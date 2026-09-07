@@ -1,0 +1,1630 @@
+{
+  "video_id": "cHrH9CQ8pmY",
+  "title": "Leaders in an Array | Brute - Optimal | Strivers A2Z DSA Course",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 713,
+  "text": "Hey, welcome back to the channel. I hope you guys are doing extremely well. So, this is another lecture from the Striver's A to Z DSA course. Just in case you're here for the first time here, this is world's most in-depth course when it comes to DS algo. Why do I say that? Because this course has 456 modules. By the end of the course, you would have solved more than 400 plus problems when it comes to DS algo. You can go across the entire internet. You can buy any of the paid courses. None of them will be teaching you DS algo in such depth. Something that I can give you as assurance is once you complete this particular course, you can actually clear any of the DS algo rounds in any of the in any part of the world. So, till now we have covered till the next permutation problem. And in this video, I'll be covering the problem leaders in an array. So, what So, what is the problem state? It states finding the leaders in an array. So, what is the definition of leaders? Everything on the right should be smaller. What does that mean? I can say 22 is a leader. Why? Because if you look on the right of 22, everything is smaller than 22. So, thereby 22 is a leader. Can I say 12 is a leader? I can because to the right of 12, everything is smaller. Can I say three is a leader? No. Why? Because to the right of three, there is six, which is greater than three. So, that is not a leader. So, can I take 10 as a leader? No. Why? Because 22 and 12 are greater than 10 and they are occurring on the right side. Can I say six is a leader? Yes, because on the right, there is nothing. So, something we can observe is the last element will always be the leader because there is nothing on the right. So, this is what you have to return. You might ask, \"What is the format in which you have to return this particular answer?\" So, over here, you can see that first I've taken 22, then 12, then six. Now, this format is following the order of the array. And a lot of platforms, you'll find a different format as well. They might ask you to return the leaders in the sorted fashion. So, something like six, 12, 22. Now, the format doesn't matter. If you can reduce a logic so that you can collect all the leaders. Once you can collect all the leaders, so our task is to collect all the leaders, then we can decide on the format. Over here, the format is on this way. If they are asking us to sort them, we will sort them. Format can be decided later. But, as of now, our task is to collect all the leaders and then we will think about the format. Got it? So, this problem comes up in an interview. The first solution that you'll give to the interview will be of the brute force solution. Now, what is the extreme naive solution that comes to your head? You're like, I need to pick up leaders. So, what if I take 10, then I'll just have to check on the right if there is anyone greater than 10. If there is, it will not be the leader. Similarly, I can pick up 22 and I can check on the right if there is anyone greater than 22. Over here, no. So, that's a leader. So, what I can do is I can go across every single element and for every single element, I can do a linear search all the right portion of the array and that will be job done. So, if I have to write the brute force code, so let's quickly write down the brute force code. So, can I say if I have to go through every element, that's saying I equal to zero, I plus plus and I'm looking for leader. So, assume initially the leader it's true. Let's take a flag leader and we will say that, okay, assume this element as of now is the leader. Now, I I will have to check on the right and I know the right starts from the next index, which is I plus one. I'll go to the end of the array. And if at any moment, if at any moment, I get an element which is greater than my leader, I will say, \"Hey, leader, you're no more the leader.\" So, mark the flag as false and you can probably break out. You can probably break out. So, this is what you can do. And if over here, you can say the leader is true, then you can store it in your answer. And you store it in your answer. So, probably answer.add and this is your leader which goes in. Quite simple. So, every element and for every element A of I, you go on the right. So, the inner loop goes on the right and the outer loop I treats element by element. So, this is the extreme brute force solution. What will be the time complexity? Near about big O of N squared because for every element we're going right. For the next we're going right. Not exactly big O of N squared because this loop doesn't runs exactly big O of N, but near about big O of N squared is what I can say. Got it? What if the interviewer will ask you about the space complexity? In that case, you have to explain him. Tell him that I haven't used any extra space in order to solve the problem. Yes, I have used an extra space to store the answer. So, if you want to consider that, then I will take a big O of N at the worst case. Imagine I give you something like 5 4 3 2 1 as the array. Then everyone will be the leader. So, everyone will be stored in the answer array. So, in that case, the worst space that I'll require to store the answer will be big O of N. So, this is how you'll tell to the interviewer. Obviously, the interviewer will not be happy with this and he'll ask you to optimize the big O of N squared. That is when you move to the optimal solution. We do not have a better for this one, so we can directly move on to the optimal solution. Now, the optimal solution is super simple. Can I say if I have 12 over here, whatever is the maximum element on the right, which is six. If 12 is greater than six, it means 12 is greater than every element on the right. Can I say that? Similarly, if I have 22 and on the right, the maximum element is 12. And 22 is greater than 12. Can I say 22 is greater than every other element? So, what I need to do is if I can see that the array element is greater than the maximum on the right, then it will always be the leader. So, what I'll do is I'll start iterating from the back and I'll be like, I will stand here and initially you can keep the maximum as a very small number. Again, you can also keep it as depending on the constraints you can keep it as zero as well, but let's as of not eat it as a very small number which is int {underscore} min. So, we are at six. Can I say six? So, on the right the maximum is int {underscore} min. So, I will be like, \"Hey, six is definitely my leader.\" Perfect. And now I will update the maximum to six and I'll move. So, as of now I'm standing at zero and on the right I have the maximum as six. On the right I have the maximum as six. So, can I say zero is not greater than six? So, thereby zero cannot be the leader. Will zero be the maximum? No, because six is greater. So, I will move forward. So, we are doing a back iteration. Got it? So, now we have three. On the right, what is the maximum? Six. Three is greater than six? No. So, three cannot be the leader. Again, will three be the maximum? No, six. We already have a bigger number. So, we will move forward to 12. Now, when we are at 12, 12 is greater than the maximum on the right which is six. Thereby, 12 is the leader. So, I'll just take that 12 and I'll place it over here. Then we will move. But before moving But before moving, the maximum will be replaced. Yes, it will no more be six because now on the right we have 12 as the maximum. Let's move forward to 22. So, when you move forward to 22, on the right you have a maximum of 12. So, 22 is greater than 12. So, I can again say 12 is one of my leaders. Perfect. Before moving, update the maximum and then move forward to 10. So, when you are 10, is 10 greater than 22, which is the right maximum? No, so 10 cannot be a leader. Again, do you need to update the maximum? No. Then move forward. Once you see that the iteration is over, what you can say is, \"Okay, I have collected all my leaders in this particular array.\" Yes, I've collected all my leaders in this particular array. Since you did a back traversal, since you did a back traversal, what will happen is the elements will be stored in this fashion. If If the problem does ask you to return in this format, 22 uh 12 and then six. If they'll ask you to return in this particular format, what do you do is you go across and reverse this answer. Reverse this answer and that will be done. If the question will ask you to probably return the sorted sorted leaders, then you'll just sort this and the sorted version will still stay the same. So, depending on the requirement of the problem, if they're asking you in the order of the array, just reverse it. They're asking you the sorted leaders, then you just apply a sorting algorithm, which will end up taking big O of n log n. Got it? Quickly code this up. Again, the problem link will be in the description. Make sure you try out the problem from the link in the description. So, what is uh the question saying? \"Element is called a superior element if it is greater than all the elements on its right.\" So, it's greater, not greater than equal to, it's greater, okay? And you must return a sorted over there Over here, they're asking you to return a sorted array. So, I know what I need to return. So, I need an vector int answer and probably I'll have to sort this. So, let's quickly sort this up. And this is what you have to return. Perfect, this is something which I know. Now, let's write the collection algorithm. So, So, can say int make uh maxi equal to int min. So, over here, if I look at the constraints, the seeding the array will be starting from one. So, even if I take zero, it'll work, but not an issue. Let's quickly start from the back, and it'll be like n equal to a. dot size. Perfect. And I'll start from the back. I'll be like n minus one, i greater than zero, and i minus minus. And I will say if array of i is that greater than maxi, if it is, it is one of your leaders. If it is one of your leaders, please go ahead and store it. And before moving, you just update your maxi to array of a array of i if it is greater than maximum. So, this is a very simple back iteration that will keep updating the maximum. This will keep track of the right maximum. Keep track of the right maximum. And over here, you just compare, and that's how you can easily get the leader. Again, what will be the time complexity? To collect, it is big O of n. According to this problem statement, since it did ask us to return a sorted version, it will take n log n at the worst case. Imagine if everyone is a leader, it'll end up taking uh big O of n log n to sort it. Are we using any space? Yes, we are using this one in order to return, but not to solve. It is just for returning. So, you should explicitly tell that to the interviewer. And the worst case will be big O of n if every one of them is a leader. So, this is So, this is the C++ code. If you want the equivalent Java and Python code, what you can do is you can go to the link in the description, and you can go across the article. There are Java and Python code over there as well. So, going back to the sheet, I can say that this problem is also done. So, if you have understood everything, make sure you hit that like button. And if you are new to our channel, what are you waiting for? Please, please do consider subscribing to us because that is the only thing that keeps you motivated to make these kind of videos. And yes, to continue our tradition, do comment understood so that I get to know that you are understanding everything. And if you haven't followed me on Instagram, Twitter, and LinkedIn, all the links will be in the description. With this, I'll be wrapping up this video. Let's meet in some other video. Till then, bye-bye. Take care. Whenever your heart has spoken, don't ever forget you're golden. I will find a light in the",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.24,
+      "text": "Hey, welcome back to the channel. I hope"
+    },
+    {
+      "start": 1.44,
+      "end": 4.32,
+      "text": "you guys are doing extremely well. So,"
+    },
+    {
+      "start": 3.24,
+      "end": 6.72,
+      "text": "this is another lecture from the"
+    },
+    {
+      "start": 4.32,
+      "end": 7.76,
+      "text": "Striver's A to Z DSA course. Just in"
+    },
+    {
+      "start": 6.72,
+      "end": 9.2,
+      "text": "case you're here for the first time"
+    },
+    {
+      "start": 7.76,
+      "end": 11.16,
+      "text": "here, this is world's most in-depth"
+    },
+    {
+      "start": 9.2,
+      "end": 13.84,
+      "text": "course when it comes to DS algo. Why do"
+    },
+    {
+      "start": 11.16,
+      "end": 15.16,
+      "text": "I say that? Because this course has 456"
+    },
+    {
+      "start": 13.84,
+      "end": 17.0,
+      "text": "modules. By the end of the course, you"
+    },
+    {
+      "start": 15.16,
+      "end": 18.76,
+      "text": "would have solved more than 400 plus"
+    },
+    {
+      "start": 17.0,
+      "end": 20.4,
+      "text": "problems when it comes to DS algo. You"
+    },
+    {
+      "start": 18.76,
+      "end": 21.92,
+      "text": "can go across the entire internet. You"
+    },
+    {
+      "start": 20.4,
+      "end": 23.52,
+      "text": "can buy any of the paid courses. None of"
+    },
+    {
+      "start": 21.92,
+      "end": 25.12,
+      "text": "them will be teaching you DS algo in"
+    },
+    {
+      "start": 23.52,
+      "end": 26.96,
+      "text": "such depth. Something that I can give"
+    },
+    {
+      "start": 25.12,
+      "end": 28.96,
+      "text": "you as assurance is once you complete"
+    },
+    {
+      "start": 26.96,
+      "end": 30.76,
+      "text": "this particular course, you can actually"
+    },
+    {
+      "start": 28.96,
+      "end": 33.24,
+      "text": "clear any of the DS algo rounds in any"
+    },
+    {
+      "start": 30.76,
+      "end": 35.24,
+      "text": "of the in any part of the world. So,"
+    },
+    {
+      "start": 33.24,
+      "end": 37.48,
+      "text": "till now we have covered till the next"
+    },
+    {
+      "start": 35.24,
+      "end": 40.04,
+      "text": "permutation problem. And in this video,"
+    },
+    {
+      "start": 37.48,
+      "end": 41.48,
+      "text": "I'll be covering the problem leaders in"
+    },
+    {
+      "start": 40.04,
+      "end": 44.12,
+      "text": "an array. So, what So, what is the"
+    },
+    {
+      "start": 41.48,
+      "end": 45.68,
+      "text": "problem state? It states finding the"
+    },
+    {
+      "start": 44.12,
+      "end": 48.16,
+      "text": "leaders in an array. So, what is the"
+    },
+    {
+      "start": 45.68,
+      "end": 50.36,
+      "text": "definition of leaders? Everything on the"
+    },
+    {
+      "start": 48.16,
+      "end": 54.36,
+      "text": "right should be smaller. What does that"
+    },
+    {
+      "start": 50.36,
+      "end": 56.92,
+      "text": "mean? I can say 22 is a leader. Why?"
+    },
+    {
+      "start": 54.36,
+      "end": 58.96,
+      "text": "Because if you look on the right of 22,"
+    },
+    {
+      "start": 56.92,
+      "end": 62.04,
+      "text": "everything is smaller than 22. So,"
+    },
+    {
+      "start": 58.96,
+      "end": 64.56,
+      "text": "thereby 22 is a leader. Can I say 12 is"
+    },
+    {
+      "start": 62.04,
+      "end": 68.08,
+      "text": "a leader? I can because to the right of"
+    },
+    {
+      "start": 64.56,
+      "end": 70.24,
+      "text": "12, everything is smaller. Can I say"
+    },
+    {
+      "start": 68.08,
+      "end": 72.24,
+      "text": "three is a leader? No. Why? Because to"
+    },
+    {
+      "start": 70.24,
+      "end": 74.92,
+      "text": "the right of three, there is six, which"
+    },
+    {
+      "start": 72.24,
+      "end": 77.52,
+      "text": "is greater than three. So, that is not a"
+    },
+    {
+      "start": 74.92,
+      "end": 80.16,
+      "text": "leader. So, can I take 10 as a leader?"
+    },
+    {
+      "start": 77.52,
+      "end": 81.52,
+      "text": "No. Why? Because 22 and 12 are greater"
+    },
+    {
+      "start": 80.16,
+      "end": 84.08,
+      "text": "than 10 and they are occurring on the"
+    },
+    {
+      "start": 81.52,
+      "end": 86.24,
+      "text": "right side. Can I say six is a leader?"
+    },
+    {
+      "start": 84.08,
+      "end": 88.4,
+      "text": "Yes, because on the right, there is"
+    },
+    {
+      "start": 86.24,
+      "end": 89.92,
+      "text": "nothing. So, something we can observe is"
+    },
+    {
+      "start": 88.4,
+      "end": 91.84,
+      "text": "the last element will always be the"
+    },
+    {
+      "start": 89.92,
+      "end": 93.36,
+      "text": "leader because there is nothing on the"
+    },
+    {
+      "start": 91.84,
+      "end": 95.28,
+      "text": "right. So, this is what you have to"
+    },
+    {
+      "start": 93.36,
+      "end": 96.84,
+      "text": "return. You might ask, \"What is the"
+    },
+    {
+      "start": 95.28,
+      "end": 98.64,
+      "text": "format in which you have to return this"
+    },
+    {
+      "start": 96.84,
+      "end": 100.96,
+      "text": "particular answer?\" So, over here, you"
+    },
+    {
+      "start": 98.64,
+      "end": 104.0,
+      "text": "can see that first I've taken 22, then"
+    },
+    {
+      "start": 100.96,
+      "end": 105.88,
+      "text": "12, then six. Now, this format is"
+    },
+    {
+      "start": 104.0,
+      "end": 107.52,
+      "text": "following the order of the array. And a"
+    },
+    {
+      "start": 105.88,
+      "end": 109.52,
+      "text": "lot of platforms, you'll find a"
+    },
+    {
+      "start": 107.52,
+      "end": 112.08,
+      "text": "different format as well. They might ask"
+    },
+    {
+      "start": 109.52,
+      "end": 115.68,
+      "text": "you to return the leaders in the sorted"
+    },
+    {
+      "start": 112.08,
+      "end": 117.56,
+      "text": "fashion. So, something like six, 12, 22."
+    },
+    {
+      "start": 115.68,
+      "end": 119.52,
+      "text": "Now, the format doesn't matter. If you"
+    },
+    {
+      "start": 117.56,
+      "end": 121.56,
+      "text": "can reduce a logic so that you can"
+    },
+    {
+      "start": 119.52,
+      "end": 123.92,
+      "text": "collect all the leaders. Once you can"
+    },
+    {
+      "start": 121.56,
+      "end": 125.96,
+      "text": "collect all the leaders, so our task is"
+    },
+    {
+      "start": 123.92,
+      "end": 127.44,
+      "text": "to collect all the leaders, then we can"
+    },
+    {
+      "start": 125.96,
+      "end": 129.92,
+      "text": "decide on the format. Over here, the"
+    },
+    {
+      "start": 127.44,
+      "end": 131.64,
+      "text": "format is on this way. If they are"
+    },
+    {
+      "start": 129.92,
+      "end": 134.04,
+      "text": "asking us to sort them, we will sort"
+    },
+    {
+      "start": 131.64,
+      "end": 136.16,
+      "text": "them. Format can be decided later. But,"
+    },
+    {
+      "start": 134.04,
+      "end": 138.84,
+      "text": "as of now, our task is to collect all"
+    },
+    {
+      "start": 136.16,
+      "end": 140.52,
+      "text": "the leaders and then we will think about"
+    },
+    {
+      "start": 138.84,
+      "end": 141.76,
+      "text": "the format. Got it? So, this problem"
+    },
+    {
+      "start": 140.52,
+      "end": 142.68,
+      "text": "comes up in an interview. The first"
+    },
+    {
+      "start": 141.76,
+      "end": 144.52,
+      "text": "solution that you'll give to the"
+    },
+    {
+      "start": 142.68,
+      "end": 146.68,
+      "text": "interview will be of the brute force"
+    },
+    {
+      "start": 144.52,
+      "end": 148.04,
+      "text": "solution. Now, what is the extreme naive"
+    },
+    {
+      "start": 146.68,
+      "end": 150.24,
+      "text": "solution that comes to your head? You're"
+    },
+    {
+      "start": 148.04,
+      "end": 152.36,
+      "text": "like, I need to pick up leaders. So,"
+    },
+    {
+      "start": 150.24,
+      "end": 155.08,
+      "text": "what if I take 10, then I'll just have"
+    },
+    {
+      "start": 152.36,
+      "end": 156.84,
+      "text": "to check on the right if there is anyone"
+    },
+    {
+      "start": 155.08,
+      "end": 159.04,
+      "text": "greater than 10. If there is, it will"
+    },
+    {
+      "start": 156.84,
+      "end": 161.88,
+      "text": "not be the leader. Similarly, I can pick"
+    },
+    {
+      "start": 159.04,
+      "end": 164.44,
+      "text": "up 22 and I can check on the right if"
+    },
+    {
+      "start": 161.88,
+      "end": 166.36,
+      "text": "there is anyone greater than 22. Over"
+    },
+    {
+      "start": 164.44,
+      "end": 169.4,
+      "text": "here, no. So, that's a leader. So, what"
+    },
+    {
+      "start": 166.36,
+      "end": 172.32,
+      "text": "I can do is I can go across every single"
+    },
+    {
+      "start": 169.4,
+      "end": 175.96,
+      "text": "element and for every single element, I"
+    },
+    {
+      "start": 172.32,
+      "end": 178.0,
+      "text": "can do a linear search all the right"
+    },
+    {
+      "start": 175.96,
+      "end": 179.8,
+      "text": "portion of the array and that will be"
+    },
+    {
+      "start": 178.0,
+      "end": 181.52,
+      "text": "job done. So, if I have to write the"
+    },
+    {
+      "start": 179.8,
+      "end": 183.36,
+      "text": "brute force code, so let's quickly write"
+    },
+    {
+      "start": 181.52,
+      "end": 185.24,
+      "text": "down the brute force code. So, can I say"
+    },
+    {
+      "start": 183.36,
+      "end": 187.16,
+      "text": "if I have to go through every element,"
+    },
+    {
+      "start": 185.24,
+      "end": 188.08,
+      "text": "that's saying I equal to zero, I plus"
+    },
+    {
+      "start": 187.16,
+      "end": 190.08,
+      "text": "plus"
+    },
+    {
+      "start": 188.08,
+      "end": 191.96,
+      "text": "and I'm looking for leader. So, assume"
+    },
+    {
+      "start": 190.08,
+      "end": 193.48,
+      "text": "initially the leader"
+    },
+    {
+      "start": 191.96,
+      "end": 195.28,
+      "text": "it's true."
+    },
+    {
+      "start": 193.48,
+      "end": 198.4,
+      "text": "Let's take a flag leader and we will say"
+    },
+    {
+      "start": 195.28,
+      "end": 200.8,
+      "text": "that, okay, assume this element as of"
+    },
+    {
+      "start": 198.4,
+      "end": 202.68,
+      "text": "now is the leader. Now, I I will have to"
+    },
+    {
+      "start": 200.8,
+      "end": 204.52,
+      "text": "check on the right and I know the right"
+    },
+    {
+      "start": 202.68,
+      "end": 206.36,
+      "text": "starts from the next index, which is I"
+    },
+    {
+      "start": 204.52,
+      "end": 207.96,
+      "text": "plus one. I'll go to the end of the"
+    },
+    {
+      "start": 206.36,
+      "end": 211.24,
+      "text": "array."
+    },
+    {
+      "start": 207.96,
+      "end": 214.04,
+      "text": "And if at any moment, if at any moment,"
+    },
+    {
+      "start": 211.24,
+      "end": 217.08,
+      "text": "I get an element which is greater than"
+    },
+    {
+      "start": 214.04,
+      "end": 218.96,
+      "text": "my leader, I will say, \"Hey, leader,"
+    },
+    {
+      "start": 217.08,
+      "end": 221.48,
+      "text": "you're no more the leader.\" So, mark the"
+    },
+    {
+      "start": 218.96,
+      "end": 223.68,
+      "text": "flag as false and you can probably break"
+    },
+    {
+      "start": 221.48,
+      "end": 225.96,
+      "text": "out. You can probably break out. So,"
+    },
+    {
+      "start": 223.68,
+      "end": 228.68,
+      "text": "this is what you can do. And if over"
+    },
+    {
+      "start": 225.96,
+      "end": 231.08,
+      "text": "here, you can say the leader"
+    },
+    {
+      "start": 228.68,
+      "end": 232.28,
+      "text": "is true, then you can store it in your"
+    },
+    {
+      "start": 231.08,
+      "end": 233.88,
+      "text": "answer."
+    },
+    {
+      "start": 232.28,
+      "end": 236.36,
+      "text": "And you store it in your answer. So,"
+    },
+    {
+      "start": 233.88,
+      "end": 238.52,
+      "text": "probably answer.add"
+    },
+    {
+      "start": 236.36,
+      "end": 241.8,
+      "text": "and this is your leader which goes in."
+    },
+    {
+      "start": 238.52,
+      "end": 244.0,
+      "text": "Quite simple. So, every element and for"
+    },
+    {
+      "start": 241.8,
+      "end": 246.08,
+      "text": "every element A of I, you go on the"
+    },
+    {
+      "start": 244.0,
+      "end": 248.8,
+      "text": "right. So, the inner loop goes on the"
+    },
+    {
+      "start": 246.08,
+      "end": 251.04,
+      "text": "right and the outer loop I treats"
+    },
+    {
+      "start": 248.8,
+      "end": 253.2,
+      "text": "element by element. So, this is the"
+    },
+    {
+      "start": 251.04,
+      "end": 255.64,
+      "text": "extreme brute force solution. What will"
+    },
+    {
+      "start": 253.2,
+      "end": 257.8,
+      "text": "be the time complexity? Near about big O"
+    },
+    {
+      "start": 255.64,
+      "end": 260.36,
+      "text": "of N squared because"
+    },
+    {
+      "start": 257.8,
+      "end": 262.8,
+      "text": "for every element we're going right. For"
+    },
+    {
+      "start": 260.36,
+      "end": 265.0,
+      "text": "the next we're going right. Not exactly"
+    },
+    {
+      "start": 262.8,
+      "end": 267.48,
+      "text": "big O of N squared because this loop"
+    },
+    {
+      "start": 265.0,
+      "end": 270.08,
+      "text": "doesn't runs exactly big O of N, but"
+    },
+    {
+      "start": 267.48,
+      "end": 272.56,
+      "text": "near about big O of N squared is what I"
+    },
+    {
+      "start": 270.08,
+      "end": 274.92,
+      "text": "can say. Got it? What if the interviewer"
+    },
+    {
+      "start": 272.56,
+      "end": 276.6,
+      "text": "will ask you about the space complexity?"
+    },
+    {
+      "start": 274.92,
+      "end": 279.08,
+      "text": "In that case, you have to explain him."
+    },
+    {
+      "start": 276.6,
+      "end": 280.96,
+      "text": "Tell him that I haven't used any extra"
+    },
+    {
+      "start": 279.08,
+      "end": 283.48,
+      "text": "space in order to solve the problem."
+    },
+    {
+      "start": 280.96,
+      "end": 285.0,
+      "text": "Yes, I have used an extra space to store"
+    },
+    {
+      "start": 283.48,
+      "end": 287.32,
+      "text": "the answer. So, if you want to consider"
+    },
+    {
+      "start": 285.0,
+      "end": 289.6,
+      "text": "that, then I will take a big O of N at"
+    },
+    {
+      "start": 287.32,
+      "end": 293.36,
+      "text": "the worst case. Imagine I give you"
+    },
+    {
+      "start": 289.6,
+      "end": 295.2,
+      "text": "something like 5 4 3 2 1 as the array."
+    },
+    {
+      "start": 293.36,
+      "end": 297.68,
+      "text": "Then everyone will be the leader. So,"
+    },
+    {
+      "start": 295.2,
+      "end": 300.64,
+      "text": "everyone will be stored in the answer"
+    },
+    {
+      "start": 297.68,
+      "end": 302.32,
+      "text": "array. So, in that case, the worst space"
+    },
+    {
+      "start": 300.64,
+      "end": 303.96,
+      "text": "that I'll require to store the answer"
+    },
+    {
+      "start": 302.32,
+      "end": 305.16,
+      "text": "will be big O of N. So, this is how"
+    },
+    {
+      "start": 303.96,
+      "end": 306.4,
+      "text": "you'll tell to the interviewer."
+    },
+    {
+      "start": 305.16,
+      "end": 307.84,
+      "text": "Obviously, the interviewer will not be"
+    },
+    {
+      "start": 306.4,
+      "end": 309.84,
+      "text": "happy with this and he'll ask you to"
+    },
+    {
+      "start": 307.84,
+      "end": 311.92,
+      "text": "optimize the big O of N squared. That is"
+    },
+    {
+      "start": 309.84,
+      "end": 313.32,
+      "text": "when you move to the optimal solution."
+    },
+    {
+      "start": 311.92,
+      "end": 315.4,
+      "text": "We do not have a better for this one, so"
+    },
+    {
+      "start": 313.32,
+      "end": 317.88,
+      "text": "we can directly move on to the optimal"
+    },
+    {
+      "start": 315.4,
+      "end": 321.08,
+      "text": "solution. Now, the optimal solution is"
+    },
+    {
+      "start": 317.88,
+      "end": 323.48,
+      "text": "super simple. Can I say if I have 12"
+    },
+    {
+      "start": 321.08,
+      "end": 326.36,
+      "text": "over here, whatever is the maximum"
+    },
+    {
+      "start": 323.48,
+      "end": 330.8,
+      "text": "element on the right, which is six. If"
+    },
+    {
+      "start": 326.36,
+      "end": 333.2,
+      "text": "12 is greater than six, it means 12 is"
+    },
+    {
+      "start": 330.8,
+      "end": 336.64,
+      "text": "greater than every element on the right."
+    },
+    {
+      "start": 333.2,
+      "end": 340.28,
+      "text": "Can I say that? Similarly, if I have 22"
+    },
+    {
+      "start": 336.64,
+      "end": 341.32,
+      "text": "and on the right, the maximum element is"
+    },
+    {
+      "start": 340.28,
+      "end": 344.48,
+      "text": "12."
+    },
+    {
+      "start": 341.32,
+      "end": 346.72,
+      "text": "And 22 is greater than 12. Can I say 22"
+    },
+    {
+      "start": 344.48,
+      "end": 349.96,
+      "text": "is greater than every other element? So,"
+    },
+    {
+      "start": 346.72,
+      "end": 352.52,
+      "text": "what I need to do is if I can see that"
+    },
+    {
+      "start": 349.96,
+      "end": 355.24,
+      "text": "the array element is greater than the"
+    },
+    {
+      "start": 352.52,
+      "end": 357.24,
+      "text": "maximum on the right, then it will"
+    },
+    {
+      "start": 355.24,
+      "end": 359.92,
+      "text": "always be the leader. So, what I'll do"
+    },
+    {
+      "start": 357.24,
+      "end": 363.0,
+      "text": "is I'll start iterating from the back"
+    },
+    {
+      "start": 359.92,
+      "end": 364.92,
+      "text": "and I'll be like, I will stand here and"
+    },
+    {
+      "start": 363.0,
+      "end": 367.56,
+      "text": "initially you can keep the maximum as a"
+    },
+    {
+      "start": 364.92,
+      "end": 370.2,
+      "text": "very small number."
+    },
+    {
+      "start": 367.56,
+      "end": 371.56,
+      "text": "Again, you can also keep it as depending"
+    },
+    {
+      "start": 370.2,
+      "end": 374.08,
+      "text": "on the constraints you can keep it as"
+    },
+    {
+      "start": 371.56,
+      "end": 376.4,
+      "text": "zero as well, but let's as of not eat it"
+    },
+    {
+      "start": 374.08,
+      "end": 379.4,
+      "text": "as a very small number which is int"
+    },
+    {
+      "start": 376.4,
+      "end": 380.4,
+      "text": "{underscore} min. So, we are at six. Can"
+    },
+    {
+      "start": 379.4,
+      "end": 383.04,
+      "text": "I say"
+    },
+    {
+      "start": 380.4,
+      "end": 385.08,
+      "text": "six? So, on the right the maximum is int"
+    },
+    {
+      "start": 383.04,
+      "end": 388.24,
+      "text": "{underscore} min. So, I will be like,"
+    },
+    {
+      "start": 385.08,
+      "end": 390.4,
+      "text": "\"Hey, six is definitely my leader.\""
+    },
+    {
+      "start": 388.24,
+      "end": 393.36,
+      "text": "Perfect. And now I will update the"
+    },
+    {
+      "start": 390.4,
+      "end": 395.48,
+      "text": "maximum to six and I'll move. So, as of"
+    },
+    {
+      "start": 393.36,
+      "end": 398.12,
+      "text": "now I'm standing at zero and on the"
+    },
+    {
+      "start": 395.48,
+      "end": 400.2,
+      "text": "right I have the maximum as six. On the"
+    },
+    {
+      "start": 398.12,
+      "end": 402.96,
+      "text": "right I have the maximum as six. So, can"
+    },
+    {
+      "start": 400.2,
+      "end": 405.72,
+      "text": "I say zero is not greater than six? So,"
+    },
+    {
+      "start": 402.96,
+      "end": 408.28,
+      "text": "thereby zero cannot be the leader. Will"
+    },
+    {
+      "start": 405.72,
+      "end": 410.52,
+      "text": "zero be the maximum? No, because six is"
+    },
+    {
+      "start": 408.28,
+      "end": 413.08,
+      "text": "greater. So, I will move forward. So, we"
+    },
+    {
+      "start": 410.52,
+      "end": 415.84,
+      "text": "are doing a back iteration. Got it? So,"
+    },
+    {
+      "start": 413.08,
+      "end": 418.44,
+      "text": "now we have three."
+    },
+    {
+      "start": 415.84,
+      "end": 421.08,
+      "text": "On the right, what is the maximum? Six."
+    },
+    {
+      "start": 418.44,
+      "end": 423.52,
+      "text": "Three is greater than six? No. So, three"
+    },
+    {
+      "start": 421.08,
+      "end": 425.76,
+      "text": "cannot be the leader. Again, will three"
+    },
+    {
+      "start": 423.52,
+      "end": 427.44,
+      "text": "be the maximum? No, six. We already have"
+    },
+    {
+      "start": 425.76,
+      "end": 431.2,
+      "text": "a bigger number. So, we will move"
+    },
+    {
+      "start": 427.44,
+      "end": 433.2,
+      "text": "forward to 12. Now, when we are at 12,"
+    },
+    {
+      "start": 431.2,
+      "end": 436.32,
+      "text": "12 is greater than the maximum on the"
+    },
+    {
+      "start": 433.2,
+      "end": 438.6,
+      "text": "right which is six. Thereby, 12 is the"
+    },
+    {
+      "start": 436.32,
+      "end": 440.76,
+      "text": "leader. So, I'll just take that 12 and"
+    },
+    {
+      "start": 438.6,
+      "end": 442.56,
+      "text": "I'll place it over here. Then we will"
+    },
+    {
+      "start": 440.76,
+      "end": 445.8,
+      "text": "move. But before moving But before"
+    },
+    {
+      "start": 442.56,
+      "end": 447.64,
+      "text": "moving, the maximum will be replaced."
+    },
+    {
+      "start": 445.8,
+      "end": 450.32,
+      "text": "Yes, it will no more be six because now"
+    },
+    {
+      "start": 447.64,
+      "end": 452.24,
+      "text": "on the right we have 12 as the maximum."
+    },
+    {
+      "start": 450.32,
+      "end": 454.24,
+      "text": "Let's move forward to 22. So, when you"
+    },
+    {
+      "start": 452.24,
+      "end": 457.44,
+      "text": "move forward to 22, on the right you"
+    },
+    {
+      "start": 454.24,
+      "end": 460.4,
+      "text": "have a maximum of 12. So, 22 is greater"
+    },
+    {
+      "start": 457.44,
+      "end": 463.56,
+      "text": "than 12. So, I can again say 12 is one"
+    },
+    {
+      "start": 460.4,
+      "end": 465.68,
+      "text": "of my leaders. Perfect. Before moving,"
+    },
+    {
+      "start": 463.56,
+      "end": 467.92,
+      "text": "update the maximum and then move forward"
+    },
+    {
+      "start": 465.68,
+      "end": 469.48,
+      "text": "to 10. So, when you are 10, is 10"
+    },
+    {
+      "start": 467.92,
+      "end": 472.64,
+      "text": "greater than 22, which is the right"
+    },
+    {
+      "start": 469.48,
+      "end": 473.92,
+      "text": "maximum? No, so 10 cannot be a leader."
+    },
+    {
+      "start": 472.64,
+      "end": 477.2,
+      "text": "Again, do you need to update the"
+    },
+    {
+      "start": 473.92,
+      "end": 479.8,
+      "text": "maximum? No. Then move forward. Once you"
+    },
+    {
+      "start": 477.2,
+      "end": 482.72,
+      "text": "see that the iteration is over, what you"
+    },
+    {
+      "start": 479.8,
+      "end": 485.44,
+      "text": "can say is, \"Okay, I have collected all"
+    },
+    {
+      "start": 482.72,
+      "end": 487.2,
+      "text": "my leaders in this particular array.\""
+    },
+    {
+      "start": 485.44,
+      "end": 489.52,
+      "text": "Yes, I've collected all my leaders in"
+    },
+    {
+      "start": 487.2,
+      "end": 491.72,
+      "text": "this particular array. Since you did a"
+    },
+    {
+      "start": 489.52,
+      "end": 494.0,
+      "text": "back traversal, since you did a back"
+    },
+    {
+      "start": 491.72,
+      "end": 496.68,
+      "text": "traversal, what will happen is the"
+    },
+    {
+      "start": 494.0,
+      "end": 500.28,
+      "text": "elements will be stored in this fashion."
+    },
+    {
+      "start": 496.68,
+      "end": 502.96,
+      "text": "If If the problem does ask you to return"
+    },
+    {
+      "start": 500.28,
+      "end": 505.8,
+      "text": "in this format, 22"
+    },
+    {
+      "start": 502.96,
+      "end": 508.12,
+      "text": "uh 12 and then six. If they'll ask you"
+    },
+    {
+      "start": 505.8,
+      "end": 510.56,
+      "text": "to return in this particular format,"
+    },
+    {
+      "start": 508.12,
+      "end": 513.2,
+      "text": "what do you do is you go across and"
+    },
+    {
+      "start": 510.56,
+      "end": 515.2,
+      "text": "reverse this answer. Reverse this answer"
+    },
+    {
+      "start": 513.2,
+      "end": 517.32,
+      "text": "and that will be done. If the question"
+    },
+    {
+      "start": 515.2,
+      "end": 520.2,
+      "text": "will ask you to"
+    },
+    {
+      "start": 517.32,
+      "end": 522.52,
+      "text": "probably return the sorted sorted"
+    },
+    {
+      "start": 520.2,
+      "end": 524.2,
+      "text": "leaders, then you'll just sort this and"
+    },
+    {
+      "start": 522.52,
+      "end": 526.56,
+      "text": "the sorted version will still stay the"
+    },
+    {
+      "start": 524.2,
+      "end": 528.08,
+      "text": "same. So, depending on the requirement"
+    },
+    {
+      "start": 526.56,
+      "end": 530.36,
+      "text": "of the problem, if they're asking you in"
+    },
+    {
+      "start": 528.08,
+      "end": 532.44,
+      "text": "the order of the array, just reverse it."
+    },
+    {
+      "start": 530.36,
+      "end": 534.68,
+      "text": "They're asking you the sorted leaders,"
+    },
+    {
+      "start": 532.44,
+      "end": 538.28,
+      "text": "then you just apply a sorting algorithm,"
+    },
+    {
+      "start": 534.68,
+      "end": 540.48,
+      "text": "which will end up taking big O of n log"
+    },
+    {
+      "start": 538.28,
+      "end": 541.48,
+      "text": "n. Got it? Quickly code this up. Again,"
+    },
+    {
+      "start": 540.48,
+      "end": 542.76,
+      "text": "the problem link will be in the"
+    },
+    {
+      "start": 541.48,
+      "end": 544.2,
+      "text": "description. Make sure you try out the"
+    },
+    {
+      "start": 542.76,
+      "end": 547.68,
+      "text": "problem from the link in the"
+    },
+    {
+      "start": 544.2,
+      "end": 549.52,
+      "text": "description. So, what is uh the question"
+    },
+    {
+      "start": 547.68,
+      "end": 551.16,
+      "text": "saying? \"Element is called a superior"
+    },
+    {
+      "start": 549.52,
+      "end": 552.64,
+      "text": "element if it is greater than all the"
+    },
+    {
+      "start": 551.16,
+      "end": 554.88,
+      "text": "elements on its right.\" So, it's"
+    },
+    {
+      "start": 552.64,
+      "end": 556.92,
+      "text": "greater, not greater than equal to, it's"
+    },
+    {
+      "start": 554.88,
+      "end": 559.16,
+      "text": "greater, okay? And you must return a"
+    },
+    {
+      "start": 556.92,
+      "end": 561.56,
+      "text": "sorted over there Over here, they're"
+    },
+    {
+      "start": 559.16,
+      "end": 563.68,
+      "text": "asking you to return a sorted array. So,"
+    },
+    {
+      "start": 561.56,
+      "end": 566.56,
+      "text": "I know what I need to return. So, I need"
+    },
+    {
+      "start": 563.68,
+      "end": 568.36,
+      "text": "an vector int answer and probably I'll"
+    },
+    {
+      "start": 566.56,
+      "end": 570.28,
+      "text": "have to sort this. So, let's quickly"
+    },
+    {
+      "start": 568.36,
+      "end": 571.88,
+      "text": "sort this up. And this is what you have"
+    },
+    {
+      "start": 570.28,
+      "end": 573.76,
+      "text": "to return. Perfect, this is something"
+    },
+    {
+      "start": 571.88,
+      "end": 575.48,
+      "text": "which I know. Now, let's write the"
+    },
+    {
+      "start": 573.76,
+      "end": 578.68,
+      "text": "collection algorithm. So, So, can say"
+    },
+    {
+      "start": 575.48,
+      "end": 581.16,
+      "text": "int make uh maxi equal to int min. So,"
+    },
+    {
+      "start": 578.68,
+      "end": 583.48,
+      "text": "over here, if I look at the constraints,"
+    },
+    {
+      "start": 581.16,
+      "end": 585.28,
+      "text": "the seeding the array will be starting"
+    },
+    {
+      "start": 583.48,
+      "end": 587.88,
+      "text": "from one. So, even if I take zero, it'll"
+    },
+    {
+      "start": 585.28,
+      "end": 590.96,
+      "text": "work, but not an issue. Let's quickly"
+    },
+    {
+      "start": 587.88,
+      "end": 592.84,
+      "text": "start from the back, and it'll be like n"
+    },
+    {
+      "start": 590.96,
+      "end": 595.08,
+      "text": "equal to a. dot"
+    },
+    {
+      "start": 592.84,
+      "end": 597.08,
+      "text": "size. Perfect. And I'll start from the"
+    },
+    {
+      "start": 595.08,
+      "end": 599.8,
+      "text": "back. I'll be like n minus one, i"
+    },
+    {
+      "start": 597.08,
+      "end": 601.56,
+      "text": "greater than zero, and i minus minus."
+    },
+    {
+      "start": 599.8,
+      "end": 605.6,
+      "text": "And I will say if"
+    },
+    {
+      "start": 601.56,
+      "end": 608.52,
+      "text": "array of i is that greater than maxi, if"
+    },
+    {
+      "start": 605.6,
+      "end": 610.4,
+      "text": "it is, it is one of your leaders. If it"
+    },
+    {
+      "start": 608.52,
+      "end": 613.2,
+      "text": "is one of your leaders, please go ahead"
+    },
+    {
+      "start": 610.4,
+      "end": 615.2,
+      "text": "and store it. And before moving, you"
+    },
+    {
+      "start": 613.2,
+      "end": 616.48,
+      "text": "just update your maxi"
+    },
+    {
+      "start": 615.2,
+      "end": 619.52,
+      "text": "to"
+    },
+    {
+      "start": 616.48,
+      "end": 622.2,
+      "text": "array of a array of i if it is greater"
+    },
+    {
+      "start": 619.52,
+      "end": 624.4,
+      "text": "than maximum. So, this is a very"
+    },
+    {
+      "start": 622.2,
+      "end": 626.28,
+      "text": "simple back iteration that will keep"
+    },
+    {
+      "start": 624.4,
+      "end": 627.92,
+      "text": "updating the maximum."
+    },
+    {
+      "start": 626.28,
+      "end": 629.72,
+      "text": "This will keep track of the right"
+    },
+    {
+      "start": 627.92,
+      "end": 631.48,
+      "text": "maximum. Keep track of the right"
+    },
+    {
+      "start": 629.72,
+      "end": 633.56,
+      "text": "maximum."
+    },
+    {
+      "start": 631.48,
+      "end": 634.64,
+      "text": "And over here, you just compare, and"
+    },
+    {
+      "start": 633.56,
+      "end": 636.76,
+      "text": "that's how"
+    },
+    {
+      "start": 634.64,
+      "end": 639.4,
+      "text": "you can easily get the leader. Again,"
+    },
+    {
+      "start": 636.76,
+      "end": 642.56,
+      "text": "what will be the time complexity?"
+    },
+    {
+      "start": 639.4,
+      "end": 644.36,
+      "text": "To collect, it is big O of n. According"
+    },
+    {
+      "start": 642.56,
+      "end": 645.48,
+      "text": "to this problem statement, since it did"
+    },
+    {
+      "start": 644.36,
+      "end": 647.48,
+      "text": "ask us"
+    },
+    {
+      "start": 645.48,
+      "end": 649.6,
+      "text": "to return a sorted version, it will take"
+    },
+    {
+      "start": 647.48,
+      "end": 652.32,
+      "text": "n log n at the worst case. Imagine if"
+    },
+    {
+      "start": 649.6,
+      "end": 655.52,
+      "text": "everyone is a leader, it'll end up"
+    },
+    {
+      "start": 652.32,
+      "end": 657.44,
+      "text": "taking uh big O of n log n to sort it."
+    },
+    {
+      "start": 655.52,
+      "end": 659.48,
+      "text": "Are we using any space? Yes, we are"
+    },
+    {
+      "start": 657.44,
+      "end": 661.96,
+      "text": "using this one in order to return, but"
+    },
+    {
+      "start": 659.48,
+      "end": 663.8,
+      "text": "not to solve. It is just for returning."
+    },
+    {
+      "start": 661.96,
+      "end": 665.28,
+      "text": "So, you should explicitly tell that to"
+    },
+    {
+      "start": 663.8,
+      "end": 668.24,
+      "text": "the interviewer. And the worst case will"
+    },
+    {
+      "start": 665.28,
+      "end": 670.4,
+      "text": "be big O of n if every one of them is a"
+    },
+    {
+      "start": 668.24,
+      "end": 671.76,
+      "text": "leader. So, this is So, this is the C++"
+    },
+    {
+      "start": 670.4,
+      "end": 673.04,
+      "text": "code. If you want the equivalent Java"
+    },
+    {
+      "start": 671.76,
+      "end": 674.68,
+      "text": "and Python code, what you can do is you"
+    },
+    {
+      "start": 673.04,
+      "end": 676.04,
+      "text": "can go to the link in the description,"
+    },
+    {
+      "start": 674.68,
+      "end": 677.8,
+      "text": "and you can go across the article. There"
+    },
+    {
+      "start": 676.04,
+      "end": 679.6,
+      "text": "are Java and Python code over there as"
+    },
+    {
+      "start": 677.8,
+      "end": 682.0,
+      "text": "well. So, going back to the sheet, I can"
+    },
+    {
+      "start": 679.6,
+      "end": 683.44,
+      "text": "say that this problem is also done. So,"
+    },
+    {
+      "start": 682.0,
+      "end": 684.88,
+      "text": "if you have understood everything, make"
+    },
+    {
+      "start": 683.44,
+      "end": 685.92,
+      "text": "sure you hit that like button. And if"
+    },
+    {
+      "start": 684.88,
+      "end": 687.84,
+      "text": "you are new to our channel, what are you"
+    },
+    {
+      "start": 685.92,
+      "end": 689.08,
+      "text": "waiting for? Please, please do consider"
+    },
+    {
+      "start": 687.84,
+      "end": 690.36,
+      "text": "subscribing to us because that is the"
+    },
+    {
+      "start": 689.08,
+      "end": 692.4,
+      "text": "only thing that keeps you motivated to"
+    },
+    {
+      "start": 690.36,
+      "end": 693.96,
+      "text": "make these kind of videos. And yes, to"
+    },
+    {
+      "start": 692.4,
+      "end": 695.44,
+      "text": "continue our tradition, do comment"
+    },
+    {
+      "start": 693.96,
+      "end": 697.12,
+      "text": "understood so that I get to know that"
+    },
+    {
+      "start": 695.44,
+      "end": 698.44,
+      "text": "you are understanding everything. And if"
+    },
+    {
+      "start": 697.12,
+      "end": 699.88,
+      "text": "you haven't followed me on Instagram,"
+    },
+    {
+      "start": 698.44,
+      "end": 701.48,
+      "text": "Twitter, and LinkedIn, all the links"
+    },
+    {
+      "start": 699.88,
+      "end": 702.56,
+      "text": "will be in the description. With this,"
+    },
+    {
+      "start": 701.48,
+      "end": 703.56,
+      "text": "I'll be wrapping up this video. Let's"
+    },
+    {
+      "start": 702.56,
+      "end": 704.84,
+      "text": "meet in some other video. Till then,"
+    },
+    {
+      "start": 703.56,
+      "end": 708.04,
+      "text": "bye-bye. Take care."
+    },
+    {
+      "start": 704.84,
+      "end": 711.32,
+      "text": "Whenever your heart has spoken,"
+    },
+    {
+      "start": 708.04,
+      "end": 714.88,
+      "text": "don't ever forget you're golden."
+    },
+    {
+      "start": 711.32,
+      "end": 714.88,
+      "text": "I will find a light in the"
+    }
+  ]
+}

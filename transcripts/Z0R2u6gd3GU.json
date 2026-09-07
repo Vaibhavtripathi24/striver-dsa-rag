@@ -1,0 +1,2035 @@
+{
+  "video_id": "Z0R2u6gd3GU",
+  "title": "Rotate Matrix/Image by 90 Degrees | Brute - Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1067,
+  "text": "for the first time here this is world's most in-depth course when we talk about Dia Salvo why do I say that 455 this course is 455 modules by the end of the post it I sold more than 400 plus problems when it comes to DSL go you can go over the entire internet you can buy any of the paid courses in the market none of them will be teaching you DSL go in such step something that I can give you as an assurance is once you complete this entire course you can create any of the DS algorithms in any of the companies in any part of the world so till now we have covered till this particular problem and this video I'll be covering the problem rotate matrix by 90 degrees so this problem also goes by the name rotate image and what does the problem State the problem States you'll be given an N cross n Matrix so that is a square Matrix so imagine here given the square Matrix your task is to rotate it in the clockwise Direction by 90 degrees so if you rotate it in the clockwise direction right 90 degrees this is what you will get and this is what you have to print that is what the question States so this question comes up in an interview the first solution so this question comes up in an interview the first solution that you'll give to the interviewer should be of the Brute Force solution and what is that so you are given a matrix of n cross n size so what you will do is you will create an answer Matrix of n cross n size and that is where you'll store the answer so what you'll say is you'll pick up one and you'll try to place it at its correct place you'll pick up two and then you will try to place it at its correct piece pick up three place it at its correct Place pick up four place it at its correct please pick up five place it add its correct Place 6 as per X play 7 8 then 9 then 10 then 11 then 12 then 13 then 14 then 15 then 16 and then this is your answer and this you can print out so how do you place all the elements at its correct place so to do that you have to do some observations so can I say the first row always goes to the last column it does the second row always goes to the second last call of Midas the third row goes to the third last and the fourth row goes to the fourth last call this is something we can definitely observe so what I will do is in order to map in terms map it in terms of indexes I'll try to write the row index and this is how the row index will be always starts from 0 and since the size of the Matrix is 4 last one will be 3 right and the column index will be 0 1 2 3. so this is the normal indexing in a 2d Matrix now let's try to map it so can I say the one who is that the zero zero index is always going over here which is basically 0 1 2 sorry 0 1 2 3 and away one two three so can I say the zero zero always goes to the 0 3 I can and can I say if this is done then guys over here it's 0 1 who always goes to over here which is 1 3 can I say the zero two which is this one always goes over here which is 2 3 let's try to observe after this and then can I say 0 3 which is this one goes here which is three three so this is something which I've done for the first row now let's try to do for the second row so can I say one zero which is 0 to perfect then can I say one one goes over here which is one two then can I say one two goes over here which is 2 2 can I say over here this is one three which goes over here which is 3 2. now let's try to observe something so I've written for a couple of rows and assume you are traversing in The Matrix in this possible way and this is the generic way to Traverse in The Matrix and for Traverse earlier using IE and J index now this I is 0 this J is zero where is it going let's try to map it in terms of I and J itself so can I say this is 0 this is 0 this is 0 but this is one so I cannot find any matches but do You observe something whatever J is the same thing is on the row over here so can I say this J goes to this jig I can and similarly you can see over here this J goes to this J Duo observe that this J is also going to this one U2 but how do you map this one because over here it is zero zero zero over here it is three three over here it is one one one it is 2 2 but do you see something yes it's constant this is also constant so something I can see is for 0 for the zeroth row it is going to the third one which is basically this and for this first it is going to the second so can I say if this is I it will be n minus 1 so this is the last index because n was 4 so this is the last index and can I save it as 1 which is I this is n minus 1 minus I can I say this yes I can because if it is 1 just write if it is 1 1 goes to n minus 1 1 so 1 goes to n minus 2 N is 4 so this overall becomes 2. so can I see the formula is if it is I the other one will be n minus 1 which is the last index minus I very obvious because if it is 0 this will be n minus 1 minus 0 which is n minus 1 which is 4 minus 1 which is 3 very simple so I will always go to n minus 1 minus I so over here I can say this will be n minus 1 minus Pi simple as that and this is what it will be for every i j you put it to J and N minus 1 minus I and that is the Brute Force so how will the Brute Force code look like what I will do is I'll declare an N cross n answer Matrix which is going to store D and so then I'll start iterating from 0 to n then the inner loop will start iterating from 0 to 1 again and this will make sure that I Traverse the entire Matrix uh element by element now what I'm saying is in answer of J n minus 1 minus I I will put whatever is in The Matrix of i j whatever is the element i j it will always go to this place and that's it and I go to every element i j and I put it to its correct place in the answer So eventually this particular answer array will be created and we can return so the time complexity of this particular approach is we go of N squared and the space complexity of this particular approach is also big of n Square because we are using an external 2D Matrix in order to store the answer now this is where the interviewer will not be happy because we are using an extra space and will ask you to optimize it now as the interviewer is not happy with the Big O of n square space that we are using that clearly tells us that we have to solve this problem in place what does in place means it means that you have to solve it within the given Matrix itself we cannot use an additional Matrix so how can we solve in the given method text itself so the first observation is the key let's try to observe something can I observe one thing now the first problem is over here it is but it's in the reverse order it's in the reverse order if you see it's like 3951 and if you again carefully see the second column is over here but again it is in the reverse order like 2 6 10 40. even the third column is over here but it is in the reverse order and this is the observation that will help you to solve it so it's very simple what you do is you say let's transpose The Matrix why you'll understand very easily so you know what does transposing of Matrix means it means the column becomes the row and the row becomes the column that is what transpose means so one five nine thirteen will become the row so let's write one 5 9 13 becomes the row then this one will become the second row so it'll be like 2 6 10 14 next this one will become the third row 3 7 11 15 next this one will become the fourth row 4 8 12 16. so we did transpose the given Matrix and if you carefully see the First Column is now the first row and the first row is the First Column and similarly the second column is the second row and the second row is the second column over here so we have successfully transposed the Matrix and now if you see it's 3951 so it's the reverse of this now what you will do is you will reverse every row you will reverse every row so if you reverse every row so this is 1 5 9 13 reverse it so you'll get this this is 2 6 10 14 reverse it you'll get this this is 3 7 11 15 reverse you get this so why did we do the transpose it is a very simple reason because 1 5 9 13 this is the First Column and this was appearing in the first root yes and that is a sign that please go ahead and transpose it and then you can easily reverse because it's clearly visible so two steps first transpose The Matrix then reverse every row if you do this it will be done in The Matrix itself without using any extra space so we know that our optimal approach is going to take couple of steps the first one is transposing of the Matrix and the second one is reversing every row but we need to First figure out how do we transpose something so let's observe this is the original Matrix and this is the transposed Matrix let's try to observe something we have a one and it stays over here we have a six it stays over here we are available it stays over here we have a 16 it stays over here so all the diagonals if you see zero zero one one two two three three all the diagonals on these indexes are staying wherever they were so the diagonals will stay wherever they were so what I'll do is I'll try to probably draw a length for the diagonal so let's draw our remain for the diagonal now which are the things that are not staying at their place it's red also we have a two we have a five and if we carefully see they are sharped places okay perfect so can I say the zero and one index okay this is zero this is one so this is the two has gone to the one zero index can I say this one to one and zero I can next we have a three and we have a nine let's observe what has happened to them we have a 9 and we have a three so they have swept as well so can I see the 0 2 has gone to two zero if you carefully observe because this is 0 to sorry my bad this is 0 2 and this is 2 0. so we did see that 2 did have a three data have a side let's look for four so if we look for four look for 13 can I say again the same thing has happened yes it's like 0 3 has swapped to three zero okay we can see that everything in this column sorry this row got solved with everything in this call done next we have a seven right we have a seven and we have a ten so again they accept Okay so 7 is at one two and it got strapped to one interesting next we have a eight and where did eight go over to fourteen if we carefully C it does so can I say we have one three this time going over to three one perfect so first row down with the first call next we have a twelfth so can I say 12 is that two three and that goes to 3 2. which is this so again the second row will be done with the second column Do You observe something every indexes rather every index goes to the Opposites like 0 1 will go to 1 0 1 2 will go to 2 1 2 3 2 3 will go to 3 2 opposites and we just have to travel store the right half and we have to look at this for the zeroth row you have to travel in one to three so for 0 you have to travel from 1 to 3. for the first row it returns from 2 to 3 observe something for 0 you traveled from 1 to 3 which is meaning like can I say if it is I this is I plus 1 and this is n minus 1 yes because for one you've traveled from two to three so if this is I this will become I plus 1 and this is the last index which is n minus one so if I have to write a pseudo4 can I say we started from 0 and we went on till 2 because that is where our last element was so can I say I will start from 0 as I and I'll go until n minus 2 index not n minus 1. we will not go on till last we'll just go on till second last and the J where is the J starting in from if you carefully see this half is this half of the Matrix will always start from one element head which is I plus 1 so I plus 1 and it will go until the last and over here can I say it will be a swap of a of i j comma a of j i very obvious and if you swap them you'll actually get your transpose Matrix so once we have transposed the Matrix we will have something like this what was the step two of the optimal approach pick up every row and try to reverse it so if you reverse every row you will ultimately get your rotated Matrix and that will be your answer so let's come back to the editor and try to code it up in case you want to try out the problem please do consider trying out the problem from the link in the description so what is the first thing let's find out the size two steps transpose and reverse so let's perform the first step transpose it's like going from here till the second last and we only travels in the first half so we will be going something like from here to here and G plus plus and it'll be saying swap of mat of i j with man of J X so we just sharpened so the step one is done well the step two reverse every row so every row is basically in from 0 to n minus one so we go from here to here and we try to reverse every row so what is every row can I say every row is basically mad of C matter by that's the row so we say reverse of modify since it's a vector we shall begin and we say modify Dot N in case your language doesn't have a reverse function what you can do is you can use this method where you take one one sharp then you take the next strap then you move so it's basically a two pointer approach I will be leaving the article Link in the description you can go ahead and try out the small function which reverses any given array in Big O of n by 2 complexity so this is how you will reverse it and ultimately you can go ahead and try to run it up I think it should be running fine it does and now we will quickly sum it up so what will be the time complexity can I say this is basically traversing one half of the array so I can say it's basically n by 2 that's what the first Loop runs for and the second one nearly runs about ny2 okay so it's like n by 2 into n by 2 for the transpose what about the reverse can I see it's basically running for n for all the rules and then we are reverse it and we did C for reversing we can just use the two pointer approach which basically reverses till going half of the array so can I see the internal group plans for n by 2. so this is the overall time complexity this plus this are we using any extra space now we are doing it in place so we are not using any extra space in order to solve this particular problem so coming back to the sheet I can say that this particular problem is also done and if you have understood everything about this video please consider giving us that like because it won't cost you anything but it will keep you motivated to make these kind of videos and if you're new to our Channel what are you doing hit that subscribe button right away and if you haven't followed me on Instagram LinkedIn and Twitter you can find all the ID links in the description with this I've been wrapping up this video let's read in some of the video until then [Music] I will find the light in",
+  "segments": [
+    {
+      "start": 9.2,
+      "end": 12.78,
+      "text": "for the first time here this is world's"
+    },
+    {
+      "start": 11.52,
+      "end": 16.38,
+      "text": "most in-depth course when we talk about"
+    },
+    {
+      "start": 12.78,
+      "end": 18.96,
+      "text": "Dia Salvo why do I say that 455 this"
+    },
+    {
+      "start": 16.38,
+      "end": 20.76,
+      "text": "course is 455 modules by the end of the"
+    },
+    {
+      "start": 18.96,
+      "end": 23.28,
+      "text": "post it I sold more than 400 plus"
+    },
+    {
+      "start": 20.76,
+      "end": 25.08,
+      "text": "problems when it comes to DSL go you can"
+    },
+    {
+      "start": 23.28,
+      "end": 26.58,
+      "text": "go over the entire internet you can buy"
+    },
+    {
+      "start": 25.08,
+      "end": 28.86,
+      "text": "any of the paid courses in the market"
+    },
+    {
+      "start": 26.58,
+      "end": 30.48,
+      "text": "none of them will be teaching you DSL go"
+    },
+    {
+      "start": 28.86,
+      "end": 32.94,
+      "text": "in such step something that I can give"
+    },
+    {
+      "start": 30.48,
+      "end": 34.5,
+      "text": "you as an assurance is once you complete"
+    },
+    {
+      "start": 32.94,
+      "end": 35.82,
+      "text": "this entire course you can create any of"
+    },
+    {
+      "start": 34.5,
+      "end": 38.22,
+      "text": "the DS algorithms in any of the"
+    },
+    {
+      "start": 35.82,
+      "end": 39.9,
+      "text": "companies in any part of the world so"
+    },
+    {
+      "start": 38.22,
+      "end": 41.4,
+      "text": "till now we have covered till this"
+    },
+    {
+      "start": 39.9,
+      "end": 43.92,
+      "text": "particular problem and this video I'll"
+    },
+    {
+      "start": 41.4,
+      "end": 46.68,
+      "text": "be covering the problem rotate matrix by"
+    },
+    {
+      "start": 43.92,
+      "end": 48.72,
+      "text": "90 degrees so this problem also goes by"
+    },
+    {
+      "start": 46.68,
+      "end": 50.88,
+      "text": "the name rotate image and what does the"
+    },
+    {
+      "start": 48.72,
+      "end": 53.1,
+      "text": "problem State the problem States you'll"
+    },
+    {
+      "start": 50.88,
+      "end": 55.38,
+      "text": "be given an N cross n Matrix so that is"
+    },
+    {
+      "start": 53.1,
+      "end": 57.96,
+      "text": "a square Matrix so imagine here given"
+    },
+    {
+      "start": 55.38,
+      "end": 60.24,
+      "text": "the square Matrix your task is to rotate"
+    },
+    {
+      "start": 57.96,
+      "end": 62.1,
+      "text": "it in the clockwise Direction by 90"
+    },
+    {
+      "start": 60.24,
+      "end": 63.6,
+      "text": "degrees so if you rotate it in the"
+    },
+    {
+      "start": 62.1,
+      "end": 66.0,
+      "text": "clockwise direction right 90 degrees"
+    },
+    {
+      "start": 63.6,
+      "end": 67.86,
+      "text": "this is what you will get and this is"
+    },
+    {
+      "start": 66.0,
+      "end": 69.78,
+      "text": "what you have to print that is what the"
+    },
+    {
+      "start": 67.86,
+      "end": 72.3,
+      "text": "question States so this question comes"
+    },
+    {
+      "start": 69.78,
+      "end": 74.04,
+      "text": "up in an interview the first solution"
+    },
+    {
+      "start": 72.3,
+      "end": 75.72,
+      "text": "so this question comes up in an"
+    },
+    {
+      "start": 74.04,
+      "end": 77.52,
+      "text": "interview the first solution that you'll"
+    },
+    {
+      "start": 75.72,
+      "end": 79.62,
+      "text": "give to the interviewer should be of the"
+    },
+    {
+      "start": 77.52,
+      "end": 82.62,
+      "text": "Brute Force solution and what is that so"
+    },
+    {
+      "start": 79.62,
+      "end": 84.84,
+      "text": "you are given a matrix of n cross n size"
+    },
+    {
+      "start": 82.62,
+      "end": 88.5,
+      "text": "so what you will do is you will create"
+    },
+    {
+      "start": 84.84,
+      "end": 90.6,
+      "text": "an answer Matrix of n cross n size and"
+    },
+    {
+      "start": 88.5,
+      "end": 92.1,
+      "text": "that is where you'll store the answer so"
+    },
+    {
+      "start": 90.6,
+      "end": 94.2,
+      "text": "what you'll say is you'll pick up one"
+    },
+    {
+      "start": 92.1,
+      "end": 96.78,
+      "text": "and you'll try to place it"
+    },
+    {
+      "start": 94.2,
+      "end": 99.24,
+      "text": "at its correct place you'll pick up two"
+    },
+    {
+      "start": 96.78,
+      "end": 101.52,
+      "text": "and then you will try to place it at its"
+    },
+    {
+      "start": 99.24,
+      "end": 103.86,
+      "text": "correct piece pick up three place it at"
+    },
+    {
+      "start": 101.52,
+      "end": 106.86,
+      "text": "its correct Place pick up four place it"
+    },
+    {
+      "start": 103.86,
+      "end": 109.56,
+      "text": "at its correct please pick up five place"
+    },
+    {
+      "start": 106.86,
+      "end": 113.94,
+      "text": "it add its correct Place 6 as per X play"
+    },
+    {
+      "start": 109.56,
+      "end": 118.32,
+      "text": "7 8 then 9 then 10 then 11 then 12 then"
+    },
+    {
+      "start": 113.94,
+      "end": 120.0,
+      "text": "13 then 14 then 15 then 16 and then this"
+    },
+    {
+      "start": 118.32,
+      "end": 122.82,
+      "text": "is your answer and this you can print"
+    },
+    {
+      "start": 120.0,
+      "end": 125.22,
+      "text": "out so how do you place all the elements"
+    },
+    {
+      "start": 122.82,
+      "end": 127.14,
+      "text": "at its correct place so to do that you"
+    },
+    {
+      "start": 125.22,
+      "end": 130.32,
+      "text": "have to do some observations so can I"
+    },
+    {
+      "start": 127.14,
+      "end": 132.66,
+      "text": "say the first row always goes to the"
+    },
+    {
+      "start": 130.32,
+      "end": 135.0,
+      "text": "last column it does the second row"
+    },
+    {
+      "start": 132.66,
+      "end": 138.18,
+      "text": "always goes to the second last call of"
+    },
+    {
+      "start": 135.0,
+      "end": 140.7,
+      "text": "Midas the third row goes to the third"
+    },
+    {
+      "start": 138.18,
+      "end": 142.68,
+      "text": "last and the fourth row goes to the"
+    },
+    {
+      "start": 140.7,
+      "end": 145.08,
+      "text": "fourth last call this is something we"
+    },
+    {
+      "start": 142.68,
+      "end": 147.72,
+      "text": "can definitely observe so what I will do"
+    },
+    {
+      "start": 145.08,
+      "end": 149.94,
+      "text": "is in order to map in terms map it in"
+    },
+    {
+      "start": 147.72,
+      "end": 152.28,
+      "text": "terms of indexes I'll try to write the"
+    },
+    {
+      "start": 149.94,
+      "end": 154.92,
+      "text": "row index and this is how the row index"
+    },
+    {
+      "start": 152.28,
+      "end": 157.5,
+      "text": "will be always starts from 0 and since"
+    },
+    {
+      "start": 154.92,
+      "end": 159.78,
+      "text": "the size of the Matrix is 4 last one"
+    },
+    {
+      "start": 157.5,
+      "end": 161.7,
+      "text": "will be 3 right and the column index"
+    },
+    {
+      "start": 159.78,
+      "end": 164.16,
+      "text": "will be 0 1 2 3. so this is the normal"
+    },
+    {
+      "start": 161.7,
+      "end": 166.68,
+      "text": "indexing in a 2d Matrix now let's try to"
+    },
+    {
+      "start": 164.16,
+      "end": 169.32,
+      "text": "map it so can I say the one who is that"
+    },
+    {
+      "start": 166.68,
+      "end": 173.4,
+      "text": "the zero zero index is always going over"
+    },
+    {
+      "start": 169.32,
+      "end": 176.64,
+      "text": "here which is basically 0 1 2 sorry 0"
+    },
+    {
+      "start": 173.4,
+      "end": 181.02,
+      "text": "1 2 3 and away one two three so can I"
+    },
+    {
+      "start": 176.64,
+      "end": 184.44,
+      "text": "say the zero zero always goes to the 0 3"
+    },
+    {
+      "start": 181.02,
+      "end": 188.7,
+      "text": "I can and can I say if this is done then"
+    },
+    {
+      "start": 184.44,
+      "end": 192.78,
+      "text": "guys over here it's 0 1 who always goes"
+    },
+    {
+      "start": 188.7,
+      "end": 196.68,
+      "text": "to over here which is 1 3 can I say the"
+    },
+    {
+      "start": 192.78,
+      "end": 198.6,
+      "text": "zero two which is this one always goes"
+    },
+    {
+      "start": 196.68,
+      "end": 200.88,
+      "text": "over here which is 2 3"
+    },
+    {
+      "start": 198.6,
+      "end": 204.24,
+      "text": "let's try to observe after this and then"
+    },
+    {
+      "start": 200.88,
+      "end": 205.32,
+      "text": "can I say 0 3 which is this one goes"
+    },
+    {
+      "start": 204.24,
+      "end": 207.96,
+      "text": "here"
+    },
+    {
+      "start": 205.32,
+      "end": 209.28,
+      "text": "which is three three so this is"
+    },
+    {
+      "start": 207.96,
+      "end": 211.08,
+      "text": "something which I've done for the first"
+    },
+    {
+      "start": 209.28,
+      "end": 214.82,
+      "text": "row now let's try to do for the second"
+    },
+    {
+      "start": 211.08,
+      "end": 214.82,
+      "text": "row so can I say one zero"
+    },
+    {
+      "start": 215.3,
+      "end": 222.14,
+      "text": "which is 0 to perfect then can I say one"
+    },
+    {
+      "start": 219.9,
+      "end": 222.14,
+      "text": "one"
+    },
+    {
+      "start": 222.36,
+      "end": 229.28,
+      "text": "goes over here which is one two"
+    },
+    {
+      "start": 225.54,
+      "end": 229.28,
+      "text": "then can I say one two"
+    },
+    {
+      "start": 229.44,
+      "end": 238.04,
+      "text": "goes over here which is 2 2"
+    },
+    {
+      "start": 234.0,
+      "end": 238.04,
+      "text": "can I say over here this is one three"
+    },
+    {
+      "start": 238.14,
+      "end": 242.46,
+      "text": "which goes over here which is 3 2. now"
+    },
+    {
+      "start": 240.84,
+      "end": 245.34,
+      "text": "let's try to observe something so I've"
+    },
+    {
+      "start": 242.46,
+      "end": 248.28,
+      "text": "written for a couple of rows and assume"
+    },
+    {
+      "start": 245.34,
+      "end": 250.92,
+      "text": "you are traversing in The Matrix in this"
+    },
+    {
+      "start": 248.28,
+      "end": 253.14,
+      "text": "possible way and this is the generic way"
+    },
+    {
+      "start": 250.92,
+      "end": 256.86,
+      "text": "to Traverse in The Matrix and for"
+    },
+    {
+      "start": 253.14,
+      "end": 258.24,
+      "text": "Traverse earlier using IE and J index"
+    },
+    {
+      "start": 256.86,
+      "end": 262.08,
+      "text": "now"
+    },
+    {
+      "start": 258.24,
+      "end": 265.74,
+      "text": "this I is 0 this J is zero where is it"
+    },
+    {
+      "start": 262.08,
+      "end": 269.64,
+      "text": "going let's try to map it in terms of I"
+    },
+    {
+      "start": 265.74,
+      "end": 272.64,
+      "text": "and J itself so can I say this is 0 this"
+    },
+    {
+      "start": 269.64,
+      "end": 274.5,
+      "text": "is 0 this is 0 but this is one so I"
+    },
+    {
+      "start": 272.64,
+      "end": 277.98,
+      "text": "cannot find any matches but do You"
+    },
+    {
+      "start": 274.5,
+      "end": 280.68,
+      "text": "observe something whatever J is"
+    },
+    {
+      "start": 277.98,
+      "end": 284.82,
+      "text": "the same thing is on the row over here"
+    },
+    {
+      "start": 280.68,
+      "end": 286.8,
+      "text": "so can I say this J goes to this jig I"
+    },
+    {
+      "start": 284.82,
+      "end": 290.28,
+      "text": "can and similarly you can see over here"
+    },
+    {
+      "start": 286.8,
+      "end": 293.58,
+      "text": "this J goes to this J Duo observe that"
+    },
+    {
+      "start": 290.28,
+      "end": 296.4,
+      "text": "this J is also going to this one U2 but"
+    },
+    {
+      "start": 293.58,
+      "end": 298.98,
+      "text": "how do you map this one because over"
+    },
+    {
+      "start": 296.4,
+      "end": 301.5,
+      "text": "here it is zero zero zero over here it"
+    },
+    {
+      "start": 298.98,
+      "end": 304.62,
+      "text": "is three three over here it is one one"
+    },
+    {
+      "start": 301.5,
+      "end": 307.98,
+      "text": "one it is 2 2 but do you see something"
+    },
+    {
+      "start": 304.62,
+      "end": 311.58,
+      "text": "yes it's constant this is also constant"
+    },
+    {
+      "start": 307.98,
+      "end": 314.22,
+      "text": "so something I can see is for 0 for the"
+    },
+    {
+      "start": 311.58,
+      "end": 316.74,
+      "text": "zeroth row it is going to the third one"
+    },
+    {
+      "start": 314.22,
+      "end": 319.02,
+      "text": "which is basically this and for this"
+    },
+    {
+      "start": 316.74,
+      "end": 323.34,
+      "text": "first it is going to the second"
+    },
+    {
+      "start": 319.02,
+      "end": 324.84,
+      "text": "so can I say if this is I it will be n"
+    },
+    {
+      "start": 323.34,
+      "end": 328.2,
+      "text": "minus"
+    },
+    {
+      "start": 324.84,
+      "end": 330.78,
+      "text": "1 so this is the last index because n"
+    },
+    {
+      "start": 328.2,
+      "end": 333.96,
+      "text": "was 4 so this is the last index and can"
+    },
+    {
+      "start": 330.78,
+      "end": 338.28,
+      "text": "I save it as 1 which is I this is n"
+    },
+    {
+      "start": 333.96,
+      "end": 340.8,
+      "text": "minus 1 minus I can I say this yes I can"
+    },
+    {
+      "start": 338.28,
+      "end": 344.28,
+      "text": "because if it is 1 just write if it is 1"
+    },
+    {
+      "start": 340.8,
+      "end": 347.96,
+      "text": "1 goes to n minus 1 1 so 1 goes to n"
+    },
+    {
+      "start": 344.28,
+      "end": 351.24,
+      "text": "minus 2 N is 4 so this overall becomes"
+    },
+    {
+      "start": 347.96,
+      "end": 352.26,
+      "text": "2. so can I see the formula is if it is"
+    },
+    {
+      "start": 351.24,
+      "end": 354.84,
+      "text": "I"
+    },
+    {
+      "start": 352.26,
+      "end": 357.78,
+      "text": "the other one will be n minus 1 which is"
+    },
+    {
+      "start": 354.84,
+      "end": 360.12,
+      "text": "the last index minus I"
+    },
+    {
+      "start": 357.78,
+      "end": 363.3,
+      "text": "very obvious because if it is 0 this"
+    },
+    {
+      "start": 360.12,
+      "end": 366.84,
+      "text": "will be n minus 1 minus 0 which is n"
+    },
+    {
+      "start": 363.3,
+      "end": 370.62,
+      "text": "minus 1 which is 4 minus 1 which is 3"
+    },
+    {
+      "start": 366.84,
+      "end": 373.02,
+      "text": "very simple so I will always go to n"
+    },
+    {
+      "start": 370.62,
+      "end": 376.98,
+      "text": "minus 1 minus I so over here I can say"
+    },
+    {
+      "start": 373.02,
+      "end": 379.38,
+      "text": "this will be n minus 1 minus Pi simple"
+    },
+    {
+      "start": 376.98,
+      "end": 382.5,
+      "text": "as that and this is what it will be for"
+    },
+    {
+      "start": 379.38,
+      "end": 384.6,
+      "text": "every i j you put it to J and N minus 1"
+    },
+    {
+      "start": 382.5,
+      "end": 386.52,
+      "text": "minus I and that is the Brute Force"
+    },
+    {
+      "start": 384.6,
+      "end": 389.28,
+      "text": "so how will the Brute Force code look"
+    },
+    {
+      "start": 386.52,
+      "end": 391.38,
+      "text": "like what I will do is I'll declare an N"
+    },
+    {
+      "start": 389.28,
+      "end": 393.72,
+      "text": "cross n answer Matrix which is going to"
+    },
+    {
+      "start": 391.38,
+      "end": 397.2,
+      "text": "store D and so then I'll start iterating"
+    },
+    {
+      "start": 393.72,
+      "end": 399.48,
+      "text": "from 0 to n then the inner loop will"
+    },
+    {
+      "start": 397.2,
+      "end": 401.46,
+      "text": "start iterating from 0 to 1 again and"
+    },
+    {
+      "start": 399.48,
+      "end": 404.28,
+      "text": "this will make sure that I Traverse the"
+    },
+    {
+      "start": 401.46,
+      "end": 408.0,
+      "text": "entire Matrix uh element by element now"
+    },
+    {
+      "start": 404.28,
+      "end": 414.18,
+      "text": "what I'm saying is in answer of J"
+    },
+    {
+      "start": 408.0,
+      "end": 417.84,
+      "text": "n minus 1 minus I I will put whatever is"
+    },
+    {
+      "start": 414.18,
+      "end": 420.12,
+      "text": "in The Matrix of i j whatever is the"
+    },
+    {
+      "start": 417.84,
+      "end": 422.34,
+      "text": "element i j it will always go to this"
+    },
+    {
+      "start": 420.12,
+      "end": 425.04,
+      "text": "place and that's it and I go to every"
+    },
+    {
+      "start": 422.34,
+      "end": 427.68,
+      "text": "element i j and I put it to its correct"
+    },
+    {
+      "start": 425.04,
+      "end": 429.12,
+      "text": "place in the answer So eventually this"
+    },
+    {
+      "start": 427.68,
+      "end": 431.58,
+      "text": "particular answer array will be created"
+    },
+    {
+      "start": 429.12,
+      "end": 433.62,
+      "text": "and we can return so the time complexity"
+    },
+    {
+      "start": 431.58,
+      "end": 435.9,
+      "text": "of this particular approach is we go of"
+    },
+    {
+      "start": 433.62,
+      "end": 437.88,
+      "text": "N squared and the space complexity of"
+    },
+    {
+      "start": 435.9,
+      "end": 439.86,
+      "text": "this particular approach is also big of"
+    },
+    {
+      "start": 437.88,
+      "end": 442.38,
+      "text": "n Square because we are using an"
+    },
+    {
+      "start": 439.86,
+      "end": 444.18,
+      "text": "external 2D Matrix in order to store the"
+    },
+    {
+      "start": 442.38,
+      "end": 446.1,
+      "text": "answer now this is where the interviewer"
+    },
+    {
+      "start": 444.18,
+      "end": 448.08,
+      "text": "will not be happy because we are using"
+    },
+    {
+      "start": 446.1,
+      "end": 449.76,
+      "text": "an extra space and will ask you to"
+    },
+    {
+      "start": 448.08,
+      "end": 451.44,
+      "text": "optimize it now as the interviewer is"
+    },
+    {
+      "start": 449.76,
+      "end": 453.72,
+      "text": "not happy with the Big O of n square"
+    },
+    {
+      "start": 451.44,
+      "end": 455.46,
+      "text": "space that we are using that clearly"
+    },
+    {
+      "start": 453.72,
+      "end": 458.58,
+      "text": "tells us that we have to solve this"
+    },
+    {
+      "start": 455.46,
+      "end": 460.74,
+      "text": "problem in place what does in place"
+    },
+    {
+      "start": 458.58,
+      "end": 463.56,
+      "text": "means it means that you have to solve it"
+    },
+    {
+      "start": 460.74,
+      "end": 466.44,
+      "text": "within the given Matrix itself we cannot"
+    },
+    {
+      "start": 463.56,
+      "end": 469.32,
+      "text": "use an additional Matrix so how can we"
+    },
+    {
+      "start": 466.44,
+      "end": 471.66,
+      "text": "solve in the given method text itself so"
+    },
+    {
+      "start": 469.32,
+      "end": 474.24,
+      "text": "the first observation is the key let's"
+    },
+    {
+      "start": 471.66,
+      "end": 476.64,
+      "text": "try to observe something can I observe"
+    },
+    {
+      "start": 474.24,
+      "end": 480.84,
+      "text": "one thing now the first problem"
+    },
+    {
+      "start": 476.64,
+      "end": 483.18,
+      "text": "is over here it is but it's in the"
+    },
+    {
+      "start": 480.84,
+      "end": 486.72,
+      "text": "reverse order it's in the reverse order"
+    },
+    {
+      "start": 483.18,
+      "end": 490.02,
+      "text": "if you see it's like 3951 and if you"
+    },
+    {
+      "start": 486.72,
+      "end": 492.3,
+      "text": "again carefully see the second column is"
+    },
+    {
+      "start": 490.02,
+      "end": 496.02,
+      "text": "over here but again it is in the reverse"
+    },
+    {
+      "start": 492.3,
+      "end": 499.2,
+      "text": "order like 2 6 10 40. even the third"
+    },
+    {
+      "start": 496.02,
+      "end": 501.3,
+      "text": "column is over here but it is in the"
+    },
+    {
+      "start": 499.2,
+      "end": 503.16,
+      "text": "reverse order and this is the"
+    },
+    {
+      "start": 501.3,
+      "end": 505.56,
+      "text": "observation that will help you to solve"
+    },
+    {
+      "start": 503.16,
+      "end": 507.68,
+      "text": "it so it's very simple what you do is"
+    },
+    {
+      "start": 505.56,
+      "end": 511.02,
+      "text": "you say let's"
+    },
+    {
+      "start": 507.68,
+      "end": 514.2,
+      "text": "transpose The Matrix why you'll"
+    },
+    {
+      "start": 511.02,
+      "end": 516.96,
+      "text": "understand very easily so you know what"
+    },
+    {
+      "start": 514.2,
+      "end": 521.04,
+      "text": "does transposing of Matrix means it"
+    },
+    {
+      "start": 516.96,
+      "end": 523.5,
+      "text": "means the column becomes the row and the"
+    },
+    {
+      "start": 521.04,
+      "end": 526.2,
+      "text": "row becomes the column that is what"
+    },
+    {
+      "start": 523.5,
+      "end": 528.72,
+      "text": "transpose means so one five nine"
+    },
+    {
+      "start": 526.2,
+      "end": 530.04,
+      "text": "thirteen will become the row so let's"
+    },
+    {
+      "start": 528.72,
+      "end": 534.24,
+      "text": "write one"
+    },
+    {
+      "start": 530.04,
+      "end": 536.04,
+      "text": "5 9 13 becomes the row then this one"
+    },
+    {
+      "start": 534.24,
+      "end": 540.72,
+      "text": "will become the second row so it'll be"
+    },
+    {
+      "start": 536.04,
+      "end": 544.74,
+      "text": "like 2 6 10 14 next this one will become"
+    },
+    {
+      "start": 540.72,
+      "end": 548.88,
+      "text": "the third row 3 7 11 15 next this one"
+    },
+    {
+      "start": 544.74,
+      "end": 551.34,
+      "text": "will become the fourth row 4 8 12 16. so"
+    },
+    {
+      "start": 548.88,
+      "end": 554.04,
+      "text": "we did transpose the given Matrix and if"
+    },
+    {
+      "start": 551.34,
+      "end": 555.6,
+      "text": "you carefully see the First Column is"
+    },
+    {
+      "start": 554.04,
+      "end": 558.84,
+      "text": "now the first row"
+    },
+    {
+      "start": 555.6,
+      "end": 562.38,
+      "text": "and the first row is the First Column"
+    },
+    {
+      "start": 558.84,
+      "end": 563.52,
+      "text": "and similarly the second column is the"
+    },
+    {
+      "start": 562.38,
+      "end": 566.22,
+      "text": "second row"
+    },
+    {
+      "start": 563.52,
+      "end": 568.28,
+      "text": "and the second row is the second column"
+    },
+    {
+      "start": 566.22,
+      "end": 571.5,
+      "text": "over here so we have successfully"
+    },
+    {
+      "start": 568.28,
+      "end": 575.16,
+      "text": "transposed the Matrix and now if you see"
+    },
+    {
+      "start": 571.5,
+      "end": 577.8,
+      "text": "it's 3951 so it's the reverse of this"
+    },
+    {
+      "start": 575.16,
+      "end": 582.06,
+      "text": "now what you will do is you will reverse"
+    },
+    {
+      "start": 577.8,
+      "end": 584.94,
+      "text": "every row you will reverse every row"
+    },
+    {
+      "start": 582.06,
+      "end": 587.22,
+      "text": "so if you reverse every row so this is 1"
+    },
+    {
+      "start": 584.94,
+      "end": 590.46,
+      "text": "5 9 13 reverse it so you'll get this"
+    },
+    {
+      "start": 587.22,
+      "end": 593.7,
+      "text": "this is 2 6 10 14 reverse it you'll get"
+    },
+    {
+      "start": 590.46,
+      "end": 596.46,
+      "text": "this this is 3 7 11 15 reverse you get"
+    },
+    {
+      "start": 593.7,
+      "end": 599.58,
+      "text": "this so why did we do the transpose it"
+    },
+    {
+      "start": 596.46,
+      "end": 602.18,
+      "text": "is a very simple reason because 1 5 9 13"
+    },
+    {
+      "start": 599.58,
+      "end": 606.96,
+      "text": "this is the First Column and this was"
+    },
+    {
+      "start": 602.18,
+      "end": 608.94,
+      "text": "appearing in the first root yes and that"
+    },
+    {
+      "start": 606.96,
+      "end": 611.1,
+      "text": "is a sign that please go ahead and"
+    },
+    {
+      "start": 608.94,
+      "end": 613.5,
+      "text": "transpose it and then you can easily"
+    },
+    {
+      "start": 611.1,
+      "end": 616.08,
+      "text": "reverse because it's clearly visible so"
+    },
+    {
+      "start": 613.5,
+      "end": 619.56,
+      "text": "two steps first transpose The Matrix"
+    },
+    {
+      "start": 616.08,
+      "end": 622.02,
+      "text": "then reverse every row if you do this it"
+    },
+    {
+      "start": 619.56,
+      "end": 624.72,
+      "text": "will be done in The Matrix itself"
+    },
+    {
+      "start": 622.02,
+      "end": 626.34,
+      "text": "without using any extra space so we know"
+    },
+    {
+      "start": 624.72,
+      "end": 628.38,
+      "text": "that our optimal approach is going to"
+    },
+    {
+      "start": 626.34,
+      "end": 630.48,
+      "text": "take couple of steps the first one is"
+    },
+    {
+      "start": 628.38,
+      "end": 633.48,
+      "text": "transposing of the Matrix and the second"
+    },
+    {
+      "start": 630.48,
+      "end": 635.34,
+      "text": "one is reversing every row but we need"
+    },
+    {
+      "start": 633.48,
+      "end": 638.46,
+      "text": "to First figure out how do we transpose"
+    },
+    {
+      "start": 635.34,
+      "end": 640.76,
+      "text": "something so let's observe this is the"
+    },
+    {
+      "start": 638.46,
+      "end": 643.62,
+      "text": "original Matrix and this is the"
+    },
+    {
+      "start": 640.76,
+      "end": 645.84,
+      "text": "transposed Matrix let's try to observe"
+    },
+    {
+      "start": 643.62,
+      "end": 648.0,
+      "text": "something we have a one and it stays"
+    },
+    {
+      "start": 645.84,
+      "end": 650.22,
+      "text": "over here we have a six it stays over"
+    },
+    {
+      "start": 648.0,
+      "end": 652.62,
+      "text": "here we are available it stays over here"
+    },
+    {
+      "start": 650.22,
+      "end": 655.08,
+      "text": "we have a 16 it stays over here so all"
+    },
+    {
+      "start": 652.62,
+      "end": 658.44,
+      "text": "the diagonals if you see zero zero one"
+    },
+    {
+      "start": 655.08,
+      "end": 661.62,
+      "text": "one two two three three all the"
+    },
+    {
+      "start": 658.44,
+      "end": 664.26,
+      "text": "diagonals on these indexes are staying"
+    },
+    {
+      "start": 661.62,
+      "end": 666.48,
+      "text": "wherever they were so the diagonals will"
+    },
+    {
+      "start": 664.26,
+      "end": 668.28,
+      "text": "stay wherever they were so what I'll do"
+    },
+    {
+      "start": 666.48,
+      "end": 670.38,
+      "text": "is I'll try to probably draw a length"
+    },
+    {
+      "start": 668.28,
+      "end": 672.9,
+      "text": "for the diagonal so let's draw our"
+    },
+    {
+      "start": 670.38,
+      "end": 674.34,
+      "text": "remain for the diagonal now which are"
+    },
+    {
+      "start": 672.9,
+      "end": 676.98,
+      "text": "the things that are not staying at their"
+    },
+    {
+      "start": 674.34,
+      "end": 679.86,
+      "text": "place it's red also we have a two we"
+    },
+    {
+      "start": 676.98,
+      "end": 682.92,
+      "text": "have a five and if we carefully see they"
+    },
+    {
+      "start": 679.86,
+      "end": 687.06,
+      "text": "are sharped places okay perfect so can I"
+    },
+    {
+      "start": 682.92,
+      "end": 689.16,
+      "text": "say the zero and one index okay this is"
+    },
+    {
+      "start": 687.06,
+      "end": 691.98,
+      "text": "zero this is one so this is the two has"
+    },
+    {
+      "start": 689.16,
+      "end": 692.88,
+      "text": "gone to the one zero index can I say"
+    },
+    {
+      "start": 691.98,
+      "end": 696.24,
+      "text": "this"
+    },
+    {
+      "start": 692.88,
+      "end": 699.6,
+      "text": "one to one and zero I can next"
+    },
+    {
+      "start": 696.24,
+      "end": 702.06,
+      "text": "we have a three and we have a nine let's"
+    },
+    {
+      "start": 699.6,
+      "end": 704.28,
+      "text": "observe what has happened to them we"
+    },
+    {
+      "start": 702.06,
+      "end": 707.7,
+      "text": "have a 9 and we have a three so they"
+    },
+    {
+      "start": 704.28,
+      "end": 710.16,
+      "text": "have swept as well so can I see the 0 2"
+    },
+    {
+      "start": 707.7,
+      "end": 713.94,
+      "text": "has gone to two zero if you carefully"
+    },
+    {
+      "start": 710.16,
+      "end": 716.4,
+      "text": "observe because this is 0 to sorry my"
+    },
+    {
+      "start": 713.94,
+      "end": 720.36,
+      "text": "bad this is 0 2"
+    },
+    {
+      "start": 716.4,
+      "end": 722.52,
+      "text": "and this is 2 0. so we did see that 2"
+    },
+    {
+      "start": 720.36,
+      "end": 724.26,
+      "text": "did have a three data have a side let's"
+    },
+    {
+      "start": 722.52,
+      "end": 727.2,
+      "text": "look for four so if we look for four"
+    },
+    {
+      "start": 724.26,
+      "end": 732.0,
+      "text": "look for 13 can I say again the same"
+    },
+    {
+      "start": 727.2,
+      "end": 736.38,
+      "text": "thing has happened yes it's like 0 3 has"
+    },
+    {
+      "start": 732.0,
+      "end": 739.44,
+      "text": "swapped to three zero okay we can see"
+    },
+    {
+      "start": 736.38,
+      "end": 741.24,
+      "text": "that everything in this column sorry"
+    },
+    {
+      "start": 739.44,
+      "end": 744.36,
+      "text": "this row got solved with everything in"
+    },
+    {
+      "start": 741.24,
+      "end": 746.7,
+      "text": "this call done next we have a seven"
+    },
+    {
+      "start": 744.36,
+      "end": 750.78,
+      "text": "right we have a seven and we have a ten"
+    },
+    {
+      "start": 746.7,
+      "end": 752.94,
+      "text": "so again they accept Okay so 7 is at one"
+    },
+    {
+      "start": 750.78,
+      "end": 755.4,
+      "text": "two"
+    },
+    {
+      "start": 752.94,
+      "end": 758.88,
+      "text": "and it got strapped to one"
+    },
+    {
+      "start": 755.4,
+      "end": 761.52,
+      "text": "interesting next we have a eight and"
+    },
+    {
+      "start": 758.88,
+      "end": 764.76,
+      "text": "where did eight go over to fourteen if"
+    },
+    {
+      "start": 761.52,
+      "end": 767.7,
+      "text": "we carefully C it does so can I say we"
+    },
+    {
+      "start": 764.76,
+      "end": 770.28,
+      "text": "have one three this time going over to"
+    },
+    {
+      "start": 767.7,
+      "end": 773.88,
+      "text": "three one"
+    },
+    {
+      "start": 770.28,
+      "end": 777.18,
+      "text": "perfect so first row down with the first"
+    },
+    {
+      "start": 773.88,
+      "end": 779.84,
+      "text": "call next we have a twelfth so can I say"
+    },
+    {
+      "start": 777.18,
+      "end": 783.96,
+      "text": "12 is that two three"
+    },
+    {
+      "start": 779.84,
+      "end": 786.48,
+      "text": "and that goes to 3 2."
+    },
+    {
+      "start": 783.96,
+      "end": 788.22,
+      "text": "which is this so again the second row"
+    },
+    {
+      "start": 786.48,
+      "end": 789.6,
+      "text": "will be done with the second column Do"
+    },
+    {
+      "start": 788.22,
+      "end": 793.98,
+      "text": "You observe something"
+    },
+    {
+      "start": 789.6,
+      "end": 797.4,
+      "text": "every indexes rather every index goes to"
+    },
+    {
+      "start": 793.98,
+      "end": 800.52,
+      "text": "the Opposites like 0 1 will go to 1 0 1"
+    },
+    {
+      "start": 797.4,
+      "end": 804.36,
+      "text": "2 will go to 2 1 2 3 2 3 will go to 3 2"
+    },
+    {
+      "start": 800.52,
+      "end": 805.5,
+      "text": "opposites and we just have to travel"
+    },
+    {
+      "start": 804.36,
+      "end": 808.92,
+      "text": "store"
+    },
+    {
+      "start": 805.5,
+      "end": 809.64,
+      "text": "the right half and we have to look at"
+    },
+    {
+      "start": 808.92,
+      "end": 812.1,
+      "text": "this"
+    },
+    {
+      "start": 809.64,
+      "end": 813.3,
+      "text": "for the zeroth row you have to travel in"
+    },
+    {
+      "start": 812.1,
+      "end": 815.58,
+      "text": "one"
+    },
+    {
+      "start": 813.3,
+      "end": 818.64,
+      "text": "to three so for 0 you have to travel"
+    },
+    {
+      "start": 815.58,
+      "end": 821.4,
+      "text": "from 1 to 3. for the first row it"
+    },
+    {
+      "start": 818.64,
+      "end": 825.3,
+      "text": "returns from 2 to 3 observe something"
+    },
+    {
+      "start": 821.4,
+      "end": 828.48,
+      "text": "for 0 you traveled from 1 to 3 which is"
+    },
+    {
+      "start": 825.3,
+      "end": 831.06,
+      "text": "meaning like can I say if it is I this"
+    },
+    {
+      "start": 828.48,
+      "end": 833.94,
+      "text": "is I plus 1 and this is n minus 1 yes"
+    },
+    {
+      "start": 831.06,
+      "end": 836.1,
+      "text": "because for one you've traveled from two"
+    },
+    {
+      "start": 833.94,
+      "end": 837.78,
+      "text": "to three so if this is I this will"
+    },
+    {
+      "start": 836.1,
+      "end": 839.94,
+      "text": "become I plus 1 and this is the last"
+    },
+    {
+      "start": 837.78,
+      "end": 842.28,
+      "text": "index which is n minus one so if I have"
+    },
+    {
+      "start": 839.94,
+      "end": 844.56,
+      "text": "to write a pseudo4 can I say we started"
+    },
+    {
+      "start": 842.28,
+      "end": 847.5,
+      "text": "from 0 and we went on till 2 because"
+    },
+    {
+      "start": 844.56,
+      "end": 850.8,
+      "text": "that is where our last element was so"
+    },
+    {
+      "start": 847.5,
+      "end": 854.58,
+      "text": "can I say I will start from 0 as I and"
+    },
+    {
+      "start": 850.8,
+      "end": 856.62,
+      "text": "I'll go until n minus 2 index not n"
+    },
+    {
+      "start": 854.58,
+      "end": 859.5,
+      "text": "minus 1. we will not go on till last"
+    },
+    {
+      "start": 856.62,
+      "end": 862.44,
+      "text": "we'll just go on till second last and"
+    },
+    {
+      "start": 859.5,
+      "end": 865.62,
+      "text": "the J where is the J starting in from if"
+    },
+    {
+      "start": 862.44,
+      "end": 869.1,
+      "text": "you carefully see this half is this half"
+    },
+    {
+      "start": 865.62,
+      "end": 872.16,
+      "text": "of the Matrix will always start from one"
+    },
+    {
+      "start": 869.1,
+      "end": 875.22,
+      "text": "element head which is I plus 1 so I plus"
+    },
+    {
+      "start": 872.16,
+      "end": 878.82,
+      "text": "1 and it will go until the last and over"
+    },
+    {
+      "start": 875.22,
+      "end": 883.92,
+      "text": "here can I say it will be a swap of a of"
+    },
+    {
+      "start": 878.82,
+      "end": 885.9,
+      "text": "i j comma a of j i very obvious and if"
+    },
+    {
+      "start": 883.92,
+      "end": 887.64,
+      "text": "you swap them you'll actually get your"
+    },
+    {
+      "start": 885.9,
+      "end": 889.56,
+      "text": "transpose Matrix so once we have"
+    },
+    {
+      "start": 887.64,
+      "end": 891.36,
+      "text": "transposed the Matrix we will have"
+    },
+    {
+      "start": 889.56,
+      "end": 893.46,
+      "text": "something like this what was the step"
+    },
+    {
+      "start": 891.36,
+      "end": 895.56,
+      "text": "two of the optimal approach pick up"
+    },
+    {
+      "start": 893.46,
+      "end": 897.42,
+      "text": "every row and try to reverse it so if"
+    },
+    {
+      "start": 895.56,
+      "end": 900.54,
+      "text": "you reverse every row you will"
+    },
+    {
+      "start": 897.42,
+      "end": 902.1,
+      "text": "ultimately get your rotated Matrix and"
+    },
+    {
+      "start": 900.54,
+      "end": 903.66,
+      "text": "that will be your answer so let's come"
+    },
+    {
+      "start": 902.1,
+      "end": 904.8,
+      "text": "back to the editor and try to code it up"
+    },
+    {
+      "start": 903.66,
+      "end": 906.36,
+      "text": "in case you want to try out the problem"
+    },
+    {
+      "start": 904.8,
+      "end": 908.22,
+      "text": "please do consider trying out the"
+    },
+    {
+      "start": 906.36,
+      "end": 909.96,
+      "text": "problem from the link in the description"
+    },
+    {
+      "start": 908.22,
+      "end": 913.14,
+      "text": "so what is the first thing let's find"
+    },
+    {
+      "start": 909.96,
+      "end": 914.76,
+      "text": "out the size two steps transpose and"
+    },
+    {
+      "start": 913.14,
+      "end": 917.64,
+      "text": "reverse so let's perform the first step"
+    },
+    {
+      "start": 914.76,
+      "end": 921.24,
+      "text": "transpose it's like going from here till"
+    },
+    {
+      "start": 917.64,
+      "end": 923.94,
+      "text": "the second last and we only travels in"
+    },
+    {
+      "start": 921.24,
+      "end": 926.34,
+      "text": "the first half so we will be going"
+    },
+    {
+      "start": 923.94,
+      "end": 928.68,
+      "text": "something like from here to here and G"
+    },
+    {
+      "start": 926.34,
+      "end": 932.16,
+      "text": "plus plus and it'll be saying swap of"
+    },
+    {
+      "start": 928.68,
+      "end": 934.14,
+      "text": "mat of i j with man of J X so we just"
+    },
+    {
+      "start": 932.16,
+      "end": 936.66,
+      "text": "sharpened so the step one is done well"
+    },
+    {
+      "start": 934.14,
+      "end": 939.54,
+      "text": "the step two reverse every row so every"
+    },
+    {
+      "start": 936.66,
+      "end": 941.94,
+      "text": "row is basically in from 0 to n minus"
+    },
+    {
+      "start": 939.54,
+      "end": 943.98,
+      "text": "one so we go from here to here and we"
+    },
+    {
+      "start": 941.94,
+      "end": 946.08,
+      "text": "try to reverse every row so what is"
+    },
+    {
+      "start": 943.98,
+      "end": 949.2,
+      "text": "every row can I say every row is"
+    },
+    {
+      "start": 946.08,
+      "end": 951.84,
+      "text": "basically mad of C matter by that's"
+    },
+    {
+      "start": 949.2,
+      "end": 954.72,
+      "text": "the row so we say reverse of modify"
+    },
+    {
+      "start": 951.84,
+      "end": 957.72,
+      "text": "since it's a vector we shall begin and"
+    },
+    {
+      "start": 954.72,
+      "end": 959.52,
+      "text": "we say modify Dot N in case your"
+    },
+    {
+      "start": 957.72,
+      "end": 962.16,
+      "text": "language doesn't have a reverse function"
+    },
+    {
+      "start": 959.52,
+      "end": 963.96,
+      "text": "what you can do is you can use this"
+    },
+    {
+      "start": 962.16,
+      "end": 965.76,
+      "text": "method where you take one one sharp then"
+    },
+    {
+      "start": 963.96,
+      "end": 967.86,
+      "text": "you take the next strap then you move so"
+    },
+    {
+      "start": 965.76,
+      "end": 969.48,
+      "text": "it's basically a two pointer approach I"
+    },
+    {
+      "start": 967.86,
+      "end": 971.82,
+      "text": "will be leaving the article Link in the"
+    },
+    {
+      "start": 969.48,
+      "end": 974.94,
+      "text": "description you can go ahead and try out"
+    },
+    {
+      "start": 971.82,
+      "end": 977.94,
+      "text": "the small function which reverses any"
+    },
+    {
+      "start": 974.94,
+      "end": 980.1,
+      "text": "given array in Big O of n by 2"
+    },
+    {
+      "start": 977.94,
+      "end": 981.66,
+      "text": "complexity so this is how you will"
+    },
+    {
+      "start": 980.1,
+      "end": 983.94,
+      "text": "reverse it and ultimately you can go"
+    },
+    {
+      "start": 981.66,
+      "end": 985.5,
+      "text": "ahead and try to run it up I think it"
+    },
+    {
+      "start": 983.94,
+      "end": 987.06,
+      "text": "should be running fine it does and now"
+    },
+    {
+      "start": 985.5,
+      "end": 989.1,
+      "text": "we will quickly sum it up so what will"
+    },
+    {
+      "start": 987.06,
+      "end": 991.56,
+      "text": "be the time complexity can I say this is"
+    },
+    {
+      "start": 989.1,
+      "end": 994.56,
+      "text": "basically traversing one half of the"
+    },
+    {
+      "start": 991.56,
+      "end": 997.5,
+      "text": "array so I can say it's basically n by 2"
+    },
+    {
+      "start": 994.56,
+      "end": 999.42,
+      "text": "that's what the first Loop runs for and"
+    },
+    {
+      "start": 997.5,
+      "end": 1002.54,
+      "text": "the second one nearly runs about ny2"
+    },
+    {
+      "start": 999.42,
+      "end": 1005.3,
+      "text": "okay so it's like n by 2 into n by 2 for"
+    },
+    {
+      "start": 1002.54,
+      "end": 1008.0,
+      "text": "the transpose what about the reverse can"
+    },
+    {
+      "start": 1005.3,
+      "end": 1010.1,
+      "text": "I see it's basically running for n for"
+    },
+    {
+      "start": 1008.0,
+      "end": 1012.56,
+      "text": "all the rules and then we are reverse it"
+    },
+    {
+      "start": 1010.1,
+      "end": 1014.66,
+      "text": "and we did C for reversing we can just"
+    },
+    {
+      "start": 1012.56,
+      "end": 1016.46,
+      "text": "use the two pointer approach which"
+    },
+    {
+      "start": 1014.66,
+      "end": 1019.52,
+      "text": "basically reverses"
+    },
+    {
+      "start": 1016.46,
+      "end": 1020.18,
+      "text": "till going half of the array so can I"
+    },
+    {
+      "start": 1019.52,
+      "end": 1022.82,
+      "text": "see"
+    },
+    {
+      "start": 1020.18,
+      "end": 1024.74,
+      "text": "the internal group plans for n by 2. so"
+    },
+    {
+      "start": 1022.82,
+      "end": 1027.8,
+      "text": "this is the overall time complexity this"
+    },
+    {
+      "start": 1024.74,
+      "end": 1030.08,
+      "text": "plus this are we using any extra space"
+    },
+    {
+      "start": 1027.8,
+      "end": 1032.0,
+      "text": "now we are doing it in place so we are"
+    },
+    {
+      "start": 1030.08,
+      "end": 1033.56,
+      "text": "not using any extra space in order to"
+    },
+    {
+      "start": 1032.0,
+      "end": 1034.94,
+      "text": "solve this particular problem so coming"
+    },
+    {
+      "start": 1033.56,
+      "end": 1037.1,
+      "text": "back to the sheet I can say that this"
+    },
+    {
+      "start": 1034.94,
+      "end": 1038.36,
+      "text": "particular problem is also done and if"
+    },
+    {
+      "start": 1037.1,
+      "end": 1040.64,
+      "text": "you have understood everything about"
+    },
+    {
+      "start": 1038.36,
+      "end": 1042.5,
+      "text": "this video please consider giving us"
+    },
+    {
+      "start": 1040.64,
+      "end": 1044.0,
+      "text": "that like because it won't cost you"
+    },
+    {
+      "start": 1042.5,
+      "end": 1045.86,
+      "text": "anything but it will keep you motivated"
+    },
+    {
+      "start": 1044.0,
+      "end": 1047.48,
+      "text": "to make these kind of videos and if"
+    },
+    {
+      "start": 1045.86,
+      "end": 1049.52,
+      "text": "you're new to our Channel what are you"
+    },
+    {
+      "start": 1047.48,
+      "end": 1050.96,
+      "text": "doing hit that subscribe button right"
+    },
+    {
+      "start": 1049.52,
+      "end": 1052.88,
+      "text": "away and if you haven't followed me on"
+    },
+    {
+      "start": 1050.96,
+      "end": 1054.86,
+      "text": "Instagram LinkedIn and Twitter you can"
+    },
+    {
+      "start": 1052.88,
+      "end": 1056.3,
+      "text": "find all the ID links in the description"
+    },
+    {
+      "start": 1054.86,
+      "end": 1057.38,
+      "text": "with this I've been wrapping up this"
+    },
+    {
+      "start": 1056.3,
+      "end": 1058.56,
+      "text": "video let's read in some of the video"
+    },
+    {
+      "start": 1057.38,
+      "end": 1064.76,
+      "text": "until then"
+    },
+    {
+      "start": 1058.56,
+      "end": 1064.76,
+      "text": "[Music]"
+    },
+    {
+      "start": 1065.18,
+      "end": 1068.62,
+      "text": "I will find the light in"
+    }
+  ]
+}

@@ -1,0 +1,2300 @@
+{
+  "video_id": "nP_ns3uSh80",
+  "title": "Majority Element I | Brute-Better-Optimal | Moore's Voting Algorithm | Intuition 🔥|Brute to Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1093,
+  "text": "hey if you're welcome back to the channel I hope you guys are doing extremely well so this is another video from the Strivers A to Z DSA course just in case you're for the first time here this is world's most in-depth course in DS algo why do I see that this cost us 456 modules by the end of the post you would have sold more than 400 plus problems in DS algo and you can go across the entire internet you can buy any of the paid courses none of them will be covering DS algo in such step so one thing that I can assure you is once you complete the entire post you can actually clear any of the DS algorithms in any of the companies in any part of the world so till now we have covered uh dell certain arrays of certain array of zeros ones and twos and in this video I'll be covering majority element so what does the problem majority element States it states that you'll be given an array of integers now your task is to find me the element that appears more than n by two times very important lining more than n by 2 not equal to two it has to be more than n by 2. Imagine n is eight then it should appear more than four times imagine n is 9 in that case 9 by 2 will take the floor value it is four so it should appear more than four times got it so in this array if I ask you which is the majority element how many like what's the length of the array three four five six seven seven is the length of the array can I say two appears for four times which is greater than n by 2 so 4 over here is your answer and this is what you have to tell me given an array tell me the element that appears more than n by 2 times so what will be the Brute Force solution to this particular problem it's going to be very simple I'll pick up an element and then I'll scan through the entire array basically do a searching through the entire array and I'll count plus plus and if at the end of the day the count appears to be greater than n by 2 for any of the element that is my answer first I'll pick up two next I'll pick up two next I'll pick up 3 and scan through the entire array next I'll pick up 3 and scan through the entire array this is what the Brute Force solution will be and the code will look something like this so it's very simple you just iterate through the entire array for the first time pick up two and scan through the entire array and keep a check and count after you have scanned through the entire array by taking array of I you check it the count is greater than n by 2 if it is then you return array of I and forward like out of the for Loop you can return -1 just in case there is no majority element so this is how the Brute Force solution will look like what will be the time complexity obviously we are using couple of Loops so it is we go of n square and when you give the solution to the interviewer the interviewer will not be happy and will ask you to optimize it this is when you'll be giving the better solution so what will be the better solution The Brute is taking n Square so we know one thing for sure the better solution will be somewhere of the order n log n or B go of n or 2N but it is definitely going to be better than n n Square so if I have to think what are we actually doing we are counting we are counting and we're looking for which element appears more than n by two times so yes yes we can use hashing it's very simple if there is a count we have to keep a track of how many times a Dockers the only technique that comes up to my mind is hashing that is what I will be doing so what I'll do is I will declare a hashma with the element and the count where the element is my key and the count is my value so this will be the representation in the map for a clear n value now what I'll do is I'll be like let's scan through the array it is two so I'll put that 2 and I'll probably tell him you okay once then I'll move and then I'll say you okay twice then I'll move and there's a three I'll say a doctors once then I'll move and there's a three it occurs twice then I'll move one occurs once then I'll move two occurs twice then I'll move two occurs four times so once you have completed the entire iteration now it's time to iterate in the map yes it's time to iterate in the map so if I iterate in the map you will see that this particular Guy 2 occurs four times which is greater than n by 2 which is three so two is your answer so just I trade in the map and see which element is occurring more than n by two times so let's quickly quote the better solution of the problem link will be in the description so we need a map to keep the count cell declare a map okay what is the next thing we have to iterate so let's quickly iterate and now once am I trading I'll say ma what's the element vfi do a plus plus so with this iteration I will be marking it in the map now what is the next job I trading the map and see which is more than n by two times so this is how you iterate in the map in C plus plus the Java port and the python code is in the description and now you say ID dot second because that is the value is greater than are you greater than V Dot size Y2 if you are then near the majority element and you know the key is very simple it's at the first place so the key will be the first place if after this there was no one you can simply say return -1 and now we will quickly go and run this off and see if it is running fine okay looks like it is not why is it not tap was not declared let's quickly go and declare hashing clue everything is running absolutely fine now it's over the time complexity can I say the first Loop is running for bego of N and there's a ordered map used which is which is going to take logarithmic of n if you use something like unordered map then this logarithmic of n will go off only in case of average and best case in case of worst case another map ends up taking the ego of end time within itself so that is an N login and what is how many elements are there in the map imagine you're given an array something like this then each of these elements will be in the map so thereby the worst case the map might end up taking n so what is the total time complexity can I say it as we go of n log n again depending on which map you're using and a big go of N2 Traverse in the map ever the space complexity we go of n because you are storing all the elements in a map data structure so this will only happen if the array contains all unique elements remember this so the moment you give this hashing solution to the interview he'll be like hey wait you are using an additional space complexity can you please optimize this that's when you'll be talking about the most optimal algorithm and that will be using something as the Moose voting algorithm now sitting in an interview you cannot invent this algorithm so you have to know this algorithm beforehand so you might be thinking but does that mean we have to mark it up no the interviewer will be grilling you on thought process and intuition if you mug up the algorithm and you just present it line by line you'll understand that you have marked up the algorithm so please make sure you understand the thought process intuition and the algorithm in depth so please make sure you watch the video till the end because you're going to take away a lot of things when the video ends so how will I be explaining this particular algorithm what I'll do is I'll do a Dryden of the algorithm and during The Dryden I'll be sharing the thought process and the intuition behind every step that this algorithm does so that it sticks to your mind okay so what is the algorithm all about it's very simple it's about two variables element and Dot initially count is zero and you can say initially the element is not initialized and we start iterating so whenever we are iterating and we are the first element or whatever if the count is zero that means we haven't taken any array please hear this out properly we still haven't taken any array so you will be like okay I will take seven and I'll increase the count to 1. so what I did was I said I will consider this 7 to be my answer I'm just taking a hypothetical assumption that 7 is my answer and the Countess one and now let's start moving we again move to seven like seven now this occurs twice five no it is not seven so you reduce the count remember this count is not storing how many times seven appears it doesn't have some other significance which I'll say next again seven increase next again five degrees next one degrees so whenever you find 7 you increase because 7 was your element whenever you find anything apart from Seven you decrease now you are reaching zero until how much till this portion let's understand what so if you take seven seven five seven five one this is an array rather this is an array and the count over here is zero what does the count signify so you took the element seven how many times does it appear three times how many times the author elements appears where other includes five and one the other element appears three times this is the reason when there was a seven you did a plus plus so there were three plus plus done and when there was five five one there was a minus minus minus 10. so 3 plus 3 minus ended up giving you a count of zero can I say something for sure if I just consider this array just consider this array 7 is definitely not my major retirement why if seven was my majority element how can you cancel because for if an element appears more than n by two times there is only one limit which appears more than n by two times and you cannot cancel it all if there are six elements and seven appears four times can you cancel four to cancel 4 you need four more so it's not possible since 7 appeared three times in a six length array which is not greater than n by 2 it is equal to equal to n by 2 so it got canceled so something that I can assurely say is till here 7 is not my majority element till here it's not so this cannot be considered as an answer but what I will do is I'll move ahead and I'll move to 5 okay the moment I move to 5 I find count is zero so what I'll do is I will just quickly say okay listen count is 0 so can you please take this as my new majority element and probably I'll start checking from here and my count will be one perfect so I will take five I'll make the count one let's move seven it's not equivalent so I'll just make it zero I just make it back zero so this time the array finishes here and the count becomes zero again eminent if I just take this particular array can 5 be the majority no that's why next we'll move ahead the moment we move ahead what will happen since count is 0 it will again initialize count to 1 and element to be five and we will start the array again from here and this time again let's move it's five increment it is seven decrement it is seven decrement so can I see in this particular array what happened five five seven seven what I can say is hey 5 was occurring twice seven hours occurring twice so it brought cancer thereby count was Zero thereby 5 also cannot be my answer so till now whoever I have considered as a majority got canceled by similar elements so till now no one has dominated we are still looking for someone who is dominating got it everyone has still no cancer let's go ahead what is the count value Crown's value is zero now so let's move it we are at account zero so again we start the count will again become one and this element still stays as five this time we'll move ahead count becomes 2 7 will move out count becomes three this term will move ahead count becomes four and we can say we have ended the iteration we have ended the iteration so since we have ended the iteration there is an element five this count has no significance but we have an element five this element 5 will be your maturity element if there exists a majority element why because everyone else got canceled off within itself so if there is someone still remaining who did not got canceled then that is my answer but am I sure that element 5 is the majority element what I said if there exists a majority limit it will be five and no one else if if there is a majority element it will be five and no one else if there doesn't then okay fine for example if the last portion was something like one one one in that case you'd have bought one and the count would have been four but is one the majority element if you see one just appears four times maybe five that's it one app is five times and when you look at the length of the array it is six two four and four which is eight plus four twelve it's a 16 length array someone has to appear more than eight times to be majority and since it is five let's see 5 is so let's see how many times five is once twice twice four five six seven eight nine five appears nine times out of which four times when not canceled four times when not canceled but the other times it was canceled so the other five times zeros canceled got it so I can say five is my major element it's a very simple process the first process is to apply moose voting algo okay about the second process verify if the element that you got the element that you got is the majority or not how do you do it whatever the element is in this case the element was 5 just iterate through the array again and see how many times 5 appears this time it will come out to be 9 which is greater than the length 16 by 2. so that's why the 5 is if it doesn't then it is not got it so I hope you've understood the intuition it's very simple if someone appears more than n by two times it will not get canceled quite simple right that's the intuition so coming back to the code editor again the problem link will be in the description so what do we need we need account zero and we can keep an element normally now let's quickly start off with zero and probably V Dot size yes and how can I say first thing that I will check is what if the count is 0. if the count is 0 I know for sure this is where I'm starting a check for a new section so ground will be one and the element will be V of I right but what if the count is not zero in that case I will check if V of I is equal to equal to the element that I was thinking it's it's the majority if it is please increase if it is not okay let's reduce simple three lines if the count is zero we just assign and we move I plus plus if it is equal equivalent we just increase count and we move if it is not then we decrease and then we move so what will happen is when you're decreasing if the curve becomes 0 when you increase and when you come back the count will be checked with 0 and it will be replaced with the newer limit and it will start a new section quite simple and once you've got the element just iterate over here and V Dot size all right plus plus and you say Hey listen if V of I is equivalent to element probably you can keep something like counter one equal to zero and you can say counter one plus plus if at the end of the day counter one is greater than V Dot size by 2 again you can store B dot size in some variable this particular element is the answer or else you can say the answer is minus one or whatever they are asking you to return so what I'll do is now I'll quickly go and run this off and see if it is running fine no it does or it'll be counter one plus plus counter one done and let's quickly submit this off I hope it does run now remember one thing whatever is the value of counter at the end it doesn't represents anything so we have to talk about the time complexity how much a single Loop and three Fields so it's a single Loop so whenever it's a single Loop you know the time complexity is very simple it's we go off n for the burst iteration of the most voting algo and if they are stating that the the array might have or might not have a majority limit then you go and verify this step will not be done if the problem states that their own ways exist a majority element then this step will never be done okay you only do the step if the prop if the array might not have a majority element got it so this will be the time complexity and we are not using any extra space so this will be the space complexity of the most optimal solution coming back to the sheet I can say that this particular problem is done and if you understood everything please please do with that like button is just one like it won't cost you anything please do consider hitting that like button and look at your tradition do comment understood so that I understand that you understanding everything and if you're new to our Channel please please do consider subscribing to us because it's like 1 23 am in the morning and after my office hours I'm recording this video so if you if you consider subscribing to me that will motivate me to make such more videos is broken don't ever forget you're golden I will find",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 5.34,
+      "text": "hey if you're welcome back to the"
+    },
+    {
+      "start": 4.38,
+      "end": 7.26,
+      "text": "channel I hope you guys are doing"
+    },
+    {
+      "start": 5.34,
+      "end": 9.96,
+      "text": "extremely well so this is another video"
+    },
+    {
+      "start": 7.26,
+      "end": 11.28,
+      "text": "from the Strivers A to Z DSA course just"
+    },
+    {
+      "start": 9.96,
+      "end": 13.2,
+      "text": "in case you're for the first time here"
+    },
+    {
+      "start": 11.28,
+      "end": 15.72,
+      "text": "this is world's most in-depth course in"
+    },
+    {
+      "start": 13.2,
+      "end": 18.06,
+      "text": "DS algo why do I see that this cost us"
+    },
+    {
+      "start": 15.72,
+      "end": 20.1,
+      "text": "456 modules by the end of the post you"
+    },
+    {
+      "start": 18.06,
+      "end": 22.38,
+      "text": "would have sold more than 400 plus"
+    },
+    {
+      "start": 20.1,
+      "end": 23.88,
+      "text": "problems in DS algo and you can go"
+    },
+    {
+      "start": 22.38,
+      "end": 25.8,
+      "text": "across the entire internet you can buy"
+    },
+    {
+      "start": 23.88,
+      "end": 28.26,
+      "text": "any of the paid courses none of them"
+    },
+    {
+      "start": 25.8,
+      "end": 30.84,
+      "text": "will be covering DS algo in such step so"
+    },
+    {
+      "start": 28.26,
+      "end": 32.22,
+      "text": "one thing that I can assure you is once"
+    },
+    {
+      "start": 30.84,
+      "end": 34.44,
+      "text": "you complete the entire post you can"
+    },
+    {
+      "start": 32.22,
+      "end": 37.02,
+      "text": "actually clear any of the DS algorithms"
+    },
+    {
+      "start": 34.44,
+      "end": 39.54,
+      "text": "in any of the companies in any part of"
+    },
+    {
+      "start": 37.02,
+      "end": 42.18,
+      "text": "the world so till now we have covered uh"
+    },
+    {
+      "start": 39.54,
+      "end": 44.34,
+      "text": "dell certain arrays of certain array of"
+    },
+    {
+      "start": 42.18,
+      "end": 47.04,
+      "text": "zeros ones and twos and in this video"
+    },
+    {
+      "start": 44.34,
+      "end": 48.54,
+      "text": "I'll be covering majority element so"
+    },
+    {
+      "start": 47.04,
+      "end": 51.0,
+      "text": "what does the problem majority element"
+    },
+    {
+      "start": 48.54,
+      "end": 53.52,
+      "text": "States it states that you'll be given an"
+    },
+    {
+      "start": 51.0,
+      "end": 56.88,
+      "text": "array of integers now your task is to"
+    },
+    {
+      "start": 53.52,
+      "end": 59.48,
+      "text": "find me the element that appears more"
+    },
+    {
+      "start": 56.88,
+      "end": 63.42,
+      "text": "than n by two times very important"
+    },
+    {
+      "start": 59.48,
+      "end": 66.3,
+      "text": "lining more than n by 2 not equal to two"
+    },
+    {
+      "start": 63.42,
+      "end": 68.4,
+      "text": "it has to be more than n by 2. Imagine n"
+    },
+    {
+      "start": 66.3,
+      "end": 72.54,
+      "text": "is eight then it should appear more than"
+    },
+    {
+      "start": 68.4,
+      "end": 74.88,
+      "text": "four times imagine n is 9 in that case 9"
+    },
+    {
+      "start": 72.54,
+      "end": 76.86,
+      "text": "by 2 will take the floor value it is"
+    },
+    {
+      "start": 74.88,
+      "end": 80.16,
+      "text": "four so it should appear more than four"
+    },
+    {
+      "start": 76.86,
+      "end": 82.44,
+      "text": "times got it so in this array if I ask"
+    },
+    {
+      "start": 80.16,
+      "end": 84.42,
+      "text": "you which is the majority element how"
+    },
+    {
+      "start": 82.44,
+      "end": 87.48,
+      "text": "many like what's the length of the array"
+    },
+    {
+      "start": 84.42,
+      "end": 89.64,
+      "text": "three four five six seven seven is the"
+    },
+    {
+      "start": 87.48,
+      "end": 93.48,
+      "text": "length of the array can I say two"
+    },
+    {
+      "start": 89.64,
+      "end": 97.8,
+      "text": "appears for four times which is greater"
+    },
+    {
+      "start": 93.48,
+      "end": 99.96,
+      "text": "than n by 2 so 4 over here is your"
+    },
+    {
+      "start": 97.8,
+      "end": 102.3,
+      "text": "answer and this is what you have to tell"
+    },
+    {
+      "start": 99.96,
+      "end": 105.54,
+      "text": "me given an array tell me the element"
+    },
+    {
+      "start": 102.3,
+      "end": 107.34,
+      "text": "that appears more than n by 2 times so"
+    },
+    {
+      "start": 105.54,
+      "end": 108.84,
+      "text": "what will be the Brute Force solution to"
+    },
+    {
+      "start": 107.34,
+      "end": 111.12,
+      "text": "this particular problem it's going to be"
+    },
+    {
+      "start": 108.84,
+      "end": 112.86,
+      "text": "very simple I'll pick up an element and"
+    },
+    {
+      "start": 111.12,
+      "end": 115.2,
+      "text": "then I'll scan through the entire array"
+    },
+    {
+      "start": 112.86,
+      "end": 117.18,
+      "text": "basically do a searching through the"
+    },
+    {
+      "start": 115.2,
+      "end": 119.94,
+      "text": "entire array and I'll count plus plus"
+    },
+    {
+      "start": 117.18,
+      "end": 122.4,
+      "text": "and if at the end of the day the count"
+    },
+    {
+      "start": 119.94,
+      "end": 124.08,
+      "text": "appears to be greater than n by 2 for"
+    },
+    {
+      "start": 122.4,
+      "end": 126.36,
+      "text": "any of the element that is my answer"
+    },
+    {
+      "start": 124.08,
+      "end": 128.4,
+      "text": "first I'll pick up two next I'll pick up"
+    },
+    {
+      "start": 126.36,
+      "end": 130.44,
+      "text": "two next I'll pick up 3 and scan through"
+    },
+    {
+      "start": 128.4,
+      "end": 132.3,
+      "text": "the entire array next I'll pick up 3 and"
+    },
+    {
+      "start": 130.44,
+      "end": 134.34,
+      "text": "scan through the entire array this is"
+    },
+    {
+      "start": 132.3,
+      "end": 135.6,
+      "text": "what the Brute Force solution will be"
+    },
+    {
+      "start": 134.34,
+      "end": 137.94,
+      "text": "and the code will look something like"
+    },
+    {
+      "start": 135.6,
+      "end": 139.86,
+      "text": "this so it's very simple you just"
+    },
+    {
+      "start": 137.94,
+      "end": 141.72,
+      "text": "iterate through the entire array for the"
+    },
+    {
+      "start": 139.86,
+      "end": 144.12,
+      "text": "first time pick up two and scan through"
+    },
+    {
+      "start": 141.72,
+      "end": 146.4,
+      "text": "the entire array and keep a check and"
+    },
+    {
+      "start": 144.12,
+      "end": 149.28,
+      "text": "count after you have scanned through the"
+    },
+    {
+      "start": 146.4,
+      "end": 151.32,
+      "text": "entire array by taking array of I you"
+    },
+    {
+      "start": 149.28,
+      "end": 154.26,
+      "text": "check it the count is greater than n by"
+    },
+    {
+      "start": 151.32,
+      "end": 155.58,
+      "text": "2 if it is then you return array of I"
+    },
+    {
+      "start": 154.26,
+      "end": 158.04,
+      "text": "and"
+    },
+    {
+      "start": 155.58,
+      "end": 160.68,
+      "text": "forward like out of the for Loop you can"
+    },
+    {
+      "start": 158.04,
+      "end": 162.48,
+      "text": "return -1 just in case there is no"
+    },
+    {
+      "start": 160.68,
+      "end": 164.82,
+      "text": "majority element so this is how the"
+    },
+    {
+      "start": 162.48,
+      "end": 166.98,
+      "text": "Brute Force solution will look like what"
+    },
+    {
+      "start": 164.82,
+      "end": 169.68,
+      "text": "will be the time complexity obviously we"
+    },
+    {
+      "start": 166.98,
+      "end": 171.6,
+      "text": "are using couple of Loops so it is we go"
+    },
+    {
+      "start": 169.68,
+      "end": 172.98,
+      "text": "of n square and when you give the"
+    },
+    {
+      "start": 171.6,
+      "end": 174.54,
+      "text": "solution to the interviewer the"
+    },
+    {
+      "start": 172.98,
+      "end": 176.22,
+      "text": "interviewer will not be happy and will"
+    },
+    {
+      "start": 174.54,
+      "end": 178.62,
+      "text": "ask you to optimize it this is when"
+    },
+    {
+      "start": 176.22,
+      "end": 180.96,
+      "text": "you'll be giving the better solution so"
+    },
+    {
+      "start": 178.62,
+      "end": 183.3,
+      "text": "what will be the better solution"
+    },
+    {
+      "start": 180.96,
+      "end": 184.68,
+      "text": "The Brute is taking n Square so we know"
+    },
+    {
+      "start": 183.3,
+      "end": 186.9,
+      "text": "one thing for sure the better solution"
+    },
+    {
+      "start": 184.68,
+      "end": 189.54,
+      "text": "will be somewhere of the order n log n"
+    },
+    {
+      "start": 186.9,
+      "end": 192.72,
+      "text": "or B go of n or 2N but it is definitely"
+    },
+    {
+      "start": 189.54,
+      "end": 194.46,
+      "text": "going to be better than n n Square so if"
+    },
+    {
+      "start": 192.72,
+      "end": 197.4,
+      "text": "I have to think what are we actually"
+    },
+    {
+      "start": 194.46,
+      "end": 199.02,
+      "text": "doing we are counting we are counting"
+    },
+    {
+      "start": 197.4,
+      "end": 202.38,
+      "text": "and we're looking for which element"
+    },
+    {
+      "start": 199.02,
+      "end": 205.8,
+      "text": "appears more than n by two times so"
+    },
+    {
+      "start": 202.38,
+      "end": 208.14,
+      "text": "yes yes we can use hashing it's very"
+    },
+    {
+      "start": 205.8,
+      "end": 210.66,
+      "text": "simple if there is a count we have to"
+    },
+    {
+      "start": 208.14,
+      "end": 213.54,
+      "text": "keep a track of how many times a Dockers"
+    },
+    {
+      "start": 210.66,
+      "end": 216.48,
+      "text": "the only technique that comes up to my"
+    },
+    {
+      "start": 213.54,
+      "end": 218.94,
+      "text": "mind is hashing that is what I will be"
+    },
+    {
+      "start": 216.48,
+      "end": 222.6,
+      "text": "doing so what I'll do is I will declare"
+    },
+    {
+      "start": 218.94,
+      "end": 225.66,
+      "text": "a hashma with the element and the count"
+    },
+    {
+      "start": 222.6,
+      "end": 230.0,
+      "text": "where the element is my key and the"
+    },
+    {
+      "start": 225.66,
+      "end": 232.56,
+      "text": "count is my value so this will be the"
+    },
+    {
+      "start": 230.0,
+      "end": 234.66,
+      "text": "representation in the map for a clear n"
+    },
+    {
+      "start": 232.56,
+      "end": 237.48,
+      "text": "value now what I'll do is I'll be like"
+    },
+    {
+      "start": 234.66,
+      "end": 239.58,
+      "text": "let's scan through the array it is two"
+    },
+    {
+      "start": 237.48,
+      "end": 242.34,
+      "text": "so I'll put that 2 and I'll probably"
+    },
+    {
+      "start": 239.58,
+      "end": 245.04,
+      "text": "tell him you okay once then I'll move"
+    },
+    {
+      "start": 242.34,
+      "end": 247.38,
+      "text": "and then I'll say you okay twice then"
+    },
+    {
+      "start": 245.04,
+      "end": 250.38,
+      "text": "I'll move and there's a three I'll say a"
+    },
+    {
+      "start": 247.38,
+      "end": 252.66,
+      "text": "doctors once then I'll move and there's"
+    },
+    {
+      "start": 250.38,
+      "end": 256.26,
+      "text": "a three it occurs twice then I'll move"
+    },
+    {
+      "start": 252.66,
+      "end": 259.02,
+      "text": "one occurs once then I'll move two"
+    },
+    {
+      "start": 256.26,
+      "end": 262.2,
+      "text": "occurs twice then I'll move two occurs"
+    },
+    {
+      "start": 259.02,
+      "end": 265.38,
+      "text": "four times so once you have completed"
+    },
+    {
+      "start": 262.2,
+      "end": 268.08,
+      "text": "the entire iteration now it's time to"
+    },
+    {
+      "start": 265.38,
+      "end": 270.78,
+      "text": "iterate in the map yes it's time to"
+    },
+    {
+      "start": 268.08,
+      "end": 273.0,
+      "text": "iterate in the map so if I iterate in"
+    },
+    {
+      "start": 270.78,
+      "end": 276.96,
+      "text": "the map you will see that"
+    },
+    {
+      "start": 273.0,
+      "end": 279.24,
+      "text": "this particular Guy 2 occurs four times"
+    },
+    {
+      "start": 276.96,
+      "end": 281.94,
+      "text": "which is greater than n by 2 which is"
+    },
+    {
+      "start": 279.24,
+      "end": 283.86,
+      "text": "three so two is your answer so just I"
+    },
+    {
+      "start": 281.94,
+      "end": 285.84,
+      "text": "trade in the map and see which element"
+    },
+    {
+      "start": 283.86,
+      "end": 287.04,
+      "text": "is occurring more than n by two times so"
+    },
+    {
+      "start": 285.84,
+      "end": 288.42,
+      "text": "let's quickly quote the better solution"
+    },
+    {
+      "start": 287.04,
+      "end": 290.76,
+      "text": "of the problem link will be in the"
+    },
+    {
+      "start": 288.42,
+      "end": 292.74,
+      "text": "description so we need a map to keep the"
+    },
+    {
+      "start": 290.76,
+      "end": 294.66,
+      "text": "count cell declare a map okay what is"
+    },
+    {
+      "start": 292.74,
+      "end": 297.36,
+      "text": "the next thing we have to iterate so"
+    },
+    {
+      "start": 294.66,
+      "end": 299.34,
+      "text": "let's quickly iterate and now once am I"
+    },
+    {
+      "start": 297.36,
+      "end": 301.68,
+      "text": "trading I'll say ma what's the element"
+    },
+    {
+      "start": 299.34,
+      "end": 304.74,
+      "text": "vfi do a plus plus so with this"
+    },
+    {
+      "start": 301.68,
+      "end": 307.02,
+      "text": "iteration I will be marking it in the"
+    },
+    {
+      "start": 304.74,
+      "end": 309.84,
+      "text": "map now what is the next job I trading"
+    },
+    {
+      "start": 307.02,
+      "end": 312.78,
+      "text": "the map and see which is more than n by"
+    },
+    {
+      "start": 309.84,
+      "end": 315.18,
+      "text": "two times so this is how you iterate"
+    },
+    {
+      "start": 312.78,
+      "end": 316.74,
+      "text": "in the map in C plus plus the Java port"
+    },
+    {
+      "start": 315.18,
+      "end": 318.96,
+      "text": "and the python code is in the"
+    },
+    {
+      "start": 316.74,
+      "end": 321.72,
+      "text": "description and now you say ID dot"
+    },
+    {
+      "start": 318.96,
+      "end": 324.48,
+      "text": "second because that is the value"
+    },
+    {
+      "start": 321.72,
+      "end": 328.44,
+      "text": "is greater than are you greater than V"
+    },
+    {
+      "start": 324.48,
+      "end": 330.48,
+      "text": "Dot size Y2 if you are then near the"
+    },
+    {
+      "start": 328.44,
+      "end": 332.94,
+      "text": "majority element and you know the key is"
+    },
+    {
+      "start": 330.48,
+      "end": 334.8,
+      "text": "very simple it's at the first place so"
+    },
+    {
+      "start": 332.94,
+      "end": 337.5,
+      "text": "the key will be the first place if after"
+    },
+    {
+      "start": 334.8,
+      "end": 338.94,
+      "text": "this there was no one you can simply say"
+    },
+    {
+      "start": 337.5,
+      "end": 341.04,
+      "text": "return -1"
+    },
+    {
+      "start": 338.94,
+      "end": 343.14,
+      "text": "and now we will quickly go and run this"
+    },
+    {
+      "start": 341.04,
+      "end": 346.14,
+      "text": "off and see if it is running fine okay"
+    },
+    {
+      "start": 343.14,
+      "end": 348.12,
+      "text": "looks like it is not why is it not tap"
+    },
+    {
+      "start": 346.14,
+      "end": 350.04,
+      "text": "was not declared let's quickly go and"
+    },
+    {
+      "start": 348.12,
+      "end": 351.96,
+      "text": "declare hashing clue everything is"
+    },
+    {
+      "start": 350.04,
+      "end": 353.58,
+      "text": "running absolutely fine now it's over"
+    },
+    {
+      "start": 351.96,
+      "end": 356.28,
+      "text": "the time complexity can I say the first"
+    },
+    {
+      "start": 353.58,
+      "end": 358.5,
+      "text": "Loop is running for bego of N and"
+    },
+    {
+      "start": 356.28,
+      "end": 360.48,
+      "text": "there's a ordered map used which is"
+    },
+    {
+      "start": 358.5,
+      "end": 363.24,
+      "text": "which is going to take logarithmic of n"
+    },
+    {
+      "start": 360.48,
+      "end": 366.24,
+      "text": "if you use something like unordered map"
+    },
+    {
+      "start": 363.24,
+      "end": 369.6,
+      "text": "then this logarithmic of n will go off"
+    },
+    {
+      "start": 366.24,
+      "end": 370.98,
+      "text": "only in case of average and best case in"
+    },
+    {
+      "start": 369.6,
+      "end": 373.2,
+      "text": "case of worst case"
+    },
+    {
+      "start": 370.98,
+      "end": 375.54,
+      "text": "another map ends up taking the ego of"
+    },
+    {
+      "start": 373.2,
+      "end": 377.94,
+      "text": "end time within itself so that is an N"
+    },
+    {
+      "start": 375.54,
+      "end": 380.04,
+      "text": "login and what is how many elements are"
+    },
+    {
+      "start": 377.94,
+      "end": 382.38,
+      "text": "there in the map imagine you're given an"
+    },
+    {
+      "start": 380.04,
+      "end": 384.66,
+      "text": "array something like this then each of"
+    },
+    {
+      "start": 382.38,
+      "end": 387.12,
+      "text": "these elements will be in the map so"
+    },
+    {
+      "start": 384.66,
+      "end": 389.4,
+      "text": "thereby the worst case the map might end"
+    },
+    {
+      "start": 387.12,
+      "end": 391.62,
+      "text": "up taking n so what is the total time"
+    },
+    {
+      "start": 389.4,
+      "end": 393.48,
+      "text": "complexity can I say it as we go of n"
+    },
+    {
+      "start": 391.62,
+      "end": 395.7,
+      "text": "log n again depending on which map"
+    },
+    {
+      "start": 393.48,
+      "end": 397.26,
+      "text": "you're using and a big go of N2 Traverse"
+    },
+    {
+      "start": 395.7,
+      "end": 400.26,
+      "text": "in the"
+    },
+    {
+      "start": 397.26,
+      "end": 401.94,
+      "text": "map ever the space complexity we go of n"
+    },
+    {
+      "start": 400.26,
+      "end": 403.98,
+      "text": "because you are storing all the elements"
+    },
+    {
+      "start": 401.94,
+      "end": 406.8,
+      "text": "in a map data structure so this will"
+    },
+    {
+      "start": 403.98,
+      "end": 410.1,
+      "text": "only happen if the array contains all"
+    },
+    {
+      "start": 406.8,
+      "end": 411.36,
+      "text": "unique elements remember this"
+    },
+    {
+      "start": 410.1,
+      "end": 412.68,
+      "text": "so the moment you give this hashing"
+    },
+    {
+      "start": 411.36,
+      "end": 414.84,
+      "text": "solution to the interview he'll be like"
+    },
+    {
+      "start": 412.68,
+      "end": 416.94,
+      "text": "hey wait you are using an additional"
+    },
+    {
+      "start": 414.84,
+      "end": 419.04,
+      "text": "space complexity can you please optimize"
+    },
+    {
+      "start": 416.94,
+      "end": 422.34,
+      "text": "this that's when you'll be talking about"
+    },
+    {
+      "start": 419.04,
+      "end": 425.4,
+      "text": "the most optimal algorithm and that will"
+    },
+    {
+      "start": 422.34,
+      "end": 426.84,
+      "text": "be using something as the Moose voting"
+    },
+    {
+      "start": 425.4,
+      "end": 428.76,
+      "text": "algorithm"
+    },
+    {
+      "start": 426.84,
+      "end": 430.26,
+      "text": "now sitting in an interview you cannot"
+    },
+    {
+      "start": 428.76,
+      "end": 432.3,
+      "text": "invent this algorithm so you have to"
+    },
+    {
+      "start": 430.26,
+      "end": 434.22,
+      "text": "know this algorithm beforehand so you"
+    },
+    {
+      "start": 432.3,
+      "end": 436.62,
+      "text": "might be thinking but does that mean we"
+    },
+    {
+      "start": 434.22,
+      "end": 439.92,
+      "text": "have to mark it up no the interviewer"
+    },
+    {
+      "start": 436.62,
+      "end": 441.84,
+      "text": "will be grilling you on thought process"
+    },
+    {
+      "start": 439.92,
+      "end": 443.76,
+      "text": "and intuition if you mug up the"
+    },
+    {
+      "start": 441.84,
+      "end": 445.38,
+      "text": "algorithm and you just present it line"
+    },
+    {
+      "start": 443.76,
+      "end": 447.0,
+      "text": "by line you'll understand that you have"
+    },
+    {
+      "start": 445.38,
+      "end": 448.8,
+      "text": "marked up the algorithm so please make"
+    },
+    {
+      "start": 447.0,
+      "end": 451.26,
+      "text": "sure you understand the thought process"
+    },
+    {
+      "start": 448.8,
+      "end": 452.82,
+      "text": "intuition and the algorithm in depth so"
+    },
+    {
+      "start": 451.26,
+      "end": 454.32,
+      "text": "please make sure you watch the video"
+    },
+    {
+      "start": 452.82,
+      "end": 456.84,
+      "text": "till the end because you're going to"
+    },
+    {
+      "start": 454.32,
+      "end": 458.04,
+      "text": "take away a lot of things when the video"
+    },
+    {
+      "start": 456.84,
+      "end": 459.48,
+      "text": "ends"
+    },
+    {
+      "start": 458.04,
+      "end": 461.1,
+      "text": "so how will I be explaining this"
+    },
+    {
+      "start": 459.48,
+      "end": 463.38,
+      "text": "particular algorithm what I'll do is"
+    },
+    {
+      "start": 461.1,
+      "end": 466.14,
+      "text": "I'll do a Dryden of the algorithm and"
+    },
+    {
+      "start": 463.38,
+      "end": 468.66,
+      "text": "during The Dryden I'll be sharing the"
+    },
+    {
+      "start": 466.14,
+      "end": 471.36,
+      "text": "thought process and the intuition behind"
+    },
+    {
+      "start": 468.66,
+      "end": 473.64,
+      "text": "every step that this algorithm does so"
+    },
+    {
+      "start": 471.36,
+      "end": 476.22,
+      "text": "that it sticks to your mind okay"
+    },
+    {
+      "start": 473.64,
+      "end": 479.04,
+      "text": "so what is the algorithm all about it's"
+    },
+    {
+      "start": 476.22,
+      "end": 480.6,
+      "text": "very simple it's about two variables"
+    },
+    {
+      "start": 479.04,
+      "end": 483.9,
+      "text": "element"
+    },
+    {
+      "start": 480.6,
+      "end": 486.06,
+      "text": "and Dot initially count is zero and you"
+    },
+    {
+      "start": 483.9,
+      "end": 488.94,
+      "text": "can say initially the element is not"
+    },
+    {
+      "start": 486.06,
+      "end": 491.28,
+      "text": "initialized and we start iterating so"
+    },
+    {
+      "start": 488.94,
+      "end": 493.5,
+      "text": "whenever we are iterating and we are the"
+    },
+    {
+      "start": 491.28,
+      "end": 496.32,
+      "text": "first element or whatever if the count"
+    },
+    {
+      "start": 493.5,
+      "end": 498.66,
+      "text": "is zero that means we haven't taken any"
+    },
+    {
+      "start": 496.32,
+      "end": 500.94,
+      "text": "array please hear this out properly we"
+    },
+    {
+      "start": 498.66,
+      "end": 503.22,
+      "text": "still haven't taken any array so you"
+    },
+    {
+      "start": 500.94,
+      "end": 505.02,
+      "text": "will be like okay I will take seven and"
+    },
+    {
+      "start": 503.22,
+      "end": 507.66,
+      "text": "I'll increase the count to 1. so what I"
+    },
+    {
+      "start": 505.02,
+      "end": 509.22,
+      "text": "did was I said I will consider this 7 to"
+    },
+    {
+      "start": 507.66,
+      "end": 511.38,
+      "text": "be my answer I'm just taking a"
+    },
+    {
+      "start": 509.22,
+      "end": 513.24,
+      "text": "hypothetical assumption that 7 is my"
+    },
+    {
+      "start": 511.38,
+      "end": 515.04,
+      "text": "answer and the Countess one and now"
+    },
+    {
+      "start": 513.24,
+      "end": 518.16,
+      "text": "let's start moving we again move to"
+    },
+    {
+      "start": 515.04,
+      "end": 519.36,
+      "text": "seven like seven now this occurs twice"
+    },
+    {
+      "start": 518.16,
+      "end": 521.28,
+      "text": "five"
+    },
+    {
+      "start": 519.36,
+      "end": 523.68,
+      "text": "no it is not seven"
+    },
+    {
+      "start": 521.28,
+      "end": 525.42,
+      "text": "so you reduce the count remember this"
+    },
+    {
+      "start": 523.68,
+      "end": 527.58,
+      "text": "count is not storing how many times"
+    },
+    {
+      "start": 525.42,
+      "end": 529.2,
+      "text": "seven appears it doesn't"
+    },
+    {
+      "start": 527.58,
+      "end": 531.9,
+      "text": "have some other significance which I'll"
+    },
+    {
+      "start": 529.2,
+      "end": 536.28,
+      "text": "say next again seven"
+    },
+    {
+      "start": 531.9,
+      "end": 538.68,
+      "text": "increase next again five degrees next"
+    },
+    {
+      "start": 536.28,
+      "end": 540.96,
+      "text": "one degrees"
+    },
+    {
+      "start": 538.68,
+      "end": 544.32,
+      "text": "so whenever you find 7 you increase"
+    },
+    {
+      "start": 540.96,
+      "end": 545.94,
+      "text": "because 7 was your element whenever you"
+    },
+    {
+      "start": 544.32,
+      "end": 548.64,
+      "text": "find anything apart from Seven you"
+    },
+    {
+      "start": 545.94,
+      "end": 550.74,
+      "text": "decrease now you are reaching zero until"
+    },
+    {
+      "start": 548.64,
+      "end": 552.98,
+      "text": "how much till this portion let's"
+    },
+    {
+      "start": 550.74,
+      "end": 558.6,
+      "text": "understand what so if you take seven"
+    },
+    {
+      "start": 552.98,
+      "end": 562.38,
+      "text": "seven five seven five one this is an"
+    },
+    {
+      "start": 558.6,
+      "end": 564.6,
+      "text": "array rather this is an array and the"
+    },
+    {
+      "start": 562.38,
+      "end": 566.88,
+      "text": "count over here is zero what does the"
+    },
+    {
+      "start": 564.6,
+      "end": 569.1,
+      "text": "count signify so you took the element"
+    },
+    {
+      "start": 566.88,
+      "end": 571.68,
+      "text": "seven how many times does it appear"
+    },
+    {
+      "start": 569.1,
+      "end": 573.66,
+      "text": "three times"
+    },
+    {
+      "start": 571.68,
+      "end": 575.4,
+      "text": "how many times the author elements"
+    },
+    {
+      "start": 573.66,
+      "end": 577.86,
+      "text": "appears where other includes five and"
+    },
+    {
+      "start": 575.4,
+      "end": 579.9,
+      "text": "one the other element appears three"
+    },
+    {
+      "start": 577.86,
+      "end": 582.18,
+      "text": "times this is the reason when there was"
+    },
+    {
+      "start": 579.9,
+      "end": 584.52,
+      "text": "a seven you did a plus plus so there"
+    },
+    {
+      "start": 582.18,
+      "end": 587.52,
+      "text": "were three plus plus done and when there"
+    },
+    {
+      "start": 584.52,
+      "end": 591.06,
+      "text": "was five five one there was a minus"
+    },
+    {
+      "start": 587.52,
+      "end": 593.76,
+      "text": "minus minus 10. so 3 plus 3 minus ended"
+    },
+    {
+      "start": 591.06,
+      "end": 596.22,
+      "text": "up giving you a count of zero can I say"
+    },
+    {
+      "start": 593.76,
+      "end": 599.16,
+      "text": "something for sure if I just consider"
+    },
+    {
+      "start": 596.22,
+      "end": 601.32,
+      "text": "this array just consider this array 7 is"
+    },
+    {
+      "start": 599.16,
+      "end": 603.9,
+      "text": "definitely not my major retirement why"
+    },
+    {
+      "start": 601.32,
+      "end": 606.3,
+      "text": "if seven was my majority element"
+    },
+    {
+      "start": 603.9,
+      "end": 608.88,
+      "text": "how can you cancel because for if an"
+    },
+    {
+      "start": 606.3,
+      "end": 610.98,
+      "text": "element appears more than n by two times"
+    },
+    {
+      "start": 608.88,
+      "end": 612.72,
+      "text": "there is only one limit which appears"
+    },
+    {
+      "start": 610.98,
+      "end": 615.06,
+      "text": "more than n by two times and you cannot"
+    },
+    {
+      "start": 612.72,
+      "end": 618.42,
+      "text": "cancel it all if there are six elements"
+    },
+    {
+      "start": 615.06,
+      "end": 620.58,
+      "text": "and seven appears four times can you"
+    },
+    {
+      "start": 618.42,
+      "end": 623.76,
+      "text": "cancel four to cancel 4 you need four"
+    },
+    {
+      "start": 620.58,
+      "end": 625.86,
+      "text": "more so it's not possible since 7"
+    },
+    {
+      "start": 623.76,
+      "end": 628.2,
+      "text": "appeared three times in a six length"
+    },
+    {
+      "start": 625.86,
+      "end": 630.54,
+      "text": "array which is not greater than n by 2"
+    },
+    {
+      "start": 628.2,
+      "end": 632.34,
+      "text": "it is equal to equal to n by 2 so it got"
+    },
+    {
+      "start": 630.54,
+      "end": 635.82,
+      "text": "canceled so something that I can"
+    },
+    {
+      "start": 632.34,
+      "end": 637.68,
+      "text": "assurely say is till here 7 is not my"
+    },
+    {
+      "start": 635.82,
+      "end": 639.36,
+      "text": "majority element till here it's not so"
+    },
+    {
+      "start": 637.68,
+      "end": 641.88,
+      "text": "this cannot be considered as an answer"
+    },
+    {
+      "start": 639.36,
+      "end": 644.52,
+      "text": "but what I will do is I'll move ahead"
+    },
+    {
+      "start": 641.88,
+      "end": 648.24,
+      "text": "and I'll move to 5 okay the moment I"
+    },
+    {
+      "start": 644.52,
+      "end": 650.58,
+      "text": "move to 5 I find count is zero so what"
+    },
+    {
+      "start": 648.24,
+      "end": 654.24,
+      "text": "I'll do is I will just quickly say okay"
+    },
+    {
+      "start": 650.58,
+      "end": 656.82,
+      "text": "listen count is 0 so can you please take"
+    },
+    {
+      "start": 654.24,
+      "end": 658.38,
+      "text": "this as my new majority element and"
+    },
+    {
+      "start": 656.82,
+      "end": 660.78,
+      "text": "probably I'll start checking from here"
+    },
+    {
+      "start": 658.38,
+      "end": 663.48,
+      "text": "and my count will be one perfect so I"
+    },
+    {
+      "start": 660.78,
+      "end": 666.18,
+      "text": "will take five I'll make the count one"
+    },
+    {
+      "start": 663.48,
+      "end": 667.98,
+      "text": "let's move seven it's not equivalent so"
+    },
+    {
+      "start": 666.18,
+      "end": 669.84,
+      "text": "I'll just make it zero I just make it"
+    },
+    {
+      "start": 667.98,
+      "end": 672.3,
+      "text": "back zero so this time the array"
+    },
+    {
+      "start": 669.84,
+      "end": 674.16,
+      "text": "finishes here and the count becomes zero"
+    },
+    {
+      "start": 672.3,
+      "end": 676.8,
+      "text": "again eminent if I just take this"
+    },
+    {
+      "start": 674.16,
+      "end": 679.68,
+      "text": "particular array can 5 be the majority"
+    },
+    {
+      "start": 676.8,
+      "end": 681.3,
+      "text": "no that's why next we'll move ahead"
+    },
+    {
+      "start": 679.68,
+      "end": 682.32,
+      "text": "the moment we move ahead what will"
+    },
+    {
+      "start": 681.3,
+      "end": 684.6,
+      "text": "happen"
+    },
+    {
+      "start": 682.32,
+      "end": 686.88,
+      "text": "since count is 0 it will again"
+    },
+    {
+      "start": 684.6,
+      "end": 689.04,
+      "text": "initialize count to 1 and element to be"
+    },
+    {
+      "start": 686.88,
+      "end": 691.08,
+      "text": "five and we will start the array again"
+    },
+    {
+      "start": 689.04,
+      "end": 694.64,
+      "text": "from here and this time again let's move"
+    },
+    {
+      "start": 691.08,
+      "end": 699.66,
+      "text": "it's five increment it is seven"
+    },
+    {
+      "start": 694.64,
+      "end": 700.38,
+      "text": "decrement it is seven decrement so can I"
+    },
+    {
+      "start": 699.66,
+      "end": 702.06,
+      "text": "see"
+    },
+    {
+      "start": 700.38,
+      "end": 705.18,
+      "text": "in this particular array what happened"
+    },
+    {
+      "start": 702.06,
+      "end": 708.9,
+      "text": "five five seven seven what I can say is"
+    },
+    {
+      "start": 705.18,
+      "end": 709.98,
+      "text": "hey 5 was occurring twice seven hours"
+    },
+    {
+      "start": 708.9,
+      "end": 712.56,
+      "text": "occurring"
+    },
+    {
+      "start": 709.98,
+      "end": 716.1,
+      "text": "twice so it brought cancer thereby count"
+    },
+    {
+      "start": 712.56,
+      "end": 718.68,
+      "text": "was Zero thereby 5 also cannot be my"
+    },
+    {
+      "start": 716.1,
+      "end": 722.4,
+      "text": "answer so till now whoever I have"
+    },
+    {
+      "start": 718.68,
+      "end": 724.38,
+      "text": "considered as a majority got canceled by"
+    },
+    {
+      "start": 722.4,
+      "end": 726.48,
+      "text": "similar elements so till now no one has"
+    },
+    {
+      "start": 724.38,
+      "end": 728.28,
+      "text": "dominated we are still looking for"
+    },
+    {
+      "start": 726.48,
+      "end": 730.68,
+      "text": "someone who is dominating got it"
+    },
+    {
+      "start": 728.28,
+      "end": 733.08,
+      "text": "everyone has still no cancer let's go"
+    },
+    {
+      "start": 730.68,
+      "end": 735.24,
+      "text": "ahead what is the count value Crown's"
+    },
+    {
+      "start": 733.08,
+      "end": 738.66,
+      "text": "value is zero now so let's move it"
+    },
+    {
+      "start": 735.24,
+      "end": 741.18,
+      "text": "we are at account zero so again we start"
+    },
+    {
+      "start": 738.66,
+      "end": 743.34,
+      "text": "the count will again become one and this"
+    },
+    {
+      "start": 741.18,
+      "end": 745.56,
+      "text": "element still stays as five this time"
+    },
+    {
+      "start": 743.34,
+      "end": 747.24,
+      "text": "we'll move ahead count becomes 2 7 will"
+    },
+    {
+      "start": 745.56,
+      "end": 750.12,
+      "text": "move out count becomes three this term"
+    },
+    {
+      "start": 747.24,
+      "end": 752.7,
+      "text": "will move ahead count becomes four and"
+    },
+    {
+      "start": 750.12,
+      "end": 755.58,
+      "text": "we can say we have ended the iteration"
+    },
+    {
+      "start": 752.7,
+      "end": 757.38,
+      "text": "we have ended the iteration so since we"
+    },
+    {
+      "start": 755.58,
+      "end": 759.18,
+      "text": "have ended the iteration there is an"
+    },
+    {
+      "start": 757.38,
+      "end": 761.1,
+      "text": "element five this count has no"
+    },
+    {
+      "start": 759.18,
+      "end": 764.1,
+      "text": "significance but we have an element five"
+    },
+    {
+      "start": 761.1,
+      "end": 767.1,
+      "text": "this element 5 will be your maturity"
+    },
+    {
+      "start": 764.1,
+      "end": 769.32,
+      "text": "element if there exists a majority"
+    },
+    {
+      "start": 767.1,
+      "end": 771.66,
+      "text": "element why because everyone else got"
+    },
+    {
+      "start": 769.32,
+      "end": 773.76,
+      "text": "canceled off within itself so if there"
+    },
+    {
+      "start": 771.66,
+      "end": 776.46,
+      "text": "is someone still remaining who did not"
+    },
+    {
+      "start": 773.76,
+      "end": 778.56,
+      "text": "got canceled then that is my answer but"
+    },
+    {
+      "start": 776.46,
+      "end": 780.96,
+      "text": "am I sure that element 5 is the majority"
+    },
+    {
+      "start": 778.56,
+      "end": 782.76,
+      "text": "element what I said if there exists a"
+    },
+    {
+      "start": 780.96,
+      "end": 785.28,
+      "text": "majority limit it will be five and no"
+    },
+    {
+      "start": 782.76,
+      "end": 786.84,
+      "text": "one else if if there is a majority"
+    },
+    {
+      "start": 785.28,
+      "end": 788.94,
+      "text": "element it will be five and no one else"
+    },
+    {
+      "start": 786.84,
+      "end": 791.4,
+      "text": "if there doesn't then okay fine for"
+    },
+    {
+      "start": 788.94,
+      "end": 794.4,
+      "text": "example if the last portion was"
+    },
+    {
+      "start": 791.4,
+      "end": 796.44,
+      "text": "something like one one one"
+    },
+    {
+      "start": 794.4,
+      "end": 798.24,
+      "text": "in that case you'd have bought one and"
+    },
+    {
+      "start": 796.44,
+      "end": 800.52,
+      "text": "the count would have been four but is"
+    },
+    {
+      "start": 798.24,
+      "end": 802.56,
+      "text": "one the majority element if you see one"
+    },
+    {
+      "start": 800.52,
+      "end": 805.14,
+      "text": "just appears four times maybe five"
+    },
+    {
+      "start": 802.56,
+      "end": 806.52,
+      "text": "that's it one app is five times and when"
+    },
+    {
+      "start": 805.14,
+      "end": 809.16,
+      "text": "you look at the length of the array it"
+    },
+    {
+      "start": 806.52,
+      "end": 811.44,
+      "text": "is six two four and four which is eight"
+    },
+    {
+      "start": 809.16,
+      "end": 813.6,
+      "text": "plus four twelve it's a 16 length array"
+    },
+    {
+      "start": 811.44,
+      "end": 817.32,
+      "text": "someone has to appear more than eight"
+    },
+    {
+      "start": 813.6,
+      "end": 819.72,
+      "text": "times to be majority and since it is"
+    },
+    {
+      "start": 817.32,
+      "end": 823.26,
+      "text": "five let's see 5 is so let's see how"
+    },
+    {
+      "start": 819.72,
+      "end": 826.88,
+      "text": "many times five is once twice twice four"
+    },
+    {
+      "start": 823.26,
+      "end": 830.1,
+      "text": "five six seven eight nine five appears"
+    },
+    {
+      "start": 826.88,
+      "end": 832.14,
+      "text": "nine times out of which four times when"
+    },
+    {
+      "start": 830.1,
+      "end": 835.38,
+      "text": "not canceled four times when not"
+    },
+    {
+      "start": 832.14,
+      "end": 837.42,
+      "text": "canceled but the other times it was"
+    },
+    {
+      "start": 835.38,
+      "end": 840.18,
+      "text": "canceled so the other five times zeros"
+    },
+    {
+      "start": 837.42,
+      "end": 842.1,
+      "text": "canceled got it so I can say five is my"
+    },
+    {
+      "start": 840.18,
+      "end": 847.34,
+      "text": "major element it's a very simple process"
+    },
+    {
+      "start": 842.1,
+      "end": 850.02,
+      "text": "the first process is to apply moose"
+    },
+    {
+      "start": 847.34,
+      "end": 854.34,
+      "text": "voting algo"
+    },
+    {
+      "start": 850.02,
+      "end": 856.44,
+      "text": "okay about the second process verify if"
+    },
+    {
+      "start": 854.34,
+      "end": 859.68,
+      "text": "the element that you got the element"
+    },
+    {
+      "start": 856.44,
+      "end": 862.14,
+      "text": "that you got is the majority or not how"
+    },
+    {
+      "start": 859.68,
+      "end": 864.6,
+      "text": "do you do it whatever the element is in"
+    },
+    {
+      "start": 862.14,
+      "end": 866.4,
+      "text": "this case the element was 5 just iterate"
+    },
+    {
+      "start": 864.6,
+      "end": 868.8,
+      "text": "through the array again and see how many"
+    },
+    {
+      "start": 866.4,
+      "end": 871.08,
+      "text": "times 5 appears this time it will come"
+    },
+    {
+      "start": 868.8,
+      "end": 874.2,
+      "text": "out to be 9 which is greater than the"
+    },
+    {
+      "start": 871.08,
+      "end": 876.84,
+      "text": "length 16 by 2. so that's why the 5 is"
+    },
+    {
+      "start": 874.2,
+      "end": 878.1,
+      "text": "if it doesn't then it is not got it so I"
+    },
+    {
+      "start": 876.84,
+      "end": 880.92,
+      "text": "hope you've understood the intuition"
+    },
+    {
+      "start": 878.1,
+      "end": 882.96,
+      "text": "it's very simple if someone appears more"
+    },
+    {
+      "start": 880.92,
+      "end": 885.3,
+      "text": "than n by two times it will not get"
+    },
+    {
+      "start": 882.96,
+      "end": 887.46,
+      "text": "canceled quite simple right that's the"
+    },
+    {
+      "start": 885.3,
+      "end": 889.44,
+      "text": "intuition so coming back to the code"
+    },
+    {
+      "start": 887.46,
+      "end": 891.42,
+      "text": "editor again the problem link will be in"
+    },
+    {
+      "start": 889.44,
+      "end": 893.34,
+      "text": "the description so what do we need we"
+    },
+    {
+      "start": 891.42,
+      "end": 896.16,
+      "text": "need account zero and we can keep an"
+    },
+    {
+      "start": 893.34,
+      "end": 899.1,
+      "text": "element normally now let's quickly start"
+    },
+    {
+      "start": 896.16,
+      "end": 902.46,
+      "text": "off with zero and probably V Dot size"
+    },
+    {
+      "start": 899.1,
+      "end": 904.98,
+      "text": "yes and how can I say first thing that I"
+    },
+    {
+      "start": 902.46,
+      "end": 907.08,
+      "text": "will check is what if the count is 0. if"
+    },
+    {
+      "start": 904.98,
+      "end": 908.04,
+      "text": "the count is 0 I know for sure this is"
+    },
+    {
+      "start": 907.08,
+      "end": 911.28,
+      "text": "where"
+    },
+    {
+      "start": 908.04,
+      "end": 913.32,
+      "text": "I'm starting a check for a new section"
+    },
+    {
+      "start": 911.28,
+      "end": 916.38,
+      "text": "so ground will be one and the element"
+    },
+    {
+      "start": 913.32,
+      "end": 918.6,
+      "text": "will be V of I right but what if the"
+    },
+    {
+      "start": 916.38,
+      "end": 921.72,
+      "text": "count is not zero in that case I will"
+    },
+    {
+      "start": 918.6,
+      "end": 923.88,
+      "text": "check if V of I is equal to equal to the"
+    },
+    {
+      "start": 921.72,
+      "end": 926.94,
+      "text": "element that I was thinking it's it's"
+    },
+    {
+      "start": 923.88,
+      "end": 929.28,
+      "text": "the majority if it is please increase if"
+    },
+    {
+      "start": 926.94,
+      "end": 932.88,
+      "text": "it is not okay let's reduce"
+    },
+    {
+      "start": 929.28,
+      "end": 936.0,
+      "text": "simple three lines if the count is zero"
+    },
+    {
+      "start": 932.88,
+      "end": 938.58,
+      "text": "we just assign and we move I plus plus"
+    },
+    {
+      "start": 936.0,
+      "end": 942.3,
+      "text": "if it is equal equivalent we just"
+    },
+    {
+      "start": 938.58,
+      "end": 944.28,
+      "text": "increase count and we move if it is not"
+    },
+    {
+      "start": 942.3,
+      "end": 945.24,
+      "text": "then we decrease and then we move so"
+    },
+    {
+      "start": 944.28,
+      "end": 948.6,
+      "text": "what will happen is when you're"
+    },
+    {
+      "start": 945.24,
+      "end": 950.52,
+      "text": "decreasing if the curve becomes 0 when"
+    },
+    {
+      "start": 948.6,
+      "end": 952.08,
+      "text": "you increase and when you come back the"
+    },
+    {
+      "start": 950.52,
+      "end": 954.3,
+      "text": "count will be checked with 0 and it will"
+    },
+    {
+      "start": 952.08,
+      "end": 956.4,
+      "text": "be replaced with the newer limit and it"
+    },
+    {
+      "start": 954.3,
+      "end": 958.56,
+      "text": "will start a new section quite simple"
+    },
+    {
+      "start": 956.4,
+      "end": 961.56,
+      "text": "and once you've got the element just"
+    },
+    {
+      "start": 958.56,
+      "end": 966.0,
+      "text": "iterate over here"
+    },
+    {
+      "start": 961.56,
+      "end": 969.24,
+      "text": "and V Dot size all right plus plus and"
+    },
+    {
+      "start": 966.0,
+      "end": 972.54,
+      "text": "you say Hey listen if V of I is"
+    },
+    {
+      "start": 969.24,
+      "end": 973.74,
+      "text": "equivalent to element probably you can"
+    },
+    {
+      "start": 972.54,
+      "end": 975.72,
+      "text": "keep"
+    },
+    {
+      "start": 973.74,
+      "end": 978.78,
+      "text": "something like"
+    },
+    {
+      "start": 975.72,
+      "end": 981.0,
+      "text": "counter one equal to zero and you can"
+    },
+    {
+      "start": 978.78,
+      "end": 984.42,
+      "text": "say counter one plus plus if at the end"
+    },
+    {
+      "start": 981.0,
+      "end": 987.84,
+      "text": "of the day counter one is greater than V"
+    },
+    {
+      "start": 984.42,
+      "end": 990.18,
+      "text": "Dot size by 2 again you can store B dot"
+    },
+    {
+      "start": 987.84,
+      "end": 992.16,
+      "text": "size in some variable this particular"
+    },
+    {
+      "start": 990.18,
+      "end": 993.66,
+      "text": "element is the answer or else you can"
+    },
+    {
+      "start": 992.16,
+      "end": 996.3,
+      "text": "say the answer is minus one or whatever"
+    },
+    {
+      "start": 993.66,
+      "end": 998.16,
+      "text": "they are asking you to return so what"
+    },
+    {
+      "start": 996.3,
+      "end": 999.54,
+      "text": "I'll do is now I'll quickly go and run"
+    },
+    {
+      "start": 998.16,
+      "end": 1001.34,
+      "text": "this off and see if it is running fine"
+    },
+    {
+      "start": 999.54,
+      "end": 1003.68,
+      "text": "no it does or it'll be counter one plus"
+    },
+    {
+      "start": 1001.34,
+      "end": 1006.92,
+      "text": "plus counter one done and let's quickly"
+    },
+    {
+      "start": 1003.68,
+      "end": 1008.96,
+      "text": "submit this off I hope it does run now"
+    },
+    {
+      "start": 1006.92,
+      "end": 1010.7,
+      "text": "remember one thing whatever is the value"
+    },
+    {
+      "start": 1008.96,
+      "end": 1013.4,
+      "text": "of counter at the end it doesn't"
+    },
+    {
+      "start": 1010.7,
+      "end": 1015.92,
+      "text": "represents anything so we have to talk"
+    },
+    {
+      "start": 1013.4,
+      "end": 1017.06,
+      "text": "about the time complexity how much a"
+    },
+    {
+      "start": 1015.92,
+      "end": 1019.7,
+      "text": "single Loop"
+    },
+    {
+      "start": 1017.06,
+      "end": 1021.38,
+      "text": "and three Fields so it's a single Loop"
+    },
+    {
+      "start": 1019.7,
+      "end": 1024.44,
+      "text": "so whenever it's a single Loop you know"
+    },
+    {
+      "start": 1021.38,
+      "end": 1027.2,
+      "text": "the time complexity is very simple it's"
+    },
+    {
+      "start": 1024.44,
+      "end": 1029.54,
+      "text": "we go off n for the burst iteration of"
+    },
+    {
+      "start": 1027.2,
+      "end": 1032.66,
+      "text": "the most voting algo and if they are"
+    },
+    {
+      "start": 1029.54,
+      "end": 1034.52,
+      "text": "stating that the the array might have or"
+    },
+    {
+      "start": 1032.66,
+      "end": 1036.98,
+      "text": "might not have a majority limit then you"
+    },
+    {
+      "start": 1034.52,
+      "end": 1039.56,
+      "text": "go and verify this step will not be done"
+    },
+    {
+      "start": 1036.98,
+      "end": 1041.9,
+      "text": "if the problem states that their own"
+    },
+    {
+      "start": 1039.56,
+      "end": 1044.3,
+      "text": "ways exist a majority element then this"
+    },
+    {
+      "start": 1041.9,
+      "end": 1047.06,
+      "text": "step will never be done okay you only do"
+    },
+    {
+      "start": 1044.3,
+      "end": 1049.22,
+      "text": "the step if the prop if the array might"
+    },
+    {
+      "start": 1047.06,
+      "end": 1050.9,
+      "text": "not have a majority element got it so"
+    },
+    {
+      "start": 1049.22,
+      "end": 1052.88,
+      "text": "this will be the time complexity and we"
+    },
+    {
+      "start": 1050.9,
+      "end": 1054.98,
+      "text": "are not using any extra space so this"
+    },
+    {
+      "start": 1052.88,
+      "end": 1057.14,
+      "text": "will be the space complexity of the most"
+    },
+    {
+      "start": 1054.98,
+      "end": 1058.28,
+      "text": "optimal solution coming back to the"
+    },
+    {
+      "start": 1057.14,
+      "end": 1059.66,
+      "text": "sheet I can say that this particular"
+    },
+    {
+      "start": 1058.28,
+      "end": 1061.22,
+      "text": "problem is done and if you understood"
+    },
+    {
+      "start": 1059.66,
+      "end": 1062.66,
+      "text": "everything please please do with that"
+    },
+    {
+      "start": 1061.22,
+      "end": 1063.8,
+      "text": "like button is just one like it won't"
+    },
+    {
+      "start": 1062.66,
+      "end": 1065.06,
+      "text": "cost you anything please do consider"
+    },
+    {
+      "start": 1063.8,
+      "end": 1066.62,
+      "text": "hitting that like button and look at"
+    },
+    {
+      "start": 1065.06,
+      "end": 1067.94,
+      "text": "your tradition do comment understood so"
+    },
+    {
+      "start": 1066.62,
+      "end": 1069.5,
+      "text": "that I understand that you understanding"
+    },
+    {
+      "start": 1067.94,
+      "end": 1070.94,
+      "text": "everything and if you're new to our"
+    },
+    {
+      "start": 1069.5,
+      "end": 1073.34,
+      "text": "Channel please please do consider"
+    },
+    {
+      "start": 1070.94,
+      "end": 1075.32,
+      "text": "subscribing to us because it's like 1 23"
+    },
+    {
+      "start": 1073.34,
+      "end": 1076.94,
+      "text": "am in the morning and after my office"
+    },
+    {
+      "start": 1075.32,
+      "end": 1078.74,
+      "text": "hours I'm recording this video so if you"
+    },
+    {
+      "start": 1076.94,
+      "end": 1080.54,
+      "text": "if you consider subscribing to me that"
+    },
+    {
+      "start": 1078.74,
+      "end": 1082.84,
+      "text": "will motivate me to make such more"
+    },
+    {
+      "start": 1080.54,
+      "end": 1082.84,
+      "text": "videos"
+    },
+    {
+      "start": 1085.82,
+      "end": 1093.64,
+      "text": "is broken don't ever forget you're"
+    },
+    {
+      "start": 1089.72,
+      "end": 1093.64,
+      "text": "golden I will find"
+    }
+  ]
+}

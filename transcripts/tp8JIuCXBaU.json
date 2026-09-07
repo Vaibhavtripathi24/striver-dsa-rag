@@ -1,0 +1,3065 @@
+{
+  "video_id": "tp8JIuCXBaU",
+  "title": "Sort an array of 0's 1's & 2's | Intuition of Algo🔥 | C++ Java Python | Brute-Better-Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1507,
+  "text": "hey everyone welcome back to the channel I hope you guys are doing extremely well so this is another video from the stripers A to Z DSA course just in case you're for the first time here this is world's most in-depth course in Dia sangu why do I say that because we are covering 456 modules by the end of the course you would have solved 400 plus problems in DS algo you can go over the entire internet you can buy any of the paid courses none of them will be teaching UDS I'll go in such depth one thing that I can give you as a guarantee from my end is if you complete this course you can actually clear any of the DS algorithms in any of the companies in any part of the world so till the last video we have covered uh the twosome problem in this video I will be covering the problem sort an array of zeros ones and twos what does the problems take you'll be given an array but the array only consists of 0 1 2. nothing else only these three integers 0 1 and 2 and your task is to sort it you might be thinking it's an easy problem no it is not when you will hear about the most optimal solution your mind will be like wow so what's the first solution that you'll give to the interview that's definitely the Brute Force solution and we know what is that that is to use any of the Sorting algorithms if we end up using merge sort it will take a Time complexity of n login and it will take a space complexity of bigo open which is the temporary array that we use during the birth chart if you do not the most shot I've already made a video on that you can go back and watch it obviously the interview will not be happy with n Log In Time complexity and the extra space that you're using so I'll ask you to optimize it that's when you'll be telling the better solution now what is the better solution that comes up now something I can say is Hey listen one thing I know for sure is the array contains 0 1 and 2. so what I'll be doing is I will do a single iteration and I'll keep three variables count zero count one and count two and in all of the iterations so when I reach 0 it's a zero so I'll increase it by one then when I reach one I'll increase this by one when I reach 2 I'll increase this by one when I reach 0 I'll increase this by 2 and eventually I will keep on going and I'll reach the end of the array once I've reached the end of the array the count 0 will be containing the number of zeros the count one will be containing the number of ones and the count two will be containing the number of twos in this case the count 0 will be five count one will be four count two will be three so once you have done this what you can do is very simply run a loop from 0 to 4 because we know the first five places will be occupied by zero because if you are sorting an array of 0 1 and 2 the first place will only have zeros the next place will only have once and the next place will only have two so you will run a loop which runs five times and you will just manually overwrite the first five values to zero then you'll run a loop for four times and you will manually overwrite the next four elements to one then you will run a loop for three times and you'll manually overwrite the last three m comments as to once you have done this I can say that the array is sorted according to zeros at first then once and then twos so what I can say is the better solution will be running a loop in order to count the zeros once at Do's that will be taking a big go of n time complexity then we will be running a first Loop then a second Loop and the third Loop which overall is actually bigger of n because the count of zero plus count of one plus count of two is equal to n so overall I can say the time complexity that I'll end up taking is n plus n 2 N am I using any extra space I can say that no I'm not using any extra space we are just modifying the given array which is the given task because we've been asked to sort an array so we're modifying the given array so by the way this will go from 0 to count 0 in order to fill up the first count zero places once I filled up the first term zero places the next place will start from count zero index and it will go until Cal zero plus count one because till then you will fill up then the next will start from count zero because these many have been filled up so it starts from there and it goes until the end so that's how the better solution will be looking like now the interview will be like hey you're taking B go off to n which is two iterations I don't need two iterations can you further optimize this this is when the most optimal solution will come in and this is going to blow your mind off so let's talk about the most optimal solution and that will be using the touch national flag algorithm now across all the lectures on YouTube I've seen something very common people are just giving you the algorithm that right and then the code no one is talking about the indication no one is talking about the thought process so in this video I'll be focusing on the thought process and the intuition behind the algorithm so make sure you watch the video till the end because one thing I can assure you is you are going to take away a lot of things when you end this particular video so the algorithm will be using three pointers that is where the thought process starts low mid High and the algorithm is revolving around three rules and the rules are very simple it states everything from 0 to low minus 1 will be zeros everything between 0 to low minus one not low low minus one will be zeros which is nothing but the extreme left and then it states everything from low again very important everything from low to make minus 1 minus 1 should be 1 then it states High plus 1 plus 1 to n minus 1 should be 2. now this is something which is Extreme right now these are the three rules on which the algorithm is based now let me let me explain you all the three rules in diagram imagine this is the zero pointer of the array and imagine this is no minus 1. so these are the indexes hypothetical indexes so they are filled with zeros that's what they are State then with the low index which is the right next index after no minus 1. till the mid minus one index everything is filled with one then right after mid minus one there's a mid index under the high index everything is filled with random numbers in an unsorted way in an unsorted way then right after high comes High plus 1 till n minus 1 everything over here is filled with twos such like two two so again it's in hypothetical array where 0 to low minus 1 is zeros low to mid minus 1 is once mid to high is 0 1 2's and high plus 1 to n minus 1 is just twos these are the three rules on which we will be using this three pointers to sort the array so we've understood the three rules clearly now let's have some observations can I say from this portion to this portion the array is sorted from this portion to this portion the array is sorted if I can somehow manage to sort this particular unsorted portion then my task will be easy so can I say initially we are starting with an entire array so can I say the mid or rather I'll take the n look can I say the mid will be pointing here and the high will be here why because the entire array is unsoft because the entire array is unsorted and that is what we were looking to sort the entire arrays and so on and thereby I can say the low can be just put over here why because that's the starting index and we know from 0 to low minus 1 everything is zero so that is still valid still valid even if I put a low here because 0 to like 0 to low minus 1 is nothing so this is still valid the main thing that we are looking at is from mid to high everything should be containing 0 1 and 2 and everything should be unsorted that is valid now our algorithm will work on a of mid you can also make it work on a of I that is okay but I'll try to tell you in terms of a of mid if I tell you in terms of a of mid you can actually write it in terms of a of high as well so I'll try to tell you in terms of a of mid so what can be the possible values of array of weight it can be zero or it can be 1 or what is the other thing or it can be 2. now these are the three possible values of array of mid right now let's analyze what happens if it is 0 what happens if it is 1 what happens if it is two now we know one thing we are taking pointers and whenever we are applying a pointer algorithm the pointers will always move that is the that is the use of pointers so coming back to the algorithm something to think about we're talking about myth we're talking about height and this portion is what we are looking to sort now what is the first case when array is said to be the area of mid array of mid is said to be having zero because that is the first case when I'm saying array of mate has a zero so array of mid has a zero now if I have to ask you how do you make sure that this 0 is in a softened order it'll be like hey wait I know one thing the left portion is sorted so the zero has to be somewhere on the left and we have to hypothetically think can I say the 0 will be somewhere here so that this still stays in a sorted order yes so what I will do is I'll say Okay zero can you go here but then if I take the 0 here what will happen to one and like wait if I take this 0 here and if I take this one here it's like what will happen so it'll be like zero zero zero zero zero zero one one one one and one it will still be sorted it'll still be sorted what I did was since it was 0 I I just brought it to the correct place and I know what is the correct place it will be low why because that is where the section contains the first one so I'll bring it to the correct place and I know this will still be sorted now can I say something if this is sorted if this is sorted what is now unsorted the element after mid plus 1 till high is unsorted because now this portion is entirely sorted because you did swap one and zeros so they are completely sorted let's do the swap and then think about the other steps so what I'll do is I'll quickly do the shaft so I've done the swap now can I see this that the mid can easily move to the next because now we are looking for this portion to be sorted like this portion is unsorted now because this is now sorted so mid has moved but now can I say one more thing what is the first law zero to low minus one everything zero but as of now zero to lower is everything zero so what will happen this low will also move a step this low will also move a step yes and the low pointer will be now pointing to this so now 0 to low minus L will be this low to mid minus 1 will be this which is palette so what did we do first thing we did was very simple we said can you go ahead and swap a of low and a of mid so that that 0 comes into its correct order then I know if there is a addition of 0 if there is an addition of zero so this range will increase the low will increase and since mid is the element admit is now at a sorted position let's move wait done so the first step I know how to move the pointer with the first step I will be easily able to move my bit pointer right so we are back to our initial configuration because this is the rule that we are following in order to reduce the algorithm so now next to what if it was one let's now think let's go back again what if there was a one here then what would have happened can I see if it's a one either this was sorted can I say this is also sorted yeah it is sorted we don't need to do anything with that one because that one is attached right after one so this is already softened so the elements that are not sorted are in this category so just move mid because mid is sorted so I'll not do anything if it's a one I will say dude I don't care you can just move ahead that's what I will do so the second step is also done let's talk about the third step so in the third step I'm saying what if at the area of mid there is two so if there is two where should you put two like logically I know all the tools are over here and in the sorted fashion and all the zeros and ones are over here so you can say maybe I can put two at the end maybe I can take two and put it somewhere in between but think logical just think low chicken they have to take two and I what am I looking for I'm looking to make sure that this portion is sorted so can I say something I know this portion is sorted what if I take this to and put it right before this right before this then what will happen this portion will get sorted and this will shrink to this much so I will be able to sort one more element I'll be able to solve one more element can I say this I can't so this is what I'll do no matter if there is a zero if there's a zero there's a one there's a two at this index no matter I will take this two and I'll say can you go over here so what will happen is this two will go over there and whatever is there even it if it's a zero it will come over here so now what will happen is if you have swapped it now you can say this portion is sorted now which portion is still unsorted can I say from mid to high minus 1 make why lesser than high because high is now sorted so we shrinked the right at half this time we shrinked the writer half this time got it so so did you understand this we are not moving mid now in The Next Step since you got a zero from here this zero will be treated according to the first condition I will show you that in the dryer but as of now can I say what I did was very simple I said swap of a of mid and a of high and then I'll see since high is getting a correct correct guy of 2 so we can just move High one this back and it will be sorted so these are the three rules and I hope you have understood the entire thought process when all these three rules so keeping all the three rules in the mind let's do our dragons of the algorithm sticks to your brain remember one thing whenever I do a dragon try to visualize in terms of this particular diagram okay let's throw that run we have a zero what do we do in terms of zero we strap a upload and a of a so 0 and 0 are at the same place they get swapped and low and mid both will move so let's quickly move both so low I'll go here and mid will go here and erase the other things okay that what's the next it's a one so array of mid is one submit plus plus you don't do anything you just move submit will reach here what's the next it's again one you don't do anything you just move mid submit will reach here this time so can you visualize so can you relate this to the diagram that we did draw 0 to low minus one all zeros low to bit minus 1 all ones mid to high all unsorted correct let's move and see if the diagram is still being relatable or not so we have a mid it's a zero we know what do we do in terms of zero we take it here and we take it here let's do it so it's like zero will go here and one will come here and after that yes low will move one place ahead and mid will move one place aired let's quickly erase this because they have moved one place ahead that was the next job yes middle one no need to do anything just move mid one please add if you have moved it is this what is that no again try to relate zero to low minus one all zeros low domain minus one all ones mid to high unsorted still relatable right what's the next we have to but we have to you have to put it on the back that was the thought process so if there's a two what will you do you'll be like okay these two will go here the zero will come here let's show this so this two will become a bad this 2 will become zero and two will go yeah you just slap both the places once you have done this this portion is sorted so what will happen to this hi this I will come here let's do this once I've done this quickly raise this for okay now now we have a zero again we fall back to the step one this zero has to be here and this one has to be here let's quickly do this the zero has to be here and probably led is this and I'll bring the what here if I've done this was an X drop we just move the mid here and we move the low here quite simple I'll erase this as well now can I say again if I have to relate it 0 to low minus one all zeros low to mid minus 1 all ones mid to high unsorted now again it is one so you do not do anything just say we will move the pointer ahead so let's move the pointer ahead where are we we are at a two and this portion is unsorted so this time this will go here and this will go here because if it's a 2 put it at the extreme right so you'll put it at the extreme right so this will go here and we will get a zero here and what will happen to this High it will just shrink so let's quickly shrink it so if you shrink it it shrinks like this so we have a mid and high as 0 0 if it's a zero would have happened yes it will go here this will come here please do it 0 and this will be one so it quickly raise this will be like zero it'll be like one once you've done this what will you do you will move the low and you'll move the mid as well so the low end mid will move and I can quickly raise the previous occurrences of the bandwidth done what's the next job so let's quickly swap it at one and done once you've done this you move low and you move the mid and the mid goes here and if I just quickly it is the last occurrence of mid and the last occurrence of low this is how it looks like and there's a point where you say the mid has gone past height which means the area that you are trying to sort is not over that's why your mid past high and if that is the case can I say that the array is sorted and if you carefully look around from 0 to low minus one everything is zero from low to middle minus one everything is one and from High plus 1 to last everything is S2 and it is sorted so we are still following the condition I hope this diagram helped you to visualize the Dutch national flag algorithm and it is very important to understand the thought process most of the videos will be like three steps do I run code and done no this is indeed important so it is very important to understand if there's a zero why it is moving here and why the one is moving here if there's a one we are not doing anything if there's a two why is it moving back all the three steps are very very important to understand so that you can explain it to the interviewer also your problem solving skills will grow if you understand these problems in very depth so let's quickly jump into the code editor and try to code it up again the problem link will be in the description so we have two rather three pointers so let's mark all the three pointers we know this is uh the starting points and I'll keep on going till this is till we have an unsorted section and we know we are working on area from it if that is 0 it can be one case else if array of mid is 1 or else it will be always 2 because the array only consists of 0 1 and 2. if it is 0 what are we doing we are seeing area flow can you please swap with array of it and once you've done this can you move yourself and mint ahead in this case I am saying just move mid ahead in this case I am saying swap array of rather mid and array of high once you've done this since this 2 is at the back I will shrink once this is done I can say that the array which is passed by reference is indeed sorted now so we can see this and now we will quickly go and run again it's a void function you don't have to return anything you have to just work it on the particular given array so we see that this is submitted okay so let's go back to the iPad and discuss the time complexity now we know one thing we have to go from the mid and till the high and make sure the unsorted section is sorted and initially the mid was here if you remember and the high was here so there is an entire length of n that you have to sort that is something which we know and we know at every step we perform either this either this or either this so if we perform this the mid increases by one so it's like on one iteration that you're doing so you are shrinking the mid on to the right so that's like plus one iteration if you do this if you do this it is still shrinking the mid which is like plus one iteration but if you are doing this step the mids is staying where it is rather the high is shrinking and the high shrinking bright this section how does it matter because at the end of the day if you're moving the mid by onto the right one of the elements will be sorted and if you are moving the high to the left again one of the elements will be socket so in each of the three steps in each of the three steps you are actually solving one element so the end of the day overall if at every step you're sorting one element and all the elements and all the elements were unsorted can I say at the end of the day you'll end up sorting n Elements by taking n and guess a snake n those cases that's why the time complexity is Big go often a single iteration and the space complexity is bigger or fun just in case you did not understand the time complexity what I usually did in my initial years was they can take this particular array and whenever I'm moving whenever I'm doing an iteration I count plus one I count plus one I count plus one and then I can visualize how many iterations where done by using this particular example and then I can relate white as we go off and please do dry runs please count one iteration please count one iteration that will help you do uh analyze the time complexity in a much much better way so coming back to the sheet I can mark this as done and I hope you have understood the thought process and the intuition behind the Dutch national flag algorithm I know the algorithm is easy but you have to understand the third process right so if I understood everything to continue our tradition please do comment understood so that I understand that my effort was worth it because I really did put a lot of time on to this video and if you're new to our Channel please please do consider subscribing it's 2 8 am in the night and I have an office tomorrow so please do consider subscribing because that does motivate me to make such kind of video videos late in the night and yeah if you haven't followed me on Instagram LinkedIn and Twitter the links will be in the description with this let's wrap up this video and millions of other videos [Music]",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 6.18,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.5,
+      "end": 7.74,
+      "text": "I hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.18,
+      "end": 9.84,
+      "text": "so this is another video from the"
+    },
+    {
+      "start": 7.74,
+      "end": 11.1,
+      "text": "stripers A to Z DSA course just in case"
+    },
+    {
+      "start": 9.84,
+      "end": 12.72,
+      "text": "you're for the first time here this is"
+    },
+    {
+      "start": 11.1,
+      "end": 15.24,
+      "text": "world's most in-depth course in Dia"
+    },
+    {
+      "start": 12.72,
+      "end": 18.36,
+      "text": "sangu why do I say that because we are"
+    },
+    {
+      "start": 15.24,
+      "end": 20.52,
+      "text": "covering 456 modules by the end of the"
+    },
+    {
+      "start": 18.36,
+      "end": 22.56,
+      "text": "course you would have solved 400 plus"
+    },
+    {
+      "start": 20.52,
+      "end": 24.0,
+      "text": "problems in DS algo you can go over the"
+    },
+    {
+      "start": 22.56,
+      "end": 25.68,
+      "text": "entire internet you can buy any of the"
+    },
+    {
+      "start": 24.0,
+      "end": 28.32,
+      "text": "paid courses none of them will be"
+    },
+    {
+      "start": 25.68,
+      "end": 30.24,
+      "text": "teaching UDS I'll go in such depth one"
+    },
+    {
+      "start": 28.32,
+      "end": 32.04,
+      "text": "thing that I can give you as a guarantee"
+    },
+    {
+      "start": 30.24,
+      "end": 33.96,
+      "text": "from my end is if you complete this"
+    },
+    {
+      "start": 32.04,
+      "end": 36.24,
+      "text": "course you can actually clear any of the"
+    },
+    {
+      "start": 33.96,
+      "end": 38.7,
+      "text": "DS algorithms in any of the companies in"
+    },
+    {
+      "start": 36.24,
+      "end": 40.62,
+      "text": "any part of the world so till the last"
+    },
+    {
+      "start": 38.7,
+      "end": 42.6,
+      "text": "video we have covered uh the twosome"
+    },
+    {
+      "start": 40.62,
+      "end": 46.2,
+      "text": "problem in this video I will be covering"
+    },
+    {
+      "start": 42.6,
+      "end": 48.18,
+      "text": "the problem sort an array of zeros ones"
+    },
+    {
+      "start": 46.2,
+      "end": 50.64,
+      "text": "and twos what does the problems take"
+    },
+    {
+      "start": 48.18,
+      "end": 53.7,
+      "text": "you'll be given an array but the array"
+    },
+    {
+      "start": 50.64,
+      "end": 56.82,
+      "text": "only consists of 0 1 2."
+    },
+    {
+      "start": 53.7,
+      "end": 60.06,
+      "text": "nothing else only these three integers 0"
+    },
+    {
+      "start": 56.82,
+      "end": 61.5,
+      "text": "1 and 2 and your task is to sort it you"
+    },
+    {
+      "start": 60.06,
+      "end": 63.6,
+      "text": "might be thinking it's an easy problem"
+    },
+    {
+      "start": 61.5,
+      "end": 65.58,
+      "text": "no it is not when you will hear about"
+    },
+    {
+      "start": 63.6,
+      "end": 68.22,
+      "text": "the most optimal solution your mind will"
+    },
+    {
+      "start": 65.58,
+      "end": 69.78,
+      "text": "be like wow so"
+    },
+    {
+      "start": 68.22,
+      "end": 71.34,
+      "text": "what's the first solution that you'll"
+    },
+    {
+      "start": 69.78,
+      "end": 73.02,
+      "text": "give to the interview that's definitely"
+    },
+    {
+      "start": 71.34,
+      "end": 75.48,
+      "text": "the Brute Force solution and we know"
+    },
+    {
+      "start": 73.02,
+      "end": 77.7,
+      "text": "what is that that is to use any of the"
+    },
+    {
+      "start": 75.48,
+      "end": 79.5,
+      "text": "Sorting algorithms if we end up using"
+    },
+    {
+      "start": 77.7,
+      "end": 82.32,
+      "text": "merge sort it will take a Time"
+    },
+    {
+      "start": 79.5,
+      "end": 85.14,
+      "text": "complexity of n login and it will take a"
+    },
+    {
+      "start": 82.32,
+      "end": 86.82,
+      "text": "space complexity of bigo open which is"
+    },
+    {
+      "start": 85.14,
+      "end": 88.56,
+      "text": "the temporary array that we use during"
+    },
+    {
+      "start": 86.82,
+      "end": 90.0,
+      "text": "the birth chart if you do not the most"
+    },
+    {
+      "start": 88.56,
+      "end": 91.98,
+      "text": "shot I've already made a video on that"
+    },
+    {
+      "start": 90.0,
+      "end": 94.08,
+      "text": "you can go back and watch it obviously"
+    },
+    {
+      "start": 91.98,
+      "end": 95.94,
+      "text": "the interview will not be happy with n"
+    },
+    {
+      "start": 94.08,
+      "end": 98.04,
+      "text": "Log In Time complexity and the extra"
+    },
+    {
+      "start": 95.94,
+      "end": 99.84,
+      "text": "space that you're using so I'll ask you"
+    },
+    {
+      "start": 98.04,
+      "end": 101.82,
+      "text": "to optimize it that's when you'll be"
+    },
+    {
+      "start": 99.84,
+      "end": 103.38,
+      "text": "telling the better solution now what is"
+    },
+    {
+      "start": 101.82,
+      "end": 105.72,
+      "text": "the better solution that comes up now"
+    },
+    {
+      "start": 103.38,
+      "end": 108.36,
+      "text": "something I can say is Hey listen"
+    },
+    {
+      "start": 105.72,
+      "end": 111.48,
+      "text": "one thing I know for sure is the array"
+    },
+    {
+      "start": 108.36,
+      "end": 114.72,
+      "text": "contains 0 1 and 2. so what I'll be"
+    },
+    {
+      "start": 111.48,
+      "end": 117.6,
+      "text": "doing is I will do a single iteration"
+    },
+    {
+      "start": 114.72,
+      "end": 120.72,
+      "text": "and I'll keep three variables count zero"
+    },
+    {
+      "start": 117.6,
+      "end": 123.18,
+      "text": "count one and count two and in all of"
+    },
+    {
+      "start": 120.72,
+      "end": 125.28,
+      "text": "the iterations so when I reach 0 it's a"
+    },
+    {
+      "start": 123.18,
+      "end": 126.96,
+      "text": "zero so I'll increase it by one then"
+    },
+    {
+      "start": 125.28,
+      "end": 128.7,
+      "text": "when I reach one I'll increase this by"
+    },
+    {
+      "start": 126.96,
+      "end": 131.1,
+      "text": "one when I reach 2"
+    },
+    {
+      "start": 128.7,
+      "end": 133.32,
+      "text": "I'll increase this by one when I reach 0"
+    },
+    {
+      "start": 131.1,
+      "end": 135.54,
+      "text": "I'll increase this by 2 and eventually I"
+    },
+    {
+      "start": 133.32,
+      "end": 138.0,
+      "text": "will keep on going and I'll reach the"
+    },
+    {
+      "start": 135.54,
+      "end": 139.98,
+      "text": "end of the array once I've reached the"
+    },
+    {
+      "start": 138.0,
+      "end": 141.9,
+      "text": "end of the array the count 0 will be"
+    },
+    {
+      "start": 139.98,
+      "end": 143.34,
+      "text": "containing the number of zeros the count"
+    },
+    {
+      "start": 141.9,
+      "end": 144.9,
+      "text": "one will be containing the number of"
+    },
+    {
+      "start": 143.34,
+      "end": 147.12,
+      "text": "ones and the count two will be"
+    },
+    {
+      "start": 144.9,
+      "end": 149.16,
+      "text": "containing the number of twos in this"
+    },
+    {
+      "start": 147.12,
+      "end": 151.68,
+      "text": "case the count 0 will be five count one"
+    },
+    {
+      "start": 149.16,
+      "end": 153.48,
+      "text": "will be four count two will be three so"
+    },
+    {
+      "start": 151.68,
+      "end": 156.84,
+      "text": "once you have done this what you can do"
+    },
+    {
+      "start": 153.48,
+      "end": 158.76,
+      "text": "is very simply run a loop from 0 to 4"
+    },
+    {
+      "start": 156.84,
+      "end": 161.4,
+      "text": "because we know the first five places"
+    },
+    {
+      "start": 158.76,
+      "end": 164.4,
+      "text": "will be occupied by zero because if you"
+    },
+    {
+      "start": 161.4,
+      "end": 166.26,
+      "text": "are sorting an array of 0 1 and 2 the"
+    },
+    {
+      "start": 164.4,
+      "end": 168.18,
+      "text": "first place will only have zeros the"
+    },
+    {
+      "start": 166.26,
+      "end": 170.1,
+      "text": "next place will only have once and the"
+    },
+    {
+      "start": 168.18,
+      "end": 171.9,
+      "text": "next place will only have two so you"
+    },
+    {
+      "start": 170.1,
+      "end": 175.44,
+      "text": "will run a loop which runs five times"
+    },
+    {
+      "start": 171.9,
+      "end": 177.42,
+      "text": "and you will just manually overwrite the"
+    },
+    {
+      "start": 175.44,
+      "end": 179.7,
+      "text": "first five values to zero then you'll"
+    },
+    {
+      "start": 177.42,
+      "end": 182.22,
+      "text": "run a loop for four times and you will"
+    },
+    {
+      "start": 179.7,
+      "end": 184.44,
+      "text": "manually overwrite the next four"
+    },
+    {
+      "start": 182.22,
+      "end": 186.36,
+      "text": "elements to one then you will run a loop"
+    },
+    {
+      "start": 184.44,
+      "end": 189.42,
+      "text": "for three times and you'll manually"
+    },
+    {
+      "start": 186.36,
+      "end": 191.64,
+      "text": "overwrite the last three m comments as"
+    },
+    {
+      "start": 189.42,
+      "end": 193.8,
+      "text": "to once you have done this I can say"
+    },
+    {
+      "start": 191.64,
+      "end": 196.38,
+      "text": "that the array is sorted according to"
+    },
+    {
+      "start": 193.8,
+      "end": 198.66,
+      "text": "zeros at first then once and then twos"
+    },
+    {
+      "start": 196.38,
+      "end": 200.88,
+      "text": "so what I can say is the better solution"
+    },
+    {
+      "start": 198.66,
+      "end": 202.98,
+      "text": "will be running a loop in order to count"
+    },
+    {
+      "start": 200.88,
+      "end": 205.26,
+      "text": "the zeros once at Do's that will be"
+    },
+    {
+      "start": 202.98,
+      "end": 207.48,
+      "text": "taking a big go of n time complexity"
+    },
+    {
+      "start": 205.26,
+      "end": 209.46,
+      "text": "then we will be running"
+    },
+    {
+      "start": 207.48,
+      "end": 212.22,
+      "text": "a first Loop then a second Loop and the"
+    },
+    {
+      "start": 209.46,
+      "end": 214.5,
+      "text": "third Loop which overall is actually"
+    },
+    {
+      "start": 212.22,
+      "end": 216.84,
+      "text": "bigger of n because the count of zero"
+    },
+    {
+      "start": 214.5,
+      "end": 219.48,
+      "text": "plus count of one plus count of two is"
+    },
+    {
+      "start": 216.84,
+      "end": 221.7,
+      "text": "equal to n so overall I can say the time"
+    },
+    {
+      "start": 219.48,
+      "end": 225.24,
+      "text": "complexity that I'll end up taking is n"
+    },
+    {
+      "start": 221.7,
+      "end": 226.98,
+      "text": "plus n 2 N am I using any extra space I"
+    },
+    {
+      "start": 225.24,
+      "end": 229.2,
+      "text": "can say that no I'm not using any extra"
+    },
+    {
+      "start": 226.98,
+      "end": 231.54,
+      "text": "space we are just modifying the given"
+    },
+    {
+      "start": 229.2,
+      "end": 233.34,
+      "text": "array which is the given task because"
+    },
+    {
+      "start": 231.54,
+      "end": 235.44,
+      "text": "we've been asked to sort an array so"
+    },
+    {
+      "start": 233.34,
+      "end": 237.72,
+      "text": "we're modifying the given array so by"
+    },
+    {
+      "start": 235.44,
+      "end": 240.06,
+      "text": "the way this will go from 0 to count 0"
+    },
+    {
+      "start": 237.72,
+      "end": 241.92,
+      "text": "in order to fill up the first count zero"
+    },
+    {
+      "start": 240.06,
+      "end": 243.72,
+      "text": "places once I filled up the first term"
+    },
+    {
+      "start": 241.92,
+      "end": 245.76,
+      "text": "zero places the next place will start"
+    },
+    {
+      "start": 243.72,
+      "end": 247.98,
+      "text": "from count zero index and it will go"
+    },
+    {
+      "start": 245.76,
+      "end": 250.32,
+      "text": "until Cal zero plus count one because"
+    },
+    {
+      "start": 247.98,
+      "end": 252.12,
+      "text": "till then you will fill up then the next"
+    },
+    {
+      "start": 250.32,
+      "end": 253.86,
+      "text": "will start from count zero because these"
+    },
+    {
+      "start": 252.12,
+      "end": 255.84,
+      "text": "many have been filled up so it starts"
+    },
+    {
+      "start": 253.86,
+      "end": 257.4,
+      "text": "from there and it goes until the end so"
+    },
+    {
+      "start": 255.84,
+      "end": 259.38,
+      "text": "that's how the better solution will be"
+    },
+    {
+      "start": 257.4,
+      "end": 261.42,
+      "text": "looking like now the interview will be"
+    },
+    {
+      "start": 259.38,
+      "end": 263.04,
+      "text": "like hey you're taking B go off to n"
+    },
+    {
+      "start": 261.42,
+      "end": 265.02,
+      "text": "which is two iterations I don't need two"
+    },
+    {
+      "start": 263.04,
+      "end": 267.0,
+      "text": "iterations can you further optimize this"
+    },
+    {
+      "start": 265.02,
+      "end": 268.68,
+      "text": "this is when the most optimal solution"
+    },
+    {
+      "start": 267.0,
+      "end": 270.36,
+      "text": "will come in and this is going to blow"
+    },
+    {
+      "start": 268.68,
+      "end": 272.22,
+      "text": "your mind off so let's talk about the"
+    },
+    {
+      "start": 270.36,
+      "end": 275.34,
+      "text": "most optimal solution and that will be"
+    },
+    {
+      "start": 272.22,
+      "end": 277.38,
+      "text": "using the touch national flag algorithm"
+    },
+    {
+      "start": 275.34,
+      "end": 279.9,
+      "text": "now across all the lectures on YouTube"
+    },
+    {
+      "start": 277.38,
+      "end": 281.58,
+      "text": "I've seen something very common people"
+    },
+    {
+      "start": 279.9,
+      "end": 283.74,
+      "text": "are just giving you the algorithm that"
+    },
+    {
+      "start": 281.58,
+      "end": 285.24,
+      "text": "right and then the code no one is"
+    },
+    {
+      "start": 283.74,
+      "end": 287.34,
+      "text": "talking about the indication no one is"
+    },
+    {
+      "start": 285.24,
+      "end": 288.84,
+      "text": "talking about the thought process so in"
+    },
+    {
+      "start": 287.34,
+      "end": 290.94,
+      "text": "this video I'll be focusing on the"
+    },
+    {
+      "start": 288.84,
+      "end": 293.28,
+      "text": "thought process and the intuition behind"
+    },
+    {
+      "start": 290.94,
+      "end": 295.32,
+      "text": "the algorithm so make sure you watch the"
+    },
+    {
+      "start": 293.28,
+      "end": 297.6,
+      "text": "video till the end because one thing I"
+    },
+    {
+      "start": 295.32,
+      "end": 300.0,
+      "text": "can assure you is you are going to take"
+    },
+    {
+      "start": 297.6,
+      "end": 302.94,
+      "text": "away a lot of things when you end this"
+    },
+    {
+      "start": 300.0,
+      "end": 305.46,
+      "text": "particular video so the algorithm will"
+    },
+    {
+      "start": 302.94,
+      "end": 309.32,
+      "text": "be using three pointers that is where"
+    },
+    {
+      "start": 305.46,
+      "end": 313.14,
+      "text": "the thought process starts low mid High"
+    },
+    {
+      "start": 309.32,
+      "end": 315.06,
+      "text": "and the algorithm is revolving around"
+    },
+    {
+      "start": 313.14,
+      "end": 318.96,
+      "text": "three rules and the rules are very"
+    },
+    {
+      "start": 315.06,
+      "end": 322.74,
+      "text": "simple it states everything from 0 to"
+    },
+    {
+      "start": 318.96,
+      "end": 325.68,
+      "text": "low minus 1 will be zeros everything"
+    },
+    {
+      "start": 322.74,
+      "end": 328.8,
+      "text": "between 0 to low minus one not low low"
+    },
+    {
+      "start": 325.68,
+      "end": 332.78,
+      "text": "minus one will be zeros which is nothing"
+    },
+    {
+      "start": 328.8,
+      "end": 335.46,
+      "text": "but the extreme left and then it states"
+    },
+    {
+      "start": 332.78,
+      "end": 338.48,
+      "text": "everything from low again very important"
+    },
+    {
+      "start": 335.46,
+      "end": 344.88,
+      "text": "everything from low to"
+    },
+    {
+      "start": 338.48,
+      "end": 351.3,
+      "text": "make minus 1 minus 1 should be 1 then it"
+    },
+    {
+      "start": 344.88,
+      "end": 353.52,
+      "text": "states High plus 1 plus 1 to n minus 1"
+    },
+    {
+      "start": 351.3,
+      "end": 357.6,
+      "text": "should be 2. now this is something which"
+    },
+    {
+      "start": 353.52,
+      "end": 358.68,
+      "text": "is Extreme right now these are the three"
+    },
+    {
+      "start": 357.6,
+      "end": 362.76,
+      "text": "rules"
+    },
+    {
+      "start": 358.68,
+      "end": 364.56,
+      "text": "on which the algorithm is based now let"
+    },
+    {
+      "start": 362.76,
+      "end": 367.62,
+      "text": "me let me explain you all the three"
+    },
+    {
+      "start": 364.56,
+      "end": 370.62,
+      "text": "rules in diagram imagine this is the"
+    },
+    {
+      "start": 367.62,
+      "end": 374.64,
+      "text": "zero pointer of the array"
+    },
+    {
+      "start": 370.62,
+      "end": 376.56,
+      "text": "and imagine this is no minus 1. so these"
+    },
+    {
+      "start": 374.64,
+      "end": 378.72,
+      "text": "are the indexes hypothetical indexes so"
+    },
+    {
+      "start": 376.56,
+      "end": 380.88,
+      "text": "they are filled with zeros that's what"
+    },
+    {
+      "start": 378.72,
+      "end": 383.46,
+      "text": "they are State then with the low index"
+    },
+    {
+      "start": 380.88,
+      "end": 387.42,
+      "text": "which is the right next index after no"
+    },
+    {
+      "start": 383.46,
+      "end": 391.26,
+      "text": "minus 1. till the mid minus one index"
+    },
+    {
+      "start": 387.42,
+      "end": 393.18,
+      "text": "everything is filled with one then right"
+    },
+    {
+      "start": 391.26,
+      "end": 397.02,
+      "text": "after mid minus one there's a mid index"
+    },
+    {
+      "start": 393.18,
+      "end": 400.56,
+      "text": "under the high index everything is"
+    },
+    {
+      "start": 397.02,
+      "end": 403.56,
+      "text": "filled with random numbers in an"
+    },
+    {
+      "start": 400.56,
+      "end": 407.04,
+      "text": "unsorted way in an unsorted way then"
+    },
+    {
+      "start": 403.56,
+      "end": 410.58,
+      "text": "right after high comes High plus 1"
+    },
+    {
+      "start": 407.04,
+      "end": 414.48,
+      "text": "till n minus 1 everything over here is"
+    },
+    {
+      "start": 410.58,
+      "end": 417.66,
+      "text": "filled with twos such like two two so"
+    },
+    {
+      "start": 414.48,
+      "end": 421.38,
+      "text": "again it's in hypothetical array where 0"
+    },
+    {
+      "start": 417.66,
+      "end": 424.62,
+      "text": "to low minus 1 is zeros low to mid minus"
+    },
+    {
+      "start": 421.38,
+      "end": 427.92,
+      "text": "1 is once mid to high is 0 1 2's and"
+    },
+    {
+      "start": 424.62,
+      "end": 431.04,
+      "text": "high plus 1 to n minus 1 is just twos"
+    },
+    {
+      "start": 427.92,
+      "end": 433.74,
+      "text": "these are the three rules on which we"
+    },
+    {
+      "start": 431.04,
+      "end": 436.2,
+      "text": "will be using this three pointers to"
+    },
+    {
+      "start": 433.74,
+      "end": 437.88,
+      "text": "sort the array so we've understood the"
+    },
+    {
+      "start": 436.2,
+      "end": 440.28,
+      "text": "three rules clearly now let's have some"
+    },
+    {
+      "start": 437.88,
+      "end": 444.36,
+      "text": "observations can I say from this portion"
+    },
+    {
+      "start": 440.28,
+      "end": 446.7,
+      "text": "to this portion the array is sorted from"
+    },
+    {
+      "start": 444.36,
+      "end": 449.94,
+      "text": "this portion to this portion the array"
+    },
+    {
+      "start": 446.7,
+      "end": 452.94,
+      "text": "is sorted if I can somehow manage to"
+    },
+    {
+      "start": 449.94,
+      "end": 456.68,
+      "text": "sort this particular unsorted portion"
+    },
+    {
+      "start": 452.94,
+      "end": 459.78,
+      "text": "then my task will be easy so can I say"
+    },
+    {
+      "start": 456.68,
+      "end": 463.02,
+      "text": "initially we are starting with an entire"
+    },
+    {
+      "start": 459.78,
+      "end": 464.88,
+      "text": "array so can I say the mid or rather"
+    },
+    {
+      "start": 463.02,
+      "end": 466.86,
+      "text": "I'll take the n look can I say the mid"
+    },
+    {
+      "start": 464.88,
+      "end": 470.4,
+      "text": "will be pointing here and the high will"
+    },
+    {
+      "start": 466.86,
+      "end": 472.14,
+      "text": "be here why because the entire array is"
+    },
+    {
+      "start": 470.4,
+      "end": 474.66,
+      "text": "unsoft because the entire array is"
+    },
+    {
+      "start": 472.14,
+      "end": 477.18,
+      "text": "unsorted and that is what we were"
+    },
+    {
+      "start": 474.66,
+      "end": 480.18,
+      "text": "looking to sort the entire arrays and so"
+    },
+    {
+      "start": 477.18,
+      "end": 483.9,
+      "text": "on and thereby I can say the low can be"
+    },
+    {
+      "start": 480.18,
+      "end": 486.72,
+      "text": "just put over here why because that's"
+    },
+    {
+      "start": 483.9,
+      "end": 488.94,
+      "text": "the starting index and we know from 0 to"
+    },
+    {
+      "start": 486.72,
+      "end": 491.52,
+      "text": "low minus 1 everything is zero so that"
+    },
+    {
+      "start": 488.94,
+      "end": 494.22,
+      "text": "is still valid still valid even if I put"
+    },
+    {
+      "start": 491.52,
+      "end": 496.26,
+      "text": "a low here because 0 to like 0 to low"
+    },
+    {
+      "start": 494.22,
+      "end": 498.54,
+      "text": "minus 1 is nothing so this is still"
+    },
+    {
+      "start": 496.26,
+      "end": 502.26,
+      "text": "valid the main thing that we are looking"
+    },
+    {
+      "start": 498.54,
+      "end": 504.54,
+      "text": "at is from mid to high everything should"
+    },
+    {
+      "start": 502.26,
+      "end": 507.36,
+      "text": "be containing 0 1 and 2 and everything"
+    },
+    {
+      "start": 504.54,
+      "end": 510.18,
+      "text": "should be unsorted that is valid now our"
+    },
+    {
+      "start": 507.36,
+      "end": 513.0,
+      "text": "algorithm will work on a of mid you can"
+    },
+    {
+      "start": 510.18,
+      "end": 516.36,
+      "text": "also make it work on a of I that is okay"
+    },
+    {
+      "start": 513.0,
+      "end": 518.52,
+      "text": "but I'll try to tell you in terms of a"
+    },
+    {
+      "start": 516.36,
+      "end": 520.5,
+      "text": "of mid if I tell you in terms of a of"
+    },
+    {
+      "start": 518.52,
+      "end": 523.32,
+      "text": "mid you can actually write it in terms"
+    },
+    {
+      "start": 520.5,
+      "end": 526.92,
+      "text": "of a of high as well so I'll try to tell"
+    },
+    {
+      "start": 523.32,
+      "end": 528.48,
+      "text": "you in terms of a of mid so what can be"
+    },
+    {
+      "start": 526.92,
+      "end": 530.22,
+      "text": "the possible values of array of weight"
+    },
+    {
+      "start": 528.48,
+      "end": 533.16,
+      "text": "it can be zero"
+    },
+    {
+      "start": 530.22,
+      "end": 536.22,
+      "text": "or it can be 1"
+    },
+    {
+      "start": 533.16,
+      "end": 537.48,
+      "text": "or what is the other thing or it can be"
+    },
+    {
+      "start": 536.22,
+      "end": 539.34,
+      "text": "2."
+    },
+    {
+      "start": 537.48,
+      "end": 542.22,
+      "text": "now these are the three possible values"
+    },
+    {
+      "start": 539.34,
+      "end": 545.22,
+      "text": "of array of mid right now let's analyze"
+    },
+    {
+      "start": 542.22,
+      "end": 547.86,
+      "text": "what happens if it is 0 what happens if"
+    },
+    {
+      "start": 545.22,
+      "end": 549.72,
+      "text": "it is 1 what happens if it is two now we"
+    },
+    {
+      "start": 547.86,
+      "end": 552.06,
+      "text": "know one thing we are taking pointers"
+    },
+    {
+      "start": 549.72,
+      "end": 554.52,
+      "text": "and whenever we are applying a pointer"
+    },
+    {
+      "start": 552.06,
+      "end": 557.1,
+      "text": "algorithm the pointers will always move"
+    },
+    {
+      "start": 554.52,
+      "end": 559.8,
+      "text": "that is the that is the use of pointers"
+    },
+    {
+      "start": 557.1,
+      "end": 562.74,
+      "text": "so coming back to the algorithm"
+    },
+    {
+      "start": 559.8,
+      "end": 564.3,
+      "text": "something to think about we're talking"
+    },
+    {
+      "start": 562.74,
+      "end": 565.92,
+      "text": "about myth we're talking about height"
+    },
+    {
+      "start": 564.3,
+      "end": 568.68,
+      "text": "and this portion is what we are looking"
+    },
+    {
+      "start": 565.92,
+      "end": 571.32,
+      "text": "to sort now what is the first case when"
+    },
+    {
+      "start": 568.68,
+      "end": 574.14,
+      "text": "array is said to be the area of mid"
+    },
+    {
+      "start": 571.32,
+      "end": 576.0,
+      "text": "array of mid is said to be having zero"
+    },
+    {
+      "start": 574.14,
+      "end": 578.34,
+      "text": "because that is the first case when I'm"
+    },
+    {
+      "start": 576.0,
+      "end": 580.68,
+      "text": "saying array of mate has a zero so array"
+    },
+    {
+      "start": 578.34,
+      "end": 584.76,
+      "text": "of mid has a zero now if I have to ask"
+    },
+    {
+      "start": 580.68,
+      "end": 586.74,
+      "text": "you how do you make sure that this 0 is"
+    },
+    {
+      "start": 584.76,
+      "end": 589.2,
+      "text": "in a softened order it'll be like hey"
+    },
+    {
+      "start": 586.74,
+      "end": 593.4,
+      "text": "wait I know one thing the left portion"
+    },
+    {
+      "start": 589.2,
+      "end": 595.86,
+      "text": "is sorted so the zero has to be"
+    },
+    {
+      "start": 593.4,
+      "end": 599.04,
+      "text": "somewhere on the left and we have to"
+    },
+    {
+      "start": 595.86,
+      "end": 602.88,
+      "text": "hypothetically think can I say the 0"
+    },
+    {
+      "start": 599.04,
+      "end": 606.3,
+      "text": "will be somewhere here so that this"
+    },
+    {
+      "start": 602.88,
+      "end": 609.18,
+      "text": "still stays in a sorted order yes so"
+    },
+    {
+      "start": 606.3,
+      "end": 611.7,
+      "text": "what I will do is I'll say Okay zero can"
+    },
+    {
+      "start": 609.18,
+      "end": 614.34,
+      "text": "you go here but then if I take the 0"
+    },
+    {
+      "start": 611.7,
+      "end": 615.6,
+      "text": "here what will happen to one and like"
+    },
+    {
+      "start": 614.34,
+      "end": 618.66,
+      "text": "wait"
+    },
+    {
+      "start": 615.6,
+      "end": 621.72,
+      "text": "if I take this 0 here"
+    },
+    {
+      "start": 618.66,
+      "end": 624.72,
+      "text": "and if I take this one here"
+    },
+    {
+      "start": 621.72,
+      "end": 628.56,
+      "text": "it's like what will happen so it'll be"
+    },
+    {
+      "start": 624.72,
+      "end": 631.26,
+      "text": "like zero zero zero zero zero zero one"
+    },
+    {
+      "start": 628.56,
+      "end": 634.02,
+      "text": "one one one and one it will still be"
+    },
+    {
+      "start": 631.26,
+      "end": 636.96,
+      "text": "sorted it'll still be sorted what I did"
+    },
+    {
+      "start": 634.02,
+      "end": 639.18,
+      "text": "was since it was 0 I"
+    },
+    {
+      "start": 636.96,
+      "end": 641.28,
+      "text": "I just brought it to the correct place"
+    },
+    {
+      "start": 639.18,
+      "end": 644.16,
+      "text": "and I know what is the correct place it"
+    },
+    {
+      "start": 641.28,
+      "end": 647.4,
+      "text": "will be low why because that is where"
+    },
+    {
+      "start": 644.16,
+      "end": 649.44,
+      "text": "the section contains the first one so"
+    },
+    {
+      "start": 647.4,
+      "end": 650.16,
+      "text": "I'll bring it to the correct place and I"
+    },
+    {
+      "start": 649.44,
+      "end": 652.68,
+      "text": "know"
+    },
+    {
+      "start": 650.16,
+      "end": 655.68,
+      "text": "this will still be sorted now can I say"
+    },
+    {
+      "start": 652.68,
+      "end": 659.28,
+      "text": "something if this is sorted if this is"
+    },
+    {
+      "start": 655.68,
+      "end": 662.28,
+      "text": "sorted what is now unsorted the element"
+    },
+    {
+      "start": 659.28,
+      "end": 665.16,
+      "text": "after mid plus 1 till high is unsorted"
+    },
+    {
+      "start": 662.28,
+      "end": 667.56,
+      "text": "because now this portion is entirely"
+    },
+    {
+      "start": 665.16,
+      "end": 670.08,
+      "text": "sorted because you did swap one and"
+    },
+    {
+      "start": 667.56,
+      "end": 672.72,
+      "text": "zeros so they are completely sorted"
+    },
+    {
+      "start": 670.08,
+      "end": 674.64,
+      "text": "let's do the swap and then think about"
+    },
+    {
+      "start": 672.72,
+      "end": 677.54,
+      "text": "the other steps so what I'll do is I'll"
+    },
+    {
+      "start": 674.64,
+      "end": 677.54,
+      "text": "quickly do the shaft"
+    },
+    {
+      "start": 677.88,
+      "end": 682.8,
+      "text": "so I've done the swap now can I see this"
+    },
+    {
+      "start": 680.16,
+      "end": 685.62,
+      "text": "that the mid can easily move to the next"
+    },
+    {
+      "start": 682.8,
+      "end": 688.26,
+      "text": "because"
+    },
+    {
+      "start": 685.62,
+      "end": 689.16,
+      "text": "now we are looking for this portion to"
+    },
+    {
+      "start": 688.26,
+      "end": 691.68,
+      "text": "be"
+    },
+    {
+      "start": 689.16,
+      "end": 693.54,
+      "text": "sorted like this portion is unsorted now"
+    },
+    {
+      "start": 691.68,
+      "end": 695.52,
+      "text": "because this is now sorted so mid has"
+    },
+    {
+      "start": 693.54,
+      "end": 698.52,
+      "text": "moved but now can I say one more thing"
+    },
+    {
+      "start": 695.52,
+      "end": 702.36,
+      "text": "what is the first law zero to low minus"
+    },
+    {
+      "start": 698.52,
+      "end": 704.52,
+      "text": "one everything zero but as of now zero"
+    },
+    {
+      "start": 702.36,
+      "end": 706.86,
+      "text": "to lower is everything zero so what will"
+    },
+    {
+      "start": 704.52,
+      "end": 710.22,
+      "text": "happen this low will also move a step"
+    },
+    {
+      "start": 706.86,
+      "end": 711.9,
+      "text": "this low will also move a step yes and"
+    },
+    {
+      "start": 710.22,
+      "end": 714.9,
+      "text": "the low pointer will be now pointing to"
+    },
+    {
+      "start": 711.9,
+      "end": 717.24,
+      "text": "this so now 0 to low minus L will be"
+    },
+    {
+      "start": 714.9,
+      "end": 720.84,
+      "text": "this low to mid minus 1 will be this"
+    },
+    {
+      "start": 717.24,
+      "end": 723.96,
+      "text": "which is palette so what did we do first"
+    },
+    {
+      "start": 720.84,
+      "end": 728.1,
+      "text": "thing we did was very simple we said can"
+    },
+    {
+      "start": 723.96,
+      "end": 732.96,
+      "text": "you go ahead and swap a of low and a of"
+    },
+    {
+      "start": 728.1,
+      "end": 735.24,
+      "text": "mid so that that 0 comes into its"
+    },
+    {
+      "start": 732.96,
+      "end": 737.7,
+      "text": "correct order then I know if there is a"
+    },
+    {
+      "start": 735.24,
+      "end": 741.18,
+      "text": "addition of 0 if there is an addition of"
+    },
+    {
+      "start": 737.7,
+      "end": 742.44,
+      "text": "zero so this range will increase the low"
+    },
+    {
+      "start": 741.18,
+      "end": 745.44,
+      "text": "will increase"
+    },
+    {
+      "start": 742.44,
+      "end": 747.6,
+      "text": "and since mid is"
+    },
+    {
+      "start": 745.44,
+      "end": 750.96,
+      "text": "the element admit is now at a sorted"
+    },
+    {
+      "start": 747.6,
+      "end": 752.88,
+      "text": "position let's move wait done so the"
+    },
+    {
+      "start": 750.96,
+      "end": 755.1,
+      "text": "first step I know how to move the"
+    },
+    {
+      "start": 752.88,
+      "end": 757.86,
+      "text": "pointer with the first step I will be"
+    },
+    {
+      "start": 755.1,
+      "end": 759.9,
+      "text": "easily able to move my bit pointer right"
+    },
+    {
+      "start": 757.86,
+      "end": 761.88,
+      "text": "so we are back to our initial"
+    },
+    {
+      "start": 759.9,
+      "end": 763.8,
+      "text": "configuration because this is the rule"
+    },
+    {
+      "start": 761.88,
+      "end": 766.98,
+      "text": "that we are following in order to reduce"
+    },
+    {
+      "start": 763.8,
+      "end": 769.56,
+      "text": "the algorithm so now next to what if it"
+    },
+    {
+      "start": 766.98,
+      "end": 772.26,
+      "text": "was one let's now think let's go back"
+    },
+    {
+      "start": 769.56,
+      "end": 774.3,
+      "text": "again what if there was a one here"
+    },
+    {
+      "start": 772.26,
+      "end": 775.74,
+      "text": "then what would have happened can I see"
+    },
+    {
+      "start": 774.3,
+      "end": 777.6,
+      "text": "if it's a one"
+    },
+    {
+      "start": 775.74,
+      "end": 780.42,
+      "text": "either this was sorted"
+    },
+    {
+      "start": 777.6,
+      "end": 782.58,
+      "text": "can I say this is also sorted yeah it is"
+    },
+    {
+      "start": 780.42,
+      "end": 784.86,
+      "text": "sorted we don't need to do anything with"
+    },
+    {
+      "start": 782.58,
+      "end": 786.66,
+      "text": "that one because that one is attached"
+    },
+    {
+      "start": 784.86,
+      "end": 789.66,
+      "text": "right after one so this is already"
+    },
+    {
+      "start": 786.66,
+      "end": 792.6,
+      "text": "softened so the elements that are not"
+    },
+    {
+      "start": 789.66,
+      "end": 795.9,
+      "text": "sorted are in this category so just move"
+    },
+    {
+      "start": 792.6,
+      "end": 798.96,
+      "text": "mid because mid is sorted so I'll not do"
+    },
+    {
+      "start": 795.9,
+      "end": 801.06,
+      "text": "anything if it's a one I will say dude"
+    },
+    {
+      "start": 798.96,
+      "end": 803.52,
+      "text": "I don't care you can just move ahead"
+    },
+    {
+      "start": 801.06,
+      "end": 805.68,
+      "text": "that's what I will do so the second step"
+    },
+    {
+      "start": 803.52,
+      "end": 807.78,
+      "text": "is also done let's talk about the third"
+    },
+    {
+      "start": 805.68,
+      "end": 810.18,
+      "text": "step so in the third step I'm saying"
+    },
+    {
+      "start": 807.78,
+      "end": 812.82,
+      "text": "what if at the area of mid there is two"
+    },
+    {
+      "start": 810.18,
+      "end": 816.06,
+      "text": "so if there is two where should you put"
+    },
+    {
+      "start": 812.82,
+      "end": 818.1,
+      "text": "two like logically I know all the tools"
+    },
+    {
+      "start": 816.06,
+      "end": 820.26,
+      "text": "are over here and in the sorted fashion"
+    },
+    {
+      "start": 818.1,
+      "end": 823.44,
+      "text": "and all the zeros and ones are over here"
+    },
+    {
+      "start": 820.26,
+      "end": 825.84,
+      "text": "so you can say maybe I can put two at"
+    },
+    {
+      "start": 823.44,
+      "end": 829.02,
+      "text": "the end maybe I can take two and put it"
+    },
+    {
+      "start": 825.84,
+      "end": 830.7,
+      "text": "somewhere in between but think logical"
+    },
+    {
+      "start": 829.02,
+      "end": 833.82,
+      "text": "just think low chicken"
+    },
+    {
+      "start": 830.7,
+      "end": 836.34,
+      "text": "they have to take two and I what am I"
+    },
+    {
+      "start": 833.82,
+      "end": 839.7,
+      "text": "looking for I'm looking to make sure"
+    },
+    {
+      "start": 836.34,
+      "end": 840.54,
+      "text": "that this portion is sorted so can I say"
+    },
+    {
+      "start": 839.7,
+      "end": 843.18,
+      "text": "something"
+    },
+    {
+      "start": 840.54,
+      "end": 844.92,
+      "text": "I know this portion is sorted what if I"
+    },
+    {
+      "start": 843.18,
+      "end": 845.82,
+      "text": "take this to and put it right before"
+    },
+    {
+      "start": 844.92,
+      "end": 847.92,
+      "text": "this"
+    },
+    {
+      "start": 845.82,
+      "end": 850.14,
+      "text": "right before this"
+    },
+    {
+      "start": 847.92,
+      "end": 853.14,
+      "text": "then what will happen this portion will"
+    },
+    {
+      "start": 850.14,
+      "end": 856.08,
+      "text": "get sorted and this will shrink to this"
+    },
+    {
+      "start": 853.14,
+      "end": 857.76,
+      "text": "much so I will be able to sort one more"
+    },
+    {
+      "start": 856.08,
+      "end": 859.98,
+      "text": "element I'll be able to solve one more"
+    },
+    {
+      "start": 857.76,
+      "end": 862.2,
+      "text": "element can I say this I can't so this"
+    },
+    {
+      "start": 859.98,
+      "end": 864.3,
+      "text": "is what I'll do no matter if there is a"
+    },
+    {
+      "start": 862.2,
+      "end": 867.6,
+      "text": "zero if there's a zero there's a one"
+    },
+    {
+      "start": 864.3,
+      "end": 869.7,
+      "text": "there's a two at this index no matter I"
+    },
+    {
+      "start": 867.6,
+      "end": 872.46,
+      "text": "will take this two and I'll say can you"
+    },
+    {
+      "start": 869.7,
+      "end": 874.2,
+      "text": "go over here so what will happen is this"
+    },
+    {
+      "start": 872.46,
+      "end": 877.32,
+      "text": "two will go over there"
+    },
+    {
+      "start": 874.2,
+      "end": 879.18,
+      "text": "and whatever is there even it if it's a"
+    },
+    {
+      "start": 877.32,
+      "end": 880.8,
+      "text": "zero it will come over here so now what"
+    },
+    {
+      "start": 879.18,
+      "end": 883.14,
+      "text": "will happen is if you have swapped it"
+    },
+    {
+      "start": 880.8,
+      "end": 886.92,
+      "text": "now you can say this portion is sorted"
+    },
+    {
+      "start": 883.14,
+      "end": 890.94,
+      "text": "now which portion is still unsorted can"
+    },
+    {
+      "start": 886.92,
+      "end": 892.32,
+      "text": "I say from mid to high minus 1 make why"
+    },
+    {
+      "start": 890.94,
+      "end": 895.02,
+      "text": "lesser than high because high is now"
+    },
+    {
+      "start": 892.32,
+      "end": 897.12,
+      "text": "sorted so we shrinked the right at half"
+    },
+    {
+      "start": 895.02,
+      "end": 899.82,
+      "text": "this time we shrinked the writer half"
+    },
+    {
+      "start": 897.12,
+      "end": 901.98,
+      "text": "this time got it so so did you"
+    },
+    {
+      "start": 899.82,
+      "end": 904.5,
+      "text": "understand this we are not moving mid"
+    },
+    {
+      "start": 901.98,
+      "end": 906.84,
+      "text": "now in The Next Step since you got a"
+    },
+    {
+      "start": 904.5,
+      "end": 910.14,
+      "text": "zero from here this zero will be treated"
+    },
+    {
+      "start": 906.84,
+      "end": 912.06,
+      "text": "according to the first condition I will"
+    },
+    {
+      "start": 910.14,
+      "end": 914.58,
+      "text": "show you that in the dryer but as of now"
+    },
+    {
+      "start": 912.06,
+      "end": 919.56,
+      "text": "can I say what I did was very simple I"
+    },
+    {
+      "start": 914.58,
+      "end": 922.86,
+      "text": "said swap of a of mid and a of high"
+    },
+    {
+      "start": 919.56,
+      "end": 924.0,
+      "text": "and then I'll see since high is getting"
+    },
+    {
+      "start": 922.86,
+      "end": 926.7,
+      "text": "a correct"
+    },
+    {
+      "start": 924.0,
+      "end": 929.76,
+      "text": "correct guy of 2 so we can just move"
+    },
+    {
+      "start": 926.7,
+      "end": 931.56,
+      "text": "High one this back and it will be sorted"
+    },
+    {
+      "start": 929.76,
+      "end": 933.24,
+      "text": "so these are the three rules and I hope"
+    },
+    {
+      "start": 931.56,
+      "end": 935.88,
+      "text": "you have understood the entire thought"
+    },
+    {
+      "start": 933.24,
+      "end": 937.56,
+      "text": "process when all these three rules so"
+    },
+    {
+      "start": 935.88,
+      "end": 939.48,
+      "text": "keeping all the three rules in the mind"
+    },
+    {
+      "start": 937.56,
+      "end": 941.46,
+      "text": "let's do our dragons of the algorithm"
+    },
+    {
+      "start": 939.48,
+      "end": 945.12,
+      "text": "sticks to your brain remember one thing"
+    },
+    {
+      "start": 941.46,
+      "end": 947.94,
+      "text": "whenever I do a dragon try to visualize"
+    },
+    {
+      "start": 945.12,
+      "end": 950.46,
+      "text": "in terms of this particular diagram okay"
+    },
+    {
+      "start": 947.94,
+      "end": 952.32,
+      "text": "let's throw that run we have a zero what"
+    },
+    {
+      "start": 950.46,
+      "end": 955.26,
+      "text": "do we do in terms of zero we strap a"
+    },
+    {
+      "start": 952.32,
+      "end": 957.18,
+      "text": "upload and a of a so 0 and 0 are at the"
+    },
+    {
+      "start": 955.26,
+      "end": 959.94,
+      "text": "same place they get swapped and low and"
+    },
+    {
+      "start": 957.18,
+      "end": 962.34,
+      "text": "mid both will move so let's quickly move"
+    },
+    {
+      "start": 959.94,
+      "end": 965.66,
+      "text": "both so low I'll go here"
+    },
+    {
+      "start": 962.34,
+      "end": 965.66,
+      "text": "and mid will go here"
+    },
+    {
+      "start": 965.7,
+      "end": 971.16,
+      "text": "and erase the other things"
+    },
+    {
+      "start": 968.94,
+      "end": 974.76,
+      "text": "okay that what's the next"
+    },
+    {
+      "start": 971.16,
+      "end": 976.8,
+      "text": "it's a one so array of mid is one submit"
+    },
+    {
+      "start": 974.76,
+      "end": 977.64,
+      "text": "plus plus you don't do anything you just"
+    },
+    {
+      "start": 976.8,
+      "end": 980.84,
+      "text": "move"
+    },
+    {
+      "start": 977.64,
+      "end": 980.84,
+      "text": "submit will reach here"
+    },
+    {
+      "start": 981.54,
+      "end": 986.28,
+      "text": "what's the next it's again one you don't"
+    },
+    {
+      "start": 984.12,
+      "end": 989.3,
+      "text": "do anything you just move mid submit"
+    },
+    {
+      "start": 986.28,
+      "end": 989.3,
+      "text": "will reach here this time"
+    },
+    {
+      "start": 990.72,
+      "end": 996.54,
+      "text": "so can you visualize so can you relate"
+    },
+    {
+      "start": 994.2,
+      "end": 998.94,
+      "text": "this to the diagram that we did draw 0"
+    },
+    {
+      "start": 996.54,
+      "end": 1002.12,
+      "text": "to low minus one all zeros low to bit"
+    },
+    {
+      "start": 998.94,
+      "end": 1005.3,
+      "text": "minus 1 all ones mid to high all"
+    },
+    {
+      "start": 1002.12,
+      "end": 1008.36,
+      "text": "unsorted correct let's move and see if"
+    },
+    {
+      "start": 1005.3,
+      "end": 1011.36,
+      "text": "the diagram is still being relatable or"
+    },
+    {
+      "start": 1008.36,
+      "end": 1013.28,
+      "text": "not so we have a mid it's a zero we know"
+    },
+    {
+      "start": 1011.36,
+      "end": 1015.74,
+      "text": "what do we do in terms of zero we take"
+    },
+    {
+      "start": 1013.28,
+      "end": 1018.5,
+      "text": "it here and we take it here let's do it"
+    },
+    {
+      "start": 1015.74,
+      "end": 1021.8,
+      "text": "so it's like zero will go here and one"
+    },
+    {
+      "start": 1018.5,
+      "end": 1024.32,
+      "text": "will come here and after that yes low"
+    },
+    {
+      "start": 1021.8,
+      "end": 1026.9,
+      "text": "will move one place ahead and mid will"
+    },
+    {
+      "start": 1024.32,
+      "end": 1028.16,
+      "text": "move one place aired let's quickly erase"
+    },
+    {
+      "start": 1026.9,
+      "end": 1031.34,
+      "text": "this because they have moved one place"
+    },
+    {
+      "start": 1028.16,
+      "end": 1034.82,
+      "text": "ahead that was the next job yes middle"
+    },
+    {
+      "start": 1031.34,
+      "end": 1037.94,
+      "text": "one no need to do anything just move mid"
+    },
+    {
+      "start": 1034.82,
+      "end": 1040.76,
+      "text": "one please add if you have moved it is"
+    },
+    {
+      "start": 1037.94,
+      "end": 1043.4,
+      "text": "this what is that no again try to relate"
+    },
+    {
+      "start": 1040.76,
+      "end": 1046.12,
+      "text": "zero to low minus one all zeros low"
+    },
+    {
+      "start": 1043.4,
+      "end": 1049.16,
+      "text": "domain minus one all ones mid to high"
+    },
+    {
+      "start": 1046.12,
+      "end": 1051.14,
+      "text": "unsorted still relatable right what's"
+    },
+    {
+      "start": 1049.16,
+      "end": 1053.36,
+      "text": "the next we have to"
+    },
+    {
+      "start": 1051.14,
+      "end": 1055.88,
+      "text": "but we have to you have to put it on the"
+    },
+    {
+      "start": 1053.36,
+      "end": 1057.68,
+      "text": "back that was the thought process so if"
+    },
+    {
+      "start": 1055.88,
+      "end": 1060.02,
+      "text": "there's a two what will you do you'll be"
+    },
+    {
+      "start": 1057.68,
+      "end": 1061.94,
+      "text": "like okay these two will go here"
+    },
+    {
+      "start": 1060.02,
+      "end": 1064.04,
+      "text": "the zero will come here let's show this"
+    },
+    {
+      "start": 1061.94,
+      "end": 1067.64,
+      "text": "so this two will become"
+    },
+    {
+      "start": 1064.04,
+      "end": 1070.16,
+      "text": "a bad this 2 will become zero and two"
+    },
+    {
+      "start": 1067.64,
+      "end": 1072.56,
+      "text": "will go yeah you just slap both the"
+    },
+    {
+      "start": 1070.16,
+      "end": 1074.36,
+      "text": "places once you have done this this"
+    },
+    {
+      "start": 1072.56,
+      "end": 1077.12,
+      "text": "portion is sorted so what will happen to"
+    },
+    {
+      "start": 1074.36,
+      "end": 1078.8,
+      "text": "this hi this I will come here let's do"
+    },
+    {
+      "start": 1077.12,
+      "end": 1080.18,
+      "text": "this once I've done this quickly raise"
+    },
+    {
+      "start": 1078.8,
+      "end": 1083.6,
+      "text": "this for"
+    },
+    {
+      "start": 1080.18,
+      "end": 1085.7,
+      "text": "okay now now we have a zero again we"
+    },
+    {
+      "start": 1083.6,
+      "end": 1087.92,
+      "text": "fall back to the step one this zero has"
+    },
+    {
+      "start": 1085.7,
+      "end": 1090.02,
+      "text": "to be here and this one has to be here"
+    },
+    {
+      "start": 1087.92,
+      "end": 1093.32,
+      "text": "let's quickly do this the zero has to be"
+    },
+    {
+      "start": 1090.02,
+      "end": 1095.3,
+      "text": "here and probably led is this"
+    },
+    {
+      "start": 1093.32,
+      "end": 1098.06,
+      "text": "and I'll bring the what here if I've"
+    },
+    {
+      "start": 1095.3,
+      "end": 1101.12,
+      "text": "done this was an X drop we just move the"
+    },
+    {
+      "start": 1098.06,
+      "end": 1102.8,
+      "text": "mid here and we move the low here quite"
+    },
+    {
+      "start": 1101.12,
+      "end": 1104.72,
+      "text": "simple"
+    },
+    {
+      "start": 1102.8,
+      "end": 1106.64,
+      "text": "I'll erase this as well"
+    },
+    {
+      "start": 1104.72,
+      "end": 1107.36,
+      "text": "now can I say again if I have to relate"
+    },
+    {
+      "start": 1106.64,
+      "end": 1110.06,
+      "text": "it"
+    },
+    {
+      "start": 1107.36,
+      "end": 1112.76,
+      "text": "0 to low minus one all zeros low to mid"
+    },
+    {
+      "start": 1110.06,
+      "end": 1115.28,
+      "text": "minus 1 all ones mid to high unsorted"
+    },
+    {
+      "start": 1112.76,
+      "end": 1117.32,
+      "text": "now again it is one so you do not do"
+    },
+    {
+      "start": 1115.28,
+      "end": 1119.12,
+      "text": "anything just say we will move the"
+    },
+    {
+      "start": 1117.32,
+      "end": 1121.88,
+      "text": "pointer ahead so let's move the pointer"
+    },
+    {
+      "start": 1119.12,
+      "end": 1123.74,
+      "text": "ahead where are we we are at a two and"
+    },
+    {
+      "start": 1121.88,
+      "end": 1125.42,
+      "text": "this portion is unsorted so this time"
+    },
+    {
+      "start": 1123.74,
+      "end": 1127.46,
+      "text": "this will go here and this will go here"
+    },
+    {
+      "start": 1125.42,
+      "end": 1129.14,
+      "text": "because if it's a 2 put it at the"
+    },
+    {
+      "start": 1127.46,
+      "end": 1131.12,
+      "text": "extreme right so you'll put it at the"
+    },
+    {
+      "start": 1129.14,
+      "end": 1132.8,
+      "text": "extreme right so this will go here and"
+    },
+    {
+      "start": 1131.12,
+      "end": 1135.02,
+      "text": "we will get a zero here and what will"
+    },
+    {
+      "start": 1132.8,
+      "end": 1137.24,
+      "text": "happen to this High it will just shrink"
+    },
+    {
+      "start": 1135.02,
+      "end": 1139.7,
+      "text": "so let's quickly shrink it so if you"
+    },
+    {
+      "start": 1137.24,
+      "end": 1143.06,
+      "text": "shrink it it shrinks like this"
+    },
+    {
+      "start": 1139.7,
+      "end": 1145.28,
+      "text": "so we have a mid and high as 0 0 if it's"
+    },
+    {
+      "start": 1143.06,
+      "end": 1147.44,
+      "text": "a zero would have happened yes it will"
+    },
+    {
+      "start": 1145.28,
+      "end": 1150.02,
+      "text": "go here this will come here please do it"
+    },
+    {
+      "start": 1147.44,
+      "end": 1152.42,
+      "text": "0 and this will be one so it quickly"
+    },
+    {
+      "start": 1150.02,
+      "end": 1155.12,
+      "text": "raise this"
+    },
+    {
+      "start": 1152.42,
+      "end": 1156.74,
+      "text": "will be like zero it'll be like one once"
+    },
+    {
+      "start": 1155.12,
+      "end": 1158.84,
+      "text": "you've done this what will you do you"
+    },
+    {
+      "start": 1156.74,
+      "end": 1162.38,
+      "text": "will move the low and you'll move the"
+    },
+    {
+      "start": 1158.84,
+      "end": 1163.96,
+      "text": "mid as well so the low end mid will move"
+    },
+    {
+      "start": 1162.38,
+      "end": 1166.64,
+      "text": "and I can quickly raise the previous"
+    },
+    {
+      "start": 1163.96,
+      "end": 1169.18,
+      "text": "occurrences of the bandwidth done what's"
+    },
+    {
+      "start": 1166.64,
+      "end": 1169.18,
+      "text": "the next job"
+    },
+    {
+      "start": 1170.92,
+      "end": 1177.08,
+      "text": "so let's quickly swap it at one and done"
+    },
+    {
+      "start": 1174.2,
+      "end": 1179.54,
+      "text": "once you've done this you move low"
+    },
+    {
+      "start": 1177.08,
+      "end": 1180.86,
+      "text": "and you move the mid and the mid goes"
+    },
+    {
+      "start": 1179.54,
+      "end": 1183.74,
+      "text": "here"
+    },
+    {
+      "start": 1180.86,
+      "end": 1185.48,
+      "text": "and if I just quickly it is the last"
+    },
+    {
+      "start": 1183.74,
+      "end": 1187.7,
+      "text": "occurrence of mid and the last"
+    },
+    {
+      "start": 1185.48,
+      "end": 1189.26,
+      "text": "occurrence of low this is how it looks"
+    },
+    {
+      "start": 1187.7,
+      "end": 1193.76,
+      "text": "like and there's a point where you say"
+    },
+    {
+      "start": 1189.26,
+      "end": 1195.92,
+      "text": "the mid has gone past height which means"
+    },
+    {
+      "start": 1193.76,
+      "end": 1199.04,
+      "text": "the area that you are trying to sort is"
+    },
+    {
+      "start": 1195.92,
+      "end": 1200.78,
+      "text": "not over that's why your mid past high"
+    },
+    {
+      "start": 1199.04,
+      "end": 1202.7,
+      "text": "and if that is the case can I say that"
+    },
+    {
+      "start": 1200.78,
+      "end": 1204.92,
+      "text": "the array is sorted and if you carefully"
+    },
+    {
+      "start": 1202.7,
+      "end": 1208.04,
+      "text": "look around from 0 to low minus one"
+    },
+    {
+      "start": 1204.92,
+      "end": 1210.26,
+      "text": "everything is zero from low to"
+    },
+    {
+      "start": 1208.04,
+      "end": 1211.82,
+      "text": "middle minus one everything is one and"
+    },
+    {
+      "start": 1210.26,
+      "end": 1217.22,
+      "text": "from High plus 1"
+    },
+    {
+      "start": 1211.82,
+      "end": 1218.96,
+      "text": "to last everything is S2 and it is"
+    },
+    {
+      "start": 1217.22,
+      "end": 1220.82,
+      "text": "sorted so we are still following the"
+    },
+    {
+      "start": 1218.96,
+      "end": 1224.96,
+      "text": "condition I hope"
+    },
+    {
+      "start": 1220.82,
+      "end": 1227.06,
+      "text": "this diagram helped you to visualize the"
+    },
+    {
+      "start": 1224.96,
+      "end": 1228.56,
+      "text": "Dutch national flag algorithm and it is"
+    },
+    {
+      "start": 1227.06,
+      "end": 1230.72,
+      "text": "very important to understand the thought"
+    },
+    {
+      "start": 1228.56,
+      "end": 1233.9,
+      "text": "process most of the videos will be like"
+    },
+    {
+      "start": 1230.72,
+      "end": 1236.78,
+      "text": "three steps do I run code and done no"
+    },
+    {
+      "start": 1233.9,
+      "end": 1238.46,
+      "text": "this is indeed important so it is very"
+    },
+    {
+      "start": 1236.78,
+      "end": 1240.2,
+      "text": "important to understand if there's a"
+    },
+    {
+      "start": 1238.46,
+      "end": 1242.12,
+      "text": "zero why it is moving here and why the"
+    },
+    {
+      "start": 1240.2,
+      "end": 1243.86,
+      "text": "one is moving here if there's a one we"
+    },
+    {
+      "start": 1242.12,
+      "end": 1245.96,
+      "text": "are not doing anything if there's a two"
+    },
+    {
+      "start": 1243.86,
+      "end": 1248.24,
+      "text": "why is it moving back all the three"
+    },
+    {
+      "start": 1245.96,
+      "end": 1250.4,
+      "text": "steps are very very important to"
+    },
+    {
+      "start": 1248.24,
+      "end": 1251.6,
+      "text": "understand so that you can explain it to"
+    },
+    {
+      "start": 1250.4,
+      "end": 1253.4,
+      "text": "the interviewer also your problem"
+    },
+    {
+      "start": 1251.6,
+      "end": 1255.2,
+      "text": "solving skills will grow if you"
+    },
+    {
+      "start": 1253.4,
+      "end": 1256.94,
+      "text": "understand these problems in very depth"
+    },
+    {
+      "start": 1255.2,
+      "end": 1259.16,
+      "text": "so let's quickly jump into the code"
+    },
+    {
+      "start": 1256.94,
+      "end": 1260.6,
+      "text": "editor and try to code it up again the"
+    },
+    {
+      "start": 1259.16,
+      "end": 1263.3,
+      "text": "problem link will be in the description"
+    },
+    {
+      "start": 1260.6,
+      "end": 1265.82,
+      "text": "so we have two rather three pointers so"
+    },
+    {
+      "start": 1263.3,
+      "end": 1268.64,
+      "text": "let's mark all the three pointers we"
+    },
+    {
+      "start": 1265.82,
+      "end": 1271.46,
+      "text": "know this is uh the starting points and"
+    },
+    {
+      "start": 1268.64,
+      "end": 1274.16,
+      "text": "I'll keep on going till this is"
+    },
+    {
+      "start": 1271.46,
+      "end": 1275.42,
+      "text": "till we have an unsorted section and we"
+    },
+    {
+      "start": 1274.16,
+      "end": 1278.6,
+      "text": "know we are"
+    },
+    {
+      "start": 1275.42,
+      "end": 1281.86,
+      "text": "working on area from it if that is 0 it"
+    },
+    {
+      "start": 1278.6,
+      "end": 1284.84,
+      "text": "can be one case else if array of mid is"
+    },
+    {
+      "start": 1281.86,
+      "end": 1287.42,
+      "text": "1 or else it will be always 2 because"
+    },
+    {
+      "start": 1284.84,
+      "end": 1288.86,
+      "text": "the array only consists of 0 1 and 2. if"
+    },
+    {
+      "start": 1287.42,
+      "end": 1291.02,
+      "text": "it is 0 what are we doing we are seeing"
+    },
+    {
+      "start": 1288.86,
+      "end": 1292.88,
+      "text": "area flow can you please swap with array"
+    },
+    {
+      "start": 1291.02,
+      "end": 1295.7,
+      "text": "of it and once you've done this can you"
+    },
+    {
+      "start": 1292.88,
+      "end": 1299.6,
+      "text": "move yourself and mint ahead in this"
+    },
+    {
+      "start": 1295.7,
+      "end": 1303.5,
+      "text": "case I am saying just move mid ahead in"
+    },
+    {
+      "start": 1299.6,
+      "end": 1307.34,
+      "text": "this case I am saying swap array of"
+    },
+    {
+      "start": 1303.5,
+      "end": 1310.88,
+      "text": "rather mid and array of"
+    },
+    {
+      "start": 1307.34,
+      "end": 1313.46,
+      "text": "high once you've done this since this 2"
+    },
+    {
+      "start": 1310.88,
+      "end": 1315.86,
+      "text": "is at the back I will shrink once this"
+    },
+    {
+      "start": 1313.46,
+      "end": 1318.74,
+      "text": "is done I can say that the array which"
+    },
+    {
+      "start": 1315.86,
+      "end": 1321.2,
+      "text": "is passed by reference is indeed sorted"
+    },
+    {
+      "start": 1318.74,
+      "end": 1323.06,
+      "text": "now so we can see this and now we will"
+    },
+    {
+      "start": 1321.2,
+      "end": 1324.02,
+      "text": "quickly go and run again it's a void"
+    },
+    {
+      "start": 1323.06,
+      "end": 1326.3,
+      "text": "function you don't have to return"
+    },
+    {
+      "start": 1324.02,
+      "end": 1328.7,
+      "text": "anything you have to just work it on the"
+    },
+    {
+      "start": 1326.3,
+      "end": 1330.86,
+      "text": "particular given array so we see that"
+    },
+    {
+      "start": 1328.7,
+      "end": 1332.6,
+      "text": "this is submitted okay so let's go back"
+    },
+    {
+      "start": 1330.86,
+      "end": 1335.9,
+      "text": "to the iPad and discuss the time"
+    },
+    {
+      "start": 1332.6,
+      "end": 1339.2,
+      "text": "complexity now we know one thing we have"
+    },
+    {
+      "start": 1335.9,
+      "end": 1341.42,
+      "text": "to go from the mid and till the high and"
+    },
+    {
+      "start": 1339.2,
+      "end": 1343.28,
+      "text": "make sure the unsorted section is sorted"
+    },
+    {
+      "start": 1341.42,
+      "end": 1345.56,
+      "text": "and initially the mid was here if you"
+    },
+    {
+      "start": 1343.28,
+      "end": 1347.84,
+      "text": "remember and the high was here so there"
+    },
+    {
+      "start": 1345.56,
+      "end": 1349.82,
+      "text": "is an entire length of n that you have"
+    },
+    {
+      "start": 1347.84,
+      "end": 1352.28,
+      "text": "to sort that is something which we know"
+    },
+    {
+      "start": 1349.82,
+      "end": 1354.38,
+      "text": "and we know at every step we perform"
+    },
+    {
+      "start": 1352.28,
+      "end": 1357.74,
+      "text": "either this either this or either this"
+    },
+    {
+      "start": 1354.38,
+      "end": 1360.56,
+      "text": "so if we perform this the mid increases"
+    },
+    {
+      "start": 1357.74,
+      "end": 1362.42,
+      "text": "by one so it's like on one iteration"
+    },
+    {
+      "start": 1360.56,
+      "end": 1365.0,
+      "text": "that you're doing so you are shrinking"
+    },
+    {
+      "start": 1362.42,
+      "end": 1368.78,
+      "text": "the mid on to the right so that's like"
+    },
+    {
+      "start": 1365.0,
+      "end": 1371.06,
+      "text": "plus one iteration if you do this if you"
+    },
+    {
+      "start": 1368.78,
+      "end": 1375.14,
+      "text": "do this it is still shrinking the mid"
+    },
+    {
+      "start": 1371.06,
+      "end": 1377.72,
+      "text": "which is like plus one iteration but if"
+    },
+    {
+      "start": 1375.14,
+      "end": 1380.12,
+      "text": "you are doing this step the mids is"
+    },
+    {
+      "start": 1377.72,
+      "end": 1382.04,
+      "text": "staying where it is rather the high is"
+    },
+    {
+      "start": 1380.12,
+      "end": 1383.18,
+      "text": "shrinking and the high shrinking bright"
+    },
+    {
+      "start": 1382.04,
+      "end": 1385.64,
+      "text": "this section"
+    },
+    {
+      "start": 1383.18,
+      "end": 1388.34,
+      "text": "how does it matter because at the end of"
+    },
+    {
+      "start": 1385.64,
+      "end": 1390.56,
+      "text": "the day if you're moving the mid by onto"
+    },
+    {
+      "start": 1388.34,
+      "end": 1392.24,
+      "text": "the right one of the elements will be"
+    },
+    {
+      "start": 1390.56,
+      "end": 1393.98,
+      "text": "sorted and if you are moving the high to"
+    },
+    {
+      "start": 1392.24,
+      "end": 1396.38,
+      "text": "the left again one of the elements will"
+    },
+    {
+      "start": 1393.98,
+      "end": 1398.6,
+      "text": "be socket so in each of the three steps"
+    },
+    {
+      "start": 1396.38,
+      "end": 1400.52,
+      "text": "in each of the three steps you are"
+    },
+    {
+      "start": 1398.6,
+      "end": 1403.22,
+      "text": "actually solving one element so the end"
+    },
+    {
+      "start": 1400.52,
+      "end": 1405.38,
+      "text": "of the day overall if at every step"
+    },
+    {
+      "start": 1403.22,
+      "end": 1406.94,
+      "text": "you're sorting one element and all the"
+    },
+    {
+      "start": 1405.38,
+      "end": 1408.8,
+      "text": "elements and all the elements were"
+    },
+    {
+      "start": 1406.94,
+      "end": 1410.96,
+      "text": "unsorted can I say at the end of the day"
+    },
+    {
+      "start": 1408.8,
+      "end": 1412.16,
+      "text": "you'll end up sorting n Elements by"
+    },
+    {
+      "start": 1410.96,
+      "end": 1415.64,
+      "text": "taking n"
+    },
+    {
+      "start": 1412.16,
+      "end": 1417.62,
+      "text": "and guess a snake n those cases that's"
+    },
+    {
+      "start": 1415.64,
+      "end": 1419.72,
+      "text": "why the time complexity is Big go often"
+    },
+    {
+      "start": 1417.62,
+      "end": 1423.02,
+      "text": "a single iteration and the space"
+    },
+    {
+      "start": 1419.72,
+      "end": 1424.46,
+      "text": "complexity is bigger or fun just in case"
+    },
+    {
+      "start": 1423.02,
+      "end": 1426.8,
+      "text": "you did not understand the time"
+    },
+    {
+      "start": 1424.46,
+      "end": 1428.48,
+      "text": "complexity what I usually did in my"
+    },
+    {
+      "start": 1426.8,
+      "end": 1431.0,
+      "text": "initial years was"
+    },
+    {
+      "start": 1428.48,
+      "end": 1433.4,
+      "text": "they can take this particular array and"
+    },
+    {
+      "start": 1431.0,
+      "end": 1435.8,
+      "text": "whenever I'm moving whenever I'm doing"
+    },
+    {
+      "start": 1433.4,
+      "end": 1438.14,
+      "text": "an iteration I count plus one I count"
+    },
+    {
+      "start": 1435.8,
+      "end": 1441.14,
+      "text": "plus one I count plus one and then I can"
+    },
+    {
+      "start": 1438.14,
+      "end": 1443.18,
+      "text": "visualize how many iterations where done"
+    },
+    {
+      "start": 1441.14,
+      "end": 1445.64,
+      "text": "by using this particular example and"
+    },
+    {
+      "start": 1443.18,
+      "end": 1447.92,
+      "text": "then I can relate white as we go off and"
+    },
+    {
+      "start": 1445.64,
+      "end": 1449.42,
+      "text": "please do dry runs please count one"
+    },
+    {
+      "start": 1447.92,
+      "end": 1451.94,
+      "text": "iteration please count one iteration"
+    },
+    {
+      "start": 1449.42,
+      "end": 1453.74,
+      "text": "that will help you do uh analyze the"
+    },
+    {
+      "start": 1451.94,
+      "end": 1456.08,
+      "text": "time complexity in a much much better"
+    },
+    {
+      "start": 1453.74,
+      "end": 1458.48,
+      "text": "way so coming back to the sheet I can"
+    },
+    {
+      "start": 1456.08,
+      "end": 1460.22,
+      "text": "mark this as done and I hope you have"
+    },
+    {
+      "start": 1458.48,
+      "end": 1461.84,
+      "text": "understood the thought process and the"
+    },
+    {
+      "start": 1460.22,
+      "end": 1464.06,
+      "text": "intuition behind the Dutch national flag"
+    },
+    {
+      "start": 1461.84,
+      "end": 1465.32,
+      "text": "algorithm I know the algorithm is easy"
+    },
+    {
+      "start": 1464.06,
+      "end": 1466.88,
+      "text": "but you have to understand the third"
+    },
+    {
+      "start": 1465.32,
+      "end": 1468.56,
+      "text": "process right so if I understood"
+    },
+    {
+      "start": 1466.88,
+      "end": 1470.66,
+      "text": "everything to continue our tradition"
+    },
+    {
+      "start": 1468.56,
+      "end": 1473.6,
+      "text": "please do comment understood so that I"
+    },
+    {
+      "start": 1470.66,
+      "end": 1475.7,
+      "text": "understand that my effort was worth it"
+    },
+    {
+      "start": 1473.6,
+      "end": 1477.92,
+      "text": "because I really did put a lot of time"
+    },
+    {
+      "start": 1475.7,
+      "end": 1479.54,
+      "text": "on to this video and if you're new to"
+    },
+    {
+      "start": 1477.92,
+      "end": 1482.54,
+      "text": "our Channel please please do consider"
+    },
+    {
+      "start": 1479.54,
+      "end": 1484.82,
+      "text": "subscribing it's 2 8 am in the night and"
+    },
+    {
+      "start": 1482.54,
+      "end": 1486.68,
+      "text": "I have an office tomorrow so please do"
+    },
+    {
+      "start": 1484.82,
+      "end": 1488.48,
+      "text": "consider subscribing because that does"
+    },
+    {
+      "start": 1486.68,
+      "end": 1490.46,
+      "text": "motivate me to make such kind of video"
+    },
+    {
+      "start": 1488.48,
+      "end": 1491.36,
+      "text": "videos late in the night and yeah if you"
+    },
+    {
+      "start": 1490.46,
+      "end": 1493.52,
+      "text": "haven't followed me on Instagram"
+    },
+    {
+      "start": 1491.36,
+      "end": 1495.32,
+      "text": "LinkedIn and Twitter the links will be"
+    },
+    {
+      "start": 1493.52,
+      "end": 1496.28,
+      "text": "in the description with this let's wrap"
+    },
+    {
+      "start": 1495.32,
+      "end": 1497.9,
+      "text": "up this video and millions of other"
+    },
+    {
+      "start": 1496.28,
+      "end": 1507.93,
+      "text": "videos"
+    },
+    {
+      "start": 1497.9,
+      "end": 1507.93,
+      "text": "[Music]"
+    }
+  ]
+}

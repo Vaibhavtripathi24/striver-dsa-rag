@@ -1,0 +1,3700 @@
+{
+  "video_id": "N0MgLvceX7M",
+  "title": "Set Matrix Zeroes | O(1) Space Approach | Brute - Better - Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1807,
+  "text": "hey everyone welcome back to the channel I hope you guys are doing extremely well so this is another lecture from the stripers A2Z DSA course just in case you're for the first time here this is world's most in-depth course when it comes to DS algo why do I say that for 55 modules by the end of the course should have sold more than 400 plus problems in DS I'll go you can go across the entire internet you can buy any of the paid courses none of them will be teaching you DS I'll go in such step something that I can give you as guarantee is once you complete this entire post you can clear any of the DSL grounds in any company in any part of the world so till now we have covered uh till this particular problem now in this video I'll be covering the problem set Matrix zeros now what does the problem State the problem States you will be given an N cross M Matrix n and M can be different can be equal now the Matrix only has zero and ones that means it's a binary Matrix your task is to find out zeros you have once you have figured out zeros so there is a zero over here what you do is you go to the entire column in which that zero exists you go to the entire row and you mark every one as zero you mark every one a zero done where is the next zero here so you go entire column entire row and you mark every one as zero done next where's the next zero over here so you go across the entire column and row and Mark every one as zero now remember one thing over here there's a catch if there's a zero here you go here Mark here Mark here Mark here but from this Mark zeros you do not do anything only whatever zeros are there during the initial time for those zeros you go for the rows and columns for those zeros you goes for the rows and columns nothing apart from them got it so this question comes up in an interview the first solution that will give to the interviewer should be of the Brute Force solution what is the Brute Force solution that you can think of that's let's do whatever is being told to us what has been told to us if there's a zero go across the entire column Mark everything as zero and go across the entire row and Mark everyone as zero so probably let's let's try doing this as the part of the group 4 solution so what we do is we're given this n cross M Matrix we will try to I trade on it and how do we iterate on Matrix we go like this like this like this like this and so on till here so let's try to do it so we start from here it's a one it's a one so one it's a one it's a one we don't do anything when there's a one and we find a zero the moment we find a zero what was the task if like the entire column is 0 and the entire row was zero so what we will do is we will go ahead and probably probably Mark everything as zero but is that the correct solution think of it once you've marked the array will look something like this and in the next step of traversal you will reach here and then for this 0 you'll Mark every one again as 0 right and then you'll get this 0 and you'll start marking this but that is a wrong solution because of this 0 you ended up turning this one to zero and when you are traversing you will find a zero here and you'll end up marking everyone a zero on this column which is wrong because over here there's a one so these people should not be zero so thereby you have to be careful you just cannot go and blindly Mark everyone as zero you cannot do that so what I will do is I will go through the entire column and I'll mark everyone as minus one rather yes I'll mark everyone is minus one so Market is minus one I'll Market is minus one I'll mark it as minus one anything apart from zero I'll just mark it as minus one done let's Now quickly do the next job so this one is this column is done now we will go for this row so let's minus 1 and then minus one make sure you do not Mark zeros as minus one because this 0 will again be responsible for marking it so if you mark it as minus one there will be an issue so for this one I've marked this I've marked this I'll move forward the moment I move forward to this we have a 0 so we'll go for this column and we'll go for this row so let's do it minus one again not do not mark this minus 1 and this particular row is done now we will start iterating we have a minus one device will not do anything had we marked for the zero zero we would have ended up marking this which would have been dropped one minus one zero okay we have a zero so entire thing and then this entire thing so this will be minus one rather minus one and this will be minus one perfect next this one makes this one makes this one next this one next this one once you have done this now what do you know for these zeros whoever was to be marked they have been marked minus one so let's do one piece of iteration mode yes let's do one piece of iteration more and what we will do is we'll just convert them to zeros now we will just convert them to zeros and once you have done this I can say this is my final array and this will be my Brute Force solution quite simple just you have to be careful it's not about doing what they have said because that might cause an issue so thereby we will just introduce something as minus 1 in The Brute Force solution so we have to write the code for the Brute Force solution so you know in order to Travis we first Travis from 0 to n then we Traverse from 0 to M this is how you usually Traverse in a 2d Matrix and then what you do is you say if there's a zero on that particular place we go to the ith row and Mark that that means this portion then we go to the column that means this portion and we mark it and you have to write these couple of functions separately so let's quickly write it so the macro function will be very simple it takes a row number and then iterates for the columns and in every i j which is non-zero do not Mark the zeros in all the non-zeros you can just assign minus one similarly there will be a column which takes the column number and it creates for every row and marks that column as minus one if it's a non-zero so this code will make sure that everything that is a zero in that particular column everything will be marked as minus 1 and in that particular row everything will be marked as -1 apart from the zeros got it so once we've done this what's the next job the next job is just to hydrate in The Matrix and whoever is -1 turn it into zero so let's quickly do it so this will be the final piece of code where we iterate in The Matrix and we say if it's a minus one please convert it into zero so what will be the time complexity of the Brute Force solution can I say over here it's n into n and inside can I say this is taking we go of N and this is taking big of n because there are two Loops that are running so thereby it's something like n into M into n plus M very important into n plus n plus you're again doing an iteration of n into m in order to initialize them to zeros so this is the overall time complexity and it's somewhere to the power of Q somewhere to the power of Cube if you carefully see this and into this will be somewhere near about the power of Q and the interviewer will not be happy with it and he will say that this is not accepted and that's when you move to the better solution so let's quickly check out the better one so we give a Brute Force solution to the interviewer which was taking a Time complex actually in the order of NQ and why was it taking a Time complexity in the order of n Cube because we were traversing in the array and that was taking n square like in the order of n Square n into F and then what we did was for every 0 we went across the entire column and the entire row and we marked every one as zero so this is where we were taking that extra time for going across the column and going across the row so what do we need to eliminate because if the interviewer is asking us to optimize the optimal solution will definitely not be n q we need to optimize this and in order to optimize we might be able to get an N square or somewhere around n Square that's for sure this is where we need to think what do we need to eliminate we need to eliminate this and we need to eliminate this how can I now can I say what was I doing I was going across and marking everyone as you I will not do that instead of that I'll think for this one to be 0 in the final Matrix for this one to be 0 in the final Matrix why would it be I'll be like if this entire column has a minimum of 1 0 can I say if it is the minimum of one zero or if this entire uh row has a minimum of 1 0 agreed because this zero will convert this to 0 even the 0 will convert but what I need is just one zero and so can I say if there's a 0 instead of going across the entire column I will say if there is a 0 I will mark it I'll mark this column because at the end of the day everyone will be 0 in this column that's for sure so I'll just keep a track this column is done and dusted at the end of the day everyone will be zero similarly if there's a 0 this row is done and dusted everyone will be zero at the end of the day so instead of marking them at the current time I'll say let's probably keep a track and by the end of the day I will mark it this is how my thought process will be so to have that thought process converted into algorithm what I'll do is I know that for the zero I'll have to mark it and for the zero I have to mark it so there has to be four column array correct which will keep a track if the problem is marked and there will be a four over here four size row array which will again keep a track if the row is marked or not so I'll go ahead and create a m size yes very important I will create a column array of M size because those many are the number of columns and I'll create a row array of n size over here and then I must same and what I'll do is initially I will Mark every one of them as 0 0 means they yet not touched and now we'll start iterating first no one no one no one no one you will not do anything when there's a one and then you go ahead and see this is zero so whenever there is a zero you know this entire column is done and dusted at the end of the day everyone will be zero so please go ahead and say I will mark it marking it means one perfect and you know everything in this row will also be marked three Market as one perfect one one one one zero gain zero means everyone in this column and everyone in this row go ahead and Mark it sale Market perfect next one one again a zero the zero means this one is marked and this one is marked so go ahead and mark it perfect next the zero means this one is marked and this one is marked next this done so what I've done is for every 0 I've ended up marking which columns and which rows will be zero now what I will do is I will do a reiteration yes I'll do a reiteration let's quickly do the rehydration so whenever we are at one we are like okay wait will I be a zero I will only be a zero if this or this is marked is this marked no is this marked no so I stay one I stay one perfect I will say one I'll only be zero if this was marked I'm like yes I'm marked so I'll end up getting zero perfect next ever one oh this is marked so I'll end up getting zero next one one not mugged not marked so stays next one not mugged but marked here so this will be a zero next zero nothing to do one marked so this will be a zero next one marked so this will be a zero next one Mark so this will be a zero next one marked this will be a zero zero nothing to be done this one marked this will be easier this one marked zero this one marked zero this one Mark zero this one already is zero so what we got to know was this entire thing got zero if you carefully see and every one over here got zero apart from these two elements apart from these two elements and this is how easily you can do it got it so how the Brute Force code look like we know we need a column of size M to keep a track so I'll mark every one as zero and we know we need a row size n to keep a track of every one of zero now I will start iterating so if you have to iterate on The Matrix first I'll go from 0 to n then I'll go from 0 to M perfect then what is the next job if that element at i j is 0 I know the row I the row I will go ahead and get marked as 0 and the column J will go ahead and sorry Mark this one rather marked as one both have been marked and this is how you can I trade and Mark it once you have done that you again reiterate yes you again reiterate from 0 to n and this time you convert the ones to zeros were marked you convert the ones to zeros to a mark so what you say is if you are marked if your row is marked or or your column is marked if anyone is marked I do not care U will be zero for short because the entire sorry the entire row is marked or the entire column is marked if that's the case you will be this and this is how the code will look like got it so in case you want to try out the problem the link will be in the description and if you want the C plus plus Java and python code all the links will be in the description remember one thing uh over here they're asking us to return a metrics that is when returning if it's a void function then you can just change to this particular Matrix which we are doing and we do not need to return anything so coming back to the iPad again what is the time complexity can I say this is taking we go of n cross M and so is this wherever the time complexity is because of 2 cross n cross M for sure what about space complexity the space complexity is nothing but Big O of N and B go of M for the two arrays that are using for hashing this is where the interviewer will not be happy because you're using an extra space and he will ask you to optimize the better solution and you will move to the optimal one over here can you optimize the time complexity we are already doing it in the order of n square and we know the minimum in order to Traverse a matrix can be n Square you cannot do better than that that's why we will be focusing to optimize the time complexity and let's get back to the Matrix we'll be taking a column and we were taking a row agreed so if I was taking a column and if I was taking a row if I have to optimize it what does that mean that means you have to do everything in the Matrix itself so what I'll start thinking is can I keep a track in The Matrix itself can I just probably keep a track in The Matrix itself and that's when I start thinking what if I say hey maybe instead of taking a row outside what if I consider the First Column to be my row like instead of taking here I moved it inside from in place I moved it inside so what I'm saying is rho R are the column of 0 will become my row which I was taking probably yes and I'll say probably instead of taking this I'll move it inside maybe because I have to do it in the Matrix so that's a possible solution the row 0 is what I will not consider as column of M size that's my first assumption but can I take it let's see if that's possible so what am I saying the things that I was marking here like for the zero if I was marking here instead of marking here I am taking this and I'll mark it here that's what I'm saying correct but is it correct it's not correct why because okay I understood you took the column inside and that's how it looks but you took the grow also inside and now there is one single point which acts as the same and if you remember the better approach there was a row here and there's a problem here and everyone was individual this point and this point were individual but if you take them inside what happens is this is one and this is one and this is a single point where it's a common point so what I'll say is it's about one point I'll apply my brain and I'll say okay probably let's keep the row as row so I'll keep the row as row perfect and the column I'll take till here I won't take the entire column I'll take till here but then I'll be like what will happen to this one like who will keep the track of this because instead of this what you are doing is you're just taking this so what happens to this I'll say okay this one is a single element no it's a single element I will probably extend this to something like this can I do this I'll call it as a column variable I just call it has a column variable can I call this because this is an extra part this is an extra part so the row stays as row and I take this much and for this since it is colliding put it into a variable now there is no Collision it works works fine for me at least so now what I'll do is I'll try to probably draw the figure it's something like this and then I go like this will look like and it's more like maybe I can call it as column 0 and Mark it as what and this will be my row do you agree you do right so this will be my rope the same Brute Force I'm trying to optimize look at the intuition okay now let's start hydrating and let's try to do the same things that we did but before that let's keep something in mind this 0 will Mark everything here and Mark everything here agreed this 0 will Mark everything here and Mark everything it agreed this 0 will Mark everything here and everything so if you remember so if you see everyone will be converted to zeros only apart from this corner guy keep this in mind that this Quantum guy will not be converted keep this in mind it will be very very useful in the next part when we figure some edge cases keep this in mind the corner is not converted okay let's start I'm creating in The Matrix we have a one right what happens to this one this one says I'm a one so I do not harm anyone let's move I'm the one I do not have I'm a one I'm a one I'm a one I don't know but he's a zero he's like what did I do I'll keep a track sell Market here I'll mark it here and I know who who is this stuff this guy who's this this one so I will now go and convert them to zeros perfect next I have a one one one one one zero this zero was marking it here and marking it here so instead of this I'll Market you perfect next one zero now this zero was apparently marking it here and was apparently marking it here in The Culinary so what will happen now instead of here it will Mark here and it's already a zero so it's okay and instead of here it will Mark here so this will make it zero perfect next we have a one we have a one we have a one so the iteration is completed once the iteration is completed what is the next job to convert all the ones two zeros were marked correct to convert all the ones who are zeros this is where you have to remember in the answer only this one was not converted so if I'm trying to convert this whom do I check I check in this and I check in this correct for this one I see the column 0 is 0 so this will be zero right because it's marked if you remember for this we will check this and this and the column 0 is 0. so this will be converted to zero but But Here Comes The Twist if you convert this to zero hypothetically just assume you converted this to zero and the twist is if you convert this to 0 what will happen is now when you go to this one when you go to this one okay this one will say I will be converted to zero if this is 0 or this is zero and what will happen is it will find here 0 and it will convert this to 0 which is wrong because this row means this so thereby you cannot start from these elements you cannot start from these you can keep them for later because as of now if you change the values that will impact the Matrix do not change their values Instead try doing from these places Instead try doing from these places do you understand I hope you did right so what I'll do is I will not touch them as of now and I will start going probably from here then to here then to here and then we can deal with this separately got it so let's start this one will be marked no it's a one but it's a zero so this will be marked perfect this one it's a zero it's Market next this one it's a zero it's a zero Market please do not do anything to the first rows and first columns please next is the one will it be no will it be yes next is already 0 next 0 next 0 why because over here next zero because here next zero so what I've done is I've converted each of them now it's time for the next okay so the last section of this algorithm and it's very important that you hear me out properly so do you remember one thing initially I told you this is the only one who was not converted to zero and everyone else would be converted to zero now tell me one thing you have solved this portion will you solve this portion at first or will you solve this portion at first let's analyze this portions answer is dependent on whom one is this and the other other one is this correct agreed or not you agree so this one is hymns and this one is one so it's dependent on this so if you solve this portion at first the value might change the value might change which might hamper this which might impact this so at first you will solve this portion then you will solve this portion now for this portion to be 0 this has to be 0 which is not the case so this stays as one for this this is already 0 and this is already 0 and we do not do anything else now for this portion to be 0 this one has to be marked and this one has to be marked and I see this is marked so this will be zero convert it to zero for this portion it's zero zero zero done so first you solve here here here here here here and you solve this because it is dependent on this then you solve this first do not solve this because if you change the values that will impact the Matrix this was the thought process behind this particular algorithm so let's quickly quote the optimal solution up and this was the better solution if you can see in the editor so when we remove this and I will just comment this off so we were initially using the column and we were initially using a row now instead of column if I go back to the iPad instead of column we will be using the row 0 which is the row 0. can I say the row 0 is this which is nothing but Matrix of the zero yes because this is 0 right Matrix of 0 is what we will be using so can I see the column is nothing but the Matrix of 0 and something the variable whatever is the variable and can I say the row is nothing but if I carefully see the row is nothing but the zeroth the zeroth which is Matrix of something of 0 because the rule keeps on changing but this stays constantive so can I say it's nothing but Matrix of something of 0 raiseable this is the first row that is the First Column which is taken as this perfect now over here if Matrix of i j is this what do we do we Mark the ith row and we Mark the jth polyp now we are marking the row which is row C rho is here so we'll just take this let's take this so we have the Ayah through so you'll see let's mark the I here through so I throw is this and we will say zero and what are we saying who is the jth column this one so I'll take this and this is the Matrix and you will say let's mark this but can we simply write this the answer to that is no why because if you remember this case it did Mark itself that is okay but it could not Mark in the column it could not Mark in the column and if you see wire what's the column that's the Matrix of 0 of something Matrix of 0 of something so remember if J is not equal to 0 then only you mark it otherwise yes otherwise what will you do you will say caller of zero can you mark yourself if your J is 0 Let's go back again if you are over here you do not mark it here it's not you mark it here got it do not Mark anything on this instead of go here so please go ahead and declare one more variable column 0 is equal to 1. perfect that so this is the marking that I've done after the marking what do we do let's analyze that whatever we do so after the marking once we mark this and this we started from here and then we vendor so it's more like I ignored the zeroth row and I ignored the zeroth column so just iterate without them so I'll be like I can I trade without them as well so you can you can again iterate from here that's okay or you can hydrate from here as well that is okay that is your case so I'll go ahead and say okay let's iterate without the you can hide it in the backward or frontward as your choice this as long as you're not touching our hash arrays I'm absolutely okay so what what will happen what will happen if this is a one I have to convert it the first check will be if Matrix of i j is not equal to zero then there might be a conversion for this I'll have to check here for this I'll have to check here so check for column and row so let's check first you have to check for column what's the column that's this let's pick it up or or what's the rule that's this sorry that's this let's pick it up say over here instead of this you will have a j over here instead of this you'll have I and if any of them is marked as 0 that means this element will go as 0 quite simple done Second Step done where we have marked everything after that what did we do first we Mark these three elements then we mark this so how will this three elements when will this three elements be zero when will this three elements be zero if this guy who has Matrix of 0 0 if this is 0 then everyone will be because it's dependent on this so the last step will be hey if Matrix of 0 0 is equal to 0 everyone in the column which is this Matrix of zero J everyone in the first row will be zero white simple and what about this one this one will be dependent on the column so please go ahead and say if column 0 is equal to equal to 0 what will I do I will do the same thing for inti equal to 0 I lesser than n i plus plus because everyone on this portion will be marked as 0 so I will go and say Matrix of 0 sorry Matrix of I and everything on the First Column will be 0 once you have done this you can return the Matrix now let's quickly go and run I hope it runs at once I'll be super happy oh I am quite simple the only way that you can write this is try to write this so that you don't get confused this is how I approach usually a code so what is the time complexity and into m and this overall is the total Matrix alteration n into n 2 into n into f are you we using any extra space probably yes for this column that's it that's it one variable and I was able to solve the problem in place within the Matrix itself so let's go back to the sheet and Mark this as done I hope you have understood all the three approaches and the build up to the optimal solution just in case you did please please do consider giving that like because it won't cost you anything but it will highly motivate me to make these kind of content and if you're new to our Channel what are you waiting for there's a bunch of content on our Channel please please do consider subscribing to us and yes to continue our tradition please do comment understood and if you haven't followed me on Instagram Twitter LinkedIn the links are in the description with this I'll be wrapping up this video let's read in some other video till then bye take care [Music] I will find the light",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 6.12,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.56,
+      "end": 7.74,
+      "text": "I hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.12,
+      "end": 10.02,
+      "text": "so this is another lecture from the"
+    },
+    {
+      "start": 7.74,
+      "end": 11.28,
+      "text": "stripers A2Z DSA course just in case"
+    },
+    {
+      "start": 10.02,
+      "end": 12.72,
+      "text": "you're for the first time here this is"
+    },
+    {
+      "start": 11.28,
+      "end": 15.3,
+      "text": "world's most in-depth course when it"
+    },
+    {
+      "start": 12.72,
+      "end": 17.34,
+      "text": "comes to DS algo why do I say that for"
+    },
+    {
+      "start": 15.3,
+      "end": 18.9,
+      "text": "55 modules by the end of the course"
+    },
+    {
+      "start": 17.34,
+      "end": 20.88,
+      "text": "should have sold more than 400 plus"
+    },
+    {
+      "start": 18.9,
+      "end": 22.62,
+      "text": "problems in DS I'll go you can go across"
+    },
+    {
+      "start": 20.88,
+      "end": 24.3,
+      "text": "the entire internet you can buy any of"
+    },
+    {
+      "start": 22.62,
+      "end": 25.92,
+      "text": "the paid courses none of them will be"
+    },
+    {
+      "start": 24.3,
+      "end": 27.24,
+      "text": "teaching you DS I'll go in such step"
+    },
+    {
+      "start": 25.92,
+      "end": 29.16,
+      "text": "something that I can give you as"
+    },
+    {
+      "start": 27.24,
+      "end": 31.02,
+      "text": "guarantee is once you complete this"
+    },
+    {
+      "start": 29.16,
+      "end": 33.24,
+      "text": "entire post you can clear any of the DSL"
+    },
+    {
+      "start": 31.02,
+      "end": 35.04,
+      "text": "grounds in any company in any part of"
+    },
+    {
+      "start": 33.24,
+      "end": 36.9,
+      "text": "the world so till now we have covered uh"
+    },
+    {
+      "start": 35.04,
+      "end": 38.76,
+      "text": "till this particular problem now in this"
+    },
+    {
+      "start": 36.9,
+      "end": 41.46,
+      "text": "video I'll be covering the problem set"
+    },
+    {
+      "start": 38.76,
+      "end": 43.8,
+      "text": "Matrix zeros now what does the problem"
+    },
+    {
+      "start": 41.46,
+      "end": 46.56,
+      "text": "State the problem States you will be"
+    },
+    {
+      "start": 43.8,
+      "end": 48.54,
+      "text": "given an N cross M Matrix n and M can be"
+    },
+    {
+      "start": 46.56,
+      "end": 52.5,
+      "text": "different can be equal now the Matrix"
+    },
+    {
+      "start": 48.54,
+      "end": 54.96,
+      "text": "only has zero and ones that means it's a"
+    },
+    {
+      "start": 52.5,
+      "end": 58.14,
+      "text": "binary Matrix your task is to find out"
+    },
+    {
+      "start": 54.96,
+      "end": 60.42,
+      "text": "zeros you have once you have figured out"
+    },
+    {
+      "start": 58.14,
+      "end": 62.94,
+      "text": "zeros so there is a zero over here what"
+    },
+    {
+      "start": 60.42,
+      "end": 65.28,
+      "text": "you do is you go to the entire column in"
+    },
+    {
+      "start": 62.94,
+      "end": 67.74,
+      "text": "which that zero exists you go to the"
+    },
+    {
+      "start": 65.28,
+      "end": 70.26,
+      "text": "entire row and you mark every one as"
+    },
+    {
+      "start": 67.74,
+      "end": 72.96,
+      "text": "zero you mark every one a zero done"
+    },
+    {
+      "start": 70.26,
+      "end": 76.14,
+      "text": "where is the next zero here so you go"
+    },
+    {
+      "start": 72.96,
+      "end": 79.56,
+      "text": "entire column entire row and you mark"
+    },
+    {
+      "start": 76.14,
+      "end": 81.54,
+      "text": "every one as zero done next where's the"
+    },
+    {
+      "start": 79.56,
+      "end": 82.5,
+      "text": "next zero over here so you go across the"
+    },
+    {
+      "start": 81.54,
+      "end": 85.02,
+      "text": "entire"
+    },
+    {
+      "start": 82.5,
+      "end": 87.0,
+      "text": "column and row and Mark every one as"
+    },
+    {
+      "start": 85.02,
+      "end": 89.04,
+      "text": "zero now remember one thing over here"
+    },
+    {
+      "start": 87.0,
+      "end": 90.96,
+      "text": "there's a catch if there's a zero here"
+    },
+    {
+      "start": 89.04,
+      "end": 94.2,
+      "text": "you go here Mark here Mark here Mark"
+    },
+    {
+      "start": 90.96,
+      "end": 97.62,
+      "text": "here but from this Mark zeros you do not"
+    },
+    {
+      "start": 94.2,
+      "end": 100.32,
+      "text": "do anything only whatever zeros are"
+    },
+    {
+      "start": 97.62,
+      "end": 102.06,
+      "text": "there during the initial time for those"
+    },
+    {
+      "start": 100.32,
+      "end": 104.04,
+      "text": "zeros you go for the rows and columns"
+    },
+    {
+      "start": 102.06,
+      "end": 106.62,
+      "text": "for those zeros you goes for the rows"
+    },
+    {
+      "start": 104.04,
+      "end": 108.24,
+      "text": "and columns nothing apart from them got"
+    },
+    {
+      "start": 106.62,
+      "end": 109.8,
+      "text": "it so this question comes up in an"
+    },
+    {
+      "start": 108.24,
+      "end": 111.18,
+      "text": "interview the first solution that will"
+    },
+    {
+      "start": 109.8,
+      "end": 113.28,
+      "text": "give to the interviewer should be of the"
+    },
+    {
+      "start": 111.18,
+      "end": 114.42,
+      "text": "Brute Force solution what is the Brute"
+    },
+    {
+      "start": 113.28,
+      "end": 116.88,
+      "text": "Force solution that you can think of"
+    },
+    {
+      "start": 114.42,
+      "end": 119.4,
+      "text": "that's let's do whatever is being told"
+    },
+    {
+      "start": 116.88,
+      "end": 121.14,
+      "text": "to us what has been told to us if"
+    },
+    {
+      "start": 119.4,
+      "end": 123.6,
+      "text": "there's a zero go across the entire"
+    },
+    {
+      "start": 121.14,
+      "end": 125.28,
+      "text": "column Mark everything as zero and go"
+    },
+    {
+      "start": 123.6,
+      "end": 127.68,
+      "text": "across the entire row and Mark everyone"
+    },
+    {
+      "start": 125.28,
+      "end": 129.42,
+      "text": "as zero so probably let's let's try"
+    },
+    {
+      "start": 127.68,
+      "end": 131.64,
+      "text": "doing this as the part of the group 4"
+    },
+    {
+      "start": 129.42,
+      "end": 135.06,
+      "text": "solution so what we do is we're given"
+    },
+    {
+      "start": 131.64,
+      "end": 137.16,
+      "text": "this n cross M Matrix we will try to I"
+    },
+    {
+      "start": 135.06,
+      "end": 138.84,
+      "text": "trade on it and how do we iterate on"
+    },
+    {
+      "start": 137.16,
+      "end": 140.82,
+      "text": "Matrix we go like this like this like"
+    },
+    {
+      "start": 138.84,
+      "end": 142.8,
+      "text": "this like this and so on till here so"
+    },
+    {
+      "start": 140.82,
+      "end": 145.08,
+      "text": "let's try to do it so we start from here"
+    },
+    {
+      "start": 142.8,
+      "end": 146.76,
+      "text": "it's a one it's a one so one it's a one"
+    },
+    {
+      "start": 145.08,
+      "end": 149.64,
+      "text": "it's a one we don't do anything when"
+    },
+    {
+      "start": 146.76,
+      "end": 152.22,
+      "text": "there's a one and we find a zero the"
+    },
+    {
+      "start": 149.64,
+      "end": 155.34,
+      "text": "moment we find a zero what was the task"
+    },
+    {
+      "start": 152.22,
+      "end": 157.38,
+      "text": "if like the entire column is 0 and the"
+    },
+    {
+      "start": 155.34,
+      "end": 159.24,
+      "text": "entire row was zero so what we will do"
+    },
+    {
+      "start": 157.38,
+      "end": 162.9,
+      "text": "is we will go ahead and probably"
+    },
+    {
+      "start": 159.24,
+      "end": 164.46,
+      "text": "probably Mark everything as zero but is"
+    },
+    {
+      "start": 162.9,
+      "end": 167.1,
+      "text": "that the correct solution think of it"
+    },
+    {
+      "start": 164.46,
+      "end": 169.74,
+      "text": "once you've marked the array will look"
+    },
+    {
+      "start": 167.1,
+      "end": 172.14,
+      "text": "something like this and in the next step"
+    },
+    {
+      "start": 169.74,
+      "end": 174.96,
+      "text": "of traversal you will reach here and"
+    },
+    {
+      "start": 172.14,
+      "end": 177.36,
+      "text": "then for this 0 you'll Mark every one"
+    },
+    {
+      "start": 174.96,
+      "end": 179.88,
+      "text": "again as 0 right and then you'll get"
+    },
+    {
+      "start": 177.36,
+      "end": 181.86,
+      "text": "this 0 and you'll start marking this but"
+    },
+    {
+      "start": 179.88,
+      "end": 184.86,
+      "text": "that is a wrong solution"
+    },
+    {
+      "start": 181.86,
+      "end": 186.6,
+      "text": "because of this 0 you ended up turning"
+    },
+    {
+      "start": 184.86,
+      "end": 189.06,
+      "text": "this one to zero and when you are"
+    },
+    {
+      "start": 186.6,
+      "end": 191.4,
+      "text": "traversing you will find a zero here and"
+    },
+    {
+      "start": 189.06,
+      "end": 193.98,
+      "text": "you'll end up marking everyone a zero on"
+    },
+    {
+      "start": 191.4,
+      "end": 195.78,
+      "text": "this column which is wrong because over"
+    },
+    {
+      "start": 193.98,
+      "end": 198.72,
+      "text": "here there's a one so these people"
+    },
+    {
+      "start": 195.78,
+      "end": 200.94,
+      "text": "should not be zero so thereby you have"
+    },
+    {
+      "start": 198.72,
+      "end": 202.98,
+      "text": "to be careful you just cannot go and"
+    },
+    {
+      "start": 200.94,
+      "end": 205.74,
+      "text": "blindly Mark everyone as zero you cannot"
+    },
+    {
+      "start": 202.98,
+      "end": 207.96,
+      "text": "do that so what I will do is I will go"
+    },
+    {
+      "start": 205.74,
+      "end": 210.12,
+      "text": "through the entire column and I'll mark"
+    },
+    {
+      "start": 207.96,
+      "end": 212.04,
+      "text": "everyone as minus one rather yes I'll"
+    },
+    {
+      "start": 210.12,
+      "end": 213.84,
+      "text": "mark everyone is minus one so Market is"
+    },
+    {
+      "start": 212.04,
+      "end": 216.0,
+      "text": "minus one I'll Market is minus one I'll"
+    },
+    {
+      "start": 213.84,
+      "end": 218.76,
+      "text": "mark it as minus one anything apart from"
+    },
+    {
+      "start": 216.0,
+      "end": 221.46,
+      "text": "zero I'll just mark it as minus one done"
+    },
+    {
+      "start": 218.76,
+      "end": 223.74,
+      "text": "let's Now quickly do the next job so"
+    },
+    {
+      "start": 221.46,
+      "end": 226.14,
+      "text": "this one is this column is done now we"
+    },
+    {
+      "start": 223.74,
+      "end": 228.66,
+      "text": "will go for this row so let's minus 1"
+    },
+    {
+      "start": 226.14,
+      "end": 231.78,
+      "text": "and then minus one make sure you do not"
+    },
+    {
+      "start": 228.66,
+      "end": 234.0,
+      "text": "Mark zeros as minus one because this 0"
+    },
+    {
+      "start": 231.78,
+      "end": 235.74,
+      "text": "will again be responsible for marking it"
+    },
+    {
+      "start": 234.0,
+      "end": 238.14,
+      "text": "so if you mark it as minus one there"
+    },
+    {
+      "start": 235.74,
+      "end": 240.66,
+      "text": "will be an issue so for this one I've"
+    },
+    {
+      "start": 238.14,
+      "end": 242.28,
+      "text": "marked this I've marked this I'll move"
+    },
+    {
+      "start": 240.66,
+      "end": 243.12,
+      "text": "forward the moment I move forward to"
+    },
+    {
+      "start": 242.28,
+      "end": 245.64,
+      "text": "this"
+    },
+    {
+      "start": 243.12,
+      "end": 247.68,
+      "text": "we have a 0 so we'll go for this column"
+    },
+    {
+      "start": 245.64,
+      "end": 250.44,
+      "text": "and we'll go for this row so let's do it"
+    },
+    {
+      "start": 247.68,
+      "end": 253.2,
+      "text": "minus one again not do not mark this"
+    },
+    {
+      "start": 250.44,
+      "end": 255.18,
+      "text": "minus 1 and this particular row is done"
+    },
+    {
+      "start": 253.2,
+      "end": 256.14,
+      "text": "now we will start iterating we have a"
+    },
+    {
+      "start": 255.18,
+      "end": 258.48,
+      "text": "minus one"
+    },
+    {
+      "start": 256.14,
+      "end": 259.98,
+      "text": "device will not do anything had we"
+    },
+    {
+      "start": 258.48,
+      "end": 261.72,
+      "text": "marked for the zero zero we would have"
+    },
+    {
+      "start": 259.98,
+      "end": 264.48,
+      "text": "ended up marking this which would have"
+    },
+    {
+      "start": 261.72,
+      "end": 267.12,
+      "text": "been dropped one minus one zero okay we"
+    },
+    {
+      "start": 264.48,
+      "end": 269.16,
+      "text": "have a zero so entire thing and then"
+    },
+    {
+      "start": 267.12,
+      "end": 272.82,
+      "text": "this entire thing so this will be minus"
+    },
+    {
+      "start": 269.16,
+      "end": 275.04,
+      "text": "one rather minus one and this will be"
+    },
+    {
+      "start": 272.82,
+      "end": 276.42,
+      "text": "minus one perfect next this one makes"
+    },
+    {
+      "start": 275.04,
+      "end": 278.7,
+      "text": "this one makes this one next this one"
+    },
+    {
+      "start": 276.42,
+      "end": 281.54,
+      "text": "next this one once you have done this"
+    },
+    {
+      "start": 278.7,
+      "end": 284.34,
+      "text": "now what do you know for these zeros"
+    },
+    {
+      "start": 281.54,
+      "end": 286.86,
+      "text": "whoever was to be marked they have been"
+    },
+    {
+      "start": 284.34,
+      "end": 289.38,
+      "text": "marked minus one so let's do one piece"
+    },
+    {
+      "start": 286.86,
+      "end": 291.6,
+      "text": "of iteration mode yes let's do one piece"
+    },
+    {
+      "start": 289.38,
+      "end": 293.88,
+      "text": "of iteration more and what we will do is"
+    },
+    {
+      "start": 291.6,
+      "end": 296.28,
+      "text": "we'll just convert them to zeros now we"
+    },
+    {
+      "start": 293.88,
+      "end": 299.4,
+      "text": "will just convert them to zeros and once"
+    },
+    {
+      "start": 296.28,
+      "end": 301.32,
+      "text": "you have done this I can say this is my"
+    },
+    {
+      "start": 299.4,
+      "end": 304.2,
+      "text": "final array and this will be my Brute"
+    },
+    {
+      "start": 301.32,
+      "end": 306.06,
+      "text": "Force solution quite simple just you"
+    },
+    {
+      "start": 304.2,
+      "end": 307.62,
+      "text": "have to be careful it's not about doing"
+    },
+    {
+      "start": 306.06,
+      "end": 309.72,
+      "text": "what they have said because that might"
+    },
+    {
+      "start": 307.62,
+      "end": 311.94,
+      "text": "cause an issue so thereby we will just"
+    },
+    {
+      "start": 309.72,
+      "end": 313.98,
+      "text": "introduce something as minus 1 in The"
+    },
+    {
+      "start": 311.94,
+      "end": 315.78,
+      "text": "Brute Force solution so we have to write"
+    },
+    {
+      "start": 313.98,
+      "end": 317.7,
+      "text": "the code for the Brute Force solution so"
+    },
+    {
+      "start": 315.78,
+      "end": 320.4,
+      "text": "you know in order to Travis we first"
+    },
+    {
+      "start": 317.7,
+      "end": 322.86,
+      "text": "Travis from 0 to n then we Traverse from"
+    },
+    {
+      "start": 320.4,
+      "end": 324.96,
+      "text": "0 to M this is how you usually Traverse"
+    },
+    {
+      "start": 322.86,
+      "end": 327.3,
+      "text": "in a 2d Matrix and then what you do is"
+    },
+    {
+      "start": 324.96,
+      "end": 330.72,
+      "text": "you say if there's a zero on that"
+    },
+    {
+      "start": 327.3,
+      "end": 333.6,
+      "text": "particular place we go to the ith row"
+    },
+    {
+      "start": 330.72,
+      "end": 335.58,
+      "text": "and Mark that that means this portion"
+    },
+    {
+      "start": 333.6,
+      "end": 337.56,
+      "text": "then we go to the column that means this"
+    },
+    {
+      "start": 335.58,
+      "end": 338.88,
+      "text": "portion and we mark it and you have to"
+    },
+    {
+      "start": 337.56,
+      "end": 341.04,
+      "text": "write these couple of functions"
+    },
+    {
+      "start": 338.88,
+      "end": 342.48,
+      "text": "separately so let's quickly write it so"
+    },
+    {
+      "start": 341.04,
+      "end": 344.94,
+      "text": "the macro function will be very simple"
+    },
+    {
+      "start": 342.48,
+      "end": 348.0,
+      "text": "it takes a row number and then iterates"
+    },
+    {
+      "start": 344.94,
+      "end": 351.24,
+      "text": "for the columns and in every i j which"
+    },
+    {
+      "start": 348.0,
+      "end": 353.04,
+      "text": "is non-zero do not Mark the zeros in all"
+    },
+    {
+      "start": 351.24,
+      "end": 354.84,
+      "text": "the non-zeros you can just assign minus"
+    },
+    {
+      "start": 353.04,
+      "end": 357.18,
+      "text": "one similarly there will be a column"
+    },
+    {
+      "start": 354.84,
+      "end": 359.4,
+      "text": "which takes the column number and it"
+    },
+    {
+      "start": 357.18,
+      "end": 362.28,
+      "text": "creates for every row and marks that"
+    },
+    {
+      "start": 359.4,
+      "end": 363.96,
+      "text": "column as minus one if it's a non-zero"
+    },
+    {
+      "start": 362.28,
+      "end": 366.12,
+      "text": "so this code will make sure that"
+    },
+    {
+      "start": 363.96,
+      "end": 367.44,
+      "text": "everything that is a zero in that"
+    },
+    {
+      "start": 366.12,
+      "end": 369.24,
+      "text": "particular column everything will be"
+    },
+    {
+      "start": 367.44,
+      "end": 370.74,
+      "text": "marked as minus 1 and in that particular"
+    },
+    {
+      "start": 369.24,
+      "end": 373.98,
+      "text": "row everything will be marked as -1"
+    },
+    {
+      "start": 370.74,
+      "end": 375.84,
+      "text": "apart from the zeros got it so once"
+    },
+    {
+      "start": 373.98,
+      "end": 377.7,
+      "text": "we've done this what's the next job the"
+    },
+    {
+      "start": 375.84,
+      "end": 380.22,
+      "text": "next job is just to hydrate in The"
+    },
+    {
+      "start": 377.7,
+      "end": 382.32,
+      "text": "Matrix and whoever is -1 turn it into"
+    },
+    {
+      "start": 380.22,
+      "end": 383.76,
+      "text": "zero so let's quickly do it so this will"
+    },
+    {
+      "start": 382.32,
+      "end": 385.44,
+      "text": "be the final piece of code where we"
+    },
+    {
+      "start": 383.76,
+      "end": 387.84,
+      "text": "iterate in The Matrix and we say if it's"
+    },
+    {
+      "start": 385.44,
+      "end": 389.52,
+      "text": "a minus one please convert it into zero"
+    },
+    {
+      "start": 387.84,
+      "end": 391.26,
+      "text": "so what will be the time complexity of"
+    },
+    {
+      "start": 389.52,
+      "end": 395.1,
+      "text": "the Brute Force solution can I say over"
+    },
+    {
+      "start": 391.26,
+      "end": 398.04,
+      "text": "here it's n into n and inside can I say"
+    },
+    {
+      "start": 395.1,
+      "end": 399.6,
+      "text": "this is taking we go of N and this is"
+    },
+    {
+      "start": 398.04,
+      "end": 402.12,
+      "text": "taking big of n because there are two"
+    },
+    {
+      "start": 399.6,
+      "end": 405.6,
+      "text": "Loops that are running so thereby it's"
+    },
+    {
+      "start": 402.12,
+      "end": 409.08,
+      "text": "something like n into M into n plus M"
+    },
+    {
+      "start": 405.6,
+      "end": 411.84,
+      "text": "very important into n plus n plus you're"
+    },
+    {
+      "start": 409.08,
+      "end": 414.06,
+      "text": "again doing an iteration of n into m in"
+    },
+    {
+      "start": 411.84,
+      "end": 416.88,
+      "text": "order to initialize them to zeros so"
+    },
+    {
+      "start": 414.06,
+      "end": 418.86,
+      "text": "this is the overall time complexity and"
+    },
+    {
+      "start": 416.88,
+      "end": 420.66,
+      "text": "it's somewhere to the power of Q"
+    },
+    {
+      "start": 418.86,
+      "end": 423.0,
+      "text": "somewhere to the power of Cube if you"
+    },
+    {
+      "start": 420.66,
+      "end": 425.16,
+      "text": "carefully see this and into this will be"
+    },
+    {
+      "start": 423.0,
+      "end": 426.66,
+      "text": "somewhere near about the power of Q and"
+    },
+    {
+      "start": 425.16,
+      "end": 428.58,
+      "text": "the interviewer will not be happy with"
+    },
+    {
+      "start": 426.66,
+      "end": 430.38,
+      "text": "it and he will say that this is not"
+    },
+    {
+      "start": 428.58,
+      "end": 432.0,
+      "text": "accepted and that's when you move to the"
+    },
+    {
+      "start": 430.38,
+      "end": 433.68,
+      "text": "better solution so let's quickly check"
+    },
+    {
+      "start": 432.0,
+      "end": 435.06,
+      "text": "out the better one so we give a Brute"
+    },
+    {
+      "start": 433.68,
+      "end": 436.68,
+      "text": "Force solution to the interviewer which"
+    },
+    {
+      "start": 435.06,
+      "end": 439.74,
+      "text": "was taking a Time complex actually in"
+    },
+    {
+      "start": 436.68,
+      "end": 441.3,
+      "text": "the order of NQ and why was it taking a"
+    },
+    {
+      "start": 439.74,
+      "end": 444.12,
+      "text": "Time complexity in the order of n Cube"
+    },
+    {
+      "start": 441.3,
+      "end": 445.92,
+      "text": "because we were traversing in the array"
+    },
+    {
+      "start": 444.12,
+      "end": 448.56,
+      "text": "and that was taking n square like in the"
+    },
+    {
+      "start": 445.92,
+      "end": 451.08,
+      "text": "order of n Square n into F and then what"
+    },
+    {
+      "start": 448.56,
+      "end": 454.26,
+      "text": "we did was for every 0 we went across"
+    },
+    {
+      "start": 451.08,
+      "end": 456.36,
+      "text": "the entire column and the entire row and"
+    },
+    {
+      "start": 454.26,
+      "end": 458.94,
+      "text": "we marked every one as zero so this is"
+    },
+    {
+      "start": 456.36,
+      "end": 460.92,
+      "text": "where we were taking that extra time for"
+    },
+    {
+      "start": 458.94,
+      "end": 462.78,
+      "text": "going across the column and going across"
+    },
+    {
+      "start": 460.92,
+      "end": 464.82,
+      "text": "the row so what do we need to eliminate"
+    },
+    {
+      "start": 462.78,
+      "end": 467.1,
+      "text": "because if the interviewer is asking us"
+    },
+    {
+      "start": 464.82,
+      "end": 468.96,
+      "text": "to optimize the optimal solution will"
+    },
+    {
+      "start": 467.1,
+      "end": 470.88,
+      "text": "definitely not be n q we need to"
+    },
+    {
+      "start": 468.96,
+      "end": 472.44,
+      "text": "optimize this and in order to optimize"
+    },
+    {
+      "start": 470.88,
+      "end": 474.36,
+      "text": "we might be able to get an N square or"
+    },
+    {
+      "start": 472.44,
+      "end": 476.4,
+      "text": "somewhere around n Square that's for"
+    },
+    {
+      "start": 474.36,
+      "end": 477.9,
+      "text": "sure this is where we need to think what"
+    },
+    {
+      "start": 476.4,
+      "end": 479.58,
+      "text": "do we need to eliminate we need to"
+    },
+    {
+      "start": 477.9,
+      "end": 482.16,
+      "text": "eliminate this and we need to eliminate"
+    },
+    {
+      "start": 479.58,
+      "end": 484.44,
+      "text": "this how can I now can I say"
+    },
+    {
+      "start": 482.16,
+      "end": 486.66,
+      "text": "what was I doing I was going across and"
+    },
+    {
+      "start": 484.44,
+      "end": 488.88,
+      "text": "marking everyone as you I will not do"
+    },
+    {
+      "start": 486.66,
+      "end": 492.72,
+      "text": "that instead of that I'll think for this"
+    },
+    {
+      "start": 488.88,
+      "end": 495.9,
+      "text": "one to be 0 in the final Matrix for this"
+    },
+    {
+      "start": 492.72,
+      "end": 498.3,
+      "text": "one to be 0 in the final Matrix"
+    },
+    {
+      "start": 495.9,
+      "end": 502.86,
+      "text": "why would it be I'll be like if this"
+    },
+    {
+      "start": 498.3,
+      "end": 504.96,
+      "text": "entire column has a minimum of 1 0 can I"
+    },
+    {
+      "start": 502.86,
+      "end": 508.8,
+      "text": "say if it is the minimum of one zero or"
+    },
+    {
+      "start": 504.96,
+      "end": 509.7,
+      "text": "if this entire uh row has a minimum of 1"
+    },
+    {
+      "start": 508.8,
+      "end": 512.58,
+      "text": "0"
+    },
+    {
+      "start": 509.7,
+      "end": 515.64,
+      "text": "agreed because this zero will convert"
+    },
+    {
+      "start": 512.58,
+      "end": 518.58,
+      "text": "this to 0 even the 0 will convert but"
+    },
+    {
+      "start": 515.64,
+      "end": 521.52,
+      "text": "what I need is just one zero and so can"
+    },
+    {
+      "start": 518.58,
+      "end": 523.38,
+      "text": "I say if there's a 0 instead of going"
+    },
+    {
+      "start": 521.52,
+      "end": 525.9,
+      "text": "across the entire column I will say if"
+    },
+    {
+      "start": 523.38,
+      "end": 527.88,
+      "text": "there is a 0 I will mark it I'll mark"
+    },
+    {
+      "start": 525.9,
+      "end": 529.98,
+      "text": "this column because at the end of the"
+    },
+    {
+      "start": 527.88,
+      "end": 531.96,
+      "text": "day everyone will be 0 in this column"
+    },
+    {
+      "start": 529.98,
+      "end": 535.56,
+      "text": "that's for sure so I'll just keep a"
+    },
+    {
+      "start": 531.96,
+      "end": 536.82,
+      "text": "track this column is done and dusted at"
+    },
+    {
+      "start": 535.56,
+      "end": 539.1,
+      "text": "the end of the day everyone will be zero"
+    },
+    {
+      "start": 536.82,
+      "end": 541.14,
+      "text": "similarly if there's a 0 this row is"
+    },
+    {
+      "start": 539.1,
+      "end": 543.06,
+      "text": "done and dusted everyone will be zero at"
+    },
+    {
+      "start": 541.14,
+      "end": 546.12,
+      "text": "the end of the day so instead of marking"
+    },
+    {
+      "start": 543.06,
+      "end": 548.82,
+      "text": "them at the current time I'll say let's"
+    },
+    {
+      "start": 546.12,
+      "end": 550.98,
+      "text": "probably keep a track and by the end of"
+    },
+    {
+      "start": 548.82,
+      "end": 552.84,
+      "text": "the day I will mark it this is how my"
+    },
+    {
+      "start": 550.98,
+      "end": 554.46,
+      "text": "thought process will be so to have that"
+    },
+    {
+      "start": 552.84,
+      "end": 556.74,
+      "text": "thought process converted into algorithm"
+    },
+    {
+      "start": 554.46,
+      "end": 558.6,
+      "text": "what I'll do is I know that for the zero"
+    },
+    {
+      "start": 556.74,
+      "end": 560.82,
+      "text": "I'll have to mark it and for the zero I"
+    },
+    {
+      "start": 558.6,
+      "end": 563.64,
+      "text": "have to mark it so there has to be four"
+    },
+    {
+      "start": 560.82,
+      "end": 565.86,
+      "text": "column array correct which will keep a"
+    },
+    {
+      "start": 563.64,
+      "end": 568.62,
+      "text": "track if the problem is marked and there"
+    },
+    {
+      "start": 565.86,
+      "end": 570.54,
+      "text": "will be a four over here four size row"
+    },
+    {
+      "start": 568.62,
+      "end": 572.4,
+      "text": "array which will again keep a track if"
+    },
+    {
+      "start": 570.54,
+      "end": 576.24,
+      "text": "the row is marked or not so I'll go"
+    },
+    {
+      "start": 572.4,
+      "end": 579.0,
+      "text": "ahead and create a m size yes very"
+    },
+    {
+      "start": 576.24,
+      "end": 581.52,
+      "text": "important I will create a column array"
+    },
+    {
+      "start": 579.0,
+      "end": 584.52,
+      "text": "of M size because those many are the"
+    },
+    {
+      "start": 581.52,
+      "end": 588.36,
+      "text": "number of columns and I'll create a row"
+    },
+    {
+      "start": 584.52,
+      "end": 591.3,
+      "text": "array of n size over here and then I"
+    },
+    {
+      "start": 588.36,
+      "end": 594.72,
+      "text": "must same and what I'll do is initially"
+    },
+    {
+      "start": 591.3,
+      "end": 598.2,
+      "text": "I will Mark every one of them as 0 0"
+    },
+    {
+      "start": 594.72,
+      "end": 600.0,
+      "text": "means they yet not touched and now we'll"
+    },
+    {
+      "start": 598.2,
+      "end": 604.74,
+      "text": "start iterating"
+    },
+    {
+      "start": 600.0,
+      "end": 606.12,
+      "text": "first no one no one no one no one you"
+    },
+    {
+      "start": 604.74,
+      "end": 608.22,
+      "text": "will not do anything when there's a one"
+    },
+    {
+      "start": 606.12,
+      "end": 610.32,
+      "text": "and then you go ahead and see this is"
+    },
+    {
+      "start": 608.22,
+      "end": 611.7,
+      "text": "zero so whenever there is a zero you"
+    },
+    {
+      "start": 610.32,
+      "end": 612.9,
+      "text": "know this entire column is done and"
+    },
+    {
+      "start": 611.7,
+      "end": 614.88,
+      "text": "dusted at the end of the day everyone"
+    },
+    {
+      "start": 612.9,
+      "end": 617.88,
+      "text": "will be zero so please go ahead and say"
+    },
+    {
+      "start": 614.88,
+      "end": 620.7,
+      "text": "I will mark it marking it means one"
+    },
+    {
+      "start": 617.88,
+      "end": 623.52,
+      "text": "perfect and you know everything in this"
+    },
+    {
+      "start": 620.7,
+      "end": 627.74,
+      "text": "row will also be marked three Market as"
+    },
+    {
+      "start": 623.52,
+      "end": 630.96,
+      "text": "one perfect one one one one zero gain"
+    },
+    {
+      "start": 627.74,
+      "end": 633.18,
+      "text": "zero means everyone in this column and"
+    },
+    {
+      "start": 630.96,
+      "end": 637.08,
+      "text": "everyone in this row go ahead and Mark"
+    },
+    {
+      "start": 633.18,
+      "end": 640.26,
+      "text": "it sale Market perfect next one one"
+    },
+    {
+      "start": 637.08,
+      "end": 642.6,
+      "text": "again a zero the zero means this one is"
+    },
+    {
+      "start": 640.26,
+      "end": 644.28,
+      "text": "marked and this one is marked so go"
+    },
+    {
+      "start": 642.6,
+      "end": 647.52,
+      "text": "ahead and mark it"
+    },
+    {
+      "start": 644.28,
+      "end": 650.46,
+      "text": "perfect next the zero means this one is"
+    },
+    {
+      "start": 647.52,
+      "end": 653.7,
+      "text": "marked and this one is marked next this"
+    },
+    {
+      "start": 650.46,
+      "end": 657.42,
+      "text": "done so what I've done is for every 0"
+    },
+    {
+      "start": 653.7,
+      "end": 660.72,
+      "text": "I've ended up marking which columns and"
+    },
+    {
+      "start": 657.42,
+      "end": 663.24,
+      "text": "which rows will be zero now what I will"
+    },
+    {
+      "start": 660.72,
+      "end": 665.16,
+      "text": "do is I will do a reiteration yes I'll"
+    },
+    {
+      "start": 663.24,
+      "end": 667.74,
+      "text": "do a reiteration let's quickly do the"
+    },
+    {
+      "start": 665.16,
+      "end": 670.68,
+      "text": "rehydration so whenever we are at one we"
+    },
+    {
+      "start": 667.74,
+      "end": 673.5,
+      "text": "are like okay wait will I be a zero I"
+    },
+    {
+      "start": 670.68,
+      "end": 676.98,
+      "text": "will only be a zero if this or this is"
+    },
+    {
+      "start": 673.5,
+      "end": 679.86,
+      "text": "marked is this marked no is this marked"
+    },
+    {
+      "start": 676.98,
+      "end": 682.08,
+      "text": "no so I stay one I stay one perfect I"
+    },
+    {
+      "start": 679.86,
+      "end": 685.14,
+      "text": "will say one I'll only be zero if this"
+    },
+    {
+      "start": 682.08,
+      "end": 687.06,
+      "text": "was marked I'm like yes I'm marked so"
+    },
+    {
+      "start": 685.14,
+      "end": 689.82,
+      "text": "I'll end up getting zero perfect next"
+    },
+    {
+      "start": 687.06,
+      "end": 692.7,
+      "text": "ever one oh this is marked so I'll end"
+    },
+    {
+      "start": 689.82,
+      "end": 696.48,
+      "text": "up getting zero next one"
+    },
+    {
+      "start": 692.7,
+      "end": 699.18,
+      "text": "one not mugged not marked so stays next"
+    },
+    {
+      "start": 696.48,
+      "end": 702.06,
+      "text": "one not mugged but marked here so this"
+    },
+    {
+      "start": 699.18,
+      "end": 705.36,
+      "text": "will be a zero next zero nothing to do"
+    },
+    {
+      "start": 702.06,
+      "end": 708.78,
+      "text": "one marked so this will be a zero next"
+    },
+    {
+      "start": 705.36,
+      "end": 711.3,
+      "text": "one marked so this will be a zero next"
+    },
+    {
+      "start": 708.78,
+      "end": 713.1,
+      "text": "one Mark so this will be a zero next one"
+    },
+    {
+      "start": 711.3,
+      "end": 715.92,
+      "text": "marked this will be a zero zero nothing"
+    },
+    {
+      "start": 713.1,
+      "end": 718.32,
+      "text": "to be done this one marked this will be"
+    },
+    {
+      "start": 715.92,
+      "end": 721.62,
+      "text": "easier this one marked zero this one"
+    },
+    {
+      "start": 718.32,
+      "end": 724.38,
+      "text": "marked zero this one Mark zero this one"
+    },
+    {
+      "start": 721.62,
+      "end": 726.78,
+      "text": "already is zero so what we got to know"
+    },
+    {
+      "start": 724.38,
+      "end": 728.76,
+      "text": "was this entire thing got zero if you"
+    },
+    {
+      "start": 726.78,
+      "end": 730.68,
+      "text": "carefully see and every one over here"
+    },
+    {
+      "start": 728.76,
+      "end": 733.14,
+      "text": "got zero apart from these two elements"
+    },
+    {
+      "start": 730.68,
+      "end": 735.54,
+      "text": "apart from these two elements and this"
+    },
+    {
+      "start": 733.14,
+      "end": 737.46,
+      "text": "is how easily you can do it got it so"
+    },
+    {
+      "start": 735.54,
+      "end": 740.7,
+      "text": "how the Brute Force code look like we"
+    },
+    {
+      "start": 737.46,
+      "end": 742.98,
+      "text": "know we need a column of size M to keep"
+    },
+    {
+      "start": 740.7,
+      "end": 746.22,
+      "text": "a track so I'll mark every one as zero"
+    },
+    {
+      "start": 742.98,
+      "end": 748.8,
+      "text": "and we know we need a row size n to keep"
+    },
+    {
+      "start": 746.22,
+      "end": 751.44,
+      "text": "a track of every one of zero now I will"
+    },
+    {
+      "start": 748.8,
+      "end": 753.54,
+      "text": "start iterating so if you have to"
+    },
+    {
+      "start": 751.44,
+      "end": 756.48,
+      "text": "iterate on The Matrix first I'll go from"
+    },
+    {
+      "start": 753.54,
+      "end": 758.94,
+      "text": "0 to n then I'll go from 0 to M perfect"
+    },
+    {
+      "start": 756.48,
+      "end": 765.78,
+      "text": "then what is the next job if that"
+    },
+    {
+      "start": 758.94,
+      "end": 768.72,
+      "text": "element at i j is 0 I know the row I the"
+    },
+    {
+      "start": 765.78,
+      "end": 771.54,
+      "text": "row I will go ahead and get marked as 0"
+    },
+    {
+      "start": 768.72,
+      "end": 774.24,
+      "text": "and the column J will go ahead and sorry"
+    },
+    {
+      "start": 771.54,
+      "end": 775.98,
+      "text": "Mark this one rather marked as one both"
+    },
+    {
+      "start": 774.24,
+      "end": 777.9,
+      "text": "have been marked and this is how you can"
+    },
+    {
+      "start": 775.98,
+      "end": 780.24,
+      "text": "I trade and Mark it once you have done"
+    },
+    {
+      "start": 777.9,
+      "end": 782.46,
+      "text": "that you again reiterate yes you again"
+    },
+    {
+      "start": 780.24,
+      "end": 785.52,
+      "text": "reiterate from 0 to n"
+    },
+    {
+      "start": 782.46,
+      "end": 787.74,
+      "text": "and this time you convert the ones to"
+    },
+    {
+      "start": 785.52,
+      "end": 790.86,
+      "text": "zeros were marked you convert the ones"
+    },
+    {
+      "start": 787.74,
+      "end": 794.34,
+      "text": "to zeros to a mark so what you say is if"
+    },
+    {
+      "start": 790.86,
+      "end": 797.22,
+      "text": "you are marked if your row is marked or"
+    },
+    {
+      "start": 794.34,
+      "end": 800.88,
+      "text": "or your column is marked if anyone is"
+    },
+    {
+      "start": 797.22,
+      "end": 803.22,
+      "text": "marked I do not care U will be zero for"
+    },
+    {
+      "start": 800.88,
+      "end": 805.02,
+      "text": "short because the entire sorry the"
+    },
+    {
+      "start": 803.22,
+      "end": 807.18,
+      "text": "entire row is marked or the entire"
+    },
+    {
+      "start": 805.02,
+      "end": 809.58,
+      "text": "column is marked if that's the case you"
+    },
+    {
+      "start": 807.18,
+      "end": 811.38,
+      "text": "will be this and this is how the code"
+    },
+    {
+      "start": 809.58,
+      "end": 812.4,
+      "text": "will look like got it so in case you"
+    },
+    {
+      "start": 811.38,
+      "end": 813.78,
+      "text": "want to try out the problem the link"
+    },
+    {
+      "start": 812.4,
+      "end": 815.22,
+      "text": "will be in the description and if you"
+    },
+    {
+      "start": 813.78,
+      "end": 816.84,
+      "text": "want the C plus plus Java and python"
+    },
+    {
+      "start": 815.22,
+      "end": 819.42,
+      "text": "code all the links will be in the"
+    },
+    {
+      "start": 816.84,
+      "end": 820.8,
+      "text": "description remember one thing uh over"
+    },
+    {
+      "start": 819.42,
+      "end": 822.84,
+      "text": "here they're asking us to return a"
+    },
+    {
+      "start": 820.8,
+      "end": 824.7,
+      "text": "metrics that is when returning if it's a"
+    },
+    {
+      "start": 822.84,
+      "end": 826.62,
+      "text": "void function then you can just change"
+    },
+    {
+      "start": 824.7,
+      "end": 828.0,
+      "text": "to this particular Matrix which we are"
+    },
+    {
+      "start": 826.62,
+      "end": 830.16,
+      "text": "doing and we do not need to return"
+    },
+    {
+      "start": 828.0,
+      "end": 831.96,
+      "text": "anything so coming back to the iPad"
+    },
+    {
+      "start": 830.16,
+      "end": 834.66,
+      "text": "again what is the time complexity can I"
+    },
+    {
+      "start": 831.96,
+      "end": 837.84,
+      "text": "say this is taking we go of n cross M"
+    },
+    {
+      "start": 834.66,
+      "end": 840.72,
+      "text": "and so is this wherever the time"
+    },
+    {
+      "start": 837.84,
+      "end": 843.6,
+      "text": "complexity is because of 2 cross n cross"
+    },
+    {
+      "start": 840.72,
+      "end": 846.3,
+      "text": "M for sure what about space complexity"
+    },
+    {
+      "start": 843.6,
+      "end": 850.26,
+      "text": "the space complexity is nothing but Big"
+    },
+    {
+      "start": 846.3,
+      "end": 852.0,
+      "text": "O of N and B go of M for the two arrays"
+    },
+    {
+      "start": 850.26,
+      "end": 853.02,
+      "text": "that are using for hashing this is where"
+    },
+    {
+      "start": 852.0,
+      "end": 855.6,
+      "text": "the interviewer will not be happy"
+    },
+    {
+      "start": 853.02,
+      "end": 857.52,
+      "text": "because you're using an extra space and"
+    },
+    {
+      "start": 855.6,
+      "end": 859.14,
+      "text": "he will ask you to optimize the better"
+    },
+    {
+      "start": 857.52,
+      "end": 860.4,
+      "text": "solution and you will move to the"
+    },
+    {
+      "start": 859.14,
+      "end": 862.68,
+      "text": "optimal one"
+    },
+    {
+      "start": 860.4,
+      "end": 865.2,
+      "text": "over here can you optimize the time"
+    },
+    {
+      "start": 862.68,
+      "end": 866.94,
+      "text": "complexity we are already doing it in"
+    },
+    {
+      "start": 865.2,
+      "end": 868.74,
+      "text": "the order of n square and we know the"
+    },
+    {
+      "start": 866.94,
+      "end": 870.66,
+      "text": "minimum in order to Traverse a matrix"
+    },
+    {
+      "start": 868.74,
+      "end": 873.6,
+      "text": "can be n Square you cannot do better"
+    },
+    {
+      "start": 870.66,
+      "end": 876.6,
+      "text": "than that that's why we will be focusing"
+    },
+    {
+      "start": 873.6,
+      "end": 878.52,
+      "text": "to optimize the time complexity and"
+    },
+    {
+      "start": 876.6,
+      "end": 882.36,
+      "text": "let's get back to the Matrix we'll be"
+    },
+    {
+      "start": 878.52,
+      "end": 885.24,
+      "text": "taking a column and we were taking a row"
+    },
+    {
+      "start": 882.36,
+      "end": 887.16,
+      "text": "agreed so if I was taking a column and"
+    },
+    {
+      "start": 885.24,
+      "end": 889.32,
+      "text": "if I was taking a row"
+    },
+    {
+      "start": 887.16,
+      "end": 890.76,
+      "text": "if I have to optimize it what does that"
+    },
+    {
+      "start": 889.32,
+      "end": 893.82,
+      "text": "mean that means you have to do"
+    },
+    {
+      "start": 890.76,
+      "end": 896.16,
+      "text": "everything in the Matrix itself so what"
+    },
+    {
+      "start": 893.82,
+      "end": 898.8,
+      "text": "I'll start thinking is can I keep a"
+    },
+    {
+      "start": 896.16,
+      "end": 900.96,
+      "text": "track in The Matrix itself can I just"
+    },
+    {
+      "start": 898.8,
+      "end": 903.18,
+      "text": "probably keep a track in The Matrix"
+    },
+    {
+      "start": 900.96,
+      "end": 905.4,
+      "text": "itself and that's when I start thinking"
+    },
+    {
+      "start": 903.18,
+      "end": 907.94,
+      "text": "what if I say hey"
+    },
+    {
+      "start": 905.4,
+      "end": 912.36,
+      "text": "maybe instead of taking a row outside"
+    },
+    {
+      "start": 907.94,
+      "end": 914.94,
+      "text": "what if I consider the First Column to"
+    },
+    {
+      "start": 912.36,
+      "end": 916.62,
+      "text": "be my row like instead of taking here"
+    },
+    {
+      "start": 914.94,
+      "end": 919.2,
+      "text": "I moved it inside"
+    },
+    {
+      "start": 916.62,
+      "end": 920.82,
+      "text": "from in place I moved it inside so what"
+    },
+    {
+      "start": 919.2,
+      "end": 924.56,
+      "text": "I'm saying is"
+    },
+    {
+      "start": 920.82,
+      "end": 924.56,
+      "text": "rho R are the column of 0"
+    },
+    {
+      "start": 924.84,
+      "end": 930.54,
+      "text": "will become my row"
+    },
+    {
+      "start": 927.42,
+      "end": 931.38,
+      "text": "which I was taking probably yes and I'll"
+    },
+    {
+      "start": 930.54,
+      "end": 933.42,
+      "text": "say"
+    },
+    {
+      "start": 931.38,
+      "end": 936.0,
+      "text": "probably instead of taking this I'll"
+    },
+    {
+      "start": 933.42,
+      "end": 938.4,
+      "text": "move it inside maybe because I have to"
+    },
+    {
+      "start": 936.0,
+      "end": 941.16,
+      "text": "do it in the Matrix so that's a possible"
+    },
+    {
+      "start": 938.4,
+      "end": 944.1,
+      "text": "solution the row 0 is what I will not"
+    },
+    {
+      "start": 941.16,
+      "end": 946.44,
+      "text": "consider as column of M size that's my"
+    },
+    {
+      "start": 944.1,
+      "end": 948.48,
+      "text": "first assumption but can I take it let's"
+    },
+    {
+      "start": 946.44,
+      "end": 950.76,
+      "text": "see if that's possible so what am I"
+    },
+    {
+      "start": 948.48,
+      "end": 953.1,
+      "text": "saying the things that I was marking"
+    },
+    {
+      "start": 950.76,
+      "end": 955.86,
+      "text": "here like for the zero if I was marking"
+    },
+    {
+      "start": 953.1,
+      "end": 957.66,
+      "text": "here instead of marking here I am taking"
+    },
+    {
+      "start": 955.86,
+      "end": 960.12,
+      "text": "this and I'll mark it here that's what"
+    },
+    {
+      "start": 957.66,
+      "end": 963.6,
+      "text": "I'm saying correct but is it correct"
+    },
+    {
+      "start": 960.12,
+      "end": 966.3,
+      "text": "it's not correct why because okay I"
+    },
+    {
+      "start": 963.6,
+      "end": 969.6,
+      "text": "understood you took the column inside"
+    },
+    {
+      "start": 966.3,
+      "end": 972.9,
+      "text": "and that's how it looks but you took the"
+    },
+    {
+      "start": 969.6,
+      "end": 974.34,
+      "text": "grow also inside and now there is one"
+    },
+    {
+      "start": 972.9,
+      "end": 976.98,
+      "text": "single point"
+    },
+    {
+      "start": 974.34,
+      "end": 979.08,
+      "text": "which acts as the same and if you"
+    },
+    {
+      "start": 976.98,
+      "end": 980.16,
+      "text": "remember the better approach there was a"
+    },
+    {
+      "start": 979.08,
+      "end": 981.9,
+      "text": "row here"
+    },
+    {
+      "start": 980.16,
+      "end": 984.18,
+      "text": "and there's a problem here and everyone"
+    },
+    {
+      "start": 981.9,
+      "end": 986.22,
+      "text": "was individual this point and this point"
+    },
+    {
+      "start": 984.18,
+      "end": 988.98,
+      "text": "were individual but if you take them"
+    },
+    {
+      "start": 986.22,
+      "end": 992.22,
+      "text": "inside what happens is this is one and"
+    },
+    {
+      "start": 988.98,
+      "end": 994.74,
+      "text": "this is one and this is a single point"
+    },
+    {
+      "start": 992.22,
+      "end": 997.02,
+      "text": "where it's a common point so what I'll"
+    },
+    {
+      "start": 994.74,
+      "end": 998.94,
+      "text": "say is it's about one point I'll apply"
+    },
+    {
+      "start": 997.02,
+      "end": 1001.22,
+      "text": "my brain and I'll say okay probably"
+    },
+    {
+      "start": 998.94,
+      "end": 1003.2,
+      "text": "let's keep the row as row so I'll keep"
+    },
+    {
+      "start": 1001.22,
+      "end": 1006.08,
+      "text": "the row as row"
+    },
+    {
+      "start": 1003.2,
+      "end": 1009.02,
+      "text": "perfect and the column I'll take till"
+    },
+    {
+      "start": 1006.08,
+      "end": 1010.7,
+      "text": "here I won't take the entire column I'll"
+    },
+    {
+      "start": 1009.02,
+      "end": 1013.1,
+      "text": "take till here but then I'll be like"
+    },
+    {
+      "start": 1010.7,
+      "end": 1014.32,
+      "text": "what will happen to this one like who"
+    },
+    {
+      "start": 1013.1,
+      "end": 1016.22,
+      "text": "will keep the track of this because"
+    },
+    {
+      "start": 1014.32,
+      "end": 1018.2,
+      "text": "instead of this what you are doing is"
+    },
+    {
+      "start": 1016.22,
+      "end": 1020.96,
+      "text": "you're just taking this so what happens"
+    },
+    {
+      "start": 1018.2,
+      "end": 1022.94,
+      "text": "to this I'll say okay this one is a"
+    },
+    {
+      "start": 1020.96,
+      "end": 1026.0,
+      "text": "single element no it's a single element"
+    },
+    {
+      "start": 1022.94,
+      "end": 1028.88,
+      "text": "I will probably extend this to something"
+    },
+    {
+      "start": 1026.0,
+      "end": 1032.0,
+      "text": "like this can I do this I'll call it as"
+    },
+    {
+      "start": 1028.88,
+      "end": 1034.28,
+      "text": "a column variable I just call it has a"
+    },
+    {
+      "start": 1032.0,
+      "end": 1036.32,
+      "text": "column variable can I call this because"
+    },
+    {
+      "start": 1034.28,
+      "end": 1039.26,
+      "text": "this is an extra part this is an extra"
+    },
+    {
+      "start": 1036.32,
+      "end": 1041.84,
+      "text": "part so the row stays as row and I take"
+    },
+    {
+      "start": 1039.26,
+      "end": 1044.36,
+      "text": "this much and for this since it is"
+    },
+    {
+      "start": 1041.84,
+      "end": 1047.12,
+      "text": "colliding put it into a variable now"
+    },
+    {
+      "start": 1044.36,
+      "end": 1049.22,
+      "text": "there is no Collision it works works"
+    },
+    {
+      "start": 1047.12,
+      "end": 1051.2,
+      "text": "fine for me at least so now what I'll do"
+    },
+    {
+      "start": 1049.22,
+      "end": 1053.96,
+      "text": "is I'll try to probably draw the figure"
+    },
+    {
+      "start": 1051.2,
+      "end": 1056.32,
+      "text": "it's something like this and then I go"
+    },
+    {
+      "start": 1053.96,
+      "end": 1056.32,
+      "text": "like this"
+    },
+    {
+      "start": 1056.74,
+      "end": 1062.3,
+      "text": "will look like and it's more like maybe"
+    },
+    {
+      "start": 1060.08,
+      "end": 1065.06,
+      "text": "I can call it as column 0 and Mark it as"
+    },
+    {
+      "start": 1062.3,
+      "end": 1067.46,
+      "text": "what and this will be my row do you"
+    },
+    {
+      "start": 1065.06,
+      "end": 1069.02,
+      "text": "agree you do right so this will be my"
+    },
+    {
+      "start": 1067.46,
+      "end": 1070.4,
+      "text": "rope"
+    },
+    {
+      "start": 1069.02,
+      "end": 1073.1,
+      "text": "the same Brute Force I'm trying to"
+    },
+    {
+      "start": 1070.4,
+      "end": 1075.2,
+      "text": "optimize look at the intuition okay now"
+    },
+    {
+      "start": 1073.1,
+      "end": 1076.76,
+      "text": "let's start hydrating and let's try to"
+    },
+    {
+      "start": 1075.2,
+      "end": 1079.46,
+      "text": "do the same things that we did but"
+    },
+    {
+      "start": 1076.76,
+      "end": 1081.92,
+      "text": "before that let's keep something in mind"
+    },
+    {
+      "start": 1079.46,
+      "end": 1084.68,
+      "text": "this 0 will Mark everything here and"
+    },
+    {
+      "start": 1081.92,
+      "end": 1086.12,
+      "text": "Mark everything here agreed this 0 will"
+    },
+    {
+      "start": 1084.68,
+      "end": 1088.46,
+      "text": "Mark everything here and Mark everything"
+    },
+    {
+      "start": 1086.12,
+      "end": 1090.2,
+      "text": "it agreed this 0 will Mark everything"
+    },
+    {
+      "start": 1088.46,
+      "end": 1092.6,
+      "text": "here and everything so if you remember"
+    },
+    {
+      "start": 1090.2,
+      "end": 1095.9,
+      "text": "so if you see everyone will be converted"
+    },
+    {
+      "start": 1092.6,
+      "end": 1098.18,
+      "text": "to zeros only apart from this corner guy"
+    },
+    {
+      "start": 1095.9,
+      "end": 1100.04,
+      "text": "keep this in mind that this Quantum guy"
+    },
+    {
+      "start": 1098.18,
+      "end": 1101.96,
+      "text": "will not be converted keep this in mind"
+    },
+    {
+      "start": 1100.04,
+      "end": 1103.94,
+      "text": "it will be very very useful in the next"
+    },
+    {
+      "start": 1101.96,
+      "end": 1106.04,
+      "text": "part when we figure some edge cases keep"
+    },
+    {
+      "start": 1103.94,
+      "end": 1107.66,
+      "text": "this in mind the corner is not converted"
+    },
+    {
+      "start": 1106.04,
+      "end": 1110.9,
+      "text": "okay let's start I'm creating in The"
+    },
+    {
+      "start": 1107.66,
+      "end": 1114.2,
+      "text": "Matrix we have a one right what happens"
+    },
+    {
+      "start": 1110.9,
+      "end": 1116.48,
+      "text": "to this one this one says I'm a one so I"
+    },
+    {
+      "start": 1114.2,
+      "end": 1118.16,
+      "text": "do not harm anyone let's move I'm the"
+    },
+    {
+      "start": 1116.48,
+      "end": 1120.32,
+      "text": "one I do not have I'm a one I'm a one"
+    },
+    {
+      "start": 1118.16,
+      "end": 1122.9,
+      "text": "I'm a one I don't know but he's a zero"
+    },
+    {
+      "start": 1120.32,
+      "end": 1125.3,
+      "text": "he's like what did I do I'll keep a"
+    },
+    {
+      "start": 1122.9,
+      "end": 1128.18,
+      "text": "track sell Market here I'll mark it here"
+    },
+    {
+      "start": 1125.3,
+      "end": 1130.82,
+      "text": "and I know who who is this stuff this"
+    },
+    {
+      "start": 1128.18,
+      "end": 1134.24,
+      "text": "guy who's this this one so I will now go"
+    },
+    {
+      "start": 1130.82,
+      "end": 1136.76,
+      "text": "and convert them to zeros perfect next I"
+    },
+    {
+      "start": 1134.24,
+      "end": 1140.0,
+      "text": "have a one one one one one zero this"
+    },
+    {
+      "start": 1136.76,
+      "end": 1142.94,
+      "text": "zero was marking it here and marking it"
+    },
+    {
+      "start": 1140.0,
+      "end": 1147.32,
+      "text": "here so instead of this I'll Market you"
+    },
+    {
+      "start": 1142.94,
+      "end": 1149.18,
+      "text": "perfect next one zero now this zero was"
+    },
+    {
+      "start": 1147.32,
+      "end": 1150.8,
+      "text": "apparently marking it here and was"
+    },
+    {
+      "start": 1149.18,
+      "end": 1153.26,
+      "text": "apparently marking it here in The"
+    },
+    {
+      "start": 1150.8,
+      "end": 1155.12,
+      "text": "Culinary so what will happen now instead"
+    },
+    {
+      "start": 1153.26,
+      "end": 1157.4,
+      "text": "of here it will Mark here and it's"
+    },
+    {
+      "start": 1155.12,
+      "end": 1159.2,
+      "text": "already a zero so it's okay and instead"
+    },
+    {
+      "start": 1157.4,
+      "end": 1163.22,
+      "text": "of here it will Mark here so this will"
+    },
+    {
+      "start": 1159.2,
+      "end": 1164.78,
+      "text": "make it zero perfect next we have a one"
+    },
+    {
+      "start": 1163.22,
+      "end": 1166.82,
+      "text": "we have a one we have a one so the"
+    },
+    {
+      "start": 1164.78,
+      "end": 1168.26,
+      "text": "iteration is completed once the"
+    },
+    {
+      "start": 1166.82,
+      "end": 1171.08,
+      "text": "iteration is completed what is the next"
+    },
+    {
+      "start": 1168.26,
+      "end": 1173.54,
+      "text": "job to convert all the ones two zeros"
+    },
+    {
+      "start": 1171.08,
+      "end": 1175.4,
+      "text": "were marked correct to convert all the"
+    },
+    {
+      "start": 1173.54,
+      "end": 1177.62,
+      "text": "ones who are zeros"
+    },
+    {
+      "start": 1175.4,
+      "end": 1179.12,
+      "text": "this is where you have to remember in"
+    },
+    {
+      "start": 1177.62,
+      "end": 1181.28,
+      "text": "the answer only this one was not"
+    },
+    {
+      "start": 1179.12,
+      "end": 1183.74,
+      "text": "converted so"
+    },
+    {
+      "start": 1181.28,
+      "end": 1187.16,
+      "text": "if I'm trying to convert this whom do I"
+    },
+    {
+      "start": 1183.74,
+      "end": 1188.6,
+      "text": "check I check in this and I check in"
+    },
+    {
+      "start": 1187.16,
+      "end": 1191.9,
+      "text": "this correct"
+    },
+    {
+      "start": 1188.6,
+      "end": 1194.06,
+      "text": "for this one I see the column 0 is 0 so"
+    },
+    {
+      "start": 1191.9,
+      "end": 1196.58,
+      "text": "this will be zero right because it's"
+    },
+    {
+      "start": 1194.06,
+      "end": 1198.86,
+      "text": "marked if you remember for this we will"
+    },
+    {
+      "start": 1196.58,
+      "end": 1201.32,
+      "text": "check this and this and the column 0 is"
+    },
+    {
+      "start": 1198.86,
+      "end": 1204.2,
+      "text": "0. so this will be converted to zero but"
+    },
+    {
+      "start": 1201.32,
+      "end": 1206.3,
+      "text": "But Here Comes The Twist if you convert"
+    },
+    {
+      "start": 1204.2,
+      "end": 1208.82,
+      "text": "this to zero hypothetically just assume"
+    },
+    {
+      "start": 1206.3,
+      "end": 1210.8,
+      "text": "you converted this to zero and the twist"
+    },
+    {
+      "start": 1208.82,
+      "end": 1213.86,
+      "text": "is if you convert this to 0 what will"
+    },
+    {
+      "start": 1210.8,
+      "end": 1216.62,
+      "text": "happen is now when you go to this one"
+    },
+    {
+      "start": 1213.86,
+      "end": 1219.74,
+      "text": "when you go to this one okay this one"
+    },
+    {
+      "start": 1216.62,
+      "end": 1222.56,
+      "text": "will say I will be converted to zero if"
+    },
+    {
+      "start": 1219.74,
+      "end": 1225.5,
+      "text": "this is 0 or this is zero and what will"
+    },
+    {
+      "start": 1222.56,
+      "end": 1227.54,
+      "text": "happen is it will find here 0 and it"
+    },
+    {
+      "start": 1225.5,
+      "end": 1230.68,
+      "text": "will convert this to 0 which is wrong"
+    },
+    {
+      "start": 1227.54,
+      "end": 1234.62,
+      "text": "because this row means this so thereby"
+    },
+    {
+      "start": 1230.68,
+      "end": 1236.36,
+      "text": "you cannot start from these elements you"
+    },
+    {
+      "start": 1234.62,
+      "end": 1238.7,
+      "text": "cannot start from these you can keep"
+    },
+    {
+      "start": 1236.36,
+      "end": 1240.98,
+      "text": "them for later because as of now if you"
+    },
+    {
+      "start": 1238.7,
+      "end": 1244.24,
+      "text": "change the values that will impact the"
+    },
+    {
+      "start": 1240.98,
+      "end": 1247.3,
+      "text": "Matrix do not change their values"
+    },
+    {
+      "start": 1244.24,
+      "end": 1250.46,
+      "text": "Instead try doing from these places"
+    },
+    {
+      "start": 1247.3,
+      "end": 1252.44,
+      "text": "Instead try doing from these places do"
+    },
+    {
+      "start": 1250.46,
+      "end": 1255.02,
+      "text": "you understand I hope you did right so"
+    },
+    {
+      "start": 1252.44,
+      "end": 1257.84,
+      "text": "what I'll do is I will not touch them as"
+    },
+    {
+      "start": 1255.02,
+      "end": 1261.74,
+      "text": "of now and I will start going probably"
+    },
+    {
+      "start": 1257.84,
+      "end": 1264.2,
+      "text": "from here then to here then to here and"
+    },
+    {
+      "start": 1261.74,
+      "end": 1267.56,
+      "text": "then we can deal with this separately"
+    },
+    {
+      "start": 1264.2,
+      "end": 1268.52,
+      "text": "got it so let's start this one will be"
+    },
+    {
+      "start": 1267.56,
+      "end": 1271.28,
+      "text": "marked"
+    },
+    {
+      "start": 1268.52,
+      "end": 1274.64,
+      "text": "no it's a one but it's a zero so this"
+    },
+    {
+      "start": 1271.28,
+      "end": 1276.14,
+      "text": "will be marked perfect this one it's a"
+    },
+    {
+      "start": 1274.64,
+      "end": 1279.38,
+      "text": "zero it's Market"
+    },
+    {
+      "start": 1276.14,
+      "end": 1280.46,
+      "text": "next this one it's a zero it's a zero"
+    },
+    {
+      "start": 1279.38,
+      "end": 1282.98,
+      "text": "Market"
+    },
+    {
+      "start": 1280.46,
+      "end": 1285.8,
+      "text": "please do not do anything to the first"
+    },
+    {
+      "start": 1282.98,
+      "end": 1290.12,
+      "text": "rows and first columns please next is"
+    },
+    {
+      "start": 1285.8,
+      "end": 1294.56,
+      "text": "the one will it be no will it be yes"
+    },
+    {
+      "start": 1290.12,
+      "end": 1297.62,
+      "text": "next is already 0 next 0 next 0 why"
+    },
+    {
+      "start": 1294.56,
+      "end": 1300.62,
+      "text": "because over here next zero because here"
+    },
+    {
+      "start": 1297.62,
+      "end": 1303.02,
+      "text": "next zero so what I've done is I've"
+    },
+    {
+      "start": 1300.62,
+      "end": 1305.3,
+      "text": "converted each of them now it's time for"
+    },
+    {
+      "start": 1303.02,
+      "end": 1306.86,
+      "text": "the next okay so the last section of"
+    },
+    {
+      "start": 1305.3,
+      "end": 1309.56,
+      "text": "this algorithm and it's very important"
+    },
+    {
+      "start": 1306.86,
+      "end": 1311.72,
+      "text": "that you hear me out properly so do you"
+    },
+    {
+      "start": 1309.56,
+      "end": 1313.46,
+      "text": "remember one thing initially I told you"
+    },
+    {
+      "start": 1311.72,
+      "end": 1315.92,
+      "text": "this is the only one who was not"
+    },
+    {
+      "start": 1313.46,
+      "end": 1318.74,
+      "text": "converted to zero and everyone else"
+    },
+    {
+      "start": 1315.92,
+      "end": 1322.16,
+      "text": "would be converted to zero now tell me"
+    },
+    {
+      "start": 1318.74,
+      "end": 1324.5,
+      "text": "one thing you have solved this portion"
+    },
+    {
+      "start": 1322.16,
+      "end": 1326.18,
+      "text": "will you solve this portion at first"
+    },
+    {
+      "start": 1324.5,
+      "end": 1328.28,
+      "text": "or will you solve this portion at first"
+    },
+    {
+      "start": 1326.18,
+      "end": 1331.4,
+      "text": "let's analyze"
+    },
+    {
+      "start": 1328.28,
+      "end": 1333.74,
+      "text": "this portions answer is dependent on"
+    },
+    {
+      "start": 1331.4,
+      "end": 1337.34,
+      "text": "whom one is this"
+    },
+    {
+      "start": 1333.74,
+      "end": 1340.88,
+      "text": "and the other other one is this correct"
+    },
+    {
+      "start": 1337.34,
+      "end": 1345.62,
+      "text": "agreed or not you agree so"
+    },
+    {
+      "start": 1340.88,
+      "end": 1347.66,
+      "text": "this one is hymns and this one is one so"
+    },
+    {
+      "start": 1345.62,
+      "end": 1350.36,
+      "text": "it's dependent on this"
+    },
+    {
+      "start": 1347.66,
+      "end": 1353.12,
+      "text": "so if you solve this portion at first"
+    },
+    {
+      "start": 1350.36,
+      "end": 1355.58,
+      "text": "the value might change the value might"
+    },
+    {
+      "start": 1353.12,
+      "end": 1358.76,
+      "text": "change which might hamper this which"
+    },
+    {
+      "start": 1355.58,
+      "end": 1361.1,
+      "text": "might impact this so at first you will"
+    },
+    {
+      "start": 1358.76,
+      "end": 1363.26,
+      "text": "solve this portion then you will solve"
+    },
+    {
+      "start": 1361.1,
+      "end": 1363.98,
+      "text": "this portion now for this portion to be"
+    },
+    {
+      "start": 1363.26,
+      "end": 1366.62,
+      "text": "0"
+    },
+    {
+      "start": 1363.98,
+      "end": 1369.62,
+      "text": "this has to be 0 which is not the case"
+    },
+    {
+      "start": 1366.62,
+      "end": 1372.86,
+      "text": "so this stays as one for this this is"
+    },
+    {
+      "start": 1369.62,
+      "end": 1374.9,
+      "text": "already 0 and this is already 0 and we"
+    },
+    {
+      "start": 1372.86,
+      "end": 1377.0,
+      "text": "do not do anything else now for this"
+    },
+    {
+      "start": 1374.9,
+      "end": 1379.76,
+      "text": "portion to be 0"
+    },
+    {
+      "start": 1377.0,
+      "end": 1381.08,
+      "text": "this one has to be marked and this one"
+    },
+    {
+      "start": 1379.76,
+      "end": 1383.6,
+      "text": "has to be marked and I see this is"
+    },
+    {
+      "start": 1381.08,
+      "end": 1385.88,
+      "text": "marked so this will be zero convert it"
+    },
+    {
+      "start": 1383.6,
+      "end": 1389.6,
+      "text": "to zero for this portion it's zero zero"
+    },
+    {
+      "start": 1385.88,
+      "end": 1392.36,
+      "text": "zero done so first you solve here here"
+    },
+    {
+      "start": 1389.6,
+      "end": 1395.42,
+      "text": "here here here here and you solve this"
+    },
+    {
+      "start": 1392.36,
+      "end": 1396.8,
+      "text": "because it is dependent on this then you"
+    },
+    {
+      "start": 1395.42,
+      "end": 1399.02,
+      "text": "solve this"
+    },
+    {
+      "start": 1396.8,
+      "end": 1401.0,
+      "text": "first do not solve this because if you"
+    },
+    {
+      "start": 1399.02,
+      "end": 1402.8,
+      "text": "change the values that will impact the"
+    },
+    {
+      "start": 1401.0,
+      "end": 1404.66,
+      "text": "Matrix this was the thought process"
+    },
+    {
+      "start": 1402.8,
+      "end": 1406.16,
+      "text": "behind this particular algorithm so"
+    },
+    {
+      "start": 1404.66,
+      "end": 1407.9,
+      "text": "let's quickly quote the optimal solution"
+    },
+    {
+      "start": 1406.16,
+      "end": 1409.94,
+      "text": "up and this was the better solution if"
+    },
+    {
+      "start": 1407.9,
+      "end": 1413.06,
+      "text": "you can see in the editor so when we"
+    },
+    {
+      "start": 1409.94,
+      "end": 1415.4,
+      "text": "remove this and I will just comment this"
+    },
+    {
+      "start": 1413.06,
+      "end": 1417.68,
+      "text": "off so we were initially using the"
+    },
+    {
+      "start": 1415.4,
+      "end": 1419.9,
+      "text": "column and we were initially using a row"
+    },
+    {
+      "start": 1417.68,
+      "end": 1422.6,
+      "text": "now instead of column if I go back to"
+    },
+    {
+      "start": 1419.9,
+      "end": 1425.54,
+      "text": "the iPad instead of column we will be"
+    },
+    {
+      "start": 1422.6,
+      "end": 1427.7,
+      "text": "using the row 0 which is the row 0. can"
+    },
+    {
+      "start": 1425.54,
+      "end": 1433.1,
+      "text": "I say the row 0 is this which is nothing"
+    },
+    {
+      "start": 1427.7,
+      "end": 1436.34,
+      "text": "but Matrix of the zero yes because this"
+    },
+    {
+      "start": 1433.1,
+      "end": 1439.88,
+      "text": "is 0 right Matrix of 0 is what we will"
+    },
+    {
+      "start": 1436.34,
+      "end": 1443.9,
+      "text": "be using so can I see the column is"
+    },
+    {
+      "start": 1439.88,
+      "end": 1446.0,
+      "text": "nothing but the Matrix of 0 and"
+    },
+    {
+      "start": 1443.9,
+      "end": 1448.7,
+      "text": "something the variable whatever is the"
+    },
+    {
+      "start": 1446.0,
+      "end": 1450.68,
+      "text": "variable and can I say the row is"
+    },
+    {
+      "start": 1448.7,
+      "end": 1453.14,
+      "text": "nothing but if I carefully see the row"
+    },
+    {
+      "start": 1450.68,
+      "end": 1456.02,
+      "text": "is nothing but the zeroth the zeroth"
+    },
+    {
+      "start": 1453.14,
+      "end": 1459.02,
+      "text": "which is Matrix of something of 0"
+    },
+    {
+      "start": 1456.02,
+      "end": 1461.78,
+      "text": "because the rule keeps on changing but"
+    },
+    {
+      "start": 1459.02,
+      "end": 1466.64,
+      "text": "this stays constantive so can I say it's"
+    },
+    {
+      "start": 1461.78,
+      "end": 1470.54,
+      "text": "nothing but Matrix of something"
+    },
+    {
+      "start": 1466.64,
+      "end": 1472.76,
+      "text": "of 0 raiseable this is the first row"
+    },
+    {
+      "start": 1470.54,
+      "end": 1475.4,
+      "text": "that is the First Column which is taken"
+    },
+    {
+      "start": 1472.76,
+      "end": 1478.58,
+      "text": "as this perfect now over here if Matrix"
+    },
+    {
+      "start": 1475.4,
+      "end": 1484.7,
+      "text": "of i j is this what do we do we Mark the"
+    },
+    {
+      "start": 1478.58,
+      "end": 1486.8,
+      "text": "ith row and we Mark the jth polyp now we"
+    },
+    {
+      "start": 1484.7,
+      "end": 1488.48,
+      "text": "are marking the row which is row C rho"
+    },
+    {
+      "start": 1486.8,
+      "end": 1490.7,
+      "text": "is here so we'll just take this let's"
+    },
+    {
+      "start": 1488.48,
+      "end": 1492.5,
+      "text": "take this so we have the Ayah through so"
+    },
+    {
+      "start": 1490.7,
+      "end": 1495.2,
+      "text": "you'll see let's mark the I here through"
+    },
+    {
+      "start": 1492.5,
+      "end": 1497.72,
+      "text": "so I throw is this"
+    },
+    {
+      "start": 1495.2,
+      "end": 1500.84,
+      "text": "and we will say zero and what are we"
+    },
+    {
+      "start": 1497.72,
+      "end": 1502.34,
+      "text": "saying who is the jth column this one so"
+    },
+    {
+      "start": 1500.84,
+      "end": 1504.68,
+      "text": "I'll take this"
+    },
+    {
+      "start": 1502.34,
+      "end": 1506.36,
+      "text": "and this is the Matrix and you will say"
+    },
+    {
+      "start": 1504.68,
+      "end": 1508.82,
+      "text": "let's mark this"
+    },
+    {
+      "start": 1506.36,
+      "end": 1511.16,
+      "text": "but can we simply write this the answer"
+    },
+    {
+      "start": 1508.82,
+      "end": 1513.14,
+      "text": "to that is no why because if you"
+    },
+    {
+      "start": 1511.16,
+      "end": 1516.44,
+      "text": "remember this case it did Mark itself"
+    },
+    {
+      "start": 1513.14,
+      "end": 1518.72,
+      "text": "that is okay but it could not Mark in"
+    },
+    {
+      "start": 1516.44,
+      "end": 1521.06,
+      "text": "the column it could not Mark in the"
+    },
+    {
+      "start": 1518.72,
+      "end": 1523.28,
+      "text": "column and if you see wire what's the"
+    },
+    {
+      "start": 1521.06,
+      "end": 1525.92,
+      "text": "column that's the Matrix of 0 of"
+    },
+    {
+      "start": 1523.28,
+      "end": 1529.82,
+      "text": "something Matrix of 0 of something so"
+    },
+    {
+      "start": 1525.92,
+      "end": 1533.3,
+      "text": "remember if J is not equal to 0 then"
+    },
+    {
+      "start": 1529.82,
+      "end": 1535.7,
+      "text": "only you mark it otherwise yes otherwise"
+    },
+    {
+      "start": 1533.3,
+      "end": 1538.64,
+      "text": "what will you do you will say caller of"
+    },
+    {
+      "start": 1535.7,
+      "end": 1541.82,
+      "text": "zero can you mark yourself if your J is"
+    },
+    {
+      "start": 1538.64,
+      "end": 1544.4,
+      "text": "0 Let's go back again if you are over"
+    },
+    {
+      "start": 1541.82,
+      "end": 1546.8,
+      "text": "here you do not mark it here it's not"
+    },
+    {
+      "start": 1544.4,
+      "end": 1549.32,
+      "text": "you mark it here got it do not Mark"
+    },
+    {
+      "start": 1546.8,
+      "end": 1550.64,
+      "text": "anything on this instead of go here so"
+    },
+    {
+      "start": 1549.32,
+      "end": 1554.12,
+      "text": "please go ahead and declare one more"
+    },
+    {
+      "start": 1550.64,
+      "end": 1556.04,
+      "text": "variable column 0 is equal to 1. perfect"
+    },
+    {
+      "start": 1554.12,
+      "end": 1558.68,
+      "text": "that so this is the marking that I've"
+    },
+    {
+      "start": 1556.04,
+      "end": 1561.74,
+      "text": "done after the marking what do we do"
+    },
+    {
+      "start": 1558.68,
+      "end": 1564.08,
+      "text": "let's analyze that whatever we do so"
+    },
+    {
+      "start": 1561.74,
+      "end": 1566.3,
+      "text": "after the marking once we mark this and"
+    },
+    {
+      "start": 1564.08,
+      "end": 1569.42,
+      "text": "this we started from here and then we"
+    },
+    {
+      "start": 1566.3,
+      "end": 1572.3,
+      "text": "vendor so it's more like I ignored the"
+    },
+    {
+      "start": 1569.42,
+      "end": 1575.18,
+      "text": "zeroth row and I ignored the zeroth"
+    },
+    {
+      "start": 1572.3,
+      "end": 1577.28,
+      "text": "column so just iterate without them so"
+    },
+    {
+      "start": 1575.18,
+      "end": 1579.5,
+      "text": "I'll be like I can I trade without them"
+    },
+    {
+      "start": 1577.28,
+      "end": 1581.78,
+      "text": "as well so you can you can again iterate"
+    },
+    {
+      "start": 1579.5,
+      "end": 1583.46,
+      "text": "from here that's okay or you can hydrate"
+    },
+    {
+      "start": 1581.78,
+      "end": 1585.32,
+      "text": "from here as well that is okay that is"
+    },
+    {
+      "start": 1583.46,
+      "end": 1588.38,
+      "text": "your case so I'll go ahead and say okay"
+    },
+    {
+      "start": 1585.32,
+      "end": 1590.06,
+      "text": "let's iterate without the"
+    },
+    {
+      "start": 1588.38,
+      "end": 1593.54,
+      "text": "you can hide it in the backward or"
+    },
+    {
+      "start": 1590.06,
+      "end": 1596.78,
+      "text": "frontward as your choice this as long as"
+    },
+    {
+      "start": 1593.54,
+      "end": 1599.0,
+      "text": "you're not touching our hash arrays I'm"
+    },
+    {
+      "start": 1596.78,
+      "end": 1602.24,
+      "text": "absolutely okay so what"
+    },
+    {
+      "start": 1599.0,
+      "end": 1604.58,
+      "text": "what will happen what will happen if"
+    },
+    {
+      "start": 1602.24,
+      "end": 1608.96,
+      "text": "this is a one I have to convert it the"
+    },
+    {
+      "start": 1604.58,
+      "end": 1614.06,
+      "text": "first check will be if Matrix of"
+    },
+    {
+      "start": 1608.96,
+      "end": 1617.42,
+      "text": "i j is not equal to zero then there"
+    },
+    {
+      "start": 1614.06,
+      "end": 1619.34,
+      "text": "might be a conversion for this I'll have"
+    },
+    {
+      "start": 1617.42,
+      "end": 1623.24,
+      "text": "to check here for this I'll have to"
+    },
+    {
+      "start": 1619.34,
+      "end": 1624.98,
+      "text": "check here so check for column"
+    },
+    {
+      "start": 1623.24,
+      "end": 1627.08,
+      "text": "and"
+    },
+    {
+      "start": 1624.98,
+      "end": 1628.52,
+      "text": "row so let's check"
+    },
+    {
+      "start": 1627.08,
+      "end": 1630.74,
+      "text": "first you have to check for column"
+    },
+    {
+      "start": 1628.52,
+      "end": 1632.54,
+      "text": "what's the column that's this let's pick"
+    },
+    {
+      "start": 1630.74,
+      "end": 1635.6,
+      "text": "it up"
+    },
+    {
+      "start": 1632.54,
+      "end": 1638.14,
+      "text": "or or what's the rule that's this sorry"
+    },
+    {
+      "start": 1635.6,
+      "end": 1641.24,
+      "text": "that's this let's pick it up"
+    },
+    {
+      "start": 1638.14,
+      "end": 1643.28,
+      "text": "say over here instead of this you will"
+    },
+    {
+      "start": 1641.24,
+      "end": 1645.44,
+      "text": "have a j over here instead of this"
+    },
+    {
+      "start": 1643.28,
+      "end": 1650.06,
+      "text": "you'll have I and if any of them is"
+    },
+    {
+      "start": 1645.44,
+      "end": 1654.4,
+      "text": "marked as 0 that means this element will"
+    },
+    {
+      "start": 1650.06,
+      "end": 1654.4,
+      "text": "go as 0 quite simple"
+    },
+    {
+      "start": 1654.74,
+      "end": 1657.92,
+      "text": "done"
+    },
+    {
+      "start": 1655.82,
+      "end": 1659.3,
+      "text": "Second Step done where we have marked"
+    },
+    {
+      "start": 1657.92,
+      "end": 1661.58,
+      "text": "everything"
+    },
+    {
+      "start": 1659.3,
+      "end": 1663.86,
+      "text": "after that what did we do first we Mark"
+    },
+    {
+      "start": 1661.58,
+      "end": 1666.98,
+      "text": "these three elements then we mark this"
+    },
+    {
+      "start": 1663.86,
+      "end": 1669.08,
+      "text": "so how will this three elements when"
+    },
+    {
+      "start": 1666.98,
+      "end": 1671.48,
+      "text": "will this three elements be zero when"
+    },
+    {
+      "start": 1669.08,
+      "end": 1675.2,
+      "text": "will this three elements be zero if this"
+    },
+    {
+      "start": 1671.48,
+      "end": 1677.66,
+      "text": "guy who has Matrix of 0 0 if this is 0"
+    },
+    {
+      "start": 1675.2,
+      "end": 1679.94,
+      "text": "then everyone will be because it's"
+    },
+    {
+      "start": 1677.66,
+      "end": 1681.2,
+      "text": "dependent on this so the last step will"
+    },
+    {
+      "start": 1679.94,
+      "end": 1687.02,
+      "text": "be hey"
+    },
+    {
+      "start": 1681.2,
+      "end": 1691.36,
+      "text": "if Matrix of 0 0 is equal to 0"
+    },
+    {
+      "start": 1687.02,
+      "end": 1691.36,
+      "text": "everyone in the column"
+    },
+    {
+      "start": 1691.4,
+      "end": 1698.54,
+      "text": "which is this Matrix of zero J everyone"
+    },
+    {
+      "start": 1695.3,
+      "end": 1701.24,
+      "text": "in the first row will be zero white"
+    },
+    {
+      "start": 1698.54,
+      "end": 1704.0,
+      "text": "simple and what about this one this one"
+    },
+    {
+      "start": 1701.24,
+      "end": 1705.8,
+      "text": "will be dependent on the column so"
+    },
+    {
+      "start": 1704.0,
+      "end": 1709.04,
+      "text": "please go ahead and say if column 0 is"
+    },
+    {
+      "start": 1705.8,
+      "end": 1711.62,
+      "text": "equal to equal to 0 what will I do I"
+    },
+    {
+      "start": 1709.04,
+      "end": 1714.02,
+      "text": "will do the same thing for inti equal to"
+    },
+    {
+      "start": 1711.62,
+      "end": 1716.42,
+      "text": "0 I lesser than n i plus plus because"
+    },
+    {
+      "start": 1714.02,
+      "end": 1720.44,
+      "text": "everyone on this portion will be marked"
+    },
+    {
+      "start": 1716.42,
+      "end": 1723.8,
+      "text": "as 0 so I will go and say Matrix of 0"
+    },
+    {
+      "start": 1720.44,
+      "end": 1726.02,
+      "text": "sorry Matrix of I and everything on the"
+    },
+    {
+      "start": 1723.8,
+      "end": 1728.12,
+      "text": "First Column will be 0 once you have"
+    },
+    {
+      "start": 1726.02,
+      "end": 1731.0,
+      "text": "done this you can return the Matrix now"
+    },
+    {
+      "start": 1728.12,
+      "end": 1734.26,
+      "text": "let's quickly go and run I hope it runs"
+    },
+    {
+      "start": 1731.0,
+      "end": 1737.18,
+      "text": "at once I'll be super happy oh I am"
+    },
+    {
+      "start": 1734.26,
+      "end": 1738.8,
+      "text": "quite simple the only way that you can"
+    },
+    {
+      "start": 1737.18,
+      "end": 1740.48,
+      "text": "write this is try to write this so that"
+    },
+    {
+      "start": 1738.8,
+      "end": 1742.76,
+      "text": "you don't get confused this is how I"
+    },
+    {
+      "start": 1740.48,
+      "end": 1746.06,
+      "text": "approach usually a code so what is the"
+    },
+    {
+      "start": 1742.76,
+      "end": 1748.88,
+      "text": "time complexity and into m"
+    },
+    {
+      "start": 1746.06,
+      "end": 1751.76,
+      "text": "and this overall is the total Matrix"
+    },
+    {
+      "start": 1748.88,
+      "end": 1753.86,
+      "text": "alteration n into n 2 into n into f are"
+    },
+    {
+      "start": 1751.76,
+      "end": 1757.3,
+      "text": "you we using any extra space"
+    },
+    {
+      "start": 1753.86,
+      "end": 1760.46,
+      "text": "probably yes for this column"
+    },
+    {
+      "start": 1757.3,
+      "end": 1762.56,
+      "text": "that's it that's it one variable and I"
+    },
+    {
+      "start": 1760.46,
+      "end": 1765.44,
+      "text": "was able to solve the problem in place"
+    },
+    {
+      "start": 1762.56,
+      "end": 1767.72,
+      "text": "within the Matrix itself so let's go"
+    },
+    {
+      "start": 1765.44,
+      "end": 1770.12,
+      "text": "back to the sheet and Mark this as done"
+    },
+    {
+      "start": 1767.72,
+      "end": 1772.64,
+      "text": "I hope you have understood all the three"
+    },
+    {
+      "start": 1770.12,
+      "end": 1774.68,
+      "text": "approaches and the build up to the"
+    },
+    {
+      "start": 1772.64,
+      "end": 1776.72,
+      "text": "optimal solution just in case you did"
+    },
+    {
+      "start": 1774.68,
+      "end": 1778.1,
+      "text": "please please do consider giving that"
+    },
+    {
+      "start": 1776.72,
+      "end": 1780.08,
+      "text": "like because it won't cost you anything"
+    },
+    {
+      "start": 1778.1,
+      "end": 1781.64,
+      "text": "but it will highly motivate me to make"
+    },
+    {
+      "start": 1780.08,
+      "end": 1783.26,
+      "text": "these kind of content and if you're new"
+    },
+    {
+      "start": 1781.64,
+      "end": 1784.88,
+      "text": "to our Channel what are you waiting for"
+    },
+    {
+      "start": 1783.26,
+      "end": 1786.5,
+      "text": "there's a bunch of content on our"
+    },
+    {
+      "start": 1784.88,
+      "end": 1788.78,
+      "text": "Channel please please do consider"
+    },
+    {
+      "start": 1786.5,
+      "end": 1789.98,
+      "text": "subscribing to us and yes to continue"
+    },
+    {
+      "start": 1788.78,
+      "end": 1791.9,
+      "text": "our tradition please do comment"
+    },
+    {
+      "start": 1789.98,
+      "end": 1793.4,
+      "text": "understood and if you haven't followed"
+    },
+    {
+      "start": 1791.9,
+      "end": 1795.02,
+      "text": "me on Instagram Twitter LinkedIn the"
+    },
+    {
+      "start": 1793.4,
+      "end": 1796.16,
+      "text": "links are in the description with this"
+    },
+    {
+      "start": 1795.02,
+      "end": 1797.48,
+      "text": "I'll be wrapping up this video let's"
+    },
+    {
+      "start": 1796.16,
+      "end": 1798.24,
+      "text": "read in some other video till then bye"
+    },
+    {
+      "start": 1797.48,
+      "end": 1804.42,
+      "text": "take care"
+    },
+    {
+      "start": 1798.24,
+      "end": 1804.42,
+      "text": "[Music]"
+    },
+    {
+      "start": 1804.8,
+      "end": 1808.12,
+      "text": "I will find the light"
+    }
+  ]
+}

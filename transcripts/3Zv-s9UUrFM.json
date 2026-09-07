@@ -1,0 +1,1915 @@
+{
+  "video_id": "3Zv-s9UUrFM",
+  "title": "Spiral Traversal of a Matrix | Spiral Matrix",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 993,
+  "text": "hey everyone welcome back to the channel I hope you guys are doing extremely well so this is another lecture from the sters A2Z DSA course just in case for the first time out this is world's most in-depth course when you talk about DS algo why do I say that because this course has 455 modules by the end of the course you to solve more than 400 plus problems you can go over the entire internet you can buy any of the paid courses in the market none of them will be teaching you DS Alo inide step something that I can give you as Assurance is if you complete this entire course you can CLE any of the DS Alon in any of the companies in any part of the world so till now we have covered till this particular problem now in this video I'll be covering this problem which is the spiral Matrix now what does the problem state it states that you'll be given an N cross M Matrix and you have to print it in a spiral form what does it mean you start from one you go like this you go like this and in this order this is what you have to print yes in a spiral order is what you have to print so if I go across printing it will start like this go like this 26 and then ends up at 36 so this is what you have to do and I've written the integers in such way that you can actually track them in a spiral format so how do you do this so remember one thing this particular problem doesn't have multiple Solutions it just has one solution and that one solution is the optimal solution and why is the interv even asking this particular question so there are two reasons one is to test your implementation skills and the second one is how clean can you write the code so our Focus will be to find the easiest implementation so how do we implement this particular problem because it is an implementation based question so let's observe first we going like this then like this then like this then like this so can I say it's a pattern first we're moving right then bottom then left and then top so that this is the outer square or rectangle can I see this so can I say the first will be right then bottom then left and then top I can and this will make sure it prints the outer covering it does can I say the second covering is also in a similar fashion that is right bottom left top right so the second layering is also printed the third layering is right bottom left doesn't have a top doesn't have a top but it is sprinted so so is the observation something like this first second third fourth fifth so spirals all over till the center I can so this is what I have to implement so how can I implement this let's observe something so if I write down the row numbers it is 0 1 2 3 4 5 if I write on the column numbers 0 1 2 3 4 5 can I say the topmost row is zero can I say the bottommost row is as of now n minus one which is 5 and can I say the leftmost point is zero and the rightmost point is five so what are we doing at first at first we are printing this one then we are printing this one then we are printing this one and then we are printing this one agreed so if I have to print this portion and as of now if I have to write top is here bottom is here left is here and right is here can I say the first printing will be left to right which will make sure this prints so the first printing will be fall Loop of left to right and it will be like array of row will be top to and if I running a loop I equal to left to right it will be I so can I say this will make sure the right is printed yes it will what about the bottom can I say the bottom will be starting from here not six do not take six do not take six it'll be a repetion it'll be starting from seven so the top has to go one down so can I say top will go one down it will so maybe after this fall Loop is complete we can do a top Plus+ this will make sure that the right is performed if there was a right okay what will be the next top has gone down what do we need to print from here to here what is constant the right is constant and you go from top to bottom so please go ahead and do it so we go from kind of top to bottom and write this constant remember this and can I say I will print a of I and write as constant perfect so this is make sure the bottom is also printed so the bottom is also printed perfect next you have to print this direction again do not print 11 so can I say the right will move one back it will and now the right stands over here and I need to start from here till here so it goes from right to left and the bottom is constant so what you'll do is you'll say okay listen for I will go from this portion to this portion which is right to left so let's go from right to left and what will you say print array of yes the bottom stays constant and you just take this one so this will make sure the left is also printed what about the remaining portion remember it starts from 17 so make sure the bottom goes up make sure the bottom goes up okay and what is the next that you'll do if if you've taken the bottom up that's bottom minus minus perfect amazing what's the next job that you'll do you'll have to print from here till here what is constant left from bottom to top you have to run a loop so you run a loop from bottom to top perfect and you say print of a of what is constant left so keep the left as constant and this will print it once you have printed this the top is standing here the bottom is standing here the left is standing here the right is standing here so this will make sure the top is printed so can I say the first layering is printed so let's mark the first laying first layering is printed where will the next layering start from Yes it starts from here it starts from 21 so after this print the left has to move ahead please make sure the left moves ahead so after this the left is standing here here the left is standing here the top is standing here bottom is here right is here so again the new Matrix looks something like this so I hope you're understanding the pattern that I'm trying to form I'm first trying to print the right then the bottom then the left then the top that is why I'm using four different iteration of the loops so once once spiral is printed next I'll print the next next I'll print the next and you might ask but straight for this there is no top how will you manage this I'll show you that in the codeedit it's time to code it up covering all the edge cases just in case you want to Cod it up the problem link will be in the description make sure you try out from the problem Link in the description so at first you figure out the number of rows and then the number of columns in case you are thinking why is it like this so usually given a list of list so basically what like the input is basically always like this they will give you something a container this will be a list this will be a list this will be a list this will be a list this will be a list all the all the rows are list and they're put inside this particular container so if you figure out the size of this particular container that will be the number of rows and if you take the first and you say that is at zero the first and you say dot size this will give you the number of columns that is why we usually write N&M like this okay now what is the first thing we do we need a left which is at zero we know the right will be at M minus1 we know we need a top row which which will be at zero and the bottom row will always be at the last that's it and we have to return this particular answer in a vector so let's take a list okay done what are the directions right bottom left and top so let's perform all the directions so at first the right is perform so let's perform the right so it is like I goes from left I goes to right and I Plus+ and it says answer do push back of Matrix of what is constant the left and I perfect rather the top and I top and I done once you've done everything once you pushed it entirely the next starts from seven so the top goes ahead so top will go ahead what is the next thing you have to go ahead and do the bottom part so it's from top to bottom so let's quickly iterate from top to bottom that's from Top till bottom i++ and you'll again probably take this line the same line answer block push back but this time this will be I and the constant is the column because we are going Bottom perfect done once youve done this once you've done this so this is printed this is printed now you'll start from here so the right goes over here yes so the right goes over here so after this there will be a right minus minus as well so make sure the Right Moves one backward so right minus minus once You' done the right minus minus what is the next you definitely start from the right and you go on to the left please go ahead and do this and what do you say answer do push back this time what will you push back you are having the bottom row as constant so have the bottom row as constant and you will have the column as moveing okay so once you have put everything on this on this one then you start from here so the bottom moves are so you do a bottom minus minus perfect so once you have done this what's the next that you do you go ahead and print from bottom to top so please go ahead and print from bottom to top it's like IND equal to bottom tell top and I minus minus and you again write answer do push back Matrix of I what stays constant left once you have printed everything the left will move here because this is the new Matrix that you have to print so the left so what do you do is once you printed everything the left moves one step ahead so can I say this will make sure that this is printed this is printed this is printed this is printed the next step starts from here again again right again bottom again left again top so again the same four Loops will run so can I say if this left is smaller than this right that means there are columns that has to be traversed or spiraled and similarly can I say if the top is lesser than the bottom there are still elements that has to be spiral thereby what I will say is Hey listen while the top if I still have any rows and if I still have one column even even one column then I need to do this right left right left thing I need to do it there is no other way so I'll I'll go ahead and do it but will it work we need to think will it work at the end we can definitely return the answer but we need to still cover the edge cases this is fine this is going to go ahead and do it let's come back to the code so what if we have a single light just a single light then it is just perform right it is just perform right which is the first case which is the first case it will perform because the top was less than equal to bottom and the left was lesser than equal to right so the first right case should be performed does it have anything to perform on the bottom on the left on the top no because it is just one row so we have done we have done a top Plus+ so what would I happened was top would have been here bottom would have been here so on doing top Plus+ top moves top moves beneath bottom so basically this condition will make sure it checks it this condition will make sure it checks it and it will never print anything on the bottom it will never print anything on the bottom so we don't need to put any extra checks we don't need to put any extra checks so the bottom will not be printed because the fall Loop checks so over here there was stop and the the B the bottom was also there after the movement the top moves beneath bottom so the fall Loop checks and it doesn't prce and the right decreases itself perfect initially the left was here and now the right will decrease and come over here what is the next it is saying right to left please move right to left please move but are we checking because we are sure the top has exceeded so please make sure you check if the top is still under bottom we still have a row otherwise where will you print what will you print if it doesn't have anything so just make sure you do this perfect none so this is done so this condition makes sure that if there was one row yes if there was one row the left will not be printed but but the top will still be printed so the bottom is checked and it will not print it but if you remember in our case we had something like this in which there was no top how do you make sure this works out so the bottom is checked what is not checked let's write it for that now whatever is not checked go ahead and write for that now if the left we still have elements we still have elements it's fine to print it but if we do not have why will you print it so please check for left and right because the bottom and check uh top has been checked over here similarly the right and left have been checked so you don't do it so over here the top and bottom were checked and the Left Right were checked here and after that the left right never got increased that's why you did not write an FS over here over here they are required because top changes the right changes once You' have done this you can go ahead and try to run it hopefully it will run at one go it does let's quickly submit it off so what will be the time complexity can I say whatever you're doing doesn't matter you are and ending up iterating for every element for every element once so the time complexity is nothing but B go of n cross M because the loops are written with all the conditional cases so it will make sure every element is like this line will only be executed for every element once so the time complexity will be B of n cross M and you're storing the answer so that's another bigo of n cross M so going back to the sheet I can mark this as done and if you have understood everything please give that like because it won't cost you anything but it will highly motivate me to make these kind of content if you're new to our Channel what are you waiting for hit that subscribe button and to continue our tredition please do comment understood so that I get to know that you are understanding everything and if you haven't followed me on LinkedIn Instagram and Twitter all the profile links will be in the description with this I'll be wrapping up this video let's read in some other video till take care when your heart is broken don't never forget your golden I will find light",
+  "segments": [
+    {
+      "start": 3.2,
+      "end": 6.28,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.48,
+      "end": 7.44,
+      "text": "I hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.28,
+      "end": 9.92,
+      "text": "so this is another lecture from the"
+    },
+    {
+      "start": 7.44,
+      "end": 11.76,
+      "text": "sters A2Z DSA course just in case for"
+    },
+    {
+      "start": 9.92,
+      "end": 13.36,
+      "text": "the first time out this is world's most"
+    },
+    {
+      "start": 11.76,
+      "end": 15.52,
+      "text": "in-depth course when you talk about DS"
+    },
+    {
+      "start": 13.36,
+      "end": 18.2,
+      "text": "algo why do I say that because this"
+    },
+    {
+      "start": 15.52,
+      "end": 20.32,
+      "text": "course has 455 modules by the end of the"
+    },
+    {
+      "start": 18.2,
+      "end": 21.52,
+      "text": "course you to solve more than 400 plus"
+    },
+    {
+      "start": 20.32,
+      "end": 23.0,
+      "text": "problems you can go over the entire"
+    },
+    {
+      "start": 21.52,
+      "end": 24.8,
+      "text": "internet you can buy any of the paid"
+    },
+    {
+      "start": 23.0,
+      "end": 26.84,
+      "text": "courses in the market none of them will"
+    },
+    {
+      "start": 24.8,
+      "end": 27.92,
+      "text": "be teaching you DS Alo inide step"
+    },
+    {
+      "start": 26.84,
+      "end": 30.16,
+      "text": "something that I can give you as"
+    },
+    {
+      "start": 27.92,
+      "end": 32.04,
+      "text": "Assurance is if you complete this entire"
+    },
+    {
+      "start": 30.16,
+      "end": 34.04,
+      "text": "course you can CLE any of the DS Alon in"
+    },
+    {
+      "start": 32.04,
+      "end": 36.72,
+      "text": "any of the companies in any part of the"
+    },
+    {
+      "start": 34.04,
+      "end": 38.32,
+      "text": "world so till now we have covered till"
+    },
+    {
+      "start": 36.72,
+      "end": 39.96,
+      "text": "this particular problem now in this"
+    },
+    {
+      "start": 38.32,
+      "end": 43.08,
+      "text": "video I'll be covering this problem"
+    },
+    {
+      "start": 39.96,
+      "end": 45.16,
+      "text": "which is the spiral Matrix now what does"
+    },
+    {
+      "start": 43.08,
+      "end": 48.44,
+      "text": "the problem state it states that you'll"
+    },
+    {
+      "start": 45.16,
+      "end": 50.96,
+      "text": "be given an N cross M Matrix and you"
+    },
+    {
+      "start": 48.44,
+      "end": 53.24,
+      "text": "have to print it in a spiral form what"
+    },
+    {
+      "start": 50.96,
+      "end": 55.56,
+      "text": "does it mean you start from one you go"
+    },
+    {
+      "start": 53.24,
+      "end": 57.76,
+      "text": "like this you go like this and in this"
+    },
+    {
+      "start": 55.56,
+      "end": 60.12,
+      "text": "order this is what you have to print yes"
+    },
+    {
+      "start": 57.76,
+      "end": 62.36,
+      "text": "in a spiral order is what you have to"
+    },
+    {
+      "start": 60.12,
+      "end": 66.0,
+      "text": "print so if I go across printing it will"
+    },
+    {
+      "start": 62.36,
+      "end": 68.92,
+      "text": "start like this go like this 26 and then"
+    },
+    {
+      "start": 66.0,
+      "end": 70.84,
+      "text": "ends up at 36 so this is what you have"
+    },
+    {
+      "start": 68.92,
+      "end": 72.4,
+      "text": "to do and I've written the integers in"
+    },
+    {
+      "start": 70.84,
+      "end": 75.32,
+      "text": "such way that you can actually track"
+    },
+    {
+      "start": 72.4,
+      "end": 77.8,
+      "text": "them in a spiral format so how do you do"
+    },
+    {
+      "start": 75.32,
+      "end": 79.92,
+      "text": "this so remember one thing this"
+    },
+    {
+      "start": 77.8,
+      "end": 82.92,
+      "text": "particular problem doesn't have multiple"
+    },
+    {
+      "start": 79.92,
+      "end": 85.04,
+      "text": "Solutions it just has one solution and"
+    },
+    {
+      "start": 82.92,
+      "end": 87.16,
+      "text": "that one solution is the optimal"
+    },
+    {
+      "start": 85.04,
+      "end": 88.84,
+      "text": "solution and why is the interv even"
+    },
+    {
+      "start": 87.16,
+      "end": 92.28,
+      "text": "asking this particular question so there"
+    },
+    {
+      "start": 88.84,
+      "end": 95.16,
+      "text": "are two reasons one is to test your"
+    },
+    {
+      "start": 92.28,
+      "end": 98.44,
+      "text": "implementation skills and the second one"
+    },
+    {
+      "start": 95.16,
+      "end": 101.32,
+      "text": "is how clean can you write the code so"
+    },
+    {
+      "start": 98.44,
+      "end": 104.28,
+      "text": "our Focus will be to find the easiest"
+    },
+    {
+      "start": 101.32,
+      "end": 105.68,
+      "text": "implementation so how do we implement"
+    },
+    {
+      "start": 104.28,
+      "end": 107.88,
+      "text": "this particular problem because it is an"
+    },
+    {
+      "start": 105.68,
+      "end": 110.48,
+      "text": "implementation based question so let's"
+    },
+    {
+      "start": 107.88,
+      "end": 112.92,
+      "text": "observe first we going like this then"
+    },
+    {
+      "start": 110.48,
+      "end": 116.0,
+      "text": "like this then like this then like this"
+    },
+    {
+      "start": 112.92,
+      "end": 120.08,
+      "text": "so can I say it's a pattern first we're"
+    },
+    {
+      "start": 116.0,
+      "end": 123.12,
+      "text": "moving right then bottom then left and"
+    },
+    {
+      "start": 120.08,
+      "end": 125.32,
+      "text": "then top so that this is the outer"
+    },
+    {
+      "start": 123.12,
+      "end": 129.16,
+      "text": "square or rectangle can I see this so"
+    },
+    {
+      "start": 125.32,
+      "end": 133.96,
+      "text": "can I say the first will be right then"
+    },
+    {
+      "start": 129.16,
+      "end": 136.84,
+      "text": "bottom then left and then top I can and"
+    },
+    {
+      "start": 133.96,
+      "end": 140.48,
+      "text": "this will make sure it prints the outer"
+    },
+    {
+      "start": 136.84,
+      "end": 143.44,
+      "text": "covering it does can I say the second"
+    },
+    {
+      "start": 140.48,
+      "end": 147.72,
+      "text": "covering is also in a similar fashion"
+    },
+    {
+      "start": 143.44,
+      "end": 150.16,
+      "text": "that is right bottom left top right so"
+    },
+    {
+      "start": 147.72,
+      "end": 153.4,
+      "text": "the second layering is also printed the"
+    },
+    {
+      "start": 150.16,
+      "end": 155.92,
+      "text": "third layering is right bottom left"
+    },
+    {
+      "start": 153.4,
+      "end": 158.6,
+      "text": "doesn't have a top doesn't have a top"
+    },
+    {
+      "start": 155.92,
+      "end": 162.36,
+      "text": "but it is sprinted so so is the"
+    },
+    {
+      "start": 158.6,
+      "end": 167.8,
+      "text": "observation something like this first"
+    },
+    {
+      "start": 162.36,
+      "end": 170.64,
+      "text": "second third fourth fifth so spirals all"
+    },
+    {
+      "start": 167.8,
+      "end": 172.04,
+      "text": "over till the center I can so this is"
+    },
+    {
+      "start": 170.64,
+      "end": 174.4,
+      "text": "what I have to implement so how can I"
+    },
+    {
+      "start": 172.04,
+      "end": 176.16,
+      "text": "implement this let's observe something"
+    },
+    {
+      "start": 174.4,
+      "end": 180.48,
+      "text": "so if I write down the row numbers it is"
+    },
+    {
+      "start": 176.16,
+      "end": 184.68,
+      "text": "0 1 2 3 4 5 if I write on the column"
+    },
+    {
+      "start": 180.48,
+      "end": 187.48,
+      "text": "numbers 0 1 2 3 4 5 can I say the"
+    },
+    {
+      "start": 184.68,
+      "end": 191.12,
+      "text": "topmost row is zero can I say the"
+    },
+    {
+      "start": 187.48,
+      "end": 193.56,
+      "text": "bottommost row is as of now n minus one"
+    },
+    {
+      "start": 191.12,
+      "end": 196.6,
+      "text": "which is 5 and can I say the leftmost"
+    },
+    {
+      "start": 193.56,
+      "end": 200.12,
+      "text": "point is zero and the rightmost point is"
+    },
+    {
+      "start": 196.6,
+      "end": 203.04,
+      "text": "five so what are we doing at first at"
+    },
+    {
+      "start": 200.12,
+      "end": 205.4,
+      "text": "first we are printing this one then we"
+    },
+    {
+      "start": 203.04,
+      "end": 207.8,
+      "text": "are printing this one then we are"
+    },
+    {
+      "start": 205.4,
+      "end": 211.08,
+      "text": "printing this one and then we are"
+    },
+    {
+      "start": 207.8,
+      "end": 214.36,
+      "text": "printing this one agreed so if I have to"
+    },
+    {
+      "start": 211.08,
+      "end": 218.96,
+      "text": "print this portion and as of now if I"
+    },
+    {
+      "start": 214.36,
+      "end": 223.68,
+      "text": "have to write top is here bottom is here"
+    },
+    {
+      "start": 218.96,
+      "end": 225.56,
+      "text": "left is here and right is here can I say"
+    },
+    {
+      "start": 223.68,
+      "end": 228.56,
+      "text": "the first printing will"
+    },
+    {
+      "start": 225.56,
+      "end": 230.64,
+      "text": "be left to right which will make sure"
+    },
+    {
+      "start": 228.56,
+      "end": 233.68,
+      "text": "this prints so the first printing will"
+    },
+    {
+      "start": 230.64,
+      "end": 238.16,
+      "text": "be fall Loop of"
+    },
+    {
+      "start": 233.68,
+      "end": 241.8,
+      "text": "left to right and it will be like array"
+    },
+    {
+      "start": 238.16,
+      "end": 243.96,
+      "text": "of row will be top to and if I running a"
+    },
+    {
+      "start": 241.8,
+      "end": 246.76,
+      "text": "loop I equal to left to right it will be"
+    },
+    {
+      "start": 243.96,
+      "end": 249.44,
+      "text": "I so can I say this will make sure the"
+    },
+    {
+      "start": 246.76,
+      "end": 252.04,
+      "text": "right is printed yes it will what about"
+    },
+    {
+      "start": 249.44,
+      "end": 255.04,
+      "text": "the bottom can I say the bottom will be"
+    },
+    {
+      "start": 252.04,
+      "end": 257.84,
+      "text": "starting from here not six do not take"
+    },
+    {
+      "start": 255.04,
+      "end": 260.04,
+      "text": "six do not take six it'll be a repetion"
+    },
+    {
+      "start": 257.84,
+      "end": 262.28,
+      "text": "it'll be starting from seven so the top"
+    },
+    {
+      "start": 260.04,
+      "end": 265.04,
+      "text": "has to go one down so can I say top will"
+    },
+    {
+      "start": 262.28,
+      "end": 267.88,
+      "text": "go one down it will so maybe after this"
+    },
+    {
+      "start": 265.04,
+      "end": 270.2,
+      "text": "fall Loop is complete we can do a top"
+    },
+    {
+      "start": 267.88,
+      "end": 274.32,
+      "text": "Plus+ this will make sure that the right"
+    },
+    {
+      "start": 270.2,
+      "end": 277.16,
+      "text": "is performed if there was a right okay"
+    },
+    {
+      "start": 274.32,
+      "end": 279.04,
+      "text": "what will be the next top has gone down"
+    },
+    {
+      "start": 277.16,
+      "end": 281.6,
+      "text": "what do we need to print from here to"
+    },
+    {
+      "start": 279.04,
+      "end": 284.88,
+      "text": "here what is constant the right is"
+    },
+    {
+      "start": 281.6,
+      "end": 287.24,
+      "text": "constant and you go from top to bottom"
+    },
+    {
+      "start": 284.88,
+      "end": 291.04,
+      "text": "so please go ahead and do it so we go"
+    },
+    {
+      "start": 287.24,
+      "end": 293.24,
+      "text": "from kind of top to bottom and write"
+    },
+    {
+      "start": 291.04,
+      "end": 297.44,
+      "text": "this constant remember this and can I"
+    },
+    {
+      "start": 293.24,
+      "end": 300.64,
+      "text": "say I will print a of I and write as"
+    },
+    {
+      "start": 297.44,
+      "end": 304.08,
+      "text": "constant perfect so this is make sure"
+    },
+    {
+      "start": 300.64,
+      "end": 307.16,
+      "text": "the bottom is also printed so the bottom"
+    },
+    {
+      "start": 304.08,
+      "end": 309.68,
+      "text": "is also printed perfect next you have to"
+    },
+    {
+      "start": 307.16,
+      "end": 312.92,
+      "text": "print this direction again do not print"
+    },
+    {
+      "start": 309.68,
+      "end": 316.2,
+      "text": "11 so can I say the right will move one"
+    },
+    {
+      "start": 312.92,
+      "end": 318.68,
+      "text": "back it will and now the right stands"
+    },
+    {
+      "start": 316.2,
+      "end": 321.68,
+      "text": "over here and I need to start from here"
+    },
+    {
+      "start": 318.68,
+      "end": 324.6,
+      "text": "till here so it goes from right to left"
+    },
+    {
+      "start": 321.68,
+      "end": 327.56,
+      "text": "and the bottom is constant so what"
+    },
+    {
+      "start": 324.6,
+      "end": 330.72,
+      "text": "you'll do is you'll say okay listen for"
+    },
+    {
+      "start": 327.56,
+      "end": 332.8,
+      "text": "I will go from this portion to this"
+    },
+    {
+      "start": 330.72,
+      "end": 336.88,
+      "text": "portion which is right to left so let's"
+    },
+    {
+      "start": 332.8,
+      "end": 342.16,
+      "text": "go from right to left and what will you"
+    },
+    {
+      "start": 336.88,
+      "end": 345.8,
+      "text": "say print array of yes the bottom stays"
+    },
+    {
+      "start": 342.16,
+      "end": 348.76,
+      "text": "constant and you just take this one so"
+    },
+    {
+      "start": 345.8,
+      "end": 352.28,
+      "text": "this will make sure the left is also"
+    },
+    {
+      "start": 348.76,
+      "end": 354.76,
+      "text": "printed what about the remaining portion"
+    },
+    {
+      "start": 352.28,
+      "end": 357.12,
+      "text": "remember it starts from 17 so make sure"
+    },
+    {
+      "start": 354.76,
+      "end": 359.08,
+      "text": "the bottom goes up make sure the bottom"
+    },
+    {
+      "start": 357.12,
+      "end": 360.84,
+      "text": "goes up okay and what is the next that"
+    },
+    {
+      "start": 359.08,
+      "end": 365.04,
+      "text": "you'll do if if you've taken the bottom"
+    },
+    {
+      "start": 360.84,
+      "end": 366.68,
+      "text": "up that's bottom minus minus perfect"
+    },
+    {
+      "start": 365.04,
+      "end": 369.24,
+      "text": "amazing what's the next job that you'll"
+    },
+    {
+      "start": 366.68,
+      "end": 371.84,
+      "text": "do you'll have to print from here till"
+    },
+    {
+      "start": 369.24,
+      "end": 373.52,
+      "text": "here what is constant left from bottom"
+    },
+    {
+      "start": 371.84,
+      "end": 375.12,
+      "text": "to top you have to run a loop so you run"
+    },
+    {
+      "start": 373.52,
+      "end": 379.84,
+      "text": "a loop from"
+    },
+    {
+      "start": 375.12,
+      "end": 383.6,
+      "text": "bottom to top perfect and you say print"
+    },
+    {
+      "start": 379.84,
+      "end": 385.52,
+      "text": "of a of what is constant left so keep"
+    },
+    {
+      "start": 383.6,
+      "end": 389.6,
+      "text": "the left as constant and this will print"
+    },
+    {
+      "start": 385.52,
+      "end": 392.24,
+      "text": "it once you have printed this the top is"
+    },
+    {
+      "start": 389.6,
+      "end": 395.04,
+      "text": "standing here the bottom is standing"
+    },
+    {
+      "start": 392.24,
+      "end": 397.12,
+      "text": "here the left is standing here the right"
+    },
+    {
+      "start": 395.04,
+      "end": 399.08,
+      "text": "is standing here so this will make sure"
+    },
+    {
+      "start": 397.12,
+      "end": 401.12,
+      "text": "the top is printed so can I say the"
+    },
+    {
+      "start": 399.08,
+      "end": 402.24,
+      "text": "first layering is printed so let's mark"
+    },
+    {
+      "start": 401.12,
+      "end": 404.8,
+      "text": "the first"
+    },
+    {
+      "start": 402.24,
+      "end": 407.12,
+      "text": "laying first layering is printed where"
+    },
+    {
+      "start": 404.8,
+      "end": 410.36,
+      "text": "will the next layering start from Yes it"
+    },
+    {
+      "start": 407.12,
+      "end": 413.48,
+      "text": "starts from here it starts from 21 so"
+    },
+    {
+      "start": 410.36,
+      "end": 416.44,
+      "text": "after this print the left has to move"
+    },
+    {
+      "start": 413.48,
+      "end": 419.32,
+      "text": "ahead please make sure the left moves"
+    },
+    {
+      "start": 416.44,
+      "end": 422.12,
+      "text": "ahead so after this the left is standing"
+    },
+    {
+      "start": 419.32,
+      "end": 423.72,
+      "text": "here here the left is standing here the"
+    },
+    {
+      "start": 422.12,
+      "end": 426.4,
+      "text": "top is standing here bottom is here"
+    },
+    {
+      "start": 423.72,
+      "end": 428.24,
+      "text": "right is here so again the new Matrix"
+    },
+    {
+      "start": 426.4,
+      "end": 429.36,
+      "text": "looks something like this so I hope"
+    },
+    {
+      "start": 428.24,
+      "end": 431.28,
+      "text": "you're understanding the pattern that"
+    },
+    {
+      "start": 429.36,
+      "end": 433.44,
+      "text": "I'm trying to form I'm first trying to"
+    },
+    {
+      "start": 431.28,
+      "end": 435.72,
+      "text": "print the right then the bottom then the"
+    },
+    {
+      "start": 433.44,
+      "end": 438.08,
+      "text": "left then the top that is why I'm using"
+    },
+    {
+      "start": 435.72,
+      "end": 440.72,
+      "text": "four different iteration of the loops so"
+    },
+    {
+      "start": 438.08,
+      "end": 442.72,
+      "text": "once once spiral is printed next I'll"
+    },
+    {
+      "start": 440.72,
+      "end": 444.92,
+      "text": "print the next next I'll print the next"
+    },
+    {
+      "start": 442.72,
+      "end": 447.12,
+      "text": "and you might ask but straight for this"
+    },
+    {
+      "start": 444.92,
+      "end": 448.76,
+      "text": "there is no top how will you manage this"
+    },
+    {
+      "start": 447.12,
+      "end": 450.48,
+      "text": "I'll show you that in the codeedit it's"
+    },
+    {
+      "start": 448.76,
+      "end": 452.32,
+      "text": "time to code it up covering all the edge"
+    },
+    {
+      "start": 450.48,
+      "end": 453.44,
+      "text": "cases just in case you want to Cod it up"
+    },
+    {
+      "start": 452.32,
+      "end": 455.04,
+      "text": "the problem link will be in the"
+    },
+    {
+      "start": 453.44,
+      "end": 457.6,
+      "text": "description make sure you try out from"
+    },
+    {
+      "start": 455.04,
+      "end": 459.6,
+      "text": "the problem Link in the description so"
+    },
+    {
+      "start": 457.6,
+      "end": 462.32,
+      "text": "at first you figure out the number of"
+    },
+    {
+      "start": 459.6,
+      "end": 464.64,
+      "text": "rows and then the number of columns in"
+    },
+    {
+      "start": 462.32,
+      "end": 468.16,
+      "text": "case you are thinking why is it like"
+    },
+    {
+      "start": 464.64,
+      "end": 470.16,
+      "text": "this so usually given a list of list so"
+    },
+    {
+      "start": 468.16,
+      "end": 472.04,
+      "text": "basically what like the input is"
+    },
+    {
+      "start": 470.16,
+      "end": 474.24,
+      "text": "basically always like this they will"
+    },
+    {
+      "start": 472.04,
+      "end": 475.6,
+      "text": "give you something a container this will"
+    },
+    {
+      "start": 474.24,
+      "end": 476.96,
+      "text": "be a list this will be a list this will"
+    },
+    {
+      "start": 475.6,
+      "end": 480.2,
+      "text": "be a list this will be a list this will"
+    },
+    {
+      "start": 476.96,
+      "end": 481.92,
+      "text": "be a list all the all the rows are list"
+    },
+    {
+      "start": 480.2,
+      "end": 484.44,
+      "text": "and they're put inside this particular"
+    },
+    {
+      "start": 481.92,
+      "end": 486.68,
+      "text": "container so if you figure out the size"
+    },
+    {
+      "start": 484.44,
+      "end": 489.6,
+      "text": "of this particular container that will"
+    },
+    {
+      "start": 486.68,
+      "end": 493.32,
+      "text": "be the number of rows and if you take"
+    },
+    {
+      "start": 489.6,
+      "end": 495.92,
+      "text": "the first and you say that is at zero"
+    },
+    {
+      "start": 493.32,
+      "end": 498.24,
+      "text": "the first and you say dot size this will"
+    },
+    {
+      "start": 495.92,
+      "end": 501.4,
+      "text": "give you the number of columns that is"
+    },
+    {
+      "start": 498.24,
+      "end": 502.92,
+      "text": "why we usually write N&M like this okay"
+    },
+    {
+      "start": 501.4,
+      "end": 504.96,
+      "text": "now what is the first thing we do we"
+    },
+    {
+      "start": 502.92,
+      "end": 508.08,
+      "text": "need a left which is at zero we know the"
+    },
+    {
+      "start": 504.96,
+      "end": 510.56,
+      "text": "right will be at M minus1 we know we"
+    },
+    {
+      "start": 508.08,
+      "end": 513.16,
+      "text": "need a top row which which will be at"
+    },
+    {
+      "start": 510.56,
+      "end": 516.04,
+      "text": "zero and the bottom row will always be"
+    },
+    {
+      "start": 513.16,
+      "end": 518.28,
+      "text": "at the last that's it and we have to"
+    },
+    {
+      "start": 516.04,
+      "end": 522.32,
+      "text": "return this particular answer in a"
+    },
+    {
+      "start": 518.28,
+      "end": 524.32,
+      "text": "vector so let's take a list okay"
+    },
+    {
+      "start": 522.32,
+      "end": 528.52,
+      "text": "done what are the"
+    },
+    {
+      "start": 524.32,
+      "end": 530.56,
+      "text": "directions right bottom left and top so"
+    },
+    {
+      "start": 528.52,
+      "end": 532.92,
+      "text": "let's perform all the directions so at"
+    },
+    {
+      "start": 530.56,
+      "end": 535.12,
+      "text": "first the right is perform so let's"
+    },
+    {
+      "start": 532.92,
+      "end": 541.28,
+      "text": "perform the right so it is"
+    },
+    {
+      "start": 535.12,
+      "end": 545.08,
+      "text": "like I goes from left I goes to right"
+    },
+    {
+      "start": 541.28,
+      "end": 549.2,
+      "text": "and I Plus+ and it says answer do push"
+    },
+    {
+      "start": 545.08,
+      "end": 552.8,
+      "text": "back of Matrix of what is constant the"
+    },
+    {
+      "start": 549.2,
+      "end": 556.92,
+      "text": "left and I perfect rather the top and"
+    },
+    {
+      "start": 552.8,
+      "end": 559.72,
+      "text": "I top and I done once you've done"
+    },
+    {
+      "start": 556.92,
+      "end": 561.56,
+      "text": "everything once you pushed it entirely"
+    },
+    {
+      "start": 559.72,
+      "end": 564.2,
+      "text": "the next starts from seven so the top"
+    },
+    {
+      "start": 561.56,
+      "end": 565.92,
+      "text": "goes ahead so top will go ahead what is"
+    },
+    {
+      "start": 564.2,
+      "end": 568.84,
+      "text": "the next thing you have to go ahead and"
+    },
+    {
+      "start": 565.92,
+      "end": 571.08,
+      "text": "do the bottom part so it's from top to"
+    },
+    {
+      "start": 568.84,
+      "end": 572.4,
+      "text": "bottom so let's quickly iterate from top"
+    },
+    {
+      "start": 571.08,
+      "end": 577.24,
+      "text": "to"
+    },
+    {
+      "start": 572.4,
+      "end": 577.24,
+      "text": "bottom that's from Top till"
+    },
+    {
+      "start": 578.0,
+      "end": 584.16,
+      "text": "bottom i++ and you'll again probably"
+    },
+    {
+      "start": 582.44,
+      "end": 587.16,
+      "text": "take this line the same line answer"
+    },
+    {
+      "start": 584.16,
+      "end": 589.88,
+      "text": "block push back but this"
+    },
+    {
+      "start": 587.16,
+      "end": 592.0,
+      "text": "time this will be I and the constant is"
+    },
+    {
+      "start": 589.88,
+      "end": 595.12,
+      "text": "the column because we are going Bottom"
+    },
+    {
+      "start": 592.0,
+      "end": 596.88,
+      "text": "perfect done once youve done this once"
+    },
+    {
+      "start": 595.12,
+      "end": 599.52,
+      "text": "you've done this so this is printed this"
+    },
+    {
+      "start": 596.88,
+      "end": 601.16,
+      "text": "is printed now you'll start from here so"
+    },
+    {
+      "start": 599.52,
+      "end": 603.12,
+      "text": "the right goes over here yes so the"
+    },
+    {
+      "start": 601.16,
+      "end": 606.0,
+      "text": "right goes over here so after this there"
+    },
+    {
+      "start": 603.12,
+      "end": 609.12,
+      "text": "will be a right minus minus as well so"
+    },
+    {
+      "start": 606.0,
+      "end": 612.44,
+      "text": "make sure the Right Moves one backward"
+    },
+    {
+      "start": 609.12,
+      "end": 614.88,
+      "text": "so right minus minus once You' done the"
+    },
+    {
+      "start": 612.44,
+      "end": 617.56,
+      "text": "right minus minus what is the next you"
+    },
+    {
+      "start": 614.88,
+      "end": 621.2,
+      "text": "definitely start from the right and you"
+    },
+    {
+      "start": 617.56,
+      "end": 624.88,
+      "text": "go on to the left please go ahead and do"
+    },
+    {
+      "start": 621.2,
+      "end": 627.6,
+      "text": "this and what do you say answer do push"
+    },
+    {
+      "start": 624.88,
+      "end": 630.12,
+      "text": "back this time what will you push back"
+    },
+    {
+      "start": 627.6,
+      "end": 631.64,
+      "text": "you are having the bottom row as"
+    },
+    {
+      "start": 630.12,
+      "end": 635.56,
+      "text": "constant so have the bottom row as"
+    },
+    {
+      "start": 631.64,
+      "end": 638.6,
+      "text": "constant and you will have the column as"
+    },
+    {
+      "start": 635.56,
+      "end": 641.52,
+      "text": "moveing okay so once you have put"
+    },
+    {
+      "start": 638.6,
+      "end": 643.76,
+      "text": "everything on this on this one then you"
+    },
+    {
+      "start": 641.52,
+      "end": 645.04,
+      "text": "start from here so the bottom moves are"
+    },
+    {
+      "start": 643.76,
+      "end": 648.52,
+      "text": "so you do a"
+    },
+    {
+      "start": 645.04,
+      "end": 650.04,
+      "text": "bottom minus minus perfect so once you"
+    },
+    {
+      "start": 648.52,
+      "end": 652.36,
+      "text": "have done this what's the next that you"
+    },
+    {
+      "start": 650.04,
+      "end": 654.36,
+      "text": "do you go ahead and print from bottom to"
+    },
+    {
+      "start": 652.36,
+      "end": 657.96,
+      "text": "top so please go ahead and print from"
+    },
+    {
+      "start": 654.36,
+      "end": 661.92,
+      "text": "bottom to top it's like IND equal to"
+    },
+    {
+      "start": 657.96,
+      "end": 665.48,
+      "text": "bottom tell top and I minus minus and"
+    },
+    {
+      "start": 661.92,
+      "end": 669.08,
+      "text": "you again write answer do push back"
+    },
+    {
+      "start": 665.48,
+      "end": 671.84,
+      "text": "Matrix of I what stays constant left"
+    },
+    {
+      "start": 669.08,
+      "end": 673.64,
+      "text": "once you have printed everything the"
+    },
+    {
+      "start": 671.84,
+      "end": 676.08,
+      "text": "left will move here because this is the"
+    },
+    {
+      "start": 673.64,
+      "end": 678.12,
+      "text": "new Matrix that you have to print so the"
+    },
+    {
+      "start": 676.08,
+      "end": 680.68,
+      "text": "left so what do you do is once you"
+    },
+    {
+      "start": 678.12,
+      "end": 683.12,
+      "text": "printed everything the left moves one"
+    },
+    {
+      "start": 680.68,
+      "end": 685.36,
+      "text": "step ahead so can I say this will make"
+    },
+    {
+      "start": 683.12,
+      "end": 687.28,
+      "text": "sure that this is printed this is"
+    },
+    {
+      "start": 685.36,
+      "end": 689.36,
+      "text": "printed this is printed this is printed"
+    },
+    {
+      "start": 687.28,
+      "end": 691.0,
+      "text": "the next step starts from here again"
+    },
+    {
+      "start": 689.36,
+      "end": 694.16,
+      "text": "again right again bottom again left"
+    },
+    {
+      "start": 691.0,
+      "end": 698.36,
+      "text": "again top so again the same four Loops"
+    },
+    {
+      "start": 694.16,
+      "end": 700.6,
+      "text": "will run so can I say if this left is"
+    },
+    {
+      "start": 698.36,
+      "end": 704.28,
+      "text": "smaller than this right that means there"
+    },
+    {
+      "start": 700.6,
+      "end": 707.0,
+      "text": "are columns that has to be traversed or"
+    },
+    {
+      "start": 704.28,
+      "end": 709.4,
+      "text": "spiraled and similarly can I say if the"
+    },
+    {
+      "start": 707.0,
+      "end": 712.12,
+      "text": "top is lesser than the bottom there are"
+    },
+    {
+      "start": 709.4,
+      "end": 715.44,
+      "text": "still elements that has to be spiral"
+    },
+    {
+      "start": 712.12,
+      "end": 720.4,
+      "text": "thereby what I will say is Hey"
+    },
+    {
+      "start": 715.44,
+      "end": 724.64,
+      "text": "listen while the top if I still have"
+    },
+    {
+      "start": 720.4,
+      "end": 728.8,
+      "text": "any rows and if I still have one column"
+    },
+    {
+      "start": 724.64,
+      "end": 730.88,
+      "text": "even even one column then I need to do"
+    },
+    {
+      "start": 728.8,
+      "end": 733.12,
+      "text": "this right left right left thing I need"
+    },
+    {
+      "start": 730.88,
+      "end": 735.52,
+      "text": "to do it there is no other way so I'll"
+    },
+    {
+      "start": 733.12,
+      "end": 737.4,
+      "text": "I'll go ahead and do it but will it work"
+    },
+    {
+      "start": 735.52,
+      "end": 739.88,
+      "text": "we need to think will it"
+    },
+    {
+      "start": 737.4,
+      "end": 742.16,
+      "text": "work at the end we can definitely return"
+    },
+    {
+      "start": 739.88,
+      "end": 743.96,
+      "text": "the answer but we need to still cover"
+    },
+    {
+      "start": 742.16,
+      "end": 746.6,
+      "text": "the edge cases this is fine this is"
+    },
+    {
+      "start": 743.96,
+      "end": 750.12,
+      "text": "going to go ahead and do it let's come"
+    },
+    {
+      "start": 746.6,
+      "end": 752.2,
+      "text": "back to the code so"
+    },
+    {
+      "start": 750.12,
+      "end": 754.68,
+      "text": "what if we have a single light just a"
+    },
+    {
+      "start": 752.2,
+      "end": 758.16,
+      "text": "single light then it is just perform"
+    },
+    {
+      "start": 754.68,
+      "end": 760.68,
+      "text": "right it is just perform right which is"
+    },
+    {
+      "start": 758.16,
+      "end": 762.88,
+      "text": "the first case which is the first case"
+    },
+    {
+      "start": 760.68,
+      "end": 764.36,
+      "text": "it will perform because the top was less"
+    },
+    {
+      "start": 762.88,
+      "end": 766.2,
+      "text": "than equal to bottom and the left was"
+    },
+    {
+      "start": 764.36,
+      "end": 768.6,
+      "text": "lesser than equal to right so the first"
+    },
+    {
+      "start": 766.2,
+      "end": 770.28,
+      "text": "right case should be performed does it"
+    },
+    {
+      "start": 768.6,
+      "end": 772.52,
+      "text": "have anything to perform on the bottom"
+    },
+    {
+      "start": 770.28,
+      "end": 777.52,
+      "text": "on the left on the top no because it is"
+    },
+    {
+      "start": 772.52,
+      "end": 779.24,
+      "text": "just one row so we have done we have"
+    },
+    {
+      "start": 777.52,
+      "end": 781.56,
+      "text": "done a top Plus+ so what would I"
+    },
+    {
+      "start": 779.24,
+      "end": 783.0,
+      "text": "happened was top would have been here"
+    },
+    {
+      "start": 781.56,
+      "end": 787.0,
+      "text": "bottom would have been here so on doing"
+    },
+    {
+      "start": 783.0,
+      "end": 788.6,
+      "text": "top Plus+ top moves top moves beneath"
+    },
+    {
+      "start": 787.0,
+      "end": 790.84,
+      "text": "bottom so"
+    },
+    {
+      "start": 788.6,
+      "end": 792.88,
+      "text": "basically this condition will make sure"
+    },
+    {
+      "start": 790.84,
+      "end": 795.32,
+      "text": "it checks it this condition will make"
+    },
+    {
+      "start": 792.88,
+      "end": 797.68,
+      "text": "sure it checks it and it will never"
+    },
+    {
+      "start": 795.32,
+      "end": 799.4,
+      "text": "print anything on the bottom it will"
+    },
+    {
+      "start": 797.68,
+      "end": 801.16,
+      "text": "never print anything on the bottom so we"
+    },
+    {
+      "start": 799.4,
+      "end": 803.04,
+      "text": "don't need to put any extra checks we"
+    },
+    {
+      "start": 801.16,
+      "end": 804.56,
+      "text": "don't need to put any extra checks so"
+    },
+    {
+      "start": 803.04,
+      "end": 808.28,
+      "text": "the bottom will not be printed because"
+    },
+    {
+      "start": 804.56,
+      "end": 810.36,
+      "text": "the fall Loop checks so over here there"
+    },
+    {
+      "start": 808.28,
+      "end": 811.4,
+      "text": "was stop and the the B the bottom was"
+    },
+    {
+      "start": 810.36,
+      "end": 814.16,
+      "text": "also"
+    },
+    {
+      "start": 811.4,
+      "end": 816.76,
+      "text": "there after the movement the top moves"
+    },
+    {
+      "start": 814.16,
+      "end": 819.16,
+      "text": "beneath bottom so the fall Loop checks"
+    },
+    {
+      "start": 816.76,
+      "end": 821.88,
+      "text": "and it doesn't prce and the right"
+    },
+    {
+      "start": 819.16,
+      "end": 824.4,
+      "text": "decreases itself perfect initially the"
+    },
+    {
+      "start": 821.88,
+      "end": 827.32,
+      "text": "left was here and now the right will"
+    },
+    {
+      "start": 824.4,
+      "end": 830.0,
+      "text": "decrease and come over here what is the"
+    },
+    {
+      "start": 827.32,
+      "end": 835.0,
+      "text": "next it is saying right to left please"
+    },
+    {
+      "start": 830.0,
+      "end": 837.2,
+      "text": "move right to left please move but are"
+    },
+    {
+      "start": 835.0,
+      "end": 840.6,
+      "text": "we checking because we are sure the top"
+    },
+    {
+      "start": 837.2,
+      "end": 842.32,
+      "text": "has exceeded so please make sure you"
+    },
+    {
+      "start": 840.6,
+      "end": 846.08,
+      "text": "check"
+    },
+    {
+      "start": 842.32,
+      "end": 848.44,
+      "text": "if the top is still under bottom we"
+    },
+    {
+      "start": 846.08,
+      "end": 850.04,
+      "text": "still have a row otherwise where will"
+    },
+    {
+      "start": 848.44,
+      "end": 852.0,
+      "text": "you print what will you print if it"
+    },
+    {
+      "start": 850.04,
+      "end": 856.48,
+      "text": "doesn't have anything so just make sure"
+    },
+    {
+      "start": 852.0,
+      "end": 860.12,
+      "text": "you do this perfect none so this is done"
+    },
+    {
+      "start": 856.48,
+      "end": 862.08,
+      "text": "so this condition makes sure that if"
+    },
+    {
+      "start": 860.12,
+      "end": 865.64,
+      "text": "there was one row yes if there was one"
+    },
+    {
+      "start": 862.08,
+      "end": 868.24,
+      "text": "row the left will not be printed but but"
+    },
+    {
+      "start": 865.64,
+      "end": 869.76,
+      "text": "the top will still be printed so the"
+    },
+    {
+      "start": 868.24,
+      "end": 871.52,
+      "text": "bottom is checked"
+    },
+    {
+      "start": 869.76,
+      "end": 873.88,
+      "text": "and it will not print it but if you"
+    },
+    {
+      "start": 871.52,
+      "end": 876.48,
+      "text": "remember in our case we had something"
+    },
+    {
+      "start": 873.88,
+      "end": 879.28,
+      "text": "like this in which there was no top how"
+    },
+    {
+      "start": 876.48,
+      "end": 881.72,
+      "text": "do you make sure this works out so the"
+    },
+    {
+      "start": 879.28,
+      "end": 883.84,
+      "text": "bottom is checked what is not checked"
+    },
+    {
+      "start": 881.72,
+      "end": 885.56,
+      "text": "let's write it for that now whatever is"
+    },
+    {
+      "start": 883.84,
+      "end": 889.8,
+      "text": "not checked go ahead and write for that"
+    },
+    {
+      "start": 885.56,
+      "end": 891.44,
+      "text": "now if the left we still have elements"
+    },
+    {
+      "start": 889.8,
+      "end": 893.6,
+      "text": "we still have elements it's fine to"
+    },
+    {
+      "start": 891.44,
+      "end": 895.12,
+      "text": "print it but if we do not have why will"
+    },
+    {
+      "start": 893.6,
+      "end": 897.16,
+      "text": "you print it so please check for left"
+    },
+    {
+      "start": 895.12,
+      "end": 899.32,
+      "text": "and right because the bottom and check"
+    },
+    {
+      "start": 897.16,
+      "end": 901.0,
+      "text": "uh top has been checked over here"
+    },
+    {
+      "start": 899.32,
+      "end": 902.92,
+      "text": "similarly the right and left have been"
+    },
+    {
+      "start": 901.0,
+      "end": 904.84,
+      "text": "checked so you don't do it so over here"
+    },
+    {
+      "start": 902.92,
+      "end": 907.32,
+      "text": "the top and bottom were checked and the"
+    },
+    {
+      "start": 904.84,
+      "end": 909.56,
+      "text": "Left Right were checked here and after"
+    },
+    {
+      "start": 907.32,
+      "end": 911.48,
+      "text": "that the left right never got increased"
+    },
+    {
+      "start": 909.56,
+      "end": 914.16,
+      "text": "that's why you did not write an FS over"
+    },
+    {
+      "start": 911.48,
+      "end": 916.56,
+      "text": "here over here they are required because"
+    },
+    {
+      "start": 914.16,
+      "end": 918.8,
+      "text": "top changes the right changes once You'"
+    },
+    {
+      "start": 916.56,
+      "end": 920.88,
+      "text": "have done this you can go ahead and try"
+    },
+    {
+      "start": 918.8,
+      "end": 924.04,
+      "text": "to run it hopefully it will run at one"
+    },
+    {
+      "start": 920.88,
+      "end": 926.16,
+      "text": "go it does let's quickly submit it off"
+    },
+    {
+      "start": 924.04,
+      "end": 928.36,
+      "text": "so what will be the time complexity can"
+    },
+    {
+      "start": 926.16,
+      "end": 930.76,
+      "text": "I say whatever you're doing doesn't"
+    },
+    {
+      "start": 928.36,
+      "end": 933.84,
+      "text": "matter you are and ending up iterating"
+    },
+    {
+      "start": 930.76,
+      "end": 937.48,
+      "text": "for every element for every element once"
+    },
+    {
+      "start": 933.84,
+      "end": 940.88,
+      "text": "so the time complexity is nothing but B"
+    },
+    {
+      "start": 937.48,
+      "end": 944.36,
+      "text": "go of n cross M because the loops are"
+    },
+    {
+      "start": 940.88,
+      "end": 947.0,
+      "text": "written with all the conditional cases"
+    },
+    {
+      "start": 944.36,
+      "end": 949.16,
+      "text": "so it will make sure every element is"
+    },
+    {
+      "start": 947.0,
+      "end": 951.24,
+      "text": "like this line will only be executed for"
+    },
+    {
+      "start": 949.16,
+      "end": 953.96,
+      "text": "every element once so the time"
+    },
+    {
+      "start": 951.24,
+      "end": 955.84,
+      "text": "complexity will be B of n cross M and"
+    },
+    {
+      "start": 953.96,
+      "end": 958.48,
+      "text": "you're storing the answer so that's"
+    },
+    {
+      "start": 955.84,
+      "end": 960.64,
+      "text": "another bigo of n cross M so going back"
+    },
+    {
+      "start": 958.48,
+      "end": 962.52,
+      "text": "to the sheet I can mark this as done and"
+    },
+    {
+      "start": 960.64,
+      "end": 964.6,
+      "text": "if you have understood everything please"
+    },
+    {
+      "start": 962.52,
+      "end": 966.24,
+      "text": "give that like because it won't cost you"
+    },
+    {
+      "start": 964.6,
+      "end": 967.92,
+      "text": "anything but it will highly motivate me"
+    },
+    {
+      "start": 966.24,
+      "end": 969.76,
+      "text": "to make these kind of content if you're"
+    },
+    {
+      "start": 967.92,
+      "end": 971.56,
+      "text": "new to our Channel what are you waiting"
+    },
+    {
+      "start": 969.76,
+      "end": 973.4,
+      "text": "for hit that subscribe button and to"
+    },
+    {
+      "start": 971.56,
+      "end": 974.84,
+      "text": "continue our tredition please do comment"
+    },
+    {
+      "start": 973.4,
+      "end": 976.4,
+      "text": "understood so that I get to know that"
+    },
+    {
+      "start": 974.84,
+      "end": 977.52,
+      "text": "you are understanding everything and if"
+    },
+    {
+      "start": 976.4,
+      "end": 979.08,
+      "text": "you haven't followed me on LinkedIn"
+    },
+    {
+      "start": 977.52,
+      "end": 980.88,
+      "text": "Instagram and Twitter all the profile"
+    },
+    {
+      "start": 979.08,
+      "end": 981.96,
+      "text": "links will be in the description with"
+    },
+    {
+      "start": 980.88,
+      "end": 983.72,
+      "text": "this I'll be wrapping up this video"
+    },
+    {
+      "start": 981.96,
+      "end": 988.08,
+      "text": "let's read in some other video till take"
+    },
+    {
+      "start": 983.72,
+      "end": 990.12,
+      "text": "care when your heart is broken don't"
+    },
+    {
+      "start": 988.08,
+      "end": 994.56,
+      "text": "never forget your"
+    },
+    {
+      "start": 990.12,
+      "end": 994.56,
+      "text": "golden I will find light"
+    }
+  ]
+}

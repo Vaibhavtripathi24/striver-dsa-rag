@@ -1,0 +1,2985 @@
+{
+  "video_id": "xvNwoz-ufXA",
+  "title": "Count Subarray sum Equals K | Brute - Better -Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1449,
+  "text": "hey view welcome back to the channel I hope you guys are doing extremely well so this is another video from the Strivers A to Z DSA course just in case you're for the first time here this is world's most in-depth course when you talk about DS I'll go why do I say that 455 this cost us 455 models by the end of the course more than 400 plus problems in DS algo you can go over the entire internet you can buy any of the paid courses none of them will be teaching you DSL go in such depth something that I can give you as Assurance is once you complete this entire post you can clear any of the DS algorons in any company in any part of the world so till now I have covered till this particular problem and this video I'll be covering this one but before that please make sure that you should have seen these two videos like there's one single view but you should know how to solve these couple of problems because the solution to this particular problem is highly dependent on these couple of problems or this one single video so please make sure you do watch it the link will be in the description so what is the problem State it's very clear by the name you have to find me the number of sub arrays which gives you a sum K now what is the definition of a sub array it means any contiguous part of the array very very important word any contiguous part of the array what does it mean if I take this this is a sub array if I take this this is a sub array if I take this portion this is also a Savari now I cannot say one four two basically one four two this is not a savare rather it is a subsequence so it's very important to understand the definition of sabare is contiguous part of the array it can be the entire array as well it can be a single element as well it can be two elements it can be three elements it can be any portion of the array but it has to be contagiously taken got it let us take this particular example with k equal to 3 and try to analyze how many number of sub arrays we can get with the sum equal to K so we're looking for a sum equal to three so I can say first I will take 1 and 2 which will give me like if I take this one it'll definitely give me the sum as three okay can I take one two 3 minus 3 yes I can can I take something like three individually yes I can can I take something like 2 3 minus 3 1 yes I can which is this one 3G will go this will still give me the summation as cake can I take something as 3 comma minus three comma 1 comma one comma one yes kinetic something as one comma one comma one yes so do we see something else yes I do something like 4 comma 2 comma minus three which is basically this one and I also see one more which is minus three one one one and then a 4 2 minus three because even if you sum up this one minus 3 this this will go and then 4 plus 2 is 6 minus three yeah three so I can see eight sub arrays so for this particular example there will be exactly eight sub arrays which will give me the sum as three it's very important to understand sabare means contiguous so what if the question comes up in an interview what is the first solution that you'll give to the interview that is definitely the Brute Force solution so what is the extreme solution that you can think of it's generate all the sub arrays and see how many are giving you some K so how do you generate all the sub arrays if you're careful You observe this is your first body this is your second sub array this is your third this is your fourth this is your fifth this is your Sixth and goes on till the last basically it starts with one element then adds one more adds one more adds one more adds one more and keeps on adding and then the next starts from 2 by taking just two then takes two three two three minus three goes on goes on goes on and so on next stanza 3 x 3 3 minus 3 then this then this then this and keeps on going and eventually you can move this point so can I say if I put a pointer I over here initially when I is here the first sub array is this so I can keep i j here the next sub array is this so I can move j the next value is this I can go here next about it is this and similarly I can move j till the last which basically means J started from here and J went on till the last index which is n minus 1 right and then what I can do is I can move I over here and I can again say that J will be here and then J will move and eventually J will go till the end and at the next step I can again move I and J will be here and J will go till the end so similarly I can keep on moving I till the end right so if I have to write can I say I will always start from 0 I will go till n minus 1 rather n and I plus plus and the poor Loop will be for J will be right room I till n minus 1 and I'll go like this so can I say one thing for sure if I is here J is here the sub array is only this much and a j moves here the sub array is this if J moves here the sub array is this much so can I surely say the disabary is from I to J I definitely can say so what I can what I'll do is I'll keep the summation as 0 and I'll run a note K from I to J because I know the sub array is from I to J and I'll say some equal to sum plus array of K correct what this particular Loop will do is this will go through the entire sub array and accumulate the sum once you have collected the sum outside the follow you can say if sum is equal to equal to K you do a counter plus plus and this count can be initialized right at the starting now this for Loop will end and then this for Loop will end So eventually this ends here and then this ends here so what I can say is once you have run the three nested Loops the counter will be storing the number of sub arrays with some K but what is the time complexity can I say it's near about B go of n Cube why because you're running near about three Loops it's not exactly n Cube but it's somewhere near about n Cube because first time it's running for the entire next it's running for this next is running for this so not exactly in queue but somewhere near about NQ so obviously the interview will not be happy with the NQ and it'll ask you to optimize it and this is when you'll move to the better solution so what will be the better solution let's have some observations what are we doing over here we are saying I is here and J is here and the first Samaria is this then we are moving J to here and we're seeing second Subaru is this then we are saying J is here and the third server is this then we are seeing j is over here and the fourth sub array is this and we are running a for Loop in order to accumulate the sum but do we actually require the for Loop think carefully whenever I is here J is here what are you doing you're iterating from I to J and accumulating the sum do you need to do that because initially the first sub array is having one so can I see sum is one and when J moves can I say the second somewhere will be 1 2 so there is only an addition of two so just add 2 Then when G moves then in the third sub array there is just an addition of three so at 3 then when J moves there is just a relation of minus three so just add minus 3 so what you can do is instead of accumulating the sum by running a loop from I to J you can say Hey listen I will not accumulate every time instead of that I'll keep a summation 0 and every time there is an addition yes just a second every time there is an addition I will just add that number because I know initially this much then 2 will get added then 3 then minus three then one so every time the number gets added so every dying instead of accumulating separately by running a loop you can directly add it and then you can check so have decrease the inner loop what is the time complexity somewhere near about B go of n Square somewhere near about B go of n Square are we using some extra space no but the interviewer will not be happy with the bigger of n square and it'll ask you to optimize it this is when you'll move to the optimal one so it's time to discuss the most optimal solution the most optimal solution will be using the concept of prefix sum in case you don't know about it I've already explained it in depth in this particular video I'll be leaving the video link in the description pause this particular video go back and watch it and then you can come back over so what is the concept of prefix sum let's understand that so as you might say I'll go till this particular element and if I ask you what is the summation of all the prefix elements so basically 1 plus 2 3 plus 3 6 minus three three four five six so I can say the prefix summation is 6 and can I say the summation of these three elements is 3 I can I can see the summation of these three elements are three and if I ask you what is the sum of these elements the remaining elements please do not add it up please do not add up single elements I'm just asking you as a normal max if the total summation is 6 and this one's sum is three how much will this be three because this minus this will give you three and this is the concept that I'll be using so what I'll try to look forward is I know in a particular till a particular index we will have a prefix sum as X as you and I know I am looking for I know I'm looking for a sub array with some k so what is the remaining portion what will be the sum of the remaining portion can I see it will be x minus K I can because if the prefix sum till here is X and probably there is a submaric probability like over here there was a summary over here there was a subarina that's why the sum the sum K mastering what if there is a sub array who sum Escape then in the backward there will always be a prefixer there will always be a prefix term till here which will have a summation of x minus K till here the prefix sum will always be x minus K similarly if I have to visualize it again can I say this if I just rub it off can I say this till here also the summation is 3 thereby these two elements will also give you how much 6 minus 3 which is 3 agreed what did You observe You observe one thing the total summation was 6 and there was I was looking for three I was looking for three because we were looking for a sub array which ends at this index we are looking for a sub array which ends at this index and apparently over here there was one which was ending over here and there was other one which was ending over here so if there are two sub arrays which are ending at here with a summation of three if there are two sub arrays which is ending at here with a summation of Threes can I say there will be two sub arrays there will be two prefix sum of x minus K I get we had till here three we had till here 3 I get right because there was two because there was two sending backward there will also be two there will also be two with the same sum with the same sum so can I say if I'm looking for K over here so instead of looking for K because it's somewhere in the middle I will look for prefix sum how many are x minus K how many are x minus K like in this case let's again go back like in this case what did we see we had three but instead of looking for three if I just erase it off and this is 3. so basically what I'm saying is till here the prefix sum was three until here the prefix sum was three so I know there were six and I was looking for three it's in the backward there was two elements with three there was two elements with six minus K there were two sub prefix with 6 minus K that means that means there will be two submaris one is this and the other one is this this is the reverse engineering we just did the reverse engineering what did we say we said if till a point the prefix sum is s and I am looking for K so in order to figure out how many k are there I will look out how many s minus K are there how many s minus K the number of s minus K will be equivalent to the number of K over here three one 2 so equivalent if you take this this will be the other sub array if you take this this will be the other side so I did look in the opposite direction why did I look in the opposite direction because we kept easily store the prefix up we can easily store the prefixer but we cannot find out uh between sub that's not possible that is why and I hope you kind of got the intuition in case you did not do not worry about it the moment I do the dry run everything will get crystalline free so let us quickly do a dry run on the algorithm so what are the data structures that we require so if you remember till here we had a prefix sum as s and we were looking for a sub array with some K so previously I was looking for if there is an occurrence of s minus K if you remember properly and that means we are looking for was there a prefixer we were looking for did it happen in the past so what better than a hash map so we will be using a data structure as hashmap which will be storing prefix sum how many times a dockered and that will be count why and everything you'll understand as you move forward in the dry run and we will take two variables one that keeps the track of what is the prefixer the other that keeps it track of the number of subares so initially the prefix sum is zero so please make sure you enter 0 as 1 saying is a prefix of 0 and count as 1 why because initially when we started we did not pick up any one and we'll understand the significance of 0 as we move forward so initially uh we will be standing at one so let's add it to the prefix sum as well so what are we saying we have some elements that gives us a prefix sum of one so in that sum n levels we will look for a sub array that insert this index with the summation of K so the previous there must be some previous Elements which can be excluded who has the sum of s minus K agreed because if this is s and if I'm looking for K the excluded people should be S minus K which is 1 minus 3 that is minus 2 do we have a minus 2 do we have any previous elements that gives we prefix a minus two no so not possible next take one and put it as one comma one this so there is a prefix sum of one that occurs once perfect let's move it so we have a 2. we have a tool now if we have a do we add it to the prefix I'm saying we have a summation three what are we saying we are saying there are some elements which gives me a sum as 3. I'm looking for some elements which ends at this particular index who gives me a sum of K so I need to exclude elements with the summation of s minus k then only I'll get K so what is this 3 what is K3 so you need to exclude Elements which gives me a summation of 0 that means no elements that's why storing the 0 has significance got it so the count will increase by 1 because there's one so there can be one prefix sum which on removal will give me this one so done next please take 3 and put it over here let's move we have a 3 again let's add it up 6. so this time we have a summation of 6 and we are looking for k equal to 3 so we have to remove s minus K we have to remove elements with sum up S minus K so what is s 6 what is K so we have to remove prefix sum 3 so that is yeah we got it we got it once that is very eminent because if you remove this you'll just have this one so this is why this works thereby since 3 occurs once the count will increase by 1 and 6 will go as one perfect let's move it the moment you over here there's a minus three take this minus 3 add it up what do you get 3 and if you're getting three this is the moment you start again looking forward you are like total three looking for three how many exclude anyone who gives you a summation of zero exclude anyone who gives you a summation of Cu and we just have one which an exclusion gives me a summation of 0 which is no one so thereby so there's only one addition perfect and there's three increase the count do not put it into the hash map increase the call next move level one so summation increases to four what are we looking for we're looking for four and we know we are looking for k equal to three so you're looking for S minus K which is 4 minus 3 which is 1 and we have it we have it which is this single element if you exclude this single element these elements will give you some array with some K it will so there's one element increase and store four comma 1 let's move we have a five this time we have a five if you have a five you're looking to remove how much Elements which give you some three do we have two do we have two no nothing to be done just take five include in the hash map and move it six very important point you have six you know you will be requiring three so you have to remove Elements which will give you summation of three and there are two occurrences if you see there are two occurrences if you remove this this gives you summation of three if you remove this this also gives you a summation of three so there are two occurrences this is why I was storing count so there are two occurrences which on removal can give you this particular sum and then you will be ending up with three so add up two six subares found so for six I've added the number of sub arrays what is the next turn add one so six will be added over here please make sure add six over here instead of adding it again into the hasher let's move forward we have a four ten so if we have a 10 we are looking for three so we have to remove seven do we have a seven no we don't have a seven not to be done put up 10 and move forward so we have a 12 is now what do we have 12 been looking for three we have to remove something of nine do we have a nine do we have a nine no 12 comma one next move and remove you have to add minus three so it's nine so an addition of minus three you get nine so it's basically you have a nine and you're looking for three so the remaining is six you have to remove elements who who are giving you some summation of six and the rock is twice once here once here it's basically once you remove this this Safari also gives you a summation of three even if you remove everyone this also gives you a summation of six thereby two more occurrences go ahead and add it up once you've done this put it into the one and your iteration is over once your iteration is over the count will be storing your answer this is why I said storing of count is very very important and also storing of 0 is also very very high significance and if you want to know why I'll just give you a subtle example you can try it out at your home so take this example 3 minus 3 1 1 okay take this example and you will see what will happen if you do not store zero please try out this example do a dragon and you'll understand why storing 0 is very very important got it so the entire logic is super simple isn't it you have a prefix sum which is the entire sum till a particular index and you are looking for K so I'll just look for how many times s minus K appeared and that will be the number of sub arrays that ends at this particular index that is what the intuition was so let's quickly go back to the code editor and try to code it up again you can find the problem Link in the description please make sure you try out the problem uh from the link in the description so we will take a map and you can also take an unordered map and initially I will say map of 0 is equal to 1. Let's store a prefix sum as 0 and let's store account as zero and at the end of the day we will return the count let's Now quickly start the iteration so we will iterate throughout the array so this is how we will write it and we will say prefix sum plus equal to array of I every time I get in and what am I looking for what am I looking to remove if I ask you on the backwards what will I look for remove it's very simple I'll try to remove this one so it's basically stating if I can get how many are there with this removals like how many in initial prefix sums are there which can be removed and that will be why counter sub arrays and before going ahead what I'll say is mpb prefix sum can you just update yourself in the hashma once this is done I can just return it and that will be it hardly a four line code and it solves the entire problem so much of logic but four lines of code so what will be the time complexity I can say we are linearly iterating on the array so that is going to take a big O of N and for the unordered map we know the average case is Big of one yeah the worst case in case of positions can be big often so depending on that you can explain to the interviewer that if we take the simple map it will be logarithmic of n if you take unordered map the best and the average will be big go of one for map but the worst might be big oven so depending on what complexity you assume for the map the logarithmic thing will alter so that will be the time complexity what about the space complexity we're using a map to store all the prefix sums so the worst case all the prefix sums can be different and we might end up storing n prefix sums so that will be the space complexity this will be the time complexity and we cannot do anything better than that so going back to the sheet I can say that this particular problem is completed with this we wrap up the medium section of arrays as well I hope understood all the three approaches just in case you did please please consider giving us that like because it won't cost you anything but that will motivate me a lot to make these kind of videos and if you're new to our Channel what are you waiting for hit that subscribe button and to continue our tradition please make sure you do comment understood and if you haven't followed me on Instagram Twitter and Linkedin all the ideas will be in the description with this I'll be wrapping up this video let's read in some of the video till then bye take care whenever your heart is broken don't ever forget your golden I I will find the light in",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 5.94,
+      "text": "hey view welcome back to the channel I"
+    },
+    {
+      "start": 4.68,
+      "end": 7.44,
+      "text": "hope you guys are doing extremely well"
+    },
+    {
+      "start": 5.94,
+      "end": 9.9,
+      "text": "so this is another video from the"
+    },
+    {
+      "start": 7.44,
+      "end": 11.22,
+      "text": "Strivers A to Z DSA course just in case"
+    },
+    {
+      "start": 9.9,
+      "end": 12.66,
+      "text": "you're for the first time here this is"
+    },
+    {
+      "start": 11.22,
+      "end": 15.02,
+      "text": "world's most in-depth course when you"
+    },
+    {
+      "start": 12.66,
+      "end": 18.24,
+      "text": "talk about DS I'll go why do I say that"
+    },
+    {
+      "start": 15.02,
+      "end": 20.34,
+      "text": "455 this cost us 455 models by the end"
+    },
+    {
+      "start": 18.24,
+      "end": 22.08,
+      "text": "of the course more than 400 plus"
+    },
+    {
+      "start": 20.34,
+      "end": 24.0,
+      "text": "problems in DS algo you can go over the"
+    },
+    {
+      "start": 22.08,
+      "end": 25.14,
+      "text": "entire internet you can buy any of the"
+    },
+    {
+      "start": 24.0,
+      "end": 26.94,
+      "text": "paid courses none of them will be"
+    },
+    {
+      "start": 25.14,
+      "end": 28.26,
+      "text": "teaching you DSL go in such depth"
+    },
+    {
+      "start": 26.94,
+      "end": 30.06,
+      "text": "something that I can give you as"
+    },
+    {
+      "start": 28.26,
+      "end": 31.86,
+      "text": "Assurance is once you complete this"
+    },
+    {
+      "start": 30.06,
+      "end": 34.98,
+      "text": "entire post you can clear any of the DS"
+    },
+    {
+      "start": 31.86,
+      "end": 37.26,
+      "text": "algorons in any company in any part of"
+    },
+    {
+      "start": 34.98,
+      "end": 39.06,
+      "text": "the world so till now I have covered"
+    },
+    {
+      "start": 37.26,
+      "end": 41.1,
+      "text": "till this particular problem and this"
+    },
+    {
+      "start": 39.06,
+      "end": 44.1,
+      "text": "video I'll be covering this one but"
+    },
+    {
+      "start": 41.1,
+      "end": 46.68,
+      "text": "before that please make sure that you"
+    },
+    {
+      "start": 44.1,
+      "end": 48.3,
+      "text": "should have seen these two videos like"
+    },
+    {
+      "start": 46.68,
+      "end": 50.34,
+      "text": "there's one single view but you should"
+    },
+    {
+      "start": 48.3,
+      "end": 52.56,
+      "text": "know how to solve these couple of"
+    },
+    {
+      "start": 50.34,
+      "end": 54.78,
+      "text": "problems because the solution to this"
+    },
+    {
+      "start": 52.56,
+      "end": 57.78,
+      "text": "particular problem is highly dependent"
+    },
+    {
+      "start": 54.78,
+      "end": 59.94,
+      "text": "on these couple of problems or this one"
+    },
+    {
+      "start": 57.78,
+      "end": 61.38,
+      "text": "single video so please make sure you do"
+    },
+    {
+      "start": 59.94,
+      "end": 63.36,
+      "text": "watch it the link will be in the"
+    },
+    {
+      "start": 61.38,
+      "end": 65.28,
+      "text": "description so what is the problem State"
+    },
+    {
+      "start": 63.36,
+      "end": 67.8,
+      "text": "it's very clear by the name you have to"
+    },
+    {
+      "start": 65.28,
+      "end": 70.2,
+      "text": "find me the number of sub arrays which"
+    },
+    {
+      "start": 67.8,
+      "end": 72.42,
+      "text": "gives you a sum K now what is the"
+    },
+    {
+      "start": 70.2,
+      "end": 75.0,
+      "text": "definition of a sub array"
+    },
+    {
+      "start": 72.42,
+      "end": 76.8,
+      "text": "it means any contiguous part of the"
+    },
+    {
+      "start": 75.0,
+      "end": 78.66,
+      "text": "array very very important word any"
+    },
+    {
+      "start": 76.8,
+      "end": 81.6,
+      "text": "contiguous part of the array what does"
+    },
+    {
+      "start": 78.66,
+      "end": 84.18,
+      "text": "it mean if I take this this is a sub"
+    },
+    {
+      "start": 81.6,
+      "end": 87.18,
+      "text": "array if I take this this is a sub array"
+    },
+    {
+      "start": 84.18,
+      "end": 89.64,
+      "text": "if I take this portion this is also a"
+    },
+    {
+      "start": 87.18,
+      "end": 93.42,
+      "text": "Savari now I cannot say one four two"
+    },
+    {
+      "start": 89.64,
+      "end": 97.62,
+      "text": "basically one four two this is not a"
+    },
+    {
+      "start": 93.42,
+      "end": 99.36,
+      "text": "savare rather it is a subsequence so"
+    },
+    {
+      "start": 97.62,
+      "end": 102.0,
+      "text": "it's very important to understand the"
+    },
+    {
+      "start": 99.36,
+      "end": 104.22,
+      "text": "definition of sabare is contiguous part"
+    },
+    {
+      "start": 102.0,
+      "end": 106.32,
+      "text": "of the array it can be the entire array"
+    },
+    {
+      "start": 104.22,
+      "end": 107.82,
+      "text": "as well it can be a single element as"
+    },
+    {
+      "start": 106.32,
+      "end": 109.74,
+      "text": "well it can be two elements it can be"
+    },
+    {
+      "start": 107.82,
+      "end": 111.66,
+      "text": "three elements it can be any portion of"
+    },
+    {
+      "start": 109.74,
+      "end": 113.82,
+      "text": "the array but it has to be contagiously"
+    },
+    {
+      "start": 111.66,
+      "end": 116.04,
+      "text": "taken got it let us take this particular"
+    },
+    {
+      "start": 113.82,
+      "end": 117.96,
+      "text": "example with k equal to 3 and try to"
+    },
+    {
+      "start": 116.04,
+      "end": 120.3,
+      "text": "analyze how many number of sub arrays we"
+    },
+    {
+      "start": 117.96,
+      "end": 122.7,
+      "text": "can get with the sum equal to K so we're"
+    },
+    {
+      "start": 120.3,
+      "end": 125.04,
+      "text": "looking for a sum equal to three so I"
+    },
+    {
+      "start": 122.7,
+      "end": 126.72,
+      "text": "can say first I will take 1 and 2 which"
+    },
+    {
+      "start": 125.04,
+      "end": 128.46,
+      "text": "will give me like if I take this one"
+    },
+    {
+      "start": 126.72,
+      "end": 132.18,
+      "text": "it'll definitely give me the sum as"
+    },
+    {
+      "start": 128.46,
+      "end": 135.24,
+      "text": "three okay can I take one two"
+    },
+    {
+      "start": 132.18,
+      "end": 137.76,
+      "text": "3 minus 3 yes I can can I take something"
+    },
+    {
+      "start": 135.24,
+      "end": 139.38,
+      "text": "like three individually yes I can can I"
+    },
+    {
+      "start": 137.76,
+      "end": 143.64,
+      "text": "take something like"
+    },
+    {
+      "start": 139.38,
+      "end": 145.8,
+      "text": "2 3 minus 3 1 yes I can which is this"
+    },
+    {
+      "start": 143.64,
+      "end": 147.72,
+      "text": "one 3G will go"
+    },
+    {
+      "start": 145.8,
+      "end": 150.48,
+      "text": "this will still give me the summation as"
+    },
+    {
+      "start": 147.72,
+      "end": 153.18,
+      "text": "cake can I take something as 3 comma"
+    },
+    {
+      "start": 150.48,
+      "end": 155.28,
+      "text": "minus three comma 1 comma one comma one"
+    },
+    {
+      "start": 153.18,
+      "end": 158.16,
+      "text": "yes kinetic something as one comma one"
+    },
+    {
+      "start": 155.28,
+      "end": 161.28,
+      "text": "comma one yes so do we see something"
+    },
+    {
+      "start": 158.16,
+      "end": 162.84,
+      "text": "else yes I do something like 4 comma 2"
+    },
+    {
+      "start": 161.28,
+      "end": 165.12,
+      "text": "comma minus three"
+    },
+    {
+      "start": 162.84,
+      "end": 167.46,
+      "text": "which is basically this one"
+    },
+    {
+      "start": 165.12,
+      "end": 171.96,
+      "text": "and I also see one more which is minus"
+    },
+    {
+      "start": 167.46,
+      "end": 173.82,
+      "text": "three one one one and then a 4 2 minus"
+    },
+    {
+      "start": 171.96,
+      "end": 174.72,
+      "text": "three because even if you sum up this"
+    },
+    {
+      "start": 173.82,
+      "end": 177.42,
+      "text": "one"
+    },
+    {
+      "start": 174.72,
+      "end": 180.0,
+      "text": "minus 3 this this will go and then 4"
+    },
+    {
+      "start": 177.42,
+      "end": 183.24,
+      "text": "plus 2 is 6 minus three yeah three so I"
+    },
+    {
+      "start": 180.0,
+      "end": 185.28,
+      "text": "can see eight sub arrays so for this"
+    },
+    {
+      "start": 183.24,
+      "end": 186.66,
+      "text": "particular example there will be exactly"
+    },
+    {
+      "start": 185.28,
+      "end": 188.64,
+      "text": "eight sub arrays which will give me the"
+    },
+    {
+      "start": 186.66,
+      "end": 191.34,
+      "text": "sum as three it's very important to"
+    },
+    {
+      "start": 188.64,
+      "end": 192.6,
+      "text": "understand sabare means contiguous so"
+    },
+    {
+      "start": 191.34,
+      "end": 193.98,
+      "text": "what if the question comes up in an"
+    },
+    {
+      "start": 192.6,
+      "end": 195.54,
+      "text": "interview what is the first solution"
+    },
+    {
+      "start": 193.98,
+      "end": 197.04,
+      "text": "that you'll give to the interview that"
+    },
+    {
+      "start": 195.54,
+      "end": 199.08,
+      "text": "is definitely the Brute Force solution"
+    },
+    {
+      "start": 197.04,
+      "end": 201.42,
+      "text": "so what is the extreme solution that you"
+    },
+    {
+      "start": 199.08,
+      "end": 204.06,
+      "text": "can think of it's generate all the sub"
+    },
+    {
+      "start": 201.42,
+      "end": 205.92,
+      "text": "arrays and see how many are giving you"
+    },
+    {
+      "start": 204.06,
+      "end": 207.72,
+      "text": "some K so how do you generate all the"
+    },
+    {
+      "start": 205.92,
+      "end": 210.3,
+      "text": "sub arrays if you're careful You observe"
+    },
+    {
+      "start": 207.72,
+      "end": 212.88,
+      "text": "this is your first body this is your"
+    },
+    {
+      "start": 210.3,
+      "end": 215.4,
+      "text": "second sub array this is your third this"
+    },
+    {
+      "start": 212.88,
+      "end": 217.56,
+      "text": "is your fourth this is your fifth this"
+    },
+    {
+      "start": 215.4,
+      "end": 219.96,
+      "text": "is your Sixth and goes on till the last"
+    },
+    {
+      "start": 217.56,
+      "end": 222.78,
+      "text": "basically it starts with one element"
+    },
+    {
+      "start": 219.96,
+      "end": 224.52,
+      "text": "then adds one more adds one more adds"
+    },
+    {
+      "start": 222.78,
+      "end": 227.76,
+      "text": "one more adds one more and keeps on"
+    },
+    {
+      "start": 224.52,
+      "end": 230.52,
+      "text": "adding and then the next starts from 2"
+    },
+    {
+      "start": 227.76,
+      "end": 232.86,
+      "text": "by taking just two then takes two three"
+    },
+    {
+      "start": 230.52,
+      "end": 235.2,
+      "text": "two three minus three goes on goes on"
+    },
+    {
+      "start": 232.86,
+      "end": 238.98,
+      "text": "goes on and so on next"
+    },
+    {
+      "start": 235.2,
+      "end": 241.38,
+      "text": "stanza 3 x 3 3 minus 3 then this then"
+    },
+    {
+      "start": 238.98,
+      "end": 243.3,
+      "text": "this then this and keeps on going and"
+    },
+    {
+      "start": 241.38,
+      "end": 245.94,
+      "text": "eventually you can move this point so"
+    },
+    {
+      "start": 243.3,
+      "end": 248.7,
+      "text": "can I say if I put a pointer I over here"
+    },
+    {
+      "start": 245.94,
+      "end": 251.64,
+      "text": "initially when I is here the first sub"
+    },
+    {
+      "start": 248.7,
+      "end": 253.68,
+      "text": "array is this so I can keep i j here the"
+    },
+    {
+      "start": 251.64,
+      "end": 256.08,
+      "text": "next sub array is this so I can move j"
+    },
+    {
+      "start": 253.68,
+      "end": 259.2,
+      "text": "the next value is this I can go here"
+    },
+    {
+      "start": 256.08,
+      "end": 261.84,
+      "text": "next about it is this and similarly I"
+    },
+    {
+      "start": 259.2,
+      "end": 265.08,
+      "text": "can move j till the last which basically"
+    },
+    {
+      "start": 261.84,
+      "end": 267.42,
+      "text": "means J started from here and J went on"
+    },
+    {
+      "start": 265.08,
+      "end": 270.06,
+      "text": "till the last index which is n minus 1"
+    },
+    {
+      "start": 267.42,
+      "end": 272.1,
+      "text": "right and then what I can do is I can"
+    },
+    {
+      "start": 270.06,
+      "end": 274.8,
+      "text": "move I over here and I can again say"
+    },
+    {
+      "start": 272.1,
+      "end": 276.66,
+      "text": "that J will be here and then J will move"
+    },
+    {
+      "start": 274.8,
+      "end": 278.88,
+      "text": "and eventually J will go till the end"
+    },
+    {
+      "start": 276.66,
+      "end": 281.16,
+      "text": "and at the next step I can again move I"
+    },
+    {
+      "start": 278.88,
+      "end": 282.96,
+      "text": "and J will be here and J will go till"
+    },
+    {
+      "start": 281.16,
+      "end": 285.42,
+      "text": "the end so similarly I can keep on"
+    },
+    {
+      "start": 282.96,
+      "end": 287.76,
+      "text": "moving I till the end right so if I have"
+    },
+    {
+      "start": 285.42,
+      "end": 292.38,
+      "text": "to write can I say I will always start"
+    },
+    {
+      "start": 287.76,
+      "end": 295.62,
+      "text": "from 0 I will go till n minus 1 rather n"
+    },
+    {
+      "start": 292.38,
+      "end": 299.28,
+      "text": "and I plus plus and the poor Loop will"
+    },
+    {
+      "start": 295.62,
+      "end": 302.16,
+      "text": "be for J will be right room I till n"
+    },
+    {
+      "start": 299.28,
+      "end": 306.0,
+      "text": "minus 1 and I'll go like this so can I"
+    },
+    {
+      "start": 302.16,
+      "end": 308.28,
+      "text": "say one thing for sure if I is here J is"
+    },
+    {
+      "start": 306.0,
+      "end": 310.74,
+      "text": "here the sub array is only this much and"
+    },
+    {
+      "start": 308.28,
+      "end": 312.84,
+      "text": "a j moves here the sub array is this if"
+    },
+    {
+      "start": 310.74,
+      "end": 315.0,
+      "text": "J moves here the sub array is this much"
+    },
+    {
+      "start": 312.84,
+      "end": 318.78,
+      "text": "so can I surely say"
+    },
+    {
+      "start": 315.0,
+      "end": 321.12,
+      "text": "the disabary is from I to J I definitely"
+    },
+    {
+      "start": 318.78,
+      "end": 323.1,
+      "text": "can say so what I can what I'll do is"
+    },
+    {
+      "start": 321.12,
+      "end": 326.28,
+      "text": "I'll keep the summation as 0 and I'll"
+    },
+    {
+      "start": 323.1,
+      "end": 328.38,
+      "text": "run a note K from I to J because I know"
+    },
+    {
+      "start": 326.28,
+      "end": 329.4,
+      "text": "the sub array is from I to J and I'll"
+    },
+    {
+      "start": 328.38,
+      "end": 333.66,
+      "text": "say some"
+    },
+    {
+      "start": 329.4,
+      "end": 336.24,
+      "text": "equal to sum plus array of K correct"
+    },
+    {
+      "start": 333.66,
+      "end": 337.86,
+      "text": "what this particular Loop will do is"
+    },
+    {
+      "start": 336.24,
+      "end": 341.1,
+      "text": "this will go through the entire sub"
+    },
+    {
+      "start": 337.86,
+      "end": 343.14,
+      "text": "array and accumulate the sum once you"
+    },
+    {
+      "start": 341.1,
+      "end": 346.5,
+      "text": "have collected the sum outside the"
+    },
+    {
+      "start": 343.14,
+      "end": 349.2,
+      "text": "follow you can say if sum is equal to"
+    },
+    {
+      "start": 346.5,
+      "end": 351.84,
+      "text": "equal to K you do a counter plus plus"
+    },
+    {
+      "start": 349.2,
+      "end": 353.76,
+      "text": "and this count can be initialized right"
+    },
+    {
+      "start": 351.84,
+      "end": 356.16,
+      "text": "at the starting now this for Loop will"
+    },
+    {
+      "start": 353.76,
+      "end": 358.2,
+      "text": "end and then this for Loop will end So"
+    },
+    {
+      "start": 356.16,
+      "end": 361.14,
+      "text": "eventually this ends here and then this"
+    },
+    {
+      "start": 358.2,
+      "end": 363.18,
+      "text": "ends here so what I can say is once you"
+    },
+    {
+      "start": 361.14,
+      "end": 364.8,
+      "text": "have run the three nested Loops the"
+    },
+    {
+      "start": 363.18,
+      "end": 367.02,
+      "text": "counter will be storing the number of"
+    },
+    {
+      "start": 364.8,
+      "end": 369.06,
+      "text": "sub arrays with some K but what is the"
+    },
+    {
+      "start": 367.02,
+      "end": 371.52,
+      "text": "time complexity can I say it's near"
+    },
+    {
+      "start": 369.06,
+      "end": 373.68,
+      "text": "about B go of n Cube why because you're"
+    },
+    {
+      "start": 371.52,
+      "end": 375.84,
+      "text": "running near about three Loops it's not"
+    },
+    {
+      "start": 373.68,
+      "end": 377.7,
+      "text": "exactly n Cube but it's somewhere near"
+    },
+    {
+      "start": 375.84,
+      "end": 380.34,
+      "text": "about n Cube because"
+    },
+    {
+      "start": 377.7,
+      "end": 381.96,
+      "text": "first time it's running for the entire"
+    },
+    {
+      "start": 380.34,
+      "end": 384.0,
+      "text": "next it's running for this next is"
+    },
+    {
+      "start": 381.96,
+      "end": 386.28,
+      "text": "running for this so not exactly in queue"
+    },
+    {
+      "start": 384.0,
+      "end": 387.6,
+      "text": "but somewhere near about NQ so obviously"
+    },
+    {
+      "start": 386.28,
+      "end": 389.76,
+      "text": "the interview will not be happy with the"
+    },
+    {
+      "start": 387.6,
+      "end": 391.44,
+      "text": "NQ and it'll ask you to optimize it and"
+    },
+    {
+      "start": 389.76,
+      "end": 393.3,
+      "text": "this is when you'll move to the better"
+    },
+    {
+      "start": 391.44,
+      "end": 395.34,
+      "text": "solution so what will be the better"
+    },
+    {
+      "start": 393.3,
+      "end": 398.1,
+      "text": "solution let's have some observations"
+    },
+    {
+      "start": 395.34,
+      "end": 400.2,
+      "text": "what are we doing over here we are"
+    },
+    {
+      "start": 398.1,
+      "end": 402.06,
+      "text": "saying I is here and J is here and the"
+    },
+    {
+      "start": 400.2,
+      "end": 403.98,
+      "text": "first Samaria is this then we are moving"
+    },
+    {
+      "start": 402.06,
+      "end": 406.08,
+      "text": "J to here and we're seeing second Subaru"
+    },
+    {
+      "start": 403.98,
+      "end": 407.7,
+      "text": "is this then we are saying J is here and"
+    },
+    {
+      "start": 406.08,
+      "end": 409.32,
+      "text": "the third server is this then we are"
+    },
+    {
+      "start": 407.7,
+      "end": 411.24,
+      "text": "seeing j is over here and the fourth sub"
+    },
+    {
+      "start": 409.32,
+      "end": 414.48,
+      "text": "array is this and we are running a for"
+    },
+    {
+      "start": 411.24,
+      "end": 416.94,
+      "text": "Loop in order to accumulate the sum but"
+    },
+    {
+      "start": 414.48,
+      "end": 420.12,
+      "text": "do we actually require the for Loop"
+    },
+    {
+      "start": 416.94,
+      "end": 422.82,
+      "text": "think carefully whenever I is here J is"
+    },
+    {
+      "start": 420.12,
+      "end": 426.24,
+      "text": "here what are you doing you're iterating"
+    },
+    {
+      "start": 422.82,
+      "end": 428.64,
+      "text": "from I to J and accumulating the sum do"
+    },
+    {
+      "start": 426.24,
+      "end": 431.52,
+      "text": "you need to do that because initially"
+    },
+    {
+      "start": 428.64,
+      "end": 434.82,
+      "text": "the first sub array is having one so can"
+    },
+    {
+      "start": 431.52,
+      "end": 436.74,
+      "text": "I see sum is one and when J moves can I"
+    },
+    {
+      "start": 434.82,
+      "end": 438.78,
+      "text": "say the second somewhere will be 1 2 so"
+    },
+    {
+      "start": 436.74,
+      "end": 441.42,
+      "text": "there is only an addition of two so just"
+    },
+    {
+      "start": 438.78,
+      "end": 442.74,
+      "text": "add 2 Then when G moves then in the"
+    },
+    {
+      "start": 441.42,
+      "end": 445.38,
+      "text": "third sub array there is just an"
+    },
+    {
+      "start": 442.74,
+      "end": 447.3,
+      "text": "addition of three so at 3 then when J"
+    },
+    {
+      "start": 445.38,
+      "end": 450.66,
+      "text": "moves there is just a relation of minus"
+    },
+    {
+      "start": 447.3,
+      "end": 454.2,
+      "text": "three so just add minus 3 so what you"
+    },
+    {
+      "start": 450.66,
+      "end": 457.74,
+      "text": "can do is instead of accumulating the"
+    },
+    {
+      "start": 454.2,
+      "end": 460.38,
+      "text": "sum by running a loop from I to J you"
+    },
+    {
+      "start": 457.74,
+      "end": 463.38,
+      "text": "can say Hey listen I will not accumulate"
+    },
+    {
+      "start": 460.38,
+      "end": 466.02,
+      "text": "every time instead of that I'll keep a"
+    },
+    {
+      "start": 463.38,
+      "end": 468.0,
+      "text": "summation 0 and every time there is an"
+    },
+    {
+      "start": 466.02,
+      "end": 470.22,
+      "text": "addition yes just a second every time"
+    },
+    {
+      "start": 468.0,
+      "end": 472.32,
+      "text": "there is an addition I will just add"
+    },
+    {
+      "start": 470.22,
+      "end": 474.48,
+      "text": "that number because I know initially"
+    },
+    {
+      "start": 472.32,
+      "end": 476.46,
+      "text": "this much then 2 will get added then 3"
+    },
+    {
+      "start": 474.48,
+      "end": 478.8,
+      "text": "then minus three then one so every time"
+    },
+    {
+      "start": 476.46,
+      "end": 480.84,
+      "text": "the number gets added so every dying"
+    },
+    {
+      "start": 478.8,
+      "end": 482.82,
+      "text": "instead of accumulating separately by"
+    },
+    {
+      "start": 480.84,
+      "end": 485.34,
+      "text": "running a loop you can directly add it"
+    },
+    {
+      "start": 482.82,
+      "end": 486.96,
+      "text": "and then you can check so have decrease"
+    },
+    {
+      "start": 485.34,
+      "end": 489.84,
+      "text": "the inner loop what is the time"
+    },
+    {
+      "start": 486.96,
+      "end": 491.94,
+      "text": "complexity somewhere near about B go of"
+    },
+    {
+      "start": 489.84,
+      "end": 494.28,
+      "text": "n Square somewhere near about B go of n"
+    },
+    {
+      "start": 491.94,
+      "end": 495.84,
+      "text": "Square are we using some extra space no"
+    },
+    {
+      "start": 494.28,
+      "end": 497.58,
+      "text": "but the interviewer will not be happy"
+    },
+    {
+      "start": 495.84,
+      "end": 499.32,
+      "text": "with the bigger of n square and it'll"
+    },
+    {
+      "start": 497.58,
+      "end": 501.12,
+      "text": "ask you to optimize it this is when"
+    },
+    {
+      "start": 499.32,
+      "end": 503.64,
+      "text": "you'll move to the optimal one"
+    },
+    {
+      "start": 501.12,
+      "end": 505.8,
+      "text": "so it's time to discuss the most optimal"
+    },
+    {
+      "start": 503.64,
+      "end": 509.58,
+      "text": "solution the most optimal solution will"
+    },
+    {
+      "start": 505.8,
+      "end": 510.78,
+      "text": "be using the concept of prefix sum in"
+    },
+    {
+      "start": 509.58,
+      "end": 513.12,
+      "text": "case you don't know about it I've"
+    },
+    {
+      "start": 510.78,
+      "end": 514.56,
+      "text": "already explained it in depth in this"
+    },
+    {
+      "start": 513.12,
+      "end": 516.42,
+      "text": "particular video I'll be leaving the"
+    },
+    {
+      "start": 514.56,
+      "end": 517.98,
+      "text": "video link in the description pause this"
+    },
+    {
+      "start": 516.42,
+      "end": 520.8,
+      "text": "particular video go back and watch it"
+    },
+    {
+      "start": 517.98,
+      "end": 523.2,
+      "text": "and then you can come back over so what"
+    },
+    {
+      "start": 520.8,
+      "end": 526.02,
+      "text": "is the concept of prefix sum let's"
+    },
+    {
+      "start": 523.2,
+      "end": 527.94,
+      "text": "understand that so as you might say I'll"
+    },
+    {
+      "start": 526.02,
+      "end": 531.12,
+      "text": "go till this particular element and if I"
+    },
+    {
+      "start": 527.94,
+      "end": 534.0,
+      "text": "ask you what is the summation of all the"
+    },
+    {
+      "start": 531.12,
+      "end": 536.82,
+      "text": "prefix elements so basically 1 plus 2 3"
+    },
+    {
+      "start": 534.0,
+      "end": 540.18,
+      "text": "plus 3 6 minus three three four five six"
+    },
+    {
+      "start": 536.82,
+      "end": 543.12,
+      "text": "so I can say the prefix summation is 6"
+    },
+    {
+      "start": 540.18,
+      "end": 544.4,
+      "text": "and can I say the summation of these"
+    },
+    {
+      "start": 543.12,
+      "end": 549.06,
+      "text": "three elements"
+    },
+    {
+      "start": 544.4,
+      "end": 551.7,
+      "text": "is 3 I can I can see the summation of"
+    },
+    {
+      "start": 549.06,
+      "end": 554.76,
+      "text": "these three elements are three and if I"
+    },
+    {
+      "start": 551.7,
+      "end": 556.8,
+      "text": "ask you what is the sum of these"
+    },
+    {
+      "start": 554.76,
+      "end": 558.66,
+      "text": "elements the remaining elements please"
+    },
+    {
+      "start": 556.8,
+      "end": 561.12,
+      "text": "do not add it up please do not add up"
+    },
+    {
+      "start": 558.66,
+      "end": 564.06,
+      "text": "single elements I'm just asking you as a"
+    },
+    {
+      "start": 561.12,
+      "end": 567.06,
+      "text": "normal max if the total summation is 6"
+    },
+    {
+      "start": 564.06,
+      "end": 570.48,
+      "text": "and this one's sum is three how much"
+    },
+    {
+      "start": 567.06,
+      "end": 572.94,
+      "text": "will this be three because this minus"
+    },
+    {
+      "start": 570.48,
+      "end": 575.4,
+      "text": "this will give you three and this is the"
+    },
+    {
+      "start": 572.94,
+      "end": 577.56,
+      "text": "concept that I'll be using so what I'll"
+    },
+    {
+      "start": 575.4,
+      "end": 579.66,
+      "text": "try to look forward is"
+    },
+    {
+      "start": 577.56,
+      "end": 581.4,
+      "text": "I know"
+    },
+    {
+      "start": 579.66,
+      "end": 584.82,
+      "text": "in a particular"
+    },
+    {
+      "start": 581.4,
+      "end": 588.6,
+      "text": "till a particular index we will have a"
+    },
+    {
+      "start": 584.82,
+      "end": 591.9,
+      "text": "prefix sum as X as you"
+    },
+    {
+      "start": 588.6,
+      "end": 596.1,
+      "text": "and I know I am looking for I know I'm"
+    },
+    {
+      "start": 591.9,
+      "end": 600.84,
+      "text": "looking for a sub array with some k"
+    },
+    {
+      "start": 596.1,
+      "end": 602.52,
+      "text": "so what is the remaining portion"
+    },
+    {
+      "start": 600.84,
+      "end": 606.0,
+      "text": "what will be the sum of the remaining"
+    },
+    {
+      "start": 602.52,
+      "end": 608.4,
+      "text": "portion can I see it will be x minus K I"
+    },
+    {
+      "start": 606.0,
+      "end": 612.18,
+      "text": "can because if the prefix sum till here"
+    },
+    {
+      "start": 608.4,
+      "end": 613.98,
+      "text": "is X and probably there is a submaric"
+    },
+    {
+      "start": 612.18,
+      "end": 615.9,
+      "text": "probability like over here there was a"
+    },
+    {
+      "start": 613.98,
+      "end": 619.14,
+      "text": "summary over here there was a subarina"
+    },
+    {
+      "start": 615.9,
+      "end": 621.54,
+      "text": "that's why the sum the sum K mastering"
+    },
+    {
+      "start": 619.14,
+      "end": 624.18,
+      "text": "what if there is a sub array who sum"
+    },
+    {
+      "start": 621.54,
+      "end": 626.4,
+      "text": "Escape then in the backward there will"
+    },
+    {
+      "start": 624.18,
+      "end": 628.74,
+      "text": "always be a prefixer there will always"
+    },
+    {
+      "start": 626.4,
+      "end": 631.2,
+      "text": "be a prefix term till here which will"
+    },
+    {
+      "start": 628.74,
+      "end": 633.56,
+      "text": "have a summation of x minus K till here"
+    },
+    {
+      "start": 631.2,
+      "end": 635.88,
+      "text": "the prefix sum will always be x minus K"
+    },
+    {
+      "start": 633.56,
+      "end": 638.46,
+      "text": "similarly if I have to visualize it"
+    },
+    {
+      "start": 635.88,
+      "end": 642.36,
+      "text": "again can I say this if I just rub it"
+    },
+    {
+      "start": 638.46,
+      "end": 645.54,
+      "text": "off can I say this till here also the"
+    },
+    {
+      "start": 642.36,
+      "end": 649.08,
+      "text": "summation is 3 thereby these two"
+    },
+    {
+      "start": 645.54,
+      "end": 653.76,
+      "text": "elements will also give you how much 6"
+    },
+    {
+      "start": 649.08,
+      "end": 654.84,
+      "text": "minus 3 which is 3 agreed what did You"
+    },
+    {
+      "start": 653.76,
+      "end": 656.76,
+      "text": "observe"
+    },
+    {
+      "start": 654.84,
+      "end": 662.1,
+      "text": "You observe one thing"
+    },
+    {
+      "start": 656.76,
+      "end": 664.2,
+      "text": "the total summation was 6 and there was"
+    },
+    {
+      "start": 662.1,
+      "end": 667.32,
+      "text": "I was looking for three I was looking"
+    },
+    {
+      "start": 664.2,
+      "end": 670.32,
+      "text": "for three because we were looking for a"
+    },
+    {
+      "start": 667.32,
+      "end": 672.54,
+      "text": "sub array which ends at this index we"
+    },
+    {
+      "start": 670.32,
+      "end": 674.94,
+      "text": "are looking for a sub array which ends"
+    },
+    {
+      "start": 672.54,
+      "end": 677.46,
+      "text": "at this index and apparently over here"
+    },
+    {
+      "start": 674.94,
+      "end": 680.34,
+      "text": "there was one which was ending over here"
+    },
+    {
+      "start": 677.46,
+      "end": 681.3,
+      "text": "and there was other one which was ending"
+    },
+    {
+      "start": 680.34,
+      "end": 684.78,
+      "text": "over here"
+    },
+    {
+      "start": 681.3,
+      "end": 686.76,
+      "text": "so if there are two sub arrays which are"
+    },
+    {
+      "start": 684.78,
+      "end": 688.98,
+      "text": "ending at here with a summation of three"
+    },
+    {
+      "start": 686.76,
+      "end": 690.36,
+      "text": "if there are two sub arrays which is"
+    },
+    {
+      "start": 688.98,
+      "end": 693.84,
+      "text": "ending at here with a summation of"
+    },
+    {
+      "start": 690.36,
+      "end": 696.48,
+      "text": "Threes can I say there will be two sub"
+    },
+    {
+      "start": 693.84,
+      "end": 699.0,
+      "text": "arrays there will be two prefix sum of x"
+    },
+    {
+      "start": 696.48,
+      "end": 701.64,
+      "text": "minus K I get"
+    },
+    {
+      "start": 699.0,
+      "end": 702.9,
+      "text": "we had till here three"
+    },
+    {
+      "start": 701.64,
+      "end": 705.36,
+      "text": "we had"
+    },
+    {
+      "start": 702.9,
+      "end": 708.54,
+      "text": "till here 3 I get"
+    },
+    {
+      "start": 705.36,
+      "end": 711.42,
+      "text": "right because there was two because"
+    },
+    {
+      "start": 708.54,
+      "end": 713.64,
+      "text": "there was two sending backward there"
+    },
+    {
+      "start": 711.42,
+      "end": 716.76,
+      "text": "will also be two there will also be two"
+    },
+    {
+      "start": 713.64,
+      "end": 717.96,
+      "text": "with the same sum with the same sum so"
+    },
+    {
+      "start": 716.76,
+      "end": 722.22,
+      "text": "can I say"
+    },
+    {
+      "start": 717.96,
+      "end": 725.4,
+      "text": "if I'm looking for K over here"
+    },
+    {
+      "start": 722.22,
+      "end": 727.74,
+      "text": "so instead of looking for K because it's"
+    },
+    {
+      "start": 725.4,
+      "end": 731.94,
+      "text": "somewhere in the middle I will look for"
+    },
+    {
+      "start": 727.74,
+      "end": 734.52,
+      "text": "prefix sum how many are x minus K how"
+    },
+    {
+      "start": 731.94,
+      "end": 737.1,
+      "text": "many are x minus K like in this case"
+    },
+    {
+      "start": 734.52,
+      "end": 740.46,
+      "text": "let's again go back"
+    },
+    {
+      "start": 737.1,
+      "end": 742.86,
+      "text": "like in this case what did we see we had"
+    },
+    {
+      "start": 740.46,
+      "end": 746.24,
+      "text": "three but instead of looking for three"
+    },
+    {
+      "start": 742.86,
+      "end": 746.24,
+      "text": "if I just erase it off"
+    },
+    {
+      "start": 746.46,
+      "end": 751.2,
+      "text": "and this is 3. so basically what I'm"
+    },
+    {
+      "start": 748.8,
+      "end": 753.24,
+      "text": "saying is till here the prefix sum was"
+    },
+    {
+      "start": 751.2,
+      "end": 756.12,
+      "text": "three until here the prefix sum was"
+    },
+    {
+      "start": 753.24,
+      "end": 757.86,
+      "text": "three so I know there were six and I was"
+    },
+    {
+      "start": 756.12,
+      "end": 760.8,
+      "text": "looking for three it's in the backward"
+    },
+    {
+      "start": 757.86,
+      "end": 763.02,
+      "text": "there was two elements with three there"
+    },
+    {
+      "start": 760.8,
+      "end": 764.28,
+      "text": "was two elements with six minus K there"
+    },
+    {
+      "start": 763.02,
+      "end": 768.06,
+      "text": "were two"
+    },
+    {
+      "start": 764.28,
+      "end": 769.98,
+      "text": "sub prefix with 6 minus K that means"
+    },
+    {
+      "start": 768.06,
+      "end": 771.3,
+      "text": "that means there will be two submaris"
+    },
+    {
+      "start": 769.98,
+      "end": 773.28,
+      "text": "one is this"
+    },
+    {
+      "start": 771.3,
+      "end": 774.96,
+      "text": "and the other one is this this is the"
+    },
+    {
+      "start": 773.28,
+      "end": 777.66,
+      "text": "reverse engineering we just did the"
+    },
+    {
+      "start": 774.96,
+      "end": 782.16,
+      "text": "reverse engineering what did we say"
+    },
+    {
+      "start": 777.66,
+      "end": 788.1,
+      "text": "we said if till a point the prefix sum"
+    },
+    {
+      "start": 782.16,
+      "end": 791.82,
+      "text": "is s and I am looking for K so in order"
+    },
+    {
+      "start": 788.1,
+      "end": 796.02,
+      "text": "to figure out how many k are there I"
+    },
+    {
+      "start": 791.82,
+      "end": 799.08,
+      "text": "will look out how many s minus K are"
+    },
+    {
+      "start": 796.02,
+      "end": 801.78,
+      "text": "there how many s minus K the number of s"
+    },
+    {
+      "start": 799.08,
+      "end": 805.38,
+      "text": "minus K will be equivalent to the number"
+    },
+    {
+      "start": 801.78,
+      "end": 810.12,
+      "text": "of K over here three one"
+    },
+    {
+      "start": 805.38,
+      "end": 812.46,
+      "text": "2 so equivalent if you take this this"
+    },
+    {
+      "start": 810.12,
+      "end": 814.8,
+      "text": "will be the other sub array if you take"
+    },
+    {
+      "start": 812.46,
+      "end": 816.9,
+      "text": "this this will be the other side so I"
+    },
+    {
+      "start": 814.8,
+      "end": 818.52,
+      "text": "did look in the opposite direction why"
+    },
+    {
+      "start": 816.9,
+      "end": 820.92,
+      "text": "did I look in the opposite direction"
+    },
+    {
+      "start": 818.52,
+      "end": 823.02,
+      "text": "because we kept easily store the prefix"
+    },
+    {
+      "start": 820.92,
+      "end": 824.34,
+      "text": "up we can easily store the prefixer but"
+    },
+    {
+      "start": 823.02,
+      "end": 827.52,
+      "text": "we cannot"
+    },
+    {
+      "start": 824.34,
+      "end": 829.62,
+      "text": "find out uh"
+    },
+    {
+      "start": 827.52,
+      "end": 832.32,
+      "text": "between sub that's not possible that is"
+    },
+    {
+      "start": 829.62,
+      "end": 834.3,
+      "text": "why and I hope you kind of got the"
+    },
+    {
+      "start": 832.32,
+      "end": 836.16,
+      "text": "intuition in case you did not do not"
+    },
+    {
+      "start": 834.3,
+      "end": 838.26,
+      "text": "worry about it the moment I do the dry"
+    },
+    {
+      "start": 836.16,
+      "end": 839.76,
+      "text": "run everything will get crystalline free"
+    },
+    {
+      "start": 838.26,
+      "end": 841.14,
+      "text": "so let us quickly do a dry run on the"
+    },
+    {
+      "start": 839.76,
+      "end": 842.94,
+      "text": "algorithm so what are the data"
+    },
+    {
+      "start": 841.14,
+      "end": 845.4,
+      "text": "structures that we require so if you"
+    },
+    {
+      "start": 842.94,
+      "end": 849.0,
+      "text": "remember till here we had a prefix sum"
+    },
+    {
+      "start": 845.4,
+      "end": 851.52,
+      "text": "as s and we were looking for a sub array"
+    },
+    {
+      "start": 849.0,
+      "end": 854.1,
+      "text": "with some K so previously I was looking"
+    },
+    {
+      "start": 851.52,
+      "end": 856.98,
+      "text": "for if there is an occurrence of s minus"
+    },
+    {
+      "start": 854.1,
+      "end": 859.02,
+      "text": "K if you remember properly and that"
+    },
+    {
+      "start": 856.98,
+      "end": 861.9,
+      "text": "means we are looking for was there a"
+    },
+    {
+      "start": 859.02,
+      "end": 864.18,
+      "text": "prefixer we were looking for did it"
+    },
+    {
+      "start": 861.9,
+      "end": 866.1,
+      "text": "happen in the past so what better than a"
+    },
+    {
+      "start": 864.18,
+      "end": 868.08,
+      "text": "hash map so we will be using a data"
+    },
+    {
+      "start": 866.1,
+      "end": 871.02,
+      "text": "structure as hashmap which will be"
+    },
+    {
+      "start": 868.08,
+      "end": 873.36,
+      "text": "storing prefix sum how many times a"
+    },
+    {
+      "start": 871.02,
+      "end": 874.8,
+      "text": "dockered and that will be count why and"
+    },
+    {
+      "start": 873.36,
+      "end": 877.02,
+      "text": "everything you'll understand as you move"
+    },
+    {
+      "start": 874.8,
+      "end": 879.06,
+      "text": "forward in the dry run and we will take"
+    },
+    {
+      "start": 877.02,
+      "end": 881.28,
+      "text": "two variables one that keeps the track"
+    },
+    {
+      "start": 879.06,
+      "end": 883.68,
+      "text": "of what is the prefixer the other that"
+    },
+    {
+      "start": 881.28,
+      "end": 886.26,
+      "text": "keeps it track of the number of subares"
+    },
+    {
+      "start": 883.68,
+      "end": 889.02,
+      "text": "so initially the prefix sum is zero so"
+    },
+    {
+      "start": 886.26,
+      "end": 891.78,
+      "text": "please make sure you enter 0 as 1 saying"
+    },
+    {
+      "start": 889.02,
+      "end": 894.12,
+      "text": "is a prefix of 0 and count as 1 why"
+    },
+    {
+      "start": 891.78,
+      "end": 895.92,
+      "text": "because initially when we started we did"
+    },
+    {
+      "start": 894.12,
+      "end": 898.14,
+      "text": "not pick up any one and we'll understand"
+    },
+    {
+      "start": 895.92,
+      "end": 900.9,
+      "text": "the significance of 0 as we move forward"
+    },
+    {
+      "start": 898.14,
+      "end": 903.12,
+      "text": "so initially uh we will be standing at"
+    },
+    {
+      "start": 900.9,
+      "end": 905.7,
+      "text": "one so let's add it to the prefix sum as"
+    },
+    {
+      "start": 903.12,
+      "end": 908.52,
+      "text": "well so what are we saying we have some"
+    },
+    {
+      "start": 905.7,
+      "end": 911.34,
+      "text": "elements that gives us a prefix sum of"
+    },
+    {
+      "start": 908.52,
+      "end": 913.98,
+      "text": "one so in that sum n levels we will look"
+    },
+    {
+      "start": 911.34,
+      "end": 918.14,
+      "text": "for a sub array that insert this index"
+    },
+    {
+      "start": 913.98,
+      "end": 920.46,
+      "text": "with the summation of K so the previous"
+    },
+    {
+      "start": 918.14,
+      "end": 922.92,
+      "text": "there must be some previous Elements"
+    },
+    {
+      "start": 920.46,
+      "end": 925.92,
+      "text": "which can be excluded"
+    },
+    {
+      "start": 922.92,
+      "end": 928.2,
+      "text": "who has the sum of s minus K agreed"
+    },
+    {
+      "start": 925.92,
+      "end": 931.08,
+      "text": "because if this is s and if I'm looking"
+    },
+    {
+      "start": 928.2,
+      "end": 934.68,
+      "text": "for K the excluded people should be S"
+    },
+    {
+      "start": 931.08,
+      "end": 936.96,
+      "text": "minus K which is 1 minus 3 that is minus"
+    },
+    {
+      "start": 934.68,
+      "end": 939.18,
+      "text": "2 do we have a minus 2 do we have any"
+    },
+    {
+      "start": 936.96,
+      "end": 942.06,
+      "text": "previous elements that gives we prefix a"
+    },
+    {
+      "start": 939.18,
+      "end": 945.6,
+      "text": "minus two no so not possible"
+    },
+    {
+      "start": 942.06,
+      "end": 947.76,
+      "text": "next take one and put it"
+    },
+    {
+      "start": 945.6,
+      "end": 949.38,
+      "text": "as one comma one this so there is a"
+    },
+    {
+      "start": 947.76,
+      "end": 952.62,
+      "text": "prefix sum of one that occurs once"
+    },
+    {
+      "start": 949.38,
+      "end": 954.72,
+      "text": "perfect let's move it so we have a 2. we"
+    },
+    {
+      "start": 952.62,
+      "end": 956.22,
+      "text": "have a tool now if we have a do we add"
+    },
+    {
+      "start": 954.72,
+      "end": 958.26,
+      "text": "it to the prefix I'm saying we have a"
+    },
+    {
+      "start": 956.22,
+      "end": 960.0,
+      "text": "summation three what are we saying we"
+    },
+    {
+      "start": 958.26,
+      "end": 963.48,
+      "text": "are saying there are some elements which"
+    },
+    {
+      "start": 960.0,
+      "end": 966.24,
+      "text": "gives me a sum as 3. I'm looking for"
+    },
+    {
+      "start": 963.48,
+      "end": 969.54,
+      "text": "some elements which ends at this"
+    },
+    {
+      "start": 966.24,
+      "end": 972.54,
+      "text": "particular index who gives me a sum of K"
+    },
+    {
+      "start": 969.54,
+      "end": 975.0,
+      "text": "so I need to exclude elements with the"
+    },
+    {
+      "start": 972.54,
+      "end": 977.76,
+      "text": "summation of s minus k then only I'll"
+    },
+    {
+      "start": 975.0,
+      "end": 979.38,
+      "text": "get K so what is this 3 what is K3 so"
+    },
+    {
+      "start": 977.76,
+      "end": 982.02,
+      "text": "you need to exclude Elements which gives"
+    },
+    {
+      "start": 979.38,
+      "end": 985.38,
+      "text": "me a summation of 0 that means no"
+    },
+    {
+      "start": 982.02,
+      "end": 988.62,
+      "text": "elements that's why storing the 0 has"
+    },
+    {
+      "start": 985.38,
+      "end": 991.62,
+      "text": "significance got it so the count will"
+    },
+    {
+      "start": 988.62,
+      "end": 994.32,
+      "text": "increase by 1 because there's one"
+    },
+    {
+      "start": 991.62,
+      "end": 996.66,
+      "text": "so there can be one prefix sum which on"
+    },
+    {
+      "start": 994.32,
+      "end": 999.48,
+      "text": "removal will give me this one so done"
+    },
+    {
+      "start": 996.66,
+      "end": 1002.18,
+      "text": "next please take 3 and put it over here"
+    },
+    {
+      "start": 999.48,
+      "end": 1005.6,
+      "text": "let's move we have a 3 again let's add"
+    },
+    {
+      "start": 1002.18,
+      "end": 1008.36,
+      "text": "it up 6. so this time we have a"
+    },
+    {
+      "start": 1005.6,
+      "end": 1011.54,
+      "text": "summation of 6 and we are looking for k"
+    },
+    {
+      "start": 1008.36,
+      "end": 1013.88,
+      "text": "equal to 3 so we have to remove s minus"
+    },
+    {
+      "start": 1011.54,
+      "end": 1018.08,
+      "text": "K we have to remove elements with sum up"
+    },
+    {
+      "start": 1013.88,
+      "end": 1020.72,
+      "text": "S minus K so what is s 6 what is K so we"
+    },
+    {
+      "start": 1018.08,
+      "end": 1023.48,
+      "text": "have to remove prefix sum 3 so that is"
+    },
+    {
+      "start": 1020.72,
+      "end": 1025.04,
+      "text": "yeah we got it we got it once that is"
+    },
+    {
+      "start": 1023.48,
+      "end": 1027.8,
+      "text": "very eminent because if you remove this"
+    },
+    {
+      "start": 1025.04,
+      "end": 1031.28,
+      "text": "you'll just have this one so this is why"
+    },
+    {
+      "start": 1027.8,
+      "end": 1034.04,
+      "text": "this works thereby since 3 occurs once"
+    },
+    {
+      "start": 1031.28,
+      "end": 1037.52,
+      "text": "the count will increase by 1 and 6 will"
+    },
+    {
+      "start": 1034.04,
+      "end": 1039.2,
+      "text": "go as one perfect let's move it the"
+    },
+    {
+      "start": 1037.52,
+      "end": 1041.84,
+      "text": "moment you over here there's a minus"
+    },
+    {
+      "start": 1039.2,
+      "end": 1044.24,
+      "text": "three take this minus 3 add it up what"
+    },
+    {
+      "start": 1041.84,
+      "end": 1046.22,
+      "text": "do you get 3 and if you're getting three"
+    },
+    {
+      "start": 1044.24,
+      "end": 1047.54,
+      "text": "this is the moment you start again"
+    },
+    {
+      "start": 1046.22,
+      "end": 1049.88,
+      "text": "looking forward"
+    },
+    {
+      "start": 1047.54,
+      "end": 1054.34,
+      "text": "you are like total"
+    },
+    {
+      "start": 1049.88,
+      "end": 1056.84,
+      "text": "three looking for three how many exclude"
+    },
+    {
+      "start": 1054.34,
+      "end": 1058.4,
+      "text": "anyone who gives you a summation of zero"
+    },
+    {
+      "start": 1056.84,
+      "end": 1060.92,
+      "text": "exclude anyone who gives you a summation"
+    },
+    {
+      "start": 1058.4,
+      "end": 1063.02,
+      "text": "of Cu and we just have one which an"
+    },
+    {
+      "start": 1060.92,
+      "end": 1065.9,
+      "text": "exclusion gives me a summation of 0"
+    },
+    {
+      "start": 1063.02,
+      "end": 1068.42,
+      "text": "which is no one so thereby so there's"
+    },
+    {
+      "start": 1065.9,
+      "end": 1070.88,
+      "text": "only one addition perfect and there's"
+    },
+    {
+      "start": 1068.42,
+      "end": 1072.8,
+      "text": "three increase the count do not put it"
+    },
+    {
+      "start": 1070.88,
+      "end": 1075.98,
+      "text": "into the hash map increase the call next"
+    },
+    {
+      "start": 1072.8,
+      "end": 1077.72,
+      "text": "move level one so summation increases to"
+    },
+    {
+      "start": 1075.98,
+      "end": 1079.88,
+      "text": "four what are we looking for we're"
+    },
+    {
+      "start": 1077.72,
+      "end": 1081.92,
+      "text": "looking for four and we know we are"
+    },
+    {
+      "start": 1079.88,
+      "end": 1084.86,
+      "text": "looking for k equal to three so you're"
+    },
+    {
+      "start": 1081.92,
+      "end": 1087.08,
+      "text": "looking for S minus K which is 4 minus 3"
+    },
+    {
+      "start": 1084.86,
+      "end": 1088.76,
+      "text": "which is 1 and we have it we have it"
+    },
+    {
+      "start": 1087.08,
+      "end": 1091.22,
+      "text": "which is this single element if you"
+    },
+    {
+      "start": 1088.76,
+      "end": 1093.98,
+      "text": "exclude this single element these"
+    },
+    {
+      "start": 1091.22,
+      "end": 1096.56,
+      "text": "elements will give you some array with"
+    },
+    {
+      "start": 1093.98,
+      "end": 1099.32,
+      "text": "some K it will so there's one element"
+    },
+    {
+      "start": 1096.56,
+      "end": 1102.38,
+      "text": "increase and store four comma 1 let's"
+    },
+    {
+      "start": 1099.32,
+      "end": 1104.54,
+      "text": "move we have a five this time we have a"
+    },
+    {
+      "start": 1102.38,
+      "end": 1107.24,
+      "text": "five if you have a five you're looking"
+    },
+    {
+      "start": 1104.54,
+      "end": 1110.06,
+      "text": "to remove how much Elements which give"
+    },
+    {
+      "start": 1107.24,
+      "end": 1113.42,
+      "text": "you some three do we have two do we have"
+    },
+    {
+      "start": 1110.06,
+      "end": 1117.32,
+      "text": "two no nothing to be done just take five"
+    },
+    {
+      "start": 1113.42,
+      "end": 1119.12,
+      "text": "include in the hash map and move it six"
+    },
+    {
+      "start": 1117.32,
+      "end": 1120.86,
+      "text": "very important point"
+    },
+    {
+      "start": 1119.12,
+      "end": 1122.24,
+      "text": "you have six"
+    },
+    {
+      "start": 1120.86,
+      "end": 1124.16,
+      "text": "you know"
+    },
+    {
+      "start": 1122.24,
+      "end": 1125.9,
+      "text": "you will be requiring three so you have"
+    },
+    {
+      "start": 1124.16,
+      "end": 1127.76,
+      "text": "to remove Elements which will give you"
+    },
+    {
+      "start": 1125.9,
+      "end": 1129.38,
+      "text": "summation of three and there are two"
+    },
+    {
+      "start": 1127.76,
+      "end": 1132.14,
+      "text": "occurrences if you see there are two"
+    },
+    {
+      "start": 1129.38,
+      "end": 1134.42,
+      "text": "occurrences if you remove this this"
+    },
+    {
+      "start": 1132.14,
+      "end": 1136.7,
+      "text": "gives you summation of three if you"
+    },
+    {
+      "start": 1134.42,
+      "end": 1138.2,
+      "text": "remove this this also gives you a"
+    },
+    {
+      "start": 1136.7,
+      "end": 1141.02,
+      "text": "summation of three so there are two"
+    },
+    {
+      "start": 1138.2,
+      "end": 1143.78,
+      "text": "occurrences this is why I was storing"
+    },
+    {
+      "start": 1141.02,
+      "end": 1146.72,
+      "text": "count so there are two occurrences which"
+    },
+    {
+      "start": 1143.78,
+      "end": 1148.58,
+      "text": "on removal can give you this particular"
+    },
+    {
+      "start": 1146.72,
+      "end": 1150.44,
+      "text": "sum and then you will be ending up with"
+    },
+    {
+      "start": 1148.58,
+      "end": 1153.62,
+      "text": "three so add up two"
+    },
+    {
+      "start": 1150.44,
+      "end": 1154.94,
+      "text": "six subares found so for six I've added"
+    },
+    {
+      "start": 1153.62,
+      "end": 1157.46,
+      "text": "the number of sub arrays what is the"
+    },
+    {
+      "start": 1154.94,
+      "end": 1159.38,
+      "text": "next turn add one so six will be added"
+    },
+    {
+      "start": 1157.46,
+      "end": 1161.66,
+      "text": "over here please make sure add six over"
+    },
+    {
+      "start": 1159.38,
+      "end": 1164.66,
+      "text": "here instead of adding it again into the"
+    },
+    {
+      "start": 1161.66,
+      "end": 1167.0,
+      "text": "hasher let's move forward we have a four"
+    },
+    {
+      "start": 1164.66,
+      "end": 1169.22,
+      "text": "ten so if we have a 10 we are looking"
+    },
+    {
+      "start": 1167.0,
+      "end": 1171.08,
+      "text": "for three so we have to remove seven do"
+    },
+    {
+      "start": 1169.22,
+      "end": 1172.7,
+      "text": "we have a seven no we don't have a seven"
+    },
+    {
+      "start": 1171.08,
+      "end": 1175.52,
+      "text": "not to be done"
+    },
+    {
+      "start": 1172.7,
+      "end": 1178.7,
+      "text": "put up 10 and move forward so we have a"
+    },
+    {
+      "start": 1175.52,
+      "end": 1179.9,
+      "text": "12 is now what do we have 12 been"
+    },
+    {
+      "start": 1178.7,
+      "end": 1181.52,
+      "text": "looking for three we have to remove"
+    },
+    {
+      "start": 1179.9,
+      "end": 1183.92,
+      "text": "something of nine do we have a nine do"
+    },
+    {
+      "start": 1181.52,
+      "end": 1188.3,
+      "text": "we have a nine no"
+    },
+    {
+      "start": 1183.92,
+      "end": 1190.82,
+      "text": "12 comma one next move and remove you"
+    },
+    {
+      "start": 1188.3,
+      "end": 1193.04,
+      "text": "have to add minus three so it's nine so"
+    },
+    {
+      "start": 1190.82,
+      "end": 1195.44,
+      "text": "an addition of minus three you get nine"
+    },
+    {
+      "start": 1193.04,
+      "end": 1197.06,
+      "text": "so it's basically you have a nine and"
+    },
+    {
+      "start": 1195.44,
+      "end": 1198.82,
+      "text": "you're looking for three so the"
+    },
+    {
+      "start": 1197.06,
+      "end": 1201.62,
+      "text": "remaining is six you have to remove"
+    },
+    {
+      "start": 1198.82,
+      "end": 1203.96,
+      "text": "elements who who are giving you some"
+    },
+    {
+      "start": 1201.62,
+      "end": 1206.36,
+      "text": "summation of six and the rock is twice"
+    },
+    {
+      "start": 1203.96,
+      "end": 1207.74,
+      "text": "once here once here it's basically once"
+    },
+    {
+      "start": 1206.36,
+      "end": 1210.14,
+      "text": "you remove this"
+    },
+    {
+      "start": 1207.74,
+      "end": 1213.56,
+      "text": "this Safari also gives you a summation"
+    },
+    {
+      "start": 1210.14,
+      "end": 1215.68,
+      "text": "of three even if you remove everyone"
+    },
+    {
+      "start": 1213.56,
+      "end": 1219.14,
+      "text": "this also gives you a summation of six"
+    },
+    {
+      "start": 1215.68,
+      "end": 1221.54,
+      "text": "thereby two more occurrences go ahead"
+    },
+    {
+      "start": 1219.14,
+      "end": 1223.88,
+      "text": "and add it up once you've done this put"
+    },
+    {
+      "start": 1221.54,
+      "end": 1226.58,
+      "text": "it into the one and your iteration is"
+    },
+    {
+      "start": 1223.88,
+      "end": 1228.74,
+      "text": "over once your iteration is over the"
+    },
+    {
+      "start": 1226.58,
+      "end": 1232.1,
+      "text": "count will be storing your answer this"
+    },
+    {
+      "start": 1228.74,
+      "end": 1235.88,
+      "text": "is why I said storing of count is very"
+    },
+    {
+      "start": 1232.1,
+      "end": 1238.46,
+      "text": "very important and also storing of 0 is"
+    },
+    {
+      "start": 1235.88,
+      "end": 1240.38,
+      "text": "also very very high significance and if"
+    },
+    {
+      "start": 1238.46,
+      "end": 1242.54,
+      "text": "you want to know why I'll just give you"
+    },
+    {
+      "start": 1240.38,
+      "end": 1245.78,
+      "text": "a subtle example you can try it out at"
+    },
+    {
+      "start": 1242.54,
+      "end": 1249.74,
+      "text": "your home so take this example 3 minus 3"
+    },
+    {
+      "start": 1245.78,
+      "end": 1250.52,
+      "text": "1 1 okay take this example and you will"
+    },
+    {
+      "start": 1249.74,
+      "end": 1253.28,
+      "text": "see"
+    },
+    {
+      "start": 1250.52,
+      "end": 1255.2,
+      "text": "what will happen if you do not store"
+    },
+    {
+      "start": 1253.28,
+      "end": 1257.78,
+      "text": "zero please"
+    },
+    {
+      "start": 1255.2,
+      "end": 1260.36,
+      "text": "try out this example do a dragon and"
+    },
+    {
+      "start": 1257.78,
+      "end": 1262.76,
+      "text": "you'll understand why storing 0 is very"
+    },
+    {
+      "start": 1260.36,
+      "end": 1264.74,
+      "text": "very important got it so the entire"
+    },
+    {
+      "start": 1262.76,
+      "end": 1266.96,
+      "text": "logic is super simple isn't it you have"
+    },
+    {
+      "start": 1264.74,
+      "end": 1269.9,
+      "text": "a prefix sum which is the entire sum"
+    },
+    {
+      "start": 1266.96,
+      "end": 1272.84,
+      "text": "till a particular index and you are"
+    },
+    {
+      "start": 1269.9,
+      "end": 1275.9,
+      "text": "looking for K so I'll just look for how"
+    },
+    {
+      "start": 1272.84,
+      "end": 1278.12,
+      "text": "many times s minus K appeared and that"
+    },
+    {
+      "start": 1275.9,
+      "end": 1280.64,
+      "text": "will be the number of sub arrays that"
+    },
+    {
+      "start": 1278.12,
+      "end": 1282.62,
+      "text": "ends at this particular index that is"
+    },
+    {
+      "start": 1280.64,
+      "end": 1284.18,
+      "text": "what the intuition was so let's quickly"
+    },
+    {
+      "start": 1282.62,
+      "end": 1285.32,
+      "text": "go back to the code editor and try to"
+    },
+    {
+      "start": 1284.18,
+      "end": 1287.36,
+      "text": "code it up again you can find the"
+    },
+    {
+      "start": 1285.32,
+      "end": 1289.22,
+      "text": "problem Link in the description please"
+    },
+    {
+      "start": 1287.36,
+      "end": 1291.74,
+      "text": "make sure you try out the problem uh"
+    },
+    {
+      "start": 1289.22,
+      "end": 1293.72,
+      "text": "from the link in the description so we"
+    },
+    {
+      "start": 1291.74,
+      "end": 1295.88,
+      "text": "will take a map and you can also take an"
+    },
+    {
+      "start": 1293.72,
+      "end": 1299.54,
+      "text": "unordered map and initially I will say"
+    },
+    {
+      "start": 1295.88,
+      "end": 1302.48,
+      "text": "map of 0 is equal to 1. Let's store a"
+    },
+    {
+      "start": 1299.54,
+      "end": 1304.7,
+      "text": "prefix sum as 0 and let's store account"
+    },
+    {
+      "start": 1302.48,
+      "end": 1306.68,
+      "text": "as zero and at the end of the day we"
+    },
+    {
+      "start": 1304.7,
+      "end": 1309.74,
+      "text": "will return the count let's Now quickly"
+    },
+    {
+      "start": 1306.68,
+      "end": 1312.14,
+      "text": "start the iteration so we will iterate"
+    },
+    {
+      "start": 1309.74,
+      "end": 1315.14,
+      "text": "throughout the array so this is how we"
+    },
+    {
+      "start": 1312.14,
+      "end": 1317.24,
+      "text": "will write it and we will say prefix sum"
+    },
+    {
+      "start": 1315.14,
+      "end": 1320.24,
+      "text": "plus equal to array of I every time I"
+    },
+    {
+      "start": 1317.24,
+      "end": 1321.92,
+      "text": "get in and what am I looking for what am"
+    },
+    {
+      "start": 1320.24,
+      "end": 1324.02,
+      "text": "I looking to remove if I ask you on the"
+    },
+    {
+      "start": 1321.92,
+      "end": 1326.48,
+      "text": "backwards what will I look for remove"
+    },
+    {
+      "start": 1324.02,
+      "end": 1327.14,
+      "text": "it's very simple I'll try to remove this"
+    },
+    {
+      "start": 1326.48,
+      "end": 1331.04,
+      "text": "one"
+    },
+    {
+      "start": 1327.14,
+      "end": 1333.98,
+      "text": "so it's basically stating if I can get"
+    },
+    {
+      "start": 1331.04,
+      "end": 1337.04,
+      "text": "how many are there with this removals"
+    },
+    {
+      "start": 1333.98,
+      "end": 1338.66,
+      "text": "like how many in initial prefix sums are"
+    },
+    {
+      "start": 1337.04,
+      "end": 1340.46,
+      "text": "there which can be removed and that will"
+    },
+    {
+      "start": 1338.66,
+      "end": 1343.4,
+      "text": "be why counter sub arrays and before"
+    },
+    {
+      "start": 1340.46,
+      "end": 1346.28,
+      "text": "going ahead what I'll say is mpb prefix"
+    },
+    {
+      "start": 1343.4,
+      "end": 1348.5,
+      "text": "sum can you just update yourself in the"
+    },
+    {
+      "start": 1346.28,
+      "end": 1351.14,
+      "text": "hashma once this is done I can just"
+    },
+    {
+      "start": 1348.5,
+      "end": 1353.42,
+      "text": "return it and that will be it"
+    },
+    {
+      "start": 1351.14,
+      "end": 1355.22,
+      "text": "hardly a four line code and it solves"
+    },
+    {
+      "start": 1353.42,
+      "end": 1357.68,
+      "text": "the entire problem"
+    },
+    {
+      "start": 1355.22,
+      "end": 1360.08,
+      "text": "so much of logic but four lines of code"
+    },
+    {
+      "start": 1357.68,
+      "end": 1362.3,
+      "text": "so what will be the time complexity I"
+    },
+    {
+      "start": 1360.08,
+      "end": 1364.16,
+      "text": "can say we are linearly iterating on the"
+    },
+    {
+      "start": 1362.3,
+      "end": 1367.58,
+      "text": "array so that is going to take a big O"
+    },
+    {
+      "start": 1364.16,
+      "end": 1370.7,
+      "text": "of N and for the unordered map we know"
+    },
+    {
+      "start": 1367.58,
+      "end": 1372.14,
+      "text": "the average case is Big of one yeah the"
+    },
+    {
+      "start": 1370.7,
+      "end": 1374.18,
+      "text": "worst case in case of positions can be"
+    },
+    {
+      "start": 1372.14,
+      "end": 1375.5,
+      "text": "big often so depending on that you can"
+    },
+    {
+      "start": 1374.18,
+      "end": 1377.06,
+      "text": "explain to the interviewer that if we"
+    },
+    {
+      "start": 1375.5,
+      "end": 1379.1,
+      "text": "take the simple map it will be"
+    },
+    {
+      "start": 1377.06,
+      "end": 1381.32,
+      "text": "logarithmic of n if you take unordered"
+    },
+    {
+      "start": 1379.1,
+      "end": 1383.3,
+      "text": "map the best and the average will be big"
+    },
+    {
+      "start": 1381.32,
+      "end": 1385.82,
+      "text": "go of one for map but the worst might be"
+    },
+    {
+      "start": 1383.3,
+      "end": 1388.58,
+      "text": "big oven so depending on what complexity"
+    },
+    {
+      "start": 1385.82,
+      "end": 1391.22,
+      "text": "you assume for the map the logarithmic"
+    },
+    {
+      "start": 1388.58,
+      "end": 1392.9,
+      "text": "thing will alter so that will be the"
+    },
+    {
+      "start": 1391.22,
+      "end": 1395.0,
+      "text": "time complexity what about the space"
+    },
+    {
+      "start": 1392.9,
+      "end": 1396.98,
+      "text": "complexity we're using a map to store"
+    },
+    {
+      "start": 1395.0,
+      "end": 1399.38,
+      "text": "all the prefix sums so the worst case"
+    },
+    {
+      "start": 1396.98,
+      "end": 1402.08,
+      "text": "all the prefix sums can be different and"
+    },
+    {
+      "start": 1399.38,
+      "end": 1404.0,
+      "text": "we might end up storing n prefix sums so"
+    },
+    {
+      "start": 1402.08,
+      "end": 1406.34,
+      "text": "that will be the space complexity this"
+    },
+    {
+      "start": 1404.0,
+      "end": 1408.32,
+      "text": "will be the time complexity and we"
+    },
+    {
+      "start": 1406.34,
+      "end": 1409.82,
+      "text": "cannot do anything better than that so"
+    },
+    {
+      "start": 1408.32,
+      "end": 1411.2,
+      "text": "going back to the sheet I can say that"
+    },
+    {
+      "start": 1409.82,
+      "end": 1413.12,
+      "text": "this particular problem is completed"
+    },
+    {
+      "start": 1411.2,
+      "end": 1416.0,
+      "text": "with this we wrap up the medium section"
+    },
+    {
+      "start": 1413.12,
+      "end": 1417.74,
+      "text": "of arrays as well I hope understood all"
+    },
+    {
+      "start": 1416.0,
+      "end": 1419.84,
+      "text": "the three approaches just in case you"
+    },
+    {
+      "start": 1417.74,
+      "end": 1421.28,
+      "text": "did please please consider giving us"
+    },
+    {
+      "start": 1419.84,
+      "end": 1423.68,
+      "text": "that like because it won't cost you"
+    },
+    {
+      "start": 1421.28,
+      "end": 1425.18,
+      "text": "anything but that will motivate me a lot"
+    },
+    {
+      "start": 1423.68,
+      "end": 1426.86,
+      "text": "to make these kind of videos and if"
+    },
+    {
+      "start": 1425.18,
+      "end": 1428.54,
+      "text": "you're new to our Channel what are you"
+    },
+    {
+      "start": 1426.86,
+      "end": 1429.98,
+      "text": "waiting for hit that subscribe button"
+    },
+    {
+      "start": 1428.54,
+      "end": 1432.02,
+      "text": "and to continue our tradition please"
+    },
+    {
+      "start": 1429.98,
+      "end": 1433.22,
+      "text": "make sure you do comment understood and"
+    },
+    {
+      "start": 1432.02,
+      "end": 1435.44,
+      "text": "if you haven't followed me on Instagram"
+    },
+    {
+      "start": 1433.22,
+      "end": 1437.36,
+      "text": "Twitter and Linkedin all the ideas will"
+    },
+    {
+      "start": 1435.44,
+      "end": 1438.56,
+      "text": "be in the description with this I'll be"
+    },
+    {
+      "start": 1437.36,
+      "end": 1439.82,
+      "text": "wrapping up this video let's read in"
+    },
+    {
+      "start": 1438.56,
+      "end": 1440.72,
+      "text": "some of the video till then bye take"
+    },
+    {
+      "start": 1439.82,
+      "end": 1444.68,
+      "text": "care"
+    },
+    {
+      "start": 1440.72,
+      "end": 1448.22,
+      "text": "whenever your heart is broken don't ever"
+    },
+    {
+      "start": 1444.68,
+      "end": 1450.52,
+      "text": "forget your golden I I will find the"
+    },
+    {
+      "start": 1448.22,
+      "end": 1450.52,
+      "text": "light in"
+    }
+  ]
+}

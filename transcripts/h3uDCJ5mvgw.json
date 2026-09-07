@@ -1,0 +1,1205 @@
+{
+  "video_id": "h3uDCJ5mvgw",
+  "title": "How to setup VS code for DSA and CP | Input / Output split format",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 531,
+  "text": "FetchedTranscriptSnippet(text=\"so in case you're looking for a setup\", start=2.94, duration=3.419) FetchedTranscriptSnippet(text='which works something like this where', start=4.74, duration=4.2) FetchedTranscriptSnippet(text='the code is on the left the input is on', start=6.359, duration=3.901) FetchedTranscriptSnippet(text='the right and the output is on the right', start=8.94, duration=3.48) FetchedTranscriptSnippet(text=\"and they're splitted across screen and\", start=10.26, duration=4.02) FetchedTranscriptSnippet(text='you input something and you write the', start=12.42, duration=4.26) FetchedTranscriptSnippet(text='code and then you click one button and', start=14.28, duration=4.38) FetchedTranscriptSnippet(text='then the output is visible if you want', start=16.68, duration=4.019) FetchedTranscriptSnippet(text='to set up something like this this video', start=18.66, duration=4.56) FetchedTranscriptSnippet(text='is going to be about setting up a', start=20.699, duration=4.201) FetchedTranscriptSnippet(text='similar kind of setup but for that in', start=23.22, duration=3.42) FetchedTranscriptSnippet(text='case for the first time here please make', start=24.9, duration=3.36) FetchedTranscriptSnippet(text='sure that you check out Strivers a to', start=26.64, duration=4.139) FetchedTranscriptSnippet(text=\"Zsa course now this is the world's most\", start=28.26, duration=4.74) FetchedTranscriptSnippet(text='in-depth DS algo course why do I see', start=30.779, duration=5.101) FetchedTranscriptSnippet(text='that because the course has 455 modules', start=33.0, duration=6.3) FetchedTranscriptSnippet(text='yes we have solved over 455 problems and', start=35.88, duration=6.06) FetchedTranscriptSnippet(text='all the videos are free you get premium', start=39.3, duration=5.279) FetchedTranscriptSnippet(text='quality articles as well over there we', start=41.94, duration=4.799) FetchedTranscriptSnippet(text='have C plus plus Java JavaScript python', start=44.579, duration=4.5) FetchedTranscriptSnippet(text='codes covered as well so you get', start=46.739, duration=4.261) FetchedTranscriptSnippet(text=\"everything at one place and you don't\", start=49.079, duration=3.781) FetchedTranscriptSnippet(text='need anything else you can straight away', start=51.0, duration=4.02) FetchedTranscriptSnippet(text='prepare for it and this is targeted for', start=52.86, duration=3.78) FetchedTranscriptSnippet(text='companies like Google Amazon Facebook', start=55.02, duration=3.48) FetchedTranscriptSnippet(text='and all the other product based', start=56.64, duration=3.78) FetchedTranscriptSnippet(text=\"companies in the market and that's one\", start=58.5, duration=3.059) FetchedTranscriptSnippet(text='other thing that I want to clarify', start=60.42, duration=2.939) FetchedTranscriptSnippet(text=\"there's a lot of rumor that the this\", start=61.559, duration=3.661) FetchedTranscriptSnippet(text='particular course is in C plus plus no', start=63.359, duration=4.381) FetchedTranscriptSnippet(text='that does not the truth so the first', start=65.22, duration=4.079) FetchedTranscriptSnippet(text='couple of videos are in C plus plus', start=67.74, duration=3.72) FetchedTranscriptSnippet(text=\"where I'm teaching for Loop while loop\", start=69.299, duration=3.841) FetchedTranscriptSnippet(text=\"because they're pretty much similar in C\", start=71.46, duration=3.78) FetchedTranscriptSnippet(text=\"plus plus and Java so I've just plot in\", start=73.14, duration=4.26) FetchedTranscriptSnippet(text=\"C plus plus if you know Java you'll you\", start=75.24, duration=4.32) FetchedTranscriptSnippet(text='can easily grasp it right but when I', start=77.4, duration=3.899) FetchedTranscriptSnippet(text='move to recursion when I move to arrays', start=79.56, duration=3.419) FetchedTranscriptSnippet(text='when I move to binary search or any', start=81.299, duration=4.201) FetchedTranscriptSnippet(text='other thing each of those lectures are', start=82.979, duration=5.64) FetchedTranscriptSnippet(text='recorded with logic and then pseudocode', start=85.5, duration=6.299) FetchedTranscriptSnippet(text='I do not write code in any language and', start=88.619, duration=5.401) FetchedTranscriptSnippet(text=\"after that in the description you'll\", start=91.799, duration=4.201) FetchedTranscriptSnippet(text=\"find notes where you'll find C plus plus\", start=94.02, duration=4.919) FetchedTranscriptSnippet(text='Java JavaScript python codes in those', start=96.0, duration=5.4) FetchedTranscriptSnippet(text='nodes so this course is not language', start=98.939, duration=4.621) FetchedTranscriptSnippet(text='dependent the first couple of videos', start=101.4, duration=4.98) FetchedTranscriptSnippet(text='might be but the entire course is not', start=103.56, duration=4.559) FetchedTranscriptSnippet(text='only the basics like the for Loop while', start=106.38, duration=3.84) FetchedTranscriptSnippet(text=\"you're printing stuff is in C plus plus\", start=108.119, duration=5.82) FetchedTranscriptSnippet(text='after that everything a pseudo code yes', start=110.22, duration=6.06) FetchedTranscriptSnippet(text='pseudocode I focus on the logic so', start=113.939, duration=4.201) FetchedTranscriptSnippet(text='please remember this and the link is in', start=116.28, duration=3.24) FetchedTranscriptSnippet(text='the description make sure you check it', start=118.14, duration=3.6) FetchedTranscriptSnippet(text=\"out so let's get back to the vs code and\", start=119.52, duration=3.959) FetchedTranscriptSnippet(text='try to set it up so first I will be', start=121.74, duration=3.839) FetchedTranscriptSnippet(text='setting it up for C plus plus after that', start=123.479, duration=4.021) FetchedTranscriptSnippet(text='I will be setting it up for Java and for', start=125.579, duration=3.841) FetchedTranscriptSnippet(text='any other language if you see these two', start=127.5, duration=4.44) FetchedTranscriptSnippet(text='setups you will be able to set it up so', start=129.42, duration=3.539) FetchedTranscriptSnippet(text='the first thing that you will do is', start=131.94, duration=3.18) FetchedTranscriptSnippet(text=\"you'll just open the vs code editor and\", start=132.959, duration=4.14) FetchedTranscriptSnippet(text='right after that you open a folder so', start=135.12, duration=3.9) FetchedTranscriptSnippet(text=\"what I'll do is I'll go over here and\", start=137.099, duration=4.561) FetchedTranscriptSnippet(text=\"I'll open C plus plus so I've opened C\", start=139.02, duration=5.219) FetchedTranscriptSnippet(text='plus plus after that I go to the', start=141.66, duration=5.42) FetchedTranscriptSnippet(text='extensions and I install C plus plus', start=144.239, duration=6.481) FetchedTranscriptSnippet(text=\"extension so search and you'll find an\", start=147.08, duration=5.2) FetchedTranscriptSnippet(text=\"extension from Microsoft I've already\", start=150.72, duration=3.84) FetchedTranscriptSnippet(text='installed it so please make sure that', start=152.28, duration=4.56) FetchedTranscriptSnippet(text='you install it once you have installed', start=154.56, duration=5.58) FetchedTranscriptSnippet(text='it go back to this folder and try to', start=156.84, duration=6.32) FetchedTranscriptSnippet(text=\"create a file so maybe I'll just create\", start=160.14, duration=6.3) FetchedTranscriptSnippet(text=\"demo.cpp so that's your file after that\", start=163.16, duration=6.48) FetchedTranscriptSnippet(text='create another file with input dot txt', start=166.44, duration=6.019) FetchedTranscriptSnippet(text='after that create one more file with', start=169.64, duration=6.4) FetchedTranscriptSnippet(text='output.txt done once you created these', start=172.459, duration=7.121) FetchedTranscriptSnippet(text='three files go to view and go to editor', start=176.04, duration=6.18) FetchedTranscriptSnippet(text='layout and say split left once you', start=179.58, duration=4.68) FetchedTranscriptSnippet(text='splitting left you will find demo is on', start=182.22, duration=3.84) FetchedTranscriptSnippet(text='the left as input and output so just', start=184.26, duration=3.78) FetchedTranscriptSnippet(text='cross it out so you have input over here', start=186.06, duration=4.2) FetchedTranscriptSnippet(text='and output so you have input and output', start=188.04, duration=3.479) FetchedTranscriptSnippet(text='on the right you want to spread them', start=190.26, duration=4.14) FetchedTranscriptSnippet(text='across so go to view again edit a layout', start=191.519, duration=5.461) FetchedTranscriptSnippet(text='and say split down once you split them', start=194.4, duration=4.979) FetchedTranscriptSnippet(text='into down so you can just drag the', start=196.98, duration=4.2) FetchedTranscriptSnippet(text='output and that should be done so the', start=199.379, duration=4.14) FetchedTranscriptSnippet(text='input is on the top and the output is', start=201.18, duration=3.779) FetchedTranscriptSnippet(text=\"over here let's take a quick break\", start=203.519, duration=3.181) FetchedTranscriptSnippet(text='before we move ahead so nowadays', start=204.959, duration=3.661) FetchedTranscriptSnippet(text='everyone is focusing on DS algo but', start=206.7, duration=3.84) FetchedTranscriptSnippet(text='people are ignoring all the other', start=208.62, duration=4.02) FetchedTranscriptSnippet(text='aspects something like projects is going', start=210.54, duration=3.839) FetchedTranscriptSnippet(text=\"to be of extreme importance when you're\", start=212.64, duration=3.78) FetchedTranscriptSnippet(text=\"going in for placements so what I'll\", start=214.379, duration=3.901) FetchedTranscriptSnippet(text='recommend you is to get a strong', start=216.42, duration=4.679) FetchedTranscriptSnippet(text='portfolio with projects and with Ds algo', start=218.28, duration=4.679) FetchedTranscriptSnippet(text='as well so what you can do is you can', start=221.099, duration=4.321) FetchedTranscriptSnippet(text=\"check out crowd.do's project Hub over\", start=222.959, duration=4.081) FetchedTranscriptSnippet(text='there they have structured a lot of', start=225.42, duration=3.78) FetchedTranscriptSnippet(text=\"projects according to domains let's say\", start=227.04, duration=4.259) FetchedTranscriptSnippet(text='we go to web dev and you can see a lot', start=229.2, duration=4.74) FetchedTranscriptSnippet(text='of project ideas and they are given in a', start=231.299, duration=4.44) FetchedTranscriptSnippet(text='structured manner so you can follow them', start=233.94, duration=3.96) FetchedTranscriptSnippet(text='and build some amazing projects and you', start=235.739, duration=4.261) FetchedTranscriptSnippet(text='can build a portfolio like pavitra', start=237.9, duration=3.36) FetchedTranscriptSnippet(text='Sharma over here you can see his', start=240.0, duration=3.72) FetchedTranscriptSnippet(text='portfolio is built some amazing projects', start=241.26, duration=3.899) FetchedTranscriptSnippet(text='so you can have a portfolio something', start=243.72, duration=3.06) FetchedTranscriptSnippet(text=\"like this when you're going in for your\", start=245.159, duration=3.601) FetchedTranscriptSnippet(text=\"placement so let's talk about crowd or\", start=246.78, duration=3.659) FetchedTranscriptSnippet(text=\"do as well so crowd or do is world's\", start=248.76, duration=3.24) FetchedTranscriptSnippet(text='first experiential learning and', start=250.439, duration=4.02) FetchedTranscriptSnippet(text=\"upscaling platform over here you don't\", start=252.0, duration=4.38) FetchedTranscriptSnippet(text='typically watch videos you basically', start=254.459, duration=4.441) FetchedTranscriptSnippet(text='learn by doing so they offer you program', start=256.38, duration=4.38) FetchedTranscriptSnippet(text=\"so you'll be working like a software\", start=258.9, duration=4.799) FetchedTranscriptSnippet(text='engineer does at Amazon Netflix Google', start=260.76, duration=4.62) FetchedTranscriptSnippet(text=\"Etc you'll be building some amazing\", start=263.699, duration=3.481) FetchedTranscriptSnippet(text='projects you can see on the screen and', start=265.38, duration=3.9) FetchedTranscriptSnippet(text=\"you'll be building under mentors who are\", start=267.18, duration=3.84) FetchedTranscriptSnippet(text='working at Google Amazon Microsoft', start=269.28, duration=3.72) FetchedTranscriptSnippet(text='Walmart PayPal so talking about', start=271.02, duration=3.66) FetchedTranscriptSnippet(text='placement stats crack has already', start=273.0, duration=3.96) FetchedTranscriptSnippet(text='transformed thousand plus careers cry', start=274.68, duration=3.9) FetchedTranscriptSnippet(text='out graduates from various backgrounds', start=276.96, duration=3.6) FetchedTranscriptSnippet(text='have already been placed in 750 plus', start=278.58, duration=3.72) FetchedTranscriptSnippet(text='companies so they offer you fellowship', start=280.56, duration=3.24) FetchedTranscriptSnippet(text='program in software development what you', start=282.3, duration=2.88) FetchedTranscriptSnippet(text='can do is you can book a free trial', start=283.8, duration=3.72) FetchedTranscriptSnippet(text='session and test it out for yourself and', start=285.18, duration=4.38) FetchedTranscriptSnippet(text='at the same time make sure that you', start=287.52, duration=3.899) FetchedTranscriptSnippet(text=\"bookmark the projects Hub I'll be\", start=289.56, duration=3.84) FetchedTranscriptSnippet(text='leaving the link in the description and', start=291.419, duration=3.601) FetchedTranscriptSnippet(text=\"you'll also find the free trial session\", start=293.4, duration=3.18) FetchedTranscriptSnippet(text='Link in the description make sure you', start=295.02, duration=3.959) FetchedTranscriptSnippet(text='check them out now quickly try to run a', start=296.58, duration=4.02) FetchedTranscriptSnippet(text=\"code so what I've done is I've copy\", start=298.979, duration=4.5) FetchedTranscriptSnippet(text='pasted a demo code now the next step is', start=300.6, duration=4.56) FetchedTranscriptSnippet(text='to run this but before that you have to', start=303.479, duration=4.621) FetchedTranscriptSnippet(text=\"go to terminal configure tasks there's\", start=305.16, duration=6.08) FetchedTranscriptSnippet(text='something else create task click it', start=308.1, duration=6.539) FetchedTranscriptSnippet(text='others once you click on others you see', start=311.24, duration=5.38) FetchedTranscriptSnippet(text=\"there's a vs code folder and there's a\", start=314.639, duration=3.78) FetchedTranscriptSnippet(text='task.json', start=316.62, duration=4.2) FetchedTranscriptSnippet(text='remove this configuration and go to the', start=318.419, duration=3.601) FetchedTranscriptSnippet(text=\"description I'll be pasting the\", start=320.82, duration=4.02) FetchedTranscriptSnippet(text='configuration just paste it and remember', start=322.02, duration=5.519) FetchedTranscriptSnippet(text='one thing the compile and run should be', start=324.84, duration=6.6) FetchedTranscriptSnippet(text='together save it and close it and right', start=327.539, duration=7.44) FetchedTranscriptSnippet(text=\"after that I'll be pressing command plus\", start=331.44, duration=6.3) FetchedTranscriptSnippet(text=\"shift plus b but for that let's give an\", start=334.979, duration=6.181) FetchedTranscriptSnippet(text='input 13 command shift and B and you', start=337.74, duration=5.58) FetchedTranscriptSnippet(text='will see that there is an output quite', start=341.16, duration=4.5) FetchedTranscriptSnippet(text=\"simple isn't it so the configuration\", start=343.32, duration=4.92) FetchedTranscriptSnippet(text=\"that you see over here that's for C plus\", start=345.66, duration=6.3) FetchedTranscriptSnippet(text='plus for MacBook in the notes like in', start=348.24, duration=5.399) FetchedTranscriptSnippet(text=\"the description I'll be leaving some\", start=351.96, duration=4.739) FetchedTranscriptSnippet(text='notes I will find for Windows as well in', start=353.639, duration=4.56) FetchedTranscriptSnippet(text='case you have any other operating system', start=356.699, duration=3.661) FetchedTranscriptSnippet(text='what you need to do is just copy paste', start=358.199, duration=4.5) FetchedTranscriptSnippet(text=\"the configuration that I've given in the\", start=360.36, duration=5.16) FetchedTranscriptSnippet(text='notes take it to chat GPT and whatever', start=362.699, duration=4.261) FetchedTranscriptSnippet(text='is your system', start=365.52, duration=4.08) FetchedTranscriptSnippet(text='ask rgbt can you give me the equivalent', start=366.96, duration=4.98) FetchedTranscriptSnippet(text='for my system and it will give you this', start=369.6, duration=4.439) FetchedTranscriptSnippet(text='copy paste and it will start working so', start=371.94, duration=4.02) FetchedTranscriptSnippet(text='this is this is how you set it up', start=374.039, duration=5.581) FetchedTranscriptSnippet(text='remember the starts.json is under your C', start=375.96, duration=5.519) FetchedTranscriptSnippet(text='plus folder in case you are switching', start=379.62, duration=3.78) FetchedTranscriptSnippet(text=\"folders you'll have to again repeat the\", start=381.479, duration=4.321) FetchedTranscriptSnippet(text='same thing got it so that was easy for C', start=383.4, duration=3.96) FetchedTranscriptSnippet(text=\"plus plus isn't it now it's time for\", start=385.8, duration=3.66) FetchedTranscriptSnippet(text=\"Java it's very much similar I go to open\", start=387.36, duration=4.619) FetchedTranscriptSnippet(text='I go to desktop and open one of my', start=389.46, duration=5.16) FetchedTranscriptSnippet(text='folders you can open from anywhere the', start=391.979, duration=3.681) FetchedTranscriptSnippet(text='next thing', start=394.62, duration=4.26) FetchedTranscriptSnippet(text='uh install an extension', start=395.66, duration=5.92) FetchedTranscriptSnippet(text=\"Java extension pack okay this one I've\", start=398.88, duration=4.14) FetchedTranscriptSnippet(text=\"already installed it so I'll not be\", start=401.58, duration=2.82) FetchedTranscriptSnippet(text='reinstalling it', start=403.02, duration=4.44) FetchedTranscriptSnippet(text=\"right after this what's the next job\", start=404.4, duration=6.239) FetchedTranscriptSnippet(text='just uh add a Java file probably I can', start=407.46, duration=5.88) FetchedTranscriptSnippet(text='give demo.java', start=410.639, duration=5.701) FetchedTranscriptSnippet(text='after that add an input.txt which takes', start=413.34, duration=4.26) FetchedTranscriptSnippet(text='your input', start=416.34, duration=3.78) FetchedTranscriptSnippet(text='add an output dot txt which takes your', start=417.6, duration=4.02) FetchedTranscriptSnippet(text='output', start=420.12, duration=5.1) FetchedTranscriptSnippet(text='go to view editor layout split left once', start=421.62, duration=6.079) FetchedTranscriptSnippet(text=\"you've done this\", start=425.22, duration=2.479) FetchedTranscriptSnippet(text='this is how it looks like and go to view', start=427.74, duration=6.239) FetchedTranscriptSnippet(text='edit a layout and then say split down so', start=430.22, duration=6.099) FetchedTranscriptSnippet(text='once you do this you just drag it off', start=433.979, duration=4.741) FetchedTranscriptSnippet(text='and move this input so you have your', start=436.319, duration=4.5) FetchedTranscriptSnippet(text=\"input and your output ready now let's\", start=438.72, duration=4.379) FetchedTranscriptSnippet(text='quickly paste a demo Java code', start=440.819, duration=4.021) FetchedTranscriptSnippet(text=\"so I've written a demo Java code now\", start=443.099, duration=3.241) FetchedTranscriptSnippet(text=\"what is the next step to run it so I'll\", start=444.84, duration=3.06) FetchedTranscriptSnippet(text='go to terminal and then something as', start=446.34, duration=2.88) FetchedTranscriptSnippet(text='configure task', start=447.9, duration=4.859) FetchedTranscriptSnippet(text='create task.g some others and over here', start=449.22, duration=6.78) FetchedTranscriptSnippet(text=\"you paste this configuration I'll be\", start=452.759, duration=5.101) FetchedTranscriptSnippet(text='leaving uh this configuration in the', start=456.0, duration=4.68) FetchedTranscriptSnippet(text='links so this is what you will paste and', start=457.86, duration=4.86) FetchedTranscriptSnippet(text='this is this is basically the command', start=460.68, duration=3.54) FetchedTranscriptSnippet(text='which kind of takes the input so the', start=462.72, duration=3.599) FetchedTranscriptSnippet(text='file names have to be input and output', start=464.22, duration=5.52) FetchedTranscriptSnippet(text='and you can save it and close it so once', start=466.319, duration=5.1) FetchedTranscriptSnippet(text='you click save you can see that it is', start=469.74, duration=4.2) FetchedTranscriptSnippet(text='under a DOT vs code folder and this is', start=471.419, duration=4.741) FetchedTranscriptSnippet(text='under the folder that I opened initially', start=473.94, duration=4.62) FetchedTranscriptSnippet(text=\"so if you're changing folders it will\", start=476.16, duration=4.5) FetchedTranscriptSnippet(text='not run you have to reconfigure the task', start=478.56, duration=4.199) FetchedTranscriptSnippet(text=\"got it so what I'll do is I'll give an\", start=480.66, duration=4.379) FetchedTranscriptSnippet(text='input over here try to run it command', start=482.759, duration=4.741) FetchedTranscriptSnippet(text='shift plus b and you can see that it is', start=485.039, duration=5.16) FetchedTranscriptSnippet(text='running this is how easy it was to set', start=487.5, duration=4.68) FetchedTranscriptSnippet(text='it up so yeah this was a talk quite', start=490.199, duration=3.421) FetchedTranscriptSnippet(text=\"simple isn't it in case you're someone\", start=492.18, duration=3.6) FetchedTranscriptSnippet(text='who uses python or JavaScript the blog', start=493.62, duration=3.66) FetchedTranscriptSnippet(text='links will be in the description and in', start=495.78, duration=3.12) FetchedTranscriptSnippet(text='case you run into any of the errors', start=497.28, duration=3.84) FetchedTranscriptSnippet(text='please do use chatgpt that will be', start=498.9, duration=4.32) FetchedTranscriptSnippet(text=\"helping you out if you're still watching\", start=501.12, duration=3.84) FetchedTranscriptSnippet(text='please do consider giving us a like and', start=503.22, duration=2.879) FetchedTranscriptSnippet(text='if you are new to our channel do', start=504.96, duration=2.94) FetchedTranscriptSnippet(text='consider subscribing to us and make sure', start=506.099, duration=3.961) FetchedTranscriptSnippet(text='you check out striveless A2Z DSA course', start=507.9, duration=4.559) FetchedTranscriptSnippet(text='because that can be a One-Stop solution', start=510.06, duration=4.44) FetchedTranscriptSnippet(text=\"if you're preparing for placements if\", start=512.459, duration=3.0) FetchedTranscriptSnippet(text=\"you haven't followed me on Instagram\", start=514.5, duration=2.399) FetchedTranscriptSnippet(text='Twitter and Linkedin all the profile', start=515.459, duration=3.061) FetchedTranscriptSnippet(text='links will be in the description with', start=516.899, duration=3.121) FetchedTranscriptSnippet(text='this I will be wrapping up this video', start=518.52, duration=4.759) FetchedTranscriptSnippet(text=\"let's finish out the video till number\", start=520.02, duration=3.259) FetchedTranscriptSnippet(text='spoken', start=524.159, duration=4.86) FetchedTranscriptSnippet(text=\"again don't ever forget your golden\", start=525.66, duration=6.679) FetchedTranscriptSnippet(text='I will find the lighting', start=529.019, duration=3.32)",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so in case you're looking for a setup\", start=2.94, duration=3.419)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='which works something like this where', start=4.74, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the code is on the left the input is on', start=6.359, duration=3.901)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the right and the output is on the right', start=8.94, duration=3.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and they're splitted across screen and\", start=10.26, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you input something and you write the', start=12.42, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='code and then you click one button and', start=14.28, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then the output is visible if you want', start=16.68, duration=4.019)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to set up something like this this video', start=18.66, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is going to be about setting up a', start=20.699, duration=4.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='similar kind of setup but for that in', start=23.22, duration=3.42)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='case for the first time here please make', start=24.9, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sure that you check out Strivers a to', start=26.64, duration=4.139)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Zsa course now this is the world's most\", start=28.26, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in-depth DS algo course why do I see', start=30.779, duration=5.101)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that because the course has 455 modules', start=33.0, duration=6.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='yes we have solved over 455 problems and', start=35.88, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='all the videos are free you get premium', start=39.3, duration=5.279)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='quality articles as well over there we', start=41.94, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have C plus plus Java JavaScript python', start=44.579, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='codes covered as well so you get', start=46.739, duration=4.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"everything at one place and you don't\", start=49.079, duration=3.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='need anything else you can straight away', start=51.0, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='prepare for it and this is targeted for', start=52.86, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='companies like Google Amazon Facebook', start=55.02, duration=3.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and all the other product based', start=56.64, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"companies in the market and that's one\", start=58.5, duration=3.059)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='other thing that I want to clarify', start=60.42, duration=2.939)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"there's a lot of rumor that the this\", start=61.559, duration=3.661)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='particular course is in C plus plus no', start=63.359, duration=4.381)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that does not the truth so the first', start=65.22, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='couple of videos are in C plus plus', start=67.74, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"where I'm teaching for Loop while loop\", start=69.299, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"because they're pretty much similar in C\", start=71.46, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"plus plus and Java so I've just plot in\", start=73.14, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"C plus plus if you know Java you'll you\", start=75.24, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can easily grasp it right but when I', start=77.4, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='move to recursion when I move to arrays', start=79.56, duration=3.419)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='when I move to binary search or any', start=81.299, duration=4.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='other thing each of those lectures are', start=82.979, duration=5.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='recorded with logic and then pseudocode', start=85.5, duration=6.299)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I do not write code in any language and', start=88.619, duration=5.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"after that in the description you'll\", start=91.799, duration=4.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"find notes where you'll find C plus plus\", start=94.02, duration=4.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Java JavaScript python codes in those', start=96.0, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='nodes so this course is not language', start=98.939, duration=4.621)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='dependent the first couple of videos', start=101.4, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='might be but the entire course is not', start=103.56, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='only the basics like the for Loop while', start=106.38, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're printing stuff is in C plus plus\", start=108.119, duration=5.82)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='after that everything a pseudo code yes', start=110.22, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='pseudocode I focus on the logic so', start=113.939, duration=4.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='please remember this and the link is in', start=116.28, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the description make sure you check it', start=118.14, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"out so let's get back to the vs code and\", start=119.52, duration=3.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='try to set it up so first I will be', start=121.74, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='setting it up for C plus plus after that', start=123.479, duration=4.021)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I will be setting it up for Java and for', start=125.579, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='any other language if you see these two', start=127.5, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='setups you will be able to set it up so', start=129.42, duration=3.539)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the first thing that you will do is', start=131.94, duration=3.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll just open the vs code editor and\", start=132.959, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='right after that you open a folder so', start=135.12, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"what I'll do is I'll go over here and\", start=137.099, duration=4.561)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'll open C plus plus so I've opened C\", start=139.02, duration=5.219)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus plus after that I go to the', start=141.66, duration=5.42)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='extensions and I install C plus plus', start=144.239, duration=6.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"extension so search and you'll find an\", start=147.08, duration=5.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"extension from Microsoft I've already\", start=150.72, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='installed it so please make sure that', start=152.28, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you install it once you have installed', start=154.56, duration=5.58)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it go back to this folder and try to', start=156.84, duration=6.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"create a file so maybe I'll just create\", start=160.14, duration=6.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"demo.cpp so that's your file after that\", start=163.16, duration=6.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='create another file with input dot txt', start=166.44, duration=6.019)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='after that create one more file with', start=169.64, duration=6.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='output.txt done once you created these', start=172.459, duration=7.121)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='three files go to view and go to editor', start=176.04, duration=6.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='layout and say split left once you', start=179.58, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='splitting left you will find demo is on', start=182.22, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the left as input and output so just', start=184.26, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='cross it out so you have input over here', start=186.06, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and output so you have input and output', start=188.04, duration=3.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='on the right you want to spread them', start=190.26, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='across so go to view again edit a layout', start=191.519, duration=5.461)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and say split down once you split them', start=194.4, duration=4.979)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='into down so you can just drag the', start=196.98, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='output and that should be done so the', start=199.379, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='input is on the top and the output is', start=201.18, duration=3.779)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"over here let's take a quick break\", start=203.519, duration=3.181)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='before we move ahead so nowadays', start=204.959, duration=3.661)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='everyone is focusing on DS algo but', start=206.7, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='people are ignoring all the other', start=208.62, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='aspects something like projects is going', start=210.54, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"to be of extreme importance when you're\", start=212.64, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"going in for placements so what I'll\", start=214.379, duration=3.901)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='recommend you is to get a strong', start=216.42, duration=4.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='portfolio with projects and with Ds algo', start=218.28, duration=4.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='as well so what you can do is you can', start=221.099, duration=4.321)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"check out crowd.do's project Hub over\", start=222.959, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='there they have structured a lot of', start=225.42, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"projects according to domains let's say\", start=227.04, duration=4.259)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we go to web dev and you can see a lot', start=229.2, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of project ideas and they are given in a', start=231.299, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='structured manner so you can follow them', start=233.94, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and build some amazing projects and you', start=235.739, duration=4.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can build a portfolio like pavitra', start=237.9, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Sharma over here you can see his', start=240.0, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='portfolio is built some amazing projects', start=241.26, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so you can have a portfolio something', start=243.72, duration=3.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"like this when you're going in for your\", start=245.159, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"placement so let's talk about crowd or\", start=246.78, duration=3.659)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"do as well so crowd or do is world's\", start=248.76, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='first experiential learning and', start=250.439, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"upscaling platform over here you don't\", start=252.0, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='typically watch videos you basically', start=254.459, duration=4.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='learn by doing so they offer you program', start=256.38, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so you'll be working like a software\", start=258.9, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='engineer does at Amazon Netflix Google', start=260.76, duration=4.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Etc you'll be building some amazing\", start=263.699, duration=3.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='projects you can see on the screen and', start=265.38, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll be building under mentors who are\", start=267.18, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='working at Google Amazon Microsoft', start=269.28, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Walmart PayPal so talking about', start=271.02, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='placement stats crack has already', start=273.0, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='transformed thousand plus careers cry', start=274.68, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='out graduates from various backgrounds', start=276.96, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have already been placed in 750 plus', start=278.58, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='companies so they offer you fellowship', start=280.56, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='program in software development what you', start=282.3, duration=2.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can do is you can book a free trial', start=283.8, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='session and test it out for yourself and', start=285.18, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='at the same time make sure that you', start=287.52, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"bookmark the projects Hub I'll be\", start=289.56, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='leaving the link in the description and', start=291.419, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll also find the free trial session\", start=293.4, duration=3.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Link in the description make sure you', start=295.02, duration=3.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='check them out now quickly try to run a', start=296.58, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"code so what I've done is I've copy\", start=298.979, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='pasted a demo code now the next step is', start=300.6, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to run this but before that you have to', start=303.479, duration=4.621)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"go to terminal configure tasks there's\", start=305.16, duration=6.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='something else create task click it', start=308.1, duration=6.539)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='others once you click on others you see', start=311.24, duration=5.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"there's a vs code folder and there's a\", start=314.639, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='task.json', start=316.62, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='remove this configuration and go to the', start=318.419, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"description I'll be pasting the\", start=320.82, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='configuration just paste it and remember', start=322.02, duration=5.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='one thing the compile and run should be', start=324.84, duration=6.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='together save it and close it and right', start=327.539, duration=7.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"after that I'll be pressing command plus\", start=331.44, duration=6.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"shift plus b but for that let's give an\", start=334.979, duration=6.181)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='input 13 command shift and B and you', start=337.74, duration=5.58)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will see that there is an output quite', start=341.16, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"simple isn't it so the configuration\", start=343.32, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that you see over here that's for C plus\", start=345.66, duration=6.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus for MacBook in the notes like in', start=348.24, duration=5.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"the description I'll be leaving some\", start=351.96, duration=4.739)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='notes I will find for Windows as well in', start=353.639, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='case you have any other operating system', start=356.699, duration=3.661)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='what you need to do is just copy paste', start=358.199, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"the configuration that I've given in the\", start=360.36, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='notes take it to chat GPT and whatever', start=362.699, duration=4.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is your system', start=365.52, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='ask rgbt can you give me the equivalent', start=366.96, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for my system and it will give you this', start=369.6, duration=4.439)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='copy paste and it will start working so', start=371.94, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is this is how you set it up', start=374.039, duration=5.581)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='remember the starts.json is under your C', start=375.96, duration=5.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus folder in case you are switching', start=379.62, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"folders you'll have to again repeat the\", start=381.479, duration=4.321)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='same thing got it so that was easy for C', start=383.4, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"plus plus isn't it now it's time for\", start=385.8, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Java it's very much similar I go to open\", start=387.36, duration=4.619)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I go to desktop and open one of my', start=389.46, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='folders you can open from anywhere the', start=391.979, duration=3.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='next thing', start=394.62, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh install an extension', start=395.66, duration=5.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Java extension pack okay this one I've\", start=398.88, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"already installed it so I'll not be\", start=401.58, duration=2.82)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='reinstalling it', start=403.02, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"right after this what's the next job\", start=404.4, duration=6.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='just uh add a Java file probably I can', start=407.46, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give demo.java', start=410.639, duration=5.701)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='after that add an input.txt which takes', start=413.34, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='your input', start=416.34, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='add an output dot txt which takes your', start=417.6, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='output', start=420.12, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='go to view editor layout split left once', start=421.62, duration=6.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you've done this\", start=425.22, duration=2.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is how it looks like and go to view', start=427.74, duration=6.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='edit a layout and then say split down so', start=430.22, duration=6.099)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='once you do this you just drag it off', start=433.979, duration=4.741)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and move this input so you have your', start=436.319, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"input and your output ready now let's\", start=438.72, duration=4.379)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='quickly paste a demo Java code', start=440.819, duration=4.021)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so I've written a demo Java code now\", start=443.099, duration=3.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"what is the next step to run it so I'll\", start=444.84, duration=3.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='go to terminal and then something as', start=446.34, duration=2.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='configure task', start=447.9, duration=4.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='create task.g some others and over here', start=449.22, duration=6.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you paste this configuration I'll be\", start=452.759, duration=5.101)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='leaving uh this configuration in the', start=456.0, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='links so this is what you will paste and', start=457.86, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is this is basically the command', start=460.68, duration=3.54)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='which kind of takes the input so the', start=462.72, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='file names have to be input and output', start=464.22, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and you can save it and close it so once', start=466.319, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you click save you can see that it is', start=469.74, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='under a DOT vs code folder and this is', start=471.419, duration=4.741)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='under the folder that I opened initially', start=473.94, duration=4.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so if you're changing folders it will\", start=476.16, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='not run you have to reconfigure the task', start=478.56, duration=4.199)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"got it so what I'll do is I'll give an\", start=480.66, duration=4.379)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='input over here try to run it command', start=482.759, duration=4.741)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='shift plus b and you can see that it is', start=485.039, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='running this is how easy it was to set', start=487.5, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it up so yeah this was a talk quite', start=490.199, duration=3.421)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"simple isn't it in case you're someone\", start=492.18, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='who uses python or JavaScript the blog', start=493.62, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='links will be in the description and in', start=495.78, duration=3.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='case you run into any of the errors', start=497.28, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='please do use chatgpt that will be', start=498.9, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"helping you out if you're still watching\", start=501.12, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='please do consider giving us a like and', start=503.22, duration=2.879)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if you are new to our channel do', start=504.96, duration=2.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='consider subscribing to us and make sure', start=506.099, duration=3.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you check out striveless A2Z DSA course', start=507.9, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='because that can be a One-Stop solution', start=510.06, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"if you're preparing for placements if\", start=512.459, duration=3.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you haven't followed me on Instagram\", start=514.5, duration=2.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Twitter and Linkedin all the profile', start=515.459, duration=3.061)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='links will be in the description with', start=516.899, duration=3.121)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this I will be wrapping up this video', start=518.52, duration=4.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"let's finish out the video till number\", start=520.02, duration=3.259)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='spoken', start=524.159, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"again don't ever forget your golden\", start=525.66, duration=6.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I will find the lighting', start=529.019, duration=3.32)"
+    }
+  ]
+}

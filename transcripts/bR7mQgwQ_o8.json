@@ -1,0 +1,3145 @@
+{
+  "video_id": "bR7mQgwQ_o8",
+  "title": "Pascal Triangle | Finding nCr in minimal time",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1605,
+  "text": "hey everyone welcome back to the channel I hope you guys are doing extremely well so this is another lecture from the stripers A to Z DSA course just in case you're for the first time here this is world's most in-depth course when we talk about DS algo why do I say that this course is 455 modules by the end of the post it I've sold more than 400 plus problems in DS algo you can go over the entire internet you can buy any of the paid courses in the market none of them will be teaching you DS algo in such step something that I can give you as Assurance is once you complete the entire course you'll be able to create any of the DS algorithms in any of the companies in any part of the world so till now we have double till the easy and medium section of arrays now today we will be starting with the hard section of arrays and the first problem that we will be solving is the Pascal's triangle now what does the problem State before diving into the problem statement let's understand what is a pascal triangle so the first row will always have one and in the second row it is one at the starting it is one at the last and on the third row it is again one at the starting and one at the last and then you see in the previous row how many elements were there there were two if there were two elements there will be a middle element like there will be middle Place between there so what you'll do is you'll take this and you'll take this and you'll add it up so it gets you two and you place it in the middle in the next row done in the next row it's again one and one at the first and last after that you will see okay there are three elements so there will be two middle there will be two middle in that middle what you'll do is you'll take one you'll take two and you'll add it and you'll get three and again the other middle is here so you'll take two you'll take one and you'll add it you'll get three perfect what about the next again one of the start and one at the last how many minutes can I say one middle here one middle here one middle here so there are three middles this will be 1 plus 3 which is 4 3 plus 3 6 3 plus 1 4 so basically three plus three six and three plus one four if I go ahead one at the start one at the back and then one middle here one middle so there are four middles add it up five ten ten five and you can keep on going and this is what the Pascal triangle looks like so if you go to an interview there can be three types of problems that might be asked to you the first one is super simple given the row number given row and column tell me the element at that place tell me the element at that place what does it mean imagine I give you r equal to 5 c equal to three so this is first row this is second row this is third row this is four this is fifth there's a sixth so in the fifth row I'm asking you the third element so that is six so the answer to this will be 6. this is the first type of problem what can be the second type of problem they might ask you print any anyth role of the Pascal triangle nth row of Pascal triangle imagine I give you n as 5 so what will be the fifth row it'll be this one so what you need to return is you just need to return one four six four one this is the second type of problem what can be the third type the third type will be print the entire Pascal triangle give it n given n print the entire triangle so imagine I give you n as 6 in that case you have to print the entire triangle got it so let us solve the first question and the first question it is stating given R and C you have to tell me the element at that row number and the column number so one of the traditional ways is you say that you're going to generate the entire triangle and then get the value at R and c and that kind of makes sense and that is the Brute Force solution which we will be doing at the third type but do we have an easier way yes we do have there is a very simple formula to it so if you're given the row number then you do an R minus 1 and if you are given the column number you do a column minus one and you say R minus 1 combination of C minus 1 so I'm sure that you know the NCR so in mathematics NCR is nothing but n factorial by R factorial into n minus r factorial I hope you know that right and how do you find this out easily because over here we know for this the answer is this so if we're given Phi if what you'll do is 5 minus 1 is 4 C minus 1 is 3 minus 1 is 2 so the answer is 4 c 2 and the value of 4 c 2 is nothing but 4 into 3 into 2 into 1 according to n factorial what's the value of R factorial 2 into 1 and then it says n minus r which is 4 minus 2 so another 2 factorial it's basically 2 and 2 gets off and 2 and 2 so the value is 6 which is ideally the value if you carefully cheap that is the value right so we know the formula but how do you find it out one of the easiest ways is you figure out n factorial you figure out R factorial you figure out n minus r factorial and what you do is numerator by denominator 1 into denominator 2 and you know how to find out factorial that's a very simple step if you said n factorial you run into for n if I said R factorial you run a neutral r n minus r till n minus 1 so the simplest way to find out this value NCR is nothing but just n factorial R factorial and you just run Loops but that is the extreme brute force can we have a shortcut we can let's have some observation imagine you give it 7c2 formula States 7 factorial by 2 factorial into 7 minus 2 which is 5 factorial this is what the formula States so if I have to write it can I write it something like this 7 into 6 into 5 into 4 into 3 into 2 into 1 7 factorial is this 2 factorial can be written as 2 into 1 into 5 factorial is 5 into 4 into 3 into 2 into 1. can I say this and this will go off always and the remaining values will be 7 into 6 and two into one something carefully to observe this one went for two places like two into one so from Seven you go two places so what is the shortcut that you noticed if I take 10 C 3 what you'll always do is you'll say three went three places three into two into one so 10 will also go three places ten into nine into eight so this is the shortcut that you will be applying okay but make sure when you compute this using for Loop you should be Computing from like in this sense 10 by 1 into 9 by 2 into 8 by 3 why is that because if you initially take three and you try to divide by 10 that will give you nothing but if you initially take 10 by 1 it is divisible then if you take 10 into 9 by 2 2 will kind of divide it and then if you take three in three numbers one will definitely be divisible by three and hence it will be easier so what will the code look like can I say I know definitely for I know definitely one thing if it is three I'll run it for three times so let's go ahead and run it for three times so can I say I equal to 0 and I'll run it till whatever like if I have to write probably unite the function that will be a better job so imagine I wrote a function which Finds Me NCR and it is taking N and is taking R okay and what we say is okay we have a numerator or rather we can have a resultant as one let's have a resultant as one and we run a loop from I equal to 0 and we will run till r the k y because we know that if it is 3 we just run three times so I'll run it like this and initially what we will do is resultant equal to resultant into if you carefully see initially it was 10 which is basically n right and then it was 9 which is basically nothing but 10 minus 1. then it is 8 which is basically 10 minus 2 so whatever this I is what you will do is use n minus I because of the first time n is 10 so 10 minus 0 will be 10 at the next time n is still 10 but I is 1 so it will be 9 so the numerator keeps on getting multiplied and what you do is once you've done the multiplication you will go ahead and divide it with what value it's going to be very simple you say I plus 1 y i plus 1 whenever I is 0 the first time you take 1 then whenever I is 1 you take 2 whenever I is 2 you take three so Apple what will happen is first time 10 and 1 10 9 by 2 then 8 by 3 and this will be done once this is done you can return the result and this will be your extreme Brute Force if I ask you the time complexity can I say the time complexity will be very simple we're running a loop for Big O of R so in order to find uh up NCR the time complexity taken is B go of R and the space complexity taken is B go of 1 please do not go ahead and run a loop like this because this will be n factorial if you go ahead and run a loop it will take B go of n plus b go of R plus b go of n minus r which might end up taking a lot of time and also when you calculate n factorial the values might be very big also remember one thing for such problems it's always safer to take the largest data type as long long so that there is no overflow got it so I've written my function NCR in order to solve the first type what I'll say is function NCR R minus 1 and C minus 1 if I pass these couple of parameters what will happen is this NCR will find me the value of R minus 1 and C of C minus 1 and will give me the answer and this is how you can easily solve the first ever problem now let's go to the second one so what is the second type of problem stating print any given row so imagine you have been asked to print the sixth row let's carefully observe something the first row has one element the second row has two elements the third row has three and similarly the sixth row has sixth elements can I say n row like the nth rule rather though Nitro will always have n elements I definitely can say that right so this is what we know at first that we have to roughly run a loop for n times now we know one thing for Sean everyone has a has this formula of R minus 1 and C of C minus 1 we know that so what we can do is the extreme brute force can be super simple we say we know one thing for sure the column will start from 1 and the column will go till the number of rows and then we can do a column plus plus and every time we can say rather print not C out we can easily say print we will call the function which computes NCR and what we will pass is we will pass the row number which is n minus 1 and we know the formula is C minus 1 so C minus 1 and every time C changes because For the First Time c will be 1 then C will be 2. and apparently it'll keep on printing this one then this one then this one then this then this so what will be the time complexity for this can I say we are running a loop for n times so it'll be n and we know this function takes bigot R so the time complexity will be n into R this is where the interviewer will not be happy you'll be like why are you using formula repeatedly can you do it in a better way and this is where we will try to optimize it okay so in order to optimize we have to dive deep into the formula the formula was R minus 1C and C minus 1 correct so let's look at the first element the first one is one let's look at the next it is 5. probably I can write it as 5 by upon probably what's the next one 10 and that is that the third column that's at the third column what will be the formula 6 minus 1 5 C 3 minus two three minus 1 2 and it'll be like five into four and two into one can I say the 10 is coming from here which is this formula I can so what did you add more did you add four into one more from the previous one you did so this one is this this 5 is this and this can be written as 5 into 4 and 1 into 2 I can so we are done with the third column it's time for the fourth column the fourth column what will be the formula n minus 1 5 C 4 minus 1 3 5 C 3 so back three into two into one correct or if I have to write it in the other way it'll be 1 into 2 into 3 and 5 will also go three times so if you carefully see what was the addition this was already there in the previous one and we just added this one so okay fine we'll be like five into four into two into three by three so there is an addition of this one okay let's look at the next at this one so this is going to be like 5 C what is this column this is the fifth column it's 5 minus one four five C four so one into two into three into four and five into four into three into two so if you carefully observe this was the answer for the previous one so as of now you are saying please add an extra this two by four amazing and you can keep going so if you carefully observe at first five by one Goddard next four by two got added next three by three got added next two by four got added so if you start with answer equal to 1. at column one and at column two what happens at column two you probably add a five by one and then at the next is probably add a four byte and in the next probably add a three by three so if you if you can somehow figure out a formula to do this I think our job will be pretty much done so let's try to figure out a formula so what will be the formula let's try to think and see if we can analyze the formula something I know for sure now what is the one thing that you know for sure the one thing that I know for sure is the first element will be one and the last element will definitely be one so we don't have to think about the first and the last that much but without it you need to think about everyone else okay so we probably can start with answer as one we can start with answer as one and in the first attempt we are doing a five by one and the column number was 2 column number was two so this is okay what if what if I take the columns in terms of zero based indexing will it be an easier job let's see so let's write down the zero based indexing this is 0 0 1 2 3 4. does it make it easier yes it does over here one is here over here to is here over here three is here over here four is here kind of makes it easy right and if you go ahead and write the next one which is the fifth one it'll be like five into four into three into two was common 100 into three into four will be common the last one will be five and this one will be one so can I see what we are doing is answer into whatever is this column we are always dividing it by column column column column column whatever was the previous answer we are dividing it by column what are we multiplying you're multiplying at first five then four it's like if nth row is 6 can you relate 6 becomes 5 reduction of one six becomes 4 reduction of two six becomes 3 reduction of three can I say it's n which is the row number or probably you can write row number rho minus column yes this is what you have to keep multiplying if you do this you'll be able to generate the entire row so if I have to write it if I have to write it it will be like I know one thing for sure probably I'll write it again I know one thing for sure that for rather let's keep answer equal to 1 and I know one thing that this will be my first this is my this will be my first because for the 0th row I know the answer will sorry zeroth column the answer will always be one so now I will start from for I equal to 1 this is where I start from and I will go on till the last which is n because the last one is fifth index and N was six so we go until this perfect and what will we do we will say answer equal to first we will try to multiply first we will try to multiply what will we multiply obviously this one which is nothing but whatever is n minus this I because this is I so minus and then we will say answer equal to answer divided by I super simple once this for Loop like this fondue will always keep on Printing and this will print the entire thing pretty simple isn't it what did I do I just kept on multiplying first five then by one then in the next step four by two it kept on generating kept on generating and we kept on printing So eventually we first print this then this then this and then this and we'll end up printing the entire nth row of the Pascal triangle got it if I talk about the time complexity can I say the time complex it will be whatever is the number of rows those many columns you have to print so the time complexity will be we go of N and the space complexity will be because1 quite simple so you are done with the first and the second type what about the third type the third type is stating you'll be given n and you have to print this entire pastel triangle does it mean you have to give all these spaces no a short pattern printing what you have to do is the first row is containing one so you return one in a list then it is one one see written one one next one to one next one three three one next one four six four one next one five ten ten this will be the answer if ns6 and everything will be inside a list and all of these lists will be put inside a list and then this is what you have to return so what is the extreme naive brute approach that you can think of it's definitely using the formula R minus one c c minus one what you do is you know the rules will be from 1 to n so you can run a loop from one to n for rows and you know the columns will be wrong 1 to this current row why is that because for the first row it is one element for the second order is two elements for the fifth it is five elements for the row number The Columns are equivalent to the row number so we know the answer will be a list which we have to return so probably take a temporary list and take an answer list and now what you do is inside the inner formula temporary list dot add as the NCR function that you wrote in the first to generate the answer for every element individual element and you can add it up once this temporary list is generated you can ask the answer to add the sub temporary list and eventually what you can do is you can return this answer yes eventually you can return this answer and this is how easily you can do it by the way the code for this you can find it in the updated article in the description below in case you want to see the code for this so what will be the time complexity can I say I'm running an N Loop another n Loop and this if you remember took B go of R that's near about not exactly near about n into n into on near the board which is near about B gov n cube in the worst like near the mouth not exactly we go of NQ we will not talk about the space complexity because we are storing the answer to return we are not using it to compute it is the answer which is stored so this time complexity is this obviously the interviewer will not be happy and they'll ask you to optimize it so how can you reduce it from Vigo of n Cube so we will use the second type if you remember the second type given any row number was generating you the entire row so we'll be using this to generate every row and this was taking a big off n complexity so for every row that there are n rows we will take big of n to generate that rule the total complexity will boil down to B go of n square and this is what will be your optimal solution for the type 3 okay so time to code the third type up again the problem link will be in the description please please make sure you try the problem from the link in the description itself so what is the first thing you'll write probably will write uh generate row function which will take the row number and it will give me a list of all the elements in that row and if you remember properly as I always said you please please take a long long over here because you'll be multiplying multiplying so the numbers might grow please take long what's the first thing you know this will be your answer Rook and we know one thing for sure we will always have one at the starting and then if you remember we started with zero based indexing if you remember this was considered as the zero where the answer was one this was considered as one and then it went across in data five cross one this was considered as 2 and then it went across and did a two divide and a four so for this 2 what you did was and was six the rule number was six six minus two at the bottom U divided in it by two so this is something you will do so you will go ahead and say okay column now goes from one and if you remember the last one will be three four five the last one will be five so column will go till the row not equal to equal to rather this and over here let's probably take answer is there so what you do is answer equal to answer into at first let's have it uh on the top what is the top row minus column perfect and then you will say divide and what will be at the bottom at the bottom was the column okay done once you have done this you will say answer no can you please take this it will take it and then you can return this answer row so what you've done is you have written a function that's basically the type 2 which takes a row number and gives you the entire row and now it is wanting the entire triangle so we will say list of list and this will be okay and maybe and now we know the number of rows Will Go On from this to this I plus plus we definitely know this and we know they will be temporary probability detectory and this temporary will call the generate row and it will pass the slow number and once it is generated you will say answer can you please store this temporary and instead of taking it in a temporary you can also directly write it because the function returns a list the list itself will get into the answer once you have done this you can go ahead and return this and that will be your answer got it so whenever you're appearing for an interview please please make sure that you maintain code quality now what do I mean by code quality I've written the function like this and called it from here I could have also written it something like this probably I'll just have answer row here and I will just copy paste this portion I'll put it over here now this will also run this will and I'll erase the function this will also be submitted and you might think given a correct solution but that doesn't work like that the interviewers will focus on your code quality so please make sure if code is getting longer break it down into paths put them into functions a functions which are readable so that okay I know that this is a function which is generating row it is quite readable so try to have core quality of this format then only it will be very easy for you to clear interviews it's just not about solving problems trust me on this so going back to the sheet I can say that this is done I hope you have understood everything just in case you have please please consider giving us that like because it won't cost you anything but that is something that will definitely motivate me to make such kind of content more and more and yes if you're new to our Channel what are you waiting for hit that subscribe button man and to continue our tradition do comment understood and if you haven't followed me on LinkedIn Twitter Instagram all the links will be in the description with this I'll be wrapping up this video let's read in some other videos [Music] I will find the lighting",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 6.3,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.68,
+      "end": 8.04,
+      "text": "I hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.3,
+      "end": 10.32,
+      "text": "so this is another lecture from the"
+    },
+    {
+      "start": 8.04,
+      "end": 12.12,
+      "text": "stripers A to Z DSA course just in case"
+    },
+    {
+      "start": 10.32,
+      "end": 13.56,
+      "text": "you're for the first time here this is"
+    },
+    {
+      "start": 12.12,
+      "end": 15.36,
+      "text": "world's most in-depth course when we"
+    },
+    {
+      "start": 13.56,
+      "end": 18.54,
+      "text": "talk about DS algo why do I say that"
+    },
+    {
+      "start": 15.36,
+      "end": 20.34,
+      "text": "this course is 455 modules by the end of"
+    },
+    {
+      "start": 18.54,
+      "end": 23.22,
+      "text": "the post it I've sold more than 400 plus"
+    },
+    {
+      "start": 20.34,
+      "end": 24.84,
+      "text": "problems in DS algo you can go over the"
+    },
+    {
+      "start": 23.22,
+      "end": 26.64,
+      "text": "entire internet you can buy any of the"
+    },
+    {
+      "start": 24.84,
+      "end": 28.14,
+      "text": "paid courses in the market none of them"
+    },
+    {
+      "start": 26.64,
+      "end": 29.7,
+      "text": "will be teaching you DS algo in such"
+    },
+    {
+      "start": 28.14,
+      "end": 31.56,
+      "text": "step something that I can give you as"
+    },
+    {
+      "start": 29.7,
+      "end": 32.7,
+      "text": "Assurance is once you complete the"
+    },
+    {
+      "start": 31.56,
+      "end": 34.38,
+      "text": "entire course you'll be able to create"
+    },
+    {
+      "start": 32.7,
+      "end": 36.66,
+      "text": "any of the DS algorithms in any of the"
+    },
+    {
+      "start": 34.38,
+      "end": 38.4,
+      "text": "companies in any part of the world so"
+    },
+    {
+      "start": 36.66,
+      "end": 40.56,
+      "text": "till now we have double till the easy"
+    },
+    {
+      "start": 38.4,
+      "end": 41.88,
+      "text": "and medium section of arrays now today"
+    },
+    {
+      "start": 40.56,
+      "end": 43.26,
+      "text": "we will be starting with the hard"
+    },
+    {
+      "start": 41.88,
+      "end": 45.72,
+      "text": "section of arrays and the first problem"
+    },
+    {
+      "start": 43.26,
+      "end": 48.66,
+      "text": "that we will be solving is the Pascal's"
+    },
+    {
+      "start": 45.72,
+      "end": 51.0,
+      "text": "triangle now what does the problem State"
+    },
+    {
+      "start": 48.66,
+      "end": 54.12,
+      "text": "before diving into the problem statement"
+    },
+    {
+      "start": 51.0,
+      "end": 56.58,
+      "text": "let's understand what is a pascal"
+    },
+    {
+      "start": 54.12,
+      "end": 60.78,
+      "text": "triangle so the first row will always"
+    },
+    {
+      "start": 56.58,
+      "end": 63.96,
+      "text": "have one and in the second row it is one"
+    },
+    {
+      "start": 60.78,
+      "end": 66.66,
+      "text": "at the starting it is one at the last"
+    },
+    {
+      "start": 63.96,
+      "end": 69.72,
+      "text": "and on the third row it is again one at"
+    },
+    {
+      "start": 66.66,
+      "end": 72.18,
+      "text": "the starting and one at the last and"
+    },
+    {
+      "start": 69.72,
+      "end": 73.74,
+      "text": "then you see in the previous row how"
+    },
+    {
+      "start": 72.18,
+      "end": 76.2,
+      "text": "many elements were there there were two"
+    },
+    {
+      "start": 73.74,
+      "end": 77.64,
+      "text": "if there were two elements there will be"
+    },
+    {
+      "start": 76.2,
+      "end": 79.74,
+      "text": "a middle element like there will be"
+    },
+    {
+      "start": 77.64,
+      "end": 81.9,
+      "text": "middle Place between there so what"
+    },
+    {
+      "start": 79.74,
+      "end": 83.64,
+      "text": "you'll do is you'll take this and you'll"
+    },
+    {
+      "start": 81.9,
+      "end": 86.46,
+      "text": "take this and you'll add it up so it"
+    },
+    {
+      "start": 83.64,
+      "end": 89.22,
+      "text": "gets you two and you place it in the"
+    },
+    {
+      "start": 86.46,
+      "end": 92.76,
+      "text": "middle in the next row done in the next"
+    },
+    {
+      "start": 89.22,
+      "end": 95.1,
+      "text": "row it's again one and one at the first"
+    },
+    {
+      "start": 92.76,
+      "end": 96.78,
+      "text": "and last after that you will see okay"
+    },
+    {
+      "start": 95.1,
+      "end": 98.46,
+      "text": "there are three elements so there will"
+    },
+    {
+      "start": 96.78,
+      "end": 100.98,
+      "text": "be two middle there will be two middle"
+    },
+    {
+      "start": 98.46,
+      "end": 102.78,
+      "text": "in that middle what you'll do is you'll"
+    },
+    {
+      "start": 100.98,
+      "end": 105.06,
+      "text": "take one you'll take two and you'll add"
+    },
+    {
+      "start": 102.78,
+      "end": 106.5,
+      "text": "it and you'll get three and again the"
+    },
+    {
+      "start": 105.06,
+      "end": 108.48,
+      "text": "other middle is here so you'll take two"
+    },
+    {
+      "start": 106.5,
+      "end": 110.82,
+      "text": "you'll take one and you'll add it you'll"
+    },
+    {
+      "start": 108.48,
+      "end": 114.84,
+      "text": "get three perfect what about the next"
+    },
+    {
+      "start": 110.82,
+      "end": 117.0,
+      "text": "again one of the start and one at the"
+    },
+    {
+      "start": 114.84,
+      "end": 118.86,
+      "text": "last how many minutes can I say one"
+    },
+    {
+      "start": 117.0,
+      "end": 121.38,
+      "text": "middle here one middle here one middle"
+    },
+    {
+      "start": 118.86,
+      "end": 125.76,
+      "text": "here so there are three middles this"
+    },
+    {
+      "start": 121.38,
+      "end": 128.4,
+      "text": "will be 1 plus 3 which is 4 3 plus 3 6 3"
+    },
+    {
+      "start": 125.76,
+      "end": 131.16,
+      "text": "plus 1 4 so basically three plus three"
+    },
+    {
+      "start": 128.4,
+      "end": 133.98,
+      "text": "six and three plus one four if I go"
+    },
+    {
+      "start": 131.16,
+      "end": 137.16,
+      "text": "ahead one at the start one at the back"
+    },
+    {
+      "start": 133.98,
+      "end": 139.94,
+      "text": "and then one middle here one middle so"
+    },
+    {
+      "start": 137.16,
+      "end": 143.64,
+      "text": "there are four middles add it up five"
+    },
+    {
+      "start": 139.94,
+      "end": 146.22,
+      "text": "ten ten five and you can keep on going"
+    },
+    {
+      "start": 143.64,
+      "end": 148.02,
+      "text": "and this is what the Pascal triangle"
+    },
+    {
+      "start": 146.22,
+      "end": 149.82,
+      "text": "looks like so if you go to an interview"
+    },
+    {
+      "start": 148.02,
+      "end": 151.74,
+      "text": "there can be three types of problems"
+    },
+    {
+      "start": 149.82,
+      "end": 154.64,
+      "text": "that might be asked to you the first one"
+    },
+    {
+      "start": 151.74,
+      "end": 159.06,
+      "text": "is super simple given the row number"
+    },
+    {
+      "start": 154.64,
+      "end": 162.42,
+      "text": "given row and column tell me the element"
+    },
+    {
+      "start": 159.06,
+      "end": 165.3,
+      "text": "at that place tell me the element at"
+    },
+    {
+      "start": 162.42,
+      "end": 167.88,
+      "text": "that place what does it mean imagine I"
+    },
+    {
+      "start": 165.3,
+      "end": 170.04,
+      "text": "give you r equal to 5 c equal to three"
+    },
+    {
+      "start": 167.88,
+      "end": 171.6,
+      "text": "so this is first row this is second row"
+    },
+    {
+      "start": 170.04,
+      "end": 174.0,
+      "text": "this is third row this is four this is"
+    },
+    {
+      "start": 171.6,
+      "end": 176.22,
+      "text": "fifth there's a sixth so in the fifth"
+    },
+    {
+      "start": 174.0,
+      "end": 178.62,
+      "text": "row I'm asking you the third element so"
+    },
+    {
+      "start": 176.22,
+      "end": 179.42,
+      "text": "that is six so the answer to this will"
+    },
+    {
+      "start": 178.62,
+      "end": 182.76,
+      "text": "be"
+    },
+    {
+      "start": 179.42,
+      "end": 184.62,
+      "text": "6. this is the first type of problem"
+    },
+    {
+      "start": 182.76,
+      "end": 189.42,
+      "text": "what can be the second type of problem"
+    },
+    {
+      "start": 184.62,
+      "end": 194.42,
+      "text": "they might ask you print any anyth role"
+    },
+    {
+      "start": 189.42,
+      "end": 199.98,
+      "text": "of the Pascal triangle nth row of Pascal"
+    },
+    {
+      "start": 194.42,
+      "end": 202.62,
+      "text": "triangle imagine I give you n as 5 so"
+    },
+    {
+      "start": 199.98,
+      "end": 204.6,
+      "text": "what will be the fifth row it'll be this"
+    },
+    {
+      "start": 202.62,
+      "end": 207.72,
+      "text": "one so what you need to return is you"
+    },
+    {
+      "start": 204.6,
+      "end": 209.76,
+      "text": "just need to return one four six four"
+    },
+    {
+      "start": 207.72,
+      "end": 211.92,
+      "text": "one this is the second type of problem"
+    },
+    {
+      "start": 209.76,
+      "end": 214.56,
+      "text": "what can be the third type the third"
+    },
+    {
+      "start": 211.92,
+      "end": 217.02,
+      "text": "type will be print the entire Pascal"
+    },
+    {
+      "start": 214.56,
+      "end": 221.94,
+      "text": "triangle give it n"
+    },
+    {
+      "start": 217.02,
+      "end": 223.98,
+      "text": "given n print the entire"
+    },
+    {
+      "start": 221.94,
+      "end": 227.7,
+      "text": "triangle"
+    },
+    {
+      "start": 223.98,
+      "end": 229.38,
+      "text": "so imagine I give you n as 6 in that"
+    },
+    {
+      "start": 227.7,
+      "end": 231.0,
+      "text": "case you have to print the entire"
+    },
+    {
+      "start": 229.38,
+      "end": 233.22,
+      "text": "triangle got it"
+    },
+    {
+      "start": 231.0,
+      "end": 235.26,
+      "text": "so let us solve the first question and"
+    },
+    {
+      "start": 233.22,
+      "end": 237.24,
+      "text": "the first question it is stating given R"
+    },
+    {
+      "start": 235.26,
+      "end": 239.82,
+      "text": "and C you have to tell me the element at"
+    },
+    {
+      "start": 237.24,
+      "end": 242.16,
+      "text": "that row number and the column number so"
+    },
+    {
+      "start": 239.82,
+      "end": 243.72,
+      "text": "one of the traditional ways is you say"
+    },
+    {
+      "start": 242.16,
+      "end": 246.96,
+      "text": "that you're going to generate the entire"
+    },
+    {
+      "start": 243.72,
+      "end": 249.78,
+      "text": "triangle and then get the value at R and"
+    },
+    {
+      "start": 246.96,
+      "end": 251.7,
+      "text": "c and that kind of makes sense and that"
+    },
+    {
+      "start": 249.78,
+      "end": 255.3,
+      "text": "is the Brute Force solution which we"
+    },
+    {
+      "start": 251.7,
+      "end": 257.04,
+      "text": "will be doing at the third type but do"
+    },
+    {
+      "start": 255.3,
+      "end": 259.5,
+      "text": "we have an easier way yes we do have"
+    },
+    {
+      "start": 257.04,
+      "end": 261.42,
+      "text": "there is a very simple formula to it so"
+    },
+    {
+      "start": 259.5,
+      "end": 263.94,
+      "text": "if you're given the row number"
+    },
+    {
+      "start": 261.42,
+      "end": 265.86,
+      "text": "then you do an R minus 1 and if you are"
+    },
+    {
+      "start": 263.94,
+      "end": 268.34,
+      "text": "given the column number you do a column"
+    },
+    {
+      "start": 265.86,
+      "end": 272.22,
+      "text": "minus one and you say R minus 1"
+    },
+    {
+      "start": 268.34,
+      "end": 274.98,
+      "text": "combination of C minus 1 so I'm sure"
+    },
+    {
+      "start": 272.22,
+      "end": 279.12,
+      "text": "that you know the NCR so in mathematics"
+    },
+    {
+      "start": 274.98,
+      "end": 283.5,
+      "text": "NCR is nothing but n factorial by R"
+    },
+    {
+      "start": 279.12,
+      "end": 286.5,
+      "text": "factorial into n minus r factorial I"
+    },
+    {
+      "start": 283.5,
+      "end": 289.44,
+      "text": "hope you know that right and how do you"
+    },
+    {
+      "start": 286.5,
+      "end": 292.26,
+      "text": "find this out easily because over here"
+    },
+    {
+      "start": 289.44,
+      "end": 294.36,
+      "text": "we know for this the answer is this so"
+    },
+    {
+      "start": 292.26,
+      "end": 298.14,
+      "text": "if we're given Phi if what you'll do is"
+    },
+    {
+      "start": 294.36,
+      "end": 301.68,
+      "text": "5 minus 1 is 4 C minus 1 is 3 minus 1 is"
+    },
+    {
+      "start": 298.14,
+      "end": 304.56,
+      "text": "2 so the answer is 4 c 2 and the value"
+    },
+    {
+      "start": 301.68,
+      "end": 307.5,
+      "text": "of 4 c 2 is nothing but 4 into 3 into 2"
+    },
+    {
+      "start": 304.56,
+      "end": 310.5,
+      "text": "into 1 according to n factorial what's"
+    },
+    {
+      "start": 307.5,
+      "end": 312.9,
+      "text": "the value of R factorial 2 into 1 and"
+    },
+    {
+      "start": 310.5,
+      "end": 315.24,
+      "text": "then it says n minus r which is 4 minus"
+    },
+    {
+      "start": 312.9,
+      "end": 318.12,
+      "text": "2 so another 2 factorial it's basically"
+    },
+    {
+      "start": 315.24,
+      "end": 320.94,
+      "text": "2 and 2 gets off and 2 and 2 so the"
+    },
+    {
+      "start": 318.12,
+      "end": 322.68,
+      "text": "value is 6 which is ideally the value if"
+    },
+    {
+      "start": 320.94,
+      "end": 325.98,
+      "text": "you carefully cheap that is the value"
+    },
+    {
+      "start": 322.68,
+      "end": 328.56,
+      "text": "right so we know the formula but how do"
+    },
+    {
+      "start": 325.98,
+      "end": 331.62,
+      "text": "you find it out one of the easiest ways"
+    },
+    {
+      "start": 328.56,
+      "end": 334.2,
+      "text": "is you figure out n factorial you figure"
+    },
+    {
+      "start": 331.62,
+      "end": 336.86,
+      "text": "out R factorial you figure out n minus r"
+    },
+    {
+      "start": 334.2,
+      "end": 340.8,
+      "text": "factorial and what you do is numerator"
+    },
+    {
+      "start": 336.86,
+      "end": 342.12,
+      "text": "by denominator 1 into denominator 2 and"
+    },
+    {
+      "start": 340.8,
+      "end": 344.82,
+      "text": "you know how to find out factorial"
+    },
+    {
+      "start": 342.12,
+      "end": 347.1,
+      "text": "that's a very simple step if you said n"
+    },
+    {
+      "start": 344.82,
+      "end": 349.74,
+      "text": "factorial you run into for n if I said R"
+    },
+    {
+      "start": 347.1,
+      "end": 352.68,
+      "text": "factorial you run a neutral r n minus r"
+    },
+    {
+      "start": 349.74,
+      "end": 355.8,
+      "text": "till n minus 1 so the simplest way to"
+    },
+    {
+      "start": 352.68,
+      "end": 358.56,
+      "text": "find out this value NCR is nothing but"
+    },
+    {
+      "start": 355.8,
+      "end": 360.66,
+      "text": "just n factorial R factorial and you"
+    },
+    {
+      "start": 358.56,
+      "end": 363.18,
+      "text": "just run Loops but that is the extreme"
+    },
+    {
+      "start": 360.66,
+      "end": 365.64,
+      "text": "brute force can we have a shortcut we"
+    },
+    {
+      "start": 363.18,
+      "end": 370.02,
+      "text": "can let's have some observation imagine"
+    },
+    {
+      "start": 365.64,
+      "end": 373.92,
+      "text": "you give it 7c2 formula States 7"
+    },
+    {
+      "start": 370.02,
+      "end": 377.76,
+      "text": "factorial by 2 factorial into"
+    },
+    {
+      "start": 373.92,
+      "end": 379.68,
+      "text": "7 minus 2 which is 5 factorial this is"
+    },
+    {
+      "start": 377.76,
+      "end": 380.82,
+      "text": "what the formula States so if I have to"
+    },
+    {
+      "start": 379.68,
+      "end": 382.86,
+      "text": "write it"
+    },
+    {
+      "start": 380.82,
+      "end": 386.88,
+      "text": "can I write it something like this 7"
+    },
+    {
+      "start": 382.86,
+      "end": 387.96,
+      "text": "into 6 into 5 into 4 into 3 into 2 into"
+    },
+    {
+      "start": 386.88,
+      "end": 391.02,
+      "text": "1"
+    },
+    {
+      "start": 387.96,
+      "end": 393.72,
+      "text": "7 factorial is this 2 factorial can be"
+    },
+    {
+      "start": 391.02,
+      "end": 397.22,
+      "text": "written as 2 into 1 into 5 factorial is"
+    },
+    {
+      "start": 393.72,
+      "end": 400.68,
+      "text": "5 into 4 into 3 into 2 into 1. can I say"
+    },
+    {
+      "start": 397.22,
+      "end": 403.62,
+      "text": "this and this will go off always and the"
+    },
+    {
+      "start": 400.68,
+      "end": 406.02,
+      "text": "remaining values will be 7 into 6"
+    },
+    {
+      "start": 403.62,
+      "end": 407.16,
+      "text": "and two into one something carefully to"
+    },
+    {
+      "start": 406.02,
+      "end": 408.66,
+      "text": "observe"
+    },
+    {
+      "start": 407.16,
+      "end": 411.9,
+      "text": "this one"
+    },
+    {
+      "start": 408.66,
+      "end": 415.32,
+      "text": "went for two places like two into one"
+    },
+    {
+      "start": 411.9,
+      "end": 417.42,
+      "text": "so from Seven you go two places so what"
+    },
+    {
+      "start": 415.32,
+      "end": 420.42,
+      "text": "is the shortcut that you noticed if I"
+    },
+    {
+      "start": 417.42,
+      "end": 424.14,
+      "text": "take 10 C 3 what you'll always do is"
+    },
+    {
+      "start": 420.42,
+      "end": 427.14,
+      "text": "you'll say three went three places three"
+    },
+    {
+      "start": 424.14,
+      "end": 429.9,
+      "text": "into two into one so 10 will also go"
+    },
+    {
+      "start": 427.14,
+      "end": 432.06,
+      "text": "three places ten into nine into eight so"
+    },
+    {
+      "start": 429.9,
+      "end": 434.94,
+      "text": "this is the shortcut that you will be"
+    },
+    {
+      "start": 432.06,
+      "end": 437.22,
+      "text": "applying okay but make sure when you"
+    },
+    {
+      "start": 434.94,
+      "end": 440.12,
+      "text": "compute this using for Loop you should"
+    },
+    {
+      "start": 437.22,
+      "end": 448.2,
+      "text": "be Computing from like in this sense"
+    },
+    {
+      "start": 440.12,
+      "end": 450.54,
+      "text": "10 by 1 into 9 by 2 into 8 by 3 why is"
+    },
+    {
+      "start": 448.2,
+      "end": 453.48,
+      "text": "that because if you initially take three"
+    },
+    {
+      "start": 450.54,
+      "end": 455.1,
+      "text": "and you try to divide by 10 that will"
+    },
+    {
+      "start": 453.48,
+      "end": 457.92,
+      "text": "give you nothing but if you initially"
+    },
+    {
+      "start": 455.1,
+      "end": 461.16,
+      "text": "take 10 by 1 it is divisible then if you"
+    },
+    {
+      "start": 457.92,
+      "end": 463.92,
+      "text": "take 10 into 9 by 2 2 will kind of"
+    },
+    {
+      "start": 461.16,
+      "end": 466.8,
+      "text": "divide it and then if you take three"
+    },
+    {
+      "start": 463.92,
+      "end": 469.26,
+      "text": "in three numbers one will definitely be"
+    },
+    {
+      "start": 466.8,
+      "end": 471.72,
+      "text": "divisible by three and hence it will be"
+    },
+    {
+      "start": 469.26,
+      "end": 475.32,
+      "text": "easier so what will the code look like"
+    },
+    {
+      "start": 471.72,
+      "end": 477.96,
+      "text": "can I say I know definitely for I know"
+    },
+    {
+      "start": 475.32,
+      "end": 480.36,
+      "text": "definitely one thing if it is three I'll"
+    },
+    {
+      "start": 477.96,
+      "end": 482.58,
+      "text": "run it for three times so let's go ahead"
+    },
+    {
+      "start": 480.36,
+      "end": 485.16,
+      "text": "and run it for three times so can I say"
+    },
+    {
+      "start": 482.58,
+      "end": 486.6,
+      "text": "I equal to 0 and I'll run it till"
+    },
+    {
+      "start": 485.16,
+      "end": 488.34,
+      "text": "whatever like if I have to write"
+    },
+    {
+      "start": 486.6,
+      "end": 490.26,
+      "text": "probably unite the function that will be"
+    },
+    {
+      "start": 488.34,
+      "end": 491.1,
+      "text": "a better job so imagine I wrote a"
+    },
+    {
+      "start": 490.26,
+      "end": 495.18,
+      "text": "function"
+    },
+    {
+      "start": 491.1,
+      "end": 498.54,
+      "text": "which Finds Me NCR and it is taking N"
+    },
+    {
+      "start": 495.18,
+      "end": 500.82,
+      "text": "and is taking R okay and what we say is"
+    },
+    {
+      "start": 498.54,
+      "end": 503.76,
+      "text": "okay we have a numerator"
+    },
+    {
+      "start": 500.82,
+      "end": 506.64,
+      "text": "or rather we can have a resultant as one"
+    },
+    {
+      "start": 503.76,
+      "end": 509.58,
+      "text": "let's have a resultant as one and we run"
+    },
+    {
+      "start": 506.64,
+      "end": 511.2,
+      "text": "a loop from I equal to 0 and we will run"
+    },
+    {
+      "start": 509.58,
+      "end": 514.98,
+      "text": "till r"
+    },
+    {
+      "start": 511.2,
+      "end": 517.38,
+      "text": "the k y because we know that if it is 3"
+    },
+    {
+      "start": 514.98,
+      "end": 519.66,
+      "text": "we just run three times so I'll run it"
+    },
+    {
+      "start": 517.38,
+      "end": 523.44,
+      "text": "like this and initially what we will do"
+    },
+    {
+      "start": 519.66,
+      "end": 525.06,
+      "text": "is resultant equal to resultant into if"
+    },
+    {
+      "start": 523.44,
+      "end": 528.54,
+      "text": "you carefully see initially it was 10"
+    },
+    {
+      "start": 525.06,
+      "end": 532.02,
+      "text": "which is basically n right and then it"
+    },
+    {
+      "start": 528.54,
+      "end": 534.78,
+      "text": "was 9 which is basically nothing but 10"
+    },
+    {
+      "start": 532.02,
+      "end": 538.2,
+      "text": "minus 1. then it is 8 which is basically"
+    },
+    {
+      "start": 534.78,
+      "end": 541.56,
+      "text": "10 minus 2 so whatever this I is what"
+    },
+    {
+      "start": 538.2,
+      "end": 544.62,
+      "text": "you will do is use n minus I because of"
+    },
+    {
+      "start": 541.56,
+      "end": 547.44,
+      "text": "the first time n is 10 so 10 minus 0"
+    },
+    {
+      "start": 544.62,
+      "end": 550.02,
+      "text": "will be 10 at the next time n is still"
+    },
+    {
+      "start": 547.44,
+      "end": 552.6,
+      "text": "10 but I is 1 so it will be 9 so the"
+    },
+    {
+      "start": 550.02,
+      "end": 554.94,
+      "text": "numerator keeps on getting multiplied"
+    },
+    {
+      "start": 552.6,
+      "end": 557.28,
+      "text": "and what you do is once you've done the"
+    },
+    {
+      "start": 554.94,
+      "end": 559.44,
+      "text": "multiplication you will go ahead and"
+    },
+    {
+      "start": 557.28,
+      "end": 562.32,
+      "text": "divide it with what value it's going to"
+    },
+    {
+      "start": 559.44,
+      "end": 566.1,
+      "text": "be very simple you say I plus 1 y i plus"
+    },
+    {
+      "start": 562.32,
+      "end": 569.28,
+      "text": "1 whenever I is 0 the first time you"
+    },
+    {
+      "start": 566.1,
+      "end": 572.34,
+      "text": "take 1 then whenever I is 1 you take 2"
+    },
+    {
+      "start": 569.28,
+      "end": 574.74,
+      "text": "whenever I is 2 you take three so Apple"
+    },
+    {
+      "start": 572.34,
+      "end": 578.46,
+      "text": "what will happen is first time 10 and 1"
+    },
+    {
+      "start": 574.74,
+      "end": 581.16,
+      "text": "10 9 by 2 then 8 by 3 and this will be"
+    },
+    {
+      "start": 578.46,
+      "end": 584.1,
+      "text": "done once this is done you can return"
+    },
+    {
+      "start": 581.16,
+      "end": 585.84,
+      "text": "the result and this will be your extreme"
+    },
+    {
+      "start": 584.1,
+      "end": 588.42,
+      "text": "Brute Force if I ask you the time"
+    },
+    {
+      "start": 585.84,
+      "end": 590.4,
+      "text": "complexity can I say the time complexity"
+    },
+    {
+      "start": 588.42,
+      "end": 593.88,
+      "text": "will be very simple we're running a loop"
+    },
+    {
+      "start": 590.4,
+      "end": 596.88,
+      "text": "for Big O of R so in order to find uh up"
+    },
+    {
+      "start": 593.88,
+      "end": 599.76,
+      "text": "NCR the time complexity taken is B go of"
+    },
+    {
+      "start": 596.88,
+      "end": 604.38,
+      "text": "R and the space complexity taken is B go"
+    },
+    {
+      "start": 599.76,
+      "end": 606.0,
+      "text": "of 1 please do not go ahead and run a"
+    },
+    {
+      "start": 604.38,
+      "end": 608.28,
+      "text": "loop like this because this will be n"
+    },
+    {
+      "start": 606.0,
+      "end": 610.62,
+      "text": "factorial if you go ahead and run a loop"
+    },
+    {
+      "start": 608.28,
+      "end": 614.22,
+      "text": "it will take B go of n plus b go of R"
+    },
+    {
+      "start": 610.62,
+      "end": 615.96,
+      "text": "plus b go of n minus r which might end"
+    },
+    {
+      "start": 614.22,
+      "end": 618.9,
+      "text": "up taking a lot of time"
+    },
+    {
+      "start": 615.96,
+      "end": 621.54,
+      "text": "and also when you calculate n factorial"
+    },
+    {
+      "start": 618.9,
+      "end": 623.88,
+      "text": "the values might be very big also"
+    },
+    {
+      "start": 621.54,
+      "end": 626.88,
+      "text": "remember one thing for such problems"
+    },
+    {
+      "start": 623.88,
+      "end": 629.52,
+      "text": "it's always safer to take the largest"
+    },
+    {
+      "start": 626.88,
+      "end": 631.62,
+      "text": "data type as long long so that there is"
+    },
+    {
+      "start": 629.52,
+      "end": 633.9,
+      "text": "no overflow got it so I've written my"
+    },
+    {
+      "start": 631.62,
+      "end": 638.28,
+      "text": "function NCR in order to solve the first"
+    },
+    {
+      "start": 633.9,
+      "end": 641.88,
+      "text": "type what I'll say is function NCR"
+    },
+    {
+      "start": 638.28,
+      "end": 643.86,
+      "text": "R minus 1 and C minus 1 if I pass these"
+    },
+    {
+      "start": 641.88,
+      "end": 647.04,
+      "text": "couple of parameters what will happen is"
+    },
+    {
+      "start": 643.86,
+      "end": 650.76,
+      "text": "this NCR will find me the value of R"
+    },
+    {
+      "start": 647.04,
+      "end": 652.32,
+      "text": "minus 1 and C of C minus 1 and will give"
+    },
+    {
+      "start": 650.76,
+      "end": 654.06,
+      "text": "me the answer and this is how you can"
+    },
+    {
+      "start": 652.32,
+      "end": 655.56,
+      "text": "easily solve the first ever problem now"
+    },
+    {
+      "start": 654.06,
+      "end": 657.54,
+      "text": "let's go to the second one"
+    },
+    {
+      "start": 655.56,
+      "end": 660.54,
+      "text": "so what is the second type of problem"
+    },
+    {
+      "start": 657.54,
+      "end": 662.22,
+      "text": "stating print any given row so imagine"
+    },
+    {
+      "start": 660.54,
+      "end": 664.14,
+      "text": "you have been asked to print the sixth"
+    },
+    {
+      "start": 662.22,
+      "end": 666.78,
+      "text": "row let's carefully observe something"
+    },
+    {
+      "start": 664.14,
+      "end": 668.82,
+      "text": "the first row has one element the second"
+    },
+    {
+      "start": 666.78,
+      "end": 671.1,
+      "text": "row has two elements the third row has"
+    },
+    {
+      "start": 668.82,
+      "end": 674.88,
+      "text": "three and similarly the sixth row has"
+    },
+    {
+      "start": 671.1,
+      "end": 677.58,
+      "text": "sixth elements can I say n row like the"
+    },
+    {
+      "start": 674.88,
+      "end": 681.12,
+      "text": "nth rule rather though Nitro will always"
+    },
+    {
+      "start": 677.58,
+      "end": 683.4,
+      "text": "have n elements I definitely can say"
+    },
+    {
+      "start": 681.12,
+      "end": 685.86,
+      "text": "that right so this is what we know at"
+    },
+    {
+      "start": 683.4,
+      "end": 688.02,
+      "text": "first that we have to roughly run a loop"
+    },
+    {
+      "start": 685.86,
+      "end": 691.2,
+      "text": "for n times now we know one thing for"
+    },
+    {
+      "start": 688.02,
+      "end": 695.88,
+      "text": "Sean everyone has a"
+    },
+    {
+      "start": 691.2,
+      "end": 698.22,
+      "text": "has this formula of R minus 1 and C of C"
+    },
+    {
+      "start": 695.88,
+      "end": 701.16,
+      "text": "minus 1 we know that so what we can do"
+    },
+    {
+      "start": 698.22,
+      "end": 703.38,
+      "text": "is the extreme brute force can be super"
+    },
+    {
+      "start": 701.16,
+      "end": 705.66,
+      "text": "simple we say we know one thing for sure"
+    },
+    {
+      "start": 703.38,
+      "end": 708.24,
+      "text": "the column will start from 1 and the"
+    },
+    {
+      "start": 705.66,
+      "end": 710.34,
+      "text": "column will go till the number of rows"
+    },
+    {
+      "start": 708.24,
+      "end": 713.7,
+      "text": "and then we can do a column plus plus"
+    },
+    {
+      "start": 710.34,
+      "end": 716.7,
+      "text": "and every time we can say rather print"
+    },
+    {
+      "start": 713.7,
+      "end": 718.32,
+      "text": "not C out we can easily say print we"
+    },
+    {
+      "start": 716.7,
+      "end": 721.2,
+      "text": "will call the function which computes"
+    },
+    {
+      "start": 718.32,
+      "end": 723.06,
+      "text": "NCR and what we will pass is we will"
+    },
+    {
+      "start": 721.2,
+      "end": 726.06,
+      "text": "pass the row number which is n minus 1"
+    },
+    {
+      "start": 723.06,
+      "end": 728.94,
+      "text": "and we know the formula is C minus 1 so"
+    },
+    {
+      "start": 726.06,
+      "end": 730.68,
+      "text": "C minus 1 and every time C changes"
+    },
+    {
+      "start": 728.94,
+      "end": 734.04,
+      "text": "because For the First Time c will be 1"
+    },
+    {
+      "start": 730.68,
+      "end": 736.14,
+      "text": "then C will be 2. and apparently it'll"
+    },
+    {
+      "start": 734.04,
+      "end": 738.0,
+      "text": "keep on printing this one then this one"
+    },
+    {
+      "start": 736.14,
+      "end": 739.5,
+      "text": "then this one then this then this so"
+    },
+    {
+      "start": 738.0,
+      "end": 741.78,
+      "text": "what will be the time complexity for"
+    },
+    {
+      "start": 739.5,
+      "end": 744.84,
+      "text": "this can I say we are running a loop for"
+    },
+    {
+      "start": 741.78,
+      "end": 747.18,
+      "text": "n times so it'll be n and we know this"
+    },
+    {
+      "start": 744.84,
+      "end": 750.42,
+      "text": "function takes bigot R so the time"
+    },
+    {
+      "start": 747.18,
+      "end": 751.56,
+      "text": "complexity will be n into R this is"
+    },
+    {
+      "start": 750.42,
+      "end": 754.02,
+      "text": "where the interviewer will not be happy"
+    },
+    {
+      "start": 751.56,
+      "end": 756.18,
+      "text": "you'll be like why are you using formula"
+    },
+    {
+      "start": 754.02,
+      "end": 757.62,
+      "text": "repeatedly can you do it in a better way"
+    },
+    {
+      "start": 756.18,
+      "end": 759.24,
+      "text": "and this is where we will try to"
+    },
+    {
+      "start": 757.62,
+      "end": 761.7,
+      "text": "optimize it"
+    },
+    {
+      "start": 759.24,
+      "end": 763.62,
+      "text": "okay so in order to optimize we have to"
+    },
+    {
+      "start": 761.7,
+      "end": 767.28,
+      "text": "dive deep into the formula the formula"
+    },
+    {
+      "start": 763.62,
+      "end": 769.38,
+      "text": "was R minus 1C and C minus 1 correct so"
+    },
+    {
+      "start": 767.28,
+      "end": 772.86,
+      "text": "let's look at the first element the"
+    },
+    {
+      "start": 769.38,
+      "end": 776.82,
+      "text": "first one is one let's look at the next"
+    },
+    {
+      "start": 772.86,
+      "end": 780.36,
+      "text": "it is 5. probably I can write it as 5 by"
+    },
+    {
+      "start": 776.82,
+      "end": 781.38,
+      "text": "upon probably what's the next one 10 and"
+    },
+    {
+      "start": 780.36,
+      "end": 783.78,
+      "text": "that is that"
+    },
+    {
+      "start": 781.38,
+      "end": 786.6,
+      "text": "the third column that's at the third"
+    },
+    {
+      "start": 783.78,
+      "end": 791.1,
+      "text": "column what will be the formula 6 minus"
+    },
+    {
+      "start": 786.6,
+      "end": 794.1,
+      "text": "1 5 C 3 minus two three minus 1 2 and"
+    },
+    {
+      "start": 791.1,
+      "end": 797.34,
+      "text": "it'll be like five into four and two"
+    },
+    {
+      "start": 794.1,
+      "end": 800.16,
+      "text": "into one can I say the 10 is coming from"
+    },
+    {
+      "start": 797.34,
+      "end": 802.26,
+      "text": "here which is this formula I can so what"
+    },
+    {
+      "start": 800.16,
+      "end": 804.66,
+      "text": "did you add more did you add four into"
+    },
+    {
+      "start": 802.26,
+      "end": 807.66,
+      "text": "one more from the previous one you did"
+    },
+    {
+      "start": 804.66,
+      "end": 809.34,
+      "text": "so this one is this this 5 is this and"
+    },
+    {
+      "start": 807.66,
+      "end": 813.48,
+      "text": "this can be written as"
+    },
+    {
+      "start": 809.34,
+      "end": 815.16,
+      "text": "5 into 4 and 1 into 2 I can so we are"
+    },
+    {
+      "start": 813.48,
+      "end": 816.84,
+      "text": "done with the third column it's time for"
+    },
+    {
+      "start": 815.16,
+      "end": 819.48,
+      "text": "the fourth column the fourth column what"
+    },
+    {
+      "start": 816.84,
+      "end": 823.02,
+      "text": "will be the formula n minus 1 5 C 4"
+    },
+    {
+      "start": 819.48,
+      "end": 825.36,
+      "text": "minus 1 3 5 C 3 so back three into two"
+    },
+    {
+      "start": 823.02,
+      "end": 828.12,
+      "text": "into one correct or if I have to write"
+    },
+    {
+      "start": 825.36,
+      "end": 831.36,
+      "text": "it in the other way it'll be 1 into 2"
+    },
+    {
+      "start": 828.12,
+      "end": 833.1,
+      "text": "into 3 and 5 will also go three times so"
+    },
+    {
+      "start": 831.36,
+      "end": 834.0,
+      "text": "if you carefully see what was the"
+    },
+    {
+      "start": 833.1,
+      "end": 835.86,
+      "text": "addition"
+    },
+    {
+      "start": 834.0,
+      "end": 839.1,
+      "text": "this was already there in the previous"
+    },
+    {
+      "start": 835.86,
+      "end": 842.7,
+      "text": "one and we just added this one so okay"
+    },
+    {
+      "start": 839.1,
+      "end": 844.92,
+      "text": "fine we'll be like five into four into"
+    },
+    {
+      "start": 842.7,
+      "end": 847.5,
+      "text": "two into three by three so there is an"
+    },
+    {
+      "start": 844.92,
+      "end": 850.2,
+      "text": "addition of this one okay let's look at"
+    },
+    {
+      "start": 847.5,
+      "end": 854.46,
+      "text": "the next at this one so this is going to"
+    },
+    {
+      "start": 850.2,
+      "end": 856.62,
+      "text": "be like 5 C what is this column this is"
+    },
+    {
+      "start": 854.46,
+      "end": 858.9,
+      "text": "the fifth column it's 5 minus one four"
+    },
+    {
+      "start": 856.62,
+      "end": 862.2,
+      "text": "five C four so one into two into three"
+    },
+    {
+      "start": 858.9,
+      "end": 864.18,
+      "text": "into four and five into four into three"
+    },
+    {
+      "start": 862.2,
+      "end": 867.06,
+      "text": "into two so if you carefully observe"
+    },
+    {
+      "start": 864.18,
+      "end": 869.04,
+      "text": "this was the answer for the previous one"
+    },
+    {
+      "start": 867.06,
+      "end": 873.9,
+      "text": "so as of now"
+    },
+    {
+      "start": 869.04,
+      "end": 875.16,
+      "text": "you are saying please add an extra this"
+    },
+    {
+      "start": 873.9,
+      "end": 877.68,
+      "text": "two by four"
+    },
+    {
+      "start": 875.16,
+      "end": 879.84,
+      "text": "amazing and you can keep going so if you"
+    },
+    {
+      "start": 877.68,
+      "end": 882.48,
+      "text": "carefully observe at first five by one"
+    },
+    {
+      "start": 879.84,
+      "end": 884.94,
+      "text": "Goddard next four by two got added next"
+    },
+    {
+      "start": 882.48,
+      "end": 887.58,
+      "text": "three by three got added next two by"
+    },
+    {
+      "start": 884.94,
+      "end": 892.02,
+      "text": "four got added so if you start with"
+    },
+    {
+      "start": 887.58,
+      "end": 894.66,
+      "text": "answer equal to 1. at column one and at"
+    },
+    {
+      "start": 892.02,
+      "end": 896.76,
+      "text": "column two what happens at column two"
+    },
+    {
+      "start": 894.66,
+      "end": 899.94,
+      "text": "you probably add a five"
+    },
+    {
+      "start": 896.76,
+      "end": 903.42,
+      "text": "by one and then at the next is probably"
+    },
+    {
+      "start": 899.94,
+      "end": 906.12,
+      "text": "add a four byte and in the next probably"
+    },
+    {
+      "start": 903.42,
+      "end": 907.74,
+      "text": "add a three by three so if you if you"
+    },
+    {
+      "start": 906.12,
+      "end": 910.68,
+      "text": "can somehow"
+    },
+    {
+      "start": 907.74,
+      "end": 912.24,
+      "text": "figure out a formula to do this I think"
+    },
+    {
+      "start": 910.68,
+      "end": 914.28,
+      "text": "our job will be pretty much done so"
+    },
+    {
+      "start": 912.24,
+      "end": 916.68,
+      "text": "let's try to figure out a formula"
+    },
+    {
+      "start": 914.28,
+      "end": 918.18,
+      "text": "so what will be the formula let's try to"
+    },
+    {
+      "start": 916.68,
+      "end": 921.36,
+      "text": "think and see if we can analyze the"
+    },
+    {
+      "start": 918.18,
+      "end": 922.68,
+      "text": "formula something I know for sure now"
+    },
+    {
+      "start": 921.36,
+      "end": 924.48,
+      "text": "what is the one thing that you know for"
+    },
+    {
+      "start": 922.68,
+      "end": 927.42,
+      "text": "sure the one thing that I know for sure"
+    },
+    {
+      "start": 924.48,
+      "end": 930.18,
+      "text": "is the first element will be one and the"
+    },
+    {
+      "start": 927.42,
+      "end": 931.8,
+      "text": "last element will definitely be one so"
+    },
+    {
+      "start": 930.18,
+      "end": 934.38,
+      "text": "we don't have to think about the first"
+    },
+    {
+      "start": 931.8,
+      "end": 936.48,
+      "text": "and the last that much but without it"
+    },
+    {
+      "start": 934.38,
+      "end": 938.94,
+      "text": "you need to think about everyone else"
+    },
+    {
+      "start": 936.48,
+      "end": 941.52,
+      "text": "okay so we probably can start with"
+    },
+    {
+      "start": 938.94,
+      "end": 944.82,
+      "text": "answer as one we can start with answer"
+    },
+    {
+      "start": 941.52,
+      "end": 946.5,
+      "text": "as one and in the first attempt we are"
+    },
+    {
+      "start": 944.82,
+      "end": 950.1,
+      "text": "doing a five by one"
+    },
+    {
+      "start": 946.5,
+      "end": 955.56,
+      "text": "and the column number was 2 column"
+    },
+    {
+      "start": 950.1,
+      "end": 956.76,
+      "text": "number was two so this is okay what if"
+    },
+    {
+      "start": 955.56,
+      "end": 959.88,
+      "text": "what if"
+    },
+    {
+      "start": 956.76,
+      "end": 962.76,
+      "text": "I take the columns in terms of zero"
+    },
+    {
+      "start": 959.88,
+      "end": 964.8,
+      "text": "based indexing will it be an easier job"
+    },
+    {
+      "start": 962.76,
+      "end": 970.98,
+      "text": "let's see so let's write down the zero"
+    },
+    {
+      "start": 964.8,
+      "end": 973.92,
+      "text": "based indexing this is 0 0 1 2 3 4."
+    },
+    {
+      "start": 970.98,
+      "end": 976.38,
+      "text": "does it make it easier yes it does"
+    },
+    {
+      "start": 973.92,
+      "end": 980.52,
+      "text": "over here one is here"
+    },
+    {
+      "start": 976.38,
+      "end": 983.94,
+      "text": "over here to is here over here three is"
+    },
+    {
+      "start": 980.52,
+      "end": 986.7,
+      "text": "here over here four is here kind of"
+    },
+    {
+      "start": 983.94,
+      "end": 988.08,
+      "text": "makes it easy right and if you go ahead"
+    },
+    {
+      "start": 986.7,
+      "end": 990.3,
+      "text": "and write the next one which is the"
+    },
+    {
+      "start": 988.08,
+      "end": 993.24,
+      "text": "fifth one it'll be like five into four"
+    },
+    {
+      "start": 990.3,
+      "end": 995.16,
+      "text": "into three into two was common 100 into"
+    },
+    {
+      "start": 993.24,
+      "end": 996.78,
+      "text": "three into four will be common the last"
+    },
+    {
+      "start": 995.16,
+      "end": 1000.38,
+      "text": "one will be five and this one will be"
+    },
+    {
+      "start": 996.78,
+      "end": 1004.22,
+      "text": "one so can I see what we are doing is"
+    },
+    {
+      "start": 1000.38,
+      "end": 1006.2,
+      "text": "answer into whatever is this column"
+    },
+    {
+      "start": 1004.22,
+      "end": 1008.96,
+      "text": "we are always dividing it by column"
+    },
+    {
+      "start": 1006.2,
+      "end": 1011.18,
+      "text": "column column column column whatever was"
+    },
+    {
+      "start": 1008.96,
+      "end": 1013.64,
+      "text": "the previous answer we are dividing it"
+    },
+    {
+      "start": 1011.18,
+      "end": 1016.94,
+      "text": "by column what are we multiplying you're"
+    },
+    {
+      "start": 1013.64,
+      "end": 1021.92,
+      "text": "multiplying at first five then four it's"
+    },
+    {
+      "start": 1016.94,
+      "end": 1025.82,
+      "text": "like if nth row is 6 can you relate"
+    },
+    {
+      "start": 1021.92,
+      "end": 1028.82,
+      "text": "6 becomes 5 reduction of one six becomes"
+    },
+    {
+      "start": 1025.82,
+      "end": 1032.24,
+      "text": "4 reduction of two six becomes 3"
+    },
+    {
+      "start": 1028.82,
+      "end": 1034.46,
+      "text": "reduction of three can I say it's n"
+    },
+    {
+      "start": 1032.24,
+      "end": 1037.4,
+      "text": "which is the row number or probably you"
+    },
+    {
+      "start": 1034.46,
+      "end": 1039.5,
+      "text": "can write row number rho minus column"
+    },
+    {
+      "start": 1037.4,
+      "end": 1041.72,
+      "text": "yes this is what you have to keep"
+    },
+    {
+      "start": 1039.5,
+      "end": 1043.88,
+      "text": "multiplying if you do this you'll be"
+    },
+    {
+      "start": 1041.72,
+      "end": 1045.38,
+      "text": "able to generate the entire row so if I"
+    },
+    {
+      "start": 1043.88,
+      "end": 1047.84,
+      "text": "have to write it if I have to write it"
+    },
+    {
+      "start": 1045.38,
+      "end": 1050.12,
+      "text": "it will be like I know one thing for"
+    },
+    {
+      "start": 1047.84,
+      "end": 1051.68,
+      "text": "sure probably I'll write it again I know"
+    },
+    {
+      "start": 1050.12,
+      "end": 1053.12,
+      "text": "one thing for sure"
+    },
+    {
+      "start": 1051.68,
+      "end": 1054.92,
+      "text": "that"
+    },
+    {
+      "start": 1053.12,
+      "end": 1058.76,
+      "text": "for"
+    },
+    {
+      "start": 1054.92,
+      "end": 1061.04,
+      "text": "rather let's keep answer equal to 1 and"
+    },
+    {
+      "start": 1058.76,
+      "end": 1062.96,
+      "text": "I know one thing that this will be my"
+    },
+    {
+      "start": 1061.04,
+      "end": 1066.26,
+      "text": "first"
+    },
+    {
+      "start": 1062.96,
+      "end": 1068.72,
+      "text": "this is my this will be my first because"
+    },
+    {
+      "start": 1066.26,
+      "end": 1070.1,
+      "text": "for the 0th row I know the answer will"
+    },
+    {
+      "start": 1068.72,
+      "end": 1074.3,
+      "text": "sorry zeroth column the answer will"
+    },
+    {
+      "start": 1070.1,
+      "end": 1077.48,
+      "text": "always be one so now I will start from"
+    },
+    {
+      "start": 1074.3,
+      "end": 1080.9,
+      "text": "for I equal to 1 this is where I start"
+    },
+    {
+      "start": 1077.48,
+      "end": 1082.94,
+      "text": "from and I will go on till"
+    },
+    {
+      "start": 1080.9,
+      "end": 1085.76,
+      "text": "the last"
+    },
+    {
+      "start": 1082.94,
+      "end": 1088.52,
+      "text": "which is n because the last one is fifth"
+    },
+    {
+      "start": 1085.76,
+      "end": 1091.4,
+      "text": "index and N was six so we go until this"
+    },
+    {
+      "start": 1088.52,
+      "end": 1094.16,
+      "text": "perfect and what will we do we will say"
+    },
+    {
+      "start": 1091.4,
+      "end": 1096.44,
+      "text": "answer equal to first we will try to"
+    },
+    {
+      "start": 1094.16,
+      "end": 1099.62,
+      "text": "multiply first we will try to multiply"
+    },
+    {
+      "start": 1096.44,
+      "end": 1103.16,
+      "text": "what will we multiply obviously this one"
+    },
+    {
+      "start": 1099.62,
+      "end": 1107.36,
+      "text": "which is nothing but whatever is n minus"
+    },
+    {
+      "start": 1103.16,
+      "end": 1111.04,
+      "text": "this I because this is I so minus and"
+    },
+    {
+      "start": 1107.36,
+      "end": 1113.0,
+      "text": "then we will say answer equal to answer"
+    },
+    {
+      "start": 1111.04,
+      "end": 1116.96,
+      "text": "divided by"
+    },
+    {
+      "start": 1113.0,
+      "end": 1118.88,
+      "text": "I super simple once this for Loop like"
+    },
+    {
+      "start": 1116.96,
+      "end": 1122.18,
+      "text": "this fondue will always keep on Printing"
+    },
+    {
+      "start": 1118.88,
+      "end": 1125.36,
+      "text": "and this will print the entire thing"
+    },
+    {
+      "start": 1122.18,
+      "end": 1127.88,
+      "text": "pretty simple isn't it what did I do I"
+    },
+    {
+      "start": 1125.36,
+      "end": 1131.0,
+      "text": "just kept on multiplying first five then"
+    },
+    {
+      "start": 1127.88,
+      "end": 1133.46,
+      "text": "by one then in the next step four by two"
+    },
+    {
+      "start": 1131.0,
+      "end": 1136.22,
+      "text": "it kept on generating kept on generating"
+    },
+    {
+      "start": 1133.46,
+      "end": 1139.34,
+      "text": "and we kept on printing So eventually we"
+    },
+    {
+      "start": 1136.22,
+      "end": 1141.98,
+      "text": "first print this then this then this and"
+    },
+    {
+      "start": 1139.34,
+      "end": 1144.2,
+      "text": "then this and we'll end up printing the"
+    },
+    {
+      "start": 1141.98,
+      "end": 1146.06,
+      "text": "entire nth row of the Pascal triangle"
+    },
+    {
+      "start": 1144.2,
+      "end": 1148.28,
+      "text": "got it if I talk about the time"
+    },
+    {
+      "start": 1146.06,
+      "end": 1149.36,
+      "text": "complexity can I say the time complex it"
+    },
+    {
+      "start": 1148.28,
+      "end": 1152.06,
+      "text": "will be"
+    },
+    {
+      "start": 1149.36,
+      "end": 1153.92,
+      "text": "whatever is the number of rows those"
+    },
+    {
+      "start": 1152.06,
+      "end": 1156.26,
+      "text": "many columns you have to print so the"
+    },
+    {
+      "start": 1153.92,
+      "end": 1158.42,
+      "text": "time complexity will be we go of N and"
+    },
+    {
+      "start": 1156.26,
+      "end": 1160.04,
+      "text": "the space complexity will be because1"
+    },
+    {
+      "start": 1158.42,
+      "end": 1161.78,
+      "text": "quite simple so you are done with the"
+    },
+    {
+      "start": 1160.04,
+      "end": 1163.52,
+      "text": "first and the second type what about the"
+    },
+    {
+      "start": 1161.78,
+      "end": 1166.16,
+      "text": "third type the third type is stating"
+    },
+    {
+      "start": 1163.52,
+      "end": 1168.62,
+      "text": "you'll be given n and you have to print"
+    },
+    {
+      "start": 1166.16,
+      "end": 1170.96,
+      "text": "this entire pastel triangle does it mean"
+    },
+    {
+      "start": 1168.62,
+      "end": 1172.82,
+      "text": "you have to give all these spaces no a"
+    },
+    {
+      "start": 1170.96,
+      "end": 1173.66,
+      "text": "short pattern printing what you have to"
+    },
+    {
+      "start": 1172.82,
+      "end": 1176.0,
+      "text": "do is"
+    },
+    {
+      "start": 1173.66,
+      "end": 1178.4,
+      "text": "the first row is containing one so you"
+    },
+    {
+      "start": 1176.0,
+      "end": 1181.28,
+      "text": "return one in a list then it is one one"
+    },
+    {
+      "start": 1178.4,
+      "end": 1185.18,
+      "text": "see written one one next one to one next"
+    },
+    {
+      "start": 1181.28,
+      "end": 1188.96,
+      "text": "one three three one next one four six"
+    },
+    {
+      "start": 1185.18,
+      "end": 1191.48,
+      "text": "four one next one five ten ten this will"
+    },
+    {
+      "start": 1188.96,
+      "end": 1195.08,
+      "text": "be the answer if ns6 and everything will"
+    },
+    {
+      "start": 1191.48,
+      "end": 1198.62,
+      "text": "be inside a list and all of these lists"
+    },
+    {
+      "start": 1195.08,
+      "end": 1200.36,
+      "text": "will be put inside a list and then this"
+    },
+    {
+      "start": 1198.62,
+      "end": 1202.52,
+      "text": "is what you have to return so what is"
+    },
+    {
+      "start": 1200.36,
+      "end": 1204.62,
+      "text": "the extreme naive brute approach that"
+    },
+    {
+      "start": 1202.52,
+      "end": 1207.26,
+      "text": "you can think of it's definitely using"
+    },
+    {
+      "start": 1204.62,
+      "end": 1209.36,
+      "text": "the formula R minus one c c minus one"
+    },
+    {
+      "start": 1207.26,
+      "end": 1212.54,
+      "text": "what you do is you know the rules will"
+    },
+    {
+      "start": 1209.36,
+      "end": 1215.72,
+      "text": "be from 1 to n so you can run a loop"
+    },
+    {
+      "start": 1212.54,
+      "end": 1218.0,
+      "text": "from one to n for rows and you know the"
+    },
+    {
+      "start": 1215.72,
+      "end": 1220.88,
+      "text": "columns will be wrong"
+    },
+    {
+      "start": 1218.0,
+      "end": 1222.38,
+      "text": "1 to this current row why is that"
+    },
+    {
+      "start": 1220.88,
+      "end": 1224.42,
+      "text": "because for the first row it is one"
+    },
+    {
+      "start": 1222.38,
+      "end": 1226.1,
+      "text": "element for the second order is two"
+    },
+    {
+      "start": 1224.42,
+      "end": 1228.5,
+      "text": "elements for the fifth it is five"
+    },
+    {
+      "start": 1226.1,
+      "end": 1230.9,
+      "text": "elements for the row number The Columns"
+    },
+    {
+      "start": 1228.5,
+      "end": 1232.76,
+      "text": "are equivalent to the row number so we"
+    },
+    {
+      "start": 1230.9,
+      "end": 1234.8,
+      "text": "know the answer will be a list which we"
+    },
+    {
+      "start": 1232.76,
+      "end": 1237.02,
+      "text": "have to return so probably take a"
+    },
+    {
+      "start": 1234.8,
+      "end": 1239.66,
+      "text": "temporary list"
+    },
+    {
+      "start": 1237.02,
+      "end": 1240.44,
+      "text": "and take an answer list and now what you"
+    },
+    {
+      "start": 1239.66,
+      "end": 1243.44,
+      "text": "do is"
+    },
+    {
+      "start": 1240.44,
+      "end": 1246.92,
+      "text": "inside the inner formula"
+    },
+    {
+      "start": 1243.44,
+      "end": 1249.62,
+      "text": "temporary list dot add as the NCR"
+    },
+    {
+      "start": 1246.92,
+      "end": 1251.36,
+      "text": "function that you wrote in the first to"
+    },
+    {
+      "start": 1249.62,
+      "end": 1253.64,
+      "text": "generate the answer for every element"
+    },
+    {
+      "start": 1251.36,
+      "end": 1256.28,
+      "text": "individual element and you can add it up"
+    },
+    {
+      "start": 1253.64,
+      "end": 1259.7,
+      "text": "once this temporary list is generated"
+    },
+    {
+      "start": 1256.28,
+      "end": 1262.88,
+      "text": "you can ask the answer to add the sub"
+    },
+    {
+      "start": 1259.7,
+      "end": 1266.0,
+      "text": "temporary list and eventually what you"
+    },
+    {
+      "start": 1262.88,
+      "end": 1267.56,
+      "text": "can do is you can return this answer yes"
+    },
+    {
+      "start": 1266.0,
+      "end": 1270.08,
+      "text": "eventually you can return this answer"
+    },
+    {
+      "start": 1267.56,
+      "end": 1272.12,
+      "text": "and this is how easily you can do it by"
+    },
+    {
+      "start": 1270.08,
+      "end": 1274.22,
+      "text": "the way the code for this you can find"
+    },
+    {
+      "start": 1272.12,
+      "end": 1275.54,
+      "text": "it in the updated article in the"
+    },
+    {
+      "start": 1274.22,
+      "end": 1276.8,
+      "text": "description below in case you want to"
+    },
+    {
+      "start": 1275.54,
+      "end": 1279.02,
+      "text": "see the code for this"
+    },
+    {
+      "start": 1276.8,
+      "end": 1281.0,
+      "text": "so what will be the time complexity can"
+    },
+    {
+      "start": 1279.02,
+      "end": 1283.4,
+      "text": "I say I'm running an N Loop another n"
+    },
+    {
+      "start": 1281.0,
+      "end": 1286.64,
+      "text": "Loop and this if you remember took B go"
+    },
+    {
+      "start": 1283.4,
+      "end": 1289.76,
+      "text": "of R that's near about not exactly near"
+    },
+    {
+      "start": 1286.64,
+      "end": 1292.7,
+      "text": "about n into n into on near the board"
+    },
+    {
+      "start": 1289.76,
+      "end": 1295.04,
+      "text": "which is near about B gov n cube in the"
+    },
+    {
+      "start": 1292.7,
+      "end": 1297.38,
+      "text": "worst like near the mouth not exactly we"
+    },
+    {
+      "start": 1295.04,
+      "end": 1299.66,
+      "text": "go of NQ we will not talk about the"
+    },
+    {
+      "start": 1297.38,
+      "end": 1301.7,
+      "text": "space complexity because we are storing"
+    },
+    {
+      "start": 1299.66,
+      "end": 1303.26,
+      "text": "the answer to return we are not using it"
+    },
+    {
+      "start": 1301.7,
+      "end": 1305.72,
+      "text": "to compute it is the answer which is"
+    },
+    {
+      "start": 1303.26,
+      "end": 1307.64,
+      "text": "stored so this time complexity is this"
+    },
+    {
+      "start": 1305.72,
+      "end": 1309.32,
+      "text": "obviously the interviewer will not be"
+    },
+    {
+      "start": 1307.64,
+      "end": 1311.84,
+      "text": "happy and they'll ask you to optimize it"
+    },
+    {
+      "start": 1309.32,
+      "end": 1314.48,
+      "text": "so how can you reduce it from Vigo of n"
+    },
+    {
+      "start": 1311.84,
+      "end": 1316.4,
+      "text": "Cube so we will use the second type if"
+    },
+    {
+      "start": 1314.48,
+      "end": 1320.06,
+      "text": "you remember the second type given any"
+    },
+    {
+      "start": 1316.4,
+      "end": 1322.82,
+      "text": "row number was generating you the entire"
+    },
+    {
+      "start": 1320.06,
+      "end": 1324.98,
+      "text": "row so we'll be using this to generate"
+    },
+    {
+      "start": 1322.82,
+      "end": 1328.22,
+      "text": "every row and this was taking a big off"
+    },
+    {
+      "start": 1324.98,
+      "end": 1330.44,
+      "text": "n complexity so for every row that there"
+    },
+    {
+      "start": 1328.22,
+      "end": 1332.66,
+      "text": "are n rows we will take big of n to"
+    },
+    {
+      "start": 1330.44,
+      "end": 1336.02,
+      "text": "generate that rule the total complexity"
+    },
+    {
+      "start": 1332.66,
+      "end": 1337.34,
+      "text": "will boil down to B go of n square and"
+    },
+    {
+      "start": 1336.02,
+      "end": 1339.86,
+      "text": "this is what will be your optimal"
+    },
+    {
+      "start": 1337.34,
+      "end": 1341.6,
+      "text": "solution for the type 3 okay so time to"
+    },
+    {
+      "start": 1339.86,
+      "end": 1343.16,
+      "text": "code the third type up again the problem"
+    },
+    {
+      "start": 1341.6,
+      "end": 1344.6,
+      "text": "link will be in the description please"
+    },
+    {
+      "start": 1343.16,
+      "end": 1346.76,
+      "text": "please make sure you try the problem"
+    },
+    {
+      "start": 1344.6,
+      "end": 1348.32,
+      "text": "from the link in the description itself"
+    },
+    {
+      "start": 1346.76,
+      "end": 1350.8,
+      "text": "so what is the first thing you'll write"
+    },
+    {
+      "start": 1348.32,
+      "end": 1354.62,
+      "text": "probably will write uh"
+    },
+    {
+      "start": 1350.8,
+      "end": 1356.84,
+      "text": "generate row function which will take"
+    },
+    {
+      "start": 1354.62,
+      "end": 1359.96,
+      "text": "the row number and it will give me a"
+    },
+    {
+      "start": 1356.84,
+      "end": 1362.12,
+      "text": "list of all the elements in that row and"
+    },
+    {
+      "start": 1359.96,
+      "end": 1365.6,
+      "text": "if you remember properly as I always"
+    },
+    {
+      "start": 1362.12,
+      "end": 1366.98,
+      "text": "said you please please take a long long"
+    },
+    {
+      "start": 1365.6,
+      "end": 1368.42,
+      "text": "over here"
+    },
+    {
+      "start": 1366.98,
+      "end": 1369.98,
+      "text": "because you'll be multiplying"
+    },
+    {
+      "start": 1368.42,
+      "end": 1372.92,
+      "text": "multiplying so the numbers might grow"
+    },
+    {
+      "start": 1369.98,
+      "end": 1376.24,
+      "text": "please take long what's the first thing"
+    },
+    {
+      "start": 1372.92,
+      "end": 1379.22,
+      "text": "you know this will be your answer Rook"
+    },
+    {
+      "start": 1376.24,
+      "end": 1382.7,
+      "text": "and we know one thing for sure"
+    },
+    {
+      "start": 1379.22,
+      "end": 1384.68,
+      "text": "we will always have one at the starting"
+    },
+    {
+      "start": 1382.7,
+      "end": 1387.68,
+      "text": "and then if you remember we started with"
+    },
+    {
+      "start": 1384.68,
+      "end": 1391.22,
+      "text": "zero based indexing if you remember"
+    },
+    {
+      "start": 1387.68,
+      "end": 1393.14,
+      "text": "this was considered as the zero where"
+    },
+    {
+      "start": 1391.22,
+      "end": 1395.6,
+      "text": "the answer was one this was considered"
+    },
+    {
+      "start": 1393.14,
+      "end": 1398.24,
+      "text": "as one and then it went across in data"
+    },
+    {
+      "start": 1395.6,
+      "end": 1400.46,
+      "text": "five cross one this was considered as 2"
+    },
+    {
+      "start": 1398.24,
+      "end": 1403.76,
+      "text": "and then it went across and did a two"
+    },
+    {
+      "start": 1400.46,
+      "end": 1405.2,
+      "text": "divide and a four so for this 2 what you"
+    },
+    {
+      "start": 1403.76,
+      "end": 1407.9,
+      "text": "did was"
+    },
+    {
+      "start": 1405.2,
+      "end": 1410.48,
+      "text": "and was six the rule number was six six"
+    },
+    {
+      "start": 1407.9,
+      "end": 1412.34,
+      "text": "minus two at the bottom U divided in it"
+    },
+    {
+      "start": 1410.48,
+      "end": 1414.26,
+      "text": "by two so this is something you will do"
+    },
+    {
+      "start": 1412.34,
+      "end": 1416.42,
+      "text": "so you will go ahead and say okay column"
+    },
+    {
+      "start": 1414.26,
+      "end": 1419.3,
+      "text": "now goes from one and if you remember"
+    },
+    {
+      "start": 1416.42,
+      "end": 1422.0,
+      "text": "the last one will be three four five the"
+    },
+    {
+      "start": 1419.3,
+      "end": 1424.34,
+      "text": "last one will be five so column will go"
+    },
+    {
+      "start": 1422.0,
+      "end": 1427.04,
+      "text": "till the row not equal to equal to"
+    },
+    {
+      "start": 1424.34,
+      "end": 1429.44,
+      "text": "rather this and over here let's probably"
+    },
+    {
+      "start": 1427.04,
+      "end": 1432.62,
+      "text": "take answer is there so what you do is"
+    },
+    {
+      "start": 1429.44,
+      "end": 1435.14,
+      "text": "answer equal to answer into at first"
+    },
+    {
+      "start": 1432.62,
+      "end": 1438.8,
+      "text": "let's have it uh on the top what is the"
+    },
+    {
+      "start": 1435.14,
+      "end": 1441.74,
+      "text": "top row minus column perfect and then"
+    },
+    {
+      "start": 1438.8,
+      "end": 1443.72,
+      "text": "you will say divide and what will be at"
+    },
+    {
+      "start": 1441.74,
+      "end": 1446.54,
+      "text": "the bottom at the bottom was the column"
+    },
+    {
+      "start": 1443.72,
+      "end": 1449.54,
+      "text": "okay done once you have done this you"
+    },
+    {
+      "start": 1446.54,
+      "end": 1451.7,
+      "text": "will say answer no can you please take"
+    },
+    {
+      "start": 1449.54,
+      "end": 1453.68,
+      "text": "this it will take it and then you can"
+    },
+    {
+      "start": 1451.7,
+      "end": 1455.3,
+      "text": "return this answer row so what you've"
+    },
+    {
+      "start": 1453.68,
+      "end": 1457.64,
+      "text": "done is you have written a function"
+    },
+    {
+      "start": 1455.3,
+      "end": 1460.16,
+      "text": "that's basically the type 2 which takes"
+    },
+    {
+      "start": 1457.64,
+      "end": 1462.56,
+      "text": "a row number and gives you the entire"
+    },
+    {
+      "start": 1460.16,
+      "end": 1464.06,
+      "text": "row and now it is wanting the entire"
+    },
+    {
+      "start": 1462.56,
+      "end": 1466.4,
+      "text": "triangle"
+    },
+    {
+      "start": 1464.06,
+      "end": 1469.24,
+      "text": "so we will say list"
+    },
+    {
+      "start": 1466.4,
+      "end": 1469.24,
+      "text": "of list"
+    },
+    {
+      "start": 1469.34,
+      "end": 1472.18,
+      "text": "and"
+    },
+    {
+      "start": 1472.58,
+      "end": 1479.96,
+      "text": "this will be okay and maybe"
+    },
+    {
+      "start": 1476.56,
+      "end": 1483.62,
+      "text": "and now we know the number of rows Will"
+    },
+    {
+      "start": 1479.96,
+      "end": 1485.36,
+      "text": "Go On from this to this I plus plus we"
+    },
+    {
+      "start": 1483.62,
+      "end": 1489.02,
+      "text": "definitely know this and we know they"
+    },
+    {
+      "start": 1485.36,
+      "end": 1491.06,
+      "text": "will be temporary probability detectory"
+    },
+    {
+      "start": 1489.02,
+      "end": 1494.06,
+      "text": "and this temporary will call the"
+    },
+    {
+      "start": 1491.06,
+      "end": 1496.94,
+      "text": "generate row and it will pass the slow"
+    },
+    {
+      "start": 1494.06,
+      "end": 1499.88,
+      "text": "number and once it is generated you will"
+    },
+    {
+      "start": 1496.94,
+      "end": 1502.52,
+      "text": "say answer can you please store this"
+    },
+    {
+      "start": 1499.88,
+      "end": 1505.34,
+      "text": "temporary and instead of taking it in a"
+    },
+    {
+      "start": 1502.52,
+      "end": 1507.98,
+      "text": "temporary you can also directly write it"
+    },
+    {
+      "start": 1505.34,
+      "end": 1510.32,
+      "text": "because the function returns a list the"
+    },
+    {
+      "start": 1507.98,
+      "end": 1512.96,
+      "text": "list itself will get into the answer"
+    },
+    {
+      "start": 1510.32,
+      "end": 1514.64,
+      "text": "once you have done this you can go ahead"
+    },
+    {
+      "start": 1512.96,
+      "end": 1516.32,
+      "text": "and return this and that will be your"
+    },
+    {
+      "start": 1514.64,
+      "end": 1517.82,
+      "text": "answer got it so whenever you're"
+    },
+    {
+      "start": 1516.32,
+      "end": 1519.62,
+      "text": "appearing for an interview please please"
+    },
+    {
+      "start": 1517.82,
+      "end": 1521.66,
+      "text": "make sure that you maintain code quality"
+    },
+    {
+      "start": 1519.62,
+      "end": 1523.04,
+      "text": "now what do I mean by code quality I've"
+    },
+    {
+      "start": 1521.66,
+      "end": 1525.26,
+      "text": "written the function like this and"
+    },
+    {
+      "start": 1523.04,
+      "end": 1526.82,
+      "text": "called it from here I could have also"
+    },
+    {
+      "start": 1525.26,
+      "end": 1530.24,
+      "text": "written it something like this probably"
+    },
+    {
+      "start": 1526.82,
+      "end": 1533.42,
+      "text": "I'll just have answer row here and I"
+    },
+    {
+      "start": 1530.24,
+      "end": 1536.0,
+      "text": "will just copy paste this portion I'll"
+    },
+    {
+      "start": 1533.42,
+      "end": 1538.1,
+      "text": "put it over here now this will also run"
+    },
+    {
+      "start": 1536.0,
+      "end": 1540.92,
+      "text": "this will and I'll erase the function"
+    },
+    {
+      "start": 1538.1,
+      "end": 1543.68,
+      "text": "this will also be submitted and you"
+    },
+    {
+      "start": 1540.92,
+      "end": 1545.6,
+      "text": "might think given a correct solution but"
+    },
+    {
+      "start": 1543.68,
+      "end": 1547.22,
+      "text": "that doesn't work like that the"
+    },
+    {
+      "start": 1545.6,
+      "end": 1549.56,
+      "text": "interviewers will focus on your code"
+    },
+    {
+      "start": 1547.22,
+      "end": 1552.02,
+      "text": "quality so please make sure if code is"
+    },
+    {
+      "start": 1549.56,
+      "end": 1553.88,
+      "text": "getting longer break it down into paths"
+    },
+    {
+      "start": 1552.02,
+      "end": 1556.1,
+      "text": "put them into functions a functions"
+    },
+    {
+      "start": 1553.88,
+      "end": 1558.08,
+      "text": "which are readable so that okay I know"
+    },
+    {
+      "start": 1556.1,
+      "end": 1560.6,
+      "text": "that this is a function which is"
+    },
+    {
+      "start": 1558.08,
+      "end": 1562.52,
+      "text": "generating row it is quite readable so"
+    },
+    {
+      "start": 1560.6,
+      "end": 1564.08,
+      "text": "try to have core quality of this format"
+    },
+    {
+      "start": 1562.52,
+      "end": 1565.88,
+      "text": "then only it will be very easy for you"
+    },
+    {
+      "start": 1564.08,
+      "end": 1568.16,
+      "text": "to clear interviews it's just not about"
+    },
+    {
+      "start": 1565.88,
+      "end": 1569.66,
+      "text": "solving problems trust me on this so"
+    },
+    {
+      "start": 1568.16,
+      "end": 1571.7,
+      "text": "going back to the sheet I can say that"
+    },
+    {
+      "start": 1569.66,
+      "end": 1573.86,
+      "text": "this is done I hope you have understood"
+    },
+    {
+      "start": 1571.7,
+      "end": 1575.36,
+      "text": "everything just in case you have please"
+    },
+    {
+      "start": 1573.86,
+      "end": 1577.1,
+      "text": "please consider giving us that like"
+    },
+    {
+      "start": 1575.36,
+      "end": 1578.36,
+      "text": "because it won't cost you anything but"
+    },
+    {
+      "start": 1577.1,
+      "end": 1580.28,
+      "text": "that is something that will definitely"
+    },
+    {
+      "start": 1578.36,
+      "end": 1582.14,
+      "text": "motivate me to make such kind of content"
+    },
+    {
+      "start": 1580.28,
+      "end": 1584.6,
+      "text": "more and more and yes if you're new to"
+    },
+    {
+      "start": 1582.14,
+      "end": 1586.64,
+      "text": "our Channel what are you waiting for hit"
+    },
+    {
+      "start": 1584.6,
+      "end": 1587.84,
+      "text": "that subscribe button man and to"
+    },
+    {
+      "start": 1586.64,
+      "end": 1589.34,
+      "text": "continue our tradition do comment"
+    },
+    {
+      "start": 1587.84,
+      "end": 1591.5,
+      "text": "understood and if you haven't followed"
+    },
+    {
+      "start": 1589.34,
+      "end": 1593.06,
+      "text": "me on LinkedIn Twitter Instagram all the"
+    },
+    {
+      "start": 1591.5,
+      "end": 1594.14,
+      "text": "links will be in the description with"
+    },
+    {
+      "start": 1593.06,
+      "end": 1596.56,
+      "text": "this I'll be wrapping up this video"
+    },
+    {
+      "start": 1594.14,
+      "end": 1602.74,
+      "text": "let's read in some other videos"
+    },
+    {
+      "start": 1596.56,
+      "end": 1602.74,
+      "text": "[Music]"
+    },
+    {
+      "start": 1603.14,
+      "end": 1606.52,
+      "text": "I will find the lighting"
+    }
+  ]
+}

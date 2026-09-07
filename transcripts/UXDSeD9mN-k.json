@@ -1,0 +1,2310 @@
+{
+  "video_id": "UXDSeD9mN-k",
+  "title": "2 Sum Problem | 2 types of the same problem for Interviews | Brute-Better-Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1100,
+  "text": "FetchedTranscriptSnippet(text='hey everyone welcome back to the channel', start=3.0, duration=3.06) FetchedTranscriptSnippet(text='I hope you guys are doing extremely well', start=4.5, duration=3.18) FetchedTranscriptSnippet(text='so this is another video from the', start=6.06, duration=4.079) FetchedTranscriptSnippet(text='stripers A to Z DSA course just in case', start=7.68, duration=3.66) FetchedTranscriptSnippet(text=\"you're for the first time here this is\", start=10.139, duration=3.12) FetchedTranscriptSnippet(text=\"world's most in-depth course in DSL go\", start=11.34, duration=3.78) FetchedTranscriptSnippet(text='why do I see that because in this course', start=13.259, duration=4.44) FetchedTranscriptSnippet(text='I will be covering four 56 modules by', start=15.12, duration=4.159) FetchedTranscriptSnippet(text='the end of the course we would have sort', start=17.699, duration=4.441) FetchedTranscriptSnippet(text=\"400 plus problems and yes I'll go you\", start=19.279, duration=4.241) FetchedTranscriptSnippet(text='can go across the entire internet you', start=22.14, duration=3.54) FetchedTranscriptSnippet(text='can buy any of the paid courses none of', start=23.52, duration=4.38) FetchedTranscriptSnippet(text='them will be teaching DS algo in such', start=25.68, duration=4.14) FetchedTranscriptSnippet(text='step so something that I can give you as', start=27.9, duration=3.84) FetchedTranscriptSnippet(text='a guarantee is once you complete this', start=29.82, duration=4.2) FetchedTranscriptSnippet(text='entire post you can track any of the DS', start=31.74, duration=4.14) FetchedTranscriptSnippet(text='algo routes at any of the interviews at', start=34.02, duration=4.08) FetchedTranscriptSnippet(text='any of the companies in any part of the', start=35.88, duration=4.26) FetchedTranscriptSnippet(text='world so till now we have covered until', start=38.1, duration=5.04) FetchedTranscriptSnippet(text='step 3.1 we will be starting with step', start=40.14, duration=5.16) FetchedTranscriptSnippet(text='3.2 and the problem that we will be', start=43.14, duration=4.259) FetchedTranscriptSnippet(text='solving in this particular video is the', start=45.3, duration=4.259) FetchedTranscriptSnippet(text='two sum problem so what does this', start=47.399, duration=3.48) FetchedTranscriptSnippet(text='particular problem State now this', start=49.559, duration=3.301) FetchedTranscriptSnippet(text='particular problem has two different', start=50.879, duration=3.84) FetchedTranscriptSnippet(text=\"varieties and I'll be covering both of\", start=52.86, duration=3.96) FetchedTranscriptSnippet(text='them the first one is very simple you', start=54.719, duration=3.721) FetchedTranscriptSnippet(text='will be given an array and the array', start=56.82, duration=3.6) FetchedTranscriptSnippet(text=\"will be containing integers and you'll\", start=58.44, duration=4.08) FetchedTranscriptSnippet(text='be given a Target value your task is to', start=60.42, duration=5.22) FetchedTranscriptSnippet(text='tell me does there exist two elements A', start=62.52, duration=5.639) FetchedTranscriptSnippet(text='and B from the array such that if you', start=65.64, duration=4.38) FetchedTranscriptSnippet(text='add them up you get this particular sum', start=68.159, duration=3.901) FetchedTranscriptSnippet(text='for an example if I give you target', start=70.02, duration=4.86) FetchedTranscriptSnippet(text='equal to 14 I can say if I pick 8 if I', start=72.06, duration=5.16) FetchedTranscriptSnippet(text='pick six six plus eight will give you', start=74.88, duration=6.419) FetchedTranscriptSnippet(text=\"14. for example if the target was 15 I'd\", start=77.22, duration=6.12) FetchedTranscriptSnippet(text=\"have said can I make 15 let's let's\", start=81.299, duration=5.761) FetchedTranscriptSnippet(text='probably check out 11 plus 2 no 6 plus 5', start=83.34, duration=6.06) FetchedTranscriptSnippet(text='No 8 plus 6 no', start=87.06, duration=4.739) FetchedTranscriptSnippet(text='I cannot find a way in which I can make', start=89.4, duration=6.359) FetchedTranscriptSnippet(text='15 so 15 is not possible 14 is possible', start=91.799, duration=6.78) FetchedTranscriptSnippet(text=\"so the answer if the target is 14 it'll\", start=95.759, duration=5.581) FetchedTranscriptSnippet(text=\"be yes that's the first variety tell me\", start=98.579, duration=5.461) FetchedTranscriptSnippet(text='yes if it is possible tell me no if it', start=101.34, duration=4.8) FetchedTranscriptSnippet(text='is not possible what is the second', start=104.04, duration=4.8) FetchedTranscriptSnippet(text='variety the second variety is slightly', start=106.14, duration=5.159) FetchedTranscriptSnippet(text='different it does tell you that Hey', start=108.84, duration=4.98) FetchedTranscriptSnippet(text=\"listen you're given a marry and we are\", start=111.299, duration=5.1) FetchedTranscriptSnippet(text='shown yes we are sure that there are two', start=113.82, duration=5.22) FetchedTranscriptSnippet(text='elements which will give you the sum 14.', start=116.399, duration=4.68) FetchedTranscriptSnippet(text=\"let's share about that your task is to\", start=119.04, duration=2.88) FetchedTranscriptSnippet(text='tell me', start=121.079, duration=3.301) FetchedTranscriptSnippet(text=\"where are these two elements so I'll be\", start=121.92, duration=5.159) FetchedTranscriptSnippet(text='like okay 8 is here 6 is here so the', start=124.38, duration=5.219) FetchedTranscriptSnippet(text='indexing is at one comma three so you', start=127.079, duration=3.781) FetchedTranscriptSnippet(text='have to return me', start=129.599, duration=4.14) FetchedTranscriptSnippet(text='both the indexes which will add up to', start=130.86, duration=5.04) FetchedTranscriptSnippet(text='give you 14 because at index 1 I have 6', start=133.739, duration=5.101) FetchedTranscriptSnippet(text='at index 3 I have eight so six plus', start=135.9, duration=5.16) FetchedTranscriptSnippet(text='eight gives you 14. your task is to', start=138.84, duration=4.44) FetchedTranscriptSnippet(text='return both the indexes instead of', start=141.06, duration=4.5) FetchedTranscriptSnippet(text='saying yes or no the first variety says', start=143.28, duration=5.16) FetchedTranscriptSnippet(text='yes or no and the second variety says', start=145.56, duration=5.759) FetchedTranscriptSnippet(text='give me both the indexes which will add', start=148.44, duration=5.4) FetchedTranscriptSnippet(text='up to give the particular Target so both', start=151.319, duration=4.321) FetchedTranscriptSnippet(text='the varieties are pretty much similar', start=153.84, duration=3.36) FetchedTranscriptSnippet(text='the only difference is you have to tell', start=155.64, duration=4.02) FetchedTranscriptSnippet(text='us which which elements are you picking', start=157.2, duration=4.619) FetchedTranscriptSnippet(text=\"up right so let's keep both the\", start=159.66, duration=3.9) FetchedTranscriptSnippet(text=\"varieties in mind and let's try to solve\", start=161.819, duration=3.481) FetchedTranscriptSnippet(text='this problem so whenever this problem', start=163.56, duration=3.42) FetchedTranscriptSnippet(text='comes up in an interview the first', start=165.3, duration=3.0) FetchedTranscriptSnippet(text='solution that you will give is', start=166.98, duration=3.3) FetchedTranscriptSnippet(text='definitely the Brute Force what is the', start=168.3, duration=3.659) FetchedTranscriptSnippet(text='Brute Force The Brute Force is very', start=170.28, duration=4.02) FetchedTranscriptSnippet(text='simple I pick up one element then I', start=171.959, duration=4.14) FetchedTranscriptSnippet(text='check with every other element does it', start=174.3, duration=3.719) FetchedTranscriptSnippet(text='sum up to give you the target then I', start=176.099, duration=3.841) FetchedTranscriptSnippet(text='pick up the next element then I check', start=178.019, duration=3.961) FetchedTranscriptSnippet(text='with all the other elements does it sum', start=179.94, duration=3.9) FetchedTranscriptSnippet(text='to give the Target and I again pick up', start=181.98, duration=3.479) FetchedTranscriptSnippet(text='the other element and I check up with', start=183.84, duration=3.66) FetchedTranscriptSnippet(text='every other element does it sum up to', start=185.459, duration=3.661) FetchedTranscriptSnippet(text='give this target then I pick up one', start=187.5, duration=2.819) FetchedTranscriptSnippet(text='other element and then I check with', start=189.12, duration=4.02) FetchedTranscriptSnippet(text=\"every other that's a simple Brute Force\", start=190.319, duration=4.801) FetchedTranscriptSnippet(text='solution so if I have to write the code', start=193.14, duration=4.2) FetchedTranscriptSnippet(text=\"can I say it'll be like for INT I equal\", start=195.12, duration=6.24) FetchedTranscriptSnippet(text='to 0 I lesser than n i plus plus and can', start=197.34, duration=8.46) FetchedTranscriptSnippet(text='I say 4 J equal to 0 J lesser than n j', start=201.36, duration=7.739) FetchedTranscriptSnippet(text='plus plus and then can I say if I is', start=205.8, duration=4.859) FetchedTranscriptSnippet(text='equal to equal to J then I will not do', start=209.099, duration=3.42) FetchedTranscriptSnippet(text=\"anything I'll just continue because we\", start=210.659, duration=3.781) FetchedTranscriptSnippet(text='cannot pick up the same elements or else', start=212.519, duration=6.781) FetchedTranscriptSnippet(text=\"I'll say if array of I plus array of J\", start=214.44, duration=8.28) FetchedTranscriptSnippet(text='is equal to equal to the Target then', start=219.3, duration=5.219) FetchedTranscriptSnippet(text=\"it's a yes\", start=222.72, duration=4.079) FetchedTranscriptSnippet(text='or if you want the indexes the indexes', start=224.519, duration=4.44) FetchedTranscriptSnippet(text='are inj so both the varieties can be', start=226.799, duration=3.961) FetchedTranscriptSnippet(text='solved by using the brute force method', start=228.959, duration=4.081) FetchedTranscriptSnippet(text='this is the yes and this is the indexes', start=230.76, duration=4.559) FetchedTranscriptSnippet(text='if you wish to so this is very simple', start=233.04, duration=4.44) FetchedTranscriptSnippet(text=\"once you've done this you can break out\", start=235.319, duration=4.861) FetchedTranscriptSnippet(text='you can return whatever you wish to do', start=237.48, duration=5.039) FetchedTranscriptSnippet(text=\"it's a very simple Brute Force solution\", start=240.18, duration=5.04) FetchedTranscriptSnippet(text='what is the time complexity n Square', start=242.519, duration=6.181) FetchedTranscriptSnippet(text='because for every for every element you', start=245.22, duration=4.62) FetchedTranscriptSnippet(text='are checking with every other element', start=248.7, duration=2.94) FetchedTranscriptSnippet(text='for every element you are checking with', start=249.84, duration=3.599) FetchedTranscriptSnippet(text='every other element so can I optimize', start=251.64, duration=3.84) FetchedTranscriptSnippet(text='them further the answer to that is yes', start=253.439, duration=4.08) FetchedTranscriptSnippet(text=\"imagine you are two you're checking with\", start=255.48, duration=4.499) FetchedTranscriptSnippet(text='six five eight eleven so 2 and 6 are', start=257.519, duration=4.261) FetchedTranscriptSnippet(text='already checked if you carefully observe', start=259.979, duration=5.28) FetchedTranscriptSnippet(text='two and six are already checked as two', start=261.78, duration=6.06) FetchedTranscriptSnippet(text='elements now when you add six', start=265.259, duration=5.641) FetchedTranscriptSnippet(text='is there a point on again checking for', start=267.84, duration=5.1) FetchedTranscriptSnippet(text='two because even if you again check for', start=270.9, duration=4.32) FetchedTranscriptSnippet(text=\"two it's like again two and six\", start=272.94, duration=4.979) FetchedTranscriptSnippet(text=\"similarly if you're at 5 is there a\", start=275.22, duration=5.1) FetchedTranscriptSnippet(text='point for checking for six so can I say', start=277.919, duration=4.381) FetchedTranscriptSnippet(text='if you are at an element you always', start=280.32, duration=4.08) FetchedTranscriptSnippet(text='start checking from the next if you are', start=282.3, duration=3.899) FetchedTranscriptSnippet(text='not six you can start from five because', start=284.4, duration=4.079) FetchedTranscriptSnippet(text='two is done if you are at five you can', start=286.199, duration=4.381) FetchedTranscriptSnippet(text='start checking from eight so what you', start=288.479, duration=4.981) FetchedTranscriptSnippet(text='can do is instead of doing 0 you can say', start=290.58, duration=5.04) FetchedTranscriptSnippet(text=\"I'll start checking from the next and\", start=293.46, duration=4.22) FetchedTranscriptSnippet(text='this line will go off so this is', start=295.62, duration=6.0) FetchedTranscriptSnippet(text='slightly lesser than n square but it is', start=297.68, duration=6.22) FetchedTranscriptSnippet(text='still near about n Square so that is the', start=301.62, duration=4.859) FetchedTranscriptSnippet(text='Brute Force solution quite simple so the', start=303.9, duration=4.079) FetchedTranscriptSnippet(text='interviewer will not be happy with the', start=306.479, duration=3.78) FetchedTranscriptSnippet(text=\"root 4 solution and it'll ask you to\", start=307.979, duration=4.621) FetchedTranscriptSnippet(text='optimize this this is when you go to the', start=310.259, duration=4.201) FetchedTranscriptSnippet(text='better solution the better solution is', start=312.6, duration=4.62) FetchedTranscriptSnippet(text='going to use hashic and what is my', start=314.46, duration=4.92) FetchedTranscriptSnippet(text=\"thought process behind it it's small\", start=317.22, duration=4.919) FetchedTranscriptSnippet(text=\"like I'm doing an N Square to kind of\", start=319.38, duration=4.74) FetchedTranscriptSnippet(text='trim it down to somewhere near about n', start=322.139, duration=4.741) FetchedTranscriptSnippet(text='or n log n or somewhere which is better', start=324.12, duration=5.16) FetchedTranscriptSnippet(text='than n Square now when I think about a', start=326.88, duration=5.4) FetchedTranscriptSnippet(text='big off n approach it tells me that', start=329.28, duration=5.94) FetchedTranscriptSnippet(text=\"means I treat on an element once that's\", start=332.28, duration=6.12) FetchedTranscriptSnippet(text='how mind brain should think I trading on', start=335.22, duration=5.28) FetchedTranscriptSnippet(text=\"an element once so if I'm eye treating\", start=338.4, duration=5.04) FetchedTranscriptSnippet(text=\"on A8 what am I looking for I'm looking\", start=340.5, duration=5.28) FetchedTranscriptSnippet(text='for one more element that gives me the', start=343.44, duration=3.18) FetchedTranscriptSnippet(text='Target', start=345.78, duration=2.759) FetchedTranscriptSnippet(text=\"simple thought process if I'm looking\", start=346.62, duration=4.98) FetchedTranscriptSnippet(text='for one more element what will it be if', start=348.539, duration=5.641) FetchedTranscriptSnippet(text=\"I'm looking for 14 if I have 8 the other\", start=351.6, duration=5.28) FetchedTranscriptSnippet(text='element will be 6 simple mathematics if', start=354.18, duration=5.4) FetchedTranscriptSnippet(text=\"I'm looking for six how do I figure this\", start=356.88, duration=6.06) FetchedTranscriptSnippet(text='out does 6 exist in the array or not so', start=359.58, duration=5.16) FetchedTranscriptSnippet(text='we say yes it does but how do you figure', start=362.94, duration=3.78) FetchedTranscriptSnippet(text='it out easily you know the technique', start=364.74, duration=3.899) FetchedTranscriptSnippet(text='hashing if you would have stored it', start=366.72, duration=4.74) FetchedTranscriptSnippet(text='somewhere that 6 is there 6 is there you', start=368.639, duration=4.981) FetchedTranscriptSnippet(text='can easily retract from it and you can', start=371.46, duration=3.9) FetchedTranscriptSnippet(text='use the map data structure which will', start=373.62, duration=4.26) FetchedTranscriptSnippet(text='tell you yes 6 is there so you can', start=375.36, duration=5.88) FetchedTranscriptSnippet(text=\"easily say with 8 I have a six that's\", start=377.88, duration=6.599) FetchedTranscriptSnippet(text=\"how you'll be using hashing got it so I\", start=381.24, duration=4.26) FetchedTranscriptSnippet(text='hope you have understood the thought', start=384.479, duration=2.821) FetchedTranscriptSnippet(text=\"process now let's do a dragon of the\", start=385.5, duration=3.66) FetchedTranscriptSnippet(text=\"algorithm so what I'll do is I'll take a\", start=387.3, duration=3.78) FetchedTranscriptSnippet(text=\"hashma and in the hash map I'll be\", start=389.16, duration=4.02) FetchedTranscriptSnippet(text='storing the array element I can say', start=391.08, duration=5.04) FetchedTranscriptSnippet(text='element and the index where the element', start=393.18, duration=4.92) FetchedTranscriptSnippet(text='will be the key where the element will', start=396.12, duration=5.28) FetchedTranscriptSnippet(text='be the key and index will be the index', start=398.1, duration=4.92) FetchedTranscriptSnippet(text='of the array this is what I will be', start=401.4, duration=3.299) FetchedTranscriptSnippet(text=\"storing in the hash file now let's\", start=403.02, duration=5.88) FetchedTranscriptSnippet(text='quickly do a trial so when we are at 2', start=404.699, duration=6.72) FetchedTranscriptSnippet(text='we will say okay we have one element', start=408.9, duration=6.359) FetchedTranscriptSnippet(text=\"dust and now I'm like okay how much like\", start=411.419, duration=6.301) FetchedTranscriptSnippet(text='what is the next number that we require', start=415.259, duration=5.401) FetchedTranscriptSnippet(text=\"that's definitely 12 because 2 plus 12\", start=417.72, duration=4.86) FetchedTranscriptSnippet(text='will give you 14 very simple you just', start=420.66, duration=3.9) FetchedTranscriptSnippet(text='take 14 and you subtract 2. so if you', start=422.58, duration=3.899) FetchedTranscriptSnippet(text=\"subtract 2 you'll get 12 it'll be like\", start=424.56, duration=4.8) FetchedTranscriptSnippet(text='okay I have to do we have 12. you look', start=426.479, duration=6.0) FetchedTranscriptSnippet(text='in the hash map and you say no I do not', start=429.36, duration=5.22) FetchedTranscriptSnippet(text='have to so if you do not have 12', start=432.479, duration=5.34) FetchedTranscriptSnippet(text='okay not possible if not possible the', start=434.58, duration=6.54) FetchedTranscriptSnippet(text='index is zero so Del 2 element with the', start=437.819, duration=5.88) FetchedTranscriptSnippet(text='index to be stored in the hash and now', start=441.12, duration=5.639) FetchedTranscriptSnippet(text='we will know okay we are six we have six', start=443.699, duration=5.22) FetchedTranscriptSnippet(text='now if we have six how much more do we', start=446.759, duration=4.861) FetchedTranscriptSnippet(text='require eight we have six do we have', start=448.919, duration=4.441) FetchedTranscriptSnippet(text='eight in the hashgraph we have eight in', start=451.62, duration=3.96) FetchedTranscriptSnippet(text='the map we we have it in the array but', start=453.36, duration=4.559) FetchedTranscriptSnippet(text='do we have it in the hashtag no so', start=455.58, duration=5.399) FetchedTranscriptSnippet(text='presently with the six there is no need', start=457.919, duration=5.761) FetchedTranscriptSnippet(text='on the left on the net there is no', start=460.979, duration=4.801) FetchedTranscriptSnippet(text='weight so if there is no weight fine', start=463.68, duration=4.2) FetchedTranscriptSnippet(text='take six and put it with the index one', start=465.78, duration=5.94) FetchedTranscriptSnippet(text='perfect next move it we have five if we', start=467.88, duration=6.0) FetchedTranscriptSnippet(text=\"have five what I will do is I'll take\", start=471.72, duration=4.44) FetchedTranscriptSnippet(text=\"five and I'll say with five how much do\", start=473.88, duration=5.099) FetchedTranscriptSnippet(text=\"you require it's like it is 14 so I\", start=476.16, duration=4.979) FetchedTranscriptSnippet(text='require nine do we have nine in the', start=478.979, duration=4.741) FetchedTranscriptSnippet(text=\"entire hashmir no so what you'll do is\", start=481.139, duration=4.261) FetchedTranscriptSnippet(text=\"you'll take five and you'll say it\", start=483.72, duration=3.84) FetchedTranscriptSnippet(text=\"appears at the index two that's what\", start=485.4, duration=3.78) FetchedTranscriptSnippet(text=\"you'll do and then you'll move to eight\", start=487.56, duration=4.199) FetchedTranscriptSnippet(text='the moment you move to a it states okay', start=489.18, duration=4.44) FetchedTranscriptSnippet(text='you have eight how much more do you', start=491.759, duration=4.021) FetchedTranscriptSnippet(text='require he says I require six I do have', start=493.62, duration=5.82) FetchedTranscriptSnippet(text='eight do I have six it states yes I have', start=495.78, duration=6.66) FetchedTranscriptSnippet(text='a six here and the six that I have', start=499.44, duration=6.06) FetchedTranscriptSnippet(text='appears at index 1 where am I currently', start=502.44, duration=5.759) FetchedTranscriptSnippet(text='at index two so if they are asking you', start=505.5, duration=5.28) FetchedTranscriptSnippet(text='yes or no you simply return a yes the', start=508.199, duration=4.681) FetchedTranscriptSnippet(text=\"moment you find it if they're asking you\", start=510.78, duration=4.8) FetchedTranscriptSnippet(text=\"to return the indexes you're like okay\", start=512.88, duration=5.039) FetchedTranscriptSnippet(text='you just leave the index system so 8', start=515.58, duration=7.139) FetchedTranscriptSnippet(text='currently is at index 3. and', start=517.919, duration=8.161) FetchedTranscriptSnippet(text='6 is at index one so three comma 1', start=522.719, duration=6.481) FetchedTranscriptSnippet(text='simple as that these are the two indexes', start=526.08, duration=5.699) FetchedTranscriptSnippet(text='they do not care about the order if they', start=529.2, duration=4.02) FetchedTranscriptSnippet(text='care about the order then you can just', start=531.779, duration=3.721) FetchedTranscriptSnippet(text='put one at the front and then three', start=533.22, duration=5.16) FetchedTranscriptSnippet(text='you can easily customize it so done once', start=535.5, duration=5.1) FetchedTranscriptSnippet(text=\"you've done you stop the iteration and\", start=538.38, duration=4.44) FetchedTranscriptSnippet(text='if you have completed the iteration and', start=540.6, duration=5.76) FetchedTranscriptSnippet(text='you do not find any existence where you', start=542.82, duration=5.4) FetchedTranscriptSnippet(text='would have got two elements then you', start=546.36, duration=4.919) FetchedTranscriptSnippet(text=\"return no very simple so let's quickly\", start=548.22, duration=4.92) FetchedTranscriptSnippet(text='quote the better solution by the way the', start=551.279, duration=3.24) FetchedTranscriptSnippet(text='problem link will be in the description', start=553.14, duration=4.379) FetchedTranscriptSnippet(text=\"so we need a map so let's take a map at\", start=554.519, duration=5.401) FetchedTranscriptSnippet(text='first and then we will be simply going', start=557.519, duration=4.801) FetchedTranscriptSnippet(text='across this one', start=559.92, duration=5.16) FetchedTranscriptSnippet(text='can I say my first element is', start=562.32, duration=4.079) FetchedTranscriptSnippet(text='this', start=565.08, duration=3.72) FetchedTranscriptSnippet(text='how much more do I require can I say I', start=566.399, duration=4.681) FetchedTranscriptSnippet(text='require more as Target', start=568.8, duration=4.62) FetchedTranscriptSnippet(text='minus a can I see if I have to look in', start=571.08, duration=5.4) FetchedTranscriptSnippet(text='the map as a matplot find more are you', start=573.42, duration=4.68) FetchedTranscriptSnippet(text=\"there in the map if you're in the map\", start=576.48, duration=2.82) FetchedTranscriptSnippet(text='then you will not be pointing to the', start=578.1, duration=3.78) FetchedTranscriptSnippet(text=\"last straighten if that's the case\", start=579.3, duration=6.02) FetchedTranscriptSnippet(text='we will be returning yes', start=581.88, duration=3.44) FetchedTranscriptSnippet(text='or else', start=586.82, duration=4.24) FetchedTranscriptSnippet(text='you just keep on going and if you keep', start=589.019, duration=3.781) FetchedTranscriptSnippet(text='on going what will you do you will say', start=591.06, duration=2.94) FetchedTranscriptSnippet(text='NPP', start=592.8, duration=5.28) FetchedTranscriptSnippet(text='map of this particular guy who is this', start=594.0, duration=6.779) FetchedTranscriptSnippet(text='number and is this Market at the index', start=598.08, duration=5.16) FetchedTranscriptSnippet(text=\"that's it and if after the complete\", start=600.779, duration=4.441) FetchedTranscriptSnippet(text='iteration you never found it you return', start=603.24, duration=5.539) FetchedTranscriptSnippet(text='a quite simple if they wanted the index', start=605.22, duration=6.36) FetchedTranscriptSnippet(text='instead of this you can easily write', start=608.779, duration=5.261) FetchedTranscriptSnippet(text='return okay what are the indexes they', start=611.58, duration=5.46) FetchedTranscriptSnippet(text='need the smaller one at first more and', start=614.04, duration=5.52) FetchedTranscriptSnippet(text='then XI quite simple if they need the', start=617.04, duration=6.0) FetchedTranscriptSnippet(text='index this is how you return if they', start=619.56, duration=6.899) FetchedTranscriptSnippet(text='need yes or no this is how you do so in', start=623.04, duration=4.799) FetchedTranscriptSnippet(text='this way you can solve both the', start=626.459, duration=2.461) FetchedTranscriptSnippet(text='varieties', start=627.839, duration=3.0) FetchedTranscriptSnippet(text='so for the variety 2 you can try the', start=628.92, duration=4.2) FetchedTranscriptSnippet(text='hashing solution only code and then you', start=630.839, duration=5.161) FetchedTranscriptSnippet(text='can quickly go and run this and it', start=633.12, duration=4.86) FetchedTranscriptSnippet(text='should be running on lead code AS so', start=636.0, duration=4.2) FetchedTranscriptSnippet(text=\"well let's quickly submit this as well\", start=637.98, duration=4.919) FetchedTranscriptSnippet(text='cool it last one okay so what is the', start=640.2, duration=4.98) FetchedTranscriptSnippet(text=\"time complexity of such an approach it's\", start=642.899, duration=5.701) FetchedTranscriptSnippet(text=\"very simple it's big bro of N I can say\", start=645.18, duration=6.24) FetchedTranscriptSnippet(text=\"n if you're assuming the map to work in\", start=648.6, duration=5.1) FetchedTranscriptSnippet(text='B go of one if the map Works in', start=651.42, duration=4.859) FetchedTranscriptSnippet(text='logarithmic profit in its login depends', start=653.7, duration=4.379) FetchedTranscriptSnippet(text='on which map you take I have already', start=656.279, duration=3.361) FetchedTranscriptSnippet(text='discussed then in time complexity', start=658.079, duration=3.481) FetchedTranscriptSnippet(text='lecture you can go over there and watch', start=659.64, duration=4.8) FetchedTranscriptSnippet(text='this is when we take a map and we go of', start=661.56, duration=5.519) FetchedTranscriptSnippet(text='n when we take an unordered map in the', start=664.44, duration=4.74) FetchedTranscriptSnippet(text='best and average case in the worst case', start=667.079, duration=5.76) FetchedTranscriptSnippet(text='of unordered map it can go up to Pico of', start=669.18, duration=6.599) FetchedTranscriptSnippet(text='n Square the complexity because find', start=672.839, duration=5.761) FetchedTranscriptSnippet(text='takes we go of n in the worst case in', start=675.779, duration=5.881) FetchedTranscriptSnippet(text=\"another got it what about this piece I'm\", start=678.6, duration=5.34) FetchedTranscriptSnippet(text='using a hash map where we are dumping', start=681.66, duration=4.14) FetchedTranscriptSnippet(text='every element every element and if', start=683.94, duration=3.839) FetchedTranscriptSnippet(text=\"you're dumping every element we know\", start=685.8, duration=4.02) FetchedTranscriptSnippet(text=\"it's going to show everything so it's a\", start=687.779, duration=3.721) FetchedTranscriptSnippet(text='big go off and I hope you have', start=689.82, duration=3.84) FetchedTranscriptSnippet(text='understood this now at this moment a lot', start=691.5, duration=4.019) FetchedTranscriptSnippet(text='of interviews might not drill you more', start=693.66, duration=4.38) FetchedTranscriptSnippet(text='because the better solution is taking an', start=695.519, duration=4.5) FetchedTranscriptSnippet(text='N login approach which is exactly', start=698.04, duration=4.2) FetchedTranscriptSnippet(text='similar to the optimal approach the only', start=700.019, duration=4.38) FetchedTranscriptSnippet(text='thing that they can review is they might', start=702.24, duration=4.02) FetchedTranscriptSnippet(text=\"ask you hey you're not allowed to use\", start=704.399, duration=3.661) FetchedTranscriptSnippet(text='the map data structure can you solve', start=706.26, duration=3.24) FetchedTranscriptSnippet(text='this without using the map data', start=708.06, duration=3.18) FetchedTranscriptSnippet(text=\"structure this is where you'll be like\", start=709.5, duration=4.68) FetchedTranscriptSnippet(text='okay maybe I have a slightly better', start=711.24, duration=4.86) FetchedTranscriptSnippet(text='solution not much slightly better', start=714.18, duration=4.44) FetchedTranscriptSnippet(text='solution and that solution will be using', start=716.1, duration=4.979) FetchedTranscriptSnippet(text=\"two pointer approach it's a very simple\", start=718.62, duration=5.1) FetchedTranscriptSnippet(text='one so there is no particular thought', start=721.079, duration=4.521) FetchedTranscriptSnippet(text=\"process we added it's a very very simple\", start=723.72, duration=5.04) FetchedTranscriptSnippet(text='greedy approach greedy approach so if I', start=725.6, duration=5.859) FetchedTranscriptSnippet(text=\"sort the array what will I get I'll get\", start=728.76, duration=8.1) FetchedTranscriptSnippet(text='something like 2 5 6. 8 11 what is the', start=731.459, duration=8.101) FetchedTranscriptSnippet(text=\"Target that I'm looking for 14. now I'm\", start=736.86, duration=4.86) FetchedTranscriptSnippet(text='looking I will apply a greedy approach', start=739.56, duration=4.38) FetchedTranscriptSnippet(text=\"so what I will do is I'll keep a left\", start=741.72, duration=4.679) FetchedTranscriptSnippet(text=\"pointer at 2 I'll keep a right pointer\", start=743.94, duration=5.04) FetchedTranscriptSnippet(text=\"at a level that's what I do left pointer\", start=746.399, duration=5.581) FetchedTranscriptSnippet(text=\"at 2 and a right pointer at 11. now I'll\", start=748.98, duration=5.88) FetchedTranscriptSnippet(text='be like okay fine what do we have 2 plus', start=751.98, duration=6.66) FetchedTranscriptSnippet(text=\"11 that's giving me 14. no it is 4 it is\", start=754.86, duration=6.06) FetchedTranscriptSnippet(text=\"not how much is it giving me it's giving\", start=758.64, duration=6.36) FetchedTranscriptSnippet(text='me 13. one shot where one shot now since', start=760.92, duration=6.599) FetchedTranscriptSnippet(text='the array is sorted if you move to this', start=765.0, duration=5.639) FetchedTranscriptSnippet(text='portion this will be 8 and 2 plus 8 will', start=767.519, duration=5.641) FetchedTranscriptSnippet(text='give you ten see you will not reach the', start=770.639, duration=5.161) FetchedTranscriptSnippet(text='packet so what will you do since this is', start=773.16, duration=5.4) FetchedTranscriptSnippet(text='13 and you want to reach 14 you have to', start=775.8, duration=4.86) FetchedTranscriptSnippet(text='do increment if you if you have to do', start=778.56, duration=3.36) FetchedTranscriptSnippet(text='increment', start=780.66, duration=3.9) FetchedTranscriptSnippet(text='in which direction is the increment if', start=781.92, duration=4.8) FetchedTranscriptSnippet(text='you move in this direction then 2 will', start=784.56, duration=3.959) FetchedTranscriptSnippet(text='increase so you have to increase the', start=786.72, duration=4.26) FetchedTranscriptSnippet(text='value if you move on left 11 will', start=788.519, duration=4.681) FetchedTranscriptSnippet(text='decrease so this is why I sorted the', start=790.98, duration=4.44) FetchedTranscriptSnippet(text=\"array so what I'll do is I'll just take\", start=793.2, duration=3.6) FetchedTranscriptSnippet(text=\"the left pointer and I'll move it to\", start=795.42, duration=4.56) FetchedTranscriptSnippet(text='files this is now five on five what do', start=796.8, duration=7.5) FetchedTranscriptSnippet(text=\"you get 11 plus 5 is 16 I'm like ah this\", start=799.98, duration=6.419) FetchedTranscriptSnippet(text='is more than 40 this is more than 14.', start=804.3, duration=5.4) FetchedTranscriptSnippet(text=\"I'm like okay more than 14 reduce I know\", start=806.399, duration=5.581) FetchedTranscriptSnippet(text=\"if I move left then I'll reduce so I'll\", start=809.7, duration=4.079) FetchedTranscriptSnippet(text='just move over here', start=811.98, duration=4.2) FetchedTranscriptSnippet(text='now what is the value to stand five plus', start=813.779, duration=6.06) FetchedTranscriptSnippet(text='eight how much again do I get 13 5 plus', start=816.18, duration=6.36) FetchedTranscriptSnippet(text='8 is 13 okay again', start=819.839, duration=6.06) FetchedTranscriptSnippet(text='you have to increase so you move', start=822.54, duration=6.06) FetchedTranscriptSnippet(text='so when you move what will you get you', start=825.899, duration=6.901) FetchedTranscriptSnippet(text=\"will get 6 and you'll get 6 Plus 8 14\", start=828.6, duration=7.859) FetchedTranscriptSnippet(text='and you can say yes I was able to but if', start=832.8, duration=7.2) FetchedTranscriptSnippet(text='at any moment left and right cross cross', start=836.459, duration=6.541) FetchedTranscriptSnippet(text='and you did not find two elements which', start=840.0, duration=5.22) FetchedTranscriptSnippet(text='add up to give you the target the answer', start=843.0, duration=4.079) FetchedTranscriptSnippet(text='will be no you might be thinking but', start=845.22, duration=4.859) FetchedTranscriptSnippet(text='Strava this is solving the variety one', start=847.079, duration=4.981) FetchedTranscriptSnippet(text='how can I solve the variety too because', start=850.079, duration=4.981) FetchedTranscriptSnippet(text='the Variety Tool tells me to give me the', start=852.06, duration=7.62) FetchedTranscriptSnippet(text='index in that case you have to put it in', start=855.06, duration=7.079) FetchedTranscriptSnippet(text='some other data structure and you have', start=859.68, duration=5.04) FetchedTranscriptSnippet(text='to put it like 2 comma zero', start=862.139, duration=7.38) FetchedTranscriptSnippet(text='six comma 1 5 comma 2 8 comma three', start=864.72, duration=6.72) FetchedTranscriptSnippet(text='eleven comma four', start=869.519, duration=3.301) FetchedTranscriptSnippet(text='so you have to put along with the', start=871.44, duration=3.66) FetchedTranscriptSnippet(text='indexes into some data structure then', start=872.82, duration=4.5) FetchedTranscriptSnippet(text='you have to sort it so that along with', start=875.1, duration=3.9) FetchedTranscriptSnippet(text='two you will always have zero along with', start=877.32, duration=3.66) FetchedTranscriptSnippet(text=\"five you'll always have to along with 6\", start=879.0, duration=3.899) FetchedTranscriptSnippet(text=\"you'll always have one along with eight\", start=880.98, duration=3.78) FetchedTranscriptSnippet(text=\"you'll always have three along with 11\", start=882.899, duration=3.781) FetchedTranscriptSnippet(text='you will always have four so that the', start=884.76, duration=4.68) FetchedTranscriptSnippet(text='indexes are preserved but again this is', start=886.68, duration=5.279) FetchedTranscriptSnippet(text='not an optimal approach for the variety', start=889.44, duration=5.459) FetchedTranscriptSnippet(text='too because you will be ending up using', start=891.959, duration=5.82) FetchedTranscriptSnippet(text='like more space because using a data', start=894.899, duration=4.74) FetchedTranscriptSnippet(text='structure of n cross 2 because you have', start=897.779, duration=3.541) FetchedTranscriptSnippet(text='to store it in some other data structure', start=899.639, duration=3.721) FetchedTranscriptSnippet(text=\"then you have to sort it so it's not an\", start=901.32, duration=4.5) FetchedTranscriptSnippet(text='optimal solution for the variety too for', start=903.36, duration=4.14) FetchedTranscriptSnippet(text='the variety one where you just have to', start=905.82, duration=5.04) FetchedTranscriptSnippet(text='tell me yes or no I can use this because', start=907.5, duration=5.459) FetchedTranscriptSnippet(text='we are no more using a map data', start=910.86, duration=4.32) FetchedTranscriptSnippet(text=\"structure we're just using sorting and\", start=912.959, duration=3.841) FetchedTranscriptSnippet(text='then we are using a traversal in order', start=915.18, duration=4.14) FetchedTranscriptSnippet(text=\"to find it so let's jump into the editor\", start=916.8, duration=3.839) FetchedTranscriptSnippet(text='and try to code this up again the', start=919.32, duration=2.519) FetchedTranscriptSnippet(text='problem link will be in the description', start=920.639, duration=3.481) FetchedTranscriptSnippet(text='so you can keep the left pointer as 0', start=921.839, duration=3.541) FetchedTranscriptSnippet(text='and the right pointer the last index', start=924.12, duration=3.24) FetchedTranscriptSnippet(text=\"which is n minus 1 what's the first step\", start=925.38, duration=5.28) FetchedTranscriptSnippet(text=\"yes you go ahead and say I'm gonna sort\", start=927.36, duration=5.4) FetchedTranscriptSnippet(text='it so you can use the Sorting function', start=930.66, duration=5.039) FetchedTranscriptSnippet(text='again the Java Port will be in the', start=932.76, duration=5.1) FetchedTranscriptSnippet(text='description and now what I can do is I', start=935.699, duration=5.7) FetchedTranscriptSnippet(text='can run the while loop so while left', start=937.86, duration=6.36) FetchedTranscriptSnippet(text='like this and I can go ahead and say Hey', start=941.399, duration=5.821) FetchedTranscriptSnippet(text='listen I need the sound so sum has to be', start=944.22, duration=7.679) FetchedTranscriptSnippet(text='book of left plus book of right this is', start=947.22, duration=6.78) FetchedTranscriptSnippet(text='very short first thing I know is if', start=951.899, duration=3.361) FetchedTranscriptSnippet(text='someone is Target', start=954.0, duration=3.12) FetchedTranscriptSnippet(text='then we are going to say hey I got my', start=955.26, duration=4.199) FetchedTranscriptSnippet(text=\"answer I don't care about you else if\", start=957.12, duration=4.32) FetchedTranscriptSnippet(text=\"you're gonna say if sum is lesser than\", start=959.459, duration=5.041) FetchedTranscriptSnippet(text=\"Target I'll be like hey increase so from\", start=961.44, duration=5.399) FetchedTranscriptSnippet(text='the left else decrease if the sum is', start=964.5, duration=4.38) FetchedTranscriptSnippet(text='greater at the end of the day I can say', start=966.839, duration=5.581) FetchedTranscriptSnippet(text='return no and also make sure after you', start=968.88, duration=4.68) FetchedTranscriptSnippet(text='have done this', start=972.42, duration=3.0) FetchedTranscriptSnippet(text='you need to do', start=973.56, duration=3.839) FetchedTranscriptSnippet(text=\"or you don't need to Hash up yeah this\", start=975.42, duration=4.44) FetchedTranscriptSnippet(text='is how you can easily do it and now we', start=977.399, duration=4.38) FetchedTranscriptSnippet(text='even quickly go and run this and see if', start=979.86, duration=3.719) FetchedTranscriptSnippet(text=\"it is running fine it is let's quickly\", start=981.779, duration=3.961) FetchedTranscriptSnippet(text='submit this what is the time complexity', start=983.579, duration=4.38) FetchedTranscriptSnippet(text='if I have to analyze I can say the time', start=985.74, duration=4.2) FetchedTranscriptSnippet(text='complexity is very simple since we are', start=987.959, duration=3.601) FetchedTranscriptSnippet(text='moving from the left and the right and', start=989.94, duration=3.66) FetchedTranscriptSnippet(text='covering the Dan array the time', start=991.56, duration=5.94) FetchedTranscriptSnippet(text=\"complexity is B go of n because they're\", start=993.6, duration=5.52) FetchedTranscriptSnippet(text=\"moving from the left they're moving from\", start=997.5, duration=3.66) FetchedTranscriptSnippet(text='the right so the worst case', start=999.12, duration=3.779) FetchedTranscriptSnippet(text='it might end up getting to the last', start=1001.16, duration=3.96) FetchedTranscriptSnippet(text='Point as you saw we went here we went', start=1002.899, duration=4.081) FetchedTranscriptSnippet(text='here so we covered this much we covered', start=1005.12, duration=4.68) FetchedTranscriptSnippet(text='this much the time complexity distance', start=1006.98, duration=5.52) FetchedTranscriptSnippet(text='surely is because of n plus another Big', start=1009.8, duration=5.219) FetchedTranscriptSnippet(text='O of n log n for sorting so what about', start=1012.5, duration=4.38) FetchedTranscriptSnippet(text=\"so what about the space complexity I'm\", start=1015.019, duration=4.32) FetchedTranscriptSnippet(text='not using any extra space so B go off', start=1016.88, duration=4.259) FetchedTranscriptSnippet(text='one yeah the interviewer might argue', start=1019.339, duration=3.481) FetchedTranscriptSnippet(text='that the you are changing the array', start=1021.139, duration=3.42) FetchedTranscriptSnippet(text=\"you're like yeah I'm changing the array\", start=1022.82, duration=4.92) FetchedTranscriptSnippet(text='so if he has to like take into account', start=1024.559, duration=5.28) FetchedTranscriptSnippet(text='the space complexity of the array', start=1027.74, duration=4.02) FetchedTranscriptSnippet(text='because you have changed it then it will', start=1029.839, duration=4.801) FetchedTranscriptSnippet(text='become big of n so you can clearly tell', start=1031.76, duration=4.919) FetchedTranscriptSnippet(text=\"them I'm not using anything extra but\", start=1034.64, duration=3.779) FetchedTranscriptSnippet(text=\"I'm distorting so if you want to\", start=1036.679, duration=3.541) FetchedTranscriptSnippet(text='consider if you want to consider that', start=1038.419, duration=3.78) FetchedTranscriptSnippet(text='distorted and a space complexity well', start=1040.22, duration=4.02) FetchedTranscriptSnippet(text=\"and good it's very often if you don't\", start=1042.199, duration=3.961) FetchedTranscriptSnippet(text=\"want to consider it speak of one it's\", start=1044.24, duration=3.839) FetchedTranscriptSnippet(text='something which is very theoretical and', start=1046.16, duration=3.36) FetchedTranscriptSnippet(text='you can always explain that to the', start=1048.079, duration=5.34) FetchedTranscriptSnippet(text='interview again this for variety 2 I lot', start=1049.52, duration=6.84) FetchedTranscriptSnippet(text='prefer this for variety 2 the better is', start=1053.419, duration=7.021) FetchedTranscriptSnippet(text='the most optimal one for variety one you', start=1056.36, duration=5.88) FetchedTranscriptSnippet(text='can sort it and then use it so coming', start=1060.44, duration=3.599) FetchedTranscriptSnippet(text='back to the sheeta I can say this is', start=1062.24, duration=3.48) FetchedTranscriptSnippet(text='done if you need the C plus plus Java', start=1064.039, duration=2.941) FetchedTranscriptSnippet(text='and python code for all the three', start=1065.72, duration=3.24) FetchedTranscriptSnippet(text='approaches there is a link in the', start=1066.98, duration=3.84) FetchedTranscriptSnippet(text='description you can check it out and yes', start=1068.96, duration=3.599) FetchedTranscriptSnippet(text='uh to continue our tradition please do', start=1070.82, duration=4.14) FetchedTranscriptSnippet(text='comment understood read the video and if', start=1072.559, duration=4.081) FetchedTranscriptSnippet(text=\"you're new to our Channel please please\", start=1074.96, duration=4.2) FetchedTranscriptSnippet(text='do consider subscribing to us because', start=1076.64, duration=4.98) FetchedTranscriptSnippet(text='that does motivate me to make such kind', start=1079.16, duration=4.32) FetchedTranscriptSnippet(text=\"of content and if you haven't followed\", start=1081.62, duration=4.26) FetchedTranscriptSnippet(text='me on Instagram Twitter LinkedIn the', start=1083.48, duration=3.78) FetchedTranscriptSnippet(text='links will be in the description please', start=1085.88, duration=3.06) FetchedTranscriptSnippet(text=\"do follow me and here with this I'll be\", start=1087.26, duration=3.06) FetchedTranscriptSnippet(text=\"wrapping up this video let's put in some\", start=1088.94, duration=3.68) FetchedTranscriptSnippet(text='other videos', start=1090.32, duration=2.3) FetchedTranscriptSnippet(text=\"don't ever forget your golden\", start=1094.66, duration=7.08) FetchedTranscriptSnippet(text='I will find the light in', start=1098.299, duration=3.441)",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hey everyone welcome back to the channel', start=3.0, duration=3.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I hope you guys are doing extremely well', start=4.5, duration=3.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so this is another video from the', start=6.06, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='stripers A to Z DSA course just in case', start=7.68, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're for the first time here this is\", start=10.139, duration=3.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"world's most in-depth course in DSL go\", start=11.34, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='why do I see that because in this course', start=13.259, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I will be covering four 56 modules by', start=15.12, duration=4.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the end of the course we would have sort', start=17.699, duration=4.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"400 plus problems and yes I'll go you\", start=19.279, duration=4.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can go across the entire internet you', start=22.14, duration=3.54)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can buy any of the paid courses none of', start=23.52, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='them will be teaching DS algo in such', start=25.68, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='step so something that I can give you as', start=27.9, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a guarantee is once you complete this', start=29.82, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='entire post you can track any of the DS', start=31.74, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='algo routes at any of the interviews at', start=34.02, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='any of the companies in any part of the', start=35.88, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='world so till now we have covered until', start=38.1, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='step 3.1 we will be starting with step', start=40.14, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3.2 and the problem that we will be', start=43.14, duration=4.259)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solving in this particular video is the', start=45.3, duration=4.259)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two sum problem so what does this', start=47.399, duration=3.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='particular problem State now this', start=49.559, duration=3.301)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='particular problem has two different', start=50.879, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"varieties and I'll be covering both of\", start=52.86, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='them the first one is very simple you', start=54.719, duration=3.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will be given an array and the array', start=56.82, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"will be containing integers and you'll\", start=58.44, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='be given a Target value your task is to', start=60.42, duration=5.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='tell me does there exist two elements A', start=62.52, duration=5.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and B from the array such that if you', start=65.64, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='add them up you get this particular sum', start=68.159, duration=3.901)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for an example if I give you target', start=70.02, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='equal to 14 I can say if I pick 8 if I', start=72.06, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='pick six six plus eight will give you', start=74.88, duration=6.419)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"14. for example if the target was 15 I'd\", start=77.22, duration=6.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"have said can I make 15 let's let's\", start=81.299, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='probably check out 11 plus 2 no 6 plus 5', start=83.34, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='No 8 plus 6 no', start=87.06, duration=4.739)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I cannot find a way in which I can make', start=89.4, duration=6.359)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='15 so 15 is not possible 14 is possible', start=91.799, duration=6.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so the answer if the target is 14 it'll\", start=95.759, duration=5.581)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"be yes that's the first variety tell me\", start=98.579, duration=5.461)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='yes if it is possible tell me no if it', start=101.34, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is not possible what is the second', start=104.04, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='variety the second variety is slightly', start=106.14, duration=5.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='different it does tell you that Hey', start=108.84, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"listen you're given a marry and we are\", start=111.299, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='shown yes we are sure that there are two', start=113.82, duration=5.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='elements which will give you the sum 14.', start=116.399, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"let's share about that your task is to\", start=119.04, duration=2.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='tell me', start=121.079, duration=3.301)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"where are these two elements so I'll be\", start=121.92, duration=5.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='like okay 8 is here 6 is here so the', start=124.38, duration=5.219)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='indexing is at one comma three so you', start=127.079, duration=3.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have to return me', start=129.599, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='both the indexes which will add up to', start=130.86, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give you 14 because at index 1 I have 6', start=133.739, duration=5.101)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='at index 3 I have eight so six plus', start=135.9, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='eight gives you 14. your task is to', start=138.84, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return both the indexes instead of', start=141.06, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='saying yes or no the first variety says', start=143.28, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='yes or no and the second variety says', start=145.56, duration=5.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give me both the indexes which will add', start=148.44, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='up to give the particular Target so both', start=151.319, duration=4.321)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the varieties are pretty much similar', start=153.84, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the only difference is you have to tell', start=155.64, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='us which which elements are you picking', start=157.2, duration=4.619)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"up right so let's keep both the\", start=159.66, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"varieties in mind and let's try to solve\", start=161.819, duration=3.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this problem so whenever this problem', start=163.56, duration=3.42)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='comes up in an interview the first', start=165.3, duration=3.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solution that you will give is', start=166.98, duration=3.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='definitely the Brute Force what is the', start=168.3, duration=3.659)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Brute Force The Brute Force is very', start=170.28, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='simple I pick up one element then I', start=171.959, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='check with every other element does it', start=174.3, duration=3.719)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum up to give you the target then I', start=176.099, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='pick up the next element then I check', start=178.019, duration=3.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='with all the other elements does it sum', start=179.94, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to give the Target and I again pick up', start=181.98, duration=3.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the other element and I check up with', start=183.84, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='every other element does it sum up to', start=185.459, duration=3.661)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give this target then I pick up one', start=187.5, duration=2.819)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='other element and then I check with', start=189.12, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"every other that's a simple Brute Force\", start=190.319, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solution so if I have to write the code', start=193.14, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"can I say it'll be like for INT I equal\", start=195.12, duration=6.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to 0 I lesser than n i plus plus and can', start=197.34, duration=8.46)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I say 4 J equal to 0 J lesser than n j', start=201.36, duration=7.739)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus plus and then can I say if I is', start=205.8, duration=4.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='equal to equal to J then I will not do', start=209.099, duration=3.42)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"anything I'll just continue because we\", start=210.659, duration=3.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='cannot pick up the same elements or else', start=212.519, duration=6.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'll say if array of I plus array of J\", start=214.44, duration=8.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is equal to equal to the Target then', start=219.3, duration=5.219)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's a yes\", start=222.72, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or if you want the indexes the indexes', start=224.519, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='are inj so both the varieties can be', start=226.799, duration=3.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solved by using the brute force method', start=228.959, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is the yes and this is the indexes', start=230.76, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if you wish to so this is very simple', start=233.04, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"once you've done this you can break out\", start=235.319, duration=4.861)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you can return whatever you wish to do', start=237.48, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's a very simple Brute Force solution\", start=240.18, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='what is the time complexity n Square', start=242.519, duration=6.181)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='because for every for every element you', start=245.22, duration=4.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='are checking with every other element', start=248.7, duration=2.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for every element you are checking with', start=249.84, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='every other element so can I optimize', start=251.64, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='them further the answer to that is yes', start=253.439, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"imagine you are two you're checking with\", start=255.48, duration=4.499)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='six five eight eleven so 2 and 6 are', start=257.519, duration=4.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='already checked if you carefully observe', start=259.979, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two and six are already checked as two', start=261.78, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='elements now when you add six', start=265.259, duration=5.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is there a point on again checking for', start=267.84, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two because even if you again check for', start=270.9, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"two it's like again two and six\", start=272.94, duration=4.979)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"similarly if you're at 5 is there a\", start=275.22, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='point for checking for six so can I say', start=277.919, duration=4.381)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if you are at an element you always', start=280.32, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='start checking from the next if you are', start=282.3, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='not six you can start from five because', start=284.4, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two is done if you are at five you can', start=286.199, duration=4.381)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='start checking from eight so what you', start=288.479, duration=4.981)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can do is instead of doing 0 you can say', start=290.58, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'll start checking from the next and\", start=293.46, duration=4.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this line will go off so this is', start=295.62, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='slightly lesser than n square but it is', start=297.68, duration=6.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='still near about n Square so that is the', start=301.62, duration=4.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Brute Force solution quite simple so the', start=303.9, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='interviewer will not be happy with the', start=306.479, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"root 4 solution and it'll ask you to\", start=307.979, duration=4.621)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='optimize this this is when you go to the', start=310.259, duration=4.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='better solution the better solution is', start=312.6, duration=4.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='going to use hashic and what is my', start=314.46, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"thought process behind it it's small\", start=317.22, duration=4.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"like I'm doing an N Square to kind of\", start=319.38, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='trim it down to somewhere near about n', start=322.139, duration=4.741)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or n log n or somewhere which is better', start=324.12, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='than n Square now when I think about a', start=326.88, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='big off n approach it tells me that', start=329.28, duration=5.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"means I treat on an element once that's\", start=332.28, duration=6.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how mind brain should think I trading on', start=335.22, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"an element once so if I'm eye treating\", start=338.4, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"on A8 what am I looking for I'm looking\", start=340.5, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for one more element that gives me the', start=343.44, duration=3.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Target', start=345.78, duration=2.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"simple thought process if I'm looking\", start=346.62, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for one more element what will it be if', start=348.539, duration=5.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'm looking for 14 if I have 8 the other\", start=351.6, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='element will be 6 simple mathematics if', start=354.18, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'm looking for six how do I figure this\", start=356.88, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='out does 6 exist in the array or not so', start=359.58, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we say yes it does but how do you figure', start=362.94, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it out easily you know the technique', start=364.74, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hashing if you would have stored it', start=366.72, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='somewhere that 6 is there 6 is there you', start=368.639, duration=4.981)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can easily retract from it and you can', start=371.46, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='use the map data structure which will', start=373.62, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='tell you yes 6 is there so you can', start=375.36, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"easily say with 8 I have a six that's\", start=377.88, duration=6.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"how you'll be using hashing got it so I\", start=381.24, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hope you have understood the thought', start=384.479, duration=2.821)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"process now let's do a dragon of the\", start=385.5, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"algorithm so what I'll do is I'll take a\", start=387.3, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"hashma and in the hash map I'll be\", start=389.16, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='storing the array element I can say', start=391.08, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='element and the index where the element', start=393.18, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will be the key where the element will', start=396.12, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='be the key and index will be the index', start=398.1, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of the array this is what I will be', start=401.4, duration=3.299)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"storing in the hash file now let's\", start=403.02, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='quickly do a trial so when we are at 2', start=404.699, duration=6.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we will say okay we have one element', start=408.9, duration=6.359)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"dust and now I'm like okay how much like\", start=411.419, duration=6.301)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='what is the next number that we require', start=415.259, duration=5.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that's definitely 12 because 2 plus 12\", start=417.72, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will give you 14 very simple you just', start=420.66, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='take 14 and you subtract 2. so if you', start=422.58, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"subtract 2 you'll get 12 it'll be like\", start=424.56, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='okay I have to do we have 12. you look', start=426.479, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in the hash map and you say no I do not', start=429.36, duration=5.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have to so if you do not have 12', start=432.479, duration=5.34)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='okay not possible if not possible the', start=434.58, duration=6.54)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='index is zero so Del 2 element with the', start=437.819, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='index to be stored in the hash and now', start=441.12, duration=5.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we will know okay we are six we have six', start=443.699, duration=5.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now if we have six how much more do we', start=446.759, duration=4.861)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='require eight we have six do we have', start=448.919, duration=4.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='eight in the hashgraph we have eight in', start=451.62, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the map we we have it in the array but', start=453.36, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='do we have it in the hashtag no so', start=455.58, duration=5.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='presently with the six there is no need', start=457.919, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='on the left on the net there is no', start=460.979, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='weight so if there is no weight fine', start=463.68, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='take six and put it with the index one', start=465.78, duration=5.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='perfect next move it we have five if we', start=467.88, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"have five what I will do is I'll take\", start=471.72, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"five and I'll say with five how much do\", start=473.88, duration=5.099)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you require it's like it is 14 so I\", start=476.16, duration=4.979)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='require nine do we have nine in the', start=478.979, duration=4.741)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"entire hashmir no so what you'll do is\", start=481.139, duration=4.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll take five and you'll say it\", start=483.72, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"appears at the index two that's what\", start=485.4, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll do and then you'll move to eight\", start=487.56, duration=4.199)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the moment you move to a it states okay', start=489.18, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you have eight how much more do you', start=491.759, duration=4.021)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='require he says I require six I do have', start=493.62, duration=5.82)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='eight do I have six it states yes I have', start=495.78, duration=6.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a six here and the six that I have', start=499.44, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='appears at index 1 where am I currently', start=502.44, duration=5.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='at index two so if they are asking you', start=505.5, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='yes or no you simply return a yes the', start=508.199, duration=4.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"moment you find it if they're asking you\", start=510.78, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"to return the indexes you're like okay\", start=512.88, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you just leave the index system so 8', start=515.58, duration=7.139)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='currently is at index 3. and', start=517.919, duration=8.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='6 is at index one so three comma 1', start=522.719, duration=6.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='simple as that these are the two indexes', start=526.08, duration=5.699)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='they do not care about the order if they', start=529.2, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='care about the order then you can just', start=531.779, duration=3.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='put one at the front and then three', start=533.22, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you can easily customize it so done once', start=535.5, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you've done you stop the iteration and\", start=538.38, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if you have completed the iteration and', start=540.6, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you do not find any existence where you', start=542.82, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='would have got two elements then you', start=546.36, duration=4.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"return no very simple so let's quickly\", start=548.22, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='quote the better solution by the way the', start=551.279, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='problem link will be in the description', start=553.14, duration=4.379)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so we need a map so let's take a map at\", start=554.519, duration=5.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='first and then we will be simply going', start=557.519, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='across this one', start=559.92, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can I say my first element is', start=562.32, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this', start=565.08, duration=3.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how much more do I require can I say I', start=566.399, duration=4.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='require more as Target', start=568.8, duration=4.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='minus a can I see if I have to look in', start=571.08, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the map as a matplot find more are you', start=573.42, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"there in the map if you're in the map\", start=576.48, duration=2.82)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then you will not be pointing to the', start=578.1, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"last straighten if that's the case\", start=579.3, duration=6.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we will be returning yes', start=581.88, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or else', start=586.82, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you just keep on going and if you keep', start=589.019, duration=3.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='on going what will you do you will say', start=591.06, duration=2.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='NPP', start=592.8, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='map of this particular guy who is this', start=594.0, duration=6.779)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='number and is this Market at the index', start=598.08, duration=5.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that's it and if after the complete\", start=600.779, duration=4.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='iteration you never found it you return', start=603.24, duration=5.539)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a quite simple if they wanted the index', start=605.22, duration=6.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='instead of this you can easily write', start=608.779, duration=5.261)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return okay what are the indexes they', start=611.58, duration=5.46)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='need the smaller one at first more and', start=614.04, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then XI quite simple if they need the', start=617.04, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='index this is how you return if they', start=619.56, duration=6.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='need yes or no this is how you do so in', start=623.04, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this way you can solve both the', start=626.459, duration=2.461)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='varieties', start=627.839, duration=3.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so for the variety 2 you can try the', start=628.92, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hashing solution only code and then you', start=630.839, duration=5.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can quickly go and run this and it', start=633.12, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='should be running on lead code AS so', start=636.0, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"well let's quickly submit this as well\", start=637.98, duration=4.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='cool it last one okay so what is the', start=640.2, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"time complexity of such an approach it's\", start=642.899, duration=5.701)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"very simple it's big bro of N I can say\", start=645.18, duration=6.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"n if you're assuming the map to work in\", start=648.6, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='B go of one if the map Works in', start=651.42, duration=4.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='logarithmic profit in its login depends', start=653.7, duration=4.379)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='on which map you take I have already', start=656.279, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='discussed then in time complexity', start=658.079, duration=3.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='lecture you can go over there and watch', start=659.64, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is when we take a map and we go of', start=661.56, duration=5.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n when we take an unordered map in the', start=664.44, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='best and average case in the worst case', start=667.079, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of unordered map it can go up to Pico of', start=669.18, duration=6.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n Square the complexity because find', start=672.839, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='takes we go of n in the worst case in', start=675.779, duration=5.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"another got it what about this piece I'm\", start=678.6, duration=5.34)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='using a hash map where we are dumping', start=681.66, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='every element every element and if', start=683.94, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're dumping every element we know\", start=685.8, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's going to show everything so it's a\", start=687.779, duration=3.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='big go off and I hope you have', start=689.82, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='understood this now at this moment a lot', start=691.5, duration=4.019)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of interviews might not drill you more', start=693.66, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='because the better solution is taking an', start=695.519, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='N login approach which is exactly', start=698.04, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='similar to the optimal approach the only', start=700.019, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thing that they can review is they might', start=702.24, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"ask you hey you're not allowed to use\", start=704.399, duration=3.661)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the map data structure can you solve', start=706.26, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this without using the map data', start=708.06, duration=3.18)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"structure this is where you'll be like\", start=709.5, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='okay maybe I have a slightly better', start=711.24, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solution not much slightly better', start=714.18, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='solution and that solution will be using', start=716.1, duration=4.979)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"two pointer approach it's a very simple\", start=718.62, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='one so there is no particular thought', start=721.079, duration=4.521)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"process we added it's a very very simple\", start=723.72, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='greedy approach greedy approach so if I', start=725.6, duration=5.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"sort the array what will I get I'll get\", start=728.76, duration=8.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='something like 2 5 6. 8 11 what is the', start=731.459, duration=8.101)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Target that I'm looking for 14. now I'm\", start=736.86, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='looking I will apply a greedy approach', start=739.56, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so what I will do is I'll keep a left\", start=741.72, duration=4.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"pointer at 2 I'll keep a right pointer\", start=743.94, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"at a level that's what I do left pointer\", start=746.399, duration=5.581)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"at 2 and a right pointer at 11. now I'll\", start=748.98, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='be like okay fine what do we have 2 plus', start=751.98, duration=6.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"11 that's giving me 14. no it is 4 it is\", start=754.86, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"not how much is it giving me it's giving\", start=758.64, duration=6.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='me 13. one shot where one shot now since', start=760.92, duration=6.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the array is sorted if you move to this', start=765.0, duration=5.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='portion this will be 8 and 2 plus 8 will', start=767.519, duration=5.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give you ten see you will not reach the', start=770.639, duration=5.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='packet so what will you do since this is', start=773.16, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='13 and you want to reach 14 you have to', start=775.8, duration=4.86)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='do increment if you if you have to do', start=778.56, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='increment', start=780.66, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in which direction is the increment if', start=781.92, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you move in this direction then 2 will', start=784.56, duration=3.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='increase so you have to increase the', start=786.72, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='value if you move on left 11 will', start=788.519, duration=4.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='decrease so this is why I sorted the', start=790.98, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"array so what I'll do is I'll just take\", start=793.2, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"the left pointer and I'll move it to\", start=795.42, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='files this is now five on five what do', start=796.8, duration=7.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you get 11 plus 5 is 16 I'm like ah this\", start=799.98, duration=6.419)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is more than 40 this is more than 14.', start=804.3, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'm like okay more than 14 reduce I know\", start=806.399, duration=5.581)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"if I move left then I'll reduce so I'll\", start=809.7, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='just move over here', start=811.98, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now what is the value to stand five plus', start=813.779, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='eight how much again do I get 13 5 plus', start=816.18, duration=6.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='8 is 13 okay again', start=819.839, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you have to increase so you move', start=822.54, duration=6.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so when you move what will you get you', start=825.899, duration=6.901)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"will get 6 and you'll get 6 Plus 8 14\", start=828.6, duration=7.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and you can say yes I was able to but if', start=832.8, duration=7.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='at any moment left and right cross cross', start=836.459, duration=6.541)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and you did not find two elements which', start=840.0, duration=5.22)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='add up to give you the target the answer', start=843.0, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will be no you might be thinking but', start=845.22, duration=4.859)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Strava this is solving the variety one', start=847.079, duration=4.981)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how can I solve the variety too because', start=850.079, duration=4.981)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the Variety Tool tells me to give me the', start=852.06, duration=7.62)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='index in that case you have to put it in', start=855.06, duration=7.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='some other data structure and you have', start=859.68, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to put it like 2 comma zero', start=862.139, duration=7.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='six comma 1 5 comma 2 8 comma three', start=864.72, duration=6.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='eleven comma four', start=869.519, duration=3.301)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so you have to put along with the', start=871.44, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='indexes into some data structure then', start=872.82, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you have to sort it so that along with', start=875.1, duration=3.9)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two you will always have zero along with', start=877.32, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"five you'll always have to along with 6\", start=879.0, duration=3.899)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll always have one along with eight\", start=880.98, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you'll always have three along with 11\", start=882.899, duration=3.781)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you will always have four so that the', start=884.76, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='indexes are preserved but again this is', start=886.68, duration=5.279)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='not an optimal approach for the variety', start=889.44, duration=5.459)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='too because you will be ending up using', start=891.959, duration=5.82)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='like more space because using a data', start=894.899, duration=4.74)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='structure of n cross 2 because you have', start=897.779, duration=3.541)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to store it in some other data structure', start=899.639, duration=3.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"then you have to sort it so it's not an\", start=901.32, duration=4.5)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='optimal solution for the variety too for', start=903.36, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the variety one where you just have to', start=905.82, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='tell me yes or no I can use this because', start=907.5, duration=5.459)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we are no more using a map data', start=910.86, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"structure we're just using sorting and\", start=912.959, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then we are using a traversal in order', start=915.18, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"to find it so let's jump into the editor\", start=916.8, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and try to code this up again the', start=919.32, duration=2.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='problem link will be in the description', start=920.639, duration=3.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so you can keep the left pointer as 0', start=921.839, duration=3.541)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and the right pointer the last index', start=924.12, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"which is n minus 1 what's the first step\", start=925.38, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"yes you go ahead and say I'm gonna sort\", start=927.36, duration=5.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it so you can use the Sorting function', start=930.66, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='again the Java Port will be in the', start=932.76, duration=5.1)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='description and now what I can do is I', start=935.699, duration=5.7)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can run the while loop so while left', start=937.86, duration=6.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='like this and I can go ahead and say Hey', start=941.399, duration=5.821)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='listen I need the sound so sum has to be', start=944.22, duration=7.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='book of left plus book of right this is', start=947.22, duration=6.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='very short first thing I know is if', start=951.899, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='someone is Target', start=954.0, duration=3.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then we are going to say hey I got my', start=955.26, duration=4.199)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"answer I don't care about you else if\", start=957.12, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're gonna say if sum is lesser than\", start=959.459, duration=5.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"Target I'll be like hey increase so from\", start=961.44, duration=5.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the left else decrease if the sum is', start=964.5, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='greater at the end of the day I can say', start=966.839, duration=5.581)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return no and also make sure after you', start=968.88, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have done this', start=972.42, duration=3.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you need to do', start=973.56, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"or you don't need to Hash up yeah this\", start=975.42, duration=4.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is how you can easily do it and now we', start=977.399, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='even quickly go and run this and see if', start=979.86, duration=3.719)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it is running fine it is let's quickly\", start=981.779, duration=3.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='submit this what is the time complexity', start=983.579, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if I have to analyze I can say the time', start=985.74, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='complexity is very simple since we are', start=987.959, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='moving from the left and the right and', start=989.94, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='covering the Dan array the time', start=991.56, duration=5.94)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"complexity is B go of n because they're\", start=993.6, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"moving from the left they're moving from\", start=997.5, duration=3.66)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the right so the worst case', start=999.12, duration=3.779)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it might end up getting to the last', start=1001.16, duration=3.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='Point as you saw we went here we went', start=1002.899, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='here so we covered this much we covered', start=1005.12, duration=4.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this much the time complexity distance', start=1006.98, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='surely is because of n plus another Big', start=1009.8, duration=5.219)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='O of n log n for sorting so what about', start=1012.5, duration=4.38)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so what about the space complexity I'm\", start=1015.019, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='not using any extra space so B go off', start=1016.88, duration=4.259)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='one yeah the interviewer might argue', start=1019.339, duration=3.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that the you are changing the array', start=1021.139, duration=3.42)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're like yeah I'm changing the array\", start=1022.82, duration=4.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so if he has to like take into account', start=1024.559, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the space complexity of the array', start=1027.74, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='because you have changed it then it will', start=1029.839, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='become big of n so you can clearly tell', start=1031.76, duration=4.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"them I'm not using anything extra but\", start=1034.64, duration=3.779)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"I'm distorting so if you want to\", start=1036.679, duration=3.541)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='consider if you want to consider that', start=1038.419, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='distorted and a space complexity well', start=1040.22, duration=4.02)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and good it's very often if you don't\", start=1042.199, duration=3.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"want to consider it speak of one it's\", start=1044.24, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='something which is very theoretical and', start=1046.16, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you can always explain that to the', start=1048.079, duration=5.34)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='interview again this for variety 2 I lot', start=1049.52, duration=6.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='prefer this for variety 2 the better is', start=1053.419, duration=7.021)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the most optimal one for variety one you', start=1056.36, duration=5.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can sort it and then use it so coming', start=1060.44, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='back to the sheeta I can say this is', start=1062.24, duration=3.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='done if you need the C plus plus Java', start=1064.039, duration=2.941)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and python code for all the three', start=1065.72, duration=3.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='approaches there is a link in the', start=1066.98, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='description you can check it out and yes', start=1068.96, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh to continue our tradition please do', start=1070.82, duration=4.14)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='comment understood read the video and if', start=1072.559, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're new to our Channel please please\", start=1074.96, duration=4.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='do consider subscribing to us because', start=1076.64, duration=4.98)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that does motivate me to make such kind', start=1079.16, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"of content and if you haven't followed\", start=1081.62, duration=4.26)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='me on Instagram Twitter LinkedIn the', start=1083.48, duration=3.78)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='links will be in the description please', start=1085.88, duration=3.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"do follow me and here with this I'll be\", start=1087.26, duration=3.06)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"wrapping up this video let's put in some\", start=1088.94, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='other videos', start=1090.32, duration=2.3)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"don't ever forget your golden\", start=1094.66, duration=7.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='I will find the light in', start=1098.299, duration=3.441)"
+    }
+  ]
+}

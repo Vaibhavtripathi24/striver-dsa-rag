@@ -1,0 +1,3040 @@
+{
+  "video_id": "oO5uLE7EUlM",
+  "title": "Longest Consecutive Sequence | Google Interview Question | Brute Better Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1391,
+  "text": "hey everyone welcome back to the channel and I hope you guys are doing extremely well so this is another lecture from The Stride bus A to Z DSA course just in case you're for the first time here this is world's most in-depth course when it comes to DSL go why do I say that because this costs us 456 models by the end of the course students or more than 400 plus problems when it comes to DS I'll go you can go over the entire internet you can buy any of the paid courses in the market none of them will be teaching you DSL go in such step because for every problem I tell you the brute the better the Optimal Solutions with code and you find C plus plus Java python code everything in the description as well something that I can give you as guarantee is once you complete this entire course you can clear any of the DS algorithms in any company in any part of the world so till now we have covered uh till this particular problem and this video I'll be covering the problem longest consecutive sequence now what does the problem State the problem States will be given an array of integers and your task is to find me the longest consecutive the world is very very important consecutive sequence now you you given integers right you can rearrange them reorder them in any manner imagine I say that I'll pick up one okay the nice I'll pick up two then I say I'll pick up three then I say I'll pick up four so it's consecutive right the numbers are consecutive and the length of the sequence is four I cannot pick up five because it's not in the array so the length that I can form is four can I pick up 100 I can can I pick up hundred one I can can I pick up hundred too again so the length is three so if you try out all the other elements longest consecutive sequence that you can form will be of length four whereas one two three four so your task is to return me the length of the longest consecutive sequence so this question comes up in an interview the first solution that you'll give to the interviewer will definitely be of the brute flow solution but what is the extreme link solution that first comes to your mind it's like really if I pick up an element X I'll look for X plus one I'll look for X plus two I'll see what's the longest that I can form by looking around the array that's the extreme range solution so imagine I say that okay cool let's keep the longest sequence length as one because I know one thing for sure even if I pick up one element from the array the longest will always be one so that is something which I'll keep and I'll start iterating in the array so I'm at 102. now what I'll do is I'll keep the counter as one and I'll I'll assign probably X as 102. so if I'm starting with 102 what's the next 103 but how do you figure out if 103 is in the array or not I'll go in the array are you 103 are you 103 103 103 no no one has so we cannot extend the sequence from 100 too thereby I will say fine let's move to the next so I go to the four now my X becomes 4 now I'll try to extend it to five another look around do I have five five five five five simple linear search no not a five so I cannot extend fine then I'll move around move to the next and I'll be at 100 so I'm at 100 what I'll do is okay do I have 101 do I have do I have do I have do I have yes I have yes I have so I can extend it to 101 if I can I'll increase my counter I'll increase my counter fine can I extend it to 102 I'll be like cool 100 200 to yes 102 I can so again I'll increase my counter can I extend it to 104 let's see 100 400 404 no I cannot so the count stays as three when I start from 100 so basically the longest that I'll get is three similarly you can go to the next and you can start from one then you will look for two then you look for three then you'll look for four and eventually the count will become four and that will be your eventual longest and you can go across to the next then to the next then to the next then to the next and eventually you will find your longest this is the extreme root Force solution that you can think of so what will be the code for this Brute Force solution it's going to be very simple what I say is I'll say longest equal to 1. and then I'll start the iteration from I equal to 0 I lesser than n i plus plus because every time I pick up one element right and then I'll store it in X maybe array of I and then I'll see the counter to be one because initially we have one element now I will say while can you look for it probably linear search in the array for the element X plus one if it is found if it is found then what you'll do is you will say x can you increase yourself to X Plus 1 and count can you increase yourself to count plus one simple Brute Force solution and this is linear search you can write it yourself so what will be the time complexity of this brute flow solution can I say it's a big go of n for the first Loop and near about week often for the internal Loop so it's a near about n square like if you take an example like one two three four five what will happen is the first time when it picks up one it goes for like one two three four five next seven it picks up two goes for two three four five so it's like near about B go of n Square are we using any space no so the space complexity is B go of one for the Brute Force solution obviously the interview will not be happy with uh this extreme time complexity and I'll ask you to optimize that is when we will move to the better solution so let's quickly understand the better solution now in order to understand the better solution I have taken a longer array why you'll understand when I'll do the dry run first step of the better solution will be to sort it why very simple we see something as consecutive and you know when you sort it uh we had a consecutive sequence of one two three four the other consecutive sequences hundred hundred one hundred two and if you carefully see they are kind of club together I know there are repetitions but they are somewhere together in the array right over here also there's somewhere to get there so that is the intuition behind sorting so that I want to bring them together to apply our work simple algorithm now the algorithm is very very simple we will say longest is one assuming that the longest length that you can get is one and we will keep a track of uh rather last smaller now what is the meaning of last smaller it will keep a track what was the last smallest guy that you have seen and assuming we are just starting off we haven't seen anything so we'll keep it as integer minimum and I will say count current so you'll always uh take in the sequence with us and I'll initially say we don't have any sequence when you're starting off so the count current is zero and now we start the iteration now when we are starting the hydration now just imagine this if this one had to be a part of a sequence the before element has to be zero and the last voiler says no we have integer Min so you cannot be a part of my you cannot be a part of my sequence he's like fine if I cannot be a part of my sequence I will be the new sequence and he says okay I will be the new sequence and I'll start off with the length one perfect let's move the next one is one so if I'm saying 1 has to be somewhere like a part of a sequence before one has to be zero and we see the before smallest is one so maybe this will be a part of sequence but this will not be so what I'll say is no you don't need to be because you're the same you're the same so whatever sequence I'm running whatever sequence I'm going with we are the same so we don't need another same element so we'll not go with you perfect let's move ahead will you increase the count no because this won't be included again you get a 1 and this one will require 0 but it doesn't have and the last smaller is one and the last smaller is one this cannot be part of my sequence as of now so this one is taken as the sequence the count is one so this one cannot be now the moment I move to 2 this is where you understand you have a two therefore to be the uh 2 to be the part of the sequence what will you look for look for one and you have a one because the last smaller in your sequence is one now you have a two so can I say this can be the part of my sequence and the last smaller will be two so you got the count as two has the longest can be updated as two next you move to two now this time remember the count is to which you know means you have taken this one and you have taken this particular two now you are standing at this two can you take this two no why because the last smaller was two so if you take it's a repeatation and you need consecutive so you cannot and you'll move forward can you again take this too no so you'll move forward can you take this three yes why because three says the last Model is 2 and that is what when I say consecutive means the last element has to be one lesser so he is so I'll say count will increase by three longest will get updated by this and the last smaller gets updated by three I move forward the next element is again three three says I'm equivalent to last smaller no need to do anything please go he's like okay and go next I have four estimate F4 and the last smaller is three so I can take the four into the consecutive sequence thereby the count current will be 4 and the longest will be updated to four next I'll update the last smaller to four and I'll move to 100. the moment I move to 100 this is a very very critical point to understand the moment I move to 100 it looks at the last smaller it's four but can this be a part of consecutive sequence he says no it had to be 19 and it is four so this cannot be a part of the concealer sequence so I say fine we start new we start fresh we start fresh from here so let's start off with a length 1 let's say the last smaller to be 100 and then we'll move forward so we will always start fresh if the last smaller is not equal or not one lesser next we have again hundred the same applies we have 101 so what will happen 101 will look at the back and we have 100 so we can take the 101 and the length will increase to 2 and the last smaller will be updated to 101 next we have again 101 nothing happens next we have hundred two so the 102 says who's the last he says hundred one so the sequence increases by one and this won't be the longest because longest is already four and then you complete the iteration once you complete the iteration you see that the longest is stored as four and this is going to be your answer got it so if I have to write the code what will it be the first step will definitely be for sorting and then we say longest we can store as one count current weekends probably stored as zero and the last smaller we can definitely store as a very small number which is integer Min once you have done this we are I trading in the array so the iteration will go from zero to n this is something we know for short and now we know one thing if array of I has to be a part of the sequence then one lesser than that has to be the last smaller if that is the case I will say count can you increase Yourself by one and last smaller can you get updated to this because this is the new term in the sequence this is the new term in the sequence perfect and if this does not works out that means it's it's a different element it's a different element and can I say if if array of I is equal to equal to the last smaller will we do anything in this case whenever we add a 1 did we do anything no the last smallest state as one the count State because this we will never pick up so we will not do anything we will not do anything in this case nothing to be done when it is equal to but when it is not equal to that's when you do something when it is not equal to then then you do something it's not equal to your note any you don't do anything on one let's say you're done so only only remaining operation is whenever you get something like 100 which is for sure like the 99 is not there because that is already checked with this if so when it is not equal to what do you do you say let's start a new sequence let's take the 100 as the new smaller guy which is array of I and you move ahead and after this if after this else if you can just go ahead and say longest equal to Max of longest comma whatever is the current count perfect that's how easy it was in case you want to drive the problem the link will be in the description what will be the time complexity and login and going forward a big go of n so over here you're distorting the adding yes you're distorting the array so the interview might not like it so this is where he might ask you to maybe not distort the array or maybe get rid of the any login stuff that you are doing and then you should move to the next solution which is the optimal one so the optimal solution is only optimal under some constraints and I'll be discussing them when I discuss the time complexity of the optimal solution now the optimal solution is very simple and what we need to do is First Step will be put everything into a set data structure so what I'll do is I'll iterate in the Daddy it's like 102 so I'll put that into the set data structure four I'll put that into the set 100 I'll put that into the set one I'll put that into the set 101 I'll put that into the set three I'll put that into the set two I'll put that into the set one no more because set Only Stores unique elements one again no more because set Only Stores unique element once I've put everything into the send data structure and over here we will be taking an unordered set in C plus plus if you're using Java then you will be taking hash set which will be ordering them but in C plus plus I'll be taking an unordered set so assuming these are the elements like unordered like they are not sorted so the elements will look something like this in a set data structure what I will now do is I will now start iterating element by element in the set data structure and the first element that I'll get is 102. when you look for 103 will you look for 104 logically if you start looking then it kind of becomes similar to The Brute Force this is where we will have a hack yes we'll have a hack now remember one thing over here the sequence that we have is hundred hundred and one hundred and two so if I start looking from 102 again it's more like looking from somewhere mid in the sequence isn't it isn't it better if you look right from 100 right from the starting point itself I'm like yes so what I will do is I'll see do we have a 101 in the array it is ETC we have so we'll see it's it's not the starting point it's not the starting point so let's not start so I'll not start because we have 101 so thereby we do not start fine let's go to the next we have four will we start looking from four so if you remember one two three four was the longest sequence right so if you start looking from four again not not needed because 3 is already there if you look in the set if you look in the set three is already there so you don't start fine let's move to the next 100 now you look around is 99 there and you find 99 is not there 99 is not there so you are sure that this is probably probably starting point and that's when you say do we have 101 and it says yes then you say do you have 102 it says yes then you ask do you have 103 and you know in order to check do we have it in the set or not it's a very logarithmic event or B go for an operation if we are using unordered set so it's there it's there so you move do you have 103 no we do not have we stop how many elements did we have three so this will become your longest as of now three becomes perfect let's go to the next we have one okay what's the before zero do we have a zero no so zero is not there so we're sure that it's probably a starting point fine let's look at the next two do we have yes let's look at the next three do we have yes so move next four do we have yes so we move next five do we have no so you see we don't have what is the length that you generated over here 4 and thereby the longest gets updated to four perfect so let me quickly erase this now what is the next element 101 let's start from 101 what's the previous of hundred one hundred is there is it in the set it is so you don't start again the same reason because if you start you don't necessarily start checking from Android one you'd have already done it from 100 or you will do it in do it from 100. so there's no need to do 401 no need to start from the mid because that's an unnecessary event so I'll avoid it by checking one before so I avoided it perfect next three so again for three you just check for previous which is two and you see that two is already there in the set so no need to go because if you if you go what will happen is you'll start going for three then you'll go to four it's a time waste so next is two now when you start from two you'll check for one and you'll see that one is already there so do you need to start because if you start what will happen is you'll start from two you'll go to three you'll go to four unnecessary three steps unnecessarily three steps so you do not go so apparently you don't go any further and that's a complete iteration in the set once you have done the complete iteration in the set what is the longest store that will be your answer and again even if the set is sorted it still works fine because what we are making sure is let's analyze what how many iterations we did if you have to ask so there was one sequence one two three and there's the other sequence 100 101 102. we did four iterations for this we did three iterations for this A2 we do any other iteration for anyone else like two three four hundred one hundred two no how did we prevent that by just checking if the previous one was there if the previous one was there we do not because we know in a consecutive sequence the first element will never have a previous one we'll never have a previous one so we always start looking from the first element got it so let's quickly code it up the problem link will be in the description make sure you try it out from there for Java and python code uh there's an article Link in the description scroll through the article until that C plus plus Java and python code you can have it on the site just in case you're using any other language so this is how you declare the size we know if the size is empty there will be no longer sequence or else we will have a minimum of one for sure at the end of the day we will have to return this and we need a set so we will declare an unordered set assuming there are no collisions and this will take the least time complexity now let's quickly iterate in the Vector so in the list rather so we will go ahead and say insert of a of I perfect done once you've done we need to iterate in the set this is how we iterate in the set for Java the code link is in the description so we say set dot find okay are you the first element if you're the first element your previous one will not be in the same okay I am then you are you are a part of this sequence that I'm trying to count under the first element perfect X is the person now let's look if you have your next that's X plus one something similar to The Brute Force and if you are if you have you will not have this so instead of linear search now I'm using the set data structure that's how I modified The Brute Force instead of linear search I'm using the set data structure as if you have fine let's go to the next sequence which is X plus one that's the next element let's increase the count by count plus one once you've done everything can I say longest can you update yourself by longest comma whatever the count this particular sequence gave you and then return it let's quickly run it up and see if it is running fine it is I know quickly submitted now for time complexity we know one thing if we use unordered set it will end up taking big of one in an average of the best case but the worst case when collations happen it's a very very rare case then the set will end up taking big of it so in the interview clearly state that okay so assuming it the set takes bigger of one first you're iterating and putting everything into the set so that's a big off one assuming the set is taking bigger fund so that is what the time complexity for the first iteration this Loop will be then we are iterating through the set then we are iterating through the set and then for every element we are iterating you might think this while loop is like another n but this is not another end why let me tell you so if you looked for this example let's see how many iterations we did so we did one two three four five six seven iterations we did a total of seven iterations for sure right that is through the set and then when you figured out hundred you move from hundred one then to 102 so that's another three iterations and then when you figured one you moved from one two three four so that's another four iterations which is 14 which is near about two n iterations that you did because we did implement the logic where you never started from two unchecked you never started from three and checked you never started from four that is why it's a 2N and not a big offend because we are not starting from everyone we're starting just from the first guys so thereby this will be two and you can take out a uh you can try out another examples as well you will find at the max it will go for 2N so 2N plus n will be 3 n 2 N plus n will be 3 n and that is the time complexity under the assumption that the set is taking we go for if if they say that there's a worst case then you have to take the logarithmic and then then the brute force is better because over here still taking the logarithmic of N and a space complexity of B go of n assuming all the elements are unique so that's the time complexity and the space complexity for this particular solution going back to the sheet I can say that this is done and I hope you have understood the blue the better and the optimal along with the code just in case you did please please consider giving us a like because that is something that does motivate me and if you're new to our Channel what are you waiting for kill that subscribe button because this channel has a bunch of resources that might be beneficial for you and to continue our tradition please make sure you come and understood so that I understand that you are understanding everything and if you haven't followed me on Instagram Twitter LinkedIn all the profile links will be in the description with this I'll be wrapping up this video let me in some other video till then bye take care whenever your heart is broken don't ever forget you're golden I I will find the light",
+  "segments": [
+    {
+      "start": 3.0,
+      "end": 5.88,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.5,
+      "end": 7.56,
+      "text": "and I hope you guys are doing extremely"
+    },
+    {
+      "start": 5.88,
+      "end": 9.66,
+      "text": "well so this is another lecture from The"
+    },
+    {
+      "start": 7.56,
+      "end": 10.86,
+      "text": "Stride bus A to Z DSA course just in"
+    },
+    {
+      "start": 9.66,
+      "end": 12.42,
+      "text": "case you're for the first time here this"
+    },
+    {
+      "start": 10.86,
+      "end": 14.28,
+      "text": "is world's most in-depth course when it"
+    },
+    {
+      "start": 12.42,
+      "end": 16.56,
+      "text": "comes to DSL go why do I say that"
+    },
+    {
+      "start": 14.28,
+      "end": 17.7,
+      "text": "because this costs us 456 models by the"
+    },
+    {
+      "start": 16.56,
+      "end": 19.92,
+      "text": "end of the course students or more than"
+    },
+    {
+      "start": 17.7,
+      "end": 21.42,
+      "text": "400 plus problems when it comes to DS"
+    },
+    {
+      "start": 19.92,
+      "end": 22.68,
+      "text": "I'll go you can go over the entire"
+    },
+    {
+      "start": 21.42,
+      "end": 24.48,
+      "text": "internet you can buy any of the paid"
+    },
+    {
+      "start": 22.68,
+      "end": 25.98,
+      "text": "courses in the market none of them will"
+    },
+    {
+      "start": 24.48,
+      "end": 27.9,
+      "text": "be teaching you DSL go in such step"
+    },
+    {
+      "start": 25.98,
+      "end": 30.36,
+      "text": "because for every problem I tell you the"
+    },
+    {
+      "start": 27.9,
+      "end": 33.18,
+      "text": "brute the better the Optimal Solutions"
+    },
+    {
+      "start": 30.36,
+      "end": 34.74,
+      "text": "with code and you find C plus plus Java"
+    },
+    {
+      "start": 33.18,
+      "end": 36.48,
+      "text": "python code everything in the"
+    },
+    {
+      "start": 34.74,
+      "end": 38.28,
+      "text": "description as well something that I can"
+    },
+    {
+      "start": 36.48,
+      "end": 39.72,
+      "text": "give you as guarantee is once you"
+    },
+    {
+      "start": 38.28,
+      "end": 41.88,
+      "text": "complete this entire course you can"
+    },
+    {
+      "start": 39.72,
+      "end": 44.58,
+      "text": "clear any of the DS algorithms in any"
+    },
+    {
+      "start": 41.88,
+      "end": 46.74,
+      "text": "company in any part of the world so till"
+    },
+    {
+      "start": 44.58,
+      "end": 48.18,
+      "text": "now we have covered uh till this"
+    },
+    {
+      "start": 46.74,
+      "end": 49.92,
+      "text": "particular problem and this video I'll"
+    },
+    {
+      "start": 48.18,
+      "end": 52.68,
+      "text": "be covering the problem longest"
+    },
+    {
+      "start": 49.92,
+      "end": 54.66,
+      "text": "consecutive sequence now what does the"
+    },
+    {
+      "start": 52.68,
+      "end": 57.3,
+      "text": "problem State the problem States will be"
+    },
+    {
+      "start": 54.66,
+      "end": 59.82,
+      "text": "given an array of integers and your task"
+    },
+    {
+      "start": 57.3,
+      "end": 61.14,
+      "text": "is to find me the longest consecutive"
+    },
+    {
+      "start": 59.82,
+      "end": 63.54,
+      "text": "the world is very very important"
+    },
+    {
+      "start": 61.14,
+      "end": 65.64,
+      "text": "consecutive sequence now you you given"
+    },
+    {
+      "start": 63.54,
+      "end": 68.4,
+      "text": "integers right you can rearrange them"
+    },
+    {
+      "start": 65.64,
+      "end": 70.26,
+      "text": "reorder them in any manner imagine I say"
+    },
+    {
+      "start": 68.4,
+      "end": 71.76,
+      "text": "that I'll pick up one okay the nice I'll"
+    },
+    {
+      "start": 70.26,
+      "end": 74.04,
+      "text": "pick up two then I say I'll pick up"
+    },
+    {
+      "start": 71.76,
+      "end": 76.08,
+      "text": "three then I say I'll pick up four so"
+    },
+    {
+      "start": 74.04,
+      "end": 77.7,
+      "text": "it's consecutive right the numbers are"
+    },
+    {
+      "start": 76.08,
+      "end": 80.16,
+      "text": "consecutive and the length of the"
+    },
+    {
+      "start": 77.7,
+      "end": 82.02,
+      "text": "sequence is four I cannot pick up five"
+    },
+    {
+      "start": 80.16,
+      "end": 84.42,
+      "text": "because it's not in the array so the"
+    },
+    {
+      "start": 82.02,
+      "end": 86.76,
+      "text": "length that I can form is four can I"
+    },
+    {
+      "start": 84.42,
+      "end": 88.68,
+      "text": "pick up 100 I can can I pick up hundred"
+    },
+    {
+      "start": 86.76,
+      "end": 91.92,
+      "text": "one I can can I pick up hundred too"
+    },
+    {
+      "start": 88.68,
+      "end": 94.2,
+      "text": "again so the length is three so if you"
+    },
+    {
+      "start": 91.92,
+      "end": 95.7,
+      "text": "try out all the other elements longest"
+    },
+    {
+      "start": 94.2,
+      "end": 98.16,
+      "text": "consecutive sequence that you can form"
+    },
+    {
+      "start": 95.7,
+      "end": 100.98,
+      "text": "will be of length four whereas one two"
+    },
+    {
+      "start": 98.16,
+      "end": 102.9,
+      "text": "three four so your task is to return me"
+    },
+    {
+      "start": 100.98,
+      "end": 104.76,
+      "text": "the length of the longest consecutive"
+    },
+    {
+      "start": 102.9,
+      "end": 106.08,
+      "text": "sequence so this question comes up in an"
+    },
+    {
+      "start": 104.76,
+      "end": 107.22,
+      "text": "interview the first solution that you'll"
+    },
+    {
+      "start": 106.08,
+      "end": 109.08,
+      "text": "give to the interviewer will definitely"
+    },
+    {
+      "start": 107.22,
+      "end": 110.58,
+      "text": "be of the brute flow solution but what"
+    },
+    {
+      "start": 109.08,
+      "end": 113.22,
+      "text": "is the extreme link solution that first"
+    },
+    {
+      "start": 110.58,
+      "end": 115.32,
+      "text": "comes to your mind it's like really if I"
+    },
+    {
+      "start": 113.22,
+      "end": 117.66,
+      "text": "pick up an element X I'll look for X"
+    },
+    {
+      "start": 115.32,
+      "end": 119.94,
+      "text": "plus one I'll look for X plus two I'll"
+    },
+    {
+      "start": 117.66,
+      "end": 122.16,
+      "text": "see what's the longest that I can form"
+    },
+    {
+      "start": 119.94,
+      "end": 124.68,
+      "text": "by looking around the array that's the"
+    },
+    {
+      "start": 122.16,
+      "end": 127.44,
+      "text": "extreme range solution so imagine I say"
+    },
+    {
+      "start": 124.68,
+      "end": 129.12,
+      "text": "that okay cool let's keep the longest"
+    },
+    {
+      "start": 127.44,
+      "end": 131.16,
+      "text": "sequence length as one because I know"
+    },
+    {
+      "start": 129.12,
+      "end": 132.96,
+      "text": "one thing for sure even if I pick up one"
+    },
+    {
+      "start": 131.16,
+      "end": 134.58,
+      "text": "element from the array the longest will"
+    },
+    {
+      "start": 132.96,
+      "end": 136.5,
+      "text": "always be one so that is something which"
+    },
+    {
+      "start": 134.58,
+      "end": 139.02,
+      "text": "I'll keep and I'll start iterating in"
+    },
+    {
+      "start": 136.5,
+      "end": 142.08,
+      "text": "the array so I'm at 102. now what I'll"
+    },
+    {
+      "start": 139.02,
+      "end": 145.26,
+      "text": "do is I'll keep the counter as one and"
+    },
+    {
+      "start": 142.08,
+      "end": 147.72,
+      "text": "I'll I'll assign probably X as 102. so"
+    },
+    {
+      "start": 145.26,
+      "end": 152.52,
+      "text": "if I'm starting with 102 what's the next"
+    },
+    {
+      "start": 147.72,
+      "end": 154.38,
+      "text": "103 but how do you figure out if 103 is"
+    },
+    {
+      "start": 152.52,
+      "end": 158.28,
+      "text": "in the array or not I'll go in the array"
+    },
+    {
+      "start": 154.38,
+      "end": 161.58,
+      "text": "are you 103 are you 103 103 103 no no"
+    },
+    {
+      "start": 158.28,
+      "end": 166.32,
+      "text": "one has so we cannot extend the sequence"
+    },
+    {
+      "start": 161.58,
+      "end": 167.88,
+      "text": "from 100 too thereby I will say fine"
+    },
+    {
+      "start": 166.32,
+      "end": 170.46,
+      "text": "let's move to the next"
+    },
+    {
+      "start": 167.88,
+      "end": 173.04,
+      "text": "so I go to the four now my X becomes 4"
+    },
+    {
+      "start": 170.46,
+      "end": 175.5,
+      "text": "now I'll try to extend it to five"
+    },
+    {
+      "start": 173.04,
+      "end": 178.2,
+      "text": "another look around do I have five five"
+    },
+    {
+      "start": 175.5,
+      "end": 181.38,
+      "text": "five five five simple linear search no"
+    },
+    {
+      "start": 178.2,
+      "end": 183.9,
+      "text": "not a five so I cannot extend fine then"
+    },
+    {
+      "start": 181.38,
+      "end": 187.44,
+      "text": "I'll move around move to the next"
+    },
+    {
+      "start": 183.9,
+      "end": 191.16,
+      "text": "and I'll be at 100 so I'm at 100 what"
+    },
+    {
+      "start": 187.44,
+      "end": 192.78,
+      "text": "I'll do is okay do I have 101 do I have"
+    },
+    {
+      "start": 191.16,
+      "end": 196.02,
+      "text": "do I have do I have do I have yes I have"
+    },
+    {
+      "start": 192.78,
+      "end": 197.94,
+      "text": "yes I have so I can extend it to 101 if"
+    },
+    {
+      "start": 196.02,
+      "end": 200.28,
+      "text": "I can I'll increase my counter I'll"
+    },
+    {
+      "start": 197.94,
+      "end": 202.98,
+      "text": "increase my counter fine can I extend it"
+    },
+    {
+      "start": 200.28,
+      "end": 206.16,
+      "text": "to 102 I'll be like cool 100 200 to yes"
+    },
+    {
+      "start": 202.98,
+      "end": 209.04,
+      "text": "102 I can so again I'll increase my"
+    },
+    {
+      "start": 206.16,
+      "end": 212.82,
+      "text": "counter can I extend it to 104 let's see"
+    },
+    {
+      "start": 209.04,
+      "end": 216.36,
+      "text": "100 400 404 no I cannot so the count"
+    },
+    {
+      "start": 212.82,
+      "end": 218.52,
+      "text": "stays as three when I start from 100 so"
+    },
+    {
+      "start": 216.36,
+      "end": 220.92,
+      "text": "basically the longest that I'll get is"
+    },
+    {
+      "start": 218.52,
+      "end": 223.08,
+      "text": "three similarly you can go to the next"
+    },
+    {
+      "start": 220.92,
+      "end": 224.46,
+      "text": "and you can start from one then you will"
+    },
+    {
+      "start": 223.08,
+      "end": 226.32,
+      "text": "look for two then you look for three"
+    },
+    {
+      "start": 224.46,
+      "end": 228.42,
+      "text": "then you'll look for four and eventually"
+    },
+    {
+      "start": 226.32,
+      "end": 231.48,
+      "text": "the count will become four and that will"
+    },
+    {
+      "start": 228.42,
+      "end": 233.04,
+      "text": "be your eventual longest and you can go"
+    },
+    {
+      "start": 231.48,
+      "end": 234.66,
+      "text": "across to the next then to the next then"
+    },
+    {
+      "start": 233.04,
+      "end": 236.58,
+      "text": "to the next then to the next and"
+    },
+    {
+      "start": 234.66,
+      "end": 239.34,
+      "text": "eventually you will find your longest"
+    },
+    {
+      "start": 236.58,
+      "end": 241.14,
+      "text": "this is the extreme root Force solution"
+    },
+    {
+      "start": 239.34,
+      "end": 242.58,
+      "text": "that you can think of so what will be"
+    },
+    {
+      "start": 241.14,
+      "end": 244.38,
+      "text": "the code for this Brute Force solution"
+    },
+    {
+      "start": 242.58,
+      "end": 247.98,
+      "text": "it's going to be very simple what I say"
+    },
+    {
+      "start": 244.38,
+      "end": 250.26,
+      "text": "is I'll say longest equal to 1. and then"
+    },
+    {
+      "start": 247.98,
+      "end": 252.66,
+      "text": "I'll start the iteration from I equal to"
+    },
+    {
+      "start": 250.26,
+      "end": 254.22,
+      "text": "0 I lesser than n i plus plus because"
+    },
+    {
+      "start": 252.66,
+      "end": 257.16,
+      "text": "every time I pick up one element right"
+    },
+    {
+      "start": 254.22,
+      "end": 259.26,
+      "text": "and then I'll store it in X maybe array"
+    },
+    {
+      "start": 257.16,
+      "end": 261.3,
+      "text": "of I and then I'll see the counter to be"
+    },
+    {
+      "start": 259.26,
+      "end": 264.36,
+      "text": "one because initially we have one"
+    },
+    {
+      "start": 261.3,
+      "end": 266.4,
+      "text": "element now I will say while can you"
+    },
+    {
+      "start": 264.36,
+      "end": 269.16,
+      "text": "look for it probably linear search"
+    },
+    {
+      "start": 266.4,
+      "end": 272.64,
+      "text": "in the array for the element X plus one"
+    },
+    {
+      "start": 269.16,
+      "end": 274.8,
+      "text": "if it is found if it is found then what"
+    },
+    {
+      "start": 272.64,
+      "end": 277.92,
+      "text": "you'll do is you will say x can you"
+    },
+    {
+      "start": 274.8,
+      "end": 280.2,
+      "text": "increase yourself to X Plus 1 and count"
+    },
+    {
+      "start": 277.92,
+      "end": 282.72,
+      "text": "can you increase yourself to count plus"
+    },
+    {
+      "start": 280.2,
+      "end": 284.28,
+      "text": "one simple Brute Force solution and this"
+    },
+    {
+      "start": 282.72,
+      "end": 285.48,
+      "text": "is linear search you can write it"
+    },
+    {
+      "start": 284.28,
+      "end": 286.86,
+      "text": "yourself so what will be the time"
+    },
+    {
+      "start": 285.48,
+      "end": 288.36,
+      "text": "complexity of this brute flow solution"
+    },
+    {
+      "start": 286.86,
+      "end": 291.3,
+      "text": "can I say it's a big go of n for the"
+    },
+    {
+      "start": 288.36,
+      "end": 291.96,
+      "text": "first Loop and near about week often for"
+    },
+    {
+      "start": 291.3,
+      "end": 294.78,
+      "text": "the"
+    },
+    {
+      "start": 291.96,
+      "end": 296.34,
+      "text": "internal Loop so it's a near about n"
+    },
+    {
+      "start": 294.78,
+      "end": 298.74,
+      "text": "square like if you take an example like"
+    },
+    {
+      "start": 296.34,
+      "end": 300.66,
+      "text": "one two three four five what will happen"
+    },
+    {
+      "start": 298.74,
+      "end": 303.0,
+      "text": "is the first time when it picks up one"
+    },
+    {
+      "start": 300.66,
+      "end": 304.8,
+      "text": "it goes for like one two three four five"
+    },
+    {
+      "start": 303.0,
+      "end": 306.66,
+      "text": "next seven it picks up two goes for two"
+    },
+    {
+      "start": 304.8,
+      "end": 308.94,
+      "text": "three four five so it's like near about"
+    },
+    {
+      "start": 306.66,
+      "end": 311.4,
+      "text": "B go of n Square are we using any space"
+    },
+    {
+      "start": 308.94,
+      "end": 313.02,
+      "text": "no so the space complexity is B go of"
+    },
+    {
+      "start": 311.4,
+      "end": 314.52,
+      "text": "one for the Brute Force solution"
+    },
+    {
+      "start": 313.02,
+      "end": 316.26,
+      "text": "obviously the interview will not be"
+    },
+    {
+      "start": 314.52,
+      "end": 318.3,
+      "text": "happy with uh this extreme time"
+    },
+    {
+      "start": 316.26,
+      "end": 320.16,
+      "text": "complexity and I'll ask you to optimize"
+    },
+    {
+      "start": 318.3,
+      "end": 321.9,
+      "text": "that is when we will move to the better"
+    },
+    {
+      "start": 320.16,
+      "end": 323.04,
+      "text": "solution so let's quickly understand the"
+    },
+    {
+      "start": 321.9,
+      "end": 324.36,
+      "text": "better solution now in order to"
+    },
+    {
+      "start": 323.04,
+      "end": 326.1,
+      "text": "understand the better solution I have"
+    },
+    {
+      "start": 324.36,
+      "end": 327.48,
+      "text": "taken a longer array why you'll"
+    },
+    {
+      "start": 326.1,
+      "end": 329.22,
+      "text": "understand when I'll do the dry run"
+    },
+    {
+      "start": 327.48,
+      "end": 332.88,
+      "text": "first step of the better solution will"
+    },
+    {
+      "start": 329.22,
+      "end": 335.04,
+      "text": "be to sort it why very simple we see"
+    },
+    {
+      "start": 332.88,
+      "end": 338.64,
+      "text": "something as consecutive and you know"
+    },
+    {
+      "start": 335.04,
+      "end": 340.38,
+      "text": "when you sort it uh we had a consecutive"
+    },
+    {
+      "start": 338.64,
+      "end": 342.36,
+      "text": "sequence of one two three four the other"
+    },
+    {
+      "start": 340.38,
+      "end": 344.28,
+      "text": "consecutive sequences hundred hundred"
+    },
+    {
+      "start": 342.36,
+      "end": 346.86,
+      "text": "one hundred two and if you carefully see"
+    },
+    {
+      "start": 344.28,
+      "end": 348.84,
+      "text": "they are kind of club together I know"
+    },
+    {
+      "start": 346.86,
+      "end": 351.12,
+      "text": "there are repetitions but they are"
+    },
+    {
+      "start": 348.84,
+      "end": 353.1,
+      "text": "somewhere together in the array right"
+    },
+    {
+      "start": 351.12,
+      "end": 355.14,
+      "text": "over here also there's somewhere to get"
+    },
+    {
+      "start": 353.1,
+      "end": 356.64,
+      "text": "there so that is the intuition behind"
+    },
+    {
+      "start": 355.14,
+      "end": 359.1,
+      "text": "sorting so that I want to bring them"
+    },
+    {
+      "start": 356.64,
+      "end": 361.38,
+      "text": "together to apply our work simple"
+    },
+    {
+      "start": 359.1,
+      "end": 362.28,
+      "text": "algorithm now the algorithm is very very"
+    },
+    {
+      "start": 361.38,
+      "end": 365.4,
+      "text": "simple"
+    },
+    {
+      "start": 362.28,
+      "end": 367.8,
+      "text": "we will say longest is one assuming that"
+    },
+    {
+      "start": 365.4,
+      "end": 370.8,
+      "text": "the longest length that you can get is"
+    },
+    {
+      "start": 367.8,
+      "end": 373.38,
+      "text": "one and we will keep a track of uh"
+    },
+    {
+      "start": 370.8,
+      "end": 375.54,
+      "text": "rather last smaller now what is the"
+    },
+    {
+      "start": 373.38,
+      "end": 377.52,
+      "text": "meaning of last smaller it will keep a"
+    },
+    {
+      "start": 375.54,
+      "end": 380.04,
+      "text": "track what was the last smallest guy"
+    },
+    {
+      "start": 377.52,
+      "end": 381.18,
+      "text": "that you have seen and assuming we are"
+    },
+    {
+      "start": 380.04,
+      "end": 383.22,
+      "text": "just starting off we haven't seen"
+    },
+    {
+      "start": 381.18,
+      "end": 386.64,
+      "text": "anything so we'll keep it as integer"
+    },
+    {
+      "start": 383.22,
+      "end": 388.5,
+      "text": "minimum and I will say count current so"
+    },
+    {
+      "start": 386.64,
+      "end": 390.54,
+      "text": "you'll always uh take in the sequence"
+    },
+    {
+      "start": 388.5,
+      "end": 391.8,
+      "text": "with us and I'll initially say we don't"
+    },
+    {
+      "start": 390.54,
+      "end": 394.26,
+      "text": "have any sequence when you're starting"
+    },
+    {
+      "start": 391.8,
+      "end": 396.42,
+      "text": "off so the count current is zero and now"
+    },
+    {
+      "start": 394.26,
+      "end": 398.94,
+      "text": "we start the iteration now when we are"
+    },
+    {
+      "start": 396.42,
+      "end": 403.38,
+      "text": "starting the hydration now just imagine"
+    },
+    {
+      "start": 398.94,
+      "end": 405.66,
+      "text": "this if this one had to be a part of a"
+    },
+    {
+      "start": 403.38,
+      "end": 408.9,
+      "text": "sequence the before element has to be"
+    },
+    {
+      "start": 405.66,
+      "end": 411.24,
+      "text": "zero and the last voiler says no we have"
+    },
+    {
+      "start": 408.9,
+      "end": 413.52,
+      "text": "integer Min so you cannot be a part of"
+    },
+    {
+      "start": 411.24,
+      "end": 415.56,
+      "text": "my you cannot be a part of my sequence"
+    },
+    {
+      "start": 413.52,
+      "end": 417.84,
+      "text": "he's like fine if I cannot be a part of"
+    },
+    {
+      "start": 415.56,
+      "end": 419.88,
+      "text": "my sequence I will be the new sequence"
+    },
+    {
+      "start": 417.84,
+      "end": 421.68,
+      "text": "and he says okay I will be the new"
+    },
+    {
+      "start": 419.88,
+      "end": 424.56,
+      "text": "sequence and I'll start off with the"
+    },
+    {
+      "start": 421.68,
+      "end": 428.52,
+      "text": "length one perfect let's move the next"
+    },
+    {
+      "start": 424.56,
+      "end": 430.68,
+      "text": "one is one so if I'm saying 1 has to be"
+    },
+    {
+      "start": 428.52,
+      "end": 433.38,
+      "text": "somewhere like a part of a sequence"
+    },
+    {
+      "start": 430.68,
+      "end": 436.56,
+      "text": "before one has to be zero and we see the"
+    },
+    {
+      "start": 433.38,
+      "end": 438.6,
+      "text": "before smallest is one so maybe this"
+    },
+    {
+      "start": 436.56,
+      "end": 440.64,
+      "text": "will be a part of sequence but this will"
+    },
+    {
+      "start": 438.6,
+      "end": 442.14,
+      "text": "not be so what I'll say is no you don't"
+    },
+    {
+      "start": 440.64,
+      "end": 444.96,
+      "text": "need to be because you're the same"
+    },
+    {
+      "start": 442.14,
+      "end": 447.0,
+      "text": "you're the same so whatever sequence I'm"
+    },
+    {
+      "start": 444.96,
+      "end": 449.16,
+      "text": "running whatever sequence I'm going with"
+    },
+    {
+      "start": 447.0,
+      "end": 451.14,
+      "text": "we are the same so we don't need another"
+    },
+    {
+      "start": 449.16,
+      "end": 453.9,
+      "text": "same element so we'll not go with you"
+    },
+    {
+      "start": 451.14,
+      "end": 456.18,
+      "text": "perfect let's move ahead will you"
+    },
+    {
+      "start": 453.9,
+      "end": 459.48,
+      "text": "increase the count no because this won't"
+    },
+    {
+      "start": 456.18,
+      "end": 460.5,
+      "text": "be included again you get a 1 and this"
+    },
+    {
+      "start": 459.48,
+      "end": 462.78,
+      "text": "one"
+    },
+    {
+      "start": 460.5,
+      "end": 465.3,
+      "text": "will require 0 but it doesn't have and"
+    },
+    {
+      "start": 462.78,
+      "end": 467.7,
+      "text": "the last smaller is one and the last"
+    },
+    {
+      "start": 465.3,
+      "end": 469.92,
+      "text": "smaller is one this cannot be part of my"
+    },
+    {
+      "start": 467.7,
+      "end": 471.84,
+      "text": "sequence as of now so this one is taken"
+    },
+    {
+      "start": 469.92,
+      "end": 474.12,
+      "text": "as the sequence the count is one so this"
+    },
+    {
+      "start": 471.84,
+      "end": 476.22,
+      "text": "one cannot be now the moment I move to 2"
+    },
+    {
+      "start": 474.12,
+      "end": 478.98,
+      "text": "this is where you understand"
+    },
+    {
+      "start": 476.22,
+      "end": 480.78,
+      "text": "you have a two therefore to be the uh 2"
+    },
+    {
+      "start": 478.98,
+      "end": 483.6,
+      "text": "to be the part of the sequence what will"
+    },
+    {
+      "start": 480.78,
+      "end": 485.94,
+      "text": "you look for look for one and you have a"
+    },
+    {
+      "start": 483.6,
+      "end": 488.4,
+      "text": "one because the last smaller in your"
+    },
+    {
+      "start": 485.94,
+      "end": 491.58,
+      "text": "sequence is one now you have a two so"
+    },
+    {
+      "start": 488.4,
+      "end": 493.38,
+      "text": "can I say this can be the part of my"
+    },
+    {
+      "start": 491.58,
+      "end": 495.78,
+      "text": "sequence and the last smaller will be"
+    },
+    {
+      "start": 493.38,
+      "end": 497.94,
+      "text": "two so you got the count as two has the"
+    },
+    {
+      "start": 495.78,
+      "end": 499.92,
+      "text": "longest can be updated as two"
+    },
+    {
+      "start": 497.94,
+      "end": 502.2,
+      "text": "next you move to two now this time"
+    },
+    {
+      "start": 499.92,
+      "end": 504.0,
+      "text": "remember the count is to which you know"
+    },
+    {
+      "start": 502.2,
+      "end": 506.22,
+      "text": "means you have taken this one and you"
+    },
+    {
+      "start": 504.0,
+      "end": 508.86,
+      "text": "have taken this particular two now you"
+    },
+    {
+      "start": 506.22,
+      "end": 511.02,
+      "text": "are standing at this two can you take"
+    },
+    {
+      "start": 508.86,
+      "end": 512.94,
+      "text": "this two no why because the last smaller"
+    },
+    {
+      "start": 511.02,
+      "end": 515.1,
+      "text": "was two so if you take it's a"
+    },
+    {
+      "start": 512.94,
+      "end": 517.08,
+      "text": "repeatation and you need consecutive so"
+    },
+    {
+      "start": 515.1,
+      "end": 519.24,
+      "text": "you cannot and you'll move forward can"
+    },
+    {
+      "start": 517.08,
+      "end": 521.7,
+      "text": "you again take this too no so you'll"
+    },
+    {
+      "start": 519.24,
+      "end": 524.94,
+      "text": "move forward can you take this three yes"
+    },
+    {
+      "start": 521.7,
+      "end": 527.34,
+      "text": "why because three says the last Model is"
+    },
+    {
+      "start": 524.94,
+      "end": 529.32,
+      "text": "2 and that is what when I say"
+    },
+    {
+      "start": 527.34,
+      "end": 531.78,
+      "text": "consecutive means the last element has"
+    },
+    {
+      "start": 529.32,
+      "end": 533.64,
+      "text": "to be one lesser so he is so I'll say"
+    },
+    {
+      "start": 531.78,
+      "end": 535.5,
+      "text": "count will increase by three longest"
+    },
+    {
+      "start": 533.64,
+      "end": 537.42,
+      "text": "will get updated by this and the last"
+    },
+    {
+      "start": 535.5,
+      "end": 539.52,
+      "text": "smaller gets updated by three I move"
+    },
+    {
+      "start": 537.42,
+      "end": 541.86,
+      "text": "forward the next element is again three"
+    },
+    {
+      "start": 539.52,
+      "end": 543.78,
+      "text": "three says I'm equivalent to last"
+    },
+    {
+      "start": 541.86,
+      "end": 546.8,
+      "text": "smaller no need to do anything please go"
+    },
+    {
+      "start": 543.78,
+      "end": 549.42,
+      "text": "he's like okay and go next I have four"
+    },
+    {
+      "start": 546.8,
+      "end": 552.12,
+      "text": "estimate F4 and the last smaller is"
+    },
+    {
+      "start": 549.42,
+      "end": 555.0,
+      "text": "three so I can take the four into the"
+    },
+    {
+      "start": 552.12,
+      "end": 557.82,
+      "text": "consecutive sequence thereby the count"
+    },
+    {
+      "start": 555.0,
+      "end": 560.88,
+      "text": "current will be 4 and the longest will"
+    },
+    {
+      "start": 557.82,
+      "end": 562.8,
+      "text": "be updated to four next I'll update the"
+    },
+    {
+      "start": 560.88,
+      "end": 565.26,
+      "text": "last smaller to four and I'll move to"
+    },
+    {
+      "start": 562.8,
+      "end": 566.52,
+      "text": "100. the moment I move to 100 this is a"
+    },
+    {
+      "start": 565.26,
+      "end": 569.4,
+      "text": "very very critical point to understand"
+    },
+    {
+      "start": 566.52,
+      "end": 571.98,
+      "text": "the moment I move to 100 it looks at the"
+    },
+    {
+      "start": 569.4,
+      "end": 573.84,
+      "text": "last smaller it's four but can this be a"
+    },
+    {
+      "start": 571.98,
+      "end": 577.38,
+      "text": "part of consecutive sequence he says no"
+    },
+    {
+      "start": 573.84,
+      "end": 579.42,
+      "text": "it had to be 19 and it is four so this"
+    },
+    {
+      "start": 577.38,
+      "end": 582.48,
+      "text": "cannot be a part of the concealer"
+    },
+    {
+      "start": 579.42,
+      "end": 585.18,
+      "text": "sequence so I say fine we start new we"
+    },
+    {
+      "start": 582.48,
+      "end": 587.58,
+      "text": "start fresh we start fresh from here so"
+    },
+    {
+      "start": 585.18,
+      "end": 589.44,
+      "text": "let's start off with a length 1 let's"
+    },
+    {
+      "start": 587.58,
+      "end": 591.0,
+      "text": "say the last smaller to be 100 and then"
+    },
+    {
+      "start": 589.44,
+      "end": 593.34,
+      "text": "we'll move forward so we will always"
+    },
+    {
+      "start": 591.0,
+      "end": 596.34,
+      "text": "start fresh if the last smaller is not"
+    },
+    {
+      "start": 593.34,
+      "end": 598.68,
+      "text": "equal or not one lesser next we have"
+    },
+    {
+      "start": 596.34,
+      "end": 601.02,
+      "text": "again hundred the same applies we have"
+    },
+    {
+      "start": 598.68,
+      "end": 602.94,
+      "text": "101 so what will happen 101 will look at"
+    },
+    {
+      "start": 601.02,
+      "end": 604.92,
+      "text": "the back and we have 100 so we can take"
+    },
+    {
+      "start": 602.94,
+      "end": 606.66,
+      "text": "the 101 and the length will increase to"
+    },
+    {
+      "start": 604.92,
+      "end": 609.42,
+      "text": "2 and the last smaller will be updated"
+    },
+    {
+      "start": 606.66,
+      "end": 611.76,
+      "text": "to 101 next we have again 101 nothing"
+    },
+    {
+      "start": 609.42,
+      "end": 613.98,
+      "text": "happens next we have hundred two so the"
+    },
+    {
+      "start": 611.76,
+      "end": 616.44,
+      "text": "102 says who's the last he says hundred"
+    },
+    {
+      "start": 613.98,
+      "end": 618.42,
+      "text": "one so the sequence increases by one"
+    },
+    {
+      "start": 616.44,
+      "end": 620.76,
+      "text": "and this won't be the longest because"
+    },
+    {
+      "start": 618.42,
+      "end": 622.98,
+      "text": "longest is already four and then you"
+    },
+    {
+      "start": 620.76,
+      "end": 624.96,
+      "text": "complete the iteration once you complete"
+    },
+    {
+      "start": 622.98,
+      "end": 627.3,
+      "text": "the iteration you see that the longest"
+    },
+    {
+      "start": 624.96,
+      "end": 629.64,
+      "text": "is stored as four and this is going to"
+    },
+    {
+      "start": 627.3,
+      "end": 631.62,
+      "text": "be your answer got it so if I have to"
+    },
+    {
+      "start": 629.64,
+      "end": 633.96,
+      "text": "write the code what will it be the first"
+    },
+    {
+      "start": 631.62,
+      "end": 636.54,
+      "text": "step will definitely be for sorting and"
+    },
+    {
+      "start": 633.96,
+      "end": 639.3,
+      "text": "then we say longest we can store as one"
+    },
+    {
+      "start": 636.54,
+      "end": 642.06,
+      "text": "count current weekends probably stored"
+    },
+    {
+      "start": 639.3,
+      "end": 643.74,
+      "text": "as zero and the last smaller we can"
+    },
+    {
+      "start": 642.06,
+      "end": 646.56,
+      "text": "definitely store as a very small number"
+    },
+    {
+      "start": 643.74,
+      "end": 648.54,
+      "text": "which is integer Min once you have done"
+    },
+    {
+      "start": 646.56,
+      "end": 650.64,
+      "text": "this we are I trading in the array so"
+    },
+    {
+      "start": 648.54,
+      "end": 652.5,
+      "text": "the iteration will go from zero to n"
+    },
+    {
+      "start": 650.64,
+      "end": 655.56,
+      "text": "this is something we know for short and"
+    },
+    {
+      "start": 652.5,
+      "end": 657.06,
+      "text": "now we know one thing if array of I"
+    },
+    {
+      "start": 655.56,
+      "end": 660.48,
+      "text": "has to be"
+    },
+    {
+      "start": 657.06,
+      "end": 663.18,
+      "text": "a part of the sequence then one lesser"
+    },
+    {
+      "start": 660.48,
+      "end": 665.58,
+      "text": "than that has to be the last smaller if"
+    },
+    {
+      "start": 663.18,
+      "end": 667.86,
+      "text": "that is the case I will say count can"
+    },
+    {
+      "start": 665.58,
+      "end": 669.96,
+      "text": "you increase Yourself by one and last"
+    },
+    {
+      "start": 667.86,
+      "end": 672.42,
+      "text": "smaller can you get updated to this"
+    },
+    {
+      "start": 669.96,
+      "end": 674.46,
+      "text": "because this is the new term in the"
+    },
+    {
+      "start": 672.42,
+      "end": 676.98,
+      "text": "sequence this is the new term in the"
+    },
+    {
+      "start": 674.46,
+      "end": 679.56,
+      "text": "sequence perfect and if this does not"
+    },
+    {
+      "start": 676.98,
+      "end": 680.76,
+      "text": "works out that means it's it's a"
+    },
+    {
+      "start": 679.56,
+      "end": 684.66,
+      "text": "different element it's a different"
+    },
+    {
+      "start": 680.76,
+      "end": 688.2,
+      "text": "element and can I say if if array of I"
+    },
+    {
+      "start": 684.66,
+      "end": 690.12,
+      "text": "is equal to equal to the last smaller"
+    },
+    {
+      "start": 688.2,
+      "end": 693.06,
+      "text": "will we do anything"
+    },
+    {
+      "start": 690.12,
+      "end": 694.68,
+      "text": "in this case whenever we add a 1 did we"
+    },
+    {
+      "start": 693.06,
+      "end": 697.08,
+      "text": "do anything no the last smallest state"
+    },
+    {
+      "start": 694.68,
+      "end": 698.94,
+      "text": "as one the count State because this we"
+    },
+    {
+      "start": 697.08,
+      "end": 699.84,
+      "text": "will never pick up so we will not do"
+    },
+    {
+      "start": 698.94,
+      "end": 702.72,
+      "text": "anything"
+    },
+    {
+      "start": 699.84,
+      "end": 704.94,
+      "text": "we will not do anything in this case"
+    },
+    {
+      "start": 702.72,
+      "end": 707.46,
+      "text": "nothing to be done when it is equal to"
+    },
+    {
+      "start": 704.94,
+      "end": 709.5,
+      "text": "but when it is not equal to that's when"
+    },
+    {
+      "start": 707.46,
+      "end": 711.12,
+      "text": "you do something when it is not equal to"
+    },
+    {
+      "start": 709.5,
+      "end": 712.74,
+      "text": "then then you do something it's not"
+    },
+    {
+      "start": 711.12,
+      "end": 715.2,
+      "text": "equal to your note any you don't do"
+    },
+    {
+      "start": 712.74,
+      "end": 717.24,
+      "text": "anything on one let's say you're done so"
+    },
+    {
+      "start": 715.2,
+      "end": 718.8,
+      "text": "only only remaining operation is"
+    },
+    {
+      "start": 717.24,
+      "end": 722.52,
+      "text": "whenever you get something like 100"
+    },
+    {
+      "start": 718.8,
+      "end": 724.38,
+      "text": "which is for sure like the 99 is not"
+    },
+    {
+      "start": 722.52,
+      "end": 726.72,
+      "text": "there because that is already checked"
+    },
+    {
+      "start": 724.38,
+      "end": 728.64,
+      "text": "with this if so when it is not equal to"
+    },
+    {
+      "start": 726.72,
+      "end": 732.12,
+      "text": "what do you do you say let's start a new"
+    },
+    {
+      "start": 728.64,
+      "end": 735.3,
+      "text": "sequence let's take the 100 as the new"
+    },
+    {
+      "start": 732.12,
+      "end": 738.24,
+      "text": "smaller guy which is array of I and you"
+    },
+    {
+      "start": 735.3,
+      "end": 740.28,
+      "text": "move ahead and after this if after this"
+    },
+    {
+      "start": 738.24,
+      "end": 745.98,
+      "text": "else if you can just go ahead and say"
+    },
+    {
+      "start": 740.28,
+      "end": 749.76,
+      "text": "longest equal to Max of longest comma"
+    },
+    {
+      "start": 745.98,
+      "end": 752.28,
+      "text": "whatever is the current count perfect"
+    },
+    {
+      "start": 749.76,
+      "end": 753.72,
+      "text": "that's how easy it was in case you want"
+    },
+    {
+      "start": 752.28,
+      "end": 755.16,
+      "text": "to drive the problem the link will be in"
+    },
+    {
+      "start": 753.72,
+      "end": 758.34,
+      "text": "the description what will be the time"
+    },
+    {
+      "start": 755.16,
+      "end": 760.92,
+      "text": "complexity and login and going forward a"
+    },
+    {
+      "start": 758.34,
+      "end": 762.42,
+      "text": "big go of n so over here you're"
+    },
+    {
+      "start": 760.92,
+      "end": 764.22,
+      "text": "distorting the adding yes you're"
+    },
+    {
+      "start": 762.42,
+      "end": 766.74,
+      "text": "distorting the array so the interview"
+    },
+    {
+      "start": 764.22,
+      "end": 768.78,
+      "text": "might not like it so this is where he"
+    },
+    {
+      "start": 766.74,
+      "end": 771.24,
+      "text": "might ask you to maybe not distort the"
+    },
+    {
+      "start": 768.78,
+      "end": 773.52,
+      "text": "array or maybe get rid of the any login"
+    },
+    {
+      "start": 771.24,
+      "end": 774.9,
+      "text": "stuff that you are doing and then you"
+    },
+    {
+      "start": 773.52,
+      "end": 776.4,
+      "text": "should move to the next solution which"
+    },
+    {
+      "start": 774.9,
+      "end": 778.98,
+      "text": "is the optimal one"
+    },
+    {
+      "start": 776.4,
+      "end": 781.26,
+      "text": "so the optimal solution is only optimal"
+    },
+    {
+      "start": 778.98,
+      "end": 782.7,
+      "text": "under some constraints and I'll be"
+    },
+    {
+      "start": 781.26,
+      "end": 784.74,
+      "text": "discussing them when I discuss the time"
+    },
+    {
+      "start": 782.7,
+      "end": 787.62,
+      "text": "complexity of the optimal solution now"
+    },
+    {
+      "start": 784.74,
+      "end": 790.02,
+      "text": "the optimal solution is very simple and"
+    },
+    {
+      "start": 787.62,
+      "end": 793.38,
+      "text": "what we need to do is First Step will be"
+    },
+    {
+      "start": 790.02,
+      "end": 796.5,
+      "text": "put everything into a set data structure"
+    },
+    {
+      "start": 793.38,
+      "end": 799.14,
+      "text": "so what I'll do is I'll iterate in the"
+    },
+    {
+      "start": 796.5,
+      "end": 801.18,
+      "text": "Daddy it's like 102 so I'll put that"
+    },
+    {
+      "start": 799.14,
+      "end": 803.22,
+      "text": "into the set data structure four I'll"
+    },
+    {
+      "start": 801.18,
+      "end": 805.5,
+      "text": "put that into the set 100 I'll put that"
+    },
+    {
+      "start": 803.22,
+      "end": 808.02,
+      "text": "into the set one I'll put that into the"
+    },
+    {
+      "start": 805.5,
+      "end": 810.0,
+      "text": "set 101 I'll put that into the set three"
+    },
+    {
+      "start": 808.02,
+      "end": 812.04,
+      "text": "I'll put that into the set two I'll put"
+    },
+    {
+      "start": 810.0,
+      "end": 813.84,
+      "text": "that into the set one no more because"
+    },
+    {
+      "start": 812.04,
+      "end": 815.7,
+      "text": "set Only Stores unique elements one"
+    },
+    {
+      "start": 813.84,
+      "end": 818.1,
+      "text": "again no more because set Only Stores"
+    },
+    {
+      "start": 815.7,
+      "end": 820.14,
+      "text": "unique element once I've put everything"
+    },
+    {
+      "start": 818.1,
+      "end": 823.26,
+      "text": "into the send data structure and over"
+    },
+    {
+      "start": 820.14,
+      "end": 826.14,
+      "text": "here we will be taking an unordered set"
+    },
+    {
+      "start": 823.26,
+      "end": 828.3,
+      "text": "in C plus plus if you're using Java then"
+    },
+    {
+      "start": 826.14,
+      "end": 830.46,
+      "text": "you will be taking hash set which will"
+    },
+    {
+      "start": 828.3,
+      "end": 833.94,
+      "text": "be ordering them but in C plus plus I'll"
+    },
+    {
+      "start": 830.46,
+      "end": 835.74,
+      "text": "be taking an unordered set so assuming"
+    },
+    {
+      "start": 833.94,
+      "end": 838.32,
+      "text": "these are the elements like unordered"
+    },
+    {
+      "start": 835.74,
+      "end": 840.9,
+      "text": "like they are not sorted so the elements"
+    },
+    {
+      "start": 838.32,
+      "end": 844.32,
+      "text": "will look something like this in a set"
+    },
+    {
+      "start": 840.9,
+      "end": 846.72,
+      "text": "data structure what I will now do is I"
+    },
+    {
+      "start": 844.32,
+      "end": 848.58,
+      "text": "will now start iterating element by"
+    },
+    {
+      "start": 846.72,
+      "end": 852.0,
+      "text": "element in the set data structure and"
+    },
+    {
+      "start": 848.58,
+      "end": 854.76,
+      "text": "the first element that I'll get is 102."
+    },
+    {
+      "start": 852.0,
+      "end": 856.26,
+      "text": "when you look for 103 will you look for"
+    },
+    {
+      "start": 854.76,
+      "end": 858.9,
+      "text": "104"
+    },
+    {
+      "start": 856.26,
+      "end": 861.0,
+      "text": "logically if you start looking then it"
+    },
+    {
+      "start": 858.9,
+      "end": 864.12,
+      "text": "kind of becomes similar to The Brute"
+    },
+    {
+      "start": 861.0,
+      "end": 866.82,
+      "text": "Force this is where we will have a hack"
+    },
+    {
+      "start": 864.12,
+      "end": 867.84,
+      "text": "yes we'll have a hack now remember one"
+    },
+    {
+      "start": 866.82,
+      "end": 870.6,
+      "text": "thing"
+    },
+    {
+      "start": 867.84,
+      "end": 872.16,
+      "text": "over here the sequence that we have is"
+    },
+    {
+      "start": 870.6,
+      "end": 874.82,
+      "text": "hundred hundred and one hundred and two"
+    },
+    {
+      "start": 872.16,
+      "end": 878.16,
+      "text": "so if I start looking from 102 again"
+    },
+    {
+      "start": 874.82,
+      "end": 880.5,
+      "text": "it's more like looking from somewhere"
+    },
+    {
+      "start": 878.16,
+      "end": 882.9,
+      "text": "mid in the sequence isn't it isn't it"
+    },
+    {
+      "start": 880.5,
+      "end": 885.12,
+      "text": "better if you look right from 100 right"
+    },
+    {
+      "start": 882.9,
+      "end": 888.18,
+      "text": "from the starting point itself I'm like"
+    },
+    {
+      "start": 885.12,
+      "end": 891.18,
+      "text": "yes so what I will do is I'll see do we"
+    },
+    {
+      "start": 888.18,
+      "end": 893.4,
+      "text": "have a 101 in the array it is ETC we"
+    },
+    {
+      "start": 891.18,
+      "end": 894.78,
+      "text": "have so we'll see it's it's not the"
+    },
+    {
+      "start": 893.4,
+      "end": 897.06,
+      "text": "starting point it's not the starting"
+    },
+    {
+      "start": 894.78,
+      "end": 900.3,
+      "text": "point so let's not start so I'll not"
+    },
+    {
+      "start": 897.06,
+      "end": 902.22,
+      "text": "start because we have 101 so thereby we"
+    },
+    {
+      "start": 900.3,
+      "end": 904.8,
+      "text": "do not start fine let's go to the next"
+    },
+    {
+      "start": 902.22,
+      "end": 907.56,
+      "text": "we have four will we start looking from"
+    },
+    {
+      "start": 904.8,
+      "end": 910.02,
+      "text": "four so if you remember one two three"
+    },
+    {
+      "start": 907.56,
+      "end": 912.72,
+      "text": "four was the longest sequence right so"
+    },
+    {
+      "start": 910.02,
+      "end": 915.84,
+      "text": "if you start looking from four again"
+    },
+    {
+      "start": 912.72,
+      "end": 917.64,
+      "text": "not not needed because 3 is already"
+    },
+    {
+      "start": 915.84,
+      "end": 919.02,
+      "text": "there if you look in the set if you look"
+    },
+    {
+      "start": 917.64,
+      "end": 921.72,
+      "text": "in the set three is already there so you"
+    },
+    {
+      "start": 919.02,
+      "end": 925.74,
+      "text": "don't start fine let's move to the next"
+    },
+    {
+      "start": 921.72,
+      "end": 928.98,
+      "text": "100 now you look around is 99 there and"
+    },
+    {
+      "start": 925.74,
+      "end": 932.46,
+      "text": "you find 99 is not there 99 is not there"
+    },
+    {
+      "start": 928.98,
+      "end": 934.2,
+      "text": "so you are sure that this is probably"
+    },
+    {
+      "start": 932.46,
+      "end": 936.24,
+      "text": "probably"
+    },
+    {
+      "start": 934.2,
+      "end": 939.42,
+      "text": "starting point and that's when you say"
+    },
+    {
+      "start": 936.24,
+      "end": 942.54,
+      "text": "do we have 101 and it says yes then you"
+    },
+    {
+      "start": 939.42,
+      "end": 945.0,
+      "text": "say do you have 102 it says yes then you"
+    },
+    {
+      "start": 942.54,
+      "end": 947.28,
+      "text": "ask do you have 103 and you know in"
+    },
+    {
+      "start": 945.0,
+      "end": 950.64,
+      "text": "order to check do we have it in the set"
+    },
+    {
+      "start": 947.28,
+      "end": 952.86,
+      "text": "or not it's a very logarithmic event or"
+    },
+    {
+      "start": 950.64,
+      "end": 955.68,
+      "text": "B go for an operation if we are using"
+    },
+    {
+      "start": 952.86,
+      "end": 958.62,
+      "text": "unordered set so it's there it's there"
+    },
+    {
+      "start": 955.68,
+      "end": 960.72,
+      "text": "so you move do you have 103 no we do not"
+    },
+    {
+      "start": 958.62,
+      "end": 963.62,
+      "text": "have we stop how many elements did we"
+    },
+    {
+      "start": 960.72,
+      "end": 966.54,
+      "text": "have three so this will become your"
+    },
+    {
+      "start": 963.62,
+      "end": 969.24,
+      "text": "longest as of now three becomes perfect"
+    },
+    {
+      "start": 966.54,
+      "end": 971.7,
+      "text": "let's go to the next we have one okay"
+    },
+    {
+      "start": 969.24,
+      "end": 974.28,
+      "text": "what's the before zero do we have a zero"
+    },
+    {
+      "start": 971.7,
+      "end": 976.62,
+      "text": "no so zero is not there so we're sure"
+    },
+    {
+      "start": 974.28,
+      "end": 979.02,
+      "text": "that it's probably a starting point fine"
+    },
+    {
+      "start": 976.62,
+      "end": 981.84,
+      "text": "let's look at the next two do we have"
+    },
+    {
+      "start": 979.02,
+      "end": 985.86,
+      "text": "yes let's look at the next three do we"
+    },
+    {
+      "start": 981.84,
+      "end": 990.24,
+      "text": "have yes so move next four do we have"
+    },
+    {
+      "start": 985.86,
+      "end": 993.06,
+      "text": "yes so we move next five do we have no"
+    },
+    {
+      "start": 990.24,
+      "end": 995.4,
+      "text": "so you see we don't have what is the"
+    },
+    {
+      "start": 993.06,
+      "end": 997.86,
+      "text": "length that you generated over here 4"
+    },
+    {
+      "start": 995.4,
+      "end": 1000.62,
+      "text": "and thereby the longest gets updated to"
+    },
+    {
+      "start": 997.86,
+      "end": 1001.58,
+      "text": "four perfect so let me quickly erase"
+    },
+    {
+      "start": 1000.62,
+      "end": 1004.46,
+      "text": "this"
+    },
+    {
+      "start": 1001.58,
+      "end": 1006.44,
+      "text": "now what is the next element 101 let's"
+    },
+    {
+      "start": 1004.46,
+      "end": 1008.96,
+      "text": "start from 101 what's the previous of"
+    },
+    {
+      "start": 1006.44,
+      "end": 1011.18,
+      "text": "hundred one hundred is there is it in"
+    },
+    {
+      "start": 1008.96,
+      "end": 1013.34,
+      "text": "the set it is so you don't start again"
+    },
+    {
+      "start": 1011.18,
+      "end": 1014.6,
+      "text": "the same reason because if you start you"
+    },
+    {
+      "start": 1013.34,
+      "end": 1016.64,
+      "text": "don't necessarily start checking from"
+    },
+    {
+      "start": 1014.6,
+      "end": 1018.8,
+      "text": "Android one you'd have already done it"
+    },
+    {
+      "start": 1016.64,
+      "end": 1021.08,
+      "text": "from 100 or you will do it in do it from"
+    },
+    {
+      "start": 1018.8,
+      "end": 1022.34,
+      "text": "100. so there's no need to do 401 no"
+    },
+    {
+      "start": 1021.08,
+      "end": 1024.38,
+      "text": "need to start from the mid because"
+    },
+    {
+      "start": 1022.34,
+      "end": 1027.14,
+      "text": "that's an unnecessary event so I'll"
+    },
+    {
+      "start": 1024.38,
+      "end": 1030.56,
+      "text": "avoid it by checking one before so I"
+    },
+    {
+      "start": 1027.14,
+      "end": 1032.48,
+      "text": "avoided it perfect next three so again"
+    },
+    {
+      "start": 1030.56,
+      "end": 1034.52,
+      "text": "for three you just check for previous"
+    },
+    {
+      "start": 1032.48,
+      "end": 1036.44,
+      "text": "which is two and you see that two is"
+    },
+    {
+      "start": 1034.52,
+      "end": 1038.18,
+      "text": "already there in the set so no need to"
+    },
+    {
+      "start": 1036.44,
+      "end": 1040.22,
+      "text": "go because if you if you go what will"
+    },
+    {
+      "start": 1038.18,
+      "end": 1042.5,
+      "text": "happen is you'll start going for three"
+    },
+    {
+      "start": 1040.22,
+      "end": 1045.74,
+      "text": "then you'll go to four it's a time waste"
+    },
+    {
+      "start": 1042.5,
+      "end": 1048.14,
+      "text": "so next is two now when you start from"
+    },
+    {
+      "start": 1045.74,
+      "end": 1050.3,
+      "text": "two you'll check for one and you'll see"
+    },
+    {
+      "start": 1048.14,
+      "end": 1051.62,
+      "text": "that one is already there so do you need"
+    },
+    {
+      "start": 1050.3,
+      "end": 1054.08,
+      "text": "to start because if you start what will"
+    },
+    {
+      "start": 1051.62,
+      "end": 1055.72,
+      "text": "happen is you'll start from two"
+    },
+    {
+      "start": 1054.08,
+      "end": 1058.22,
+      "text": "you'll go to three you'll go to four"
+    },
+    {
+      "start": 1055.72,
+      "end": 1060.56,
+      "text": "unnecessary three steps unnecessarily"
+    },
+    {
+      "start": 1058.22,
+      "end": 1062.9,
+      "text": "three steps so you do not go so"
+    },
+    {
+      "start": 1060.56,
+      "end": 1065.6,
+      "text": "apparently you don't go any further and"
+    },
+    {
+      "start": 1062.9,
+      "end": 1067.1,
+      "text": "that's a complete iteration in the set"
+    },
+    {
+      "start": 1065.6,
+      "end": 1069.08,
+      "text": "once you have done the complete"
+    },
+    {
+      "start": 1067.1,
+      "end": 1072.44,
+      "text": "iteration in the set what is the longest"
+    },
+    {
+      "start": 1069.08,
+      "end": 1074.72,
+      "text": "store that will be your answer and again"
+    },
+    {
+      "start": 1072.44,
+      "end": 1077.66,
+      "text": "even if the set is sorted it still works"
+    },
+    {
+      "start": 1074.72,
+      "end": 1080.06,
+      "text": "fine because what we are making sure is"
+    },
+    {
+      "start": 1077.66,
+      "end": 1082.82,
+      "text": "let's analyze what how many iterations"
+    },
+    {
+      "start": 1080.06,
+      "end": 1085.1,
+      "text": "we did if you have to ask so there was"
+    },
+    {
+      "start": 1082.82,
+      "end": 1088.76,
+      "text": "one sequence one two three and there's"
+    },
+    {
+      "start": 1085.1,
+      "end": 1090.74,
+      "text": "the other sequence 100 101 102. we did"
+    },
+    {
+      "start": 1088.76,
+      "end": 1092.84,
+      "text": "four iterations for this we did three"
+    },
+    {
+      "start": 1090.74,
+      "end": 1095.3,
+      "text": "iterations for this A2 we do any other"
+    },
+    {
+      "start": 1092.84,
+      "end": 1097.76,
+      "text": "iteration for anyone else like two three"
+    },
+    {
+      "start": 1095.3,
+      "end": 1100.1,
+      "text": "four hundred one hundred two no how did"
+    },
+    {
+      "start": 1097.76,
+      "end": 1102.08,
+      "text": "we prevent that by just checking if the"
+    },
+    {
+      "start": 1100.1,
+      "end": 1104.36,
+      "text": "previous one was there if the previous"
+    },
+    {
+      "start": 1102.08,
+      "end": 1106.4,
+      "text": "one was there we do not because we know"
+    },
+    {
+      "start": 1104.36,
+      "end": 1108.02,
+      "text": "in a consecutive sequence the first"
+    },
+    {
+      "start": 1106.4,
+      "end": 1110.06,
+      "text": "element will never have a previous one"
+    },
+    {
+      "start": 1108.02,
+      "end": 1113.3,
+      "text": "we'll never have a previous one so we"
+    },
+    {
+      "start": 1110.06,
+      "end": 1116.06,
+      "text": "always start looking from the first"
+    },
+    {
+      "start": 1113.3,
+      "end": 1117.26,
+      "text": "element got it so let's quickly code it"
+    },
+    {
+      "start": 1116.06,
+      "end": 1118.46,
+      "text": "up the problem link will be in the"
+    },
+    {
+      "start": 1117.26,
+      "end": 1120.92,
+      "text": "description make sure you try it out"
+    },
+    {
+      "start": 1118.46,
+      "end": 1122.12,
+      "text": "from there for Java and python code uh"
+    },
+    {
+      "start": 1120.92,
+      "end": 1123.68,
+      "text": "there's an article Link in the"
+    },
+    {
+      "start": 1122.12,
+      "end": 1125.42,
+      "text": "description scroll through the article"
+    },
+    {
+      "start": 1123.68,
+      "end": 1127.1,
+      "text": "until that C plus plus Java and python"
+    },
+    {
+      "start": 1125.42,
+      "end": 1129.02,
+      "text": "code you can have it on the site just in"
+    },
+    {
+      "start": 1127.1,
+      "end": 1131.0,
+      "text": "case you're using any other language"
+    },
+    {
+      "start": 1129.02,
+      "end": 1133.1,
+      "text": "so this is how you declare the size we"
+    },
+    {
+      "start": 1131.0,
+      "end": 1135.8,
+      "text": "know if the size is empty there will be"
+    },
+    {
+      "start": 1133.1,
+      "end": 1139.4,
+      "text": "no longer sequence or else we will have"
+    },
+    {
+      "start": 1135.8,
+      "end": 1141.32,
+      "text": "a minimum of one for sure at the end of"
+    },
+    {
+      "start": 1139.4,
+      "end": 1144.02,
+      "text": "the day we will have to return this and"
+    },
+    {
+      "start": 1141.32,
+      "end": 1146.0,
+      "text": "we need a set so we will declare an"
+    },
+    {
+      "start": 1144.02,
+      "end": 1148.16,
+      "text": "unordered set assuming there are no"
+    },
+    {
+      "start": 1146.0,
+      "end": 1149.96,
+      "text": "collisions and this will take the least"
+    },
+    {
+      "start": 1148.16,
+      "end": 1152.24,
+      "text": "time complexity now let's quickly"
+    },
+    {
+      "start": 1149.96,
+      "end": 1155.3,
+      "text": "iterate in the"
+    },
+    {
+      "start": 1152.24,
+      "end": 1158.24,
+      "text": "Vector so in the list rather so we will"
+    },
+    {
+      "start": 1155.3,
+      "end": 1160.94,
+      "text": "go ahead and say insert of a of I"
+    },
+    {
+      "start": 1158.24,
+      "end": 1163.34,
+      "text": "perfect done once you've done we need to"
+    },
+    {
+      "start": 1160.94,
+      "end": 1165.5,
+      "text": "iterate in the set this is how we"
+    },
+    {
+      "start": 1163.34,
+      "end": 1168.02,
+      "text": "iterate in the set for Java the code"
+    },
+    {
+      "start": 1165.5,
+      "end": 1171.44,
+      "text": "link is in the description so we say set"
+    },
+    {
+      "start": 1168.02,
+      "end": 1172.7,
+      "text": "dot find okay are you the first element"
+    },
+    {
+      "start": 1171.44,
+      "end": 1173.84,
+      "text": "if you're the first element your"
+    },
+    {
+      "start": 1172.7,
+      "end": 1176.66,
+      "text": "previous one will not be in the same"
+    },
+    {
+      "start": 1173.84,
+      "end": 1178.52,
+      "text": "okay I am then you are you are a part of"
+    },
+    {
+      "start": 1176.66,
+      "end": 1180.98,
+      "text": "this sequence that I'm trying to count"
+    },
+    {
+      "start": 1178.52,
+      "end": 1183.8,
+      "text": "under the first element perfect X is the"
+    },
+    {
+      "start": 1180.98,
+      "end": 1184.76,
+      "text": "person now let's look if you have your"
+    },
+    {
+      "start": 1183.8,
+      "end": 1187.52,
+      "text": "next"
+    },
+    {
+      "start": 1184.76,
+      "end": 1189.74,
+      "text": "that's X plus one something similar to"
+    },
+    {
+      "start": 1187.52,
+      "end": 1192.14,
+      "text": "The Brute Force and if you are if you"
+    },
+    {
+      "start": 1189.74,
+      "end": 1194.18,
+      "text": "have you will not have this so instead"
+    },
+    {
+      "start": 1192.14,
+      "end": 1196.58,
+      "text": "of linear search now I'm using the set"
+    },
+    {
+      "start": 1194.18,
+      "end": 1197.84,
+      "text": "data structure that's how I modified The"
+    },
+    {
+      "start": 1196.58,
+      "end": 1200.36,
+      "text": "Brute Force instead of linear search I'm"
+    },
+    {
+      "start": 1197.84,
+      "end": 1202.82,
+      "text": "using the set data structure as if you"
+    },
+    {
+      "start": 1200.36,
+      "end": 1204.38,
+      "text": "have fine let's go to the next sequence"
+    },
+    {
+      "start": 1202.82,
+      "end": 1206.3,
+      "text": "which is X plus one that's the next"
+    },
+    {
+      "start": 1204.38,
+      "end": 1207.8,
+      "text": "element let's increase the count by"
+    },
+    {
+      "start": 1206.3,
+      "end": 1210.02,
+      "text": "count plus one once you've done"
+    },
+    {
+      "start": 1207.8,
+      "end": 1212.24,
+      "text": "everything can I say longest can you"
+    },
+    {
+      "start": 1210.02,
+      "end": 1213.44,
+      "text": "update yourself by longest comma"
+    },
+    {
+      "start": 1212.24,
+      "end": 1215.3,
+      "text": "whatever the count this particular"
+    },
+    {
+      "start": 1213.44,
+      "end": 1216.98,
+      "text": "sequence gave you and then return it"
+    },
+    {
+      "start": 1215.3,
+      "end": 1219.46,
+      "text": "let's quickly run it up and see if it is"
+    },
+    {
+      "start": 1216.98,
+      "end": 1219.46,
+      "text": "running fine"
+    },
+    {
+      "start": 1219.62,
+      "end": 1224.24,
+      "text": "it is I know quickly submitted now for"
+    },
+    {
+      "start": 1222.38,
+      "end": 1226.58,
+      "text": "time complexity we know one thing if we"
+    },
+    {
+      "start": 1224.24,
+      "end": 1228.38,
+      "text": "use unordered set it will end up taking"
+    },
+    {
+      "start": 1226.58,
+      "end": 1230.3,
+      "text": "big of one in an average of the best"
+    },
+    {
+      "start": 1228.38,
+      "end": 1232.58,
+      "text": "case but the worst case when collations"
+    },
+    {
+      "start": 1230.3,
+      "end": 1234.44,
+      "text": "happen it's a very very rare case then"
+    },
+    {
+      "start": 1232.58,
+      "end": 1237.56,
+      "text": "the set will end up taking big of it so"
+    },
+    {
+      "start": 1234.44,
+      "end": 1240.14,
+      "text": "in the interview clearly state that okay"
+    },
+    {
+      "start": 1237.56,
+      "end": 1242.18,
+      "text": "so assuming it the set takes bigger of"
+    },
+    {
+      "start": 1240.14,
+      "end": 1243.68,
+      "text": "one first you're iterating and putting"
+    },
+    {
+      "start": 1242.18,
+      "end": 1245.06,
+      "text": "everything into the set so that's a big"
+    },
+    {
+      "start": 1243.68,
+      "end": 1247.1,
+      "text": "off one assuming the set is taking"
+    },
+    {
+      "start": 1245.06,
+      "end": 1249.08,
+      "text": "bigger fund so that is what the time"
+    },
+    {
+      "start": 1247.1,
+      "end": 1251.48,
+      "text": "complexity for the first iteration this"
+    },
+    {
+      "start": 1249.08,
+      "end": 1253.58,
+      "text": "Loop will be then we are iterating"
+    },
+    {
+      "start": 1251.48,
+      "end": 1255.68,
+      "text": "through the set then we are iterating"
+    },
+    {
+      "start": 1253.58,
+      "end": 1257.6,
+      "text": "through the set and then for every"
+    },
+    {
+      "start": 1255.68,
+      "end": 1259.88,
+      "text": "element we are iterating you might think"
+    },
+    {
+      "start": 1257.6,
+      "end": 1263.36,
+      "text": "this while loop is like another n but"
+    },
+    {
+      "start": 1259.88,
+      "end": 1265.52,
+      "text": "this is not another end why let me tell"
+    },
+    {
+      "start": 1263.36,
+      "end": 1267.86,
+      "text": "you so if you looked for this example"
+    },
+    {
+      "start": 1265.52,
+      "end": 1271.16,
+      "text": "let's see how many iterations we did so"
+    },
+    {
+      "start": 1267.86,
+      "end": 1274.22,
+      "text": "we did one two three four five six seven"
+    },
+    {
+      "start": 1271.16,
+      "end": 1276.8,
+      "text": "iterations we did a total of seven"
+    },
+    {
+      "start": 1274.22,
+      "end": 1278.66,
+      "text": "iterations for sure right that is"
+    },
+    {
+      "start": 1276.8,
+      "end": 1281.06,
+      "text": "through the set and then when you"
+    },
+    {
+      "start": 1278.66,
+      "end": 1283.46,
+      "text": "figured out hundred you move from"
+    },
+    {
+      "start": 1281.06,
+      "end": 1285.44,
+      "text": "hundred one then to 102 so that's"
+    },
+    {
+      "start": 1283.46,
+      "end": 1287.42,
+      "text": "another three iterations and then when"
+    },
+    {
+      "start": 1285.44,
+      "end": 1289.22,
+      "text": "you figured one you moved from one two"
+    },
+    {
+      "start": 1287.42,
+      "end": 1291.86,
+      "text": "three four so that's another four"
+    },
+    {
+      "start": 1289.22,
+      "end": 1293.96,
+      "text": "iterations which is 14 which is near"
+    },
+    {
+      "start": 1291.86,
+      "end": 1297.74,
+      "text": "about two n iterations that you did"
+    },
+    {
+      "start": 1293.96,
+      "end": 1300.44,
+      "text": "because we did implement the logic where"
+    },
+    {
+      "start": 1297.74,
+      "end": 1301.88,
+      "text": "you never started from two unchecked you"
+    },
+    {
+      "start": 1300.44,
+      "end": 1305.0,
+      "text": "never started from three and checked you"
+    },
+    {
+      "start": 1301.88,
+      "end": 1307.76,
+      "text": "never started from four that is why it's"
+    },
+    {
+      "start": 1305.0,
+      "end": 1309.62,
+      "text": "a 2N and not a big offend because we are"
+    },
+    {
+      "start": 1307.76,
+      "end": 1312.56,
+      "text": "not starting from everyone we're"
+    },
+    {
+      "start": 1309.62,
+      "end": 1315.38,
+      "text": "starting just from the first guys so"
+    },
+    {
+      "start": 1312.56,
+      "end": 1317.06,
+      "text": "thereby this will be two and you can"
+    },
+    {
+      "start": 1315.38,
+      "end": 1319.22,
+      "text": "take out a uh you can try out another"
+    },
+    {
+      "start": 1317.06,
+      "end": 1323.6,
+      "text": "examples as well you will find at the"
+    },
+    {
+      "start": 1319.22,
+      "end": 1326.3,
+      "text": "max it will go for 2N so 2N plus n will"
+    },
+    {
+      "start": 1323.6,
+      "end": 1327.62,
+      "text": "be 3 n 2 N plus n will be 3 n and that"
+    },
+    {
+      "start": 1326.3,
+      "end": 1329.48,
+      "text": "is the time complexity under the"
+    },
+    {
+      "start": 1327.62,
+      "end": 1332.24,
+      "text": "assumption that the set is taking we go"
+    },
+    {
+      "start": 1329.48,
+      "end": 1333.44,
+      "text": "for if if they say that there's a worst"
+    },
+    {
+      "start": 1332.24,
+      "end": 1335.9,
+      "text": "case then you have to take the"
+    },
+    {
+      "start": 1333.44,
+      "end": 1338.12,
+      "text": "logarithmic and then then the brute"
+    },
+    {
+      "start": 1335.9,
+      "end": 1341.42,
+      "text": "force is better because over here still"
+    },
+    {
+      "start": 1338.12,
+      "end": 1345.08,
+      "text": "taking the logarithmic of N and a space"
+    },
+    {
+      "start": 1341.42,
+      "end": 1347.42,
+      "text": "complexity of B go of n assuming all the"
+    },
+    {
+      "start": 1345.08,
+      "end": 1350.0,
+      "text": "elements are unique so that's the time"
+    },
+    {
+      "start": 1347.42,
+      "end": 1351.44,
+      "text": "complexity and the space complexity for"
+    },
+    {
+      "start": 1350.0,
+      "end": 1352.94,
+      "text": "this particular solution going back to"
+    },
+    {
+      "start": 1351.44,
+      "end": 1354.44,
+      "text": "the sheet I can say that this is done"
+    },
+    {
+      "start": 1352.94,
+      "end": 1355.88,
+      "text": "and I hope you have understood the blue"
+    },
+    {
+      "start": 1354.44,
+      "end": 1357.86,
+      "text": "the better and the optimal along with"
+    },
+    {
+      "start": 1355.88,
+      "end": 1359.42,
+      "text": "the code just in case you did please"
+    },
+    {
+      "start": 1357.86,
+      "end": 1361.58,
+      "text": "please consider giving us a like because"
+    },
+    {
+      "start": 1359.42,
+      "end": 1362.9,
+      "text": "that is something that does motivate me"
+    },
+    {
+      "start": 1361.58,
+      "end": 1365.06,
+      "text": "and if you're new to our Channel what"
+    },
+    {
+      "start": 1362.9,
+      "end": 1366.68,
+      "text": "are you waiting for kill that subscribe"
+    },
+    {
+      "start": 1365.06,
+      "end": 1368.78,
+      "text": "button because this channel has a bunch"
+    },
+    {
+      "start": 1366.68,
+      "end": 1370.64,
+      "text": "of resources that might be beneficial"
+    },
+    {
+      "start": 1368.78,
+      "end": 1372.02,
+      "text": "for you and to continue our tradition"
+    },
+    {
+      "start": 1370.64,
+      "end": 1373.58,
+      "text": "please make sure you come and understood"
+    },
+    {
+      "start": 1372.02,
+      "end": 1375.26,
+      "text": "so that I understand that you are"
+    },
+    {
+      "start": 1373.58,
+      "end": 1376.34,
+      "text": "understanding everything and if you"
+    },
+    {
+      "start": 1375.26,
+      "end": 1378.32,
+      "text": "haven't followed me on Instagram Twitter"
+    },
+    {
+      "start": 1376.34,
+      "end": 1379.76,
+      "text": "LinkedIn all the profile links will be"
+    },
+    {
+      "start": 1378.32,
+      "end": 1380.96,
+      "text": "in the description with this I'll be"
+    },
+    {
+      "start": 1379.76,
+      "end": 1382.64,
+      "text": "wrapping up this video let me in some"
+    },
+    {
+      "start": 1380.96,
+      "end": 1386.72,
+      "text": "other video till then bye take care"
+    },
+    {
+      "start": 1382.64,
+      "end": 1390.26,
+      "text": "whenever your heart is broken don't ever"
+    },
+    {
+      "start": 1386.72,
+      "end": 1392.38,
+      "text": "forget you're golden I I will find the"
+    },
+    {
+      "start": 1390.26,
+      "end": 1392.38,
+      "text": "light"
+    }
+  ]
+}

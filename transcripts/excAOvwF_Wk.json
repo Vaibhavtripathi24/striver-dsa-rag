@@ -1,0 +1,1010 @@
+{
+  "video_id": "excAOvwF_Wk",
+  "title": "DP 35. Best Time to Buy and Sell Stock | DP on Stocks 🔥",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 551,
+  "text": "Hey everyone, welcome back to take you forward. So we completed 1 DDP, DP on grids, DP on subsequences and DP on strings. So it's time it's so it's time to start DP on stocks. Yes. And there are generically uh six problem stocks. Uh is that the spelling? Yeah, that's the spelling. So we have six problems and in any of the interviews if you go across by doing these six problems DP on stocks gets covered and I'll be doing all these six problems like sequentially and it's very important that you follow every problem like make sure you don't directly jump to the fourth problem make sure you watch all the videos on that given sequence because I'll be building the intuition problem by problem and Yes, in DPO stocks it's very important to understand the space optimization in an interview. You cannot skip this portion. You cannot skip the space optimization portion because in an interview in DP on stocks people tend to expect you to answer the space optimization technique. So it's very important you don't skip it. So yeah without without wasting any time uh let's actually start with the first problem. So the first problem is best time to buy and sell stock. What does the problem state? The problem state you will be given an array and it states if you sell or buy a stock on any given day. This is the first day. This is the second day. Third day. Fourth day. Fifth day. Sixth day. The price of that stock is 7 rupees. On the first day, the price is one. On the second day, the price is five. On the third day, the price is uh three. On the fourth day, the price is sixth. On the fifth, and so on. Now, it states you that you have n number of days. Yes, over here you have six days. You have to decide a day when you buy the stock. You have to decide a day when you buy the stock. And you have to decide a day when you sell off the stock. Assume I decide that I'm going to buy the stock on this day. So buying that will cost me 1 rupee. And I'm asking you when will you sell it? So you will be selling it on this day which is costing you six. So if I ask you you invested one in buying it and now you're selling it at six. What is the profit that you make? The profit that you make is five. So the question states you have to maximize the profit. Maximize the profit. Remember in order to sell a stock you have to buy it. So the buying has to be done before the selling. You can't be like okay I I'll sell it on this day. I'll buy it on this day. 7 - 1. No it doesn't works this way. First you have to buy it like you bought it on here and then you decided to sell it over here. You could have done other ways like buy it on this day, sell it on this day. This could have given you the profit of four and you are only allowed to do this transaction like buy and selling can only be done once. Can only be done once. So that is the problem. Given the stock prices on n number of days, you decide when do you buy it and then you decide when do you sell it and just make sure the difference of these guys the profit has to be maximum. The profit has to be maximum is what you need to do it. I hope that makes sense. So how do you approach this problem? Now in order to approach this problem just assume I'm asking you if you are selling the stock on this day selling it on this day when will you try to buy it you will definitely try to buy it on the day which is the minimum price like do you agree or not like it won't make sense if you buy it on this day because then you will have loss if you're selling it over here on the left you will try to buy it on the day which has minimum which is this. Similarly, if you are selling it on this, you'll try to buy it on a day when it has a minimum. Always remember if you are selling on ayat day you buy on the minimum minimum price from the first day to the I minus one day. Agreed. If you are selling it over here, over here whichever is the minimum you buy it on that. So can I say can I say I will try for every day I'll be like okay I definitely cannot buy and sell on the same day because the profit will be zero. That won't make any sense because I want to make profit. I don't want to make uh losses right. So I'll definitely start from here for this guy. Who's the minimal? The minimal is seven. The profit will be negative. So not considered for this guy who is the minimal one. So the profit will be 5 - 1 4. So you got a profit of four. For this guy who the minimal 1. The profit will be 3 - 1 2. For this guy who's the minimal one. The profit will be 6 - 1 5. Perfect. For this guy who's the minimal 1. So the profit will be 4 - 1 3. So for every day for every price you saw what profit you can make and you got for this six if you sell it on six the profit you'll make five and that is the maximum so I can say for every guy if I can keep a track of the minimal on the left my job will be done so why don't you do that it's very simple and straightforward I like okay fine I know one thing for sure the minimum as of Now the first guy is the minimum and I know the profit that I can make zero like I will not I'm not interested in making negative profit. If I'm making negative profit I will not buy and sell. I'll not buy and sell or I'll buy it on the same day. I'll sell it on the same day. So the profit will be zero. So profit is zero. Now can I say for I = 1 I lesser than N I ++ whenever you at I equal to 1 which is this guy this is the minimal this is the minimal so can I say the cost that you will the cost that it will cost you is if you uh like if you're selling it on this price and you bought it on the minimal price this is the cost and can I say the profit you you need to maximize it so can I say it will be of this cost or the previous one right now in the next step when I goes to two which means you will go to here which which means you'll go to here which is the second index this will be the minimum can I say before moving to the next guy before doing an I++ I just need to make sure the mini is updated by the share price on this day so that on the next iteration I keep a track of the minimal. So while moving I'm keeping a track of all the minimals of a of i. So that for the next of a of i for the next a of i will be having the minimal and I can easily find the costing and throughout whichever is the maximal profit is going to be my answer. So I've written the exact same code which I wrote on the iPad. Let's see if it is running fine. Yeah, it is running fine. Let's quickly submit this off to see if this gives us the correct answer. It does give us the correct answer. Time complexity guys you can start the loop from one. So the time complexity is we go of n space a go of one. So why dynamic programming? Because what is dynamic programming? Remembering the past here remembering the minimum throughout. So that's why this comes under dynamic programming tag as well. But yeah like this is definitely constructive algorithm. So guys I hope you have understood the first problem on DP stocks. Just in case you did please make sure you like this video and if you're new to this channel please please please do consider subscribing to us and yeah to continue our tradition make sure you write it write understood in the comment section and with this we will be wrapping up this video. Let's meet in the next one where we will be doing the second problem on DPN stocks. Still in bye-bye take care.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.48,
+      "text": "Hey everyone, welcome back to take you"
+    },
+    {
+      "start": 1.44,
+      "end": 8.24,
+      "text": "forward. So we completed 1 DDP, DP on"
+    },
+    {
+      "start": 4.48,
+      "end": 12.24,
+      "text": "grids, DP on subsequences and DP on"
+    },
+    {
+      "start": 8.24,
+      "end": 16.32,
+      "text": "strings. So it's time it's so it's time"
+    },
+    {
+      "start": 12.24,
+      "end": 20.16,
+      "text": "to start DP on stocks. Yes."
+    },
+    {
+      "start": 16.32,
+      "end": 22.08,
+      "text": "And there are generically uh six problem"
+    },
+    {
+      "start": 20.16,
+      "end": 25.28,
+      "text": "stocks. Uh is that the spelling? Yeah,"
+    },
+    {
+      "start": 22.08,
+      "end": 26.96,
+      "text": "that's the spelling. So we have six"
+    },
+    {
+      "start": 25.28,
+      "end": 30.24,
+      "text": "problems"
+    },
+    {
+      "start": 26.96,
+      "end": 33.36,
+      "text": "and in any of the interviews if you go"
+    },
+    {
+      "start": 30.24,
+      "end": 36.16,
+      "text": "across by doing these six problems DP on"
+    },
+    {
+      "start": 33.36,
+      "end": 39.68,
+      "text": "stocks gets covered and I'll be doing"
+    },
+    {
+      "start": 36.16,
+      "end": 41.28,
+      "text": "all these six problems like sequentially"
+    },
+    {
+      "start": 39.68,
+      "end": 44.0,
+      "text": "and it's very important that you follow"
+    },
+    {
+      "start": 41.28,
+      "end": 45.6,
+      "text": "every problem like make sure you don't"
+    },
+    {
+      "start": 44.0,
+      "end": 47.6,
+      "text": "directly jump to the fourth problem make"
+    },
+    {
+      "start": 45.6,
+      "end": 49.76,
+      "text": "sure you watch all the videos on that"
+    },
+    {
+      "start": 47.6,
+      "end": 52.4,
+      "text": "given sequence because I'll be building"
+    },
+    {
+      "start": 49.76,
+      "end": 56.16,
+      "text": "the intuition problem by problem and"
+    },
+    {
+      "start": 52.4,
+      "end": 58.4,
+      "text": "Yes, in DPO stocks it's very important"
+    },
+    {
+      "start": 56.16,
+      "end": 60.56,
+      "text": "to understand the space optimization in"
+    },
+    {
+      "start": 58.4,
+      "end": 62.72,
+      "text": "an interview. You cannot skip this"
+    },
+    {
+      "start": 60.56,
+      "end": 64.24,
+      "text": "portion. You cannot skip the space"
+    },
+    {
+      "start": 62.72,
+      "end": 67.12,
+      "text": "optimization portion because in an"
+    },
+    {
+      "start": 64.24,
+      "end": 69.76,
+      "text": "interview in DP on stocks people tend to"
+    },
+    {
+      "start": 67.12,
+      "end": 71.68,
+      "text": "expect you to answer the space"
+    },
+    {
+      "start": 69.76,
+      "end": 73.28,
+      "text": "optimization technique. So it's very"
+    },
+    {
+      "start": 71.68,
+      "end": 75.36,
+      "text": "important you don't skip it. So yeah"
+    },
+    {
+      "start": 73.28,
+      "end": 77.04,
+      "text": "without without wasting any time uh"
+    },
+    {
+      "start": 75.36,
+      "end": 79.84,
+      "text": "let's actually start with the first"
+    },
+    {
+      "start": 77.04,
+      "end": 83.2,
+      "text": "problem. So the first problem is best"
+    },
+    {
+      "start": 79.84,
+      "end": 86.0,
+      "text": "time to buy and sell stock. What does"
+    },
+    {
+      "start": 83.2,
+      "end": 90.32,
+      "text": "the problem state? The problem state you"
+    },
+    {
+      "start": 86.0,
+      "end": 96.08,
+      "text": "will be given an array and it states if"
+    },
+    {
+      "start": 90.32,
+      "end": 98.32,
+      "text": "you sell or buy a stock on any given"
+    },
+    {
+      "start": 96.08,
+      "end": 100.32,
+      "text": "day. This is the first day. This is the"
+    },
+    {
+      "start": 98.32,
+      "end": 101.92,
+      "text": "second day."
+    },
+    {
+      "start": 100.32,
+      "end": 104.48,
+      "text": "Third day. Fourth day. Fifth day. Sixth"
+    },
+    {
+      "start": 101.92,
+      "end": 106.72,
+      "text": "day. The price of that stock is 7"
+    },
+    {
+      "start": 104.48,
+      "end": 109.04,
+      "text": "rupees. On the first day, the price is"
+    },
+    {
+      "start": 106.72,
+      "end": 111.44,
+      "text": "one. On the second day, the price is"
+    },
+    {
+      "start": 109.04,
+      "end": 113.12,
+      "text": "five. On the third day, the price is uh"
+    },
+    {
+      "start": 111.44,
+      "end": 116.16,
+      "text": "three. On the fourth day, the price is"
+    },
+    {
+      "start": 113.12,
+      "end": 120.4,
+      "text": "sixth. On the fifth, and so on. Now, it"
+    },
+    {
+      "start": 116.16,
+      "end": 124.88,
+      "text": "states you that you have n number of"
+    },
+    {
+      "start": 120.4,
+      "end": 127.52,
+      "text": "days. Yes, over here you have six days."
+    },
+    {
+      "start": 124.88,
+      "end": 130.16,
+      "text": "You have to decide a day when you buy"
+    },
+    {
+      "start": 127.52,
+      "end": 132.08,
+      "text": "the stock. You have to decide a day when"
+    },
+    {
+      "start": 130.16,
+      "end": 135.44,
+      "text": "you buy the stock. And you have to"
+    },
+    {
+      "start": 132.08,
+      "end": 138.08,
+      "text": "decide a day when you sell off the"
+    },
+    {
+      "start": 135.44,
+      "end": 141.52,
+      "text": "stock. Assume I decide that I'm going to"
+    },
+    {
+      "start": 138.08,
+      "end": 145.36,
+      "text": "buy the stock on this day. So buying"
+    },
+    {
+      "start": 141.52,
+      "end": 147.68,
+      "text": "that will cost me 1 rupee. And I'm"
+    },
+    {
+      "start": 145.36,
+      "end": 150.32,
+      "text": "asking you when will you sell it? So you"
+    },
+    {
+      "start": 147.68,
+      "end": 154.96,
+      "text": "will be selling it on this day which is"
+    },
+    {
+      "start": 150.32,
+      "end": 158.16,
+      "text": "costing you six. So if I ask you you"
+    },
+    {
+      "start": 154.96,
+      "end": 160.88,
+      "text": "invested one in buying it and now you're"
+    },
+    {
+      "start": 158.16,
+      "end": 163.2,
+      "text": "selling it at six. What is the profit"
+    },
+    {
+      "start": 160.88,
+      "end": 167.2,
+      "text": "that you make? The profit that you make"
+    },
+    {
+      "start": 163.2,
+      "end": 171.68,
+      "text": "is five. So the question states you have"
+    },
+    {
+      "start": 167.2,
+      "end": 175.36,
+      "text": "to maximize the profit."
+    },
+    {
+      "start": 171.68,
+      "end": 179.12,
+      "text": "Maximize the profit. Remember in order"
+    },
+    {
+      "start": 175.36,
+      "end": 181.04,
+      "text": "to sell a stock you have to buy it. So"
+    },
+    {
+      "start": 179.12,
+      "end": 184.08,
+      "text": "the buying has to be done before the"
+    },
+    {
+      "start": 181.04,
+      "end": 186.08,
+      "text": "selling. You can't be like okay I I'll"
+    },
+    {
+      "start": 184.08,
+      "end": 188.48,
+      "text": "sell it on this day. I'll buy it on this"
+    },
+    {
+      "start": 186.08,
+      "end": 190.4,
+      "text": "day. 7 - 1. No it doesn't works this"
+    },
+    {
+      "start": 188.48,
+      "end": 192.88,
+      "text": "way. First you have to buy it like you"
+    },
+    {
+      "start": 190.4,
+      "end": 194.48,
+      "text": "bought it on here and then you decided"
+    },
+    {
+      "start": 192.88,
+      "end": 197.12,
+      "text": "to sell it over here. You could have"
+    },
+    {
+      "start": 194.48,
+      "end": 198.96,
+      "text": "done other ways like buy it on this day,"
+    },
+    {
+      "start": 197.12,
+      "end": 202.0,
+      "text": "sell it on this day. This could have"
+    },
+    {
+      "start": 198.96,
+      "end": 204.48,
+      "text": "given you the profit of four and you are"
+    },
+    {
+      "start": 202.0,
+      "end": 209.2,
+      "text": "only allowed to do this transaction like"
+    },
+    {
+      "start": 204.48,
+      "end": 211.84,
+      "text": "buy and selling can only be done once."
+    },
+    {
+      "start": 209.2,
+      "end": 215.44,
+      "text": "Can only be done once. So that is the"
+    },
+    {
+      "start": 211.84,
+      "end": 218.96,
+      "text": "problem. Given the stock prices on n"
+    },
+    {
+      "start": 215.44,
+      "end": 221.68,
+      "text": "number of days, you decide when do you"
+    },
+    {
+      "start": 218.96,
+      "end": 224.56,
+      "text": "buy it and then you decide when do you"
+    },
+    {
+      "start": 221.68,
+      "end": 227.52,
+      "text": "sell it and just make sure the"
+    },
+    {
+      "start": 224.56,
+      "end": 230.48,
+      "text": "difference of these guys the profit has"
+    },
+    {
+      "start": 227.52,
+      "end": 232.56,
+      "text": "to be maximum. The profit has to be"
+    },
+    {
+      "start": 230.48,
+      "end": 234.8,
+      "text": "maximum is what you need to do it. I"
+    },
+    {
+      "start": 232.56,
+      "end": 237.36,
+      "text": "hope that makes sense. So how do you"
+    },
+    {
+      "start": 234.8,
+      "end": 239.28,
+      "text": "approach this problem? Now in order to"
+    },
+    {
+      "start": 237.36,
+      "end": 241.84,
+      "text": "approach this problem just assume I'm"
+    },
+    {
+      "start": 239.28,
+      "end": 245.92,
+      "text": "asking you if you are selling the stock"
+    },
+    {
+      "start": 241.84,
+      "end": 248.88,
+      "text": "on this day selling it on this day when"
+    },
+    {
+      "start": 245.92,
+      "end": 252.16,
+      "text": "will you try to buy it you will"
+    },
+    {
+      "start": 248.88,
+      "end": 254.96,
+      "text": "definitely try to buy it on the day"
+    },
+    {
+      "start": 252.16,
+      "end": 257.76,
+      "text": "which is the minimum price like do you"
+    },
+    {
+      "start": 254.96,
+      "end": 260.08,
+      "text": "agree or not like it won't make sense if"
+    },
+    {
+      "start": 257.76,
+      "end": 262.88,
+      "text": "you buy it on this day because then you"
+    },
+    {
+      "start": 260.08,
+      "end": 266.64,
+      "text": "will have loss if you're selling it over"
+    },
+    {
+      "start": 262.88,
+      "end": 268.56,
+      "text": "here on the left you will try to buy it"
+    },
+    {
+      "start": 266.64,
+      "end": 270.64,
+      "text": "on the day which has minimum which is"
+    },
+    {
+      "start": 268.56,
+      "end": 273.36,
+      "text": "this. Similarly, if you are selling it"
+    },
+    {
+      "start": 270.64,
+      "end": 277.2,
+      "text": "on this, you'll try to buy it on a day"
+    },
+    {
+      "start": 273.36,
+      "end": 280.4,
+      "text": "when it has a minimum. Always remember"
+    },
+    {
+      "start": 277.2,
+      "end": 282.08,
+      "text": "if you are"
+    },
+    {
+      "start": 280.4,
+      "end": 285.84,
+      "text": "selling"
+    },
+    {
+      "start": 282.08,
+      "end": 289.24,
+      "text": "on ayat day"
+    },
+    {
+      "start": 285.84,
+      "end": 289.24,
+      "text": "you buy"
+    },
+    {
+      "start": 290.16,
+      "end": 298.96,
+      "text": "on the minimum"
+    },
+    {
+      "start": 293.84,
+      "end": 302.32,
+      "text": "minimum price from the first day to the"
+    },
+    {
+      "start": 298.96,
+      "end": 304.32,
+      "text": "I minus one day. Agreed. If you are"
+    },
+    {
+      "start": 302.32,
+      "end": 306.32,
+      "text": "selling it over here, over here"
+    },
+    {
+      "start": 304.32,
+      "end": 310.08,
+      "text": "whichever is the minimum you buy it on"
+    },
+    {
+      "start": 306.32,
+      "end": 312.8,
+      "text": "that. So can I say can I say I will try"
+    },
+    {
+      "start": 310.08,
+      "end": 314.64,
+      "text": "for every day I'll be like okay I"
+    },
+    {
+      "start": 312.8,
+      "end": 316.32,
+      "text": "definitely cannot buy and sell on the"
+    },
+    {
+      "start": 314.64,
+      "end": 319.92,
+      "text": "same day because the profit will be"
+    },
+    {
+      "start": 316.32,
+      "end": 322.0,
+      "text": "zero. That won't make any sense because"
+    },
+    {
+      "start": 319.92,
+      "end": 324.4,
+      "text": "I want to make profit. I don't want to"
+    },
+    {
+      "start": 322.0,
+      "end": 327.12,
+      "text": "make uh losses right. So I'll definitely"
+    },
+    {
+      "start": 324.4,
+      "end": 329.6,
+      "text": "start from here for this guy. Who's the"
+    },
+    {
+      "start": 327.12,
+      "end": 331.68,
+      "text": "minimal? The minimal is seven. The"
+    },
+    {
+      "start": 329.6,
+      "end": 334.48,
+      "text": "profit will be negative. So not"
+    },
+    {
+      "start": 331.68,
+      "end": 338.0,
+      "text": "considered for this guy who is the"
+    },
+    {
+      "start": 334.48,
+      "end": 341.04,
+      "text": "minimal one. So the profit will be 5 - 1"
+    },
+    {
+      "start": 338.0,
+      "end": 344.72,
+      "text": "4. So you got a profit of four. For this"
+    },
+    {
+      "start": 341.04,
+      "end": 348.72,
+      "text": "guy who the minimal 1. The profit will"
+    },
+    {
+      "start": 344.72,
+      "end": 352.96,
+      "text": "be 3 - 1 2. For this guy who's the"
+    },
+    {
+      "start": 348.72,
+      "end": 357.28,
+      "text": "minimal one. The profit will be 6 - 1 5."
+    },
+    {
+      "start": 352.96,
+      "end": 361.28,
+      "text": "Perfect. For this guy who's the minimal"
+    },
+    {
+      "start": 357.28,
+      "end": 365.52,
+      "text": "1. So the profit will be 4 - 1 3. So for"
+    },
+    {
+      "start": 361.28,
+      "end": 368.72,
+      "text": "every day for every price you saw what"
+    },
+    {
+      "start": 365.52,
+      "end": 371.84,
+      "text": "profit you can make and you got for this"
+    },
+    {
+      "start": 368.72,
+      "end": 374.24,
+      "text": "six if you sell it on six the profit"
+    },
+    {
+      "start": 371.84,
+      "end": 377.36,
+      "text": "you'll make five and that is the maximum"
+    },
+    {
+      "start": 374.24,
+      "end": 380.0,
+      "text": "so I can say for every guy if I can keep"
+    },
+    {
+      "start": 377.36,
+      "end": 381.76,
+      "text": "a track of the minimal on the left my"
+    },
+    {
+      "start": 380.0,
+      "end": 383.28,
+      "text": "job will be done so why don't you do"
+    },
+    {
+      "start": 381.76,
+      "end": 386.0,
+      "text": "that it's very simple and"
+    },
+    {
+      "start": 383.28,
+      "end": 389.84,
+      "text": "straightforward I like okay fine I know"
+    },
+    {
+      "start": 386.0,
+      "end": 393.28,
+      "text": "one thing for sure the minimum as of Now"
+    },
+    {
+      "start": 389.84,
+      "end": 396.16,
+      "text": "the first guy is the minimum"
+    },
+    {
+      "start": 393.28,
+      "end": 398.08,
+      "text": "and I know the profit that I can make"
+    },
+    {
+      "start": 396.16,
+      "end": 400.16,
+      "text": "zero like I will not I'm not interested"
+    },
+    {
+      "start": 398.08,
+      "end": 402.88,
+      "text": "in making negative profit. If I'm making"
+    },
+    {
+      "start": 400.16,
+      "end": 404.8,
+      "text": "negative profit I will not buy and sell."
+    },
+    {
+      "start": 402.88,
+      "end": 406.48,
+      "text": "I'll not buy and sell or I'll buy it on"
+    },
+    {
+      "start": 404.8,
+      "end": 408.32,
+      "text": "the same day. I'll sell it on the same"
+    },
+    {
+      "start": 406.48,
+      "end": 413.84,
+      "text": "day. So the profit will be zero. So"
+    },
+    {
+      "start": 408.32,
+      "end": 418.08,
+      "text": "profit is zero. Now can I say for I = 1"
+    },
+    {
+      "start": 413.84,
+      "end": 419.92,
+      "text": "I lesser than N I ++"
+    },
+    {
+      "start": 418.08,
+      "end": 423.04,
+      "text": "whenever you at I equal to 1 which is"
+    },
+    {
+      "start": 419.92,
+      "end": 427.28,
+      "text": "this guy this is the minimal this is the"
+    },
+    {
+      "start": 423.04,
+      "end": 430.56,
+      "text": "minimal so can I say the cost"
+    },
+    {
+      "start": 427.28,
+      "end": 434.48,
+      "text": "that you will the cost that it will cost"
+    },
+    {
+      "start": 430.56,
+      "end": 438.24,
+      "text": "you is if you uh like if you're selling"
+    },
+    {
+      "start": 434.48,
+      "end": 440.72,
+      "text": "it on this price and you bought it on"
+    },
+    {
+      "start": 438.24,
+      "end": 443.52,
+      "text": "the minimal price this is the cost and"
+    },
+    {
+      "start": 440.72,
+      "end": 445.52,
+      "text": "can I say the profit"
+    },
+    {
+      "start": 443.52,
+      "end": 448.48,
+      "text": "you you need to maximize it so can I say"
+    },
+    {
+      "start": 445.52,
+      "end": 452.96,
+      "text": "it will be of this cost or the previous"
+    },
+    {
+      "start": 448.48,
+      "end": 454.88,
+      "text": "one right now in the next step when I"
+    },
+    {
+      "start": 452.96,
+      "end": 457.28,
+      "text": "goes to two which means you will go to"
+    },
+    {
+      "start": 454.88,
+      "end": 459.2,
+      "text": "here which which means you'll go to here"
+    },
+    {
+      "start": 457.28,
+      "end": 462.64,
+      "text": "which is the second index this will be"
+    },
+    {
+      "start": 459.2,
+      "end": 465.84,
+      "text": "the minimum can I say before moving to"
+    },
+    {
+      "start": 462.64,
+      "end": 469.28,
+      "text": "the next guy before doing an I++ I just"
+    },
+    {
+      "start": 465.84,
+      "end": 474.16,
+      "text": "need to make sure the mini"
+    },
+    {
+      "start": 469.28,
+      "end": 477.2,
+      "text": "is updated by the share price on this"
+    },
+    {
+      "start": 474.16,
+      "end": 480.16,
+      "text": "day so that on the next iteration I keep"
+    },
+    {
+      "start": 477.2,
+      "end": 482.72,
+      "text": "a track of the minimal. So while moving"
+    },
+    {
+      "start": 480.16,
+      "end": 485.12,
+      "text": "I'm keeping a track of all the minimals"
+    },
+    {
+      "start": 482.72,
+      "end": 487.76,
+      "text": "of a of i. So that for the next of a of"
+    },
+    {
+      "start": 485.12,
+      "end": 489.44,
+      "text": "i for the next a of i will be having the"
+    },
+    {
+      "start": 487.76,
+      "end": 491.36,
+      "text": "minimal and I can easily find the"
+    },
+    {
+      "start": 489.44,
+      "end": 496.96,
+      "text": "costing and throughout whichever is the"
+    },
+    {
+      "start": 491.36,
+      "end": 498.56,
+      "text": "maximal profit is going to be my answer."
+    },
+    {
+      "start": 496.96,
+      "end": 500.4,
+      "text": "So I've written the exact same code"
+    },
+    {
+      "start": 498.56,
+      "end": 501.76,
+      "text": "which I wrote on the iPad. Let's see if"
+    },
+    {
+      "start": 500.4,
+      "end": 503.76,
+      "text": "it is running fine. Yeah, it is running"
+    },
+    {
+      "start": 501.76,
+      "end": 506.08,
+      "text": "fine. Let's quickly submit this off to"
+    },
+    {
+      "start": 503.76,
+      "end": 507.92,
+      "text": "see if this gives us the correct answer."
+    },
+    {
+      "start": 506.08,
+      "end": 510.16,
+      "text": "It does give us the correct answer. Time"
+    },
+    {
+      "start": 507.92,
+      "end": 512.56,
+      "text": "complexity guys you can start the loop"
+    },
+    {
+      "start": 510.16,
+      "end": 516.08,
+      "text": "from one. So the time complexity is we"
+    },
+    {
+      "start": 512.56,
+      "end": 518.96,
+      "text": "go of n space a go of one. So why"
+    },
+    {
+      "start": 516.08,
+      "end": 520.8,
+      "text": "dynamic programming? Because what is"
+    },
+    {
+      "start": 518.96,
+      "end": 523.12,
+      "text": "dynamic programming? Remembering the"
+    },
+    {
+      "start": 520.8,
+      "end": 524.64,
+      "text": "past here remembering the minimum"
+    },
+    {
+      "start": 523.12,
+      "end": 526.96,
+      "text": "throughout. So that's why this comes"
+    },
+    {
+      "start": 524.64,
+      "end": 529.12,
+      "text": "under dynamic programming tag as well."
+    },
+    {
+      "start": 526.96,
+      "end": 531.2,
+      "text": "But yeah like this is definitely"
+    },
+    {
+      "start": 529.12,
+      "end": 532.72,
+      "text": "constructive algorithm. So guys I hope"
+    },
+    {
+      "start": 531.2,
+      "end": 534.96,
+      "text": "you have understood the first problem on"
+    },
+    {
+      "start": 532.72,
+      "end": 536.64,
+      "text": "DP stocks. Just in case you did please"
+    },
+    {
+      "start": 534.96,
+      "end": 537.76,
+      "text": "make sure you like this video and if"
+    },
+    {
+      "start": 536.64,
+      "end": 540.08,
+      "text": "you're new to this channel please please"
+    },
+    {
+      "start": 537.76,
+      "end": 541.52,
+      "text": "please do consider subscribing to us and"
+    },
+    {
+      "start": 540.08,
+      "end": 543.28,
+      "text": "yeah to continue our tradition make sure"
+    },
+    {
+      "start": 541.52,
+      "end": 545.12,
+      "text": "you write it write understood in the"
+    },
+    {
+      "start": 543.28,
+      "end": 546.48,
+      "text": "comment section and with this we will be"
+    },
+    {
+      "start": 545.12,
+      "end": 548.0,
+      "text": "wrapping up this video. Let's meet in"
+    },
+    {
+      "start": 546.48,
+      "end": 549.76,
+      "text": "the next one where we will be doing the"
+    },
+    {
+      "start": 548.0,
+      "end": 552.72,
+      "text": "second problem on DPN stocks. Still in"
+    },
+    {
+      "start": 549.76,
+      "end": 552.72,
+      "text": "bye-bye take care."
+    }
+  ]
+}

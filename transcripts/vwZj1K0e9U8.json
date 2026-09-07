@@ -1,0 +1,3310 @@
+{
+  "video_id": "vwZj1K0e9U8",
+  "title": "Majority Element II | Brute-Better-Optimal",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1618,
+  "text": "hey everyone welcome back to the channel I hope you guys are doing extremely well so this is another lecture from the stripers A to Z DSA course just in case here for the first time here this is world's most in-depth course when we talk about DS algo why do I see that this costs us 455 modules by the end of the course to sold more than 400 plus problems in DSL book you can go over the entire internet you can buy any of the paid courses none of them will be teaching you this I'll go in such step something that I can give you as a short it says once you complete this entire course you can click any of the DS algorithms in any of the companies in any part of the world so till now we have covered up till this particular problem now in this video I'll be covering up the problem majority element n by three times but please before watching this video go back and watch the video majority element n by two times in that video I've explained the algorithm and intuition in depth and for this particular problem I'll just be using that algorithm and intuition to derive a solution for n by three times so if you haven't seen that particular video there's a link in the description description pause this video go back and watch it and then only resume it because if you haven't seen it you won't understand anything then I'll teach in this particular video so what does the problem actually state it states that it will be given an array and that will be consisting of integers and you have to return me all the integers that are appearing more than floor of n by three times what does it mean so over here n is given as eight so if I write 8 by 3 the value will be two point something so if I take the floor of the division it will actually be 2 so you have to return view all the integers that are appearing more than two times so can I say one is definitely one of the integers that is appearing more than two tanks because it appears three times and can I definitely say two is another integer that is appearing more than two times because 2 is also appearing three times so there are two integers that are appearing more than two tanks and these two integers have to be returned so before we move on to the solution I have a very simple question for you how many integers do you think at Max will be there in the answer like over here you did see that the answer had one and two so they were at Max of two integers to ask you how many at match will be there in the answer can I say the answer will be at Max having two integers can I say this why so over here n was it and when I did a floor of it the value that I bought was 2 correct and I wanted someone greater than two like any element that is appearing more than two times so more than two times means at minimal it will be three at minimum it has to appear three times so if I take three plus three it is giving me six but if I take three integers if I take three integers each of them appearing three times then the total will be nine nine integers and but n was just eight so can I definitely say that at Max there will just be two elements which will always appear greater than floor of n by 3 I can take any other value of n imagine you take n as nine and if I do something like 9 by 3 and a floor that gives me three if I take more than three I want integers that are appearing more than three so that is at minimum of four times four plus four will be eight and if you add another one which appears four times and becomes twelve but n was just nine so at maximum at maximum the answer just can have two integers at minimum it can have zero integers it can have no one appearing more than n by three times but at Max we can just have two integers so that is the first thing we have observed so we know something for short that the answer will always have two elements now what is the first solution that comes to your mind like The Brute Force The Brute Force is very simple what you say is you pick up every element that you check through the array which is appearing more than floor of n by three times and that is the extreme root Force so probably I'll take a list which is initially empty okay and then I start with the first element one and I pick up one and I Traverse in the entire array I pick up 108 Travis in the entire array I say one are you appearing how many times like one says once twice Thrice no no no no no so one appears price and that is greater than the floor of n by three thereby I can say that okay one is a possibility thereby I just take it then I move forward and I again see one but that is already in the list if it is already in the list I'll not do anything I'll just move and then I have a one and I again say it is already in my answer so I'll not do anything and I'll move I see I have a three if I see I have a three I pick up three and I'll probably start counting it and it's like no no no yes yes he no no no so two times which is not greater than floor of n by 3 so nothing to be done let's move ahead we have a three again the same thing next we have a do the warranty taker to no no no over here and then yes yes so three ranks which is more than floor of n by three times so thereby 2 will be in the answer the moment you see that the list has two elements you can stop you can stop the iteration over here because you know at Max you'll just have two integers that can appear more than floor of n by three times so you just stop and you can return this list as the answer so let's quickly write down the pseudo code for The Brute Force so can I say I'll probably take a list which is initially empty and then I'll start iterating from I equal to 0 till the last index which is n minus 1 and I know one thing for short if the list is empty then I need to check I don't need to do anything I can just go ahead and take that element and count in the entire array or or I can say if the list is not empty if the list is not empty then whatever is at the first index whatever is at the first position I will say if that's not equal to the current element can I say this that means this is not a part of my answer so what I will do is I'll probably keep account equal to 0 is Count equal to 0 and then I'll just run a loop from J equal to 0 to n minus 1 and I'll say Hey listen if array of J is equal to equal to this particular nums or rather nums of J if nums of J is equal to equal to nums of I then poon please keep a counter counter plus plus so once this entire for Loop is over I can simply say if counter is greater than n by 3 then what I say is list can you just add this possible element and he will add it and this is how you do it so basically what I did was if Nest has no answer we check for the element or if it has one element then I'll say if that one element is not equal to the current then go and check and it just simply does a linear search and once this if is completed what you do is if at any moment the list size becomes equal to equal to 2 you break there is no need to do any further iterations you break and at the end of the day you can return the list that will be your answer so if I ask you what is the time complexity can I say the time complexity is we are running a big O of n Loop over here we are another big off and loop inside so can I see the time complexity is near above Big O of n square and what about the space complexity are we using any extra space yes we are we are taking a list but that is hardly going to stop two elements so big O of 2 is the space which is as good as the constant space so this will be the overall time complexity and the space complexity obviously the interviewer will not be happy with n square and it'll ask you to optimize it this is where we will move to the better solution so we have to improve from n Square so what can you think of we know one thing for sure we are counting as we move forward so you have to keep a track of how many times it did appear we have to remember and whenever these things come in what is the logic like what is the technique that comes to your mind it is the hashing technique because you have to remember so probably we can hash it so what I will do is I'll do a hash it and that is when I'll probably take a empty hash mark this is the better solution I'll take an empty hash map and in the hashtag what I'll do is I'll keep the number and I'll keep the count as the key and value and I'll start eye tweeting over the array first element is one I'll say one you appear one day perfect next move forward it's again one so I'll just go ahead and increase the count next again one go ahead and increase the Curve perfect next again one go ahead and again increase the count next three put it into the hashva next to put it into the hashma next to increase next to increase once you've iterated through the entire array your hash map is containing every unique element if you carefully see every unique element with its count what did you require how many of them appeared more than floor of n by 3 so I'll go through the hashma I'll go through the hash map and I'll say okay one you're paying four times that's more than what I require so one will be my answer next three no next two yes so I have two possible answers and this I can store in a list and return so what did we do as the part of the better solution we first iterated over the array then we iterated over the hash map so two iterations with it but do we actually need two iterations can we do better we can let's see how sad present we were basically going through the entire array and then iterating through the entire map and we need to remove this step so what I'll try to do is whenever I take an element and I put it into the map that is the moment we have to do something correct so what I'll do is I will at first figure out what is floor of n by 3 so floor of n by 3 is nothing but 2 in this case so we need any element that appears a minimum of three times because greater than 2 means a minimum of 3 times is what I require right so now what I will do is I'll take up the first element which is 1. I'll put it into the hash map with 1 by comma 1 okay next I'll take up one and I'll increase the count next I'll take up one and I'll increase the count to three very important point the moment someone's count goes to 3 the moment someone's curve goes to three you'll be like I needed minimum of three times it so I'll take that into my answer next I go to one and the count increases to four but if the count increases to 4 no need to take because I'd have already taken it when I would have compared it with three so no need to take it move forward three put it into the hash map one note next two no next increase no next increase again the moment you increase it to three three is what you required for a minimum time for it to be counted as an answer take it and put it in the answer and the iteration is over so what I did was a single iteration yes a single iteration B go of n hydration and that does it so one iteration does it let's quickly write down the pseudocode so I'll require a list and I'll definitely require a map right so let's quickly iterate on the array so it goes from 0 to n minus 1 as 0 and we know one thing if we do something like NPP of array of I plus plus now if the element doesn't appears it automatically takes it as zero remember this if the element doesn't appears it automatically considers the value to be 0 for that particular key and it does a plus plus on it so for the first time when there's a one it will not find it so it will do a plus plus and will enter into the map one comma one so you have entered it into the map once you've done it you say if MPP of array of I if the value in the hashma is equivalent to your minimum value which is floor off so you can say n by 3 plus 1 because null plus 1 will be otld floor of this plus 1 is equal to minimum then you can probably add it to your list yes then you can go ahead and add it to your list quite simple so this will be the super simple code for The Brute Force solution what is the time complexity we go of n for normal iteration and if I consider this one to be the logarithmic of n you can take low algorithmic of n if you are taking a map which is working in P go of one which is the unordered map then this can be a beaker of one as well but remember one thing the unordered Maps worst time complexity is we go of n okay so this is how easily you can do the better solution but obviously the interviewer will not be happy why because yeah using an extra space time complexity is n or n log n but the space that you're using is B go often why imagine if I give you an array like one two three four then you end up putting every element into the map so the space complexity will be be equal of n at the worst case and this is where the interview will ask you can you please try to optimize the space complexity so in case you want to submit the better solution the problem link will be in the description please do make sure that you submit it from the link in the description itself and this is how it will look like I've just added one statement which says the moment you get the answer stop iterating and over here they've asked you to return the array of in the sorted order that's why I've just sorted the answers before returning it so this is how the better solution will look like uh will it add to the time complexity no because it is hardly an area of size two so two logarithmic 2 is what you're adding if you are sorting it it's like we go off to log 2 which is like as good as constant okay let's sign for the optimal solution but if you remember at the starting of the video I've told you that the optimal algorithm will be derived from greater than n by 2 times so if you haven't seen it the video link is in the description please go back and watch it let's quickly go to the optimal code so this is the optimal code where at first we apply the algorithm and whatever element we get we check if that element is appearing like we just do a another iteration and we check if it is appearing more than n by n by two times just to be sure so let's come back to the iPad so this is the algorithm that we are writing for greater than floor of n by two times right this is the algorithm that we are writing now we have to kind of simulate this algorithm for greater than floor of n by three times what was the intuition if you remember the like if you have seen the previous video the intuition was very simple if you have 1 1 1 and if you have 2 2 2 then we know for sure if this one is taken and this appears four times for someone else to cancel it it has to appear four times then only they will cancel it off right that was the logic and that is where if it's equal we're doing count plus plus and if it's not equal we are doing counter minus minus so over here it appears four times this appears three times so the one will not be canceled and at the end of the day the element will be this particular one so it is the cancellation logic that we did apply at greater than floor of n by two times we're gonna apply the same cancellation logic in this problem as well so let's try to simulate so we know over here we just had one answer because there can only be one element which appears more than n by two times over here we know there will be two possible elements so instead of count what I'll do is I'll take count of one equal to 0 and counter 2 equal to 0. you're trying to simulate the same angle and I'll take element one and we'll take element two right and same way I'll probably try to iterate from 0 till n minus 1 same I'm not in the same code what is the first thing you're saying if counter is U if counter is zero please take that element and say okay this element might be my answer okay fine I'll take if counter one instead of this I'll let counter 1 is equal to 0. I will say hey counter one is one and probably the element one this time instead of element it's element one will be nums of I or array of I whatever you can and this will be my first step now after this it goes for checking but if you see over here we have a counter one we have a counted similarly you can write another one so this is pretty much similar to this just for the second element you will write counter 2 is equal to equal to 0 and then you will say in that case counter 2 will be 1 and element 2 will be nums of I perfect so this has been simulated to two because overhead is for count over here it will be for counter one and counter two done let's do the next step it is stating if it is equal let's increase the so let's write it else if the the element one is equal to equal to array of fire nums of I whatever in that case can you please do a counter plus plus which is counter one and again simulated for two variables so else if element 2 is equal to equal to nums of I can you please give it a counter to plus plus so this one has been simulated for two that was the next one ends so the next one is else the next one is else let's quickly erase this over here it says counter minus minus so in the else you will say count of one minus minus because it is neither equal to this or neither equal to this so let's subtract from both because I have to eliminate both if you remember the intuition let's subtracted from both subtracted now will this algorithm work this is an exact replica of this just for two elements will it work the answer to that is no it won't work why I'll give you a test case and I'll tell you why this will not work and why you have to do a slight modification so I've taken this particular example now what I'll do is I'll at first have counter 1 as 0 and the element can be initialized to a varying a number which is not in the array so counter 2 is again 0 and element 2 is also there so what is the first step that happens first step we add this two and we move ahead and counter one as definitely zero so counter one makes itself one it initializes itself with this particular to that let's move ahead we have one next time it comes again to this phone Loop and we add this counter one is zero no it is not counted to a zero yes it is so please initialize it with one and increase the value of element 2 2. what rather initialize the value of element to do one next you'll move remember one thing all of these are else of statements so if one statement executes the other will not so we have a one if counter one zero no if counter to zero no is element one element is two and this is one so no if element two is one yes so counter two increases counter two increases to two convert to increases to two very important next move it and this is two and this is one so all of these statements are false so apparently the else tends to work the moment you work out the else the counter will reduce by it the counter reduce so basically what happened was this three canceled of 1 1 and 1 into it canceled off perfect done so what is the next step it goes over to the next element whenever it goes to the next element it again starts checking it's counter one zero it is what it will do is it is a counter one one is this one to here which is a wrong thing why because element 2 is already holding one so you should not you should not because if you execute this and for this one the counter will not increase itself ideally this should be executed and this will not so please make sure to include a simple Edge case over here steating and he listen we will see if if this nums of I should not be equal to element 2 that should be very sure because if I am considering this number I to be element 1 that should never be element 2 and similarly can I say over here just a second over here as well and and nouns of I should not be equal to element 1y because I'm considering this to be element 2 this should never be element one and if you just modify these couple of lines this will work and this is why I told you please go back and watch the previous video because the intuition is similar to the previous video we just keep canceling and at the end of the day once you have done this please do a manual check please do a manual check on element 1 and on element 2 if they can be the possible answers or not got it so let's quickly code up the optimal solution again please do try out the problem from the link in the description itself so we we required couple of counts so count one equal to 0 and count to equal to zero we require an element one which can be taken as into mean because that is definitely not going to be the answer we can take an element uh 2 as into mean as well taken what's the next step let's quickly start iterating from 0 till the end of the array and this is how you do it and then we go ahead and then we say if counter 1 is equal to equal to 0 and please make sure that the element 2 is not equal to V of I that's very important you say counter one is equal to 1 at the same time you say element one is equal to V of I again you write else if very important that you write else if otherwise everything will free and you make sure that element one is not equal to this particular one so it's a counter two is equal to 1 and element 2 is equal to V of I once you have done this you say else if what if this is equal to element one then you say counter plus plus what if you say V of I is equal to equal to element two then you say counter to plus plus and what if both of these cases are not there okay say counter minus minus and counter 2 minus minus simple as that once you've done this you can say a vector in LS and please go ahead and take another counter maybe take the same count as initialize it as 0 and counter to initial it as zeros so once the iteration is done you will have something stored in the element one and something in the element two but you cannot surely say that those elements are the majority elements so what you do is you do a manual check and for that what I've done is I've reinitialized count one and count two to be zero and we will start iterating again and this time I just manually have a count so if element one is equal to V of I I'll do counter plus plus if element 2 is equal to equal to V of I I'll do a counter to plus plus and at the end of the day if what was the value if you remember it was n by 3 plus 1 is what you require it to be a minimum of so you basically say if this count of one is somewhere equal to or greater than this then you probably add it to your answer so go ahead and add it to your answer and this will be element one and if you see counter 2 to be greater than meaning again you add it to your answer which is the element two and once you've done this just go ahead and sort it you can manually sort it as well by swapping but yeah cool I'll sort it once I've done this I'll go ahead and return this particular list which is going to be my answer so let's quickly run it off and see if it is running fine there's some compilation errors okay n is not there so it'll be weird size I think we should have declared n because we've declared V Dot size so many times okay it does run now let's quickly submit it off and see if it is getting submitted so what is the time complexity we go of n over here because it's just a simple iteration another big oven so we go of 2N and this is like as good as constant because it's just two elements which are getting sorted so we go off to n are we using any extra space we're using four variables which is as good as ons so big of one is the space complexity the time complexity is 2N so going back to the sheet I can mark this one as done as well I hope I've understood the Brew the better and the optimal in case you are thinking why did I not discuss about the intuition in depth the reason is because uh we've already discussed about this in this particular video the link will be in the description in case you're watching till here please please do consider giving us that like because it won't cost you anything but that is something that will highly motivate me to make these kind of videos if you haven't followed me on Instagram what are you doing I'm putting a lot of information of content over there so please follow me on Instagram it goes by the name scrivon disco 79 and yes if you're new to our channel do consider subscribing to us with this I'll be wrapping on this video let's finish some of the videos [Music]",
+  "segments": [
+    {
+      "start": 2.94,
+      "end": 6.18,
+      "text": "hey everyone welcome back to the channel"
+    },
+    {
+      "start": 4.56,
+      "end": 7.86,
+      "text": "I hope you guys are doing extremely well"
+    },
+    {
+      "start": 6.18,
+      "end": 9.96,
+      "text": "so this is another lecture from the"
+    },
+    {
+      "start": 7.86,
+      "end": 11.34,
+      "text": "stripers A to Z DSA course just in case"
+    },
+    {
+      "start": 9.96,
+      "end": 13.2,
+      "text": "here for the first time here this is"
+    },
+    {
+      "start": 11.34,
+      "end": 15.12,
+      "text": "world's most in-depth course when we"
+    },
+    {
+      "start": 13.2,
+      "end": 18.0,
+      "text": "talk about DS algo why do I see that"
+    },
+    {
+      "start": 15.12,
+      "end": 19.86,
+      "text": "this costs us 455 modules by the end of"
+    },
+    {
+      "start": 18.0,
+      "end": 21.96,
+      "text": "the course to sold more than 400 plus"
+    },
+    {
+      "start": 19.86,
+      "end": 23.46,
+      "text": "problems in DSL book you can go over the"
+    },
+    {
+      "start": 21.96,
+      "end": 25.02,
+      "text": "entire internet you can buy any of the"
+    },
+    {
+      "start": 23.46,
+      "end": 26.46,
+      "text": "paid courses none of them will be"
+    },
+    {
+      "start": 25.02,
+      "end": 28.02,
+      "text": "teaching you this I'll go in such step"
+    },
+    {
+      "start": 26.46,
+      "end": 29.7,
+      "text": "something that I can give you as a short"
+    },
+    {
+      "start": 28.02,
+      "end": 31.38,
+      "text": "it says once you complete this entire"
+    },
+    {
+      "start": 29.7,
+      "end": 33.36,
+      "text": "course you can click any of the DS"
+    },
+    {
+      "start": 31.38,
+      "end": 35.22,
+      "text": "algorithms in any of the companies in"
+    },
+    {
+      "start": 33.36,
+      "end": 36.66,
+      "text": "any part of the world so till now we"
+    },
+    {
+      "start": 35.22,
+      "end": 37.92,
+      "text": "have covered up till this particular"
+    },
+    {
+      "start": 36.66,
+      "end": 39.78,
+      "text": "problem now in this video I'll be"
+    },
+    {
+      "start": 37.92,
+      "end": 42.3,
+      "text": "covering up the problem majority element"
+    },
+    {
+      "start": 39.78,
+      "end": 44.64,
+      "text": "n by three times but please before"
+    },
+    {
+      "start": 42.3,
+      "end": 46.98,
+      "text": "watching this video go back and watch"
+    },
+    {
+      "start": 44.64,
+      "end": 49.14,
+      "text": "the video majority element n by two"
+    },
+    {
+      "start": 46.98,
+      "end": 52.44,
+      "text": "times in that video I've explained the"
+    },
+    {
+      "start": 49.14,
+      "end": 55.32,
+      "text": "algorithm and intuition in depth and for"
+    },
+    {
+      "start": 52.44,
+      "end": 57.78,
+      "text": "this particular problem I'll just be"
+    },
+    {
+      "start": 55.32,
+      "end": 60.0,
+      "text": "using that algorithm and intuition to"
+    },
+    {
+      "start": 57.78,
+      "end": 61.62,
+      "text": "derive a solution for n by three times"
+    },
+    {
+      "start": 60.0,
+      "end": 62.88,
+      "text": "so if you haven't seen that particular"
+    },
+    {
+      "start": 61.62,
+      "end": 64.74,
+      "text": "video there's a link in the description"
+    },
+    {
+      "start": 62.88,
+      "end": 66.6,
+      "text": "description pause this video go back and"
+    },
+    {
+      "start": 64.74,
+      "end": 68.22,
+      "text": "watch it and then only resume it because"
+    },
+    {
+      "start": 66.6,
+      "end": 70.26,
+      "text": "if you haven't seen it you won't"
+    },
+    {
+      "start": 68.22,
+      "end": 71.58,
+      "text": "understand anything then I'll teach in"
+    },
+    {
+      "start": 70.26,
+      "end": 73.62,
+      "text": "this particular video so what does the"
+    },
+    {
+      "start": 71.58,
+      "end": 75.48,
+      "text": "problem actually state it states that it"
+    },
+    {
+      "start": 73.62,
+      "end": 77.4,
+      "text": "will be given an array and that will be"
+    },
+    {
+      "start": 75.48,
+      "end": 79.68,
+      "text": "consisting of integers and you have to"
+    },
+    {
+      "start": 77.4,
+      "end": 82.74,
+      "text": "return me all the integers that are"
+    },
+    {
+      "start": 79.68,
+      "end": 85.32,
+      "text": "appearing more than floor of n by three"
+    },
+    {
+      "start": 82.74,
+      "end": 88.38,
+      "text": "times what does it mean so over here n"
+    },
+    {
+      "start": 85.32,
+      "end": 90.9,
+      "text": "is given as eight so if I write 8 by 3"
+    },
+    {
+      "start": 88.38,
+      "end": 93.36,
+      "text": "the value will be two point something so"
+    },
+    {
+      "start": 90.9,
+      "end": 94.98,
+      "text": "if I take the floor of the division it"
+    },
+    {
+      "start": 93.36,
+      "end": 97.26,
+      "text": "will actually be 2 so you have to return"
+    },
+    {
+      "start": 94.98,
+      "end": 100.62,
+      "text": "view all the integers that are appearing"
+    },
+    {
+      "start": 97.26,
+      "end": 102.42,
+      "text": "more than two times so can I say one is"
+    },
+    {
+      "start": 100.62,
+      "end": 104.1,
+      "text": "definitely one of the integers that is"
+    },
+    {
+      "start": 102.42,
+      "end": 106.44,
+      "text": "appearing more than two tanks because it"
+    },
+    {
+      "start": 104.1,
+      "end": 108.42,
+      "text": "appears three times and can I definitely"
+    },
+    {
+      "start": 106.44,
+      "end": 109.98,
+      "text": "say two is another integer that is"
+    },
+    {
+      "start": 108.42,
+      "end": 112.14,
+      "text": "appearing more than two times because 2"
+    },
+    {
+      "start": 109.98,
+      "end": 114.24,
+      "text": "is also appearing three times so there"
+    },
+    {
+      "start": 112.14,
+      "end": 116.52,
+      "text": "are two integers that are appearing more"
+    },
+    {
+      "start": 114.24,
+      "end": 118.56,
+      "text": "than two tanks and these two integers"
+    },
+    {
+      "start": 116.52,
+      "end": 119.64,
+      "text": "have to be returned so before we move on"
+    },
+    {
+      "start": 118.56,
+      "end": 121.86,
+      "text": "to the solution I have a very simple"
+    },
+    {
+      "start": 119.64,
+      "end": 124.14,
+      "text": "question for you how many integers do"
+    },
+    {
+      "start": 121.86,
+      "end": 126.78,
+      "text": "you think at Max will be there in the"
+    },
+    {
+      "start": 124.14,
+      "end": 129.48,
+      "text": "answer like over here you did see that"
+    },
+    {
+      "start": 126.78,
+      "end": 132.06,
+      "text": "the answer had one and two so they were"
+    },
+    {
+      "start": 129.48,
+      "end": 133.62,
+      "text": "at Max of two integers to ask you how"
+    },
+    {
+      "start": 132.06,
+      "end": 136.5,
+      "text": "many at match will be there in the"
+    },
+    {
+      "start": 133.62,
+      "end": 139.56,
+      "text": "answer can I say the answer will be at"
+    },
+    {
+      "start": 136.5,
+      "end": 142.56,
+      "text": "Max having two integers"
+    },
+    {
+      "start": 139.56,
+      "end": 145.86,
+      "text": "can I say this why so over here n was it"
+    },
+    {
+      "start": 142.56,
+      "end": 148.74,
+      "text": "and when I did a floor of it the value"
+    },
+    {
+      "start": 145.86,
+      "end": 151.38,
+      "text": "that I bought was 2 correct and I wanted"
+    },
+    {
+      "start": 148.74,
+      "end": 153.18,
+      "text": "someone greater than two like any"
+    },
+    {
+      "start": 151.38,
+      "end": 155.76,
+      "text": "element that is appearing more than two"
+    },
+    {
+      "start": 153.18,
+      "end": 158.4,
+      "text": "times so more than two times means at"
+    },
+    {
+      "start": 155.76,
+      "end": 160.86,
+      "text": "minimal it will be three at minimum it"
+    },
+    {
+      "start": 158.4,
+      "end": 163.32,
+      "text": "has to appear three times so if I take"
+    },
+    {
+      "start": 160.86,
+      "end": 165.24,
+      "text": "three plus three it is giving me six but"
+    },
+    {
+      "start": 163.32,
+      "end": 167.52,
+      "text": "if I take three integers if I take three"
+    },
+    {
+      "start": 165.24,
+      "end": 170.16,
+      "text": "integers each of them appearing three"
+    },
+    {
+      "start": 167.52,
+      "end": 173.64,
+      "text": "times then the total will be nine"
+    },
+    {
+      "start": 170.16,
+      "end": 176.34,
+      "text": "nine integers and but n was just eight"
+    },
+    {
+      "start": 173.64,
+      "end": 179.16,
+      "text": "so can I definitely say that at Max"
+    },
+    {
+      "start": 176.34,
+      "end": 181.92,
+      "text": "there will just be two elements which"
+    },
+    {
+      "start": 179.16,
+      "end": 184.26,
+      "text": "will always appear greater than floor of"
+    },
+    {
+      "start": 181.92,
+      "end": 187.02,
+      "text": "n by 3 I can take any other value of n"
+    },
+    {
+      "start": 184.26,
+      "end": 190.26,
+      "text": "imagine you take n as nine and if I do"
+    },
+    {
+      "start": 187.02,
+      "end": 192.66,
+      "text": "something like 9 by 3 and a floor"
+    },
+    {
+      "start": 190.26,
+      "end": 194.82,
+      "text": "that gives me three if I take more than"
+    },
+    {
+      "start": 192.66,
+      "end": 197.58,
+      "text": "three I want integers that are appearing"
+    },
+    {
+      "start": 194.82,
+      "end": 199.92,
+      "text": "more than three so that is at minimum of"
+    },
+    {
+      "start": 197.58,
+      "end": 202.32,
+      "text": "four times four plus four will be eight"
+    },
+    {
+      "start": 199.92,
+      "end": 204.78,
+      "text": "and if you add another one which appears"
+    },
+    {
+      "start": 202.32,
+      "end": 209.34,
+      "text": "four times and becomes twelve but n was"
+    },
+    {
+      "start": 204.78,
+      "end": 212.34,
+      "text": "just nine so at maximum at maximum the"
+    },
+    {
+      "start": 209.34,
+      "end": 214.38,
+      "text": "answer just can have two integers at"
+    },
+    {
+      "start": 212.34,
+      "end": 216.48,
+      "text": "minimum it can have zero integers it can"
+    },
+    {
+      "start": 214.38,
+      "end": 219.12,
+      "text": "have no one appearing more than n by"
+    },
+    {
+      "start": 216.48,
+      "end": 221.1,
+      "text": "three times but at Max we can just have"
+    },
+    {
+      "start": 219.12,
+      "end": 222.6,
+      "text": "two integers so that is the first thing"
+    },
+    {
+      "start": 221.1,
+      "end": 224.1,
+      "text": "we have observed so we know something"
+    },
+    {
+      "start": 222.6,
+      "end": 226.68,
+      "text": "for short that the answer will always"
+    },
+    {
+      "start": 224.1,
+      "end": 227.82,
+      "text": "have two elements now what is the first"
+    },
+    {
+      "start": 226.68,
+      "end": 229.86,
+      "text": "solution that comes to your mind like"
+    },
+    {
+      "start": 227.82,
+      "end": 232.44,
+      "text": "The Brute Force The Brute Force is very"
+    },
+    {
+      "start": 229.86,
+      "end": 234.36,
+      "text": "simple what you say is you pick up every"
+    },
+    {
+      "start": 232.44,
+      "end": 237.0,
+      "text": "element that you check through the array"
+    },
+    {
+      "start": 234.36,
+      "end": 238.8,
+      "text": "which is appearing more than floor of n"
+    },
+    {
+      "start": 237.0,
+      "end": 242.28,
+      "text": "by three times and that is the extreme"
+    },
+    {
+      "start": 238.8,
+      "end": 244.98,
+      "text": "root Force so probably I'll take a list"
+    },
+    {
+      "start": 242.28,
+      "end": 246.9,
+      "text": "which is initially empty okay and then I"
+    },
+    {
+      "start": 244.98,
+      "end": 249.06,
+      "text": "start with the first element one and I"
+    },
+    {
+      "start": 246.9,
+      "end": 251.22,
+      "text": "pick up one and I Traverse in the entire"
+    },
+    {
+      "start": 249.06,
+      "end": 253.68,
+      "text": "array I pick up 108 Travis in the entire"
+    },
+    {
+      "start": 251.22,
+      "end": 255.84,
+      "text": "array I say one are you appearing how"
+    },
+    {
+      "start": 253.68,
+      "end": 259.2,
+      "text": "many times like one says once twice"
+    },
+    {
+      "start": 255.84,
+      "end": 261.42,
+      "text": "Thrice no no no no no so one appears"
+    },
+    {
+      "start": 259.2,
+      "end": 263.04,
+      "text": "price and that is greater than the floor"
+    },
+    {
+      "start": 261.42,
+      "end": 267.06,
+      "text": "of n by"
+    },
+    {
+      "start": 263.04,
+      "end": 269.88,
+      "text": "three thereby I can say that okay one is"
+    },
+    {
+      "start": 267.06,
+      "end": 272.46,
+      "text": "a possibility thereby I just take it"
+    },
+    {
+      "start": 269.88,
+      "end": 275.34,
+      "text": "then I move forward and I again see one"
+    },
+    {
+      "start": 272.46,
+      "end": 277.2,
+      "text": "but that is already in the list if it is"
+    },
+    {
+      "start": 275.34,
+      "end": 278.76,
+      "text": "already in the list I'll not do anything"
+    },
+    {
+      "start": 277.2,
+      "end": 281.22,
+      "text": "I'll just move"
+    },
+    {
+      "start": 278.76,
+      "end": 283.32,
+      "text": "and then I have a one and I again say it"
+    },
+    {
+      "start": 281.22,
+      "end": 285.18,
+      "text": "is already in my answer so I'll not do"
+    },
+    {
+      "start": 283.32,
+      "end": 287.64,
+      "text": "anything and I'll move I see I have a"
+    },
+    {
+      "start": 285.18,
+      "end": 289.44,
+      "text": "three if I see I have a three I pick up"
+    },
+    {
+      "start": 287.64,
+      "end": 294.24,
+      "text": "three and I'll probably start counting"
+    },
+    {
+      "start": 289.44,
+      "end": 297.12,
+      "text": "it and it's like no no no yes yes he no"
+    },
+    {
+      "start": 294.24,
+      "end": 299.34,
+      "text": "no no so two times which is not greater"
+    },
+    {
+      "start": 297.12,
+      "end": 301.56,
+      "text": "than floor of n by 3 so nothing to be"
+    },
+    {
+      "start": 299.34,
+      "end": 304.32,
+      "text": "done let's move ahead we have a three"
+    },
+    {
+      "start": 301.56,
+      "end": 307.02,
+      "text": "again the same thing"
+    },
+    {
+      "start": 304.32,
+      "end": 310.86,
+      "text": "next we have a do the warranty taker to"
+    },
+    {
+      "start": 307.02,
+      "end": 312.9,
+      "text": "no no no over here and then yes yes so"
+    },
+    {
+      "start": 310.86,
+      "end": 315.0,
+      "text": "three ranks which is more than floor of"
+    },
+    {
+      "start": 312.9,
+      "end": 316.98,
+      "text": "n by three times so thereby 2 will be in"
+    },
+    {
+      "start": 315.0,
+      "end": 319.5,
+      "text": "the answer the moment you see that the"
+    },
+    {
+      "start": 316.98,
+      "end": 321.0,
+      "text": "list has two elements you can stop you"
+    },
+    {
+      "start": 319.5,
+      "end": 323.78,
+      "text": "can stop the iteration over here because"
+    },
+    {
+      "start": 321.0,
+      "end": 326.28,
+      "text": "you know at Max you'll just have two"
+    },
+    {
+      "start": 323.78,
+      "end": 328.92,
+      "text": "integers that can appear more than floor"
+    },
+    {
+      "start": 326.28,
+      "end": 330.84,
+      "text": "of n by three times so you just stop and"
+    },
+    {
+      "start": 328.92,
+      "end": 332.58,
+      "text": "you can return this list as the answer"
+    },
+    {
+      "start": 330.84,
+      "end": 334.38,
+      "text": "so let's quickly write down the pseudo"
+    },
+    {
+      "start": 332.58,
+      "end": 335.88,
+      "text": "code for The Brute Force so can I say"
+    },
+    {
+      "start": 334.38,
+      "end": 337.98,
+      "text": "I'll probably take a list which is"
+    },
+    {
+      "start": 335.88,
+      "end": 340.32,
+      "text": "initially empty and then I'll start"
+    },
+    {
+      "start": 337.98,
+      "end": 342.84,
+      "text": "iterating from I equal to 0 till the"
+    },
+    {
+      "start": 340.32,
+      "end": 347.16,
+      "text": "last index which is n minus 1 and I know"
+    },
+    {
+      "start": 342.84,
+      "end": 350.1,
+      "text": "one thing for short if the list is empty"
+    },
+    {
+      "start": 347.16,
+      "end": 352.74,
+      "text": "then I need to check I don't need to do"
+    },
+    {
+      "start": 350.1,
+      "end": 354.36,
+      "text": "anything I can just go ahead and take"
+    },
+    {
+      "start": 352.74,
+      "end": 357.66,
+      "text": "that element and count in the entire"
+    },
+    {
+      "start": 354.36,
+      "end": 359.7,
+      "text": "array or or I can say if the list is not"
+    },
+    {
+      "start": 357.66,
+      "end": 362.34,
+      "text": "empty if the list is not empty then"
+    },
+    {
+      "start": 359.7,
+      "end": 365.22,
+      "text": "whatever is at the first index whatever"
+    },
+    {
+      "start": 362.34,
+      "end": 368.22,
+      "text": "is at the first position I will say if"
+    },
+    {
+      "start": 365.22,
+      "end": 371.1,
+      "text": "that's not equal to the current element"
+    },
+    {
+      "start": 368.22,
+      "end": 373.02,
+      "text": "can I say this that means this is not a"
+    },
+    {
+      "start": 371.1,
+      "end": 375.78,
+      "text": "part of my answer so what I will do is"
+    },
+    {
+      "start": 373.02,
+      "end": 377.76,
+      "text": "I'll probably keep account equal to 0 is"
+    },
+    {
+      "start": 375.78,
+      "end": 380.28,
+      "text": "Count equal to 0 and then I'll just run"
+    },
+    {
+      "start": 377.76,
+      "end": 384.42,
+      "text": "a loop from J equal to 0 to n minus 1"
+    },
+    {
+      "start": 380.28,
+      "end": 387.48,
+      "text": "and I'll say Hey listen if array of J is"
+    },
+    {
+      "start": 384.42,
+      "end": 389.1,
+      "text": "equal to equal to this particular nums"
+    },
+    {
+      "start": 387.48,
+      "end": 391.14,
+      "text": "or rather"
+    },
+    {
+      "start": 389.1,
+      "end": 395.7,
+      "text": "nums of J"
+    },
+    {
+      "start": 391.14,
+      "end": 398.7,
+      "text": "if nums of J is equal to equal to nums"
+    },
+    {
+      "start": 395.7,
+      "end": 401.58,
+      "text": "of I then poon please keep a counter"
+    },
+    {
+      "start": 398.7,
+      "end": 404.16,
+      "text": "counter plus plus so once this entire"
+    },
+    {
+      "start": 401.58,
+      "end": 408.54,
+      "text": "for Loop is over I can simply say if"
+    },
+    {
+      "start": 404.16,
+      "end": 411.6,
+      "text": "counter is greater than n by 3 then what"
+    },
+    {
+      "start": 408.54,
+      "end": 415.08,
+      "text": "I say is list can you just add this"
+    },
+    {
+      "start": 411.6,
+      "end": 416.7,
+      "text": "possible element and he will add it and"
+    },
+    {
+      "start": 415.08,
+      "end": 419.52,
+      "text": "this is how you do it so basically what"
+    },
+    {
+      "start": 416.7,
+      "end": 421.92,
+      "text": "I did was if Nest has no answer we check"
+    },
+    {
+      "start": 419.52,
+      "end": 424.38,
+      "text": "for the element or if it has one element"
+    },
+    {
+      "start": 421.92,
+      "end": 426.12,
+      "text": "then I'll say if that one element is not"
+    },
+    {
+      "start": 424.38,
+      "end": 428.46,
+      "text": "equal to the current then go and check"
+    },
+    {
+      "start": 426.12,
+      "end": 432.06,
+      "text": "and it just simply does a linear search"
+    },
+    {
+      "start": 428.46,
+      "end": 435.66,
+      "text": "and once this if is completed what you"
+    },
+    {
+      "start": 432.06,
+      "end": 438.18,
+      "text": "do is if at any moment the list size"
+    },
+    {
+      "start": 435.66,
+      "end": 440.0,
+      "text": "becomes equal to equal to 2 you break"
+    },
+    {
+      "start": 438.18,
+      "end": 442.62,
+      "text": "there is no need to do any further"
+    },
+    {
+      "start": 440.0,
+      "end": 444.6,
+      "text": "iterations you break and at the end of"
+    },
+    {
+      "start": 442.62,
+      "end": 446.46,
+      "text": "the day you can return the list that"
+    },
+    {
+      "start": 444.6,
+      "end": 448.68,
+      "text": "will be your answer so if I ask you what"
+    },
+    {
+      "start": 446.46,
+      "end": 450.3,
+      "text": "is the time complexity can I say the"
+    },
+    {
+      "start": 448.68,
+      "end": 453.12,
+      "text": "time complexity is we are running a big"
+    },
+    {
+      "start": 450.3,
+      "end": 455.34,
+      "text": "O of n Loop over here we are another big"
+    },
+    {
+      "start": 453.12,
+      "end": 458.58,
+      "text": "off and loop inside so can I see the"
+    },
+    {
+      "start": 455.34,
+      "end": 460.02,
+      "text": "time complexity is near above Big O of n"
+    },
+    {
+      "start": 458.58,
+      "end": 462.6,
+      "text": "square and what about the space"
+    },
+    {
+      "start": 460.02,
+      "end": 465.6,
+      "text": "complexity are we using any extra space"
+    },
+    {
+      "start": 462.6,
+      "end": 467.82,
+      "text": "yes we are we are taking a list but that"
+    },
+    {
+      "start": 465.6,
+      "end": 470.34,
+      "text": "is hardly going to stop two elements so"
+    },
+    {
+      "start": 467.82,
+      "end": 472.62,
+      "text": "big O of 2 is the space which is as good"
+    },
+    {
+      "start": 470.34,
+      "end": 474.6,
+      "text": "as the constant"
+    },
+    {
+      "start": 472.62,
+      "end": 476.28,
+      "text": "space so this will be the overall time"
+    },
+    {
+      "start": 474.6,
+      "end": 478.02,
+      "text": "complexity and the space complexity"
+    },
+    {
+      "start": 476.28,
+      "end": 479.88,
+      "text": "obviously the interviewer will not be"
+    },
+    {
+      "start": 478.02,
+      "end": 481.62,
+      "text": "happy with n square and it'll ask you to"
+    },
+    {
+      "start": 479.88,
+      "end": 483.36,
+      "text": "optimize it this is where we will move"
+    },
+    {
+      "start": 481.62,
+      "end": 486.84,
+      "text": "to the better solution so we have to"
+    },
+    {
+      "start": 483.36,
+      "end": 489.12,
+      "text": "improve from n Square so what can you"
+    },
+    {
+      "start": 486.84,
+      "end": 491.34,
+      "text": "think of we know one thing for sure we"
+    },
+    {
+      "start": 489.12,
+      "end": 493.26,
+      "text": "are counting as we move forward so you"
+    },
+    {
+      "start": 491.34,
+      "end": 495.6,
+      "text": "have to keep a track of how many times"
+    },
+    {
+      "start": 493.26,
+      "end": 497.88,
+      "text": "it did appear we have to remember and"
+    },
+    {
+      "start": 495.6,
+      "end": 499.32,
+      "text": "whenever these things come in what is"
+    },
+    {
+      "start": 497.88,
+      "end": 501.36,
+      "text": "the logic like what is the technique"
+    },
+    {
+      "start": 499.32,
+      "end": 502.86,
+      "text": "that comes to your mind it is the"
+    },
+    {
+      "start": 501.36,
+      "end": 505.38,
+      "text": "hashing technique because you have to"
+    },
+    {
+      "start": 502.86,
+      "end": 508.5,
+      "text": "remember so probably we can hash it so"
+    },
+    {
+      "start": 505.38,
+      "end": 509.76,
+      "text": "what I will do is I'll do a hash it and"
+    },
+    {
+      "start": 508.5,
+      "end": 512.52,
+      "text": "that is when"
+    },
+    {
+      "start": 509.76,
+      "end": 514.56,
+      "text": "I'll probably take a empty hash mark"
+    },
+    {
+      "start": 512.52,
+      "end": 516.36,
+      "text": "this is the better solution I'll take an"
+    },
+    {
+      "start": 514.56,
+      "end": 518.46,
+      "text": "empty hash map and in the hashtag what"
+    },
+    {
+      "start": 516.36,
+      "end": 520.92,
+      "text": "I'll do is I'll keep the number and I'll"
+    },
+    {
+      "start": 518.46,
+      "end": 522.84,
+      "text": "keep the count as the key and value"
+    },
+    {
+      "start": 520.92,
+      "end": 525.42,
+      "text": "and I'll start eye tweeting over the"
+    },
+    {
+      "start": 522.84,
+      "end": 528.54,
+      "text": "array first element is one I'll say one"
+    },
+    {
+      "start": 525.42,
+      "end": 531.0,
+      "text": "you appear one day perfect next move"
+    },
+    {
+      "start": 528.54,
+      "end": 533.28,
+      "text": "forward it's again one so I'll just go"
+    },
+    {
+      "start": 531.0,
+      "end": 535.62,
+      "text": "ahead and increase the count next again"
+    },
+    {
+      "start": 533.28,
+      "end": 538.74,
+      "text": "one go ahead and increase the Curve"
+    },
+    {
+      "start": 535.62,
+      "end": 541.86,
+      "text": "perfect next again one go ahead and"
+    },
+    {
+      "start": 538.74,
+      "end": 544.92,
+      "text": "again increase the count next three"
+    },
+    {
+      "start": 541.86,
+      "end": 546.84,
+      "text": "put it into the hashva next to put it"
+    },
+    {
+      "start": 544.92,
+      "end": 551.22,
+      "text": "into the hashma next"
+    },
+    {
+      "start": 546.84,
+      "end": 553.56,
+      "text": "to increase next to increase once you've"
+    },
+    {
+      "start": 551.22,
+      "end": 555.72,
+      "text": "iterated through the entire array your"
+    },
+    {
+      "start": 553.56,
+      "end": 557.58,
+      "text": "hash map is containing every unique"
+    },
+    {
+      "start": 555.72,
+      "end": 561.24,
+      "text": "element if you carefully see every"
+    },
+    {
+      "start": 557.58,
+      "end": 563.46,
+      "text": "unique element with its count what did"
+    },
+    {
+      "start": 561.24,
+      "end": 566.64,
+      "text": "you require how many of them appeared"
+    },
+    {
+      "start": 563.46,
+      "end": 569.46,
+      "text": "more than floor of n by 3 so I'll go"
+    },
+    {
+      "start": 566.64,
+      "end": 571.92,
+      "text": "through the hashma I'll go through the"
+    },
+    {
+      "start": 569.46,
+      "end": 574.14,
+      "text": "hash map and I'll say okay one you're"
+    },
+    {
+      "start": 571.92,
+      "end": 577.32,
+      "text": "paying four times that's more than what"
+    },
+    {
+      "start": 574.14,
+      "end": 581.7,
+      "text": "I require so one will be my answer next"
+    },
+    {
+      "start": 577.32,
+      "end": 584.76,
+      "text": "three no next two yes so I have two"
+    },
+    {
+      "start": 581.7,
+      "end": 587.58,
+      "text": "possible answers and this I can store in"
+    },
+    {
+      "start": 584.76,
+      "end": 589.8,
+      "text": "a list and return so what did we do as"
+    },
+    {
+      "start": 587.58,
+      "end": 592.5,
+      "text": "the part of the better solution we first"
+    },
+    {
+      "start": 589.8,
+      "end": 594.6,
+      "text": "iterated over the array then we iterated"
+    },
+    {
+      "start": 592.5,
+      "end": 596.04,
+      "text": "over the hash map so two iterations with"
+    },
+    {
+      "start": 594.6,
+      "end": 598.74,
+      "text": "it but do we actually need two"
+    },
+    {
+      "start": 596.04,
+      "end": 601.62,
+      "text": "iterations can we do better we can let's"
+    },
+    {
+      "start": 598.74,
+      "end": 603.72,
+      "text": "see how sad present we were basically"
+    },
+    {
+      "start": 601.62,
+      "end": 606.12,
+      "text": "going through the entire array and then"
+    },
+    {
+      "start": 603.72,
+      "end": 607.98,
+      "text": "iterating through the entire map and we"
+    },
+    {
+      "start": 606.12,
+      "end": 610.02,
+      "text": "need to remove this step so what I'll"
+    },
+    {
+      "start": 607.98,
+      "end": 612.3,
+      "text": "try to do is whenever I take an element"
+    },
+    {
+      "start": 610.02,
+      "end": 614.04,
+      "text": "and I put it into the map that is the"
+    },
+    {
+      "start": 612.3,
+      "end": 617.34,
+      "text": "moment we have to do something correct"
+    },
+    {
+      "start": 614.04,
+      "end": 620.46,
+      "text": "so what I'll do is I will at first"
+    },
+    {
+      "start": 617.34,
+      "end": 624.54,
+      "text": "figure out what is floor of n by 3 so"
+    },
+    {
+      "start": 620.46,
+      "end": 628.02,
+      "text": "floor of n by 3 is nothing but 2 in this"
+    },
+    {
+      "start": 624.54,
+      "end": 630.96,
+      "text": "case so we need any element that appears"
+    },
+    {
+      "start": 628.02,
+      "end": 633.78,
+      "text": "a minimum of three times because greater"
+    },
+    {
+      "start": 630.96,
+      "end": 636.54,
+      "text": "than 2 means a minimum of 3 times is"
+    },
+    {
+      "start": 633.78,
+      "end": 638.34,
+      "text": "what I require right so now what I will"
+    },
+    {
+      "start": 636.54,
+      "end": 640.56,
+      "text": "do is I'll take up the first element"
+    },
+    {
+      "start": 638.34,
+      "end": 644.7,
+      "text": "which is 1. I'll put it into the hash"
+    },
+    {
+      "start": 640.56,
+      "end": 646.08,
+      "text": "map with 1 by comma 1 okay next I'll"
+    },
+    {
+      "start": 644.7,
+      "end": 649.26,
+      "text": "take up one"
+    },
+    {
+      "start": 646.08,
+      "end": 651.12,
+      "text": "and I'll increase the count next I'll"
+    },
+    {
+      "start": 649.26,
+      "end": 654.26,
+      "text": "take up one and I'll increase the count"
+    },
+    {
+      "start": 651.12,
+      "end": 657.36,
+      "text": "to three very important point the moment"
+    },
+    {
+      "start": 654.26,
+      "end": 659.64,
+      "text": "someone's count goes to 3 the moment"
+    },
+    {
+      "start": 657.36,
+      "end": 660.48,
+      "text": "someone's curve goes to three you'll be"
+    },
+    {
+      "start": 659.64,
+      "end": 664.14,
+      "text": "like"
+    },
+    {
+      "start": 660.48,
+      "end": 667.32,
+      "text": "I needed minimum of three times it so"
+    },
+    {
+      "start": 664.14,
+      "end": 669.54,
+      "text": "I'll take that into my answer next I go"
+    },
+    {
+      "start": 667.32,
+      "end": 672.12,
+      "text": "to one and the count increases to four"
+    },
+    {
+      "start": 669.54,
+      "end": 674.22,
+      "text": "but if the count increases to 4 no need"
+    },
+    {
+      "start": 672.12,
+      "end": 675.66,
+      "text": "to take because I'd have already taken"
+    },
+    {
+      "start": 674.22,
+      "end": 678.14,
+      "text": "it when I would have compared it with"
+    },
+    {
+      "start": 675.66,
+      "end": 681.96,
+      "text": "three so no need to take it move forward"
+    },
+    {
+      "start": 678.14,
+      "end": 683.82,
+      "text": "three put it into the hash map one note"
+    },
+    {
+      "start": 681.96,
+      "end": 685.86,
+      "text": "next two"
+    },
+    {
+      "start": 683.82,
+      "end": 688.98,
+      "text": "no next"
+    },
+    {
+      "start": 685.86,
+      "end": 691.92,
+      "text": "increase no next increase again the"
+    },
+    {
+      "start": 688.98,
+      "end": 694.38,
+      "text": "moment you increase it to three three is"
+    },
+    {
+      "start": 691.92,
+      "end": 696.72,
+      "text": "what you required for a minimum time for"
+    },
+    {
+      "start": 694.38,
+      "end": 698.28,
+      "text": "it to be counted as an answer take it"
+    },
+    {
+      "start": 696.72,
+      "end": 700.5,
+      "text": "and put it in the answer and the"
+    },
+    {
+      "start": 698.28,
+      "end": 703.44,
+      "text": "iteration is over so what I did was a"
+    },
+    {
+      "start": 700.5,
+      "end": 707.4,
+      "text": "single iteration yes a single iteration"
+    },
+    {
+      "start": 703.44,
+      "end": 708.78,
+      "text": "B go of n hydration and that does it so"
+    },
+    {
+      "start": 707.4,
+      "end": 710.4,
+      "text": "one iteration does it let's quickly"
+    },
+    {
+      "start": 708.78,
+      "end": 712.5,
+      "text": "write down the pseudocode so I'll"
+    },
+    {
+      "start": 710.4,
+      "end": 715.38,
+      "text": "require a list and I'll definitely"
+    },
+    {
+      "start": 712.5,
+      "end": 718.44,
+      "text": "require a map right so let's quickly"
+    },
+    {
+      "start": 715.38,
+      "end": 721.86,
+      "text": "iterate on the array so it goes from 0"
+    },
+    {
+      "start": 718.44,
+      "end": 724.1,
+      "text": "to n minus 1 as 0 and we know one thing"
+    },
+    {
+      "start": 721.86,
+      "end": 728.4,
+      "text": "if we do something like"
+    },
+    {
+      "start": 724.1,
+      "end": 731.7,
+      "text": "NPP of array of I plus plus"
+    },
+    {
+      "start": 728.4,
+      "end": 734.34,
+      "text": "now if the element doesn't appears it"
+    },
+    {
+      "start": 731.7,
+      "end": 736.92,
+      "text": "automatically takes it as zero remember"
+    },
+    {
+      "start": 734.34,
+      "end": 739.08,
+      "text": "this if the element doesn't appears it"
+    },
+    {
+      "start": 736.92,
+      "end": 741.78,
+      "text": "automatically considers the value to be"
+    },
+    {
+      "start": 739.08,
+      "end": 743.4,
+      "text": "0 for that particular key and it does a"
+    },
+    {
+      "start": 741.78,
+      "end": 745.5,
+      "text": "plus plus on it so for the first time"
+    },
+    {
+      "start": 743.4,
+      "end": 747.9,
+      "text": "when there's a one it will not find it"
+    },
+    {
+      "start": 745.5,
+      "end": 750.24,
+      "text": "so it will do a plus plus and will enter"
+    },
+    {
+      "start": 747.9,
+      "end": 752.22,
+      "text": "into the map one comma one so you have"
+    },
+    {
+      "start": 750.24,
+      "end": 754.4,
+      "text": "entered it into the map once you've done"
+    },
+    {
+      "start": 752.22,
+      "end": 759.42,
+      "text": "it you say if"
+    },
+    {
+      "start": 754.4,
+      "end": 763.14,
+      "text": "MPP of array of I if the value"
+    },
+    {
+      "start": 759.42,
+      "end": 765.9,
+      "text": "in the hashma is equivalent to your"
+    },
+    {
+      "start": 763.14,
+      "end": 769.56,
+      "text": "minimum value which is floor off so you"
+    },
+    {
+      "start": 765.9,
+      "end": 773.52,
+      "text": "can say n by 3 plus 1 because null plus"
+    },
+    {
+      "start": 769.56,
+      "end": 775.44,
+      "text": "1 will be otld floor of this plus 1 is"
+    },
+    {
+      "start": 773.52,
+      "end": 777.06,
+      "text": "equal to minimum"
+    },
+    {
+      "start": 775.44,
+      "end": 779.46,
+      "text": "then you can probably add it to your"
+    },
+    {
+      "start": 777.06,
+      "end": 783.24,
+      "text": "list yes then you can go ahead and add"
+    },
+    {
+      "start": 779.46,
+      "end": 786.72,
+      "text": "it to your list quite simple"
+    },
+    {
+      "start": 783.24,
+      "end": 788.28,
+      "text": "so this will be the super simple code"
+    },
+    {
+      "start": 786.72,
+      "end": 789.6,
+      "text": "for The Brute Force solution what is the"
+    },
+    {
+      "start": 788.28,
+      "end": 792.06,
+      "text": "time complexity"
+    },
+    {
+      "start": 789.6,
+      "end": 795.12,
+      "text": "we go of n"
+    },
+    {
+      "start": 792.06,
+      "end": 797.46,
+      "text": "for normal iteration and if I consider"
+    },
+    {
+      "start": 795.12,
+      "end": 799.62,
+      "text": "this one to be the logarithmic of n you"
+    },
+    {
+      "start": 797.46,
+      "end": 801.66,
+      "text": "can take low algorithmic of n if you are"
+    },
+    {
+      "start": 799.62,
+      "end": 803.7,
+      "text": "taking a map which is working in P go of"
+    },
+    {
+      "start": 801.66,
+      "end": 805.92,
+      "text": "one which is the unordered map then this"
+    },
+    {
+      "start": 803.7,
+      "end": 808.2,
+      "text": "can be a beaker of one as well but"
+    },
+    {
+      "start": 805.92,
+      "end": 811.98,
+      "text": "remember one thing the unordered Maps"
+    },
+    {
+      "start": 808.2,
+      "end": 814.86,
+      "text": "worst time complexity is we go of n okay"
+    },
+    {
+      "start": 811.98,
+      "end": 816.96,
+      "text": "so this is how easily you can do the"
+    },
+    {
+      "start": 814.86,
+      "end": 818.58,
+      "text": "better solution but obviously the"
+    },
+    {
+      "start": 816.96,
+      "end": 821.4,
+      "text": "interviewer will not be happy why"
+    },
+    {
+      "start": 818.58,
+      "end": 823.86,
+      "text": "because yeah using an extra space time"
+    },
+    {
+      "start": 821.4,
+      "end": 826.74,
+      "text": "complexity is n or n log n but the space"
+    },
+    {
+      "start": 823.86,
+      "end": 828.66,
+      "text": "that you're using is B go often why"
+    },
+    {
+      "start": 826.74,
+      "end": 830.88,
+      "text": "imagine if I give you an array like one"
+    },
+    {
+      "start": 828.66,
+      "end": 833.28,
+      "text": "two three four then you end up putting"
+    },
+    {
+      "start": 830.88,
+      "end": 836.1,
+      "text": "every element into the map so the space"
+    },
+    {
+      "start": 833.28,
+      "end": 837.54,
+      "text": "complexity will be be equal of n at the"
+    },
+    {
+      "start": 836.1,
+      "end": 839.16,
+      "text": "worst case and this is where the"
+    },
+    {
+      "start": 837.54,
+      "end": 841.2,
+      "text": "interview will ask you can you please"
+    },
+    {
+      "start": 839.16,
+      "end": 842.4,
+      "text": "try to optimize the space complexity so"
+    },
+    {
+      "start": 841.2,
+      "end": 844.02,
+      "text": "in case you want to submit the better"
+    },
+    {
+      "start": 842.4,
+      "end": 846.0,
+      "text": "solution the problem link will be in the"
+    },
+    {
+      "start": 844.02,
+      "end": 847.38,
+      "text": "description please do make sure that you"
+    },
+    {
+      "start": 846.0,
+      "end": 849.72,
+      "text": "submit it from the link in the"
+    },
+    {
+      "start": 847.38,
+      "end": 851.34,
+      "text": "description itself and this is how it"
+    },
+    {
+      "start": 849.72,
+      "end": 853.2,
+      "text": "will look like I've just added one"
+    },
+    {
+      "start": 851.34,
+      "end": 855.66,
+      "text": "statement which says the moment you get"
+    },
+    {
+      "start": 853.2,
+      "end": 857.52,
+      "text": "the answer stop iterating and over here"
+    },
+    {
+      "start": 855.66,
+      "end": 859.44,
+      "text": "they've asked you to return the array of"
+    },
+    {
+      "start": 857.52,
+      "end": 861.66,
+      "text": "in the sorted order that's why I've just"
+    },
+    {
+      "start": 859.44,
+      "end": 863.46,
+      "text": "sorted the answers before returning it"
+    },
+    {
+      "start": 861.66,
+      "end": 864.42,
+      "text": "so this is how the better solution will"
+    },
+    {
+      "start": 863.46,
+      "end": 867.12,
+      "text": "look like"
+    },
+    {
+      "start": 864.42,
+      "end": 869.4,
+      "text": "uh will it add to the time complexity no"
+    },
+    {
+      "start": 867.12,
+      "end": 872.34,
+      "text": "because it is hardly an area of size two"
+    },
+    {
+      "start": 869.4,
+      "end": 873.78,
+      "text": "so two logarithmic 2 is what you're"
+    },
+    {
+      "start": 872.34,
+      "end": 877.2,
+      "text": "adding if you are sorting it it's like"
+    },
+    {
+      "start": 873.78,
+      "end": 879.24,
+      "text": "we go off to log 2 which is like as good"
+    },
+    {
+      "start": 877.2,
+      "end": 880.62,
+      "text": "as constant okay let's sign for the"
+    },
+    {
+      "start": 879.24,
+      "end": 881.88,
+      "text": "optimal solution but if you remember at"
+    },
+    {
+      "start": 880.62,
+      "end": 883.8,
+      "text": "the starting of the video I've told you"
+    },
+    {
+      "start": 881.88,
+      "end": 886.62,
+      "text": "that the optimal algorithm will be"
+    },
+    {
+      "start": 883.8,
+      "end": 888.84,
+      "text": "derived from greater than n by 2 times"
+    },
+    {
+      "start": 886.62,
+      "end": 890.52,
+      "text": "so if you haven't seen it the video link"
+    },
+    {
+      "start": 888.84,
+      "end": 893.22,
+      "text": "is in the description please go back and"
+    },
+    {
+      "start": 890.52,
+      "end": 896.22,
+      "text": "watch it let's quickly go to the optimal"
+    },
+    {
+      "start": 893.22,
+      "end": 898.32,
+      "text": "code so this is the optimal code where"
+    },
+    {
+      "start": 896.22,
+      "end": 900.54,
+      "text": "at first we apply the algorithm and"
+    },
+    {
+      "start": 898.32,
+      "end": 903.18,
+      "text": "whatever element we get we check if that"
+    },
+    {
+      "start": 900.54,
+      "end": 904.98,
+      "text": "element is appearing like we just do a"
+    },
+    {
+      "start": 903.18,
+      "end": 907.68,
+      "text": "another iteration and we check if it is"
+    },
+    {
+      "start": 904.98,
+      "end": 909.42,
+      "text": "appearing more than n by n by two times"
+    },
+    {
+      "start": 907.68,
+      "end": 912.6,
+      "text": "just to be sure"
+    },
+    {
+      "start": 909.42,
+      "end": 914.96,
+      "text": "so let's come back to the iPad so this"
+    },
+    {
+      "start": 912.6,
+      "end": 918.0,
+      "text": "is the algorithm that we are writing for"
+    },
+    {
+      "start": 914.96,
+      "end": 919.62,
+      "text": "greater than floor of n by two times"
+    },
+    {
+      "start": 918.0,
+      "end": 921.78,
+      "text": "right this is the algorithm that we are"
+    },
+    {
+      "start": 919.62,
+      "end": 924.24,
+      "text": "writing now we have to"
+    },
+    {
+      "start": 921.78,
+      "end": 926.58,
+      "text": "kind of simulate this algorithm for"
+    },
+    {
+      "start": 924.24,
+      "end": 928.56,
+      "text": "greater than floor of n by three times"
+    },
+    {
+      "start": 926.58,
+      "end": 929.88,
+      "text": "what was the intuition if you remember"
+    },
+    {
+      "start": 928.56,
+      "end": 932.04,
+      "text": "the like if you have seen the previous"
+    },
+    {
+      "start": 929.88,
+      "end": 935.4,
+      "text": "video the intuition was very simple"
+    },
+    {
+      "start": 932.04,
+      "end": 938.4,
+      "text": "if you have 1 1 1 and if you have 2 2 2"
+    },
+    {
+      "start": 935.4,
+      "end": 941.1,
+      "text": "then we know for sure if this one is"
+    },
+    {
+      "start": 938.4,
+      "end": 942.9,
+      "text": "taken and this appears four times for"
+    },
+    {
+      "start": 941.1,
+      "end": 944.76,
+      "text": "someone else to cancel it it has to"
+    },
+    {
+      "start": 942.9,
+      "end": 946.98,
+      "text": "appear four times then only they will"
+    },
+    {
+      "start": 944.76,
+      "end": 949.2,
+      "text": "cancel it off right that was the logic"
+    },
+    {
+      "start": 946.98,
+      "end": 951.24,
+      "text": "and that is where if it's equal we're"
+    },
+    {
+      "start": 949.2,
+      "end": 953.46,
+      "text": "doing count plus plus and if it's not"
+    },
+    {
+      "start": 951.24,
+      "end": 955.8,
+      "text": "equal we are doing counter minus minus"
+    },
+    {
+      "start": 953.46,
+      "end": 957.72,
+      "text": "so over here it appears four times this"
+    },
+    {
+      "start": 955.8,
+      "end": 959.76,
+      "text": "appears three times so the one will not"
+    },
+    {
+      "start": 957.72,
+      "end": 962.52,
+      "text": "be canceled and at the end of the day"
+    },
+    {
+      "start": 959.76,
+      "end": 965.58,
+      "text": "the element will be this particular one"
+    },
+    {
+      "start": 962.52,
+      "end": 968.4,
+      "text": "so it is the cancellation logic that we"
+    },
+    {
+      "start": 965.58,
+      "end": 970.26,
+      "text": "did apply at greater than floor of n by"
+    },
+    {
+      "start": 968.4,
+      "end": 972.18,
+      "text": "two times we're gonna apply the same"
+    },
+    {
+      "start": 970.26,
+      "end": 974.88,
+      "text": "cancellation logic"
+    },
+    {
+      "start": 972.18,
+      "end": 976.2,
+      "text": "in this problem as well so let's try to"
+    },
+    {
+      "start": 974.88,
+      "end": 978.96,
+      "text": "simulate"
+    },
+    {
+      "start": 976.2,
+      "end": 980.94,
+      "text": "so we know over here we just had one"
+    },
+    {
+      "start": 978.96,
+      "end": 983.34,
+      "text": "answer because there can only be one"
+    },
+    {
+      "start": 980.94,
+      "end": 985.8,
+      "text": "element which appears more than n by two"
+    },
+    {
+      "start": 983.34,
+      "end": 988.08,
+      "text": "times over here we know there will be"
+    },
+    {
+      "start": 985.8,
+      "end": 990.6,
+      "text": "two possible elements so instead of"
+    },
+    {
+      "start": 988.08,
+      "end": 993.72,
+      "text": "count what I'll do is I'll take count of"
+    },
+    {
+      "start": 990.6,
+      "end": 995.4,
+      "text": "one equal to 0 and counter 2 equal to 0."
+    },
+    {
+      "start": 993.72,
+      "end": 997.86,
+      "text": "you're trying to simulate the same angle"
+    },
+    {
+      "start": 995.4,
+      "end": 999.44,
+      "text": "and I'll take element one and we'll take"
+    },
+    {
+      "start": 997.86,
+      "end": 1002.98,
+      "text": "element two right"
+    },
+    {
+      "start": 999.44,
+      "end": 1006.98,
+      "text": "and same way I'll probably try to"
+    },
+    {
+      "start": 1002.98,
+      "end": 1008.72,
+      "text": "iterate from 0 till n minus 1 same I'm"
+    },
+    {
+      "start": 1006.98,
+      "end": 1011.24,
+      "text": "not in the same code what is the first"
+    },
+    {
+      "start": 1008.72,
+      "end": 1014.06,
+      "text": "thing you're saying if counter is U if"
+    },
+    {
+      "start": 1011.24,
+      "end": 1016.76,
+      "text": "counter is zero please take that element"
+    },
+    {
+      "start": 1014.06,
+      "end": 1018.62,
+      "text": "and say okay this element might be my"
+    },
+    {
+      "start": 1016.76,
+      "end": 1021.14,
+      "text": "answer okay fine"
+    },
+    {
+      "start": 1018.62,
+      "end": 1024.44,
+      "text": "I'll take if counter one instead of this"
+    },
+    {
+      "start": 1021.14,
+      "end": 1027.86,
+      "text": "I'll let counter 1 is equal to 0. I will"
+    },
+    {
+      "start": 1024.44,
+      "end": 1030.08,
+      "text": "say hey counter one is one and probably"
+    },
+    {
+      "start": 1027.86,
+      "end": 1032.9,
+      "text": "the element one this time instead of"
+    },
+    {
+      "start": 1030.08,
+      "end": 1033.86,
+      "text": "element it's element one will be nums of"
+    },
+    {
+      "start": 1032.9,
+      "end": 1036.2,
+      "text": "I"
+    },
+    {
+      "start": 1033.86,
+      "end": 1039.56,
+      "text": "or array of I whatever you can and this"
+    },
+    {
+      "start": 1036.2,
+      "end": 1042.02,
+      "text": "will be my first step now after this it"
+    },
+    {
+      "start": 1039.56,
+      "end": 1043.94,
+      "text": "goes for checking but if you"
+    },
+    {
+      "start": 1042.02,
+      "end": 1045.08,
+      "text": "see over here we have a counter one we"
+    },
+    {
+      "start": 1043.94,
+      "end": 1048.62,
+      "text": "have a counted"
+    },
+    {
+      "start": 1045.08,
+      "end": 1050.84,
+      "text": "similarly you can write another one"
+    },
+    {
+      "start": 1048.62,
+      "end": 1053.36,
+      "text": "so this is pretty much similar to this"
+    },
+    {
+      "start": 1050.84,
+      "end": 1056.72,
+      "text": "just for the second element you will"
+    },
+    {
+      "start": 1053.36,
+      "end": 1059.38,
+      "text": "write counter 2 is equal to equal to 0"
+    },
+    {
+      "start": 1056.72,
+      "end": 1062.72,
+      "text": "and then you will say in that case"
+    },
+    {
+      "start": 1059.38,
+      "end": 1067.76,
+      "text": "counter 2 will be 1 and element 2 will"
+    },
+    {
+      "start": 1062.72,
+      "end": 1069.98,
+      "text": "be nums of I perfect so this has been"
+    },
+    {
+      "start": 1067.76,
+      "end": 1072.38,
+      "text": "simulated to two"
+    },
+    {
+      "start": 1069.98,
+      "end": 1074.42,
+      "text": "because overhead is for count over here"
+    },
+    {
+      "start": 1072.38,
+      "end": 1077.12,
+      "text": "it will be for counter one and counter"
+    },
+    {
+      "start": 1074.42,
+      "end": 1079.04,
+      "text": "two done let's do the next step it is"
+    },
+    {
+      "start": 1077.12,
+      "end": 1083.12,
+      "text": "stating if it is equal let's increase"
+    },
+    {
+      "start": 1079.04,
+      "end": 1086.9,
+      "text": "the so let's write it else if"
+    },
+    {
+      "start": 1083.12,
+      "end": 1089.36,
+      "text": "the the element one is equal to equal to"
+    },
+    {
+      "start": 1086.9,
+      "end": 1092.42,
+      "text": "array of fire nums of I whatever"
+    },
+    {
+      "start": 1089.36,
+      "end": 1095.24,
+      "text": "in that case can you please do a counter"
+    },
+    {
+      "start": 1092.42,
+      "end": 1098.72,
+      "text": "plus plus which is counter one and again"
+    },
+    {
+      "start": 1095.24,
+      "end": 1102.38,
+      "text": "simulated for two variables so else if"
+    },
+    {
+      "start": 1098.72,
+      "end": 1104.54,
+      "text": "element 2 is equal to equal to nums of I"
+    },
+    {
+      "start": 1102.38,
+      "end": 1109.1,
+      "text": "can you please give it a counter to plus"
+    },
+    {
+      "start": 1104.54,
+      "end": 1112.94,
+      "text": "plus so this one has been simulated for"
+    },
+    {
+      "start": 1109.1,
+      "end": 1114.26,
+      "text": "two that was the next one ends so the"
+    },
+    {
+      "start": 1112.94,
+      "end": 1116.72,
+      "text": "next one is else"
+    },
+    {
+      "start": 1114.26,
+      "end": 1119.0,
+      "text": "the next one is else let's quickly erase"
+    },
+    {
+      "start": 1116.72,
+      "end": 1121.88,
+      "text": "this over here it says counter minus"
+    },
+    {
+      "start": 1119.0,
+      "end": 1124.58,
+      "text": "minus so in the else you will say count"
+    },
+    {
+      "start": 1121.88,
+      "end": 1126.5,
+      "text": "of one minus minus because it is neither"
+    },
+    {
+      "start": 1124.58,
+      "end": 1129.62,
+      "text": "equal to this or neither equal to this"
+    },
+    {
+      "start": 1126.5,
+      "end": 1132.2,
+      "text": "so let's subtract from both"
+    },
+    {
+      "start": 1129.62,
+      "end": 1134.0,
+      "text": "because I have to eliminate both if you"
+    },
+    {
+      "start": 1132.2,
+      "end": 1136.76,
+      "text": "remember the intuition let's subtracted"
+    },
+    {
+      "start": 1134.0,
+      "end": 1138.38,
+      "text": "from both subtracted now will this"
+    },
+    {
+      "start": 1136.76,
+      "end": 1141.8,
+      "text": "algorithm work"
+    },
+    {
+      "start": 1138.38,
+      "end": 1144.5,
+      "text": "this is an exact replica of this just"
+    },
+    {
+      "start": 1141.8,
+      "end": 1148.1,
+      "text": "for two elements will it work the answer"
+    },
+    {
+      "start": 1144.5,
+      "end": 1149.6,
+      "text": "to that is no it won't work why I'll"
+    },
+    {
+      "start": 1148.1,
+      "end": 1152.42,
+      "text": "give you a test case and I'll tell you"
+    },
+    {
+      "start": 1149.6,
+      "end": 1154.76,
+      "text": "why this will not work and why you have"
+    },
+    {
+      "start": 1152.42,
+      "end": 1156.26,
+      "text": "to do a slight modification so I've"
+    },
+    {
+      "start": 1154.76,
+      "end": 1158.6,
+      "text": "taken this particular example now what"
+    },
+    {
+      "start": 1156.26,
+      "end": 1161.42,
+      "text": "I'll do is I'll at first have counter 1"
+    },
+    {
+      "start": 1158.6,
+      "end": 1163.64,
+      "text": "as 0 and the element can be initialized"
+    },
+    {
+      "start": 1161.42,
+      "end": 1164.72,
+      "text": "to a varying a number which is not in"
+    },
+    {
+      "start": 1163.64,
+      "end": 1167.3,
+      "text": "the array"
+    },
+    {
+      "start": 1164.72,
+      "end": 1168.86,
+      "text": "so counter 2 is again 0 and element 2 is"
+    },
+    {
+      "start": 1167.3,
+      "end": 1170.06,
+      "text": "also there so what is the first step"
+    },
+    {
+      "start": 1168.86,
+      "end": 1173.24,
+      "text": "that happens"
+    },
+    {
+      "start": 1170.06,
+      "end": 1175.52,
+      "text": "first step we add this two and we move"
+    },
+    {
+      "start": 1173.24,
+      "end": 1177.92,
+      "text": "ahead and counter one as definitely zero"
+    },
+    {
+      "start": 1175.52,
+      "end": 1180.56,
+      "text": "so counter one makes itself one it"
+    },
+    {
+      "start": 1177.92,
+      "end": 1184.4,
+      "text": "initializes itself with this particular"
+    },
+    {
+      "start": 1180.56,
+      "end": 1186.44,
+      "text": "to that let's move ahead we have one"
+    },
+    {
+      "start": 1184.4,
+      "end": 1189.26,
+      "text": "next time it comes again to this phone"
+    },
+    {
+      "start": 1186.44,
+      "end": 1192.5,
+      "text": "Loop and we add this counter one is zero"
+    },
+    {
+      "start": 1189.26,
+      "end": 1195.08,
+      "text": "no it is not counted to a zero yes it is"
+    },
+    {
+      "start": 1192.5,
+      "end": 1198.14,
+      "text": "so please initialize it with one and"
+    },
+    {
+      "start": 1195.08,
+      "end": 1200.42,
+      "text": "increase the value of element 2 2."
+    },
+    {
+      "start": 1198.14,
+      "end": 1202.82,
+      "text": "what rather initialize the value of"
+    },
+    {
+      "start": 1200.42,
+      "end": 1204.92,
+      "text": "element to do one next you'll move"
+    },
+    {
+      "start": 1202.82,
+      "end": 1206.66,
+      "text": "remember one thing all of these are else"
+    },
+    {
+      "start": 1204.92,
+      "end": 1209.12,
+      "text": "of statements so if one statement"
+    },
+    {
+      "start": 1206.66,
+      "end": 1211.7,
+      "text": "executes the other will not so we have a"
+    },
+    {
+      "start": 1209.12,
+      "end": 1214.52,
+      "text": "one if counter one zero no if counter to"
+    },
+    {
+      "start": 1211.7,
+      "end": 1218.24,
+      "text": "zero no is element one element is two"
+    },
+    {
+      "start": 1214.52,
+      "end": 1221.72,
+      "text": "and this is one so no if element two is"
+    },
+    {
+      "start": 1218.24,
+      "end": 1223.46,
+      "text": "one yes so counter two increases counter"
+    },
+    {
+      "start": 1221.72,
+      "end": 1225.14,
+      "text": "two increases to two convert to"
+    },
+    {
+      "start": 1223.46,
+      "end": 1228.34,
+      "text": "increases to two very important next"
+    },
+    {
+      "start": 1225.14,
+      "end": 1228.34,
+      "text": "move it"
+    },
+    {
+      "start": 1237.76,
+      "end": 1242.54,
+      "text": "and this is two and this is one so all"
+    },
+    {
+      "start": 1240.44,
+      "end": 1244.04,
+      "text": "of these statements are false so"
+    },
+    {
+      "start": 1242.54,
+      "end": 1246.68,
+      "text": "apparently the else"
+    },
+    {
+      "start": 1244.04,
+      "end": 1251.12,
+      "text": "tends to work the moment you work out"
+    },
+    {
+      "start": 1246.68,
+      "end": 1253.28,
+      "text": "the else the counter will reduce by"
+    },
+    {
+      "start": 1251.12,
+      "end": 1254.72,
+      "text": "it the counter reduce so basically what"
+    },
+    {
+      "start": 1253.28,
+      "end": 1258.14,
+      "text": "happened was"
+    },
+    {
+      "start": 1254.72,
+      "end": 1260.96,
+      "text": "this three canceled of 1 1 and 1 into it"
+    },
+    {
+      "start": 1258.14,
+      "end": 1262.46,
+      "text": "canceled off perfect done so what is the"
+    },
+    {
+      "start": 1260.96,
+      "end": 1264.08,
+      "text": "next step it goes over to the next"
+    },
+    {
+      "start": 1262.46,
+      "end": 1266.42,
+      "text": "element whenever it goes to the next"
+    },
+    {
+      "start": 1264.08,
+      "end": 1269.36,
+      "text": "element it again starts checking it's"
+    },
+    {
+      "start": 1266.42,
+      "end": 1272.62,
+      "text": "counter one zero it is what it will do"
+    },
+    {
+      "start": 1269.36,
+      "end": 1272.62,
+      "text": "is it is a counter one one"
+    },
+    {
+      "start": 1273.34,
+      "end": 1279.08,
+      "text": "is this one to here which is a wrong"
+    },
+    {
+      "start": 1276.08,
+      "end": 1282.02,
+      "text": "thing why because element 2 is already"
+    },
+    {
+      "start": 1279.08,
+      "end": 1285.5,
+      "text": "holding one so you should not you should"
+    },
+    {
+      "start": 1282.02,
+      "end": 1287.9,
+      "text": "not because if you execute this and for"
+    },
+    {
+      "start": 1285.5,
+      "end": 1290.78,
+      "text": "this one the counter will not increase"
+    },
+    {
+      "start": 1287.9,
+      "end": 1293.96,
+      "text": "itself ideally this should be executed"
+    },
+    {
+      "start": 1290.78,
+      "end": 1297.26,
+      "text": "and this will not so please make sure to"
+    },
+    {
+      "start": 1293.96,
+      "end": 1300.14,
+      "text": "include a simple Edge case"
+    },
+    {
+      "start": 1297.26,
+      "end": 1305.12,
+      "text": "over here steating and he listen"
+    },
+    {
+      "start": 1300.14,
+      "end": 1308.48,
+      "text": "we will see if if this nums of I"
+    },
+    {
+      "start": 1305.12,
+      "end": 1309.92,
+      "text": "should not be equal to element 2 that"
+    },
+    {
+      "start": 1308.48,
+      "end": 1312.14,
+      "text": "should be very sure because if I am"
+    },
+    {
+      "start": 1309.92,
+      "end": 1314.9,
+      "text": "considering this number I to be element"
+    },
+    {
+      "start": 1312.14,
+      "end": 1316.22,
+      "text": "1 that should never be element 2 and"
+    },
+    {
+      "start": 1314.9,
+      "end": 1318.74,
+      "text": "similarly"
+    },
+    {
+      "start": 1316.22,
+      "end": 1320.42,
+      "text": "can I say over here just a second over"
+    },
+    {
+      "start": 1318.74,
+      "end": 1325.1,
+      "text": "here as well"
+    },
+    {
+      "start": 1320.42,
+      "end": 1327.98,
+      "text": "and and nouns of I should not be equal"
+    },
+    {
+      "start": 1325.1,
+      "end": 1329.78,
+      "text": "to element 1y because I'm considering"
+    },
+    {
+      "start": 1327.98,
+      "end": 1331.88,
+      "text": "this to be element 2 this should never"
+    },
+    {
+      "start": 1329.78,
+      "end": 1335.36,
+      "text": "be element one and if you just modify"
+    },
+    {
+      "start": 1331.88,
+      "end": 1337.64,
+      "text": "these couple of lines this will work and"
+    },
+    {
+      "start": 1335.36,
+      "end": 1339.56,
+      "text": "this is why I told you please go back"
+    },
+    {
+      "start": 1337.64,
+      "end": 1341.54,
+      "text": "and watch the previous video because the"
+    },
+    {
+      "start": 1339.56,
+      "end": 1344.06,
+      "text": "intuition is similar to the previous"
+    },
+    {
+      "start": 1341.54,
+      "end": 1345.32,
+      "text": "video we just keep canceling and at the"
+    },
+    {
+      "start": 1344.06,
+      "end": 1348.2,
+      "text": "end of the day once you have done this"
+    },
+    {
+      "start": 1345.32,
+      "end": 1351.62,
+      "text": "please do a manual check"
+    },
+    {
+      "start": 1348.2,
+      "end": 1355.1,
+      "text": "please do a manual check on element 1"
+    },
+    {
+      "start": 1351.62,
+      "end": 1357.2,
+      "text": "and on element 2 if they can be the"
+    },
+    {
+      "start": 1355.1,
+      "end": 1358.52,
+      "text": "possible answers or not got it so let's"
+    },
+    {
+      "start": 1357.2,
+      "end": 1360.14,
+      "text": "quickly code up the optimal solution"
+    },
+    {
+      "start": 1358.52,
+      "end": 1362.72,
+      "text": "again please do try out the problem from"
+    },
+    {
+      "start": 1360.14,
+      "end": 1365.0,
+      "text": "the link in the description itself so we"
+    },
+    {
+      "start": 1362.72,
+      "end": 1368.12,
+      "text": "we required couple of counts so count"
+    },
+    {
+      "start": 1365.0,
+      "end": 1370.82,
+      "text": "one equal to 0 and count to equal to"
+    },
+    {
+      "start": 1368.12,
+      "end": 1373.34,
+      "text": "zero we require an element one which can"
+    },
+    {
+      "start": 1370.82,
+      "end": 1375.08,
+      "text": "be taken as into mean because that is"
+    },
+    {
+      "start": 1373.34,
+      "end": 1377.96,
+      "text": "definitely not going to be the answer we"
+    },
+    {
+      "start": 1375.08,
+      "end": 1380.78,
+      "text": "can take an element uh 2 as into mean as"
+    },
+    {
+      "start": 1377.96,
+      "end": 1383.96,
+      "text": "well taken what's the next step let's"
+    },
+    {
+      "start": 1380.78,
+      "end": 1385.46,
+      "text": "quickly start iterating from 0"
+    },
+    {
+      "start": 1383.96,
+      "end": 1388.58,
+      "text": "till the end of the array and this is"
+    },
+    {
+      "start": 1385.46,
+      "end": 1391.88,
+      "text": "how you do it and then we go ahead"
+    },
+    {
+      "start": 1388.58,
+      "end": 1394.46,
+      "text": "and then we say if counter 1 is equal to"
+    },
+    {
+      "start": 1391.88,
+      "end": 1396.98,
+      "text": "equal to 0 and please make sure that the"
+    },
+    {
+      "start": 1394.46,
+      "end": 1399.08,
+      "text": "element 2 is not equal to V of I that's"
+    },
+    {
+      "start": 1396.98,
+      "end": 1401.24,
+      "text": "very important you say counter one is"
+    },
+    {
+      "start": 1399.08,
+      "end": 1404.54,
+      "text": "equal to 1 at the same time you say"
+    },
+    {
+      "start": 1401.24,
+      "end": 1406.22,
+      "text": "element one is equal to V of I again you"
+    },
+    {
+      "start": 1404.54,
+      "end": 1408.56,
+      "text": "write else if very important that you"
+    },
+    {
+      "start": 1406.22,
+      "end": 1410.78,
+      "text": "write else if otherwise everything will"
+    },
+    {
+      "start": 1408.56,
+      "end": 1413.66,
+      "text": "free and you make sure that element one"
+    },
+    {
+      "start": 1410.78,
+      "end": 1415.82,
+      "text": "is not equal to this particular one so"
+    },
+    {
+      "start": 1413.66,
+      "end": 1418.76,
+      "text": "it's a counter two is equal to 1 and"
+    },
+    {
+      "start": 1415.82,
+      "end": 1420.98,
+      "text": "element 2 is equal to V of I once you"
+    },
+    {
+      "start": 1418.76,
+      "end": 1423.2,
+      "text": "have done this you say else if what if"
+    },
+    {
+      "start": 1420.98,
+      "end": 1425.48,
+      "text": "this is equal to element one then you"
+    },
+    {
+      "start": 1423.2,
+      "end": 1427.88,
+      "text": "say counter plus plus what if you say V"
+    },
+    {
+      "start": 1425.48,
+      "end": 1430.1,
+      "text": "of I is equal to equal to element two"
+    },
+    {
+      "start": 1427.88,
+      "end": 1432.08,
+      "text": "then you say counter to plus plus and"
+    },
+    {
+      "start": 1430.1,
+      "end": 1434.66,
+      "text": "what if both of these cases are not"
+    },
+    {
+      "start": 1432.08,
+      "end": 1436.94,
+      "text": "there okay say counter minus minus and"
+    },
+    {
+      "start": 1434.66,
+      "end": 1438.62,
+      "text": "counter 2 minus minus simple as that"
+    },
+    {
+      "start": 1436.94,
+      "end": 1441.74,
+      "text": "once you've done this you can say a"
+    },
+    {
+      "start": 1438.62,
+      "end": 1445.34,
+      "text": "vector in LS and please go ahead and"
+    },
+    {
+      "start": 1441.74,
+      "end": 1448.22,
+      "text": "take another counter maybe take the same"
+    },
+    {
+      "start": 1445.34,
+      "end": 1450.44,
+      "text": "count as initialize it as 0 and counter"
+    },
+    {
+      "start": 1448.22,
+      "end": 1452.0,
+      "text": "to initial it as zeros so once the"
+    },
+    {
+      "start": 1450.44,
+      "end": 1453.8,
+      "text": "iteration is done you will have"
+    },
+    {
+      "start": 1452.0,
+      "end": 1455.36,
+      "text": "something stored in the element one and"
+    },
+    {
+      "start": 1453.8,
+      "end": 1457.52,
+      "text": "something in the element two but you"
+    },
+    {
+      "start": 1455.36,
+      "end": 1459.56,
+      "text": "cannot surely say that those elements"
+    },
+    {
+      "start": 1457.52,
+      "end": 1461.12,
+      "text": "are the majority elements so what you do"
+    },
+    {
+      "start": 1459.56,
+      "end": 1462.38,
+      "text": "is you do a manual check and for that"
+    },
+    {
+      "start": 1461.12,
+      "end": 1464.9,
+      "text": "what I've done is I've reinitialized"
+    },
+    {
+      "start": 1462.38,
+      "end": 1468.98,
+      "text": "count one and count two to be zero and"
+    },
+    {
+      "start": 1464.9,
+      "end": 1470.18,
+      "text": "we will start iterating again and this"
+    },
+    {
+      "start": 1468.98,
+      "end": 1473.06,
+      "text": "time"
+    },
+    {
+      "start": 1470.18,
+      "end": 1476.42,
+      "text": "I just manually have a count so if"
+    },
+    {
+      "start": 1473.06,
+      "end": 1477.68,
+      "text": "element one is equal to V of I I'll do"
+    },
+    {
+      "start": 1476.42,
+      "end": 1481.58,
+      "text": "counter plus plus"
+    },
+    {
+      "start": 1477.68,
+      "end": 1483.5,
+      "text": "if element 2 is equal to equal to V of I"
+    },
+    {
+      "start": 1481.58,
+      "end": 1485.96,
+      "text": "I'll do a counter to plus plus and at"
+    },
+    {
+      "start": 1483.5,
+      "end": 1491.06,
+      "text": "the end of the day if what was the value"
+    },
+    {
+      "start": 1485.96,
+      "end": 1492.98,
+      "text": "if you remember it was n by 3 plus 1 is"
+    },
+    {
+      "start": 1491.06,
+      "end": 1496.82,
+      "text": "what you require it to be a minimum of"
+    },
+    {
+      "start": 1492.98,
+      "end": 1500.0,
+      "text": "so you basically say if this count of"
+    },
+    {
+      "start": 1496.82,
+      "end": 1500.9,
+      "text": "one is somewhere equal to or greater"
+    },
+    {
+      "start": 1500.0,
+      "end": 1502.82,
+      "text": "than this"
+    },
+    {
+      "start": 1500.9,
+      "end": 1504.74,
+      "text": "then you probably add it to your answer"
+    },
+    {
+      "start": 1502.82,
+      "end": 1509.6,
+      "text": "so go ahead and add it to your answer"
+    },
+    {
+      "start": 1504.74,
+      "end": 1512.66,
+      "text": "and this will be element one and if you"
+    },
+    {
+      "start": 1509.6,
+      "end": 1515.24,
+      "text": "see counter 2 to be greater than meaning"
+    },
+    {
+      "start": 1512.66,
+      "end": 1517.34,
+      "text": "again you add it to your answer which is"
+    },
+    {
+      "start": 1515.24,
+      "end": 1519.92,
+      "text": "the element two and once you've done"
+    },
+    {
+      "start": 1517.34,
+      "end": 1522.86,
+      "text": "this just go ahead and sort it you can"
+    },
+    {
+      "start": 1519.92,
+      "end": 1525.02,
+      "text": "manually sort it as well by swapping but"
+    },
+    {
+      "start": 1522.86,
+      "end": 1526.76,
+      "text": "yeah cool I'll sort it once I've done"
+    },
+    {
+      "start": 1525.02,
+      "end": 1530.24,
+      "text": "this I'll go ahead and return this"
+    },
+    {
+      "start": 1526.76,
+      "end": 1531.98,
+      "text": "particular list which is going to be my"
+    },
+    {
+      "start": 1530.24,
+      "end": 1533.24,
+      "text": "answer so let's quickly run it off and"
+    },
+    {
+      "start": 1531.98,
+      "end": 1535.82,
+      "text": "see if it is running fine there's some"
+    },
+    {
+      "start": 1533.24,
+      "end": 1537.74,
+      "text": "compilation errors okay n is not there"
+    },
+    {
+      "start": 1535.82,
+      "end": 1539.66,
+      "text": "so it'll be weird size"
+    },
+    {
+      "start": 1537.74,
+      "end": 1541.94,
+      "text": "I think we should have declared n"
+    },
+    {
+      "start": 1539.66,
+      "end": 1544.1,
+      "text": "because we've declared V Dot size so"
+    },
+    {
+      "start": 1541.94,
+      "end": 1545.9,
+      "text": "many times okay it does run now let's"
+    },
+    {
+      "start": 1544.1,
+      "end": 1548.18,
+      "text": "quickly submit it off and see if it is"
+    },
+    {
+      "start": 1545.9,
+      "end": 1550.88,
+      "text": "getting submitted so what is the time"
+    },
+    {
+      "start": 1548.18,
+      "end": 1553.1,
+      "text": "complexity we go of n over here because"
+    },
+    {
+      "start": 1550.88,
+      "end": 1557.12,
+      "text": "it's just a simple iteration another big"
+    },
+    {
+      "start": 1553.1,
+      "end": 1559.22,
+      "text": "oven so we go of 2N and this is like as"
+    },
+    {
+      "start": 1557.12,
+      "end": 1561.08,
+      "text": "good as constant because it's just two"
+    },
+    {
+      "start": 1559.22,
+      "end": 1563.18,
+      "text": "elements which are getting sorted so we"
+    },
+    {
+      "start": 1561.08,
+      "end": 1565.46,
+      "text": "go off to n are we using any extra space"
+    },
+    {
+      "start": 1563.18,
+      "end": 1567.98,
+      "text": "we're using four variables which is as"
+    },
+    {
+      "start": 1565.46,
+      "end": 1571.22,
+      "text": "good as ons so big of one is the space"
+    },
+    {
+      "start": 1567.98,
+      "end": 1572.66,
+      "text": "complexity the time complexity is 2N so"
+    },
+    {
+      "start": 1571.22,
+      "end": 1573.98,
+      "text": "going back to the sheet I can mark this"
+    },
+    {
+      "start": 1572.66,
+      "end": 1575.66,
+      "text": "one as done as well I hope I've"
+    },
+    {
+      "start": 1573.98,
+      "end": 1577.58,
+      "text": "understood the Brew the better and the"
+    },
+    {
+      "start": 1575.66,
+      "end": 1579.14,
+      "text": "optimal in case you are thinking why did"
+    },
+    {
+      "start": 1577.58,
+      "end": 1581.18,
+      "text": "I not discuss about the intuition in"
+    },
+    {
+      "start": 1579.14,
+      "end": 1582.56,
+      "text": "depth the reason is because uh we've"
+    },
+    {
+      "start": 1581.18,
+      "end": 1584.24,
+      "text": "already discussed about this in this"
+    },
+    {
+      "start": 1582.56,
+      "end": 1586.04,
+      "text": "particular video the link will be in the"
+    },
+    {
+      "start": 1584.24,
+      "end": 1588.44,
+      "text": "description in case you're watching till"
+    },
+    {
+      "start": 1586.04,
+      "end": 1589.7,
+      "text": "here please please do consider giving us"
+    },
+    {
+      "start": 1588.44,
+      "end": 1591.92,
+      "text": "that like because it won't cost you"
+    },
+    {
+      "start": 1589.7,
+      "end": 1593.54,
+      "text": "anything but that is something that will"
+    },
+    {
+      "start": 1591.92,
+      "end": 1595.1,
+      "text": "highly motivate me to make these kind of"
+    },
+    {
+      "start": 1593.54,
+      "end": 1597.14,
+      "text": "videos if you haven't followed me on"
+    },
+    {
+      "start": 1595.1,
+      "end": 1598.58,
+      "text": "Instagram what are you doing I'm putting"
+    },
+    {
+      "start": 1597.14,
+      "end": 1599.84,
+      "text": "a lot of information of content over"
+    },
+    {
+      "start": 1598.58,
+      "end": 1603.38,
+      "text": "there so please follow me on Instagram"
+    },
+    {
+      "start": 1599.84,
+      "end": 1604.94,
+      "text": "it goes by the name scrivon disco 79 and"
+    },
+    {
+      "start": 1603.38,
+      "end": 1606.92,
+      "text": "yes if you're new to our channel do"
+    },
+    {
+      "start": 1604.94,
+      "end": 1608.0,
+      "text": "consider subscribing to us with this"
+    },
+    {
+      "start": 1606.92,
+      "end": 1609.62,
+      "text": "I'll be wrapping on this video let's"
+    },
+    {
+      "start": 1608.0,
+      "end": 1619.63,
+      "text": "finish some of the videos"
+    },
+    {
+      "start": 1609.62,
+      "end": 1619.63,
+      "text": "[Music]"
+    }
+  ]
+}

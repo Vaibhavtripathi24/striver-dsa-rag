@@ -1,0 +1,2435 @@
+{
+  "video_id": "69ZCDFy-OUo",
+  "title": "Re 3. Parameterised and Functional Recursion | Strivers A2Z DSA Course",
+  "channel": "take U forward",
+  "language": "en",
+  "duration": 1094,
+  "text": "FetchedTranscriptSnippet(text=\"so before starting this video i'd love\", start=0.0, duration=2.96) FetchedTranscriptSnippet(text='to thank the sponsor of this video which', start=1.52, duration=3.52) FetchedTranscriptSnippet(text='is code studio now if you are willing to', start=2.96, duration=4.16) FetchedTranscriptSnippet(text='practice uh interview problems topic', start=5.04, duration=3.76) FetchedTranscriptSnippet(text='wise this is the place where you should', start=7.12, duration=3.519) FetchedTranscriptSnippet(text='look for because core studio has over', start=8.8, duration=4.08) FetchedTranscriptSnippet(text='2000 plus problems and has all the', start=10.639, duration=4.641) FetchedTranscriptSnippet(text='problem solution in c plus java as well', start=12.88, duration=4.399) FetchedTranscriptSnippet(text=\"as python if you're looking for a guided\", start=15.28, duration=4.4) FetchedTranscriptSnippet(text='path then you can find for python for', start=17.279, duration=4.481) FetchedTranscriptSnippet(text='dbms for object oriented programming', start=19.68, duration=3.679) FetchedTranscriptSnippet(text='operating system computer networks', start=21.76, duration=3.92) FetchedTranscriptSnippet(text='system design web development any other', start=23.359, duration=3.201) FetchedTranscriptSnippet(text=\"thing that you're looking for you'll\", start=25.68, duration=3.04) FetchedTranscriptSnippet(text='find guided paths for every other thing', start=26.56, duration=4.08) FetchedTranscriptSnippet(text=\"over here also also if you're looking\", start=28.72, duration=4.32) FetchedTranscriptSnippet(text=\"for any top company questions let's say\", start=30.64, duration=4.48) FetchedTranscriptSnippet(text='if you have an interview at amazon if', start=33.04, duration=3.44) FetchedTranscriptSnippet(text=\"you're looking for amazon questions you\", start=35.12, duration=3.36) FetchedTranscriptSnippet(text='can get all the top amazon coding', start=36.48, duration=3.919) FetchedTranscriptSnippet(text='questions via tag and all the solutions', start=38.48, duration=4.56) FetchedTranscriptSnippet(text='in c plus java as well as python also if', start=40.399, duration=4.0) FetchedTranscriptSnippet(text='you have an interview schedule you can', start=43.04, duration=3.44) FetchedTranscriptSnippet(text='read their interview experiences where', start=44.399, duration=4.32) FetchedTranscriptSnippet(text='there are 600 plus interview experiences', start=46.48, duration=4.079) FetchedTranscriptSnippet(text='from companies like amazon microsoft', start=48.719, duration=4.561) FetchedTranscriptSnippet(text='adobe google etc so what are you waiting', start=50.559, duration=4.16) FetchedTranscriptSnippet(text='for code studio has a lot of free', start=53.28, duration=2.959) FetchedTranscriptSnippet(text='resources for interview preparation the', start=54.719, duration=3.041) FetchedTranscriptSnippet(text='link will be in the description make', start=56.239, duration=4.241) FetchedTranscriptSnippet(text='sure you check it out', start=57.76, duration=2.72) FetchedTranscriptSnippet(text='hey everyone welcome back to the channel', start=64.0, duration=3.2) FetchedTranscriptSnippet(text='i hope you guys are doing extremely well', start=65.36, duration=4.96) FetchedTranscriptSnippet(text='today we will be uh solving a very very', start=67.2, duration=5.76) FetchedTranscriptSnippet(text='interesting problem in recursion which', start=70.32, duration=5.2) FetchedTranscriptSnippet(text='is the summation of', start=72.96, duration=4.96) FetchedTranscriptSnippet(text='the first n numbers', start=75.52, duration=6.0) FetchedTranscriptSnippet(text='now this can be done using', start=77.92, duration=5.92) FetchedTranscriptSnippet(text='a very simple for loop but i want you to', start=81.52, duration=4.239) FetchedTranscriptSnippet(text='do this using recursion because that', start=83.84, duration=4.56) FetchedTranscriptSnippet(text='will create your base of recursion very', start=85.759, duration=4.4) FetchedTranscriptSnippet(text=\"very strong i'm going to teach you a\", start=88.4, duration=4.56) FetchedTranscriptSnippet(text='couple of ways the first way being the', start=90.159, duration=5.121) FetchedTranscriptSnippet(text='parameter wise ways', start=92.96, duration=4.159) FetchedTranscriptSnippet(text=\"where i'll be showing you how to do this\", start=95.28, duration=4.56) FetchedTranscriptSnippet(text='using parameter the next one will be', start=97.119, duration=4.881) FetchedTranscriptSnippet(text='functional way where the function itself', start=99.84, duration=3.2) FetchedTranscriptSnippet(text='returns', start=102.0, duration=3.52) FetchedTranscriptSnippet(text='the answer okay so to start off with uh', start=103.04, duration=3.6) FetchedTranscriptSnippet(text='i hope you have understood the question', start=105.52, duration=3.919) FetchedTranscriptSnippet(text='sum of first n numbers assume n is given', start=106.64, duration=4.96) FetchedTranscriptSnippet(text='as 3 then the summation will be', start=109.439, duration=4.081) FetchedTranscriptSnippet(text='definitely 6 because', start=111.6, duration=5.28) FetchedTranscriptSnippet(text='1 plus 2 plus 3 is equal to 6 the sum of', start=113.52, duration=5.279) FetchedTranscriptSnippet(text='the first three numbers is what the', start=116.88, duration=3.199) FetchedTranscriptSnippet(text='question states', start=118.799, duration=3.36) FetchedTranscriptSnippet(text='so to start off with', start=120.079, duration=6.921) FetchedTranscriptSnippet(text=\"let's uh learn the parameterized way\", start=122.159, duration=4.841) FetchedTranscriptSnippet(text='now when i say a parameterized wave what', start=128.399, duration=3.2) FetchedTranscriptSnippet(text='does that mean', start=130.479, duration=3.521) FetchedTranscriptSnippet(text='that means assume i write a function is', start=131.599, duration=5.761) FetchedTranscriptSnippet(text='assume i write a function and i say i', start=134.0, duration=5.84) FetchedTranscriptSnippet(text='and i carry a variable sum', start=137.36, duration=4.48) FetchedTranscriptSnippet(text=\"okay and that's the recursive function\", start=139.84, duration=4.479) FetchedTranscriptSnippet(text=\"that i'm writing\", start=141.84, duration=5.119) FetchedTranscriptSnippet(text=\"and i say that okay i'm gonna think this\", start=144.319, duration=5.121) FetchedTranscriptSnippet(text='as a loop so in the previous lecture we', start=146.959, duration=4.64) FetchedTranscriptSnippet(text='saw that we started from one we went on', start=149.44, duration=4.64) FetchedTranscriptSnippet(text=\"to two we went down to three so we're\", start=151.599, duration=5.041) FetchedTranscriptSnippet(text=\"gonna do this uh till we don't reach n\", start=154.08, duration=4.4) FetchedTranscriptSnippet(text='or probably we can do it the opposite', start=156.64, duration=4.4) FetchedTranscriptSnippet(text='way from n to uh', start=158.48, duration=4.56) FetchedTranscriptSnippet(text=\"one so let's assume we do it from n to\", start=161.04, duration=5.68) FetchedTranscriptSnippet(text='one so we can say if at any moment i is', start=163.04, duration=5.919) FetchedTranscriptSnippet(text='lesser than one yes if at any moment i', start=166.72, duration=3.76) FetchedTranscriptSnippet(text='is less than one', start=168.959, duration=5.201) FetchedTranscriptSnippet(text='i can definitely print yes i can', start=170.48, duration=6.88) FetchedTranscriptSnippet(text=\"definitely say let's uh print the\", start=174.16, duration=4.799) FetchedTranscriptSnippet(text='summation', start=177.36, duration=2.56) FetchedTranscriptSnippet(text='okay', start=178.959, duration=4.241) FetchedTranscriptSnippet(text='and then try our return make sense', start=179.92, duration=4.959) FetchedTranscriptSnippet(text=\"and apart from this what i'm going to\", start=183.2, duration=4.08) FetchedTranscriptSnippet(text='say is okay f of', start=184.879, duration=4.161) FetchedTranscriptSnippet(text='i minus 1', start=187.28, duration=2.879) FetchedTranscriptSnippet(text='sum', start=189.04, duration=3.6) FetchedTranscriptSnippet(text=\"plus i is what i'm going to pass\", start=190.159, duration=5.041) FetchedTranscriptSnippet(text='so this is what my recursive statement', start=192.64, duration=4.959) FetchedTranscriptSnippet(text='will be and the main will be very simple', start=195.2, duration=5.36) FetchedTranscriptSnippet(text='again the main will be uh taking an n as', start=197.599, duration=4.161) FetchedTranscriptSnippet(text='the input', start=200.56, duration=3.84) FetchedTranscriptSnippet(text='and then we can just call f of', start=201.76, duration=5.6) FetchedTranscriptSnippet(text='n comma initial summation as', start=204.4, duration=3.839) FetchedTranscriptSnippet(text='0.', start=207.36, duration=3.04) FetchedTranscriptSnippet(text='now this is what i have taken now for an', start=208.239, duration=5.681) FetchedTranscriptSnippet(text=\"example let's assume this is the output\", start=210.4, duration=4.96) FetchedTranscriptSnippet(text='screen', start=213.92, duration=3.84) FetchedTranscriptSnippet(text=\"and let's assume n is given as\", start=215.36, duration=3.28) FetchedTranscriptSnippet(text='3', start=217.76, duration=3.28) FetchedTranscriptSnippet(text=\"so what i'm calling for the first time\", start=218.64, duration=3.28) FetchedTranscriptSnippet(text='is', start=221.04, duration=3.6) FetchedTranscriptSnippet(text=\"i'm saying i to be\", start=221.92, duration=3.679) FetchedTranscriptSnippet(text='3', start=224.64, duration=2.239) FetchedTranscriptSnippet(text='sum to be', start=225.599, duration=3.041) FetchedTranscriptSnippet(text='0', start=226.879, duration=4.801) FetchedTranscriptSnippet(text=\"right that is what i'm saying\", start=228.64, duration=5.92) FetchedTranscriptSnippet(text='i to be 3 and sum to be 0', start=231.68, duration=5.44) FetchedTranscriptSnippet(text='this line is not executed', start=234.56, duration=5.36) FetchedTranscriptSnippet(text='this line is executed and it thereby', start=237.12, duration=4.88) FetchedTranscriptSnippet(text='calls another function', start=239.92, duration=3.519) FetchedTranscriptSnippet(text='in the same link the same function is', start=242.0, duration=3.76) FetchedTranscriptSnippet(text='called in the memory and it passes i', start=243.439, duration=5.921) FetchedTranscriptSnippet(text='minus 1 which is 2 because i was 3 so it', start=245.76, duration=6.399) FetchedTranscriptSnippet(text='tends down to 3 minus 1 which is 2 and', start=249.36, duration=4.159) FetchedTranscriptSnippet(text='sum plus i', start=252.159, duration=6.64) FetchedTranscriptSnippet(text='sum was 0 if you see sum was 0 so 0 plus', start=253.519, duration=8.801) FetchedTranscriptSnippet(text='3 will become 3 so it goes as', start=258.799, duration=5.12) FetchedTranscriptSnippet(text='3 again', start=262.32, duration=3.599) FetchedTranscriptSnippet(text='is the if line executed', start=263.919, duration=4.881) FetchedTranscriptSnippet(text='no the if line is not executed so the', start=265.919, duration=4.881) FetchedTranscriptSnippet(text='functional line will be executed and', start=268.8, duration=4.72) FetchedTranscriptSnippet(text=\"that's i minus 1 which means\", start=270.8, duration=5.28) FetchedTranscriptSnippet(text='something and then sum was 3', start=273.52, duration=3.52) FetchedTranscriptSnippet(text='plus', start=276.08, duration=3.92) FetchedTranscriptSnippet(text='i this time is 2.', start=277.04, duration=5.68) FetchedTranscriptSnippet(text='now this time this function again calls', start=280.0, duration=5.44) FetchedTranscriptSnippet(text='a function which says function i minus 1', start=282.72, duration=5.28) FetchedTranscriptSnippet(text='so i was 2 it becomes', start=285.44, duration=7.759) FetchedTranscriptSnippet(text='1 and the summation 3 plus 2 becomes 5', start=288.0, duration=8.0) FetchedTranscriptSnippet(text='is the if statement executed no because', start=293.199, duration=4.401) FetchedTranscriptSnippet(text='the if statement if you carefully', start=296.0, duration=2.479) FetchedTranscriptSnippet(text='observe', start=297.6, duration=2.4) FetchedTranscriptSnippet(text=\"it's\", start=298.479, duration=3.681) FetchedTranscriptSnippet(text=\"i lesser than one and that's not the\", start=300.0, duration=5.44) FetchedTranscriptSnippet(text=\"case so it's not executed correct\", start=302.16, duration=5.12) FetchedTranscriptSnippet(text='thereby', start=305.44, duration=3.599) FetchedTranscriptSnippet(text='it goes again and calls the same', start=307.28, duration=4.4) FetchedTranscriptSnippet(text='function with i minus 1', start=309.039, duration=3.6) FetchedTranscriptSnippet(text='comma', start=311.68, duration=2.56) FetchedTranscriptSnippet(text='sum plus', start=312.639, duration=3.601) FetchedTranscriptSnippet(text='i', start=314.24, duration=5.2) FetchedTranscriptSnippet(text='this time i minus 1 i was 1', start=316.24, duration=5.519) FetchedTranscriptSnippet(text='so this time the functional call is made', start=319.44, duration=6.8) FetchedTranscriptSnippet(text='to f of i minus 1 1 minus 1 becomes 0', start=321.759, duration=7.121) FetchedTranscriptSnippet(text='then summation summation was 5', start=326.24, duration=7.36) FetchedTranscriptSnippet(text='plus i i was 1 so it calls it as 6. what', start=328.88, duration=6.879) FetchedTranscriptSnippet(text='is the if statement if statement stated', start=333.6, duration=4.8) FetchedTranscriptSnippet(text='i lesser than 1 i less', start=335.759, duration=6.0) FetchedTranscriptSnippet(text='than 1 is that the case yes so what it', start=338.4, duration=4.48) FetchedTranscriptSnippet(text='does is', start=341.759, duration=4.641) FetchedTranscriptSnippet(text='print the summation summation was 6 so', start=342.88, duration=6.96) FetchedTranscriptSnippet(text='on the output screen the 6 is printed', start=346.4, duration=4.799) FetchedTranscriptSnippet(text='and it says', start=349.84, duration=3.68) FetchedTranscriptSnippet(text='return so thereby this functional line', start=351.199, duration=4.401) FetchedTranscriptSnippet(text='is no more executed and it directly', start=353.52, duration=4.32) FetchedTranscriptSnippet(text='returns from here', start=355.6, duration=3.92) FetchedTranscriptSnippet(text='so if it returns', start=357.84, duration=3.68) FetchedTranscriptSnippet(text='this function is done', start=359.52, duration=4.16) FetchedTranscriptSnippet(text='and now it returns', start=361.52, duration=4.72) FetchedTranscriptSnippet(text='thereby saying this function is done so', start=363.68, duration=4.239) FetchedTranscriptSnippet(text='this guy', start=366.24, duration=3.04) FetchedTranscriptSnippet(text='again returns', start=367.919, duration=3.521) FetchedTranscriptSnippet(text='thereby this function is done thereby', start=369.28, duration=4.479) FetchedTranscriptSnippet(text='this guy returns so we did a', start=371.44, duration=4.96) FetchedTranscriptSnippet(text='parameterized function where we can say', start=373.759, duration=5.601) FetchedTranscriptSnippet(text='that our recursive tree was', start=376.4, duration=5.84) FetchedTranscriptSnippet(text='3 comma 0 where this being the i and sum', start=379.36, duration=6.64) FetchedTranscriptSnippet(text='we went on to f of 2 comma added this 3', start=382.24, duration=7.12) FetchedTranscriptSnippet(text='we went on to f of 1 comma added this 2', start=386.0, duration=6.88) FetchedTranscriptSnippet(text='we went on to f comma 0 added this one', start=389.36, duration=6.48) FetchedTranscriptSnippet(text='so whenever we ended up at 0 we just', start=392.88, duration=5.28) FetchedTranscriptSnippet(text='printed this because we were', start=395.84, duration=5.28) FetchedTranscriptSnippet(text='adding the i adding the i every time to', start=398.16, duration=4.64) FetchedTranscriptSnippet(text='the parameter', start=401.12, duration=3.919) FetchedTranscriptSnippet(text='and that is what we printed this could', start=402.8, duration=3.679) FetchedTranscriptSnippet(text='have been done in the other way where', start=405.039, duration=3.361) FetchedTranscriptSnippet(text='you could have done i plus one as well', start=406.479, duration=3.521) FetchedTranscriptSnippet(text=\"but i'm just teaching you the parameter\", start=408.4, duration=4.88) FetchedTranscriptSnippet(text='way in how can you actually carry the', start=410.0, duration=5.36) FetchedTranscriptSnippet(text='parameters yes because over here we', start=413.28, duration=4.479) FetchedTranscriptSnippet(text='increase the parameters and at the end', start=415.36, duration=4.559) FetchedTranscriptSnippet(text='of the day at the end of the day we came', start=417.759, duration=4.56) FetchedTranscriptSnippet(text='here and print this particular parameter', start=419.919, duration=4.161) FetchedTranscriptSnippet(text='which is six so this is how the', start=422.319, duration=3.921) FetchedTranscriptSnippet(text='recursion tree will be at the end it', start=424.08, duration=4.32) FetchedTranscriptSnippet(text='came back came back came back and went', start=426.24, duration=4.399) FetchedTranscriptSnippet(text='back right this is how you can do it', start=428.4, duration=5.359) FetchedTranscriptSnippet(text='using parameterized okay', start=430.639, duration=4.481) FetchedTranscriptSnippet(text=\"now if you've understood the\", start=433.759, duration=3.761) FetchedTranscriptSnippet(text=\"parameterized it's time to understand\", start=435.12, duration=4.24) FetchedTranscriptSnippet(text='the functional', start=437.52, duration=3.519) FetchedTranscriptSnippet(text='how do you generally', start=439.36, duration=4.32) FetchedTranscriptSnippet(text='write the function because functional', start=441.039, duration=3.921) FetchedTranscriptSnippet(text='means uh', start=443.68, duration=2.799) FetchedTranscriptSnippet(text=\"you don't want the parameter to do the\", start=444.96, duration=3.76) FetchedTranscriptSnippet(text='work you want you write a recursive', start=446.479, duration=4.321) FetchedTranscriptSnippet(text='function where you say that hey listen', start=448.72, duration=4.96) FetchedTranscriptSnippet(text='this is my value of n take n as 3 and', start=450.8, duration=5.76) FetchedTranscriptSnippet(text=\"give me the summation as 6. so if i'm\", start=453.68, duration=4.639) FetchedTranscriptSnippet(text='asking you to write such a function', start=456.56, duration=3.6) FetchedTranscriptSnippet(text=\"that's when you cannot use parameterized\", start=458.319, duration=3.361) FetchedTranscriptSnippet(text='because you want the function to return', start=460.16, duration=3.28) FetchedTranscriptSnippet(text=\"the answer you don't want it to print\", start=461.68, duration=3.84) FetchedTranscriptSnippet(text='you want it to return why', start=463.44, duration=2.879) FetchedTranscriptSnippet(text='uh', start=465.52, duration=2.32) FetchedTranscriptSnippet(text='there will be a lot of cases when you', start=466.319, duration=3.44) FetchedTranscriptSnippet(text='learn dynamic programming that you want', start=467.84, duration=3.68) FetchedTranscriptSnippet(text='the function to give you back something', start=469.759, duration=4.241) FetchedTranscriptSnippet(text='instead of printing right so basically', start=471.52, duration=4.079) FetchedTranscriptSnippet(text='uh to understand the concept before', start=474.0, duration=4.16) FetchedTranscriptSnippet(text=\"writing the recursive code let's uh so\", start=475.599, duration=4.32) FetchedTranscriptSnippet(text=\"these are all patterns that i'm teaching\", start=478.16, duration=3.28) FetchedTranscriptSnippet(text=\"it's not that i'm just writing the codes\", start=479.919, duration=3.201) FetchedTranscriptSnippet(text=\"these are patterns i'm teaching you to\", start=481.44, duration=3.28) FetchedTranscriptSnippet(text='learn these patterns if parameters are', start=483.12, duration=2.799) FetchedTranscriptSnippet(text='there then you have to do it in such a', start=484.72, duration=3.12) FetchedTranscriptSnippet(text=\"way if there's return then you have to\", start=485.919, duration=3.441) FetchedTranscriptSnippet(text='do it in such a way to learn these', start=487.84, duration=3.359) FetchedTranscriptSnippet(text=\"patterns once you're very confident\", start=489.36, duration=3.519) FetchedTranscriptSnippet(text='about these patterns you can solve any', start=491.199, duration=4.801) FetchedTranscriptSnippet(text='problem in recursion that is my word', start=492.879, duration=5.44) FetchedTranscriptSnippet(text=\"okay to go with functional let's\", start=496.0, duration=3.919) FetchedTranscriptSnippet(text='understand when i say functional what', start=498.319, duration=4.801) FetchedTranscriptSnippet(text='does that mean now if n is given as a 3', start=499.919, duration=5.601) FetchedTranscriptSnippet(text='for a reason if n is given as 3', start=503.12, duration=4.88) FetchedTranscriptSnippet(text='can i say this can i say this', start=505.52, duration=6.32) FetchedTranscriptSnippet(text=\"i can say i'll do a 3 i'll do\", start=508.0, duration=5.039) FetchedTranscriptSnippet(text='f of 2', start=511.84, duration=3.119) FetchedTranscriptSnippet(text='where i know where i know', start=513.039, duration=4.321) FetchedTranscriptSnippet(text='f of n means', start=514.959, duration=4.161) FetchedTranscriptSnippet(text='summation of', start=517.36, duration=5.919) FetchedTranscriptSnippet(text='first n numbers okay i know this so if i', start=519.12, duration=5.039) FetchedTranscriptSnippet(text='write', start=523.279, duration=3.281) FetchedTranscriptSnippet(text='3 plus f of 2 makes sense', start=524.159, duration=4.721) FetchedTranscriptSnippet(text=\"then when i'm calling for f of 2 can i\", start=526.56, duration=3.6) FetchedTranscriptSnippet(text='say okay', start=528.88, duration=4.16) FetchedTranscriptSnippet(text='that can be written as 2 plus f of 1', start=530.16, duration=5.6) FetchedTranscriptSnippet(text=\"and when i'm at f of 1 can i write this\", start=533.04, duration=3.68) FetchedTranscriptSnippet(text='as', start=535.76, duration=2.96) FetchedTranscriptSnippet(text='1 plus f of 0', start=536.72, duration=4.0) FetchedTranscriptSnippet(text='and everyone knows that f of 0 is', start=538.72, duration=4.08) FetchedTranscriptSnippet(text='nothing but 0 so i can think it in such', start=540.72, duration=4.0) FetchedTranscriptSnippet(text='a way that okay', start=542.8, duration=3.92) FetchedTranscriptSnippet(text='whenever there is an f of n', start=544.72, duration=3.679) FetchedTranscriptSnippet(text='i know n will be there', start=546.72, duration=3.6) FetchedTranscriptSnippet(text='i know n will be there which is 3', start=548.399, duration=4.401) FetchedTranscriptSnippet(text=\"because if i'm saying f of 3 i know the\", start=550.32, duration=4.88) FetchedTranscriptSnippet(text='summation will contain 3 but i need the', start=552.8, duration=4.479) FetchedTranscriptSnippet(text='summation of the rest of the', start=555.2, duration=4.319) FetchedTranscriptSnippet(text='rest of the two numbers', start=557.279, duration=4.881) FetchedTranscriptSnippet(text='so this is the idea that i am going to', start=559.519, duration=5.44) FetchedTranscriptSnippet(text=\"follow so what i'll say is okay\", start=562.16, duration=5.679) FetchedTranscriptSnippet(text='let them give me the n', start=564.959, duration=4.961) FetchedTranscriptSnippet(text='if at any moment n is equal to equal to', start=567.839, duration=4.881) FetchedTranscriptSnippet(text=\"zero i'm going to return a zero because\", start=569.92, duration=5.039) FetchedTranscriptSnippet(text='if f is if n is zero i know the', start=572.72, duration=5.2) FetchedTranscriptSnippet(text='summation of the first 0 numbers is 0', start=574.959, duration=4.401) FetchedTranscriptSnippet(text='or else', start=577.92, duration=3.52) FetchedTranscriptSnippet(text=\"i'm going to return simply\", start=579.36, duration=6.24) FetchedTranscriptSnippet(text='n plus f of n minus 1 okay', start=581.44, duration=7.92) FetchedTranscriptSnippet(text=\"i'm going to simply return n plus f of n\", start=585.6, duration=4.799) FetchedTranscriptSnippet(text='minus', start=589.36, duration=2.159) FetchedTranscriptSnippet(text='1', start=590.399, duration=2.801) FetchedTranscriptSnippet(text='done', start=591.519, duration=2.961) FetchedTranscriptSnippet(text='now question', start=593.2, duration=2.88) FetchedTranscriptSnippet(text='might arise', start=594.48, duration=3.76) FetchedTranscriptSnippet(text=\"how will this work let's understand\", start=596.08, duration=3.84) FetchedTranscriptSnippet(text=\"let's write the main function again so\", start=598.24, duration=3.52) FetchedTranscriptSnippet(text='if i write main', start=599.92, duration=4.88) FetchedTranscriptSnippet(text='and i say n is given as 3 and i call f', start=601.76, duration=6.88) FetchedTranscriptSnippet(text='of 3 or f of n rather', start=604.8, duration=3.84) FetchedTranscriptSnippet(text='and i write', start=608.8, duration=2.64) FetchedTranscriptSnippet(text='print', start=609.92, duration=3.68) FetchedTranscriptSnippet(text='print this f of', start=611.44, duration=3.839) FetchedTranscriptSnippet(text='n', start=613.6, duration=5.12) FetchedTranscriptSnippet(text='so what is being done', start=615.279, duration=4.961) FetchedTranscriptSnippet(text='this f of n', start=618.72, duration=5.679) FetchedTranscriptSnippet(text=\"goes and calls this so let's call this\", start=620.24, duration=5.52) FetchedTranscriptSnippet(text='with what value', start=624.399, duration=4.641) FetchedTranscriptSnippet(text='with the value 3 f of 3 is called is', start=625.76, duration=4.96) FetchedTranscriptSnippet(text='this line executed', start=629.04, duration=2.56) FetchedTranscriptSnippet(text='no', start=630.72, duration=2.64) FetchedTranscriptSnippet(text='n means', start=631.6, duration=2.96) FetchedTranscriptSnippet(text='3', start=633.36, duration=2.159) FetchedTranscriptSnippet(text='plus', start=634.56, duration=4.8) FetchedTranscriptSnippet(text='f of n minus 1 is called remember this', start=635.519, duration=5.361) FetchedTranscriptSnippet(text=\"there's a line\", start=639.36, duration=4.56) FetchedTranscriptSnippet(text='in completed line 3 plus something', start=640.88, duration=5.36) FetchedTranscriptSnippet(text='incompleted that incompleted will be', start=643.92, duration=4.24) FetchedTranscriptSnippet(text='called in recursion till it does not', start=646.24, duration=3.92) FetchedTranscriptSnippet(text=\"comes i'm waiting three plus three plus\", start=648.16, duration=4.96) FetchedTranscriptSnippet(text=\"something something i'm waiting got that\", start=650.16, duration=3.76) FetchedTranscriptSnippet(text='so', start=653.12, duration=2.719) FetchedTranscriptSnippet(text='f of two now goes', start=653.92, duration=4.24) FetchedTranscriptSnippet(text='it states if n is equal to equal to zero', start=655.839, duration=3.68) FetchedTranscriptSnippet(text='it says no', start=658.16, duration=3.28) FetchedTranscriptSnippet(text=\"so i'm like okay return\", start=659.519, duration=3.921) FetchedTranscriptSnippet(text='two plus f of one', start=661.44, duration=3.2) FetchedTranscriptSnippet(text='this time', start=663.44, duration=2.32) FetchedTranscriptSnippet(text='two plus', start=664.64, duration=2.56) FetchedTranscriptSnippet(text='this line', start=665.76, duration=3.68) FetchedTranscriptSnippet(text='waits', start=667.2, duration=4.639) FetchedTranscriptSnippet(text='for f of one to be done so i go and call', start=669.44, duration=3.6) FetchedTranscriptSnippet(text='f of one', start=671.839, duration=4.24) FetchedTranscriptSnippet(text='if n is equal to equal to 0 again i say', start=673.04, duration=5.44) FetchedTranscriptSnippet(text='no remember this you could have written', start=676.079, duration=4.481) FetchedTranscriptSnippet(text=\"n equal to equal to 1 that's your choice\", start=678.48, duration=4.16) FetchedTranscriptSnippet(text=\"you can write it i'm just teaching you\", start=680.56, duration=4.56) FetchedTranscriptSnippet(text=\"patterns that's it return 0 doesn't\", start=682.64, duration=4.639) FetchedTranscriptSnippet(text='works', start=685.12, duration=3.6) FetchedTranscriptSnippet(text='return', start=687.279, duration=2.721) FetchedTranscriptSnippet(text='one plus', start=688.72, duration=2.799) FetchedTranscriptSnippet(text='f of zero', start=690.0, duration=5.04) FetchedTranscriptSnippet(text='again this line awaits i am awaiting let', start=691.519, duration=4.801) FetchedTranscriptSnippet(text='him come back', start=695.04, duration=2.64) FetchedTranscriptSnippet(text=\"so let's go\", start=696.32, duration=3.12) FetchedTranscriptSnippet(text='f of zero', start=697.68, duration=3.76) FetchedTranscriptSnippet(text=\"when you go for f of zero let's\", start=699.44, duration=3.839) FetchedTranscriptSnippet(text='understand what happens', start=701.44, duration=4.32) FetchedTranscriptSnippet(text='if n equal to equal to 0', start=703.279, duration=4.161) FetchedTranscriptSnippet(text='returns a 0', start=705.76, duration=5.759) FetchedTranscriptSnippet(text='this guy comes in with a value 0 returns', start=707.44, duration=6.399) FetchedTranscriptSnippet(text=\"a 0 this time i'm returning something\", start=711.519, duration=4.401) FetchedTranscriptSnippet(text=\"i'm giving back something so it's\", start=713.839, duration=5.201) FetchedTranscriptSnippet(text='returning a zero i hope that makes sense', start=715.92, duration=4.56) FetchedTranscriptSnippet(text='so whenever', start=719.04, duration=3.44) FetchedTranscriptSnippet(text='this function is called this function is', start=720.48, duration=4.72) FetchedTranscriptSnippet(text='called it came back with zero came back', start=722.48, duration=4.96) FetchedTranscriptSnippet(text='with zero so can i say', start=725.2, duration=5.28) FetchedTranscriptSnippet(text='now instead of writing this f of 0 i can', start=727.44, duration=4.959) FetchedTranscriptSnippet(text='actually write this 0 because this', start=730.48, duration=4.88) FetchedTranscriptSnippet(text='function yielded you a value 0 so', start=732.399, duration=6.24) FetchedTranscriptSnippet(text='thereby 1 plus 0 is 1', start=735.36, duration=6.88) FetchedTranscriptSnippet(text='hence return this guy returns a 1', start=738.639, duration=6.241) FetchedTranscriptSnippet(text='1 0 returns are one so can i say now', start=742.24, duration=4.48) FetchedTranscriptSnippet(text='instead of writing f of one', start=744.88, duration=4.399) FetchedTranscriptSnippet(text='can i write one because one has been', start=746.72, duration=3.6) FetchedTranscriptSnippet(text='returned', start=749.279, duration=3.601) FetchedTranscriptSnippet(text='thereby two plus one can i say this guy', start=750.32, duration=5.519) FetchedTranscriptSnippet(text='returns a three indeed i can say that f', start=752.88, duration=5.44) FetchedTranscriptSnippet(text='of n minus one goes away and i can write', start=755.839, duration=5.761) FetchedTranscriptSnippet(text='three so thereby three plus three is six', start=758.32, duration=5.6) FetchedTranscriptSnippet(text='thereby this guy returns six and you say', start=761.6, duration=3.84) FetchedTranscriptSnippet(text='print', start=763.92, duration=4.08) FetchedTranscriptSnippet(text='so output is six', start=765.44, duration=5.28) FetchedTranscriptSnippet(text='this is how yes this is how you can', start=768.0, duration=4.72) FetchedTranscriptSnippet(text='write a', start=770.72, duration=4.32) FetchedTranscriptSnippet(text='functional stuff when the problem is', start=772.72, duration=5.28) FetchedTranscriptSnippet(text='broken down into smaller parts yes', start=775.04, duration=4.96) FetchedTranscriptSnippet(text='the problem gets broken down into', start=778.0, duration=4.16) FetchedTranscriptSnippet(text='smaller smaller parts and once it is', start=780.0, duration=4.959) FetchedTranscriptSnippet(text='broken down it easily gives you the', start=782.16, duration=4.4) FetchedTranscriptSnippet(text='output', start=784.959, duration=4.0) FetchedTranscriptSnippet(text='so coming across to the code the quotes', start=786.56, duration=5.04) FetchedTranscriptSnippet(text='very very simple you say int sum you can', start=788.959, duration=4.081) FetchedTranscriptSnippet(text='call int n', start=791.6, duration=4.08) FetchedTranscriptSnippet(text='right and you can simply write if n is', start=793.04, duration=4.88) FetchedTranscriptSnippet(text='equal to equal to 0', start=795.68, duration=3.76) FetchedTranscriptSnippet(text='please', start=797.92, duration=3.28) FetchedTranscriptSnippet(text='return a 0', start=799.44, duration=5.28) FetchedTranscriptSnippet(text='else return an n plus sum of', start=801.2, duration=6.4) FetchedTranscriptSnippet(text='n minus 1 and over here probably i i can', start=804.72, duration=5.04) FetchedTranscriptSnippet(text='just keep n equal to a 3 you can take', start=807.6, duration=4.56) FetchedTranscriptSnippet(text='this take this as input as well c out', start=809.76, duration=4.48) FetchedTranscriptSnippet(text=\"sum of n so if i just write it you'll\", start=812.16, duration=4.4) FetchedTranscriptSnippet(text='see this this perfectly works', start=814.24, duration=4.48) FetchedTranscriptSnippet(text=\"i saw it perfectly it's a very simple\", start=816.56, duration=4.56) FetchedTranscriptSnippet(text=\"one okay so i hope you've understood how\", start=818.72, duration=5.119) FetchedTranscriptSnippet(text='to get the sum of first n numbers', start=821.12, duration=5.719) FetchedTranscriptSnippet(text='now if i give you a very simple', start=823.839, duration=5.761) FetchedTranscriptSnippet(text='task task is', start=826.839, duration=5.401) FetchedTranscriptSnippet(text='factorial of', start=829.6, duration=4.239) FetchedTranscriptSnippet(text='n', start=832.24, duration=3.36) FetchedTranscriptSnippet(text='what is factorial of n', start=833.839, duration=4.401) FetchedTranscriptSnippet(text='whenever i give you n equal to 3', start=835.6, duration=5.76) FetchedTranscriptSnippet(text='it is 6 whenever i give you n equal to 4', start=838.24, duration=7.44) FetchedTranscriptSnippet(text=\"it's 24 basically 1 into 2 into 3 this\", start=841.36, duration=9.039) FetchedTranscriptSnippet(text=\"time it's 1 into 2 into 3 into 4 correct\", start=845.68, duration=7.519) FetchedTranscriptSnippet(text='multiplication instead of addition', start=850.399, duration=5.041) FetchedTranscriptSnippet(text='multiplication instead of addition so', start=853.199, duration=4.0) FetchedTranscriptSnippet(text='how will you do this', start=855.44, duration=4.16) FetchedTranscriptSnippet(text=\"i think that's very simple this time\", start=857.199, duration=3.601) FetchedTranscriptSnippet(text='very simple', start=859.6, duration=2.08) FetchedTranscriptSnippet(text='uh', start=860.8, duration=2.96) FetchedTranscriptSnippet(text='if i write the code', start=861.68, duration=3.76) FetchedTranscriptSnippet(text=\"so i'll leave the parameterized you can\", start=863.76, duration=3.84) FetchedTranscriptSnippet(text=\"do it yourself i'll try to write the\", start=865.44, duration=4.88) FetchedTranscriptSnippet(text='recursive code okay now you know one', start=867.6, duration=4.479) FetchedTranscriptSnippet(text='thing for sure in the recursive code', start=870.32, duration=3.759) FetchedTranscriptSnippet(text='this will become a factorial', start=872.079, duration=3.921) FetchedTranscriptSnippet(text='correct', start=874.079, duration=5.12) FetchedTranscriptSnippet(text='and this will become into because 5 into', start=876.0, duration=4.8) FetchedTranscriptSnippet(text='4 into 3', start=879.199, duration=3.361) FetchedTranscriptSnippet(text='and this will become n minus 1 but we', start=880.8, duration=4.479) FetchedTranscriptSnippet(text='need to understand will the base case', start=882.56, duration=3.68) FetchedTranscriptSnippet(text='change', start=885.279, duration=3.201) FetchedTranscriptSnippet(text='will it be n equal to equal to zero the', start=886.24, duration=4.56) FetchedTranscriptSnippet(text=\"step let's see if i write this and if i\", start=888.48, duration=4.32) FetchedTranscriptSnippet(text=\"run this what happens let's understand\", start=890.8, duration=3.599) FetchedTranscriptSnippet(text='if i just give it a run', start=892.8, duration=4.32) FetchedTranscriptSnippet(text=\"see uh okay sorry let's give it a run so\", start=894.399, duration=4.401) FetchedTranscriptSnippet(text='if i', start=897.12, duration=3.36) FetchedTranscriptSnippet(text=\"let's change it factorial okay now let's\", start=898.8, duration=3.52) FetchedTranscriptSnippet(text='give it a run so if i give it a run you', start=900.48, duration=3.44) FetchedTranscriptSnippet(text='see the output being zero so you see the', start=902.32, duration=3.6) FetchedTranscriptSnippet(text='output being zero why', start=903.92, duration=5.279) FetchedTranscriptSnippet(text=\"due to this base case let's understand\", start=905.92, duration=5.599) FetchedTranscriptSnippet(text='how why did this base gave uh', start=909.199, duration=4.721) FetchedTranscriptSnippet(text='why did this base case give you 0 so if', start=911.519, duration=4.56) FetchedTranscriptSnippet(text='i write f of n', start=913.92, duration=4.08) FetchedTranscriptSnippet(text='and i write the base cases n equal to', start=916.079, duration=4.32) FetchedTranscriptSnippet(text='equal to 0 and i say return', start=918.0, duration=5.12) FetchedTranscriptSnippet(text=\"0 and i'm saying return\", start=920.399, duration=3.68) FetchedTranscriptSnippet(text='n', start=923.12, duration=1.839) FetchedTranscriptSnippet(text='into', start=924.079, duration=3.841) FetchedTranscriptSnippet(text='factorial of n minus 1 if this is the', start=924.959, duration=3.841) FetchedTranscriptSnippet(text='code', start=927.92, duration=5.52) FetchedTranscriptSnippet(text='and i am writing the main function as', start=928.8, duration=4.64) FetchedTranscriptSnippet(text='n is given as 3', start=933.6, duration=3.76) FetchedTranscriptSnippet(text=\"and i'm saying print\", start=935.12, duration=4.48) FetchedTranscriptSnippet(text='f of n', start=937.36, duration=4.399) FetchedTranscriptSnippet(text='so basically this guy goes and calls', start=939.6, duration=4.0) FetchedTranscriptSnippet(text='this with three', start=941.759, duration=3.361) FetchedTranscriptSnippet(text='not executed', start=943.6, duration=3.599) FetchedTranscriptSnippet(text='three into', start=945.12, duration=3.2) FetchedTranscriptSnippet(text='f of', start=947.199, duration=3.44) FetchedTranscriptSnippet(text='two not executed', start=948.32, duration=6.48) FetchedTranscriptSnippet(text='if line is not executed so return', start=950.639, duration=8.32) FetchedTranscriptSnippet(text='2 into f of 2 minus 1 which is 1', start=954.8, duration=6.64) FetchedTranscriptSnippet(text='so this is gone f of 1', start=958.959, duration=4.0) FetchedTranscriptSnippet(text=\"again you're writing n equal to equal to\", start=961.44, duration=3.519) FetchedTranscriptSnippet(text='0 not executed', start=962.959, duration=4.161) FetchedTranscriptSnippet(text='return 1 into', start=964.959, duration=3.761) FetchedTranscriptSnippet(text='f of', start=967.12, duration=3.04) FetchedTranscriptSnippet(text='0', start=968.72, duration=4.479) FetchedTranscriptSnippet(text='f of 0 is going', start=970.16, duration=5.76) FetchedTranscriptSnippet(text='and this time the if is executed', start=973.199, duration=6.161) FetchedTranscriptSnippet(text='and you return a 0 and you return a 0', start=975.92, duration=5.599) FetchedTranscriptSnippet(text='which is absolutely wrong because the', start=979.36, duration=4.399) FetchedTranscriptSnippet(text='moment you return on 0 this guy returns', start=981.519, duration=4.721) FetchedTranscriptSnippet(text='a 0 and if i just strike it off instead', start=983.759, duration=5.281) FetchedTranscriptSnippet(text='of f of 0 you end up writing a 0 which', start=986.24, duration=6.8) FetchedTranscriptSnippet(text='means 1 into 0 is 0 you get a 0 thereby', start=989.04, duration=7.76) FetchedTranscriptSnippet(text='this is straight up 0 2 into 0 is 0', start=993.04, duration=5.2) FetchedTranscriptSnippet(text='0', start=996.8, duration=4.399) FetchedTranscriptSnippet(text='this gets 0 3 into 0 is 0 you get a 3.', start=998.24, duration=6.08) FetchedTranscriptSnippet(text='so what should you have returned yes you', start=1001.199, duration=6.08) FetchedTranscriptSnippet(text='should have written ideally 1', start=1004.32, duration=4.48) FetchedTranscriptSnippet(text='or or or', start=1007.279, duration=3.281) FetchedTranscriptSnippet(text='you should have done this', start=1008.8, duration=3.44) FetchedTranscriptSnippet(text='this is also correct or even if you keep', start=1010.56, duration=3.199) FetchedTranscriptSnippet(text='this this is also correct you should', start=1012.24, duration=3.039) FetchedTranscriptSnippet(text='return one because in case of', start=1013.759, duration=3.76) FetchedTranscriptSnippet(text=\"multiplications if you're returning 0\", start=1015.279, duration=4.721) FetchedTranscriptSnippet(text='the overall product gets multiplied to 0', start=1017.519, duration=5.361) FetchedTranscriptSnippet(text='thereby giving you a wrong answer so', start=1020.0, duration=5.039) FetchedTranscriptSnippet(text='this is what i wanted to', start=1022.88, duration=4.559) FetchedTranscriptSnippet(text='explain you again uh what about the time', start=1025.039, duration=5.681) FetchedTranscriptSnippet(text=\"complexity you're basically uh doing one\", start=1027.439, duration=7.441) FetchedTranscriptSnippet(text='call two call three call till n calls', start=1030.72, duration=6.16) FetchedTranscriptSnippet(text='so i can say big of n', start=1034.88, duration=4.319) FetchedTranscriptSnippet(text='is the time and the space complexity is', start=1036.88, duration=4.88) FetchedTranscriptSnippet(text='an auxiliary space stack space because', start=1039.199, duration=4.801) FetchedTranscriptSnippet(text='this awaits then this awaits so there', start=1041.76, duration=3.919) FetchedTranscriptSnippet(text='will be go of n', start=1044.0, duration=4.24) FetchedTranscriptSnippet(text='uh n functions will be awaiting to be', start=1045.679, duration=4.641) FetchedTranscriptSnippet(text='completed so stack space will be taken', start=1048.24, duration=4.72) FetchedTranscriptSnippet(text='so in stack uh this is what the time and', start=1050.32, duration=4.96) FetchedTranscriptSnippet(text='space complexity will be y big of n as', start=1052.96, duration=3.76) FetchedTranscriptSnippet(text='the time complexity first time this', start=1055.28, duration=3.44) FetchedTranscriptSnippet(text='function is called next this time and', start=1056.72, duration=3.839) FetchedTranscriptSnippet(text='these functions are all unique functions', start=1058.72, duration=3.28) FetchedTranscriptSnippet(text=\"you don't take a lot of time inside\", start=1060.559, duration=3.521) FetchedTranscriptSnippet(text='these functions thereby the number of', start=1062.0, duration=3.36) FetchedTranscriptSnippet(text='function calls will be equal to the', start=1064.08, duration=3.52) FetchedTranscriptSnippet(text='number of time complex is equal to the', start=1065.36, duration=4.72) FetchedTranscriptSnippet(text='time complexity so guys i hope you have', start=1067.6, duration=4.64) FetchedTranscriptSnippet(text='understood the entire lecture so just in', start=1070.08, duration=3.76) FetchedTranscriptSnippet(text='case you did please please please make', start=1072.24, duration=3.2) FetchedTranscriptSnippet(text=\"sure you like this video and if you're\", start=1073.84, duration=3.36) FetchedTranscriptSnippet(text='new to the channel please do consider', start=1075.44, duration=3.68) FetchedTranscriptSnippet(text='subscribing please please do consider', start=1077.2, duration=4.08) FetchedTranscriptSnippet(text=\"subscribing and yeah with this let's\", start=1079.12, duration=3.919) FetchedTranscriptSnippet(text='wrap up this video and meet in the next', start=1081.28, duration=4.17) FetchedTranscriptSnippet(text='precaution video bye-bye', start=1083.039, duration=12.431) FetchedTranscriptSnippet(text='[Music]', start=1085.45, duration=10.02)",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so before starting this video i'd love\", start=0.0, duration=2.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to thank the sponsor of this video which', start=1.52, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is code studio now if you are willing to', start=2.96, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='practice uh interview problems topic', start=5.04, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='wise this is the place where you should', start=7.12, duration=3.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='look for because core studio has over', start=8.8, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='2000 plus problems and has all the', start=10.639, duration=4.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='problem solution in c plus java as well', start=12.88, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"as python if you're looking for a guided\", start=15.28, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='path then you can find for python for', start=17.279, duration=4.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='dbms for object oriented programming', start=19.68, duration=3.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='operating system computer networks', start=21.76, duration=3.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='system design web development any other', start=23.359, duration=3.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"thing that you're looking for you'll\", start=25.68, duration=3.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='find guided paths for every other thing', start=26.56, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"over here also also if you're looking\", start=28.72, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"for any top company questions let's say\", start=30.64, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if you have an interview at amazon if', start=33.04, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you're looking for amazon questions you\", start=35.12, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can get all the top amazon coding', start=36.48, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='questions via tag and all the solutions', start=38.48, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in c plus java as well as python also if', start=40.399, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you have an interview schedule you can', start=43.04, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='read their interview experiences where', start=44.399, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='there are 600 plus interview experiences', start=46.48, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='from companies like amazon microsoft', start=48.719, duration=4.561)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='adobe google etc so what are you waiting', start=50.559, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for code studio has a lot of free', start=53.28, duration=2.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='resources for interview preparation the', start=54.719, duration=3.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='link will be in the description make', start=56.239, duration=4.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sure you check it out', start=57.76, duration=2.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hey everyone welcome back to the channel', start=64.0, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i hope you guys are doing extremely well', start=65.36, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='today we will be uh solving a very very', start=67.2, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='interesting problem in recursion which', start=70.32, duration=5.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is the summation of', start=72.96, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the first n numbers', start=75.52, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now this can be done using', start=77.92, duration=5.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a very simple for loop but i want you to', start=81.52, duration=4.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='do this using recursion because that', start=83.84, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will create your base of recursion very', start=85.759, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"very strong i'm going to teach you a\", start=88.4, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='couple of ways the first way being the', start=90.159, duration=5.121)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='parameter wise ways', start=92.96, duration=4.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"where i'll be showing you how to do this\", start=95.28, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='using parameter the next one will be', start=97.119, duration=4.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='functional way where the function itself', start=99.84, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returns', start=102.0, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the answer okay so to start off with uh', start=103.04, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i hope you have understood the question', start=105.52, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum of first n numbers assume n is given', start=106.64, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='as 3 then the summation will be', start=109.439, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='definitely 6 because', start=111.6, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='1 plus 2 plus 3 is equal to 6 the sum of', start=113.52, duration=5.279)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the first three numbers is what the', start=116.88, duration=3.199)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='question states', start=118.799, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so to start off with', start=120.079, duration=6.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"let's uh learn the parameterized way\", start=122.159, duration=4.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now when i say a parameterized wave what', start=128.399, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='does that mean', start=130.479, duration=3.521)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that means assume i write a function is', start=131.599, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='assume i write a function and i say i', start=134.0, duration=5.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and i carry a variable sum', start=137.36, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"okay and that's the recursive function\", start=139.84, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that i'm writing\", start=141.84, duration=5.119)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and i say that okay i'm gonna think this\", start=144.319, duration=5.121)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='as a loop so in the previous lecture we', start=146.959, duration=4.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='saw that we started from one we went on', start=149.44, duration=4.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"to two we went down to three so we're\", start=151.599, duration=5.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"gonna do this uh till we don't reach n\", start=154.08, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or probably we can do it the opposite', start=156.64, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='way from n to uh', start=158.48, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"one so let's assume we do it from n to\", start=161.04, duration=5.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='one so we can say if at any moment i is', start=163.04, duration=5.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='lesser than one yes if at any moment i', start=166.72, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is less than one', start=168.959, duration=5.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i can definitely print yes i can', start=170.48, duration=6.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"definitely say let's uh print the\", start=174.16, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='summation', start=177.36, duration=2.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='okay', start=178.959, duration=4.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and then try our return make sense', start=179.92, duration=4.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and apart from this what i'm going to\", start=183.2, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='say is okay f of', start=184.879, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i minus 1', start=187.28, duration=2.879)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum', start=189.04, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"plus i is what i'm going to pass\", start=190.159, duration=5.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so this is what my recursive statement', start=192.64, duration=4.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will be and the main will be very simple', start=195.2, duration=5.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='again the main will be uh taking an n as', start=197.599, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the input', start=200.56, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and then we can just call f of', start=201.76, duration=5.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n comma initial summation as', start=204.4, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='0.', start=207.36, duration=3.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now this is what i have taken now for an', start=208.239, duration=5.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"example let's assume this is the output\", start=210.4, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='screen', start=213.92, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and let's assume n is given as\", start=215.36, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3', start=217.76, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so what i'm calling for the first time\", start=218.64, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is', start=221.04, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i'm saying i to be\", start=221.92, duration=3.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3', start=224.64, duration=2.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum to be', start=225.599, duration=3.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='0', start=226.879, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"right that is what i'm saying\", start=228.64, duration=5.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i to be 3 and sum to be 0', start=231.68, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this line is not executed', start=234.56, duration=5.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this line is executed and it thereby', start=237.12, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='calls another function', start=239.92, duration=3.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in the same link the same function is', start=242.0, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='called in the memory and it passes i', start=243.439, duration=5.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='minus 1 which is 2 because i was 3 so it', start=245.76, duration=6.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='tends down to 3 minus 1 which is 2 and', start=249.36, duration=4.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum plus i', start=252.159, duration=6.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum was 0 if you see sum was 0 so 0 plus', start=253.519, duration=8.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3 will become 3 so it goes as', start=258.799, duration=5.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3 again', start=262.32, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is the if line executed', start=263.919, duration=4.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='no the if line is not executed so the', start=265.919, duration=4.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='functional line will be executed and', start=268.8, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that's i minus 1 which means\", start=270.8, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='something and then sum was 3', start=273.52, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus', start=276.08, duration=3.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i this time is 2.', start=277.04, duration=5.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now this time this function again calls', start=280.0, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a function which says function i minus 1', start=282.72, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so i was 2 it becomes', start=285.44, duration=7.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='1 and the summation 3 plus 2 becomes 5', start=288.0, duration=8.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is the if statement executed no because', start=293.199, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the if statement if you carefully', start=296.0, duration=2.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='observe', start=297.6, duration=2.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's\", start=298.479, duration=3.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i lesser than one and that's not the\", start=300.0, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"case so it's not executed correct\", start=302.16, duration=5.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby', start=305.44, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it goes again and calls the same', start=307.28, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='function with i minus 1', start=309.039, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='comma', start=311.68, duration=2.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='sum plus', start=312.639, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i', start=314.24, duration=5.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this time i minus 1 i was 1', start=316.24, duration=5.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so this time the functional call is made', start=319.44, duration=6.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to f of i minus 1 1 minus 1 becomes 0', start=321.759, duration=7.121)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='then summation summation was 5', start=326.24, duration=7.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus i i was 1 so it calls it as 6. what', start=328.88, duration=6.879)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is the if statement if statement stated', start=333.6, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i lesser than 1 i less', start=335.759, duration=6.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='than 1 is that the case yes so what it', start=338.4, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='does is', start=341.759, duration=4.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='print the summation summation was 6 so', start=342.88, duration=6.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='on the output screen the 6 is printed', start=346.4, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and it says', start=349.84, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return so thereby this functional line', start=351.199, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is no more executed and it directly', start=353.52, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returns from here', start=355.6, duration=3.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so if it returns', start=357.84, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this function is done', start=359.52, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and now it returns', start=361.52, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby saying this function is done so', start=363.68, duration=4.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this guy', start=366.24, duration=3.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='again returns', start=367.919, duration=3.521)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby this function is done thereby', start=369.28, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this guy returns so we did a', start=371.44, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='parameterized function where we can say', start=373.759, duration=5.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that our recursive tree was', start=376.4, duration=5.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3 comma 0 where this being the i and sum', start=379.36, duration=6.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we went on to f of 2 comma added this 3', start=382.24, duration=7.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we went on to f of 1 comma added this 2', start=386.0, duration=6.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='we went on to f comma 0 added this one', start=389.36, duration=6.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so whenever we ended up at 0 we just', start=392.88, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='printed this because we were', start=395.84, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='adding the i adding the i every time to', start=398.16, duration=4.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the parameter', start=401.12, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and that is what we printed this could', start=402.8, duration=3.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='have been done in the other way where', start=405.039, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you could have done i plus one as well', start=406.479, duration=3.521)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"but i'm just teaching you the parameter\", start=408.4, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='way in how can you actually carry the', start=410.0, duration=5.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='parameters yes because over here we', start=413.28, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='increase the parameters and at the end', start=415.36, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of the day at the end of the day we came', start=417.759, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='here and print this particular parameter', start=419.919, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='which is six so this is how the', start=422.319, duration=3.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='recursion tree will be at the end it', start=424.08, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='came back came back came back and went', start=426.24, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='back right this is how you can do it', start=428.4, duration=5.359)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='using parameterized okay', start=430.639, duration=4.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"now if you've understood the\", start=433.759, duration=3.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"parameterized it's time to understand\", start=435.12, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the functional', start=437.52, duration=3.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how do you generally', start=439.36, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='write the function because functional', start=441.039, duration=3.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='means uh', start=443.68, duration=2.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you don't want the parameter to do the\", start=444.96, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='work you want you write a recursive', start=446.479, duration=4.321)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='function where you say that hey listen', start=448.72, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is my value of n take n as 3 and', start=450.8, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"give me the summation as 6. so if i'm\", start=453.68, duration=4.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='asking you to write such a function', start=456.56, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"that's when you cannot use parameterized\", start=458.319, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='because you want the function to return', start=460.16, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"the answer you don't want it to print\", start=461.68, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you want it to return why', start=463.44, duration=2.879)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh', start=465.52, duration=2.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='there will be a lot of cases when you', start=466.319, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='learn dynamic programming that you want', start=467.84, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the function to give you back something', start=469.759, duration=4.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='instead of printing right so basically', start=471.52, duration=4.079)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh to understand the concept before', start=474.0, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"writing the recursive code let's uh so\", start=475.599, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"these are all patterns that i'm teaching\", start=478.16, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's not that i'm just writing the codes\", start=479.919, duration=3.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"these are patterns i'm teaching you to\", start=481.44, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='learn these patterns if parameters are', start=483.12, duration=2.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='there then you have to do it in such a', start=484.72, duration=3.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"way if there's return then you have to\", start=485.919, duration=3.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='do it in such a way to learn these', start=487.84, duration=3.359)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"patterns once you're very confident\", start=489.36, duration=3.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='about these patterns you can solve any', start=491.199, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='problem in recursion that is my word', start=492.879, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"okay to go with functional let's\", start=496.0, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='understand when i say functional what', start=498.319, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='does that mean now if n is given as a 3', start=499.919, duration=5.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for a reason if n is given as 3', start=503.12, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can i say this can i say this', start=505.52, duration=6.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i can say i'll do a 3 i'll do\", start=508.0, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of 2', start=511.84, duration=3.119)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='where i know where i know', start=513.039, duration=4.321)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of n means', start=514.959, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='summation of', start=517.36, duration=5.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='first n numbers okay i know this so if i', start=519.12, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='write', start=523.279, duration=3.281)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3 plus f of 2 makes sense', start=524.159, duration=4.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"then when i'm calling for f of 2 can i\", start=526.56, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='say okay', start=528.88, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='that can be written as 2 plus f of 1', start=530.16, duration=5.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and when i'm at f of 1 can i write this\", start=533.04, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='as', start=535.76, duration=2.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='1 plus f of 0', start=536.72, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and everyone knows that f of 0 is', start=538.72, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='nothing but 0 so i can think it in such', start=540.72, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a way that okay', start=542.8, duration=3.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='whenever there is an f of n', start=544.72, duration=3.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i know n will be there', start=546.72, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i know n will be there which is 3', start=548.399, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"because if i'm saying f of 3 i know the\", start=550.32, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='summation will contain 3 but i need the', start=552.8, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='summation of the rest of the', start=555.2, duration=4.319)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='rest of the two numbers', start=557.279, duration=4.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so this is the idea that i am going to', start=559.519, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"follow so what i'll say is okay\", start=562.16, duration=5.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='let them give me the n', start=564.959, duration=4.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if at any moment n is equal to equal to', start=567.839, duration=4.881)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"zero i'm going to return a zero because\", start=569.92, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if f is if n is zero i know the', start=572.72, duration=5.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='summation of the first 0 numbers is 0', start=574.959, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or else', start=577.92, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i'm going to return simply\", start=579.36, duration=6.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n plus f of n minus 1 okay', start=581.44, duration=7.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i'm going to simply return n plus f of n\", start=585.6, duration=4.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='minus', start=589.36, duration=2.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='1', start=590.399, duration=2.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='done', start=591.519, duration=2.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now question', start=593.2, duration=2.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='might arise', start=594.48, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"how will this work let's understand\", start=596.08, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"let's write the main function again so\", start=598.24, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if i write main', start=599.92, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and i say n is given as 3 and i call f', start=601.76, duration=6.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of 3 or f of n rather', start=604.8, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and i write', start=608.8, duration=2.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='print', start=609.92, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='print this f of', start=611.44, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n', start=613.6, duration=5.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so what is being done', start=615.279, duration=4.961)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this f of n', start=618.72, duration=5.679)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"goes and calls this so let's call this\", start=620.24, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='with what value', start=624.399, duration=4.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='with the value 3 f of 3 is called is', start=625.76, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this line executed', start=629.04, duration=2.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='no', start=630.72, duration=2.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n means', start=631.6, duration=2.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='3', start=633.36, duration=2.159)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='plus', start=634.56, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of n minus 1 is called remember this', start=635.519, duration=5.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"there's a line\", start=639.36, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='in completed line 3 plus something', start=640.88, duration=5.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='incompleted that incompleted will be', start=643.92, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='called in recursion till it does not', start=646.24, duration=3.92)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"comes i'm waiting three plus three plus\", start=648.16, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"something something i'm waiting got that\", start=650.16, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so', start=653.12, duration=2.719)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of two now goes', start=653.92, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it states if n is equal to equal to zero', start=655.839, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it says no', start=658.16, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so i'm like okay return\", start=659.519, duration=3.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two plus f of one', start=661.44, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this time', start=663.44, duration=2.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two plus', start=664.64, duration=2.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this line', start=665.76, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='waits', start=667.2, duration=4.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='for f of one to be done so i go and call', start=669.44, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of one', start=671.839, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if n is equal to equal to 0 again i say', start=673.04, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='no remember this you could have written', start=676.079, duration=4.481)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"n equal to equal to 1 that's your choice\", start=678.48, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you can write it i'm just teaching you\", start=680.56, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"patterns that's it return 0 doesn't\", start=682.64, duration=4.639)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='works', start=685.12, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return', start=687.279, duration=2.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='one plus', start=688.72, duration=2.799)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of zero', start=690.0, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='again this line awaits i am awaiting let', start=691.519, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='him come back', start=695.04, duration=2.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so let's go\", start=696.32, duration=3.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of zero', start=697.68, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"when you go for f of zero let's\", start=699.44, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='understand what happens', start=701.44, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if n equal to equal to 0', start=703.279, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returns a 0', start=705.76, duration=5.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this guy comes in with a value 0 returns', start=707.44, duration=6.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"a 0 this time i'm returning something\", start=711.519, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i'm giving back something so it's\", start=713.839, duration=5.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returning a zero i hope that makes sense', start=715.92, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so whenever', start=719.04, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this function is called this function is', start=720.48, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='called it came back with zero came back', start=722.48, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='with zero so can i say', start=725.2, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now instead of writing this f of 0 i can', start=727.44, duration=4.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='actually write this 0 because this', start=730.48, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='function yielded you a value 0 so', start=732.399, duration=6.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby 1 plus 0 is 1', start=735.36, duration=6.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='hence return this guy returns a 1', start=738.639, duration=6.241)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='1 0 returns are one so can i say now', start=742.24, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='instead of writing f of one', start=744.88, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='can i write one because one has been', start=746.72, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returned', start=749.279, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby two plus one can i say this guy', start=750.32, duration=5.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='returns a three indeed i can say that f', start=752.88, duration=5.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of n minus one goes away and i can write', start=755.839, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='three so thereby three plus three is six', start=758.32, duration=5.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby this guy returns six and you say', start=761.6, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='print', start=763.92, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so output is six', start=765.44, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is how yes this is how you can', start=768.0, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='write a', start=770.72, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='functional stuff when the problem is', start=772.72, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='broken down into smaller parts yes', start=775.04, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the problem gets broken down into', start=778.0, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='smaller smaller parts and once it is', start=780.0, duration=4.959)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='broken down it easily gives you the', start=782.16, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='output', start=784.959, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so coming across to the code the quotes', start=786.56, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='very very simple you say int sum you can', start=788.959, duration=4.081)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='call int n', start=791.6, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='right and you can simply write if n is', start=793.04, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='equal to equal to 0', start=795.68, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='please', start=797.92, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return a 0', start=799.44, duration=5.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='else return an n plus sum of', start=801.2, duration=6.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n minus 1 and over here probably i i can', start=804.72, duration=5.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='just keep n equal to a 3 you can take', start=807.6, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this take this as input as well c out', start=809.76, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"sum of n so if i just write it you'll\", start=812.16, duration=4.4)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='see this this perfectly works', start=814.24, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i saw it perfectly it's a very simple\", start=816.56, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"one okay so i hope you've understood how\", start=818.72, duration=5.119)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='to get the sum of first n numbers', start=821.12, duration=5.719)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='now if i give you a very simple', start=823.839, duration=5.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='task task is', start=826.839, duration=5.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='factorial of', start=829.6, duration=4.239)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n', start=832.24, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='what is factorial of n', start=833.839, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='whenever i give you n equal to 3', start=835.6, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='it is 6 whenever i give you n equal to 4', start=838.24, duration=7.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"it's 24 basically 1 into 2 into 3 this\", start=841.36, duration=9.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"time it's 1 into 2 into 3 into 4 correct\", start=845.68, duration=7.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='multiplication instead of addition', start=850.399, duration=5.041)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='multiplication instead of addition so', start=853.199, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how will you do this', start=855.44, duration=4.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"i think that's very simple this time\", start=857.199, duration=3.601)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='very simple', start=859.6, duration=2.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh', start=860.8, duration=2.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if i write the code', start=861.68, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"so i'll leave the parameterized you can\", start=863.76, duration=3.84)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"do it yourself i'll try to write the\", start=865.44, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='recursive code okay now you know one', start=867.6, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thing for sure in the recursive code', start=870.32, duration=3.759)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this will become a factorial', start=872.079, duration=3.921)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='correct', start=874.079, duration=5.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and this will become into because 5 into', start=876.0, duration=4.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='4 into 3', start=879.199, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and this will become n minus 1 but we', start=880.8, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='need to understand will the base case', start=882.56, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='change', start=885.279, duration=3.201)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will it be n equal to equal to zero the', start=886.24, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"step let's see if i write this and if i\", start=888.48, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"run this what happens let's understand\", start=890.8, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if i just give it a run', start=892.8, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"see uh okay sorry let's give it a run so\", start=894.399, duration=4.401)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if i', start=897.12, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"let's change it factorial okay now let's\", start=898.8, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='give it a run so if i give it a run you', start=900.48, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='see the output being zero so you see the', start=902.32, duration=3.6)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='output being zero why', start=903.92, duration=5.279)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"due to this base case let's understand\", start=905.92, duration=5.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='how why did this base gave uh', start=909.199, duration=4.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='why did this base case give you 0 so if', start=911.519, duration=4.56)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='i write f of n', start=913.92, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and i write the base cases n equal to', start=916.079, duration=4.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='equal to 0 and i say return', start=918.0, duration=5.12)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"0 and i'm saying return\", start=920.399, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n', start=923.12, duration=1.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='into', start=924.079, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='factorial of n minus 1 if this is the', start=924.959, duration=3.841)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='code', start=927.92, duration=5.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and i am writing the main function as', start=928.8, duration=4.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='n is given as 3', start=933.6, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"and i'm saying print\", start=935.12, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of n', start=937.36, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so basically this guy goes and calls', start=939.6, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this with three', start=941.759, duration=3.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='not executed', start=943.6, duration=3.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='three into', start=945.12, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of', start=947.199, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='two not executed', start=948.32, duration=6.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='if line is not executed so return', start=950.639, duration=8.32)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='2 into f of 2 minus 1 which is 1', start=954.8, duration=6.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so this is gone f of 1', start=958.959, duration=4.0)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"again you're writing n equal to equal to\", start=961.44, duration=3.519)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='0 not executed', start=962.959, duration=4.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return 1 into', start=964.959, duration=3.761)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of', start=967.12, duration=3.04)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='0', start=968.72, duration=4.479)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='f of 0 is going', start=970.16, duration=5.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and this time the if is executed', start=973.199, duration=6.161)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='and you return a 0 and you return a 0', start=975.92, duration=5.599)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='which is absolutely wrong because the', start=979.36, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='moment you return on 0 this guy returns', start=981.519, duration=4.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='a 0 and if i just strike it off instead', start=983.759, duration=5.281)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='of f of 0 you end up writing a 0 which', start=986.24, duration=6.8)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='means 1 into 0 is 0 you get a 0 thereby', start=989.04, duration=7.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is straight up 0 2 into 0 is 0', start=993.04, duration=5.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='0', start=996.8, duration=4.399)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this gets 0 3 into 0 is 0 you get a 3.', start=998.24, duration=6.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so what should you have returned yes you', start=1001.199, duration=6.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='should have written ideally 1', start=1004.32, duration=4.48)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='or or or', start=1007.279, duration=3.281)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='you should have done this', start=1008.8, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is also correct or even if you keep', start=1010.56, duration=3.199)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this this is also correct you should', start=1012.24, duration=3.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='return one because in case of', start=1013.759, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"multiplications if you're returning 0\", start=1015.279, duration=4.721)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the overall product gets multiplied to 0', start=1017.519, duration=5.361)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='thereby giving you a wrong answer so', start=1020.0, duration=5.039)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this is what i wanted to', start=1022.88, duration=4.559)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='explain you again uh what about the time', start=1025.039, duration=5.681)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"complexity you're basically uh doing one\", start=1027.439, duration=7.441)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='call two call three call till n calls', start=1030.72, duration=6.16)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so i can say big of n', start=1034.88, duration=4.319)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='is the time and the space complexity is', start=1036.88, duration=4.88)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='an auxiliary space stack space because', start=1039.199, duration=4.801)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='this awaits then this awaits so there', start=1041.76, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='will be go of n', start=1044.0, duration=4.24)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='uh n functions will be awaiting to be', start=1045.679, duration=4.641)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='completed so stack space will be taken', start=1048.24, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='so in stack uh this is what the time and', start=1050.32, duration=4.96)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='space complexity will be y big of n as', start=1052.96, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='the time complexity first time this', start=1055.28, duration=3.44)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='function is called next this time and', start=1056.72, duration=3.839)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='these functions are all unique functions', start=1058.72, duration=3.28)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"you don't take a lot of time inside\", start=1060.559, duration=3.521)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='these functions thereby the number of', start=1062.0, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='function calls will be equal to the', start=1064.08, duration=3.52)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='number of time complex is equal to the', start=1065.36, duration=4.72)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='time complexity so guys i hope you have', start=1067.6, duration=4.64)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='understood the entire lecture so just in', start=1070.08, duration=3.76)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='case you did please please please make', start=1072.24, duration=3.2)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"sure you like this video and if you're\", start=1073.84, duration=3.36)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='new to the channel please do consider', start=1075.44, duration=3.68)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='subscribing please please do consider', start=1077.2, duration=4.08)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text=\"subscribing and yeah with this let's\", start=1079.12, duration=3.919)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='wrap up this video and meet in the next', start=1081.28, duration=4.17)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='precaution video bye-bye', start=1083.039, duration=12.431)"
+    },
+    {
+      "start": 0.0,
+      "end": 0.0,
+      "text": "FetchedTranscriptSnippet(text='[Music]', start=1085.45, duration=10.02)"
+    }
+  ]
+}
