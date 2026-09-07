@@ -158,34 +158,14 @@ _OOD_TERMS = {
     "langchain", "langgraph", "lang graph", "autogen", "crewai", "llamaindex", "ollama", "gpt",
     "react", "angular", "vue", "node", "nodejs", "express", "django", "flask",
     "fastapi", "spring", "springboot", "flutter", "reactnative", "android", "ios",
-    "cooking", "recipe", "cricket", "football", "movie", "song", "lyrics"
+    "cooking", "recipe", "cricket", "football", "movie", "song", "lyrics", "politics", "weather"
 }
 
 
-def _is_confident(question: str, hits: list[tuple[Chunk, float]]) -> bool:
-    """Is the top result trustworthy enough to present without a caveat?"""
-    if not hits:
-        return False
-
+def _is_ood(question: str) -> bool:
+    """Check if query is strictly outside the Data Structures & Algorithms domain."""
     q_norm = question.lower()
-    for ood in _OOD_TERMS:
-        if ood in q_norm:
-            return False
-
-    chunk, distance = hits[0]
-    q_terms = _terms(question)
-
-    if not q_terms:
-        return distance <= CONFIDENT_DISTANCE
-
-    t_terms = _terms(chunk.video_title)
-    overlap = len(q_terms & t_terms)
-    coverage = overlap / len(q_terms)
-
-    if coverage >= 0.50 or overlap >= 1 or distance <= CONFIDENT_DISTANCE:
-        return True
-
-    return False
+    return any(ood in q_norm for ood in _OOD_TERMS)
 
 
 def answer(
@@ -200,29 +180,35 @@ def answer(
     if not question:
         return {"answer": REFUSAL, "citations": [], "grounded": False, "retrieved": 0}
 
-    hits = search(question, top_k=top_k, video_id=video_id, max_distance=max_distance)
-
-    # Guard zero: if the top hit is not confident (e.g. out of domain query), refuse immediately
-    if not hits or not _is_confident(question, hits):
-        refusal_msg = f"Yeh topic ('{question}') Striver ke A2Z DSA course me cover nahi hua hai. Striver's A2Z DSA course me Data Structures & Algorithms (Arrays, Binary Search, Trees, Graphs, DP, etc.) covered hai."
+    # 1. Reject out-of-domain non-DSA queries immediately
+    if _is_ood(question):
+        refusal_msg = f"Yeh topic ('{question}') DSA domain me nahi aata hai. Striver's A2Z DSA platform Data Structures & Algorithms (Arrays, Binary Search, Trees, Graphs, DP, etc.) ke liye hai."
         return {"answer": refusal_msg, "citations": [], "grounded": False, "retrieved": 0}
 
-    chunks = [chunk for chunk, _ in hits]
-    user_prompt = f"EXCERPTS\n{build_context(chunks)}\n\nQUESTION: {question}\n\n[USER PREFERENCE: Please write the code solution in {code_lang}]"
+    # 2. Search for lecture timestamp hits
+    hits = search(question, top_k=top_k, video_id=video_id, max_distance=max_distance)
 
-    text = _chat(SYSTEM_PROMPT, user_prompt)
-
-    if REFUSAL.lower() in text.lower():
-        return {"answer": REFUSAL, "citations": [], "grounded": False, "retrieved": len(hits)}
-
-    text, citations = _renumber(text, hits)
-
-    return {
-        "answer": text,
-        "citations": citations,
-        "grounded": bool(citations),
-        "retrieved": len(hits),
-    }
+    if hits:
+        chunks = [chunk for chunk, _ in hits]
+        user_prompt = f"EXCERPTS\n{build_context(chunks)}\n\nQUESTION: {question}\n\n[USER PREFERENCE: Please write the code solution in {code_lang}]"
+        text = _chat(SYSTEM_PROMPT, user_prompt)
+        text, citations = _renumber(text, hits)
+        return {
+            "answer": text,
+            "citations": citations,
+            "grounded": bool(citations),
+            "retrieved": len(hits),
+        }
+    else:
+        # General DSA query -> Provide comprehensive AI explanation & solution code!
+        user_prompt = f"QUESTION: {question}\n\n[USER PREFERENCE: Please thoroughly explain this DSA concept and write the complete optimal solution code in {code_lang}.]"
+        text = _chat(SYSTEM_PROMPT, user_prompt)
+        return {
+            "answer": text,
+            "citations": [],
+            "grounded": False,
+            "retrieved": 0,
+        }
 
 
 def retrieve_only(question: str, top_k: int = TOP_K, filtered: bool = False) -> list[tuple[Chunk, float]]:
@@ -231,24 +217,14 @@ def retrieve_only(question: str, top_k: int = TOP_K, filtered: bool = False) -> 
 
 
 def search_only(question: str, top_k: int = TOP_K, video_id: str | None = None) -> dict:
-    """Retrieval with no LLM at all — the timestamps, ranked.
-
-    If the query is out-of-domain (e.g. 'langchain', 'react', 'lang graph') and the best match
-    is not confident, return empty results so no misleading video is shown.
-    """
+    """Retrieval with no LLM at all — the timestamps, ranked."""
     question = question.strip()
-    if not question:
-        return {"results": [], "confident": False, "query": question}
+    if not question or _is_ood(question):
+        return {"query": question, "confident": False, "results": []}
 
     hits = search(question, top_k=top_k, video_id=video_id)
-    confident = _is_confident(question, hits)
-
-    if not confident:
-        return {
-            "query": question,
-            "confident": False,
-            "results": [],
-        }
+    if not hits:
+        return {"query": question, "confident": False, "results": []}
 
     return {
         "query": question,
@@ -262,7 +238,7 @@ def search_only(question: str, top_k: int = TOP_K, video_id: str | None = None) 
                 "end_sec": chunk.end_sec,
                 "video_id": chunk.video_id,
                 "distance": round(distance, 4),
-                "preview": chunk.text.split(chr(10) + chr(10), 1)[-1][:240].strip(),
+                "preview": chunk.text[:240].replace("\n", " ").strip(),
             }
             for chunk, distance in hits
         ],
