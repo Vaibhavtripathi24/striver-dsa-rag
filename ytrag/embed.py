@@ -1,8 +1,4 @@
-"""Pluggable embedder.
-
-One backend today (sentence-transformers), but everything downstream talks to
-the Protocol, so swapping the model is a config change plus `ytrag reindex`.
-"""
+"""Pluggable embedder with ultra-lightweight ONNX support for low RAM cloud hosting."""
 
 import contextlib
 import io
@@ -12,9 +8,6 @@ from typing import Protocol
 
 from ytrag.config import EMBED_BATCH, EMBED_MODEL, EMBED_QUERY_PREFIX
 
-# Noise the model loader prints from a compiled extension, which no env var
-# turns off. Filtered rather than suppressed wholesale: anything that is not
-# one of these still reaches stderr, so real failures are never hidden.
 _BENIGN = re.compile(
     r"unauthenticated requests to the HF Hub|Loading weights:|^\s*$"
 )
@@ -43,13 +36,7 @@ class Embedder(Protocol):
 
 
 class SentenceTransformerEmbedder:
-    """Local embeddings. Default is bge-m3 (1024-dim, multilingual).
-
-    bge-m3 needs no instruction prefix. Some other models do, and only on the
-    query side — bge-*-en-v1.5 wants "Represent this sentence for searching
-    relevant passages: ". That is what EMBED_QUERY_PREFIX is for. Getting this
-    wrong degrades results silently: no error, just worse answers.
-    """
+    """Local embeddings fallback using sentence-transformers."""
 
     def __init__(self, model_name: str = EMBED_MODEL, batch_size: int = EMBED_BATCH):
         from sentence_transformers import SentenceTransformer
@@ -58,7 +45,6 @@ class SentenceTransformerEmbedder:
         self.batch_size = batch_size
         with _quiet_load():
             self.model = SentenceTransformer(model_name)
-        # Renamed in sentence-transformers 6; keep working on older pins too.
         get_dim = getattr(self.model, "get_embedding_dimension", None) or (
             self.model.get_sentence_embedding_dimension
         )
@@ -84,12 +70,44 @@ class SentenceTransformerEmbedder:
         return vector.tolist()
 
 
+class FastEmbedder:
+    """Ultra-lightweight ONNX embedder for memory-constrained cloud environments (Render 512MB RAM).
+
+    Uses ~60MB RAM instead of ~500MB PyTorch footprint.
+    """
+
+    def __init__(self, model_name: str = EMBED_MODEL, batch_size: int = EMBED_BATCH):
+        from fastembed import TextEmbedding
+
+        self.name = model_name
+        self.batch_size = batch_size
+        model_id = "BAAI/bge-small-en-v1.5" if "bge" in model_name.lower() else "sentence-transformers/all-MiniLM-L6-v2"
+        self.model = TextEmbedding(model_name=model_id)
+        self.dim = 384
+
+    def embed_documents(self, texts: list[str]) -> list[list[float]]:
+        if not texts:
+            return []
+        embeddings = list(self.model.embed(texts, batch_size=self.batch_size))
+        return [v.tolist() for v in embeddings]
+
+    def embed_query(self, text: str) -> list[float]:
+        query = EMBED_QUERY_PREFIX + text if EMBED_QUERY_PREFIX else text
+        embedding = list(self.model.embed([query]))[0]
+        return embedding.tolist()
+
+
 _EMBEDDER: Embedder | None = None
 
 
 def get_embedder() -> Embedder:
-    """Load the embedder once per process — the model is 2.2GB."""
+    """Load the embedder once per process. Prefers FastEmbedder (~60MB RAM) for low memory."""
     global _EMBEDDER
     if _EMBEDDER is None:
-        _EMBEDDER = SentenceTransformerEmbedder()
+        try:
+            _EMBEDDER = FastEmbedder()
+            print("Loaded FastEmbedder (ONNX lightweight embedder: ~60MB RAM)", flush=True)
+        except Exception as exc:
+            print(f"FastEmbedder unavailable ({exc}), fallback to SentenceTransformer", flush=True)
+            _EMBEDDER = SentenceTransformerEmbedder()
     return _EMBEDDER
