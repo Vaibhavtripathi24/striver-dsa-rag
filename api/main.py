@@ -22,16 +22,24 @@ from ytrag.index import stats as index_stats
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 
+import asyncio
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Load embedding model and pre-warm in-memory vector store before accepting traffic."""
-    from ytrag.embed import get_embedder
-    from ytrag.index import preload_index
+    """Start uvicorn server instantly so Render port binding succeeds in <1s, pre-warm index in background."""
+    def warm():
+        try:
+            from ytrag.embed import get_embedder
+            from ytrag.index import preload_index
 
-    print("Loading embedding model & pre-warming vector index...", flush=True)
-    embedder = get_embedder()
-    preload_index()
-    print(f"Ready: {embedder.name} ({embedder.dim}-dim)", flush=True)
+            print("Background pre-warming embedding model & vector index...", flush=True)
+            embedder = get_embedder()
+            preload_index()
+            print(f"Ready: {embedder.name} ({embedder.dim}-dim)", flush=True)
+        except Exception as exc:
+            print(f"Background pre-warm note: {exc}", flush=True)
+
+    asyncio.create_task(asyncio.to_thread(warm))
     yield
 
 
