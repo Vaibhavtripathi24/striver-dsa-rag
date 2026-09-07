@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: striver-dsa-rag
+    env: python
+    buildCommand: pip install -e .
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: YTRAG_EMBED_MODEL
+        value: all-MiniLM-L6-v2
+      - key: YTRAG_COLLECTION
+        value: striver_a2z_dsa
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
