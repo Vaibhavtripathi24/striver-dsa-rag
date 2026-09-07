@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Striver DSA Navigator — Interactive Video Learning Platform</title>
+<meta name="description" content="Master Data Structures & Algorithms with Striver's A2Z Course. Search 314+ lectures, jump to exact video timestamps, and take revision notes." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-page:        #0B0F17;
+    --bg-header:      #0F1623;
+    --bg-surface:     #131B2E;
+    --bg-surface-2:   #1A243B;
+    --bg-surface-hover: #222E48;
+    --border:        #232F48;
+    --border-subtle: #1C273E;
+    --border-accent: #3B82F6;
+    
+    --text-primary:   #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted:     #64748B;
+    
+    --brand-primary:  #2563EB;
+    --brand-indigo:   #6366F1;
+    --brand-cyan:     #0EA5E9;
+    --brand-gradient: linear-gradient(135deg, #2563EB 0%, #6366F1 100%);
+    
+    --success:        #10B981;
+    --warning:        #F59E0B;
+    --info:           #0EA5E9;
+    
+    --radius-xl:      16px;
+    --radius-lg:      12px;
+    --radius-md:      8px;
+    --radius-sm:      6px;
+    
+    --shadow-card:    0 10px 30px -10px rgba(0,0,0,0.5);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Top Navigation Bar */
+  .top-navbar {
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--brand-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  .logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .logo-text span {
+    color: var(--brand-cyan);
+  }
+  .nav-tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-tab {
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-surface);
+  }
+  .nav-tab.active {
+    color: #FFF;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border);
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .status-pill {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: var(--success);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--success);
+  }
+
+  /* Main Workspace Layout */
+  .workspace-layout {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 1200px) {
+    .workspace-layout {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    }
+    .sidebar-roadmap { display: none; }
+  }
+  @media (max-width: 900px) {
+    .workspace-layout { grid-template-columns: 1fr; }
+  }
+
+  /* Sidebar: Striver A2Z Roadmap Steps */
+  .sidebar-roadmap {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    height: calc(100vh - 120px);
+    position: sticky;
+    top: 92px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding: 0 4px;
+  }
+  .roadmap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .roadmap-item {
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .roadmap-item:hover {
+    background: var(--bg-surface-2);
+    color: var(--text-primary);
+  }
+  .roadmap-item.active {
+    background: var(--brand-gradient);
+    color: #FFF;
+    font-weight: 600;
+  }
+  .roadmap-badge {
+    font-size: 11px;
+    background: rgba(255,255,255,0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* Center Column: Search & Course Content */
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .search-hero {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+  }
+  .search-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    color: var(--text-muted);
+    font-size: 17px;
+  }
+  .main-search-input {
+    width: 100%;
+    background: var(--bg-page);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 44px 14px 44px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .main-search-input:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  }
+  .search-clear-btn {
+    position: absolute;
+    right: 14px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: var(--text-muted);
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .search-options-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .search-mode-selector {
+    display: flex;
+    gap: 8px;
+  }
+  .mode-pill {
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: all 0.15s ease;
+  }
+  .mode-pill.active {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #FFF;
+  }
+
+  /* Quick Topic Pills */
+  .quick-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .topic-pill {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .topic-pill:hover {
+    border-color: var(--border-accent);
+    color: var(--text-primary);
+    background: var(--bg-surface-hover);
+  }
+
+  /* Results Stream */
+  .results-section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lecture-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .lecture-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-card);
+  }
+  .lecture-card.playing {
+    border-color: var(--brand-primary);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, var(--bg-surface) 100%);
+  }
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .lecture-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+  }
+  .timestamp-tag {
+    background: var(--brand-gradient);
+    color: #FFF;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+  }
+  .transcript-excerpt {
+    background: var(--bg-page);
+    border-left: 3px solid var(--brand-primary);
+    padding: 10px 14px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+  }
+  .card-btn-group {
+    display: flex;
+    gap: 8px;
+  }
+  .btn-primary {
+    background: var(--brand-primary);
+    color: #FFF;
+    border: none;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease;
+  }
+  .btn-primary:hover { background: #1D4ED8; }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-secondary:hover {
+    background: var(--bg-surface-2);
+    color: var(--text-primary);
+  }
+
+  /* Right Column: Player & Notes Workspace */
+  .right-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 92px;
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .player-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+  .iframe-aspect-ratio {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+  }
+  .iframe-aspect-ratio iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .player-details {
+    padding: 16px 20px;
+  }
+  .player-active-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .player-active-meta {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Notes & Bookmarks Tabbed Box */
+  .learning-tools-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .tools-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .tools-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notes-textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 120px;
+    background: var(--bg-page);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 13.5px;
+    outline: none;
+    resize: vertical;
+  }
+  .notes-textarea:focus { border-color: var(--brand-primary); }
+
+  /* Saved Bookmarks List */
+  .bookmarks-list {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+  .bookmark-item {
+    background: var(--bg-page);
+    border: 1px solid var(--border-subtle);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bookmark-item a {
+    color: var(--brand-cyan);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .bookmark-item a:hover { text-decoration: underline; }
+
+  /* Empty state */
+  .empty-box {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--bg-surface);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .empty-box h3 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .empty-box p { color: var(--text-muted); font-size: 13.5px; }
+
+  /* AI Explanation Container */
+  .ai-answer-card {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--brand-indigo);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
+  }
+  .ai-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="top-navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="#" class="logo-link">
+        <div class="logo-icon">🎯</div>
+        <div class="logo-text">Striver <span>DSA Navigator</span></div>
+      </a>
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="switchMainTab('explorer')">📚 Lecture Explorer</button>
+        <button class="nav-tab" onclick="switchMainTab('bookmarks')">⭐ Saved Timestamps (<span id="bookmarkCount">0</span>)</button>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="status-pill">
+        <div class="status-dot"></div>
+        <span>314 Lessons Indexed (130+ Hrs)</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Workspace Grid -->
+<div class="workspace-layout">
+  
+  <!-- Column 1: Striver A2Z Roadmap Steps Sidebar -->
+  <aside class="sidebar-roadmap">
+    <div class="sidebar-title">A2Z Course Roadmap</div>
+    <div class="roadmap-list">
+      <div class="roadmap-item active" onclick="filterByTopic('All')">
+        <span>🌟 All Topics</span>
+        <span class="roadmap-badge">314</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Step 1: Basics')">
+        <span>Step 1: C++ & Basics</span>
+        <span class="roadmap-badge">12</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Step 2: Sorting')">
+        <span>Step 2: Sorting Techniques</span>
+        <span class="roadmap-badge">7</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Step 3: Arrays')">
+        <span>Step 3: Arrays (Easy/Med/Hard)</span>
+        <span class="roadmap-badge">40</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Binary Search')">
+        <span>Step 4: Binary Search</span>
+        <span class="roadmap-badge">26</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Recursion')">
+        <span>Step 7: Recursion & Backtracking</span>
+        <span class="roadmap-badge">18</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Stack')">
+        <span>Step 9: Stack & Queue / LRU</span>
+        <span class="roadmap-badge">22</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Sliding Window')">
+        <span>Step 10: Sliding Window</span>
+        <span class="roadmap-badge">12</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Greedy')">
+        <span>Step 12: Greedy Algorithms</span>
+        <span class="roadmap-badge">15</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Tree')">
+        <span>Step 13: Binary Trees & BST</span>
+        <span class="roadmap-badge">50</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('Graph')">
+        <span>Step 14: Graph Algorithms</span>
+        <span class="roadmap-badge">54</span>
+      </div>
+      <div class="roadmap-item" onclick="filterByTopic('DP')">
+        <span>Step 15: Dynamic Programming</span>
+        <span class="roadmap-badge">56</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Column 2: Search & Search Results Stream -->
+  <main class="center-content">
+    
+    <!-- Search Bar Card -->
+    <div class="search-hero">
+      <div class="search-input-group">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="main-search-input" 
+          placeholder="Search any concept (e.g. Kadane's, Memoization vs Tabulation, Dijkstra)..."
+          autocomplete="off"
+        />
+        <button class="search-clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+      </div>
+
+      <div class="search-options-bar">
+        <div class="search-mode-selector">
+          <button class="mode-pill active" id="btnModeSearch" onclick="setMode('search')">⚡ Fast Timestamps</button>
+          <button class="mode-pill" id="btnModeAsk" onclick="setMode('ask')">🤖 AI Answer & Citations</button>
+        </div>
+        <span style="font-size: 12px; color: var(--text-muted);">Press Enter or type 3+ chars</span>
+      </div>
+
+      <!-- Quick Topic Pills -->
+      <div class="quick-pills-row">
+        <div class="topic-pill" onclick="searchQuery('Kadane\'s algorithm maximum subarray sum')">⚡ Kadane's Algo</div>
+        <div class="topic-pill" onclick="searchQuery('Difference between memoization and tabulation')">🧩 Memoization vs Tabulation</div>
+        <div class="topic-pill" onclick="searchQuery('Binary Search Tree BST preorder inorder')">🌳 Binary Tree Traversals</div>
+        <div class="topic-pill" onclick="searchQuery('Dijkstra algorithm shortest path')">🕸️ Dijkstra's Algorithm</div>
+        <div class="topic-pill" onclick="searchQuery('Implement LRU cache data structure')">🥞 LRU Cache</div>
+        <div class="topic-pill" onclick="searchQuery('Merge Sort algorithm dry run')">🔀 Merge Sort</div>
+        <div class="topic-pill" onclick="searchQuery('Sliding Window Maximum Subarray')">🪟 Sliding Window</div>
+      </div>
+    </div>
+
+    <!-- AI Explanation Card (Hidden by default) -->
+    <div id="aiAnswerCard" style="display: none;"></div>
+
+    <!-- Results Stream Header -->
+    <div class="results-section-title">
+      <span id="resultsTitleText">Relevant Lecture Timestamps</span>
+      <span id="resultsConfidenceText" style="font-size: 12.5px; font-weight: 500;"></span>
+    </div>
+
+    <!-- Results List -->
+    <div id="resultsStream" style="display: flex; flex-direction: column; gap: 14px;">
+      <div class="empty-box">
+        <h3>🔍 Explore Striver's A2Z DSA Lectures</h3>
+        <p>Type any concept or click one of the topic shortcuts above to find exact video lecture moments.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Column 3: Sticky Video Player & Notes Workspace -->
+  <section class="right-workspace">
+    <div class="player-box">
+      <div class="iframe-aspect-ratio">
+        <iframe 
+          id="videoIframe"
+          src="https://www.youtube.com/embed/AHZpyENo7kE?enablejsapi=1" 
+          title="Striver DSA Video Player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="player-details">
+        <div class="player-active-title" id="playerActiveTitle">Kadane's Algorithm : Maximum Subarray Sum</div>
+        <div class="player-active-meta">
+          <span id="playerActiveTimestamp" style="font-weight: 600; color: var(--brand-cyan);">Timestamp @ 00:00</span>
+          <a id="playerExternalUrl" href="https://youtu.be/AHZpyENo7kE" target="_blank" style="color: var(--text-secondary); text-decoration: none; font-weight: 500;">
+            ↗ Open on YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes & Saved Bookmarks -->
+    <div class="learning-tools-box">
+      <div class="tools-header">
+        <div class="tools-title">📝 Revision Notes & Key Takeaways</div>
+        <button class="btn-secondary" style="padding: 4px 10px; font-size: 11.5px;" onclick="saveNotes()">Save Notes</button>
+      </div>
+      <textarea id="userNotes" class="notes-textarea" placeholder="Write down your key takeaways, time complexity notes, or code logic here... (Auto-saved locally)"></textarea>
+      
+      <div style="margin-top: 14px; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+        <div class="tools-title" style="font-size: 13px;">⭐ Saved Revision Timestamps</div>
+        <div class="bookmarks-list" id="bookmarksList">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+let currentMode = 'search';
+let searchTimeout = null;
+let bookmarks = JSON.parse(localStorage.getItem('striver_dsa_bookmarks') || '[]');
+
+// Load Saved Notes
+document.getElementById('userNotes').value = localStorage.getItem('striver_dsa_notes') || '';
+updateBookmarksUI();
+
+const searchInput = document.getElementById('searchInput');
+const clearBtn = document.getElementById('clearBtn');
+
+searchInput.addEventListener('input', (e) => {
+  clearBtn.style.display = e.target.value ? 'flex' : 'none';
+  clearTimeout(searchTimeout);
+  if (e.target.value.trim().length >= 3) {
+    searchTimeout = setTimeout(() => executeSearch(), 350);
+  }
+});
+
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    clearTimeout(searchTimeout);
+    executeSearch();
+  }
+});
+
+function clearSearch() {
+  searchInput.value = '';
+  clearBtn.style.display = 'none';
+  document.getElementById('aiAnswerCard').style.display = 'none';
+  document.getElementById('resultsStream').innerHTML = `
+    <div class="empty-box">
+      <h3>🔍 Explore Striver's A2Z DSA Lectures</h3>
+      <p>Type any concept or click one of the topic shortcuts above to find exact video lecture moments.</p>
+    </div>
+  `;
+}
+
+function searchQuery(text) {
+  searchInput.value = text;
+  clearBtn.style.display = 'flex';
+  executeSearch();
+}
+
+function filterByTopic(topicKeyword) {
+  if (topicKeyword === 'All') {
+    clearSearch();
+    return;
+  }
+  searchQuery(topicKeyword);
+}
+
+function setMode(mode) {
+  currentMode = mode;
+  document.getElementById('btnModeSearch').classList.toggle('active', mode === 'search');
+  document.getElementById('btnModeAsk').classList.toggle('active', mode === 'ask');
+  if (searchInput.value.trim().length >= 3) {
+    executeSearch();
+  }
+}
+
+async function executeSearch() {
+  const query = searchInput.value.trim();
+  if (!query) return;
+
+  const resultsStream = document.getElementById('resultsStream');
+  const aiAnswerCard = document.getElementById('aiAnswerCard');
+  
+  resultsStream.innerHTML = `<div class="empty-box"><p>Searching 314 Striver lectures...</p></div>`;
+  aiAnswerCard.style.display = 'none';
+
+  try {
+    if (currentMode === 'search') {
+      const res = await fetch('/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: query, top_k: 6 })
+      });
+      const data = await res.json();
+      renderSearchResults(data);
+    } else {
+      aiAnswerCard.style.display = 'block';
+      aiAnswerCard.innerHTML = `<div class="ai-answer-card"><p>Generating AI answer grounded in Striver's lectures...</p></div>`;
+      
+      const res = await fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: query, top_k: 6 })
+      });
+      const data = await res.json();
+      renderAskResults(data);
+    }
+  } catch (err) {
+    resultsStream.innerHTML = `
+      <div class="empty-box">
+        <h3>⚠️ Search Error</h3>
+        <p>${err.message || 'Error connecting to server.'}</p>
+      </div>
+    `;
+  }
+}
+
+function renderSearchResults(data) {
+  const resultsStream = document.getElementById('resultsStream');
+  
+  if (!data.results || data.results.length === 0) {
+    resultsStream.innerHTML = `
+      <div class="empty-box">
+        <h3>❓ No Matching Lecture Found</h3>
+        <p>Is topic ko doosre keywords se search karke try karein.</p>
+      </div>
+    `;
+    return;
+  }
+
+  document.getElementById('resultsTitleText').innerText = `Found ${data.results.length} Relevant Video Timestamps`;
+  document.getElementById('resultsConfidenceText').innerHTML = data.confident 
+    ? `<span style="color: var(--success); font-weight: 600;">✓ High Confidence Match</span>`
+    : `<span style="color: var(--warning); font-weight: 600;">⚠️ Related Topic</span>`;
+
+  resultsStream.innerHTML = data.results.map((item, idx) => `
+    <div class="lecture-card ${idx === 0 ? 'playing' : ''}" id="card-${idx}">
+      <div class="card-top">
+        <h4 class="lecture-heading">${escapeHtml(item.title)}</h4>
+        <span class="timestamp-tag">⏱️ ${item.timestamp}</span>
+      </div>
+      <div class="transcript-excerpt">"${escapeHtml(item.preview)}..."</div>
+      <div class="card-bottom">
+        <div class="card-btn-group">
+          <button class="btn-primary" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}', ${idx})">
+            ▶ Play at ${item.timestamp}
+          </button>
+          <button class="btn-secondary" onclick="addBookmark('${escapeHtml(item.title)}', '${item.timestamp}', '${item.video_id}', ${item.start_sec})">
+            ⭐ Bookmark
+          </button>
+        </div>
+        <button class="btn-secondary" onclick="copyLink('${item.url}')">📋 Share Link</button>
+      </div>
+    </div>
+  `).join('');
+
+  if (data.results.length > 0) {
+    const top = data.results[0];
+    playVideo(top.video_id, top.start_sec, top.title, top.timestamp, 0);
+  }
+}
+
+function renderAskResults(data) {
+  const aiAnswerCard = document.getElementById('aiAnswerCard');
+  const resultsStream = document.getElementById('resultsStream');
+
+  aiAnswerCard.style.display = 'block';
+  aiAnswerCard.innerHTML = `
+    <div class="ai-answer-card">
+      <div class="ai-title">🤖 AI Summary (Grounded in Striver's Lecture):</div>
+      <div style="font-size: 14px; line-height: 1.65; color: var(--text-primary);">
+        ${escapeHtml(data.answer).replace(/\n/g, '<br>')}
+      </div>
+    </div>
+  `;
+
+  if (data.citations && data.citations.length > 0) {
+    document.getElementById('resultsTitleText').innerText = `Cited Sources (${data.citations.length})`;
+    resultsStream.innerHTML = data.citations.map((item, idx) => `
+      <div class="lecture-card ${idx === 0 ? 'playing' : ''}" id="card-${idx}">
+        <div class="card-top">
+          <h4 class="lecture-heading">[${idx + 1}] ${escapeHtml(item.title)}</h4>
+          <span class="timestamp-tag">⏱️ ${item.timestamp}</span>
+        </div>
+        <div class="card-bottom">
+          <button class="btn-primary" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}', ${idx})">
+            ▶ Jump to ${item.timestamp}
+          </button>
+          <button class="btn-secondary" onclick="copyLink('${item.url}')">📋 Share Link</button>
+        </div>
+      </div>
+    `).join('');
+
+    const top = data.citations[0];
+    playVideo(top.video_id, top.start_sec, top.title, top.timestamp, 0);
+  }
+}
+
+function playVideo(videoId, startSec, title, timestamp, cardIdx) {
+  const iframe = document.getElementById('videoIframe');
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.max(0, startSec)}`;
+  
+  document.getElementById('playerActiveTitle').innerText = title;
+  document.getElementById('playerActiveTimestamp').innerText = `Timestamp @ ${timestamp}`;
+  document.getElementById('playerExternalUrl').href = `https://youtu.be/${videoId}?t=${startSec}`;
+
+  document.querySelectorAll('.lecture-card').forEach((card, idx) => {
+    card.classList.toggle('playing', idx === cardIdx);
+  });
+}
+
+function saveNotes() {
+  const val = document.getElementById('userNotes').value;
+  localStorage.setItem('striver_dsa_notes', val);
+  alert('Notes saved to local storage!');
+}
+
+function addBookmark(title, timestamp, videoId, startSec) {
+  const exists = bookmarks.some(b => b.videoId === videoId && b.timestamp === timestamp);
+  if (!exists) {
+    bookmarks.push({ title, timestamp, videoId, startSec });
+    localStorage.setItem('striver_dsa_bookmarks', JSON.stringify(bookmarks));
+    updateBookmarksUI();
+    alert('Bookmark saved!');
+  }
+}
+
+function updateBookmarksUI() {
+  document.getElementById('bookmarkCount').innerText = bookmarks.length;
+  const list = document.getElementById('bookmarksList');
+  if (bookmarks.length === 0) {
+    list.innerHTML = `<div style="font-size: 12px; color: var(--text-muted);">No saved bookmarks yet.</div>`;
+    return;
+  }
+  list.innerHTML = bookmarks.map((b, idx) => `
+    <div class="bookmark-item">
+      <a href="#" onclick="playVideo('${b.videoId}', ${b.startSec}, '${escapeHtml(b.title)}', '${b.timestamp}', -1)">
+        ${escapeHtml(b.title.substring(0, 32))}... (${b.timestamp})
+      </a>
+      <button style="background:none; border:none; color:var(--text-muted); cursor:pointer;" onclick="removeBookmark(${idx})">✕</button>
+    </div>
+  `).join('');
+}
+
+function removeBookmark(idx) {
+  bookmarks.splice(idx, 1);
+  localStorage.setItem('striver_dsa_bookmarks', JSON.stringify(bookmarks));
+  updateBookmarksUI();
+}
+
+function copyLink(url) {
+  navigator.clipboard.writeText(url);
+  alert('Timestamped YouTube link copied!');
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+</script>
+</body>
+</html>
