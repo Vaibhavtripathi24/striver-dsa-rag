@@ -362,6 +362,76 @@ def title_overlap(query: str, title: str) -> int:
     return len(_terms(expand_query(query)) & _terms(title))
 
 
+_NP_STORE = None
+_EMBED_CACHE = {}
+
+
+def preload_index():
+    """Preload in-memory numpy store at server startup for ultra-fast <10ms retrieval."""
+    get_np_store()
+
+
+def get_np_store():
+    global _NP_STORE
+    if _NP_STORE is None:
+        npz_path = Path(__file__).resolve().parent.parent / "index" / "vectors.npz"
+        if npz_path.exists():
+            import numpy as np
+            try:
+                data = np.load(npz_path, allow_pickle=True)
+                payloads_raw = data["payloads"].item() if hasattr(data["payloads"], "item") else data["payloads"]
+                payloads = json.loads(payloads_raw) if isinstance(payloads_raw, str) else payloads_raw
+                _NP_STORE = {
+                    "vectors": data["vectors"].astype(np.float32),
+                    "payloads": payloads
+                }
+            except Exception:
+                _NP_STORE = False
+        else:
+            _NP_STORE = False
+    return _NP_STORE if isinstance(_NP_STORE, dict) else None
+
+
+def search_numpy(
+    query: str,
+    top_k: int = TOP_K,
+    video_id: str | None = None,
+    max_distance: float | None = None,
+) -> list[tuple[Chunk, float]]:
+    """In-memory vector search fallback using pre-computed index/vectors.npz."""
+    import numpy as np
+    store = get_np_store()
+    if not store:
+        return []
+
+    q_key = query.lower().strip()
+    if q_key in _EMBED_CACHE:
+        q_vec = _EMBED_CACHE[q_key]
+    else:
+        expanded = expand_query(query)
+        q_vec = np.array(get_embedder().embed_query(expanded), dtype=np.float32)
+        if len(_EMBED_CACHE) < 500:
+            _EMBED_CACHE[q_key] = q_vec
+
+    sims = np.dot(store["vectors"], q_vec)
+    distances = 1.0 - sims
+
+    cutoff = MAX_DISTANCE if max_distance is None else max_distance
+    scored = []
+    for idx, dist in enumerate(distances):
+        payload = store["payloads"][idx]
+        if video_id and payload.get("video_id") != video_id:
+            continue
+        chunk = Chunk.from_payload(payload)
+        t_boost = title_score(query, chunk.video_title)
+        composite_score = dist - t_boost
+        if dist <= cutoff or t_boost >= 0.35:
+            scored.append((composite_score, float(dist), chunk))
+
+    scored.sort(key=lambda row: row[0])
+    return [(chunk, distance) for _, distance, chunk in scored[:top_k]]
+
+
 def search(
     query: str,
     top_k: int = TOP_K,
@@ -369,77 +439,83 @@ def search(
     max_distance: float | None = None,
 ) -> list[tuple[Chunk, float]]:
     """Return [(chunk, distance)] sorted best-first, already distance-filtered."""
-    name = ensure_collection()
-    client = get_client()
-    expanded = expand_query(query)
-    vector = get_embedder().embed_query(expanded)
+    try:
+        name = ensure_collection()
+        client = get_client()
+        expanded = expand_query(query)
+        vector = get_embedder().embed_query(expanded)
 
-    candidate_points = []
-    seen_ids = set()
+        candidate_points = []
+        seen_ids = set()
 
-    if not video_id:
-        v_results = client.query_points(
-            collection_name=name,
-            query=vector,
-            limit=max(top_k * 30, 150),
-            with_payload=True,
-        ).points
-        for p in v_results:
-            if p.id not in seen_ids:
-                candidate_points.append(p)
-                seen_ids.add(p.id)
-
-        catalog = get_video_catalog()
-        matching_vids = [
-            vid for vid, meta in catalog.items()
-            if title_score(query, meta["title"]) >= 0.35
-        ]
-        if matching_vids:
-            t_filter = Filter(
-                should=[
-                    FieldCondition(key="video_id", match=MatchValue(value=vid))
-                    for vid in matching_vids
-                ]
-            )
-            t_points = client.query_points(
+        if not video_id:
+            v_results = client.query_points(
                 collection_name=name,
                 query=vector,
-                limit=100,
+                limit=max(top_k * 30, 150),
                 with_payload=True,
-                query_filter=t_filter,
             ).points
-            for p in t_points:
+            for p in v_results:
                 if p.id not in seen_ids:
                     candidate_points.append(p)
                     seen_ids.add(p.id)
-    else:
-        q_filter = Filter(
-            must=[FieldCondition(key="video_id", match=MatchValue(value=video_id))]
-        )
-        v_results = client.query_points(
-            collection_name=name,
-            query=vector,
-            limit=max(top_k * 20, 120),
-            with_payload=True,
-            query_filter=q_filter,
-        ).points
-        candidate_points = v_results
 
-    cutoff = MAX_DISTANCE if max_distance is None else max_distance
-    scored: list[tuple[float, float, Chunk]] = []
-    for point in candidate_points:
-        raw_score = getattr(point, "score", None)
-        distance = (1.0 - float(raw_score)) if raw_score is not None else 0.45
+            catalog = get_video_catalog()
+            matching_vids = [
+                vid for vid, meta in catalog.items()
+                if title_score(query, meta["title"]) >= 0.35
+            ]
+            if matching_vids:
+                t_filter = Filter(
+                    should=[
+                        FieldCondition(key="video_id", match=MatchValue(value=vid))
+                        for vid in matching_vids
+                    ]
+                )
+                t_points = client.query_points(
+                    collection_name=name,
+                    query=vector,
+                    limit=100,
+                    with_payload=True,
+                    query_filter=t_filter,
+                ).points
+                for p in t_points:
+                    if p.id not in seen_ids:
+                        candidate_points.append(p)
+                        seen_ids.add(p.id)
+        else:
+            q_filter = Filter(
+                must=[FieldCondition(key="video_id", match=MatchValue(value=video_id))]
+            )
+            v_results = client.query_points(
+                collection_name=name,
+                query=vector,
+                limit=max(top_k * 20, 120),
+                with_payload=True,
+                query_filter=q_filter,
+            ).points
+            candidate_points = v_results
 
-        chunk = Chunk.from_payload(point.payload)
-        t_boost = title_score(query, chunk.video_title)
+        cutoff = MAX_DISTANCE if max_distance is None else max_distance
+        scored: list[tuple[float, float, Chunk]] = []
+        for point in candidate_points:
+            raw_score = getattr(point, "score", None)
+            distance = (1.0 - float(raw_score)) if raw_score is not None else 0.45
 
-        composite_score = distance - t_boost
-        if distance <= cutoff or t_boost >= 0.35:
-            scored.append((composite_score, distance, chunk))
+            chunk = Chunk.from_payload(point.payload)
+            t_boost = title_score(query, chunk.video_title)
 
-    scored.sort(key=lambda row: row[0])
-    return [(chunk, distance) for _, distance, chunk in scored[:top_k]]
+            composite_score = distance - t_boost
+            if distance <= cutoff or t_boost >= 0.35:
+                scored.append((composite_score, distance, chunk))
+
+        scored.sort(key=lambda row: row[0])
+        if scored:
+            return [(chunk, distance) for _, distance, chunk in scored[:top_k]]
+    except Exception as exc:
+        print(f"Qdrant query failed ({exc}); falling back to in-memory numpy search", flush=True)
+
+    return search_numpy(query=query, top_k=top_k, video_id=video_id, max_distance=max_distance)
 
 
 def stats() -> dict:

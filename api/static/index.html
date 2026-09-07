@@ -898,6 +898,10 @@ async function executeSearch() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: query, top_k: 6 })
       });
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || `HTTP ${res.status}`);
+      }
       const data = await res.json();
       renderSearchResults(query, data);
     } else {
@@ -909,6 +913,10 @@ async function executeSearch() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: query, top_k: 6, code_lang: currentLang })
       });
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || `HTTP ${res.status}`);
+      }
       const data = await res.json();
       renderAskResults(data);
     }
