@@ -45,6 +45,7 @@ app = FastAPI(title="Striver DSA RAG AI", version="1.0.0", lifespan=lifespan)
 class AskRequest(BaseModel):
     question: str = Field(..., min_length=1, max_length=config.MAX_QUESTION_CHARS)
     top_k: int = Field(default=config.TOP_K, ge=1, le=20)
+    code_lang: str = Field(default="C++", max_length=20)
 
 
 # A dict of deques is enough for one process on a free tier. Behind more than
@@ -95,7 +96,7 @@ def search(payload: AskRequest, request: Request):
 def ask(payload: AskRequest, request: Request):
     _rate_limit(request)
     try:
-        return answer_question(payload.question, top_k=payload.top_k)
+        return answer_question(payload.question, top_k=payload.top_k, code_lang=payload.code_lang)
     except RateLimitError as exc:
         # The LLM provider's own quota, not ours. Surfacing this as a 500 tells
         # the student nothing; they need to know it is temporary and whose

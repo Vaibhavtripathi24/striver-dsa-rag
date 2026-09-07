@@ -149,18 +149,9 @@ TOP_K = int(os.getenv("YTRAG_TOP_K", 6))
 # unrelated and keeps every genuine question; the model's own refusal, working
 # from the excerpts, does the semantic judgement. Measured at this value:
 # 20/20 real questions kept, 10/10 off-topic questions still refused.
-MAX_DISTANCE = float(os.getenv("YTRAG_MAX_DISTANCE", 0.6))
-
-# Below this, the top hit is a solid match and the UI says so plainly. Above
-# it the results are still shown, just flagged as weak — measured in-syllabus
-# questions land at 0.30-0.57, so this catches most genuine ones while marking
-# the tail honestly.
-CONFIDENT_DISTANCE = float(os.getenv("YTRAG_CONFIDENT_DISTANCE", 0.45))
-
-# How much a matching word in the lecture title improves a chunk's ranking,
-# in cosine-distance terms, per matched word. 0.06 is roughly one rank step
-# in the tightly-clustered band bge-m3 produces. Set to 0 to disable.
-TITLE_BOOST = float(os.getenv("YTRAG_TITLE_BOOST", 0.06))
+MAX_DISTANCE = float(os.getenv("YTRAG_MAX_DISTANCE", 0.75))
+CONFIDENT_DISTANCE = float(os.getenv("YTRAG_CONFIDENT_DISTANCE", 0.55))
+TITLE_BOOST = float(os.getenv("YTRAG_TITLE_BOOST", 0.18))
 
 # The written explanation is OPTIONAL — /search returns the timestamps without
 # ever touching an LLM. This only configures the "explain" button.

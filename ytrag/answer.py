@@ -25,22 +25,44 @@ from ytrag.config import (
     REFUSAL,
     TOP_K,
 )
-from ytrag.index import search, title_overlap
+from ytrag.index import _terms, search, title_overlap
 from ytrag.models import Chunk
 
 _CLIENT: Groq | None = None
 
-SYSTEM_PROMPT = f"""You are answering using ONLY the transcript excerpts below, which come from
-Striver's (take U forward) A2Z DSA lectures. The transcripts are auto-generated and may contain
-minor errors — read past obvious mis-transcriptions of technical terms.
+SYSTEM_PROMPT = f"""You are an expert DSA mentor explaining concepts directly from Striver's (take U forward) A2Z DSA course lectures.
+
+Format your response in a crystal-clear, structured, easy-to-understand manner (matching the language of the student's question - Hinglish or English):
+
+### 📌 1. Problem Explanation & Example
+Explain what the question is asking in simple, clear terms. Provide a simple input & expected output example so a beginner immediately understands the problem.
+
+### 💡 2. Intuition & Core Logic
+Explain the step-by-step thinking process. Why does the optimal approach work and how do we arrive at it?
+
+### ⚙️ 3. Step-by-Step Approaches
+- **Brute Force**: Explain the naive approach and why it takes more time/space.
+- **Better Approach**: Explain intermediate optimizations if any.
+- **Optimal Approach**: Explain the best strategy (e.g. 2 Pointers, Hash Map, Binary Search, DP, Sliding Window).
+
+### 💻 4. Code Implementation
+Provide complete, clean, well-commented code snippet for the optimal solution in the requested language (default to C++). Add comments explaining crucial logic lines.
+
+### ⏱️ 5. Complexity Analysis
+Provide a Markdown Table for complexity:
+| Approach | Time Complexity | Auxiliary Space |
+|---|---|---|
+| Brute Force | O(...) | O(...) |
+| Optimal | O(...) | O(...) |
+
+### 🎯 6. Key Takeaway & Striver's Tip
+A 1-2 sentence quick summary of the core pattern to remember for interviews.
 
 Rules:
-- Answer only from the excerpts. If they don't cover it, say exactly:
-  "{REFUSAL}"
-- Cite with [1], [2] inline, using the excerpt numbers given below.
-- Match the language of the question (Hinglish question -> Hinglish answer).
-- 4-6 sentences max.
-- Never invent a timestamp or a lecture name."""
+- Make explanations simple, thorough, warm, and easy to grasp.
+- Ground your response strictly in the provided lecture excerpts. Cite excerpts using [1], [2] inline.
+- If the topic is not covered in the excerpts, say exactly: "{REFUSAL}"
+"""
 
 _CITATION_RE = re.compile(r"\[(\d+)\]")
 
@@ -132,11 +154,46 @@ def _renumber(text: str, hits: list[tuple[Chunk, float]]) -> tuple[str, list[dic
     return rewritten, citations
 
 
+_OOD_TERMS = {
+    "langchain", "langgraph", "lang graph", "autogen", "crewai", "llamaindex", "ollama", "gpt",
+    "react", "angular", "vue", "node", "nodejs", "express", "django", "flask",
+    "fastapi", "spring", "springboot", "flutter", "reactnative", "android", "ios",
+    "cooking", "recipe", "cricket", "football", "movie", "song", "lyrics"
+}
+
+
+def _is_confident(question: str, hits: list[tuple[Chunk, float]]) -> bool:
+    """Is the top result trustworthy enough to present without a caveat?"""
+    if not hits:
+        return False
+
+    q_norm = question.lower()
+    for ood in _OOD_TERMS:
+        if ood in q_norm:
+            return False
+
+    chunk, distance = hits[0]
+    q_terms = _terms(question)
+
+    if not q_terms:
+        return distance <= CONFIDENT_DISTANCE
+
+    t_terms = _terms(chunk.video_title)
+    overlap = len(q_terms & t_terms)
+    coverage = overlap / len(q_terms)
+
+    if coverage >= 0.50 or overlap >= 1 or distance <= CONFIDENT_DISTANCE:
+        return True
+
+    return False
+
+
 def answer(
     question: str,
     top_k: int = TOP_K,
     video_id: str | None = None,
     max_distance: float | None = None,
+    code_lang: str = "C++",
 ) -> dict:
     """-> {"answer", "citations", "grounded", "retrieved"}"""
     question = question.strip()
@@ -145,24 +202,21 @@ def answer(
 
     hits = search(question, top_k=top_k, video_id=video_id, max_distance=max_distance)
 
-    # Guard one: nothing survived the distance cutoff, so there is nothing to
-    # ground an answer in. Return the refusal and never call the LLM.
-    if not hits:
-        return {"answer": REFUSAL, "citations": [], "grounded": False, "retrieved": 0}
+    # Guard zero: if the top hit is not confident (e.g. out of domain query), refuse immediately
+    if not hits or not _is_confident(question, hits):
+        refusal_msg = f"Yeh topic ('{question}') Striver ke A2Z DSA course me cover nahi hua hai. Striver's A2Z DSA course me Data Structures & Algorithms (Arrays, Binary Search, Trees, Graphs, DP, etc.) covered hai."
+        return {"answer": refusal_msg, "citations": [], "grounded": False, "retrieved": 0}
 
     chunks = [chunk for chunk, _ in hits]
-    user_prompt = f"EXCERPTS\n{build_context(chunks)}\n\nQUESTION: {question}"
+    user_prompt = f"EXCERPTS\n{build_context(chunks)}\n\nQUESTION: {question}\n\n[USER PREFERENCE: Please write the code solution in {code_lang}]"
 
     text = _chat(SYSTEM_PROMPT, user_prompt)
 
-    # Guard two: the model read the excerpts and said they don't cover it.
     if REFUSAL.lower() in text.lower():
         return {"answer": REFUSAL, "citations": [], "grounded": False, "retrieved": len(hits)}
 
     text, citations = _renumber(text, hits)
 
-    # Guard three: an answer with no citation at all is the model talking from
-    # its own knowledge. Show it, but don't dress it up with links.
     return {
         "answer": text,
         "citations": citations,
@@ -172,52 +226,33 @@ def answer(
 
 
 def retrieve_only(question: str, top_k: int = TOP_K, filtered: bool = False) -> list[tuple[Chunk, float]]:
-    """Retrieval without the LLM — used by evaluate.py and `ytrag search`.
-
-    Unfiltered by default: 2.0 is the maximum possible cosine distance, so
-    nothing is dropped. Eval wants to see what retrieval actually returned,
-    including the results the MAX_DISTANCE cutoff would have thrown away.
-    """
+    """Retrieval without the LLM — used by evaluate.py and `ytrag search`."""
     return search(question, top_k=top_k, max_distance=None if filtered else 2.0)
-
-def _is_confident(question: str, hits: list[tuple[Chunk, float]]) -> bool:
-    """Is the top result trustworthy enough to present without a caveat?
-
-    Distance alone cannot answer this — measured on the real index, off-topic
-    questions score *better* than some genuine ones ("React hooks" 0.463 beats
-    "number of islands" 0.568), so any single cutoff mislabels one group.
-
-    Two signals together work far better. Either the lecture title actually
-    mentions what was asked, or the match is close enough that the topic is
-    unambiguous even when no title names it.
-    """
-    if not hits:
-        return False
-    chunk, distance = hits[0]
-    return title_overlap(question, chunk.video_title) > 0 or distance <= CONFIDENT_DISTANCE
 
 
 def search_only(question: str, top_k: int = TOP_K, video_id: str | None = None) -> dict:
     """Retrieval with no LLM at all — the timestamps, ranked.
 
-    This is the main path. The timestamps *are* the product: a student wants
-    to land on the moment the thing was explained, not read a paraphrase of
-    it. Skipping the model makes this instant, free, unlimited, and incapable
-    of hallucinating, since nothing is generated.
-
-    `confident` reports whether the best match is close enough to be worth
-    trusting. It is advisory, not a gate — a weak match still gets shown,
-    because a ranked list the student can dismiss in one glance is far less
-    harmful than a confident sentence that is wrong.
+    If the query is out-of-domain (e.g. 'langchain', 'react', 'lang graph') and the best match
+    is not confident, return empty results so no misleading video is shown.
     """
     question = question.strip()
     if not question:
         return {"results": [], "confident": False, "query": question}
 
     hits = search(question, top_k=top_k, video_id=video_id)
+    confident = _is_confident(question, hits)
+
+    if not confident:
+        return {
+            "query": question,
+            "confident": False,
+            "results": [],
+        }
+
     return {
         "query": question,
-        "confident": _is_confident(question, hits),
+        "confident": True,
         "results": [
             {
                 "title": chunk.video_title,

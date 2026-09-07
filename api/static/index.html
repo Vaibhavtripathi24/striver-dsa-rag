@@ -3,793 +3,831 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Striver DSA Navigator — Interactive Video Learning Platform</title>
-<meta name="description" content="Master Data Structures & Algorithms with Striver's A2Z Course. Search 314+ lectures, jump to exact video timestamps, and take revision notes." />
+<title>Striver A2Z DSA Search — Exact Lecture & Timestamp Finder</title>
+<meta name="description" content="Search all 314+ Striver A2Z DSA course lectures to find exact timestamps and code explanations instantly." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <style>
   :root {
-    --bg-page:        #0B0F17;
-    --bg-header:      #0F1623;
-    --bg-surface:     #131B2E;
-    --bg-surface-2:   #1A243B;
-    --bg-surface-hover: #222E48;
-    --border:        #232F48;
-    --border-subtle: #1C273E;
-    --border-accent: #3B82F6;
+    --bg-page:        #0B0F19;
+    --bg-card:        #151D2A;
+    --bg-card-glow:   #1C273A;
+    --bg-input:       #0A0E17;
+    --border:         #2A364F;
+    --border-primary: #3B82F6;
     
-    --text-primary:   #F8FAFC;
-    --text-secondary: #94A3B8;
+    --text-main:      #F8FAFC;
+    --text-sub:       #94A3B8;
     --text-muted:     #64748B;
     
-    --brand-primary:  #2563EB;
-    --brand-indigo:   #6366F1;
-    --brand-cyan:     #0EA5E9;
-    --brand-gradient: linear-gradient(135deg, #2563EB 0%, #6366F1 100%);
+    --accent:         #3B82F6;
+    --accent-hover:   #2563EB;
+    --emerald:        #10B981;
+    --emerald-bg:     rgba(16, 185, 129, 0.12);
+    --amber:          #F59E0B;
+    --amber-bg:        rgba(245, 158, 11, 0.12);
     
-    --success:        #10B981;
-    --warning:        #F59E0B;
-    --info:           #0EA5E9;
-    
-    --radius-xl:      16px;
-    --radius-lg:      12px;
-    --radius-md:      8px;
-    --radius-sm:      6px;
-    
-    --shadow-card:    0 10px 30px -10px rgba(0,0,0,0.5);
+    --radius:         12px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
   body {
     background-color: var(--bg-page);
-    color: var(--text-primary);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 14.5px;
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
     line-height: 1.6;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 
-  /* Top Navigation Bar */
-  .top-navbar {
-    background-color: var(--bg-header);
+  /* Header */
+  header {
+    background: #060911;
     border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
   }
-  .nav-container {
-    max-width: 1400px;
+  .header-container {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 24px;
-    height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-  .logo-link {
+  .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    text-decoration: none;
-  }
-  .logo-icon {
-    width: 38px;
-    height: 38px;
-    background: var(--brand-gradient);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  }
-  .logo-text {
     font-family: 'Outfit', sans-serif;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-  .logo-text span {
-    color: var(--brand-cyan);
-  }
-  .nav-tabs {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-tab {
-    padding: 8px 14px;
-    border-radius: var(--radius-md);
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 13.5px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .nav-tab:hover {
-    color: var(--text-primary);
-    background: var(--bg-surface);
-  }
-  .nav-tab.active {
     color: #FFF;
-    background: var(--bg-surface-2);
-    border: 1px solid var(--border);
+    text-decoration: none;
   }
-  .nav-right {
+  .logo span { color: var(--accent); }
+  .header-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
   }
-  .status-pill {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: var(--success);
+  .badge {
+    background: rgba(59, 130, 246, 0.12);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60A5FA;
     padding: 5px 12px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
-    display: flex;
+  }
+  .bookmark-nav-btn {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #FBBF24;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-  }
-  .status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--success);
-  }
-
-  /* Main Workspace Layout */
-  .workspace-layout {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 24px;
-    flex: 1;
-    display: grid;
-    grid-template-columns: 280px minmax(0, 1fr) minmax(0, 0.95fr);
-    gap: 24px;
-  }
-
-  @media (max-width: 1200px) {
-    .workspace-layout {
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    }
-    .sidebar-roadmap { display: none; }
-  }
-  @media (max-width: 900px) {
-    .workspace-layout { grid-template-columns: 1fr; }
-  }
-
-  /* Sidebar: Striver A2Z Roadmap Steps */
-  .sidebar-roadmap {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 16px;
-    height: calc(100vh - 120px);
-    position: sticky;
-    top: 92px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .sidebar-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    padding: 0 4px;
-  }
-  .roadmap-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .roadmap-item {
-    padding: 10px 12px;
-    border-radius: var(--radius-md);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    cursor: pointer;
     transition: all 0.15s ease;
+  }
+  .bookmark-nav-btn:hover {
+    background: rgba(245, 158, 11, 0.25);
+    transform: translateY(-1px);
+  }
+
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  /* Search Hero */
+  .search-hero {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    margin-bottom: 24px;
+  }
+  .search-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #FFF;
+  }
+  .search-subtitle {
+    color: var(--text-sub);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+
+  .mode-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  .roadmap-item:hover {
-    background: var(--bg-surface-2);
-    color: var(--text-primary);
-  }
-  .roadmap-item.active {
-    background: var(--brand-gradient);
-    color: #FFF;
-    font-weight: 600;
-  }
-  .roadmap-badge {
-    font-size: 11px;
-    background: rgba(255,255,255,0.15);
-    padding: 2px 6px;
-    border-radius: 4px;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
   }
 
-  /* Center Column: Search & Course Content */
-  .center-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .search-hero {
-    background: var(--bg-surface);
+  .mode-tabs {
+    display: inline-flex;
+    background: var(--bg-input);
+    padding: 4px;
+    border-radius: 8px;
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 20px;
-    box-shadow: var(--shadow-card);
+    gap: 4px;
   }
-  .search-input-group {
+  .mode-tab {
+    padding: 7px 16px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--text-sub);
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .mode-tab.active {
+    background: var(--accent);
+    color: #FFF;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+  }
+
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+  .lang-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-sub);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .lang-btn.active {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--emerald);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+  }
+
+  .search-box {
     position: relative;
     display: flex;
     align-items: center;
   }
+  .search-input {
+    width: 100%;
+    background: var(--bg-input);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px 44px 15px 42px;
+    color: #FFF;
+    font-size: 15.5px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .search-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
   .search-icon {
     position: absolute;
-    left: 16px;
+    left: 15px;
     color: var(--text-muted);
     font-size: 17px;
   }
-  .main-search-input {
-    width: 100%;
-    background: var(--bg-page);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 14px 44px 14px 44px;
-    color: var(--text-primary);
-    font-size: 15px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  .mic-btn {
+    position: absolute;
+    right: 42px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  .main-search-input:focus {
-    border-color: var(--brand-primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-  }
-  .search-clear-btn {
+  .mic-btn:hover { opacity: 1; transform: scale(1.1); }
+  .mic-btn.recording { opacity: 1; animation: pulseMic 1s infinite alternate; }
+  @keyframes pulseMic { from { transform: scale(1); color: #EF4444; } to { transform: scale(1.25); color: #F87171; } }
+
+  .clear-btn {
     position: absolute;
     right: 14px;
-    background: rgba(255,255,255,0.1);
+    background: none;
     border: none;
     color: var(--text-muted);
-    width: 24px; height: 24px;
-    border-radius: 50%;
+    font-size: 16px;
     cursor: pointer;
     display: none;
-    align-items: center;
-    justify-content: center;
+  }
+  .clear-btn:hover { color: #FFF; }
+
+  /* Recent & Popular Filters */
+  .filter-section {
+    margin-top: 18px;
+  }
+  .filter-row {
+    margin-bottom: 12px;
+  }
+  .filter-label {
     font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 8px;
   }
-
-  .search-options-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--border-subtle);
-  }
-  .search-mode-selector {
-    display: flex;
-    gap: 8px;
-  }
-  .mode-pill {
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
-    font-size: 12.5px;
-    font-weight: 500;
-    cursor: pointer;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    transition: all 0.15s ease;
-  }
-  .mode-pill.active {
-    background: var(--brand-primary);
-    border-color: var(--brand-primary);
-    color: #FFF;
-  }
-
-  /* Quick Topic Pills */
-  .quick-pills-row {
+  .quick-shortcuts {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
   }
-  .topic-pill {
-    background: var(--bg-surface-2);
-    border: 1px solid var(--border-subtle);
-    color: var(--text-secondary);
-    padding: 5px 12px;
+  .chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+    padding: 6px 13px;
     border-radius: 20px;
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s ease;
-  }
-  .topic-pill:hover {
-    border-color: var(--border-accent);
-    color: var(--text-primary);
-    background: var(--bg-surface-hover);
-  }
-
-  /* Results Stream */
-  .results-section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .lecture-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 18px;
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .lecture-card:hover {
-    border-color: var(--border-accent);
-    box-shadow: var(--shadow-card);
-  }
-  .lecture-card.playing {
-    border-color: var(--brand-primary);
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, var(--bg-surface) 100%);
-  }
-  .card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .lecture-heading {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.35;
-  }
-  .timestamp-tag {
-    background: var(--brand-gradient);
-    color: #FFF;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
-  }
-  .transcript-excerpt {
-    background: var(--bg-page);
-    border-left: 3px solid var(--brand-primary);
-    padding: 10px 14px;
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-  .card-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 4px;
-  }
-  .card-btn-group {
-    display: flex;
-    gap: 8px;
-  }
-  .btn-primary {
-    background: var(--brand-primary);
-    color: #FFF;
-    border: none;
-    padding: 8px 14px;
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.15s ease;
-  }
-  .btn-primary:hover { background: #1D4ED8; }
-  .btn-secondary {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.15s ease;
   }
-  .btn-secondary:hover {
-    background: var(--bg-surface-2);
-    color: var(--text-primary);
+  .chip:hover {
+    border-color: var(--accent);
+    color: #FFF;
+    background: rgba(59, 130, 246, 0.12);
+  }
+  .chip.recent {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: rgba(245, 158, 11, 0.08);
+    color: #FCD34D;
+  }
+  .chip.recent:hover {
+    background: rgba(245, 158, 11, 0.2);
+    color: #FFF;
   }
 
-  /* Right Column: Player & Notes Workspace */
-  .right-workspace {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: sticky;
-    top: 92px;
-    height: calc(100vh - 120px);
-    overflow-y: auto;
-  }
-
-  .player-box {
-    background: var(--bg-surface);
+  /* Video Player Section */
+  .player-container {
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow-card);
+    margin-bottom: 28px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
-  .iframe-aspect-ratio {
+  .iframe-wrapper {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
     background: #000;
   }
-  .iframe-aspect-ratio iframe {
+  .iframe-wrapper iframe {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
+    top: 0; left: 0; width: 100%; height: 100%; border: none;
   }
-  .player-details {
-    padding: 16px 20px;
-  }
-  .player-active-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-  }
-  .player-active-meta {
-    font-size: 12.5px;
-    color: var(--text-muted);
+  .player-header {
+    padding: 16px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #111726;
+    border-top: 1px solid var(--border);
   }
-
-  /* Notes & Bookmarks Tabbed Box */
-  .learning-tools-box {
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 18px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .tools-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 12px;
-    margin-bottom: 14px;
-  }
-  .tools-title {
+  .player-title {
     font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .notes-textarea {
-    width: 100%;
-    flex: 1;
-    min-height: 120px;
-    background: var(--bg-page);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 12px;
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-    font-size: 13.5px;
-    outline: none;
-    resize: vertical;
-  }
-  .notes-textarea:focus { border-color: var(--brand-primary); }
-
-  /* Saved Bookmarks List */
-  .bookmarks-list {
-    margin-top: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    max-height: 160px;
-    overflow-y: auto;
-  }
-  .bookmark-item {
-    background: var(--bg-page);
-    border: 1px solid var(--border-subtle);
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
-    font-size: 12.5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .bookmark-item a {
-    color: var(--brand-cyan);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .bookmark-item a:hover { text-decoration: underline; }
-
-  /* Empty state */
-  .empty-box {
-    text-align: center;
-    padding: 40px 20px;
-    background: var(--bg-surface);
-    border: 1px dashed var(--border);
-    border-radius: var(--radius-lg);
-  }
-  .empty-box h3 { font-family: 'Outfit', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-  .empty-box p { color: var(--text-muted); font-size: 13.5px; }
-
-  /* AI Explanation Container */
-  .ai-answer-card {
-    background: var(--bg-surface-2);
-    border: 1px solid var(--brand-indigo);
-    border-radius: var(--radius-lg);
-    padding: 18px;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
-  }
-  .ai-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
+    font-size: 16.5px;
     font-weight: 700;
     color: #FFF;
+  }
+  .player-time {
+    color: #60A5FA;
+    font-weight: 700;
+    font-size: 13.5px;
+    background: rgba(59, 130, 246, 0.15);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  /* Results Title */
+  .results-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-sub);
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+  }
+
+  /* Primary Card */
+  .primary-card {
+    background: linear-gradient(135deg, #1A263B 0%, #151D2A 100%);
+    border: 1.5px solid var(--emerald);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
+    position: relative;
+  }
+  .primary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--emerald-bg);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: var(--emerald);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
     margin-bottom: 10px;
   }
+
+  /* Standard Card */
+  .result-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+    transition: all 0.15s ease;
+  }
+  .result-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-1px);
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #FFF;
+    line-height: 1.35;
+  }
+  .time-badge {
+    background: var(--accent);
+    color: #FFF;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .preview-quote {
+    font-size: 14px;
+    color: var(--text-sub);
+    background: var(--bg-input);
+    padding: 12px 14px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .btn-play {
+    background: var(--accent);
+    color: #FFF;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s ease;
+  }
+  .btn-play:hover { background: var(--accent-hover); }
+  .btn-copy {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-sub);
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-copy:hover { border-color: var(--text-sub); color: #FFF; }
+  .btn-bookmark {
+    background: transparent;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #FBBF24;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn-bookmark:hover { background: rgba(245, 158, 11, 0.2); }
+
+  /* AI Explanation Box */
+  .ai-box {
+    background: #111A2E;
+    border: 1.5px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  }
+  .ai-box-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    color: #FFF;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .markdown-content h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #60A5FA;
+    margin: 20px 0 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 6px;
+  }
+  .markdown-content p {
+    margin-bottom: 12px;
+    color: #CBD5E1;
+    line-height: 1.65;
+  }
+  .markdown-content ul, .markdown-content ol {
+    margin: 10px 0 14px 22px;
+    color: #CBD5E1;
+  }
+  .markdown-content li {
+    margin-bottom: 6px;
+  }
+  .markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    background: var(--bg-input);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .markdown-content th {
+    background: #1A263B;
+    color: #FFF;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .markdown-content td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #CBD5E1;
+  }
+  .markdown-content code {
+    font-family: 'Fira Code', monospace;
+    background: rgba(255,255,255,0.08);
+    color: #F43F5E;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13.5px;
+  }
+  .markdown-content pre {
+    background: #090D16;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 14px 0;
+  }
+  .markdown-content pre code {
+    background: none;
+    color: #E2E8F0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Code Header Wrapper */
+  .code-wrapper {
+    position: relative;
+    margin: 16px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #090D16;
+  }
+  .code-header {
+    background: #111726;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-sub);
+  }
+  .btn-copy-code {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid var(--border);
+    color: #FFF;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-copy-code:hover { background: var(--accent); border-color: var(--accent); }
+
+  /* Interactive Citation Tag */
+  .citation-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(59, 130, 246, 0.18);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #60A5FA;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .citation-tag:hover {
+    background: var(--accent);
+    color: #FFF;
+    transform: scale(1.05);
+  }
+
+  /* Modal / Drawer for Bookmarks */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.75);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 650px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    overflow: hidden;
+  }
+  .modal-header {
+    padding: 18px 24px;
+    background: #111726;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #FFF;
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .modal-close:hover { color: #FFF; }
+  .modal-body {
+    padding: 20px 24px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 56px 20px;
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    color: var(--text-sub);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #1E293B;
+    color: #FFF;
+    border: 1px solid var(--emerald);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: none;
+    z-index: 3000;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
 
-<!-- Top Navigation -->
-<nav class="top-navbar">
-  <div class="nav-container">
-    <div class="nav-left">
-      <a href="#" class="logo-link">
-        <div class="logo-icon">🎯</div>
-        <div class="logo-text">Striver <span>DSA Navigator</span></div>
-      </a>
-      <div class="nav-tabs">
-        <button class="nav-tab active" onclick="switchMainTab('explorer')">📚 Lecture Explorer</button>
-        <button class="nav-tab" onclick="switchMainTab('bookmarks')">⭐ Saved Timestamps (<span id="bookmarkCount">0</span>)</button>
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <a href="#" class="logo">🎯 Striver A2Z DSA <span>Search</span></a>
+    <div class="header-right">
+      <span class="badge">314 Lectures • 130+ Hours</span>
+      <button class="bookmark-nav-btn" onclick="openBookmarksModal()">
+        ⭐ Revision Bookmarks (<span id="bookmarkCount">0</span>)
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main Container -->
+<div class="container">
+  
+  <!-- Search Card -->
+  <div class="search-hero">
+    <h1 class="search-title">Exact Lecture Video & Timestamp Finder</h1>
+    <p class="search-subtitle">Search any DSA question or algorithm topic to find the exact video and timestamp where Striver explained it.</p>
+    
+    <div class="mode-row">
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="btnModeSearch" onclick="setMode('search')">⚡ Fast Video Search</button>
+        <button class="mode-tab" id="btnModeAsk" onclick="setMode('ask')">🤖 AI Explanation Mode</button>
+      </div>
+
+      <div class="lang-selector" id="langSelector" style="display: none;">
+        <span class="lang-label">Code Language:</span>
+        <button class="lang-btn active" onclick="setLang('C++')">C++</button>
+        <button class="lang-btn" onclick="setLang('Java')">Java</button>
+        <button class="lang-btn" onclick="setLang('Python')">Python</button>
       </div>
     </div>
-    <div class="nav-right">
-      <div class="status-pill">
-        <div class="status-dot"></div>
-        <span>314 Lessons Indexed (130+ Hrs)</span>
+
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="Type or speak e.g. '3 sum kya hota hai', 'Lower Bound', 'Pascal Triangle', 'Set Matrix Zeroes'..."
+        autocomplete="off"
+      />
+      <button class="mic-btn" id="micBtn" onclick="startVoiceSearch()" title="Speak to Search">🎤</button>
+      <button class="clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
+    </div>
+
+    <!-- Recent Searches -->
+    <div class="filter-section" id="recentSection" style="display: none;">
+      <div class="filter-label">🕒 Your Recent Searches</div>
+      <div class="quick-shortcuts" id="recentList"></div>
+    </div>
+
+    <!-- Quick Topic Shortcuts -->
+    <div class="filter-section">
+      <div class="filter-label">Top Popular DSA Topics</div>
+      <div class="quick-shortcuts">
+        <div class="chip" onclick="searchQuery('2 sum')">⚡ 2 Sum</div>
+        <div class="chip" onclick="searchQuery('3 sum')">⚡ 3 Sum</div>
+        <div class="chip" onclick="searchQuery('Kadane\'s algorithm maximum subarray sum')">⚡ Kadane's Algo</div>
+        <div class="chip" onclick="searchQuery('Lower Bound')">🔍 Lower Bound</div>
+        <div class="chip" onclick="searchQuery('Pascal Triangle')">📐 Pascal Triangle</div>
+        <div class="chip" onclick="searchQuery('Set Matrix Zeroes')">🔳 Set Matrix Zeroes</div>
+        <div class="chip" onclick="searchQuery('Merge Sort')">🔀 Merge Sort</div>
+        <div class="chip" onclick="searchQuery('Dijkstra algorithm')">🕸️ Dijkstra</div>
+        <div class="chip" onclick="searchQuery('LRU Cache')">🥞 LRU Cache</div>
+        <div class="chip" onclick="searchQuery('Koko Eating Bananas')">🍌 Koko Bananas</div>
       </div>
     </div>
   </div>
-</nav>
 
-<!-- Main Workspace Grid -->
-<div class="workspace-layout">
-  
-  <!-- Column 1: Striver A2Z Roadmap Steps Sidebar -->
-  <aside class="sidebar-roadmap">
-    <div class="sidebar-title">A2Z Course Roadmap</div>
-    <div class="roadmap-list">
-      <div class="roadmap-item active" onclick="filterByTopic('All')">
-        <span>🌟 All Topics</span>
-        <span class="roadmap-badge">314</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Step 1: Basics')">
-        <span>Step 1: C++ & Basics</span>
-        <span class="roadmap-badge">12</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Step 2: Sorting')">
-        <span>Step 2: Sorting Techniques</span>
-        <span class="roadmap-badge">7</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Step 3: Arrays')">
-        <span>Step 3: Arrays (Easy/Med/Hard)</span>
-        <span class="roadmap-badge">40</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Binary Search')">
-        <span>Step 4: Binary Search</span>
-        <span class="roadmap-badge">26</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Recursion')">
-        <span>Step 7: Recursion & Backtracking</span>
-        <span class="roadmap-badge">18</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Stack')">
-        <span>Step 9: Stack & Queue / LRU</span>
-        <span class="roadmap-badge">22</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Sliding Window')">
-        <span>Step 10: Sliding Window</span>
-        <span class="roadmap-badge">12</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Greedy')">
-        <span>Step 12: Greedy Algorithms</span>
-        <span class="roadmap-badge">15</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Tree')">
-        <span>Step 13: Binary Trees & BST</span>
-        <span class="roadmap-badge">50</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('Graph')">
-        <span>Step 14: Graph Algorithms</span>
-        <span class="roadmap-badge">54</span>
-      </div>
-      <div class="roadmap-item" onclick="filterByTopic('DP')">
-        <span>Step 15: Dynamic Programming</span>
-        <span class="roadmap-badge">56</span>
-      </div>
+  <!-- Video Player Section -->
+  <div class="player-container" id="playerContainer">
+    <div class="iframe-wrapper">
+      <iframe id="videoIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-  </aside>
-
-  <!-- Column 2: Search & Search Results Stream -->
-  <main class="center-content">
-    
-    <!-- Search Bar Card -->
-    <div class="search-hero">
-      <div class="search-input-group">
-        <span class="search-icon">🔍</span>
-        <input 
-          type="text" 
-          id="searchInput" 
-          class="main-search-input" 
-          placeholder="Search any concept (e.g. Kadane's, Memoization vs Tabulation, Dijkstra)..."
-          autocomplete="off"
-        />
-        <button class="search-clear-btn" id="clearBtn" onclick="clearSearch()">✕</button>
-      </div>
-
-      <div class="search-options-bar">
-        <div class="search-mode-selector">
-          <button class="mode-pill active" id="btnModeSearch" onclick="setMode('search')">⚡ Fast Timestamps</button>
-          <button class="mode-pill" id="btnModeAsk" onclick="setMode('ask')">🤖 AI Answer & Citations</button>
-        </div>
-        <span style="font-size: 12px; color: var(--text-muted);">Press Enter or type 3+ chars</span>
-      </div>
-
-      <!-- Quick Topic Pills -->
-      <div class="quick-pills-row">
-        <div class="topic-pill" onclick="searchQuery('Kadane\'s algorithm maximum subarray sum')">⚡ Kadane's Algo</div>
-        <div class="topic-pill" onclick="searchQuery('Difference between memoization and tabulation')">🧩 Memoization vs Tabulation</div>
-        <div class="topic-pill" onclick="searchQuery('Binary Search Tree BST preorder inorder')">🌳 Binary Tree Traversals</div>
-        <div class="topic-pill" onclick="searchQuery('Dijkstra algorithm shortest path')">🕸️ Dijkstra's Algorithm</div>
-        <div class="topic-pill" onclick="searchQuery('Implement LRU cache data structure')">🥞 LRU Cache</div>
-        <div class="topic-pill" onclick="searchQuery('Merge Sort algorithm dry run')">🔀 Merge Sort</div>
-        <div class="topic-pill" onclick="searchQuery('Sliding Window Maximum Subarray')">🪟 Sliding Window</div>
-      </div>
+    <div class="player-header">
+      <div class="player-title" id="playerTitle">Lecture Video</div>
+      <div class="player-time" id="playerTime">Timestamp @ 00:00</div>
     </div>
+  </div>
 
-    <!-- AI Explanation Card (Hidden by default) -->
-    <div id="aiAnswerCard" style="display: none;"></div>
+  <!-- AI Answer Box -->
+  <div id="aiBox" style="display: none;"></div>
 
-    <!-- Results Stream Header -->
-    <div class="results-section-title">
-      <span id="resultsTitleText">Relevant Lecture Timestamps</span>
-      <span id="resultsConfidenceText" style="font-size: 12.5px; font-weight: 500;"></span>
+  <!-- Results Title -->
+  <div class="results-title" id="resultsTitle" style="display: none;">
+    <span id="resultsCount">Search Results</span>
+  </div>
+
+  <!-- Results Stream -->
+  <div id="resultsStream">
+    <div class="empty-state">
+      <h3 style="margin-bottom: 6px; color: #FFF;">Search any DSA topic or problem</h3>
+      <p>Type <strong>"3 sum kya hota hai"</strong>, <strong>"Lower bound"</strong>, or click any topic chip above to get instant video timestamp matches.</p>
     </div>
-
-    <!-- Results List -->
-    <div id="resultsStream" style="display: flex; flex-direction: column; gap: 14px;">
-      <div class="empty-box">
-        <h3>🔍 Explore Striver's A2Z DSA Lectures</h3>
-        <p>Type any concept or click one of the topic shortcuts above to find exact video lecture moments.</p>
-      </div>
-    </div>
-  </main>
-
-  <!-- Column 3: Sticky Video Player & Notes Workspace -->
-  <section class="right-workspace">
-    <div class="player-box">
-      <div class="iframe-aspect-ratio">
-        <iframe 
-          id="videoIframe"
-          src="https://www.youtube.com/embed/AHZpyENo7kE?enablejsapi=1" 
-          title="Striver DSA Video Player" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <div class="player-details">
-        <div class="player-active-title" id="playerActiveTitle">Kadane's Algorithm : Maximum Subarray Sum</div>
-        <div class="player-active-meta">
-          <span id="playerActiveTimestamp" style="font-weight: 600; color: var(--brand-cyan);">Timestamp @ 00:00</span>
-          <a id="playerExternalUrl" href="https://youtu.be/AHZpyENo7kE" target="_blank" style="color: var(--text-secondary); text-decoration: none; font-weight: 500;">
-            ↗ Open on YouTube
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Notes & Saved Bookmarks -->
-    <div class="learning-tools-box">
-      <div class="tools-header">
-        <div class="tools-title">📝 Revision Notes & Key Takeaways</div>
-        <button class="btn-secondary" style="padding: 4px 10px; font-size: 11.5px;" onclick="saveNotes()">Save Notes</button>
-      </div>
-      <textarea id="userNotes" class="notes-textarea" placeholder="Write down your key takeaways, time complexity notes, or code logic here... (Auto-saved locally)"></textarea>
-      
-      <div style="margin-top: 14px; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
-        <div class="tools-title" style="font-size: 13px;">⭐ Saved Revision Timestamps</div>
-        <div class="bookmarks-list" id="bookmarksList">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
 </div>
 
+<!-- Bookmarks Modal -->
+<div class="modal-overlay" id="bookmarksModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 class="modal-title">⭐ Saved Revision Bookmarks</h3>
+      <button class="modal-close" onclick="closeBookmarksModal()">✕</button>
+    </div>
+    <div class="modal-body" id="bookmarksList">
+      <!-- Bookmarks dynamically rendered here -->
+    </div>
+  </div>
+</div>
+
+<!-- Toast Alert -->
+<div class="toast" id="toast">Copied YouTube timestamp link to clipboard! 📋</div>
+
 <script>
 let currentMode = 'search';
+let currentLang = 'C++';
 let searchTimeout = null;
-let bookmarks = JSON.parse(localStorage.getItem('striver_dsa_bookmarks') || '[]');
-
-// Load Saved Notes
-document.getElementById('userNotes').value = localStorage.getItem('striver_dsa_notes') || '';
-updateBookmarksUI();
+let currentCitations = [];
 
 const searchInput = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 
+// Initialize Bookmarks & Recent Searches on Load
+document.addEventListener('DOMContentLoaded', () => {
+  updateBookmarkCount();
+  renderRecentSearches();
+});
+
 searchInput.addEventListener('input', (e) => {
-  clearBtn.style.display = e.target.value ? 'flex' : 'none';
+  clearBtn.style.display = e.target.value ? 'block' : 'none';
   clearTimeout(searchTimeout);
-  if (e.target.value.trim().length >= 3) {
-    searchTimeout = setTimeout(() => executeSearch(), 350);
+  if (e.target.value.trim().length >= 2) {
+    searchTimeout = setTimeout(() => executeSearch(), 250);
   }
 });
 
@@ -803,34 +841,40 @@ searchInput.addEventListener('keydown', (e) => {
 function clearSearch() {
   searchInput.value = '';
   clearBtn.style.display = 'none';
-  document.getElementById('aiAnswerCard').style.display = 'none';
+  document.getElementById('aiBox').style.display = 'none';
+  document.getElementById('resultsTitle').style.display = 'none';
+  document.getElementById('playerContainer').style.display = 'none';
   document.getElementById('resultsStream').innerHTML = `
-    <div class="empty-box">
-      <h3>🔍 Explore Striver's A2Z DSA Lectures</h3>
-      <p>Type any concept or click one of the topic shortcuts above to find exact video lecture moments.</p>
+    <div class="empty-state">
+      <h3 style="margin-bottom: 6px; color: #FFF;">Search any DSA topic or problem</h3>
+      <p>Type <strong>"3 sum kya hota hai"</strong>, <strong>"Lower bound"</strong>, or click any topic chip above to get instant video timestamp matches.</p>
     </div>
   `;
 }
 
 function searchQuery(text) {
   searchInput.value = text;
-  clearBtn.style.display = 'flex';
+  clearBtn.style.display = 'block';
   executeSearch();
-}
-
-function filterByTopic(topicKeyword) {
-  if (topicKeyword === 'All') {
-    clearSearch();
-    return;
-  }
-  searchQuery(topicKeyword);
 }
 
 function setMode(mode) {
   currentMode = mode;
   document.getElementById('btnModeSearch').classList.toggle('active', mode === 'search');
   document.getElementById('btnModeAsk').classList.toggle('active', mode === 'ask');
-  if (searchInput.value.trim().length >= 3) {
+  document.getElementById('langSelector').style.display = (mode === 'ask') ? 'flex' : 'none';
+  
+  if (searchInput.value.trim().length >= 2) {
+    executeSearch();
+  }
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.innerText.includes(lang));
+  });
+  if (currentMode === 'ask' && searchInput.value.trim().length >= 2) {
     executeSearch();
   }
 }
@@ -839,11 +883,13 @@ async function executeSearch() {
   const query = searchInput.value.trim();
   if (!query) return;
 
+  saveRecentSearch(query);
+
   const resultsStream = document.getElementById('resultsStream');
-  const aiAnswerCard = document.getElementById('aiAnswerCard');
-  
-  resultsStream.innerHTML = `<div class="empty-box"><p>Searching 314 Striver lectures...</p></div>`;
-  aiAnswerCard.style.display = 'none';
+  const aiBox = document.getElementById('aiBox');
+
+  resultsStream.innerHTML = `<div class="empty-state"><p>Searching 314 Striver lectures...</p></div>`;
+  aiBox.style.display = 'none';
 
   try {
     if (currentMode === 'search') {
@@ -853,165 +899,355 @@ async function executeSearch() {
         body: JSON.stringify({ question: query, top_k: 6 })
       });
       const data = await res.json();
-      renderSearchResults(data);
+      renderSearchResults(query, data);
     } else {
-      aiAnswerCard.style.display = 'block';
-      aiAnswerCard.innerHTML = `<div class="ai-answer-card"><p>Generating AI answer grounded in Striver's lectures...</p></div>`;
+      aiBox.style.display = 'block';
+      aiBox.innerHTML = `<div class="ai-box"><p>Generating comprehensive AI answer grounded in Striver's lectures...</p></div>`;
       
       const res = await fetch('/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: query, top_k: 6 })
+        body: JSON.stringify({ question: query, top_k: 6, code_lang: currentLang })
       });
       const data = await res.json();
       renderAskResults(data);
     }
   } catch (err) {
-    resultsStream.innerHTML = `
-      <div class="empty-box">
-        <h3>⚠️ Search Error</h3>
-        <p>${err.message || 'Error connecting to server.'}</p>
-      </div>
-    `;
+    resultsStream.innerHTML = `<div class="empty-state"><p>Error: ${err.message}</p></div>`;
   }
 }
 
-function renderSearchResults(data) {
+function renderSearchResults(query, data) {
   const resultsStream = document.getElementById('resultsStream');
-  
+  const resultsTitle = document.getElementById('resultsTitle');
+  const playerContainer = document.getElementById('playerContainer');
+  const iframe = document.getElementById('videoIframe');
+
   if (!data.results || data.results.length === 0) {
+    resultsTitle.style.display = 'none';
+    playerContainer.style.display = 'none';
+    iframe.src = '';
+
     resultsStream.innerHTML = `
-      <div class="empty-box">
-        <h3>❓ No Matching Lecture Found</h3>
-        <p>Is topic ko doosre keywords se search karke try karein.</p>
+      <div class="empty-state">
+        <h3 style="margin-bottom: 8px; color: #FFF;">No Lecture Found for "${escapeHtml(query)}"</h3>
+        <p style="max-width: 520px; margin: 0 auto; color: var(--text-sub); font-size: 14.5px;">
+          This topic is not covered in Striver's A2Z DSA Course.<br>
+          Striver's course covers Data Structures & Algorithms (Arrays, Binary Search, Trees, Graphs, DP, etc.).
+        </p>
       </div>
     `;
     return;
   }
 
-  document.getElementById('resultsTitleText').innerText = `Found ${data.results.length} Relevant Video Timestamps`;
-  document.getElementById('resultsConfidenceText').innerHTML = data.confident 
-    ? `<span style="color: var(--success); font-weight: 600;">✓ High Confidence Match</span>`
-    : `<span style="color: var(--warning); font-weight: 600;">⚠️ Related Topic</span>`;
+  resultsTitle.style.display = 'flex';
+  document.getElementById('resultsCount').innerText = `Found ${data.results.length} Video Timestamp Matches`;
 
-  resultsStream.innerHTML = data.results.map((item, idx) => `
-    <div class="lecture-card ${idx === 0 ? 'playing' : ''}" id="card-${idx}">
-      <div class="card-top">
-        <h4 class="lecture-heading">${escapeHtml(item.title)}</h4>
-        <span class="timestamp-tag">⏱️ ${item.timestamp}</span>
-      </div>
-      <div class="transcript-excerpt">"${escapeHtml(item.preview)}..."</div>
-      <div class="card-bottom">
-        <div class="card-btn-group">
-          <button class="btn-primary" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}', ${idx})">
-            ▶ Play at ${item.timestamp}
+  let html = '';
+  data.results.forEach((item, idx) => {
+    const isPrimary = (idx === 0);
+    const cardClass = isPrimary ? 'primary-card' : 'result-card';
+    const primaryTag = isPrimary ? `<div class="primary-badge">🎯 Exact Target Lecture Video</div>` : '';
+    const isSaved = isBookmarked(item.url);
+    const bookmarkLabel = isSaved ? '⭐ Saved' : '⭐ Bookmark';
+
+    html += `
+      <div class="${cardClass}">
+        ${primaryTag}
+        <div class="card-header">
+          <h4 class="card-title">${escapeHtml(item.title)}</h4>
+          <span class="time-badge">⏱️ ${item.timestamp}</span>
+        </div>
+        <div class="preview-quote">"${escapeHtml(item.preview)}..."</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}')">
+            ▶ Play Video at ${item.timestamp}
           </button>
-          <button class="btn-secondary" onclick="addBookmark('${escapeHtml(item.title)}', '${item.timestamp}', '${item.video_id}', ${item.start_sec})">
-            ⭐ Bookmark
+          <button class="btn-copy" onclick="copyLink('${item.url}')">📋 Copy YouTube Link</button>
+          <button class="btn-bookmark" onclick="toggleBookmark('${escapeHtml(item.title)}', '${item.timestamp}', '${item.url}', '${item.video_id}', ${item.start_sec})">
+            ${bookmarkLabel}
           </button>
         </div>
-        <button class="btn-secondary" onclick="copyLink('${item.url}')">📋 Share Link</button>
       </div>
-    </div>
-  `).join('');
+    `;
+  });
 
+  resultsStream.innerHTML = html;
+
+  // Auto play top primary result
   if (data.results.length > 0) {
     const top = data.results[0];
-    playVideo(top.video_id, top.start_sec, top.title, top.timestamp, 0);
+    playVideo(top.video_id, top.start_sec, top.title, top.timestamp);
   }
+}
+
+function parseMarkdown(text) {
+  if (!text) return '';
+  
+  // Custom Marked Options
+  if (typeof marked !== 'undefined') {
+    marked.setOptions({
+      gfm: true,
+      breaks: true
+    });
+    let html = marked.parse(text);
+    
+    // Replace [1], [2] citation references with interactive clickable badges
+    html = html.replace(/\[(\d+)\]/g, (match, num) => {
+      const idx = parseInt(num, 10);
+      return `<span class="citation-tag" onclick="playCitation(${idx})">📍 Lecture [${idx}]</span>`;
+    });
+
+    // Post process code blocks to add header & copy button
+    html = html.replace(/<pre><code(?:\s+class="language-(\w+)")?>([\s\S]*?)<\/code><\/pre>/g, (match, lang, code) => {
+      const displayLang = (lang || 'code').toUpperCase();
+      return `<div class="code-wrapper">
+        <div class="code-header">
+          <span>💻 ${displayLang} Solution Code</span>
+          <button class="btn-copy-code" onclick="copyCode(this)">📋 Copy Code</button>
+        </div>
+        <pre><code>${code}</code></pre>
+      </div>`;
+    });
+
+    return html;
+  }
+  
+  return escapeHtml(text).replace(/\n/g, '<br>');
 }
 
 function renderAskResults(data) {
-  const aiAnswerCard = document.getElementById('aiAnswerCard');
+  const aiBox = document.getElementById('aiBox');
   const resultsStream = document.getElementById('resultsStream');
+  const playerContainer = document.getElementById('playerContainer');
+  const iframe = document.getElementById('videoIframe');
 
-  aiAnswerCard.style.display = 'block';
-  aiAnswerCard.innerHTML = `
-    <div class="ai-answer-card">
-      <div class="ai-title">🤖 AI Summary (Grounded in Striver's Lecture):</div>
-      <div style="font-size: 14px; line-height: 1.65; color: var(--text-primary);">
-        ${escapeHtml(data.answer).replace(/\n/g, '<br>')}
+  currentCitations = data.citations || [];
+
+  aiBox.style.display = 'block';
+  aiBox.innerHTML = `
+    <div class="ai-box">
+      <div class="ai-box-title">
+        <span>🤖 AI Explanation & Code Solution (${currentLang}):</span>
       </div>
+      <div class="markdown-content">${parseMarkdown(data.answer)}</div>
     </div>
   `;
 
-  if (data.citations && data.citations.length > 0) {
-    document.getElementById('resultsTitleText').innerText = `Cited Sources (${data.citations.length})`;
-    resultsStream.innerHTML = data.citations.map((item, idx) => `
-      <div class="lecture-card ${idx === 0 ? 'playing' : ''}" id="card-${idx}">
-        <div class="card-top">
-          <h4 class="lecture-heading">[${idx + 1}] ${escapeHtml(item.title)}</h4>
-          <span class="timestamp-tag">⏱️ ${item.timestamp}</span>
+  if (currentCitations.length > 0) {
+    resultsStream.innerHTML = currentCitations.map((item, idx) => {
+      const isSaved = isBookmarked(item.url);
+      const bookmarkLabel = isSaved ? '⭐ Saved' : '⭐ Bookmark';
+      return `
+        <div class="result-card">
+          <div class="card-header">
+            <h4 class="card-title">[Citation ${idx + 1}] ${escapeHtml(item.title)}</h4>
+            <span class="time-badge">⏱️ ${item.timestamp}</span>
+          </div>
+          <div class="card-actions">
+            <button class="btn-play" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}')">
+              ▶ Play Video at ${item.timestamp}
+            </button>
+            <button class="btn-copy" onclick="copyLink('${item.url}')">📋 Copy YouTube Link</button>
+            <button class="btn-bookmark" onclick="toggleBookmark('${escapeHtml(item.title)}', '${item.timestamp}', '${item.url}', '${item.video_id}', ${item.start_sec})">
+              ${bookmarkLabel}
+            </button>
+          </div>
         </div>
-        <div class="card-bottom">
-          <button class="btn-primary" onclick="playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}', ${idx})">
-            ▶ Jump to ${item.timestamp}
-          </button>
-          <button class="btn-secondary" onclick="copyLink('${item.url}')">📋 Share Link</button>
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
-    const top = data.citations[0];
-    playVideo(top.video_id, top.start_sec, top.title, top.timestamp, 0);
+    const top = currentCitations[0];
+    playVideo(top.video_id, top.start_sec, top.title, top.timestamp);
+  } else {
+    playerContainer.style.display = 'none';
+    iframe.src = '';
+    resultsStream.innerHTML = '';
   }
 }
 
-function playVideo(videoId, startSec, title, timestamp, cardIdx) {
+function playCitation(index) {
+  if (currentCitations && currentCitations[index - 1]) {
+    const item = currentCitations[index - 1];
+    playVideo(item.video_id, item.start_sec, item.title, item.timestamp);
+    showToast(`Playing Citation [${index}] timestamp video! 🎬`);
+  }
+}
+
+function playVideo(videoId, startSec, title, timestamp) {
+  const container = document.getElementById('playerContainer');
   const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.max(0, startSec)}`;
   
-  document.getElementById('playerActiveTitle').innerText = title;
-  document.getElementById('playerActiveTimestamp').innerText = `Timestamp @ ${timestamp}`;
-  document.getElementById('playerExternalUrl').href = `https://youtu.be/${videoId}?t=${startSec}`;
-
-  document.querySelectorAll('.lecture-card').forEach((card, idx) => {
-    card.classList.toggle('playing', idx === cardIdx);
-  });
-}
-
-function saveNotes() {
-  const val = document.getElementById('userNotes').value;
-  localStorage.setItem('striver_dsa_notes', val);
-  alert('Notes saved to local storage!');
-}
-
-function addBookmark(title, timestamp, videoId, startSec) {
-  const exists = bookmarks.some(b => b.videoId === videoId && b.timestamp === timestamp);
-  if (!exists) {
-    bookmarks.push({ title, timestamp, videoId, startSec });
-    localStorage.setItem('striver_dsa_bookmarks', JSON.stringify(bookmarks));
-    updateBookmarksUI();
-    alert('Bookmark saved!');
-  }
-}
-
-function updateBookmarksUI() {
-  document.getElementById('bookmarkCount').innerText = bookmarks.length;
-  const list = document.getElementById('bookmarksList');
-  if (bookmarks.length === 0) {
-    list.innerHTML = `<div style="font-size: 12px; color: var(--text-muted);">No saved bookmarks yet.</div>`;
-    return;
-  }
-  list.innerHTML = bookmarks.map((b, idx) => `
-    <div class="bookmark-item">
-      <a href="#" onclick="playVideo('${b.videoId}', ${b.startSec}, '${escapeHtml(b.title)}', '${b.timestamp}', -1)">
-        ${escapeHtml(b.title.substring(0, 32))}... (${b.timestamp})
-      </a>
-      <button style="background:none; border:none; color:var(--text-muted); cursor:pointer;" onclick="removeBookmark(${idx})">✕</button>
-    </div>
-  `).join('');
-}
-
-function removeBookmark(idx) {
-  bookmarks.splice(idx, 1);
-  localStorage.setItem('striver_dsa_bookmarks', JSON.stringify(bookmarks));
-  updateBookmarksUI();
+  container.style.display = 'block';
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&start=${Math.max(0, startSec)}`;
+  document.getElementById('playerTitle').innerText = title;
+  document.getElementById('playerTime').innerText = `Timestamp @ ${timestamp}`;
+  container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function copyLink(url) {
   navigator.clipboard.writeText(url);
-  alert('Timestamped YouTube link copied!');
+  showToast('Copied YouTube timestamp link to clipboard! 📋');
+}
+
+function copyCode(btn) {
+  const wrapper = btn.closest('.code-wrapper');
+  const code = wrapper.querySelector('pre code').innerText;
+  navigator.clipboard.writeText(code);
+  showToast('Copied solution code to clipboard! 💻');
+}
+
+/* Voice Search API */
+function startVoiceSearch() {
+  const micBtn = document.getElementById('micBtn');
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    showToast('Voice Search is not supported in this browser. Try Chrome/Edge!');
+    return;
+  }
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'en-US';
+  recognition.interimResults = false;
+
+  micBtn.classList.add('recording');
+  showToast('Listening... Speak your DSA query now 🎤');
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    searchInput.value = transcript;
+    clearBtn.style.display = 'block';
+    micBtn.classList.remove('recording');
+    executeSearch();
+  };
+
+  recognition.onerror = () => {
+    micBtn.classList.remove('recording');
+    showToast('Could not hear audio. Try again!');
+  };
+
+  recognition.onend = () => {
+    micBtn.classList.remove('recording');
+  };
+
+  recognition.start();
+}
+
+/* Bookmarks System */
+function getBookmarks() {
+  try {
+    return JSON.parse(localStorage.getItem('striver_bookmarks') || '[]');
+  } catch (e) { return []; }
+}
+
+function saveBookmarks(list) {
+  localStorage.setItem('striver_bookmarks', JSON.stringify(list));
+  updateBookmarkCount();
+}
+
+function isBookmarked(url) {
+  return getBookmarks().some(b => b.url === url);
+}
+
+function toggleBookmark(title, timestamp, url, video_id, start_sec) {
+  let list = getBookmarks();
+  const existing = list.findIndex(b => b.url === url);
+  if (existing >= 0) {
+    list.splice(existing, 1);
+    showToast('Removed from revision bookmarks.');
+  } else {
+    list.push({ title, timestamp, url, video_id, start_sec, addedAt: new Date().toLocaleDateString() });
+    showToast('Saved to revision bookmarks! ⭐');
+  }
+  saveBookmarks(list);
+  if (currentMode === 'search' && searchInput.value) {
+    executeSearch();
+  }
+}
+
+function updateBookmarkCount() {
+  const count = getBookmarks().length;
+  document.getElementById('bookmarkCount').innerText = count;
+}
+
+function openBookmarksModal() {
+  const modal = document.getElementById('bookmarksModal');
+  const body = document.getElementById('bookmarksList');
+  const list = getBookmarks();
+
+  if (list.length === 0) {
+    body.innerHTML = `
+      <div class="empty-state">
+        <h4 style="color:#FFF; margin-bottom:6px;">No Saved Bookmarks Yet</h4>
+        <p>Click the <strong>"⭐ Bookmark"</strong> button on any lecture search result to save it here for revision!</p>
+      </div>
+    `;
+  } else {
+    body.innerHTML = list.map((item, idx) => `
+      <div class="result-card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <h4 class="card-title">${escapeHtml(item.title)}</h4>
+          <span class="time-badge">⏱️ ${item.timestamp}</span>
+        </div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="closeBookmarksModal(); playVideo('${item.video_id}', ${item.start_sec}, '${escapeHtml(item.title)}', '${item.timestamp}');">
+            ▶ Play Video
+          </button>
+          <button class="btn-copy" onclick="copyLink('${item.url}')">📋 Copy Link</button>
+          <button class="btn-bookmark" onclick="toggleBookmark('${escapeHtml(item.title)}', '${item.timestamp}', '${item.url}', '${item.video_id}', ${item.start_sec}); openBookmarksModal();">
+            ✕ Remove
+          </button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  modal.style.display = 'flex';
+}
+
+function closeBookmarksModal() {
+  document.getElementById('bookmarksModal').style.display = 'none';
+}
+
+/* Recent Search History */
+function getRecentSearches() {
+  try {
+    return JSON.parse(localStorage.getItem('striver_recent') || '[]');
+  } catch (e) { return []; }
+}
+
+function saveRecentSearch(q) {
+  if (!q || q.length < 2) return;
+  let list = getRecentSearches();
+  list = list.filter(item => item.toLowerCase() !== q.toLowerCase());
+  list.unshift(q);
+  if (list.length > 5) list = list.slice(0, 5);
+  localStorage.setItem('striver_recent', JSON.stringify(list));
+  renderRecentSearches();
+}
+
+function renderRecentSearches() {
+  const list = getRecentSearches();
+  const section = document.getElementById('recentSection');
+  const container = document.getElementById('recentList');
+
+  if (list.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+
+  section.style.display = 'block';
+  container.innerHTML = list.map(q => `
+    <div class="chip recent" onclick="searchQuery('${escapeHtml(q)}')">🕒 ${escapeHtml(q)}</div>
+  `).join('');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.innerText = msg;
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 2500);
 }
 
 function escapeHtml(str) {

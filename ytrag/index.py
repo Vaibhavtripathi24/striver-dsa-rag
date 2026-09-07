@@ -201,10 +201,42 @@ def indexed_video_ids() -> set[str]:
 _STOP = {
     "kaise", "kya", "hai", "hain", "me", "ka", "ki", "ke", "aur", "kab", "karte",
     "karna", "hota", "nikale", "solve", "kare", "chahiye", "use", "kahan", "se",
-    "ko", "pehchane", "difference", "farak", "the", "a", "is", "in", "what", "how",
-    "do", "to", "of", "for", "video", "dsa", "patterns", "pattern", "episode",
-    "leetcode", "interview", "questions", "question", "master", "best", "explained",
+    "ko", "pehchane", "difference", "farak", "the", "a", "an", "is", "in", "what", "how",
+    "do", "to", "of", "for", "with", "given", "using", "part", "find", "all", "video",
+    "dsa", "patterns", "pattern", "episode", "leetcode", "interview", "questions",
+    "question", "master", "best", "explained", "explain", "explanation", "problem",
+    "problems", "types", "same", "code", "codes", "approach", "approaches", "brute",
+    "better", "optimal", "playlist", "series", "sheet", "striver", "strivers", "a2z",
+    "course", "lecture", "cpp", "c++", "java", "python", "hindi", "hinglish", "intuition",
+    "technique", "method", "solution", "tell", "about", "give", "samjhao", "samjha"
 }
+
+
+# Pre-compiled regex patterns for zero compilation overhead during searches
+RE_NUM_2 = re.compile(r"\b2\b", re.IGNORECASE)
+RE_NUM_3 = re.compile(r"\b3\b", re.IGNORECASE)
+RE_NUM_4 = re.compile(r"\b4\b", re.IGNORECASE)
+RE_WORDS = re.compile(r"[a-z0-9]+")
+RE_DELIM = re.compile(r"[\|\-\:]")
+
+_DSA_SYNONYMS = [
+    (re.compile(r"\b2\s*sum\b", re.IGNORECASE), "two sum 2 sum pair with given sum"),
+    (re.compile(r"\b3\s*sum\b", re.IGNORECASE), "three sum 3 sum triplet sum"),
+    (re.compile(r"\b4\s*sum\b", re.IGNORECASE), "four sum 4 sum quad sum"),
+    (re.compile(r"\bkadane\b", re.IGNORECASE), "kadane algorithm maximum subarray sum"),
+    (re.compile(r"\bdijkstra\b", re.IGNORECASE), "dijkstra algorithm shortest path"),
+    (re.compile(r"\blru\b", re.IGNORECASE), "lru cache implement lru"),
+    (re.compile(r"\blfu\b", re.IGNORECASE), "lfu cache implement lfu"),
+    (re.compile(r"\blcs\b", re.IGNORECASE), "longest common subsequence lcs"),
+    (re.compile(r"\blis\b", re.IGNORECASE), "longest increasing subsequence lis"),
+    (re.compile(r"\bdnf\b", re.IGNORECASE), "dutch national flag sort 0s 1s 2s"),
+    (re.compile(r"\bbst\b", re.IGNORECASE), "binary search tree bst"),
+    (re.compile(r"\bdll\b", re.IGNORECASE), "doubly linked list dll"),
+    (re.compile(r"\bmst\b", re.IGNORECASE), "minimum spanning tree prims kruskal"),
+    (re.compile(r"\bkmp\b", re.IGNORECASE), "kmp algorithm string matching"),
+    (re.compile(r"\bkoko\b", re.IGNORECASE), "koko eating bananas binary search"),
+    (re.compile(r"\bpascal\b", re.IGNORECASE), "pascal triangle ncr"),
+]
 
 
 def _stem(word: str) -> str:
@@ -216,16 +248,118 @@ def _stem(word: str) -> str:
 
 
 def _terms(text: str) -> set[str]:
+    text_norm = text.lower()
+    text_norm = RE_NUM_2.sub("two 2", text_norm)
+    text_norm = RE_NUM_3.sub("three 3", text_norm)
+    text_norm = RE_NUM_4.sub("four 4", text_norm)
     return {
         _stem(w)
-        for w in re.findall(r"[a-z0-9]+", text.lower())
-        if w not in _STOP and len(w) > 2
+        for w in RE_WORDS.findall(text_norm)
+        if w not in _STOP and (len(w) >= 2 or w.isdigit())
     }
 
 
+def expand_query(query: str) -> str:
+    q = query.lower().strip()
+    for pattern, expansion in _DSA_SYNONYMS:
+        q = pattern.sub(expansion, q)
+    return q
+
+
+_VIDEO_CATALOG_CACHE: dict[str, dict] | None = None
+
+
+def get_video_catalog() -> dict[str, dict]:
+    """Return pre-tokenized cached catalog of video_id -> {title, norm_title, terms, main_header}."""
+    global _VIDEO_CATALOG_CACHE
+    if _VIDEO_CATALOG_CACHE is not None:
+        return _VIDEO_CATALOG_CACHE
+
+    client = get_client()
+    name = collection_name()
+    if not client.collection_exists(name):
+        return {}
+
+    catalog: dict[str, dict] = {}
+    offset = None
+    while True:
+        points, offset = client.scroll(
+            collection_name=name,
+            limit=1000,
+            offset=offset,
+            with_payload=["video_id", "video_title"],
+            with_vectors=False,
+        )
+        for point in points:
+            payload = point.payload or {}
+            vid = payload.get("video_id")
+            vtitle = payload.get("video_title")
+            if vid and vtitle and vid not in catalog:
+                t_lower = vtitle.lower()
+                catalog[vid] = {
+                    "title": vtitle,
+                    "norm_title": t_lower,
+                    "terms": _terms(vtitle),
+                    "main_header": RE_DELIM.split(t_lower)[0].strip(),
+                }
+        if offset is None:
+            break
+
+    _VIDEO_CATALOG_CACHE = catalog
+    return _VIDEO_CATALOG_CACHE
+
+
+def get_video_titles() -> dict[str, str]:
+    """Backward compatible helper returning video_id -> video_title."""
+    return {vid: meta["title"] for vid, meta in get_video_catalog().items()}
+
+
+def title_score(query: str, title: str) -> float:
+    """Calculate universal query-title relevance score combining term coverage, exact alias matching, and phrase alignment."""
+    q_raw = query.lower().strip()
+    t_raw = title.lower()
+
+    if not q_raw or not t_raw:
+        return 0.0
+
+    q_terms = _terms(query)
+    t_terms = _terms(title)
+
+    if not q_terms:
+        return 0.0
+
+    matched_terms = q_terms & t_terms
+    coverage = len(matched_terms) / len(q_terms)
+
+    exact_boost = 0.0
+    if q_raw in t_raw:
+        exact_boost = 0.60
+    elif coverage == 1.0:
+        exact_boost = 0.45
+    elif coverage >= 0.66:
+        exact_boost = 0.30
+
+    if "2 sum" in q_raw and ("2 sum" in t_raw or "two sum" in t_raw):
+        exact_boost = max(exact_boost, 0.60)
+    elif "3 sum" in q_raw and ("3 sum" in t_raw or "three sum" in t_raw):
+        exact_boost = max(exact_boost, 0.60)
+    elif "4 sum" in q_raw and ("4 sum" in t_raw or "four sum" in t_raw):
+        exact_boost = max(exact_boost, 0.60)
+    elif "lru" in q_raw and "lru" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+    elif "lfu" in q_raw and "lfu" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+
+    t_main = RE_DELIM.split(t_raw)[0].strip()
+    if q_raw in t_main or any(term in t_main for term in matched_terms if len(term) >= 4):
+        exact_boost += 0.15
+
+    return (coverage * 0.25) + exact_boost
+
+
 def title_overlap(query: str, title: str) -> int:
-    """How many meaningful query words appear in the lecture's title."""
-    return len(_terms(query) & _terms(title))
+    """Legacy helper for backward compatibility."""
+    return len(_terms(expand_query(query)) & _terms(title))
 
 
 def search(
@@ -234,46 +368,75 @@ def search(
     video_id: str | None = None,
     max_distance: float | None = None,
 ) -> list[tuple[Chunk, float]]:
-    """Return [(chunk, distance)] sorted best-first, already distance-filtered.
-
-    Qdrant returns a cosine *similarity* score (higher is better); the rest of
-    the system thinks in distance (lower is better), so convert once here.
-    """
+    """Return [(chunk, distance)] sorted best-first, already distance-filtered."""
     name = ensure_collection()
     client = get_client()
-    vector = get_embedder().embed_query(query)
+    expanded = expand_query(query)
+    vector = get_embedder().embed_query(expanded)
 
-    query_filter = None
-    if video_id:
-        query_filter = Filter(
+    candidate_points = []
+    seen_ids = set()
+
+    if not video_id:
+        v_results = client.query_points(
+            collection_name=name,
+            query=vector,
+            limit=max(top_k * 30, 150),
+            with_payload=True,
+        ).points
+        for p in v_results:
+            if p.id not in seen_ids:
+                candidate_points.append(p)
+                seen_ids.add(p.id)
+
+        catalog = get_video_catalog()
+        matching_vids = [
+            vid for vid, meta in catalog.items()
+            if title_score(query, meta["title"]) >= 0.35
+        ]
+        if matching_vids:
+            t_filter = Filter(
+                should=[
+                    FieldCondition(key="video_id", match=MatchValue(value=vid))
+                    for vid in matching_vids
+                ]
+            )
+            t_points = client.query_points(
+                collection_name=name,
+                query=vector,
+                limit=100,
+                with_payload=True,
+                query_filter=t_filter,
+            ).points
+            for p in t_points:
+                if p.id not in seen_ids:
+                    candidate_points.append(p)
+                    seen_ids.add(p.id)
+    else:
+        q_filter = Filter(
             must=[FieldCondition(key="video_id", match=MatchValue(value=video_id))]
         )
-
-    # Over-fetch, then re-rank. The vector search alone is a decent recall
-    # filter but a poor judge of which result belongs first.
-    results = client.query_points(
-        collection_name=name,
-        query=vector,
-        limit=max(top_k * 4, 20),
-        with_payload=True,
-        query_filter=query_filter,
-    ).points
+        v_results = client.query_points(
+            collection_name=name,
+            query=vector,
+            limit=max(top_k * 20, 120),
+            with_payload=True,
+            query_filter=q_filter,
+        ).points
+        candidate_points = v_results
 
     cutoff = MAX_DISTANCE if max_distance is None else max_distance
     scored: list[tuple[float, float, Chunk]] = []
-    for point in results:
-        distance = 1.0 - float(point.score)
-        if distance > cutoff:
-            continue
+    for point in candidate_points:
+        raw_score = getattr(point, "score", None)
+        distance = (1.0 - float(raw_score)) if raw_score is not None else 0.45
+
         chunk = Chunk.from_payload(point.payload)
-        # Nudge chunks whose lecture title actually mentions what was asked.
-        # Dense similarity over a 75-second ramble dilutes the topic badly —
-        # a chunk about ASCII values outranked the Number of Islands lecture
-        # for "number of islands" until this existed. The title is the one
-        # place the topic is stated plainly, so it gets a say in the ordering.
-        # Measured on 12 questions: top-1 accuracy 9/12 -> 12/12.
-        overlap = title_overlap(query, chunk.video_title)
-        scored.append((distance - TITLE_BOOST * overlap, distance, chunk))
+        t_boost = title_score(query, chunk.video_title)
+
+        composite_score = distance - t_boost
+        if distance <= cutoff or t_boost >= 0.35:
+            scored.append((composite_score, distance, chunk))
 
     scored.sort(key=lambda row: row[0])
     return [(chunk, distance) for _, distance, chunk in scored[:top_k]]

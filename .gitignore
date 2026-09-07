@@ -1,7 +1,28 @@
+# Environment & Secret files
 .env
 .env.*
 !.env.example
 
-.venv/
+# Python cache & compiled files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS & Temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.stackdump
