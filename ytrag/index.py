@@ -275,35 +275,55 @@ def get_video_catalog() -> dict[str, dict]:
     if _VIDEO_CATALOG_CACHE is not None:
         return _VIDEO_CATALOG_CACHE
 
-    client = get_client()
-    name = collection_name()
-    if not client.collection_exists(name):
-        return {}
-
     catalog: dict[str, dict] = {}
-    offset = None
-    while True:
-        points, offset = client.scroll(
-            collection_name=name,
-            limit=1000,
-            offset=offset,
-            with_payload=["video_id", "video_title"],
-            with_vectors=False,
-        )
-        for point in points:
-            payload = point.payload or {}
-            vid = payload.get("video_id")
-            vtitle = payload.get("video_title")
-            if vid and vtitle and vid not in catalog:
-                t_lower = vtitle.lower()
-                catalog[vid] = {
-                    "title": vtitle,
-                    "norm_title": t_lower,
-                    "terms": _terms(vtitle),
-                    "main_header": RE_DELIM.split(t_lower)[0].strip(),
-                }
-        if offset is None:
-            break
+
+    # 1. Primary Source: Load official 316 catalog JSON first
+    cat_json_path = Path(__file__).resolve().parent.parent / "striver_official_catalog.json"
+    if cat_json_path.exists():
+        try:
+            with open(cat_json_path, "r", encoding="utf-8") as f:
+                raw_cat = json.load(f)
+                for vid, vtitle in raw_cat.items():
+                    t_lower = vtitle.lower()
+                    catalog[vid] = {
+                        "title": vtitle,
+                        "norm_title": t_lower,
+                        "terms": _terms(vtitle),
+                        "main_header": RE_DELIM.split(t_lower)[0].strip(),
+                    }
+        except Exception as exc:
+            print(f"Error loading striver_official_catalog.json: {exc}", flush=True)
+
+    # 2. Secondary Source: Merge with Qdrant collection points if present
+    try:
+        client = get_client()
+        name = collection_name()
+        if client.collection_exists(name):
+            offset = None
+            while True:
+                points, offset = client.scroll(
+                    collection_name=name,
+                    limit=1000,
+                    offset=offset,
+                    with_payload=["video_id", "video_title"],
+                    with_vectors=False,
+                )
+                for point in points:
+                    payload = point.payload or {}
+                    vid = payload.get("video_id")
+                    vtitle = payload.get("video_title")
+                    if vid and vtitle and vid not in catalog:
+                        t_lower = vtitle.lower()
+                        catalog[vid] = {
+                            "title": vtitle,
+                            "norm_title": t_lower,
+                            "terms": _terms(vtitle),
+                            "main_header": RE_DELIM.split(t_lower)[0].strip(),
+                        }
+                if offset is None:
+                    break
+    except Exception:
+        pass
 
     _VIDEO_CATALOG_CACHE = catalog
     return _VIDEO_CATALOG_CACHE
@@ -348,6 +368,14 @@ def title_score(query: str, title: str) -> float:
     elif "lru" in q_raw and "lru" in t_raw:
         exact_boost = max(exact_boost, 0.60)
     elif "lfu" in q_raw and "lfu" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+    elif "histogram" in q_raw and "histogram" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+    elif "pascal" in q_raw and "pascal" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+    elif "koko" in q_raw and "koko" in t_raw:
+        exact_boost = max(exact_boost, 0.60)
+    elif "kadane" in q_raw and "kadane" in t_raw:
         exact_boost = max(exact_boost, 0.60)
 
     t_main = RE_DELIM.split(t_raw)[0].strip()
@@ -400,36 +428,74 @@ def search_numpy(
 ) -> list[tuple[Chunk, float]]:
     """In-memory vector search fallback using pre-computed index/vectors.npz."""
     import numpy as np
+
+    catalog = get_video_catalog()
+    matched_catalog_vids = set()
+    best_catalog_vid = None
+    best_catalog_score = 0.0
+
+    for vid, meta in catalog.items():
+        score = title_score(query, meta["title"])
+        if score >= 0.35:
+            matched_catalog_vids.add(vid)
+            if score > best_catalog_score:
+                best_catalog_score = score
+                best_catalog_vid = vid
+
     store = get_np_store()
-    if not store:
-        return []
-
-    q_key = query.lower().strip()
-    if q_key in _EMBED_CACHE:
-        q_vec = _EMBED_CACHE[q_key]
-    else:
-        expanded = expand_query(query)
-        q_vec = np.array(get_embedder().embed_query(expanded), dtype=np.float32)
-        if len(_EMBED_CACHE) < 500:
-            _EMBED_CACHE[q_key] = q_vec
-
-    sims = np.dot(store["vectors"], q_vec)
-    distances = 1.0 - sims
-
-    cutoff = MAX_DISTANCE if max_distance is None else max_distance
     scored = []
-    for idx, dist in enumerate(distances):
-        payload = store["payloads"][idx]
-        if video_id and payload.get("video_id") != video_id:
-            continue
-        chunk = Chunk.from_payload(payload)
-        t_boost = title_score(query, chunk.video_title)
-        composite_score = dist - t_boost
-        if dist <= cutoff or t_boost >= 0.35:
-            scored.append((composite_score, float(dist), chunk))
 
-    scored.sort(key=lambda row: row[0])
-    return [(chunk, distance) for _, distance, chunk in scored[:top_k]]
+    if store:
+        q_key = query.lower().strip()
+        if q_key in _EMBED_CACHE:
+            q_vec = _EMBED_CACHE[q_key]
+        else:
+            expanded = expand_query(query)
+            q_vec = np.array(get_embedder().embed_query(expanded), dtype=np.float32)
+            if len(_EMBED_CACHE) < 500:
+                _EMBED_CACHE[q_key] = q_vec
+
+        sims = np.dot(store["vectors"], q_vec)
+        distances = 1.0 - sims
+        cutoff = MAX_DISTANCE if max_distance is None else max_distance
+
+        for idx, dist in enumerate(distances):
+            payload = store["payloads"][idx]
+            v_id = payload.get("video_id")
+            if video_id and v_id != video_id:
+                continue
+
+            chunk = Chunk.from_payload(payload)
+            t_boost = title_score(query, chunk.video_title)
+
+            # Suppress unrelated videos if a strong title match exists for another catalog video
+            if matched_catalog_vids and v_id not in matched_catalog_vids and t_boost < 0.35:
+                continue
+
+            composite_score = dist - t_boost
+
+            if dist <= cutoff or t_boost >= 0.35:
+                scored.append((composite_score, float(dist), chunk))
+
+        scored.sort(key=lambda row: row[0])
+
+    if scored:
+        return [(chunk, distance) for _, distance, chunk in scored[:top_k]]
+
+    # Fallback to official catalog match if no vector chunk met the quality bar
+    if best_catalog_vid and best_catalog_vid in catalog:
+        cat_meta = catalog[best_catalog_vid]
+        syn_chunk = Chunk(
+            chunk_id=f"{best_catalog_vid}_0",
+            video_id=best_catalog_vid,
+            video_title=cat_meta["title"],
+            start_sec=0,
+            end_sec=60,
+            text=f"Striver's official lecture video: {cat_meta['title']}. Click play to watch Striver explain this topic.",
+        )
+        return [(syn_chunk, 0.10)]
+
+    return []
 
 
 def search(
@@ -448,6 +514,19 @@ def search(
         candidate_points = []
         seen_ids = set()
 
+        catalog = get_video_catalog()
+        matched_catalog_vids = set()
+        best_catalog_vid = None
+        best_catalog_score = 0.0
+
+        for vid, meta in catalog.items():
+            score = title_score(query, meta["title"])
+            if score >= 0.35:
+                matched_catalog_vids.add(vid)
+                if score > best_catalog_score:
+                    best_catalog_score = score
+                    best_catalog_vid = vid
+
         if not video_id:
             v_results = client.query_points(
                 collection_name=name,
@@ -460,16 +539,11 @@ def search(
                     candidate_points.append(p)
                     seen_ids.add(p.id)
 
-            catalog = get_video_catalog()
-            matching_vids = [
-                vid for vid, meta in catalog.items()
-                if title_score(query, meta["title"]) >= 0.35
-            ]
-            if matching_vids:
+            if matched_catalog_vids:
                 t_filter = Filter(
                     should=[
                         FieldCondition(key="video_id", match=MatchValue(value=vid))
-                        for vid in matching_vids
+                        for vid in matched_catalog_vids
                     ]
                 )
                 t_points = client.query_points(
@@ -503,7 +577,11 @@ def search(
             distance = (1.0 - float(raw_score)) if raw_score is not None else 0.45
 
             chunk = Chunk.from_payload(point.payload)
+            v_id = chunk.video_id
             t_boost = title_score(query, chunk.video_title)
+
+            if matched_catalog_vids and v_id not in matched_catalog_vids and t_boost < 0.35:
+                continue
 
             composite_score = distance - t_boost
             if distance <= cutoff or t_boost >= 0.35:

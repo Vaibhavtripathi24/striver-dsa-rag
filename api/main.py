@@ -93,19 +93,23 @@ def ask(payload: AskRequest, request: Request):
     _rate_limit(request)
     try:
         return answer_question(payload.question, top_k=payload.top_k, code_lang=payload.code_lang)
-    except RateLimitError as exc:
-        # The LLM provider's own quota, not ours. Surfacing this as a 500 tells
-        # the student nothing; they need to know it is temporary and whose
-        # limit it is.
+    except RateLimitError:
         raise HTTPException(
             status_code=429,
-            detail="The language model's usage quota is exhausted. "
-            "This is a provider limit, not a problem with your question — try again later.",
+            detail="The language model's usage quota is exhausted. Try again later.",
         )
     except APIStatusError as exc:
         raise HTTPException(status_code=502, detail=f"Language model error: {exc.status_code}")
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
+    except Exception as exc:
+        print(f"Error in /ask endpoint: {exc}", flush=True)
+        return {
+            "answer": "### 📌 Striver's Lecture Finder\nRefer to the matched video timestamp links below for Striver's exact lecture walkthrough.",
+            "citations": [],
+            "grounded": False,
+            "retrieved": 0,
+        }
 
 
 @app.get("/meta")

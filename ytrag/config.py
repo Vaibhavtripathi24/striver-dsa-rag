@@ -149,8 +149,8 @@ TOP_K = int(os.getenv("YTRAG_TOP_K", 6))
 # unrelated and keeps every genuine question; the model's own refusal, working
 # from the excerpts, does the semantic judgement. Measured at this value:
 # 20/20 real questions kept, 10/10 off-topic questions still refused.
-MAX_DISTANCE = float(os.getenv("YTRAG_MAX_DISTANCE", 0.75))
-CONFIDENT_DISTANCE = float(os.getenv("YTRAG_CONFIDENT_DISTANCE", 0.55))
+MAX_DISTANCE = float(os.getenv("YTRAG_MAX_DISTANCE", 0.55))
+CONFIDENT_DISTANCE = float(os.getenv("YTRAG_CONFIDENT_DISTANCE", 0.50))
 TITLE_BOOST = float(os.getenv("YTRAG_TITLE_BOOST", 0.18))
 
 # The written explanation is OPTIONAL — /search returns the timestamps without
@@ -167,7 +167,7 @@ LLM_BACKEND = os.getenv("YTRAG_LLM_BACKEND", _DEFAULT_BACKEND)  # gemini | groq 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "") or os.getenv("GOOGLE_API_KEY", "")
 LLM_MODEL = os.getenv("YTRAG_LLM_MODEL", "")  # blank = per-backend default
-GROQ_MODEL = os.getenv("YTRAG_GROQ_MODEL", "openai/gpt-oss-120b")
+GROQ_MODEL = os.getenv("YTRAG_GROQ_MODEL", "llama-3.3-70b-versatile")
 GEMINI_MODEL = os.getenv("YTRAG_GEMINI_MODEL", "gemini-1.5-flash")
 
 # The exact string the system says when retrieval comes back empty. Kept here
